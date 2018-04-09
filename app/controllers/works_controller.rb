@@ -23,3 +23,9 @@ class WorksController < ApplicationController
   def destroy
   end
 end
+
+private
+
+def work_params
+  return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+end
