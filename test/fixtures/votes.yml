@@ -4,8 +4,26 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+vote1:
+  user: usako
+  publication: sailormoon
+
+vote2:
+  user: mamochan
+  publication: sailorstars
+
+vote3:
+  user: chibiusa
+  publication: codenamev
+
+vote4:
+  user: usako
+  publication: sailorstars
+
+vote4:
+  user:
+  publication: codenamev
+
+vote5:
+  user: mamochan
+  publication: sailormoon

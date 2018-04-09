@@ -1,15 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: MyString
-  description: MyString
+sailormoon:
+  category: Book
+  title: Sailor Moon
+  creator: Naoko Takeuchi
+  publication_year: 1992
+  description: Magical girl goes on adventures...
 
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: MyString
-  description: MyString
+sailorstars:
+  category: TV Show
+  title: Sailor Moon Stars
+  creator: Naoko Takeuchi
+  publication_year: 1996
+  description:
+
+codenamev:
+  category: Book
+  title: Codename: Sailor V
+  creator: Naoko Takeuchi
+  publication_year: 1991
+  description: Someone should know about this....
+
+sailorcrystal:
+  category: TV Show
+    title: Sailor Moon Crystal
+    creator: Naoko Takeuchi
+    publication_year: 2014
+    description: Oh no....

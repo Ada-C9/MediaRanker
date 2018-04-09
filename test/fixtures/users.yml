@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+usako:
+  name: Usagi
 
-two:
-  name: MyString
+mamochan:
+  name: Mamoru
+
+chibiusa:
+  name: Small Lady
+
+sailorv:
+  name: Minako
