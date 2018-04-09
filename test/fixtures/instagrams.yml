@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  handle: MyString
+  posts: 1
+  followers: 1
+
+two:
+  handle: MyString
+  posts: 1
+  followers: 1
