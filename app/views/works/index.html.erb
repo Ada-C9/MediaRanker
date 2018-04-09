@@ -1,4 +1,5 @@
 <h3>List of works</h3>
+
 <section class="works-table">
   <h4>Albums</h4>
   <table>
@@ -18,6 +19,60 @@
           <td><%= album.title %></td>
           <td><%= album.creator %></td>
           <td><%= album.publication_year %></td>
+          <!-- TODO: Add functionality to btn -->
+          <td><%= button_to('Upvote')%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<section class="works-table">
+  <h4>Books</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>votes TBD</td>
+          <td><%= book.title %></td>
+          <td><%= book.creator %></td>
+          <td><%= book.publication_year %></td>
+          <!-- TODO: Add functionality to btn -->
+          <td><%= button_to('Upvote')%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<section class="works-table">
+  <h4>Movies</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td>votes TBD</td>
+          <td><%= movie.title %></td>
+          <td><%= movie.creator %></td>
+          <td><%= movie.publication_year %></td>
           <!-- TODO: Add functionality to btn -->
           <td><%= button_to('Upvote')%></td>
         </tr>
