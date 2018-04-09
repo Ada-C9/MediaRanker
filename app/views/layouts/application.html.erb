@@ -12,6 +12,19 @@
   </head>
 
   <body>
+    <nav>
+      <h1><%= link_to "Media Ranker", root_path %></h1>
+      <h2>Ranking the Best of Everything</h2>
+
+      <ul>
+        <li><%= link_to "View top media", root_path %></li>
+        <li><%= link_to "View all media", works_path %></li>
+        <li><%= link_to "Add a new work", new_work_path %></li>
+        <li>View all users to be linked</li>
+        <li>Log in as username to be linked</li>
+        <li>Log out to be linked</li>
+      </ul>
+    </nav>
 
     <%= yield %>
 
