@@ -29,6 +29,7 @@ class WorksController < ApplicationController
 
     if work.save
       redirect_to work_path(work)
+    end
   end
 
   def destroy
@@ -37,7 +38,8 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
-private
-def work_params
-  return params.require(:work).permit(:category, :title, :created_by, :votes, :published_year, :description)
+  private
+  def work_params
+    return params.require(:work).permit(:category, :title, :created_by, :votes, :published_year, :description)
+  end
 end
