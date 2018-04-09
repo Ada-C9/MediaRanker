@@ -16,7 +16,8 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      redirect_to works_path
+      flash[:notice] = "Successfully created #{@work.category} #{@work.id}"
+      redirect_to work_path(@work)
     else
       render :new
     end
@@ -30,6 +31,7 @@ class WorksController < ApplicationController
     @work = Work.find_by(id: params[:id])
     if !@work.nil?
       if @work.update(work_params)
+        flash[:notice] = "Successfully updated #{@work.category} #{@work.id}"
         redirect_to work_path
       else
         render :edit
