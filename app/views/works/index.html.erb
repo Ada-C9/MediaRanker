@@ -1,1 +1,27 @@
-<h1>Media Ranker Homepage</h1>
+<h3>List of works</h3>
+<section class="works-table">
+  <h4>Albums</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @albums.each do |album| %>
+        <tr>
+          <td>votes TBD</td>
+          <td><%= album.title %></td>
+          <td><%= album.creator %></td>
+          <td><%= album.publication_year %></td>
+          <!-- TODO: Add functionality to btn -->
+          <td><%= button_to('Upvote')%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
