@@ -1,0 +1,19 @@
+<h2 class="my-class"><%= page_title %></h2>
+
+<% if @user.errors.any? %>
+  <ul class="errors">
+    <% @user.errors.each do |field, message| %>
+      <li>
+        <strong><%= field.capitalize %>: </strong><%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
