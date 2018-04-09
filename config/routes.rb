@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+
   # Home-page:
-  root 'works#index'
+  root 'home#index'
+
+  #  Home
+  get 'home/', to: 'home#index'
 
   # Works
   get 'works/', to: 'works#index', as: 'works'
