@@ -6,4 +6,14 @@
     <li>Published</li>
     <li>Upvote</li>
   </ul>
+<% @works.each do |w| %>
+  <ul>
+    <li>Vote Count TBD</li>
+    <li><%= link_to("#{w.title}", work_path(w.id)) %></li>
+    <li><%= "#{w.creator}" %></li>
+    <li><%= "#{w.publication_year}" %></li>
+    <li><%= link_to("Upvote", new_vote_path(w.id)) %></li>
+
+  </ul>
+<% end %>
 </section>
