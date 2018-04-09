@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  created_by: MyString
-  published: 1
-
-two:
-  title: MyString
-  created_by: MyString
-  published: 1
+agua:
+  category: book
+  title: Como Agua Para Chocolate
+  creator: Laura Esquivel
+  publication_year: 1989
+  description: Beautiful story about a love that cannot be.  It explores magic and the connection between emotions and food.

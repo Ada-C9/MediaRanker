@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+book:
+  name: book
 
-two:
-  name: MyString
+album:
+  name: album
+
+movie:
+  name: movie
