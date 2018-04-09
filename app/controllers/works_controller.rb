@@ -1,6 +1,9 @@
 class WorksController < ApplicationController
   def index
     @works = Work.all
+    @books = @works.books
+    @albums = @works.albums
+    @movies = @works.movies
   end
 
   def new
