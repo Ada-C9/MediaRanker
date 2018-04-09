@@ -1,7 +1,7 @@
 require 'csv'
 
 WORK_FILE = Rails.root.join('db',  'media_seeds.csv')
-puts "Loading raw driver data from #{WORK_FILE}"
+puts "Loading raw work data from #{WORK_FILE}"
 
 work_failures = []
 CSV.foreach(WORK_FILE, :headers => true) do |row|
