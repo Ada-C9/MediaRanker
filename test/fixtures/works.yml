@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beyonce:
+  category: album
+  title: beyonce
+  creator: MyString
+  publication_year: 2018-04-09
+  description: self-titled album
+
+hp1:
+  category: book
+  title: harry potter 1
+  creator: JK rowling
+  publication_year: 2018-04-09
+  description: first book in series

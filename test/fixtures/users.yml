@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beyhiver2000:
+  username: beyhiver2000
+  joindate: 2018-04-09
+
+potterhead:
+  username: potterhead
+  joindate: 2018-04-09
