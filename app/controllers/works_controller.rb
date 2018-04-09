@@ -42,6 +42,13 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    @work = Work.find_by(id: params[:id])
+
+    if @work
+      @work.destroy
+      flash[:notice] = "Successfully destroyed #{@work.category} #{@work.id}"
+    end
+    redirect_to works_path
   end
 
   private
