@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :work
 
-  resources :user , only: [:new, :create, :update]
+
+  resources :works
+
+  resources :users , only: [:new, :create, :update]
 
 
 
