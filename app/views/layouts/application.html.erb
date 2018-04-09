@@ -7,9 +7,23 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Gudea:400,700|Hammersmith+One">
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+
+  <header>
+    <h1>
+      <%= link_to "Media Ranker", root_path %>
+      <small>Ranking the Best of Everything</small>
+    </h1>
+
+    <nav>
+      <%= link_to "View top media", root_path %>
+      <%= link_to "View all media", works_path %>
+      <%= link_to "Add a new work", new_work_path %>
+    </nav>
+  </header>
 
   <body>
 
