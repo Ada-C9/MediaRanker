@@ -1,8 +1,8 @@
 class CreateWorksUsersJoin < ActiveRecord::Migration[5.1]
   def change
-    create_table :users_works do |t|
-    t.belongs_to :book, index: true
-    t.belongs_to :genre, index: true
+    create_table :works_users_join do |t|
+    t.belongs_to :work, index: true
+    t.belongs_to :user, index: true
 
     t.timestamps
     end

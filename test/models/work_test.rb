@@ -1,9 +1,14 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new }
+  describe 'relations' do
+    it 'connects works and users' do
+      user = User.create!
+      work = Work.create!
 
-  it "must be valid" do
-    value(work).must_be :valid?
+      work.users << user
+      work.user_ids.must_include user.id
+    end
+
   end
 end
