@@ -12,23 +12,66 @@
 # subreddit name summary subscribers
 require 'csv'
 
-INSTAGRAM_FILE= Rails.root.join('db', 'seed_data', 'instagram.csv')
+INSTAGRAM_FILE= Rails.root.join('db', 'seed_data', 'instagrams.csv')
 puts "Loading raw instagram data from #{INSTAGRAM_FILE}"
 
 instagram_failures = []
 CSV.foreach(INSTAGRAM_FILE, :headers => true) do |row|
-  driver = Driver.new
-  driver.id = row['id']
-  driver.name = row['name']
-  driver.vin = row['vin']
-  successful = driver.save
+  instagram = Instagram.new
+  instagram.id = row['id']
+  instagram.handle = row['handle']
+  instagram.posts = row['posts']
+  instagram.followers = row['followers']
+  successful = instagram.save
   if !successful
-    driver_failures << driver
-    puts "Failed to save driver: #{driver.inspect}"
+    instagram_failures << instagram
+    puts "Failed to save instagram: #{instagram.inspect}"
   else
-    puts "Created driver: #{driver.inspect}"
+    puts "Created instagram: #{instagram.inspect}"
   end
 end
 
-puts "Added #{Driver.count} driver records"
-puts "#{driver_failures.length} drivers failed to save"
+puts "Added #{Instagram.count} instagram records"
+puts "#{instagram_failures.length} instagrams failed to save"
+
+  SUBREDDIT_FILE  = Rails.root.join('db', 'seed_data', 'subreddits.csv')
+puts "Loading raw   subreddit data from #{  SUBREDDIT_FILE }"
+
+  subreddit _failures = []
+CSV.foreach(  SUBREDDIT_FILE , :headers => true) do |row|
+    subreddit = Subreddit.new
+    subreddit.id = row['id']
+    subreddit.title = row['title']
+    subreddit.description = row['description']
+  successful = subreddit.save
+  if !successful
+      subreddit_failures << subreddit
+    puts "Failed to save subreddit: #{subreddit.inspect}"
+  else
+    puts "Created subreddit: #{subreddit.inspect}"
+  end
+end
+
+puts "Added #{Subreddit.count} subreddit records"
+puts "#{subreddit_failures.length} subreddits failed to save"
+
+TWITTER_FILE = Rails.root.join('db', 'seed_data', 'twitters.csv')
+puts "Loading raw twitter data from #{TWITTER_FILE}"
+
+twitter_failures = []
+CSV.foreach(TWITTER_FILE , :headers => true) do |row|
+  twitter = twitter.new
+  twitter.id = row['id']
+  twitter.handle = row['handle']
+  twitter.followers = row['followers']
+  successful = twitter.save
+  if !successful
+    twitter_failures << twitter
+    puts "Failed to save twitter: #{twitter.inspect}"
+  else
+    puts "Created twitter: #{twitter.inspect}"
+  end
+end
+
+puts "Added #{twitter.count} twitter records"
+puts "#{twitter_failures.length} twitters failed to save"
