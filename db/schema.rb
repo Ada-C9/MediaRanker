@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409213521) do
+ActiveRecord::Schema.define(version: 20180409215814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "works", force: :cascade do |t|
-    t.string "title"
-    t.string "created_by"
-    t.integer "published"
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "works", force: :cascade do |t|
+    t.string "title"
+    t.string "creator"
+    t.integer "publication_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_works_on_category_id"
+  end
+
+  add_foreign_key "works", "categories"
 end
