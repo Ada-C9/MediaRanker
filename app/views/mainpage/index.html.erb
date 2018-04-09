@@ -1,0 +1,33 @@
+<%# make these a partial %>
+<h3>Top Albums</h3>
+<ul>
+  <% @top_albums.each do |album| %>
+    <li>
+      <%= album.title %>
+      <%= album.creator %>
+      <%= album.publication_year %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Top Books</h3>
+<ul>
+  <% @top_books.each do |book| %>
+    <li>
+      <%= book.title %>
+      <%= book.creator %>
+      <%= book.publication_year %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Top Movies</h3>
+<ul>
+  <% @top_movies.each do |movie| %>
+    <li>
+      <%= movie.title %>
+      <%= movie.creator %>
+      <%= movie.publication_year %>
+    </li>
+  <% end %>
+</ul>
