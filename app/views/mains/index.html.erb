@@ -1,0 +1,34 @@
+<p><%= flash[:notice] %></p>
+
+<h1>Top Movies</h1>
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, work_path(movie)%> by <%= movie.creator %>
+      <br>
+      Votes to be shown
+    </li>
+  <% end %>
+</ul>
+
+<h1>Top Books</h1>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.title, work_path(book)%> by <%= book.creator %>
+      <br>
+      Votes to be shown
+    </li>
+  <% end %>
+</ul>
+
+<h1>Top Albums</h1>
+<ul>
+  <% @albums.each do |album| %>
+    <li>
+      <%= link_to album.title, work_path(album)%> by <%= album.creator %>
+      <br>
+      Votes to be shown
+    </li>
+  <% end %>
+</ul>

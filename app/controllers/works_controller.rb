@@ -48,7 +48,7 @@ class WorksController < ApplicationController
       @work.destroy
       flash[:notice] = "Successfully destroyed #{@work.category} #{@work.id}"
     end
-    redirect_to works_path
+    redirect_to mains_path
   end
 
   private
