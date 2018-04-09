@@ -22,6 +22,10 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
   end
 
+  def edit
+    @work = Work.find(params[:id])
+  end
+
 
 
   private
