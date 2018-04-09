@@ -1,0 +1,13 @@
+<h3>HELLO</h3>
+<h3>These are sorted by category</h3>
+<p>below are all the works we have so far: </p>
+
+<ul>
+  <% @works.each do |w| %>
+    <li><%= w.category.name %></li>
+    <li><%= w.title %></li>
+    <li><%= w.creator %></li>
+    <li><%= w.publication_year %></li>
+    <li><%= w.description %></li>
+  <% end %>
+</ul>

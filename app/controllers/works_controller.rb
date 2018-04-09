@@ -28,6 +28,10 @@ class WorksController < ApplicationController
 
   end
 
+  def top
+    @works = Work.all
+  end
+
 
 
 
