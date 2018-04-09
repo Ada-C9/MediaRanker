@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+metz:
+  format: book
+  title: Practical Object Oriented Design in Ruby
+  published: 2018-04-09
+  creator: Sandi Metz
+
+purple:
+  format: album
+  title: Purple Rain
+  published: 2018-04-09
+  creator: Sandi Metz
