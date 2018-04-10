@@ -61,6 +61,6 @@ class UsersController < ApplicationController
 
   def user_params
     # You don't need an explicit return here, but if it helps keep things straight in your head, it's okay to do it.
-    params.require(:user, :name).permit(vote_ids: [])
+    params.require(:user, :name)
   end
 end
