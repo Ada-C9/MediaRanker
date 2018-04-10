@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
   def index
-    @publications = Publication.all
+    @publications = Publication.all.order(:category)
   end
 end
