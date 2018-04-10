@@ -1,7 +1,6 @@
 class WorksController < ApplicationController
   def index
     @works = Work.all
-    @hash = Work.make_category_hash
   end
 
   def new
@@ -17,6 +16,7 @@ class WorksController < ApplicationController
   end
 
   def show
+    @work = Work.find_by(id: params[:id])
   end
 
   def destroy

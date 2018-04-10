@@ -3,11 +3,11 @@
 <% categories = Work.make_category_hash %>
 <% categories.each do |category| %>
   <h3><%= category %></h3>
-  <% works = @works.where(category: category) %>
+  <% works_by_category = @works.where(category: category) %>
   <% i = 0 %>
-  <% while i < works.length %>
-    <strong><%= works[i].title %></strong>
-    <span> by <%= works[i].creator %></span>
+  <% while i < works_by_category.length %>
+    <strong><%= link_to works_by_category[i].title, work_path(works_by_category[i][:id]) %></strong>
+    <span> by <%= works_by_category[i].creator %></span>
     <br>
     <% i += 1%>
   <% end %>
