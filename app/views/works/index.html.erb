@@ -43,7 +43,7 @@
     <tr>
       <% @books.each do |book|%>
       <td>Put votes</td>
-      <td><%=link_to book.title, work_path(book[:id])%> </td>
+      <td> <%=link_to book.title, work_path(book[:id])%></td>
       <td> <%= book.creator %></td>
       <td> <%= book.publication_year %></td>
       <td> put link to vote</td>
@@ -77,3 +77,8 @@
     <% end%>
   </tbody>
 </table>
+
+<ul>
+  <li><%=link_to "View top media", root_path%></li>
+  <li><%=link_to "Add a new work", new_work_path%></li>
+</ul>
