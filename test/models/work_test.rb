@@ -1,6 +1,7 @@
 require "test_helper"
 
 describe Work do
+
   describe "validations" do
 
     it "must have a title" do
@@ -12,4 +13,5 @@ describe Work do
     end
 
   end # validationts
+  
 end
