@@ -1,6 +1,5 @@
 List of works
 
-
 <% @types.each do |type| %>
 <%= type.capitalize %>s
 <table>
@@ -20,9 +19,6 @@ List of works
   <th>
     Upvote
   </th>
-
-
-
 
   <% Work.sort.each do |work| %>
   <% if work.category == type %>
