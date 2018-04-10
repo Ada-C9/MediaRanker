@@ -1,0 +1,33 @@
+<h3 class="page-header"><%=page_title %></h3>
+<% if @work.errors.any? %>
+  <ul>
+    <% @work.errors.each do |column, message| %>
+    <li><strong><%= column.capitalize %></strong> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<section class="form">
+  <%= form_for @work do |f| %>
+
+    <%= f.label :work_category %>
+    <%= f.select :work_category, [
+      "album", "book", "movie"
+    ] %>
+
+    <%= f.label :work_title %>
+    <%= f.text_field :work_title %>
+
+    <%= f.label :work_creator %>
+    <%= f.text_field :work_creator %>
+
+    <%= f.label :work_publication_year %>
+    <%= f.text_field :work_publication_year %>
+
+    <%= f.label :work_description %>
+    <%= f.text_area :work_description %>
+
+  <%= f.submit  %>
+
+  <% end %>
+</section>
