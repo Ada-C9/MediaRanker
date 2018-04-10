@@ -16,7 +16,7 @@
       <% @albums.each do |album| %>
         <tr>
           <td>votes TBD</td>
-          <td><%= album.title %></td>
+          <td><%= link_to album.title, album %></td>
           <td><%= album.creator %></td>
           <td><%= album.publication_year %></td>
           <!-- TODO: Add functionality to btn -->
