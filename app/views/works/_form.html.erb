@@ -1,0 +1,19 @@
+<h2 class="my-class"><%=page_title%></h2>
+
+
+<%=form_for @work do |f| %>
+<%= f.select :category, [['Movie'],['Book'],['Album']], :prompt => 'Select a Category' %>
+<%= f.label :title%>
+<%= f.text_field :title%>
+
+<%= f.label :creator%>
+<%= f.text_field :creator %>
+
+<%= f.label :publication%>
+<%= f.text_field :publication_year %>
+
+<%= f.label :description%>
+<%= f.text_field :description %>
+
+<%= f.submit%>
+<%end%>
