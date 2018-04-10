@@ -1,9 +1,24 @@
 <h1>Instagram</h1>
-<main>
+<section class = "add-link">
+<%= link_to "Add a New Instagram", new_instagram_path%>
+</section>
+<section>
+
   <%= @instagrams.each do |instagram| %>
-      <%= instagram.id %>
-      <%= instagram.handle %>
-      <%= instagram.posts %>
-      <%= instagram.followers %>
-      <% end %>
-</main>
+  <ul>
+  <li>
+    <%= instagram.id %>
+  </li>
+  <li>Handle:
+    <%= instagram.handle %>
+  </li>
+  <li>Posts:
+    <%= instagram.posts %>
+  </li>
+  <li>Followers:
+    <%= instagram.followers %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

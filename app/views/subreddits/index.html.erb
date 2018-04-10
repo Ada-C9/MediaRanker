@@ -1,10 +1,26 @@
-<h1>Subreddits</h1>
+<h1>Subreddit</h1>
+<section class = "add-link">
+<%= link_to "Add a New Subreddit", new_subreddit_path%>
+</section>
+<section>
 
-<main>
   <%= @subreddits.each do |subreddit| %>
-      <%= subreddit.id %>
-      <%= subreddit.title %>
-      <%= subreddit.description %>
-      <%= subreddit.subscribers %>
-      <% end %>
-</main>
+  <ul>
+  <li>
+    <strong>
+    <%= link_to subreddit.id, subreddit_path(subreddit) %>
+    </strong>
+  </li>
+  <li>Title:
+    <%= subreddit.title %>
+  </li>
+  <li>Description:
+    <%= subreddit.description %>
+  </li>
+  <li> Subscribers:
+    <%= subreddit.subscribers %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

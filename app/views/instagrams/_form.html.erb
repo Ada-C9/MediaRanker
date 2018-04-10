@@ -3,7 +3,7 @@
   <%= page_title %>
 </h4>
 
-<%= form_for @instagram do |f| %>
+<%= form_for @instagram do |f| %>z
 <div>
   <%= f.label :handle %>
   <%= f.text_field :handle%>
@@ -11,12 +11,12 @@
 
 <div>
   <%= f.label :posts %>
-  <%= f.integer :posts %>
+  <%= f.number_field :posts %>
 </div>
 
 <div>
   <%= f.label :followers %>
-  <%= f.integer :followers %>
+  <%= f.number_field :followers %>
 </div>
 
 <div>
@@ -28,6 +28,3 @@
 <div>
 <%= link_to "List of Instagrams", instagrams_path %>
 </div>
-
-
-<% end %>

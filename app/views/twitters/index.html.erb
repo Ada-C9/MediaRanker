@@ -1,9 +1,24 @@
-<h1>twitters</h1>
 
-<main>
+<h1>Twitter</h1>
+<section class = "add-link">
+<%= link_to "Add a New Twitter", new_twitter_path%>
+</section>
+<section>
+
   <%= @twitters.each do |twitter| %>
-      <%= twitter.id %>
-      <%= twitter.handle %>
-      <%= twitter.followers %>
-      <% end %>
-</main>
+  <ul>
+  <li>
+    <strong>
+    <%= link_to twitter.id, twitter_path(twitter) %>
+    </strong>
+  </li>
+  <li>Handle:
+    <%= twitter.handle %>
+  </li>
+  <li>Followers:
+    <%= twitter.followers %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

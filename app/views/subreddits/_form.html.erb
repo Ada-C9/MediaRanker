@@ -5,8 +5,8 @@
 
 <%= form_for @subreddit do |f| %>
 <div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 </div>
 
 <div>
@@ -16,7 +16,7 @@
 
 <div>
   <%= f.label :subscribers %>
-  <%= f.integer :subscribers %>
+  <%= f.number_field :subscribers %>
 </div>
 
 <div>

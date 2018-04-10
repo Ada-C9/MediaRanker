@@ -1,0 +1,11 @@
+<section>
+  <h2>instagramDetails</h2>
+  <h3><%= @instagram.handle %></h3>
+  <p><%= @instagram.posts %></p>
+  <p><%= @instagram.followers %></p>
+  <li>
+    <%= link_to "Edit", edit_instagram_path(@instagram) %>
+    <%= link_to("Delete", instagram_path(@instagram), method: :delete, data: { confirm: "Are you sure you want to delete this instagram?" }) %>
+    <%= link_to "List of instagrams", instagrams_path %>
+  </li>
+</section>
