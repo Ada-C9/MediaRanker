@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # root 'works#index'
+
+  root 'welcome#index'
 
   resources :works do
     resources :votes
