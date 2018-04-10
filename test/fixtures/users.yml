@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+jones:
+  name: Brittany Jones
 
-two:
-  name: MyString
+carter:
+  name: Rober Carter
+
+smith:
+  name: John Smith
+
+kate:
+  name: Kate Johnson
+
+jim:
+  name: Jim Links

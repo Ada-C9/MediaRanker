@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  work: one
-  user: one
+  work: boosh
+  user: jones
 
 two:
-  work: two
-  user: two
+  work: kitchen
+  user: carter
+
+three:
+  work: vacation
+  user: smith
+
+four:
+  work: baskets
+  user: kate
