@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
 
 get '/works', to: 'works#index'
-
-
+get '/works/:id', to: 'works#show', as: 'work'
 
 end
