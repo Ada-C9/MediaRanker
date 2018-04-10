@@ -27,9 +27,21 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @work = Work.find(params[:id])
   end
 
   def update
+    @work = Work.find(params[:id])
+    @work.assign_attributes(work_params)
+
+    if @work.save
+      flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
+      redirect_to work_path(@work)
+    else
+      # include error messages
+      flash.now[:failure] = "A problem occurred: Could not update #{@work.category}"
+      render :edit
+    end
   end
 
   def destroy
