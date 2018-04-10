@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/destroy'
+
   root to: 'works#top'
 
   get '/works/top', to: 'works#top', as: 'top_works'

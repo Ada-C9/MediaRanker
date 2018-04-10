@@ -3,4 +3,5 @@ class Work < ApplicationRecord
 
   validates :title, presence: true
   validates :category, presence: true
+  validates :title, uniqueness: {scope: :category}
 end

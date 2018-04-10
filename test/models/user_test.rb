@@ -1,9 +1,16 @@
 require "test_helper"
 
 describe User do
-  let(:user) { User.new }
+  let(:user) { users(:jones)}
 
-  it "must be valid" do
-    value(user).must_be :valid?
-  end
+  it "must be valid when there is a name present" do
+   user.valid?.must_equal true
+ end
+
+ it "must not be valid if there is no name" do
+   user.name = nil
+   user.valid?.must_equal false
+   user.errors.must_include :name
+ end
+
 end
