@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
-  get 'works/index'
+  root 'works#index'
 
-  get 'works/new'
+  resources :works do
 
-  get 'works/create'
-
-  get 'works/show'
-
-  get 'works/update'
-
-  get 'works/edit'
-
-  get 'works/destroy'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
