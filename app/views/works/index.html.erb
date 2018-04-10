@@ -1,34 +1,70 @@
-<!-- <ul>
-  <% @works.each do |work| %>
-    <li>
-      <%= work.category %>
-      <%= work.title %>
-      <%= work.creator %>
-      <%= work.publication_year %>
-      <%= work.description %>
-    </li>
-  <% end %>
-</ul> -->
-<%= link_to("Add a New work", new_work_path, class: "important") %>
+<section>
+  <h2><strong>List of works</strong></h2>
+
+  <table>
+    <tr>
+      <th>
+        <strong>Votes</strong>
+      </th>
+      <th>
+        <strong>Title</strong>
+      </th>
+      <th>
+        <strong>Created By</strong>
+      </th>
+      <th>
+        <strong>Pubthshed</strong>
+      </th>
+      <th>
+        <strong>Upvote</strong>
+      </th>
+    </tr>
 
 
+    <% @works.each do |work| %>
+    <tr>
+      <th>
+        <%= work.category %>
+      </th>
+      <th>
+        <%= link_to "#{work.title}" %>
+      </th>
+      <th>
+        <%= work.creator %>
+      </th>
+      <th>
+        <%= work.publication_year %>
+      </th>
+      <th>
+        <%= work.description %>
+      </th>
+    </tr>
+    <% end %>
+  </table>
+</section>
+
+
+<%= link_to("View top media") %>
+<%= link_to("Add a New work", new_work_path) %>
+
+<!--
 <% @works.each do |work| %>
 <ul>
 
-  <li>
-    Category: <%= work.category %>
-  </li>
-  <li>
-    Title: <%= work.title %>
-  </li>
-  <li>
-    Creator: <%= work.creator %>
-  </li>
-  <li>
-    Publication_year: <%= work.publication_year %>
-  </li>
-  <li>
-    Description: <%= work.description %>
-  </li>
+<li>
+Category: <%= work.category %>
+</li>
+<li>
+Title: <%= work.title %>
+</li>
+<li>
+Creator: <%= work.creator %>
+</li>
+<li>
+Publication_year: <%= work.publication_year %>
+</li>
+<li>
+Description: <%= work.description %>
+</li>
 </ul>
-<% end %>
+<% end %> -->

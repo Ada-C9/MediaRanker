@@ -17,3 +17,13 @@
  *= require foundation_and_overrides
 
  */
+ .nav ul {
+   display: grid;
+   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+   list-style-type: none;
+ }
+
+.nav ul li {
+  border: 1px solid black;
+  margin-right: 5px;
+}
