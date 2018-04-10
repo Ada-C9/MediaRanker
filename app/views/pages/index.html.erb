@@ -4,14 +4,15 @@
   <h3>Media Spotlight Section</h3>
 </section>
 
-<% @hash.each {|key, value| %>
-  <h3><%= key %></h3>
+<% categories = Work.make_category_hash %>
+<% categories.each do |category| %>
+  <h3><%= category %></h3>
+  <% works = @works.where(category: category) %>
   <% i = 0 %>
-  <% while i < Work.num_runs(value) %>
-    <% work = value[i] %>
-    <strong><%= work.title %></strong>
-    <span> by <%= work.creator %></span>
+  <% while i < Work.num_runs(works) %>
+    <strong><%= works[i].title %></strong>
+    <span> by <%= works[i].creator %></span>
     <br>
     <% i += 1%>
   <% end %>
-<%  } %>
+<% end %>

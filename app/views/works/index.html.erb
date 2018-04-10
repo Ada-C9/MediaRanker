@@ -1,12 +1,14 @@
 <h1>List of works</h1>
-<% @hash.each {|key, value| %>
-  <h3><%= key %></h3>
+
+<% categories = Work.make_category_hash %>
+<% categories.each do |category| %>
+  <h3><%= category %></h3>
+  <% works = @works.where(category: category) %>
   <% i = 0 %>
-  <% while i < value.length %>
-    <% work = value[i] %>
-    <strong><%= work.title %></strong>
-    <span> by <%= work.creator %></span>
+  <% while i < works.length %>
+    <strong><%= works[i].title %></strong>
+    <span> by <%= works[i].creator %></span>
     <br>
     <% i += 1%>
   <% end %>
-<%  } %>
+<% end %>
