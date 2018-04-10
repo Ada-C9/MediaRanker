@@ -1,6 +1,5 @@
 <section>
-  <h1><strong>List of works</strong></h1>
-
+  <h><strong>List of works</strong></h2>
 
   <table>
     <tr>
@@ -42,7 +41,12 @@
     <% end %>
   </table>
 
-  <button class="button-selects">
-    <%= link_to("Add a new wook", new_work_path) %>
-  </button>
+<ul>
+  <li>
+    <%= link_to("View top media", works_path, class: "hollow button") %>
+  </li>
+  <li>
+    <%= link_to("Add a new wook", new_work_path, class: "hollow button") %>
+  </li>
+</ul>
 </section>

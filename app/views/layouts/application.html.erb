@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel=“icon” type=“image/png” href=“images/owl.jpg”>
+    <%= favicon_link_tag asset_path('owl.jpg'), :rel => 'icon', :type => 'image/jpg' %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -17,19 +17,25 @@
         <nav class="nav">
           <ul>
             <li>
-              <%= link_to("View top media") %>
+              <h1>Media Ranker </h1>
             </li>
             <li>
-              <%= link_to("View all media", works_path) %>
+              <h2>| Ranking the Best of Everything</h2>
             </li>
             <li>
-              <%= link_to("Add a new work", new_work_path) %>
+              <%= link_to("View top media", works_path, class: "hollow button") %>
             </li>
             <li>
-              <%= link_to("View all users") %>
+              <%= link_to("View all media", works_path, class: "hollow button") %>
             </li>
             <li>
-              <%= link_to("Log in") %>
+              <%= link_to("Add a new work", new_work_path, class: "hollow button") %>
+            </li>
+            <li>
+              <%= link_to("View all users", works_path, class: "hollow button") %>
+            </li>
+            <li>
+              <%= link_to("Log in", class: "hollow button") %>
             </li>
           </ul>
 
@@ -41,7 +47,6 @@
       </main>
 
       <footer>
-
       </footer>
 
     </body>
