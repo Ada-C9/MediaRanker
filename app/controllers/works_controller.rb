@@ -41,7 +41,7 @@ class WorksController < ApplicationController
 
     @work.update_attributes work_params
     if @work.update_attributes work_params
-      redirect_to works_path
+      redirect_to work_path
       flash[:success] = "Updated #{@work.title}"
     else
       render :edit
@@ -52,5 +52,9 @@ class WorksController < ApplicationController
     @types = ["movie", "book", "album"]
   end
 
+  private
+    def work_params
+      return params.require(:work).permit(:title, :description, :category, :year)
+    end
 
 end
