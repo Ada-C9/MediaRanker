@@ -23,3 +23,19 @@
    background-color: #e6e6e6;
    color: #8a8a8a;
  }
+
+ h3 {
+   color: #26A69A;
+ }
+
+ .main-header {
+   background-color: #B2DFDB;
+ }
+
+ .header-title a {
+   color: #FF5722;
+ }
+
+ ul {
+   list-style-type: none;
+ }
