@@ -1,0 +1,27 @@
+<%= form_for @work do |f| %>
+<ul>
+  <li>
+  <%= f.label :category %>
+  <%= f.select :category, ["book", "movie", "album" ]%>
+  </li>
+  <li>
+<%= f.label :title , "Title"%>
+<%= f.text_field :title %>
+</li>
+<li>
+<%= f.label :created_by, "Creator" %>
+<%= f.text_field :created_by %>
+</li>
+<li>
+<%= f.label :published, "Publication year" %>
+<%= f.number_field :published %>
+</li>
+
+<li>
+<%= f.label :description %>
+<%= f.text_field :description %>
+</li>
+
+</ul>
+<%= f.submit  %>
+<%end%>

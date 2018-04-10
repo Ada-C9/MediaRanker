@@ -1,12 +1,48 @@
-<h1> All the Media </h1>
+<h2>List of works</h2>
 <ul>
-  <%@works.each do |work|%>
+  <h2>Albums</h2>
+  <%@works.where(category: "album").each do |work|%>
   <li>
-  <span><%= work.category%></span>
-  <span><%= work.title%></span>
-  <span><%= work.created_by%></span>
-  <span><%= work.published%></span>
-  <span><%= work.votes%></span>
-</li>
+    <span><%= work.votes%></span>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.published%></span>
+    <span>Upvote</span>
+
+  </li>
   <%end%>
+</ul>
+
+<ul>
+  <h2>Books</h2>
+  <%@works.where(category: "book").each do |work|%>
+  <li>
+    <span><%= work.votes%></span>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.published%></span>
+    <span>Upvote</span>
+
+
+  </li>
+  <%end%>
+</ul>
+
+<ul>
+  <h2>Movies</h2>
+  <%@works.where(category: "movie").each do |work|%>
+  <li>
+    <span><%= work.votes%></span>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.published%></span>
+    <span>Upvote</span>
+
+    
+  </li>
+  <%end%>
+</ul>
+<ul>
+  <li><%= link_to "View top media", root_path%></li>
+  <li><%= link_to "Add a new work", new_work_path%></li>
 </ul>
