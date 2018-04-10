@@ -14,4 +14,18 @@ describe User do
 
   end # validations
 
+  describe "relationships" do
+
+    it "connects vote and vote id" do
+
+      vote_for_poodr = votes(:vote_for_poodr)
+
+      test_user = users(:test_user)
+
+      test_user.votes.must_include vote_for_poodr
+
+    end
+
+  end # relationships
+
 end

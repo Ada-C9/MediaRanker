@@ -9,4 +9,5 @@ one: {}
 #
 vote_for_poodr:
   work: poodr
+  user: test_user
 # column: value
