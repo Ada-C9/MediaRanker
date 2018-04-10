@@ -5,39 +5,16 @@
       <%= link_to "#{@top.title}", work_path(@top) %>
       by <%="#{@top.creator}" %>
     </h3>
+    <p><%= @top.votes.count %> votes - <%= @top.description %></p>
   </div>
 </section>
 
-<%# make these a partial %>
-<h3>Top Albums</h3>
-<ul>
-  <% @top_albums.each do |album| %>
-    <li>
-      <%= link_to "#{album.title}", work_path(album) %>
-      <%= album.creator %>
-      <%= album.publication_year %>
-    </li>
-  <% end %>
-</ul>
+<hr>
 
-<h3>Top Books</h3>
-<ul>
-  <% @top_books.each do |book| %>
-    <li>
-      <%= link_to "#{book.title}", work_path(book) %>
-      <%= book.creator %>
-      <%= book.publication_year %>
-    </li>
-  <% end %>
-</ul>
+<section class='top-ten-container'>
+  <%= render partial: 'display_top', locals: { section_title: 'Top Movies', category: @top_movies } %>
 
-<h3>Top Movies</h3>
-<ul>
-  <% @top_movies.each do |movie| %>
-    <li>
-      <%= link_to "#{movie.title}", work_path(movie) %>
-      <%= movie.creator %>
-      <%= movie.publication_year %>
-    </li>
-  <% end %>
-</ul>
+  <%= render partial: 'display_top', locals: { section_title: 'Top Books', category: @top_books } %>
+
+  <%= render partial: 'display_top', locals: { section_title: 'Top Albums', category: @top_albums } %>
+</section>

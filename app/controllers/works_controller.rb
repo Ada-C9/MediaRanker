@@ -62,7 +62,14 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    Work.destroy(params[:id])
+    work = Work.find(params[:id])
+    id = work.id
+    category = Category.find(work.category_id)
+    result = Work.destroy(params[:id])
+    if result
+      flash[:success] = "Successfully destroyed #{category.name} #{id}"
+    end
+    redirect_to root_path
   end
 
   def upvote
@@ -73,7 +80,7 @@ class WorksController < ApplicationController
     if vote.save
       flash[:success] = 'Successfully upvoted!'
     else
-      flash[:failure] = 'Could not upvote'
+      flash[:failure] = 'You must log in to do that'
     end
     redirect_to work_path(work.id)
   end

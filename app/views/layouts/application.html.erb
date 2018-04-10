@@ -22,7 +22,7 @@
         <%= link_to 'View all users', users_path, class: 'button' %>
         <div class='float-right'>
           <% if session[:user_id] %>
-            <%= link_to "Logged in as #{@user.username}", user_path(session[:user_id]), class: 'button' %>
+            <%= link_to "Logged in as #{@user.username}", user_path(session[:user_id]), class: 'button user-status' %>
             <%= link_to 'Logout', logout_path, method: :delete, class: 'button float-right' %>
           <% else %>
             <%= link_to 'Login', login_path, class: 'button float-right' %>
@@ -30,12 +30,14 @@
         </div>
       </nav>
     </header>
+
+    <section class="row status">
+      <% flash.each do |name, message| %>
+      <div class="<%= name %>"><%= message %></div>
+      <% end %>
+    </section>
+
     <main>
-      <section class="flash">
-        <% flash.each do |name, message| %>
-          <div class="<%= name %>"><%= message %></div>
-        <% end %>
-      </section>
       <%= yield %>
     </main>
 

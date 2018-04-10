@@ -1,0 +1,14 @@
+<section class='top-ten'>
+  <h3> <%= section_title %> </h3>
+  <ul>
+    <% category.each do |work| %>
+      <li>
+        <h4>
+          <%= link_to "#{work.title}", work_path(work) %>
+          <small> by <%= work.creator %></small>
+        </h4>
+        <p><%= work.votes.count %> votes</p>
+      </li>
+    <% end %>
+  </ul>
+</section>
