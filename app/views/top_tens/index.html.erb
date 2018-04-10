@@ -20,17 +20,54 @@
   <section>
     <h3>Top Movies</h3>
     <ul>
+      <% @top_movies.each do |movie| %>
+        <li>
+          <%= link_to movie.title, work_path(movie) %> by
+          <small>
+            <%= movie.creator %>
+          </small>
+          <p>
+            <%= movie.votes.count %> votes
+          </p>
+        </li>
+      <% end %>
     </ul>
 
   </section><!-- top ten movies -->
 
   <section>
     <h3>Top Books</h3>
+    <ul>
+      <% @top_books.each do |book| %>
+        <li>
+          <%= link_to book.title, work_path(book) %> by
+          <small>
+            <%= book.creator %>
+          </small>
+          <p>
+            <%= book.votes.count %> votes
+          </p>
+        </li>
+      <% end %>
+    </ul>
 
   </section><!-- top ten books -->
 
   <section>
     <h3>Top Albums</h3>
+    <ul>
+      <% @top_albums.each do |album| %>
+        <li>
+          <%= link_to album.title, work_path(album) %> by
+          <small>
+            <%= album.creator %>
+          </small>
+          <p>
+            <%= album.votes.count %> votes
+          </p>
+        </li>
+      <% end %>
+    </ul>
 
   </section><!-- top ten albums -->
 
