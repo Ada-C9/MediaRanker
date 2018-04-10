@@ -35,7 +35,7 @@ puts "Added #{Work.count} work records"
 puts "#{work_failures.length} works failed to save"
 
 50.times do |index|
-  Work.create!(category: "film",
+  Work.create!(category: "movie",
     title: Faker::HeyArnold.character,
     creator: Faker::Name.name,
     publication_year:
