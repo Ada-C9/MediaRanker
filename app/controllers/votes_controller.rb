@@ -1,5 +1,7 @@
 class VotesController < ApplicationController
   def index
+    @user = User.find_by(id:)
+    @work = Work.find_by(id:)
   end
 
   def show
