@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'subreddits/index'
 
   get 'twitters/index'
