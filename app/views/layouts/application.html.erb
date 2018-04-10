@@ -12,6 +12,35 @@
   </head>
 
   <body>
+    <header>
+      <h1>Media Ranker | Ranking the best of everything</h1>
+
+      <ul>
+      <li>
+        <%= link_to 'View Top Media', root_path %>
+      </li>
+      <li>View All Media
+      </li>
+      <li>Add a New Work
+      </li>
+      <li>View all users
+      </li>
+      <li>Log In
+      </li>
+
+      <ul>
+      <li>
+      <%= link_to 'View Instagrams', instagrams_path %>
+    </li>
+    <li>
+      <%= link_to 'View Twitters',
+      twitters_path %>
+    </li>
+    <li>
+      <%= link_to "View Subreddits", subreddits_path %>
+    </li>
+  </ul>
+</header>
 
     <%= yield %>
 

@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
-  get 'subreddits/index'
-
-  get 'twitters/index'
-
-  get 'instagrams/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
@@ -14,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :twitters
 
-  resources :subreddits 
+  resources :subreddits
 
 end
