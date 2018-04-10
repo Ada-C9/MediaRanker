@@ -13,13 +13,13 @@
   <% categories = Publication.return_all_categories%>
   <% categories.each do | category | %>
     <section class="top-ten">
-      <h3>Top <%= category %></h3>
+      <h3>Top <%= category.capitalize %></h3>
       <ul>
         <% top_ten = Publication.find_top_ten_by(category) %>
         <% top_ten.each do |publication| %>
           <li>
             <h4>
-              <%= publication.title %>
+              <%= link_to publication.title, publication_path(publication.id) %>
               <span>by <%= publication.creator%></span>
             </h4>
             <p><%= publication.find_total_votes %> votes</p>

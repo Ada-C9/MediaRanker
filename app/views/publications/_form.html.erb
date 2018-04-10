@@ -1,6 +1,6 @@
 <h3><%= page_title %></h3>
 <section>
-  <% form_for @publication do |f| %>
+  <%= form_for @publication do |f| %>
     <%= f.label :category %>
     <%= f.select :category, Publication.return_all_categories %>
     <%= f.label :title %>
@@ -11,6 +11,6 @@
     <%= f.text_field :publication_year %>
     <%= f.label :description %>
     <%= f.text_area :description %>
-    <%= f.submit, value: submit_value
+    <%= f.submit submit_value %>
   <% end %>
 </section>
