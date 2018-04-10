@@ -1,0 +1,6 @@
+<%= Top Movies %>
+
+  <% @controller.top_movies.each do |m| %>
+    <%= "#{m.title} by #{m.author}" %>
+    <%= "#{m.votes} votes" %>
+  <% end %>

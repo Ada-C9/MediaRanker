@@ -1,7 +1,7 @@
 module HomeHelper
 
   def top_movies
-    Work.where(category: "film")
+    Work.where(category: "movie")
   end
 
   def top_books
