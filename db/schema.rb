@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409215220) do
+ActiveRecord::Schema.define(version: 20180410162837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180409215220) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,13 +37,6 @@ ActiveRecord::Schema.define(version: 20180409215220) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "works_votes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "vote_id"
-    t.index ["user_id"], name: "index_works_votes_on_user_id"
-    t.index ["vote_id"], name: "index_works_votes_on_vote_id"
   end
 
 end
