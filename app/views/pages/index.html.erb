@@ -6,9 +6,13 @@
 
 <% @hash.each {|key, value| %>
   <h3><%= key %></h3>
-  <% value.each do |work| %>
-    <strong><%= work.title %></strong>
-    <span> by <%= work.creator %></span>
+
+  <% i = 0 %>
+  <% while i < 10 %>
+    <strong><%= value[i].title %></strong>
+    <span> by <%= value[i].creator %></span>
     <br>
+    <% i += 1%>
   <% end %>
+
 <%  } %>

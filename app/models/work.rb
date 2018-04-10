@@ -10,7 +10,8 @@ class Work < ApplicationRecord
       if category_hash.has_key?(Work.all[i].category) == false
         category_hash[Work.all[i].category] = []
         category_hash[Work.all[i].category] << Work.all[i]
-      elsif category_hash.has_key?(Work.all[i].category) && category_hash[Work.all[i].category].length < 10
+      # elsif category_hash.has_key?(Work.all[i].category) && category_hash[Work.all[i].category].length < 10
+      else
         category_hash[Work.all[i].category] << Work.all[i]
       end
       i += 1
@@ -19,6 +20,6 @@ class Work < ApplicationRecord
   end
 
   def self.spotlight
-    
+
   end
 end
