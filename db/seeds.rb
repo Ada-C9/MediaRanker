@@ -8,8 +8,8 @@
 
 require 'csv'
 
-WORK_FILE = Rails.root.join('db', 'seed_data', 'drivers.csv')
-puts "Loading raw driver data from #{WORK_FILE}"
+WORK_FILE = Rails.root.join('db', 'media_seeds.csv')
+puts "Loading raw work data from #{WORK_FILE}"
 
 work_failures = []
 CSV.foreach(WORK_FILE, :headers => true) do |row|
@@ -28,5 +28,5 @@ CSV.foreach(WORK_FILE, :headers => true) do |row|
   end
 end
 
-puts "Added #{Driver.count} driver records"
-puts "#{driver_failures.length} drivers failed to save"
+puts "Added #{Work.count} work records"
+puts "#{work_failures.length} works failed to save"
