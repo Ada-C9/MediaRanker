@@ -3,13 +3,16 @@
 
   <section>
     <h3>Albums</h3>
+    <%= render partial: "works-by-category", collection: @works.where(category: :album), as: :item %>
   </section>
 
   <section>
     <h3>Books</h3>
+    <%= render partial: "works-by-category", collection: @works.where(category: :book), as: :item %>
   </section>
 
   <section>
     <h3>Movies</h3>
+    <%= render partial: "works-by-category", collection: @works.where(category: :movie), as: :item %>
   </section>
 </main>
