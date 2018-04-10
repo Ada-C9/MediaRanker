@@ -4,9 +4,18 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new
   end
 
   def create
+    @work = Work.new(work_params)
+    @work.published.to_i
+    if @work.save
+      flash[:success] = "Work Created"
+      redirect_to works_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,5 +32,11 @@ class WorksController < ApplicationController
   end
 
   def upvote
+  end
+
+  private
+
+  def work_params
+    return params.require(:work).permit(:title, :description, :creator, :published, :category)
   end
 end
