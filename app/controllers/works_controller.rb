@@ -16,6 +16,7 @@ class WorksController < ApplicationController
     else
       flash[:failure] = "A problem occurred: Could not create #{params[:category]}"
       render :new
+    end
   end
 
   def show
