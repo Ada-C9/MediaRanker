@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
   <% @works.each do |work| %>
     <li>
       <%= work.category %>
@@ -8,4 +8,26 @@
       <%= work.description %>
     </li>
   <% end %>
+</ul> -->
+
+
+<% @works.each do |work| %>
+<ul>
+
+  <li>
+    Category: <%= work.category %>
+  </li>
+  <li>
+    Title: <%= work.title %>
+  </li>
+  <li>
+    Creator: <%= work.creator %>
+  </li>
+  <li>
+    Publication_year: <%= work.publication_year %>
+  </li>
+  <li>
+    Description: <%= work.description %>
+  </li>
 </ul>
+<% end %>
