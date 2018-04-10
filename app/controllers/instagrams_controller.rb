@@ -12,6 +12,7 @@ class InstagramsController < ApplicationController
     @instagram = Instagram.new(instagram_params)
 
     if @instagram.save
+      #works.create
       redirect_to instagrams_path
     else
       render :new
@@ -38,6 +39,7 @@ class InstagramsController < ApplicationController
 
   def delete
     Instagram.destroy(params[:id])
+    #if delete works.delete
   end
 
 

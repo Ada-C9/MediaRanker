@@ -1,0 +1,36 @@
+
+<h4>
+  <% page_title ||= "User Information" %>
+  <%= page_title %>
+</h4>
+
+<% if @user.errors.any? %>
+  <ul class="errors">
+    <% @user.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<div>
+<%= link_to "List of users", users_path %>
+</div>

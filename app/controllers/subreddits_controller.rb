@@ -10,6 +10,7 @@ class SubredditsController < ApplicationController
   def create
     @subreddit = Subreddit.new(subreddit_params)
     if @subreddit.save
+      #works.create
       redirect_to subreddits_path
     else
       render :new
@@ -34,6 +35,11 @@ class SubredditsController < ApplicationController
 
   def delete
     Subreddit.destroy(params[:id])
+
+   if subreddit.destroy
+      redirect_to subreddits_path
+            #if delete works.delete
+    end
   end
 
 
