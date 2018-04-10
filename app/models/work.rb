@@ -11,7 +11,7 @@ class Work < ApplicationRecord
         category_hash[Work.all[i].category] = []
         category_hash[Work.all[i].category] << Work.all[i]
         # binding.pry
-      else
+      elsif category_hash.has_key?(Work.all[i].category) && category_hash[Work.all[i].category].length < 10
         category_hash[Work.all[i].category] << Work.all[i]
       end
       i += 1
