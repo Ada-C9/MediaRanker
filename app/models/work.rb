@@ -10,12 +10,15 @@ class Work < ApplicationRecord
       if category_hash.has_key?(Work.all[i].category) == false
         category_hash[Work.all[i].category] = []
         category_hash[Work.all[i].category] << Work.all[i]
-        # binding.pry
       elsif category_hash.has_key?(Work.all[i].category) && category_hash[Work.all[i].category].length < 10
         category_hash[Work.all[i].category] << Work.all[i]
       end
       i += 1
     end
     return category_hash
+  end
+
+  def self.spotlight
+    
   end
 end
