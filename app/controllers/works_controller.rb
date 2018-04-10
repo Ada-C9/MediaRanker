@@ -27,6 +27,13 @@ class WorksController < ApplicationController
   end
 
   def update
+    @work.assign_attributes(work_params)
+
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render work_path(@work)
+    end
   end
 
   def destroy
