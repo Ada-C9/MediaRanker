@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :update, :edit, :destroy]
+
   def index
     @movies = Work.where(category: 'movie')
     @books = Work.where(category: 'book')
