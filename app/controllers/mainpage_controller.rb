@@ -1,9 +1,10 @@
 class MainpageController < ApplicationController
 
   def index
-    @top_albums = Work.where(category_id: categorize('album'))
-    @top_books = Work.where(category_id: categorize('book'))
-    @top_movies = Work.where(category_id: categorize('movie'))
+    @top = Work.top_work
+    @top_albums = Work.where(category_id: categorize('album')).first(10)
+    @top_books = Work.where(category_id: categorize('book')).first(10)
+    @top_movies = Work.where(category_id: categorize('movie')).first(10)
   end
 
   private

@@ -10,11 +10,20 @@ describe Work do
       work.user_ids.must_include user.id
     end
 
+    it 'belongs to a category' do
+      category = Category.first
+      work = Work.first
+
+      work.category = category
+      work.category_id.must_equal category.id
+    end
+
   end
 
   describe 'validations' do
     before do
       @work = Work.new(title: 'A new work')
+      @work.category = Category.first
     end
 
     it 'can be created with all required fields' do

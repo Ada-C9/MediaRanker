@@ -2,7 +2,7 @@ require "test_helper"
 
 describe Category do
   describe 'relations' do
-    it 'belongs to a work' do
+    it 'relates to works' do
       work = Work.first
       category = Category.new(name: 'album')
 

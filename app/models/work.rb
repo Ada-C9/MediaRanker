@@ -3,4 +3,8 @@ class Work < ApplicationRecord
   belongs_to :category
 
   validates :title, presence: true
+
+  def self.top_work
+    return Work.first
+  end
 end

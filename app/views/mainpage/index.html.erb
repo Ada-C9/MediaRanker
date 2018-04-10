@@ -1,9 +1,19 @@
+<section class='row spotlight'>
+  <div>
+    <h3>
+      <span class="media-spotlight-header">Media Spotlight</span>
+      <%= link_to "#{@top.title}", work_path(@top) %>
+      by <%="#{@top.creator}" %>
+    </h3>
+  </div>
+</section>
+
 <%# make these a partial %>
 <h3>Top Albums</h3>
 <ul>
   <% @top_albums.each do |album| %>
     <li>
-      <%= album.title %>
+      <%= link_to "#{album.title}", work_path(album) %>
       <%= album.creator %>
       <%= album.publication_year %>
     </li>
@@ -14,7 +24,7 @@
 <ul>
   <% @top_books.each do |book| %>
     <li>
-      <%= book.title %>
+      <%= link_to "#{book.title}", work_path(book) %>
       <%= book.creator %>
       <%= book.publication_year %>
     </li>
@@ -25,7 +35,7 @@
 <ul>
   <% @top_movies.each do |movie| %>
     <li>
-      <%= movie.title %>
+      <%= link_to "#{movie.title}", work_path(movie) %>
       <%= movie.creator %>
       <%= movie.publication_year %>
     </li>

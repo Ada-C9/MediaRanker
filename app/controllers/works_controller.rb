@@ -11,9 +11,16 @@ class WorksController < ApplicationController
   end
 
   def create
+    @work = Work.new(work_params)
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :new
+    end
   end
 
   def show
+    @work = Work.find(params[:id])
   end
 
   def edit
@@ -23,6 +30,14 @@ class WorksController < ApplicationController
   end
 
   def update
+    @work = Work.find(params[:id])
+    @work.assign_attributes(work_params)
+
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -35,5 +50,9 @@ class WorksController < ApplicationController
 
   def categorize(category)
     return Category.find_by(name: category).id
+  end
+
+  def work_params
+    return params.require(:work).permit(:title, :category, :creator, :publication_year, :description)
   end
 end

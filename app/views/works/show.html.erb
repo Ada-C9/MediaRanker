@@ -1,0 +1,12 @@
+<article class='media-details'>
+  <h3><%= @work.title %></h3>
+  <p>Created by: <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_year %></p>
+  <p><%= @work.description %></p>
+  <section>
+    <%= link_to 'Back to media ranks', root_path, class: 'button' %>
+    <%= link_to 'Edit', edit_work_path(@work), class: 'button' %>
+    <%= link_to 'Upvote', work_upvote_path(@work), class: 'button', method: :upvote %>
+    <%= link_to 'Delete', work_path(@work), class: 'button', method: :delete, data: {confirm: 'Are you sure?'} %>
+  </section>
+</article>
