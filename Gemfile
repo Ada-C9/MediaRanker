@@ -55,7 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-turbolinks'
 gem 'jquery-rails'
-gem 'foundation-rails'
+gem 'foundation-rails', '6.4.3.0'
 gem 'normalize-rails'
 group :development, :test do
   gem 'pry-rails'

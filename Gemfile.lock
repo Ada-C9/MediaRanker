@@ -211,7 +211,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   capybara (~> 2.13)
-  foundation-rails
+  foundation-rails (= 6.4.3.0)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
