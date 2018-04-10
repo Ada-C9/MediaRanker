@@ -11,9 +11,16 @@
     <li>Vote Count TBD</li>
     <li><%= link_to("#{w.title}", work_path(w.id)) %></li>
     <li><%= "#{w.creator}" %></li>
-    <li><%= "#{w.publication_year.year}" %></li>
-    <li><%= link_to("Upvote", new_vote_path(w.id)) %></li>
-
+    <% if w.publication_year != nil %>
+      <li><%= "#{w.publication_year.year}" %></li>
+    <% else %>
+      <li>
+        <%= "#{w.publication_year}" %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to("Upvote", new_vote_path(w.id)) %>
+    </li>
   </ul>
 <% end %>
 </section>

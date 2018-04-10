@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 3.0" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -19,22 +19,22 @@
       <nav>
         <ul>
           <li>
-            <%= link_to("View top media", root_path) %>
+            <%= link_to("View top media", root_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("View all media", works_path) %>
+            <%= link_to("View all media", works_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("Add a new work", new_work_path) %>
+            <%= link_to("Add a new work", new_work_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("View all users", users_path) %>
+            <%= link_to("View all users", users_path, class: "button") %>
           </li>
           <li>
             <% if session[:user_id] %>
-              <%= link_to "Log Out", logout_path, method: :delete %>
+            <%= link_to "Log Out", logout_path, class: "button", method: :delete %>
             <% else %>
-              <%= link_to "Login", login_path %>
+            <%= link_to "Login", login_path, class: "button" %>
             <% end %>
           </li>
         </ul>
@@ -44,7 +44,7 @@
 
       <section class="flash">
         <% flash.each do |name, message| %>
-        <div class="<%= name %>"><%= message %></div>
+        <h3><div class="<%= name %>"><%= message %></div></h3>
         <% end %>
       </section>
 
@@ -52,4 +52,5 @@
 
     </main>
   </body>
+
 </html>

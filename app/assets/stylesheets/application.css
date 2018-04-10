@@ -12,8 +12,14 @@
  *= require normalize-rails
 
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+
 
  */
+
+ .flash {
+   background-color: #e6e6e6;
+   color: #8a8a8a;
+ }

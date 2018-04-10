@@ -192,7 +192,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
-    web-console (3.5.1)
+    web-console (3.6.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -211,7 +211,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   capybara (~> 2.13)
-  foundation-rails
+  foundation-rails (= 6.4.3.0)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
