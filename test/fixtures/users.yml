@@ -10,8 +10,11 @@
 # two: {}
 # # column: value
 
-cheetara:
-  name: "cheetara"
+yellowlion:
+  name: "yellowlion"
 
-pumyra:
-  name: "pumyra"
+rabbit:
+  name: "rabbit"
+
+littlepony:
+  name: "littlepony"
