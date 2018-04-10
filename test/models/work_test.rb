@@ -1,9 +1,15 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new }
+  before do
+    @work = Work.first
+  end
 
-  it "must be valid" do
-    value(work).must_be :valid?
+  it "can be created with all required fields" do
+    # Act
+    result = @work.valid?
+
+    # Assert
+    result.must_equal true
   end
 end

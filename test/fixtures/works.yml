@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+RPO:
+  category: book
+  title: Ready Player One
+  creator: Earnest Cline
+  publication_year: 2011
+  description: Lots of 80's reference and finding the hidden Easter Egg.
 
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+Jumanji:
+  category: movie
+  title: Jumanji: Welcome to the Jungle
+  creator: Jake Kasdan
+  publication_year: 2017
+  description: A rebute of the original Jumanji from 1981.
