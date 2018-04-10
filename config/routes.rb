@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :works
 
   resources :users
+  get '/login', to: 'users#new', as: 'login'
+  post '/login', to: 'users#create'
 end
