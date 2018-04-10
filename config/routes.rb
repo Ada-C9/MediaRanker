@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root 'mains#index'
 
   resources :mains, only: [:index]
@@ -8,5 +7,7 @@ Rails.application.routes.draw do
   resources :works
 
   resources :users, only: [:index, :show]
+
+  resources :sessions, only: [:new, :create, :destroy]
 
 end
