@@ -26,6 +26,6 @@ Work.create!([
   {category: "book", title: "A Wizard of Earthsea", creator: "Ursula K. Leguin", description: nil, publication_year: 1968},
   {category: "movie", title: "The Princess Bride", creator: "Rob Reiner", description: nil, publication_year: 1987},
   {category: "movie", title: "Inside Out", creator: "Pixar", description: "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.", publication_year: 2015},
-  {category: "Movie", title: "Labyrinth", creator: "Jim Henson", description: "A 16-year-old girl is given 13 hours to solve a labyrinth and rescue her baby brother when her wish for him to be taken away is granted by the Goblin King.", publication_year: 1986},
-  {category: "Movie", title: "Zootopia", creator: "Disney", description: "In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.", publication_year: 2016},
+  {category: "movie", title: "Labyrinth", creator: "Jim Henson", description: "A 16-year-old girl is given 13 hours to solve a labyrinth and rescue her baby brother when her wish for him to be taken away is granted by the Goblin King.", publication_year: 1986},
+  {category: "movie", title: "Zootopia", creator: "Disney", description: "In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.", publication_year: 2016},
 ])

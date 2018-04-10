@@ -18,7 +18,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:success] = "<h3>Successfully created #{@work.category} #{@work.id}</h3>"
+      flash[:success] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to works_path
     else
       render :new

@@ -1,15 +1,15 @@
-<h1>Index</h1>
+
 
 <section class="top-ten-container css-grid">
-  <article class="top-ten">
+  <article class="top-ten columns large-4 small-12">
     <h3>Top Movies</h3>
     <%= render partial: "layouts/work", collection: @movies, as: :item %>
   </article>
-  <article class="top-ten">
+  <article class="top-ten columns large-4 small-12">
     <h3>Top Books</h3>
     <%= render partial: "layouts/work", collection: @books, as: :item %>
   </article>
-  <article class="top-ten">
+  <article class="top-ten columns large-4 small-12">
     <h3>Top Albums</h3>
     <%= render partial: "layouts/work", collection: @albums, as: :item %>
   </article>

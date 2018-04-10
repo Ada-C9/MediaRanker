@@ -1,10 +1,10 @@
-<ul class="list-row">
-  <li>
-    <strong>
-      <%= link_to "#{item.title}", item %>
-    </strong> created by: <%= "#{item.creator}" %>
-  </li>
-  <li>
-    votes
-  </li>
-</ul>
+
+  <ul>
+      <li>
+        <h4>
+          <%= link_to item.title, work_path(item) %>
+          <small>by <%= item.creator %></small>
+        </h4>
+        <p> <!--#item.votes %> --> votes</p>
+      </li>
+  </ul>

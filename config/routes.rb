@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'works#root'
 
   resources :works
 
