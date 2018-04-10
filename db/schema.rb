@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20180410191540) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "works_id"
+    t.bigint "work_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
-    t.index ["works_id"], name: "index_votes_on_works_id"
+    t.index ["work_id"], name: "index_votes_on_work_id"
   end
 
   create_table "works", force: :cascade do |t|
@@ -41,5 +41,5 @@ ActiveRecord::Schema.define(version: 20180410191540) do
   end
 
   add_foreign_key "votes", "users"
-  add_foreign_key "votes", "works", column: "works_id"
+  add_foreign_key "votes", "works"
 end
