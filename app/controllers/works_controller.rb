@@ -15,8 +15,8 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:success] = "Work created successfully"
-      redirect_to works_path
+      flash[:success] = "Successfully created #{@work.category} #{@work.id}"
+      redirect_to work_path(@work)
     else
       render :new
     end
@@ -27,6 +27,16 @@ class WorksController < ApplicationController
 
     @work = Work.find_by(id: work_id)
   end
+
+  def destroy
+    @work = Work.find(params[:id])
+
+    @work.delete
+    flash[:success] = "Successfully destroyed #{@work.category} #{@work.id}"
+
+    redirect_to root_path
+  end
+
 
   private
 

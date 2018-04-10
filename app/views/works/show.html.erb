@@ -5,3 +5,24 @@
 <p>Published: <%= @work.publication_year %></p>
 
 <p><%= @work.description %></p>
+
+<nav>
+  <ul>
+    <li>
+      <%= link_to("Back to media ranks", root_path, class: "button") %>
+    </li>
+    <li>
+      <%= link_to("Edit", edit_work_path(@work), class: "button") %>
+    </li>
+    <li>
+      <%= link_to("Upvote", root_path, class: "button") %>
+    </li>
+    <li>
+      <%= link_to("Delete", work_path(@work), class: "button", method: :delete, data: { confirm: "Are you sure?"}) %>
+    </li>
+  </ul>
+</nav>
+Back to media ranks
+Edit
+Upvote
+Delete
