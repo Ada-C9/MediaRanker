@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Media Ranker 2.0</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -11,7 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<<body>
+<body>
   <header class="page-header row">
     <h2>
       <a href="/">Media Ranker</a>
@@ -24,12 +25,18 @@
       <a class="button" href="/works/new">Add a new work</a>
       <a class="button" href="/users">View all users</a>
       <div class="float-right">
+        <% if @user %>
+          <a class="button" href="/users/479">Logged in as Ottowoman</a>
+          <a class="button" rel="nofollow" data-method="post" href="/logout">Log Out</a>
+        <% else %>
           <a class="button float-right" href="/login">Log In</a>
+        <% end %>
+
       </div>
     </nav>
   </header>
 
-  
+
   <main>
     <%= yield %>
   </main>

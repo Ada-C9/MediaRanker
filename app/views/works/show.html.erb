@@ -6,11 +6,12 @@
   <p><%= @work.work_description %></p>
   <section>
     <a class="button" href="/">Back to media ranks</a>
-    <a class="button"> <%= button_to "Edit", edit_work_path %></a>
-    <a class="button"><%= button_to "Upvote", edit_work_path %></a>
-    <a class="button"><%= button_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"} %></a>
+    <%= link_to "Edit", edit_work_path, class: "button" %>
+    <%= link_to "Upvote", edit_work_path, class: "button" %>
+    <%= link_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"}, class: "button alert" %>
   </section>
 </article>
+
 
 <article class="voting-users">
   <h3>XX Votes for this Album</h3>
@@ -22,9 +23,8 @@
       </tr>
     </thead>
     <tbody>
-  <tr>
+      <tr>
 
-
-  </li>
-</ul>
-</article>
+      </li>
+    </ul>
+  </article>

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+
+
   root to: 'works#welcome'
   resources :works
   resources :users, :except => [:destroy, :edit]
+  
+  get '/login', to: 'sessions#new', as: 'login_form'
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/login', to: 'sessions#destroy', as: 'logout'
 
   # get 'works/index'
   #
