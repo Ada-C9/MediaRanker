@@ -4,26 +4,126 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+# cardcaptor - most votes at 10
 vote1:
   user: usako
-  publication: sailormoon
-
+  publication: cardcaptor
 vote2:
   user: mamochan
-  publication: sailorstars
-
+  publication: cardcaptor
 vote3:
+  user: sailorv
+  publication: cardcaptor
+vote4:
   user: chibiusa
-  publication: codenamev
-
-vote4:
-  user: usako
-  publication: sailorstars
-
-vote4:
-  user:
-  publication: codenamev
-
+  publication: cardcaptor
 vote5:
+  user: sailormars
+  publication: cardcaptor
+vote6:
+  user: sailorm
+  publication: cardcaptor
+vote7:
+  user: sailorj
+  publication: cardcaptor
+vote8:
+  user: sailoru
+  publication: cardcaptor
+vote9:
+  user: sailorp
+  publication: cardcaptor
+vote10:
+  user: sailorn
+  publication: cardcaptor
+# books order based votes - with 6 votes
+
+vote31:
+  user: usako
+  publication: sailormoon
+vote32:
   user: mamochan
   publication: sailormoon
+vote33:
+  user: sailorv
+  publication: sailormoon
+vote34:
+  user: chibiusa
+  publication: sailormoon
+vote35:
+  user: sailormars
+  publication: sailormoon
+vote36:
+  user: sailorm
+  publication: sailormoon
+
+# second votes - fruits with 5 votes
+vote11:
+  user: usako
+  publication: fruits
+vote12:
+  user: mamochan
+  publication: fruits
+vote13:
+  user: sailorm
+  publication: fruits
+vote14:
+  user: sailorv
+  publication: fruits
+vote15:
+  user: sailorn
+  publication: fruits
+
+# third place - bleach with 4
+
+vote16:
+  user: chibiusa
+  publication: bleach
+vote17:
+  user: usako
+  publication: bleach
+vote18:
+  user: sailoru
+  publication: bleach
+vote19:
+  user: sailorp
+  publication: bleach
+
+# fourth place hostclub - with 3
+vote20:
+  user: usako
+  publication: hostclub
+vote21:
+  user: chibiusa
+  publication: hostclub
+vote22:
+  user: sailorj
+  publication: hostclub
+
+# fifth place and sixth - with 2
+vote23:
+  user: usako
+  publication: tsubasa
+vote24:
+  user: chibiusa
+  publication: tsubasa
+vote25:
+  user: usako
+  publication: dgray
+vote26:
+  user: mamochan
+  publication: dgray
+
+# sixth - tenth place - with 1
+vote27:
+  user: usako
+  publication: inuyasha
+vote28:
+  user: usako
+  publication: mars
+vote29:
+  user: usako
+  publication: rurouni
+vote30:
+  user: usako
+  publication: codenamev

@@ -11,3 +11,25 @@ chibiusa:
 
 sailorv:
   name: Minako
+
+sailorm:
+  name: Ami
+
+sailormars:
+  name: Rei
+
+sailorj:
+  name: Makoto
+
+sailoru:
+  name: Haruka
+
+sailorn:
+  name: Michuru
+
+sailorp:
+  name: Setsuna
+
+# going to have no votes
+sailors:
+  name: Hotaru

@@ -31,11 +31,20 @@ describe Publication do
 
   describe 'publication relationships' do
     it 'can have zero or more votes' do
+      #zero votes
+      publications(:sailorcrystal).votes.must_be_empty
+
+      #multiple votes
+      sailor_moon.votes.must_include votes(:vote32)
+      sailor_moon.votes.length.must_equal 6
     end
   end
 
   describe 'custom methods' do
     describe 'self.find_spotlight_publication' do
+      it 'returns the publication record with the most votes' do
+        Publication.find_spotlight_publication.must_equal
+      end
     end
     describe 'self.return_all_categories' do
     end

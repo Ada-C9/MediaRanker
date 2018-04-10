@@ -1,26 +1,151 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-sailormoon:
-  category: Book
-  title: Sailor Moon
-  creator: Naoko Takeuchi
-  publication_year: 1992
-  description: Magical girl goes on adventures...
+#tv shows, total is 11
 sailorstars:
   category: TV Show
   title: Sailor Moon Stars
   creator: Naoko Takeuchi
   publication_year: 1996
   description:
-codenamev:
-  category: Book
-  title: Codename Sailor V
-  creator: Naoko Takeuchi
-  publication_year: 1991
-  description: Someone should know about this....
 sailorcrystal:
   category: TV Show
   title: Sailor Moon Crystal
   creator: Naoko Takeuchi
   publication_year: 2014
   description: Oh no....
+cardcaptor:
+  category: TV Show
+  title: Cardcaptor Sakura
+  creator: Madhouse
+  publication_year: 1998
+  description: Absolutely amazing magical adventures
+yuyuhakusho:
+  category: TV Show
+  title: Yu Yu Hakusho
+  creator:
+  publication_year: 1992
+  description: adventures of Yusuke, the spirit detective
+trigun:
+  category: TV Show
+  title: Trigun
+  creator: Madhouse
+  publication_year: 1998
+  description: Western scifi anime
+deadlysins:
+  category: TV Show
+  title: Seven Deadly Sins
+  creator: A-1 Pictures
+  publication_year: 2014
+  description: Hilarious fantasy with demons, angels, and fairies
+alchemist:
+  category: TV Show
+  title: Fullmetal Alchemist Brotherhood
+  creator: Bones
+  publication_year: 2009
+  description: One of the best things ever...
+elfen:
+  category: TV Show
+  title: Elfen Lied
+  creator:
+  publication_year:
+  description: sadness TT_TT
+hellsing:
+  category: TV Show
+  title: Hellsing
+  creator: Gonzo
+  publication_year: 2001
+  description:
+geass:
+  category: TV Show
+  title: Code Geass
+  creator: Sunrise
+  publication_year: 2006
+  description:
+bebop:
+  category: TV Show
+  title: Cowboy Bepop
+  creator: Sunrise
+  publication_year:
+  description: classic
+
+# book, total is 10
+sailormoon:
+  category: Book
+  title: Sailor Moon
+  creator: Naoko Takeuchi
+  publication_year: 1992
+  description: Magical girl goes on adventures...
+codenamev:
+  category: Book
+  title: Codename Sailor V
+  creator: Naoko Takeuchi
+  publication_year: 1991
+  description: Someone should know about this....
+tsubasa:
+  category: Book
+  title: Tsubasa Resevoir Chronicles
+  creator: Clamp
+  publication_year: 2003
+  description: Freaking I don't even know...
+bleach:
+  category: Book
+  title: Bleach
+  creator: Tite Kubo
+  publication_year:
+  description: Shinigami
+fruits:
+  category: Book
+  title: Fruits Basket
+  creator: Natsuki Takaya
+  publication_year:
+  description: Chinese zodiac fantasy high school romance
+rurouni:
+  category: Book
+  title: Rurouni Kenshin
+  creator: Nobuhiro Watsuki
+  publication_year: 1994
+  description:
+hostclub:
+  category: Book
+  title: Ouran High School Host Club
+  creator: Bisco Hatori
+  publication_year: 2002
+  description:
+dgray:
+  category: Book
+  title: D. Gray-man
+  creator: Katsura Hoshino
+  publication_year: 2004
+  description: Will you ever end???
+inuyasha:
+  category: Book
+  title: InuYasha
+  creator: Rumiko Takahashi
+  publication_year: 1996
+  description:
+mars:
+  category: Book
+  title: Mars
+  creator: Fuyumi Soryo
+  publication_year: 1996
+  description:
+
+# movies, total is 3
+spirited:
+  category: Movie
+  title: Spirited Away
+  creator: Hayao Miyazaki
+  publication_year: 2002
+  description: careful what paths you follow
+appleseed:
+  category: Movie
+  title: Appleseed
+  creator:
+  publication_year: 2004
+  description:
+vampire:
+  category: Movie
+  title: Vampire Hunter D
+  creator:
+  publication_year: 1985
+  description: Another classic
