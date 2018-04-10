@@ -43,7 +43,25 @@ describe Publication do
   describe 'custom methods' do
     describe 'self.find_spotlight_publication' do
       it 'returns the publication record with the most votes' do
-        Publication.find_spotlight_publication.must_equal
+        Publication.find_spotlight_publication.must_equal publications(:cardcaptor)
+      end
+
+      it 'returns record with most recent vote if there is a tie' do
+        new_vote_1 = Vote.create(user: users(:sailorj), publication: sailor_moon)
+        new_vote_2 = Vote.create(user: users(:sailorn), publication: sailor_moon)
+        new_vote_3 = Vote.create(user: users(:sailorp), publication: sailor_moon)
+        new_vote_4 = Vote.create(user: users(:sailoru), publication: sailor_moon)
+
+        Publication.find_spotlight_publication.must_equal sailor_moon
+      end
+
+      it 'returns string if there are no votes yet' do
+        Publication.all.each do |publication|
+          publication.votes.each do | vote |
+            vote.destroy
+          end
+        end
+        Publication.find_spotlight_publication.must_equal "There are no votes"
       end
     end
     describe 'self.return_all_categories' do
