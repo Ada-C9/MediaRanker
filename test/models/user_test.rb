@@ -3,11 +3,13 @@ require "test_helper"
 describe User do
   describe 'validations' do
     before do
-      @user = User.new(username: 'test', joindate: 2018-04-09)
+      @user = User.new(username: 'test', joindate: 2017-04-19)
     end
+
     it "is valid when all fields are present" do
       result = @user.valid?
       result.must_equal true
+    end
   end
 
   it 'is invalid without a username' do

@@ -2,7 +2,7 @@ require "test_helper"
 
 describe Vote do
   before do
-    @vote = Vote.new(user_id: 1, work_id: 1,   vote_date: 2018-04-09)
+    @vote = Vote.new(user_id: 1, work_id: 1,   vote_date: 2017-04-19)
   end
   it "is valid when all fields are present" do
     result = @vote.valid?
