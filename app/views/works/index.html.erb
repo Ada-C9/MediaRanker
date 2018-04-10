@@ -1,0 +1,41 @@
+List of works
+
+
+<% @types.each do |type| %>
+<%= type.capitalize %>s
+<table>
+
+  <th>
+    Votes
+  </th>
+  <th>
+    Title
+  </th>
+  <th>
+    Created By
+  </th>
+  <th>
+    Published
+  </th>
+  <th>
+    Upvote
+  </th>
+
+
+
+
+  <% Work.sort.each do |work| %>
+  <% if work.category == type %>
+
+  <%= work.votes.count %>
+
+  <%=link_to work.title, work_path(work.id) %>
+
+  <%=work.created_by%>
+
+  <%=work.year%>
+
+  <%= link_to "Upvote", vote_path(work.id),  method: :post %>
+  <%end%>
+  <%end%>
+  <%end%>
