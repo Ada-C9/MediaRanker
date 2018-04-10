@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+<html>
+  <head class="page-header">
+    <h2>
+      <strong>Media Ranker</strong>
+      <small> | Ranking the Best of Everything </small>
+    </h2>
     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "View top media", root_path, class: "nav-links" %>
+          </li>
+          <li>
+            <%= link_to "View all media", works_path, class: "nav-links" %>
+          </li>
+          <li>
+            <%= link_to "Add a new work", new_work_path, class: "nav-links" %>
+          </li>
+          <li>
+            <%= link_to "View all users", users_path, class: "nav-links" %>
+          </li>
+          <li>
+            <%= link_to "Login", new_user_path, class: "nav-links" %>
+            <!-- not sure how Login works yet, also if these need to be buttons -->
+          </li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
-
   </body>
 </html>

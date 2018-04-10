@@ -1,2 +1,26 @@
-<h1>Welcomes#index</h1>
-<p>Find me in app/views/welcomes/index.html.erb</p>
+<h3>Top Movies</h3>
+<% @works.each do |work| %>
+  <% if work.category == "movie" %>
+    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+    <br>
+    <p># of votes will be here</p>
+    <%end%>
+<%end%>
+
+<h3>Top Books</h3>
+  <% @works.each do |work| %>
+  <% if work.category == "book" %>
+    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+    <br>
+    <p># of votes will be here</p>
+    <%end%>
+  <%end%>
+
+  <h3>Top Albums</h3>
+  <% @works.each do |work| %>
+  <%if work.category == "album" %>
+    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+    <br>
+    <p># of votes will be here</p>
+  <%end%>
+<%end%>
