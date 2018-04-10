@@ -17,3 +17,10 @@
  *= require_self
 
  */
+
+nav ul li {
+  list-style: none;
+  float: left;
+  margin: 1em;
+  padding-bottom: 2em;
+}
