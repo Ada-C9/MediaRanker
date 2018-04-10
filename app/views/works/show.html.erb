@@ -6,9 +6,9 @@
   <p><%= @work.work_description %></p>
   <section>
     <a class="button" href="/">Back to media ranks</a>
-    <%= button_to "Edit", edit_work_path %>
-    <%= button_to "Upvote", edit_work_path %>
-    <%= button_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    <a class="button"> <%= button_to "Edit", edit_work_path %></a>
+    <a class="button"><%= button_to "Upvote", edit_work_path %></a>
+    <a class="button"><%= button_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"} %></a>
   </section>
 </article>
 
