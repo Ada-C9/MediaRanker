@@ -2,6 +2,15 @@
   <% page_title ||= "Instagram Information" %>
   <%= page_title %>
 </h4>
+<% if @instagram.errors.any? %>
+  <ul class="errors">
+    <% @instagram.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for @instagram do |f| %>z
 <div>

@@ -8,7 +8,7 @@ class TwittersController < ApplicationController
   end
 
   def create
-    @twitter = Twitter.new(driver_params)
+    @twitter = Twitter.new(twitter_params)
 
     if @twitter.save
       redirect_to twitters_path
@@ -46,6 +46,6 @@ end
 
   private
   def twitter_params
-    params.require(:handle,:followers)
+    params.permit(:handle,:followers)
   end
 end

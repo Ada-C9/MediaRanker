@@ -1,8 +1,18 @@
 
 <h4>
-  <% page_title ||= "twitter Information" %>
+  <% page_title ||= "Twitter Information" %>
   <%= page_title %>
 </h4>
+
+<% if @twitter.errors.any? %>
+  <ul class="errors">
+    <% @twitter.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for @twitter do |f| %>
 <div>

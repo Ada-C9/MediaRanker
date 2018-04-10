@@ -10,12 +10,15 @@ class InstagramsController < ApplicationController
 
   def create
     @instagram = Instagram.new(instagram_params)
+
     if @instagram.save
       redirect_to instagrams_path
     else
       render :new
     end
   end
+
+
 
   def show
     @instagram = Instagram.find(params[:id])
@@ -41,6 +44,6 @@ class InstagramsController < ApplicationController
 
   private
   def instagram_params
-    return params.require(:handle, :followers).permit(:posts)
+    return params.permit(:handle, :posts, :followers)
   end
 end

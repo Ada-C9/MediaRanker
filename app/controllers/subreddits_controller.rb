@@ -40,6 +40,6 @@ class SubredditsController < ApplicationController
 
   private
   def subreddit_params
-    return params.require(:title).permit(:description,:subscribers)
+    return params.permit(:description, :subscribers, :title)
   end
 end

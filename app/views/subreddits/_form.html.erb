@@ -3,6 +3,16 @@
   <%= page_title %>
 </h4>
 
+<% if @subreddit.errors.any? %>
+  <ul class="errors">
+    <% @subreddit.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @subreddit do |f| %>
 <div>
   <%= f.label :title %>
