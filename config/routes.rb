@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  root 'mainpage#index'
 
   resources :works
 

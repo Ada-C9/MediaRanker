@@ -1,0 +1,12 @@
+<h1> All the Media </h1>
+<ul>
+  <%@works.each do |work|%>
+  <li>
+  <span><%= work.category%></span>
+  <span><%= work.title%></span>
+  <span><%= work.created_by%></span>
+  <span><%= work.published%></span>
+  <span><%= work.votes%></span>
+</li>
+  <%end%>
+</ul>

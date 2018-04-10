@@ -1,11 +1,11 @@
 class WorksController < ApplicationController
 
   def index
-    user = Work.all
+    @works = Work.all
   end
 
   def new
-    user = Work.new
+    #user = Work.new
   end
 
   def create
@@ -13,7 +13,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    user = Work.find(params[:id])
+    @work = Work.find(params[:id])
   end
 
   def edit

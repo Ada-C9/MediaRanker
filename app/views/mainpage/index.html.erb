@@ -1,0 +1,33 @@
+<h1>Media Spotlight</h1>
+<ul>
+  <h2>Top Movies</h2>
+  <%@works.where(category: "movie").each do |work|%>
+  <li>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.votes%></span>
+  </li>
+  <%end%>
+</ul>
+
+<ul>
+  <h2>Top Books</h2>
+  <%@works.where(category: "book").each do |work|%>
+  <li>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.votes%></span>
+  </li>
+  <%end%>
+</ul>
+
+<ul>
+  <h2>Top Albums</h2>
+  <%@works.where(category: "album").each do |work|%>
+  <li>
+    <span><%= link_to work.title, work_path(work)%></span>
+    <span><%= work.created_by%></span>
+    <span><%= work.votes%></span>
+  </li>
+  <%end%>
+</ul>
