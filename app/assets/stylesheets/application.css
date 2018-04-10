@@ -17,3 +17,8 @@
  *= require foundation_and_overrides
 
  */
+
+
+body ul li {
+  list-style-type: none
+}

@@ -1,0 +1,9 @@
+<ul class="home_list">
+  <% @works.each do |work| %>
+    <% if work.category == 'album' %>
+      <li><%= link_to(work.title, work_path(work) ) %></li>
+      <li><%= work.creator %></li>
+      <li><%= work.publication_year %></li>
+    <% end %>
+  <% end %>
+</ul>
