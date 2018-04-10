@@ -13,21 +13,20 @@
 
 <body>
   <header>
-    Media Ranker
+    <h2><%= link_to "Media Ranker", homepage_path %> | <small>Ranking the Best of Everything</small> </h2>
   </header>
 
   <nav>
     <ul>
-      <li><%= link_to "View top media", homepage_path, class: "button" %></li>
-      <li><%= link_to "View all media", works_path, class: "button" %></li>
-      <li><%= link_to "Add a new work", new_work_path, class: "button" %></li>
-      <li><%= link_to "View all users", users_path, class: "button" %></li>
-    </ul>
+      <%= link_to "View top media", homepage_path, class: "button" %>
+      <%= link_to "View all media", works_path, class: "button" %>
+      <%= link_to "Add a new work", new_work_path, class: "button" %>
+      <%= link_to "View all users", users_path, class: "button" %>
   </nav>
 
   <section class="flash">
     <% flash.each do |name, message| %>
-      <div class="<%= name %>"><%= message %></div>
+    <div class="<%= name %>"><%= message %></div>
     <% end %>
   </section>
   <%= yield %>

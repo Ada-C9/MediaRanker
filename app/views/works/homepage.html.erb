@@ -7,40 +7,46 @@
   </strong>
 </section>
 
-<section class="top_lists">
-  <ul class="top_ten_list">
-    <strong>
-      Top Movies
-    </strong>
-    <% @works.show_movies.first(10).each do |movie| %>
-    <li>
-      <%= link_to(movie.title, work_path(movie)) %>
-      by <%= movie.creator %>
-    </li>
-    <% end %>
-  </ul>
+<div class="grid-x">
+    <div class="cell small-4">
+      <strong>
+        Top Movies
+      </strong>
+      <ul>
+        <% @works.show_movies.first(10).each do |movie| %>
+        <li>
+          <%= link_to(movie.title, work_path(movie)) %>
+          by <%= movie.creator %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
 
-  <ul class="top_ten_list">
-    <strong>
-      Top Books
-    </strong>
-    <% @works.show_books.first(10).each do |book| %>
-    <li>
-      <%= link_to(book.title, work_path(book)) %>
-      by <%= book.creator %>
-    </li>
-    <% end %>
-  </ul>
+    <div class="cell small-4">
+      <strong>
+        Top Books
+      </strong>
+      <ul>
+        <% @works.show_books.first(10).each do |book| %>
+        <li>
+          <%= link_to(book.title, work_path(book)) %>
+          by <%= book.creator %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
 
-  <ul class="top_ten_list">
-    <strong>
-      Top Albums
-    </strong>
-    <% @works.show_albums.first(10).each do |album| %>
-    <li>
-      <%= link_to(album.title, work_path(album)) %>
-      by <%= album.creator %>
-    </li>
-    <% end %>
-  </ul>
-</section>
+    <div class="cell small-4">
+      <strong>
+        Top Albums
+      </strong>
+      <ul>
+        <% @works.show_albums.first(10).each do |album| %>
+        <li>
+          <%= link_to(album.title, work_path(album)) %>
+          by <%= album.creator %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+</div>
