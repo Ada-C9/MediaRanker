@@ -1,8 +1,6 @@
 class WorksController < ApplicationController
   def index
-
     @works = Work.all
-
   end
 
   def new
@@ -13,9 +11,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      redirect_to '/works'
-      # can also do
-      # redirect_to works_path
+      redirect_to works_path
     else
       # Validations failed! What do we do now? See below...
       render :new
@@ -24,13 +20,9 @@ class WorksController < ApplicationController
   end
 
   def show
-    # Figure out which work the user wanted
     work_id = params[:id]
 
-    # Load it from the DB
-    # Save it in an instance variable for the view
     @work = Work.find(work_id)
-
   end
 
   def edit
@@ -38,7 +30,6 @@ class WorksController < ApplicationController
   end
 
   def update
-
     @work = Work.find(params[:id])
 
     @work.assign_attributes(work_params)
