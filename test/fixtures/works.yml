@@ -1,15 +1,34 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+aja:
+  category: album
+  title: Aja
+  creator: Steely Dan
+  publication_year: 1977
+  description: something I don't know
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+nvm:
+  category: album
+  title: NVM
+  creator: Tacocat
+  publication_year: 2014
+  description: something I don't know
 
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+kindred:
+  category: book
+  title: Kindred
+  creator: Octavia E. Butle
+  publication_year: 1979
+  description: something I don't know
+
+parable:
+  category: book
+  title: Parable of the Sower
+  creator: Octavia E. Butle
+  publication_year: 1993
+  description: something I don't know
+
+coco:
+  category: movie
+  title: Coco
+  creator: Walt Disney Pictures
+  publication_year: 2017
+  description: a sad story

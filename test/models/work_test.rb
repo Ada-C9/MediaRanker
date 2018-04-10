@@ -1,9 +1,16 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new }
 
-  it "must be valid" do
-    value(work).must_be :valid?
+  it "is valid when all fields are present" do
+    works(:aja).valid?.must_equal true
   end
+
+  it "is invalid without a title" do
+    work = Work.new
+
+    work.valid?.must_equal false
+    work.errors.messages.must_include :title
+  end
+
 end

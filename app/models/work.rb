@@ -1,3 +1,3 @@
 class Work < ApplicationRecord
-  validates_presence_of :title
+  validates :title, presence: true
 end
