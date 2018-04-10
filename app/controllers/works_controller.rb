@@ -30,7 +30,9 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.find(params[:id])
+    work_id = params[:id]
+    @work = Work.find(work_id)
+    @votes = Vote.where(work_id: work_id)
   end
 
   def edit
@@ -53,10 +55,20 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    Work.destroy(params[:id])
   end
 
   def upvote
-    
+    user_id = session[:user_id]
+    work = Work.find(params[:work_id])
+    vote = Vote.new(user_id: user_id, work_id: work.id)
+
+    if vote.save
+      flash[:success] = 'Successfully upvoted!'
+    else
+      flash[:failure] = 'Could not upvote'
+    end
+    redirect_to work_path(work.id)
   end
 
   private

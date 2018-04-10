@@ -10,3 +10,23 @@
     <%= link_to 'Delete', work_path(@work), class: 'button', method: :delete, data: {confirm: 'Are you sure?'} %>
   </section>
 </article>
+
+<article class="voting-users">
+  <h3><%= "#{@votes.count}" %> Votes for this item</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.users.each do |user| %>
+        <tr>
+          <td><%= link_to "#{user.username}", user_path(user) %></td>
+          <td> date to be entered</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</article>
