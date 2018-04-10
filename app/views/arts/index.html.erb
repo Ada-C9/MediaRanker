@@ -1,30 +1,14 @@
 <h1>Works of Art</h1>
 
 <h3>Albums</h3>
-<ul>
-  <% @albums.each do |album| %>
-  <li>
-    <%= link_to(album.title, art_path(album)) %>
-  </li>
-  <% end %>
-</ul>
 
+<%= render partial: "table", locals: {arts: @albums} %>
 
 <h3>Books</h3>
-<ul>
-  <% @books.each do |book| %>
-  <li>
-    <%= link_to(book.title, art_path(book)) %>
-  </li>
-  <% end %>
-</ul>
+
+<%= render partial: "table", locals: {arts: @books} %>
 
 
 <h3>Movies</h3>
-<ul>
-  <% @movies.each do |movie| %>
-  <li>
-    <%= link_to(movie.title, art_path(movie)) %>
-  </li>
-  <% end %>
-</ul>
+
+<%= render partial: "table", locals: {arts: @movies} %>
