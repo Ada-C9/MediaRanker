@@ -19,6 +19,7 @@ class WorksController < ApplicationController
       flash[:notice] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to work_path(@work)
     else
+      flash.now[:alert] = @work.errors
       render :new
     end
   end
@@ -34,6 +35,7 @@ class WorksController < ApplicationController
         flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
         redirect_to work_path(@work.id)
       else
+        flash.now[:alert] = @work.errors
         render :edit
       end
     else
