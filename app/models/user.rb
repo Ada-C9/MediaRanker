@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :votes
 
-  validates_presence_of :user_name
+  validates :user_name, presence: { message: "Please provide a user name." }
+  validates :user_name, uniqueness: true
 end

@@ -14,24 +14,18 @@
   <body>
     <header>
       <nav>
-        <ul>
-          <li>
-            <%= link_to "View top media", root_path, class: "nav-links" %>
-          </li>
-          <li>
-            <%= link_to "View all media", works_path, class: "nav-links" %>
-          </li>
-          <li>
-            <%= link_to "Add a new work", new_work_path, class: "nav-links" %>
-          </li>
-          <li>
-            <%= link_to "View all users", users_path, class: "nav-links" %>
-          </li>
-          <li>
-            <%= link_to "Login", new_user_path, class: "nav-links" %>
+
+            <%= link_to "View top media", root_path, class: "button" %>
+
+            <%= link_to "View all media", works_path, class: "button" %>
+
+            <%= link_to "Add a new work", new_work_path, class: "button" %>
+
+            <%= link_to "View all users", users_path, class: "button" %>
+
+            <%= link_to "Login", new_user_path, class: "button" %>
             <!-- not sure how Login works yet, also if these need to be buttons -->
-          </li>
-        </ul>
+      
       </nav>
     </header>
     <%= yield %>

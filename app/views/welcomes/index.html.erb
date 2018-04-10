@@ -1,26 +1,26 @@
 <h3>Top Movies</h3>
-<% @works.each do |work| %>
-  <% if work.category == "movie" %>
-    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+<% @movies.each do |movie| %>
+
+    <%=link_to movie.title, work_path(movie[:id]) %> by <%= movie.creator %>
     <br>
     <p># of votes will be here</p>
-    <%end%>
+
 <%end%>
 
 <h3>Top Books</h3>
-  <% @works.each do |work| %>
-  <% if work.category == "book" %>
-    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+  <% @books.each do |book| %>
+
+    <%=link_to book.title, work_path(book[:id]) %> by <%= book.creator %>
     <br>
     <p># of votes will be here</p>
-    <%end%>
+
   <%end%>
 
   <h3>Top Albums</h3>
-  <% @works.each do |work| %>
-  <%if work.category == "album" %>
-    <%=link_to work.title, work_path(work[:id]) %> by <%= work.creator %>
+  <% @albums.each do |album| %>
+
+    <%=link_to album.title, work_path(album[:id]) %> by <%= album.creator %>
     <br>
     <p># of votes will be here</p>
-  <%end%>
+
 <%end%>
