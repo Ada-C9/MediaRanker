@@ -12,13 +12,15 @@
       </tr>
     </thead>
     <tbody>
+      <% @publications.each do | publication | %>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= publication.find_total_votes %></td>
+        <td><%= publication.title %></td>
+        <td><%= publication.creator %></td>
+        <td><%= publication.publication_year %></td>
+        <td><%= link_to "Upvote: Path Needed", root_path %></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
 </section>
