@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work_title: MyString
+  work_creator: MyString
+  work_description: MyString
+  work_category: MyString
+  work_publication_year: 1
+
+two:
+  work_title: MyString
+  work_creator: MyString
+  work_description: MyString
+  work_category: MyString
+  work_publication_year: 1
