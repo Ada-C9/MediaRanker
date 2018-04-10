@@ -13,6 +13,26 @@
 
   <body>
 
+    <header>
+
+      <h2>
+        Media Ranker |
+        <small>
+          Ranking the Best of Everything
+        </small>
+      </h2>
+
+      <nav>
+        <ul>
+          <li><%= link_to "View top media", root_path, class: "hollow button" %></li>
+          <li><%= link_to "View all media", works_path, class: "hollow button" %></li>
+          <li><%= link_to "Add a new work", new_work_path, class: "hollow button" %></li>
+          <li><%= link_to "View all users", users_path, class: "hollow button" %></li>
+        </ul>
+      </nav>
+
+    </header>
+
     <%= yield %>
 
   </body>
