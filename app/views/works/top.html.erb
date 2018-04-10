@@ -9,7 +9,7 @@
     <ul>
     <% @works.where(category: category).each do |work| %>
     <li>
-      <h4>work.name <small>work.creator</small></h4>
+      <h4><%= work.title %><small> by <%= work.creator %></small></h4>
       <p>5 votes</p>
     </li>
     <% end%>

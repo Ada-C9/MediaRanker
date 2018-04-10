@@ -18,15 +18,13 @@
       <% @works.where(category: category).each do |work| %>
       <tr>
         <td>26</td>
-        <td>work.title</td>
-        <td>work.creator</td>
-        <td>work.publication_year</td>
+        <td><%= work.title %></td>
+        <td><%= work.creator %></td>
+        <td><%= work.publication_year %></td>
         <td>UPVOTE</td>
       </tr>
       <% end%>
     </tbody>
   </table>
-
-
 </section>
 <% end %>

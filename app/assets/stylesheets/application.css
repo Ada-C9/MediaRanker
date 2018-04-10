@@ -17,3 +17,45 @@
  *= require_self
 
  */
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+.page-header {
+  max-width: 100%;
+  background-color: #B2DFDB;
+  border-bottom: 1px solid #EEEEEE;
+  margin-bottom: 10px;
+  padding: 25px 20px 10px;
+}
+
+.page-header h2 {
+  text-align: center;
+  margin: 25px auto 40px;
+}
+
+.page-header h2 a {
+  color: #FF5722;
+  padding-right: 25px;
+  margin-right: 15px;
+  border-right: white 2px solid;
+}
+
+.page-header h2 small {
+  color: white;
+}
+
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+small {
+  font-size: 80%;
+}

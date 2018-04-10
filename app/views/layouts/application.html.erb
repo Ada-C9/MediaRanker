@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= favicon_link_tag asset_path('owl.ico'), :rel => 'icon', :type => "image/x-icon" %>
+  <title>Media Ranker 2.0</title>
 
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Gudea", media: "all", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,7 +14,7 @@
 <body>
 
   <header class="page-header row">
-    <h2>Media Ranker <small>Ranking the Best of Everything</small></h2>
+    <h2><%= link_to("Media Ranker", root_path) %><small>Ranking the Best of Everything</small></h2>
     <nav>
       <%= link_to("View top media", root_path, class: "button") %>
       <%= link_to("View all media", works_path, class: "button") %>
