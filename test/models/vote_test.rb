@@ -1,12 +1,36 @@
 require "test_helper"
 
 describe Vote do
-  let(:vote) { Vote.new }
+  before do
+    @vote = Vote.new(user_id: 1, work_id: 1,   vote_date: 2018-04-09)
+  end
+  it "is valid when all fields are present" do
+    result = @vote.valid?
+    result.must_equal true
+  end
 
-  it "must be valid" do
-    value(vote).must_be :valid?
+  it 'is invalid without a user_id' do
+    @vote.user_id = nil
+    result = @vote.valid?
+    result.must_equal false
+    @vote.errors.messages.must_include :user_id
+  end
+
+  it 'is invalid without a work_id' do
+    @vote.work_id = nil
+    result = @vote.valid?
+    result.must_equal false
+    @vote.errors.messages.must_include :work_id
+  end
+
+  it 'is invalid without a vote_date' do
+    @vote.vote_date = nil
+    result = @vote.valid?
+    result.must_equal false
+    @vote.errors.messages.must_include :vote_date
   end
 end
+
 
 describe Vote do
   describe 'relations' do
