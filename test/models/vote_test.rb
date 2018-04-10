@@ -1,7 +1,27 @@
 require "test_helper"
 
 describe Vote do
-  # validations
+
+  describe "validations" do
+
+    it "is unique for any given work-user combination" do
+      poodr = works(:poodr)
+
+      test_user = users(:test_user)
+
+      another_vote_for_poodr = Vote.new
+
+      another_vote_for_poodr.work = poodr
+
+      another_vote_for_poodr.user = test_user
+
+      result = another_vote_for_poodr.valid?
+
+      result.must_equal false
+
+    end
+
+  end # validations
 
   describe "relationships" do
 
