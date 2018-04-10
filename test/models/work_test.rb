@@ -13,5 +13,19 @@ describe Work do
     end
 
   end # validationts
-  
+
+  describe "relationships" do
+
+    it "connects vote and vote id" do
+
+      vote_for_poodr = votes(:vote_for_poodr)
+
+      poodr = works(:poodr)
+
+      poodr.votes.must_include vote_for_poodr
+
+    end
+
+  end # relationships
+
 end

@@ -1,9 +1,20 @@
 require "test_helper"
 
 describe Vote do
-  let(:vote) { Vote.new }
+  # validations
 
-  it "must be valid" do
-    value(vote).must_be :valid?
-  end
+  describe "relationships" do
+
+    it "connects work and work id" do
+
+      poodr = works(:poodr)
+
+      vote_for_poodr = votes(:vote_for_poodr)
+
+      vote_for_poodr.work.must_equal poodr
+
+    end
+
+  end # relationships
+
 end
