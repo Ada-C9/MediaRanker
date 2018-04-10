@@ -5,5 +5,8 @@ class Work < ApplicationRecord
   has_many :votes
   has_many :users, through: :votes
 
-  validates :name presence: true,  uniqueness: true
+  validates :title presence: true,  uniqueness: true
+  validates :creator presence: true
+  validates :publication_year presence: true
+  validates :description
 end
