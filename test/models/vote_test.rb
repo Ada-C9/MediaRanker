@@ -1,54 +1,63 @@
 require "test_helper"
 
 describe Vote do
+
+  before do
+  @work = Work.create!(category: "album", title: "melodrama", creator: "lorde", publication_year: 2017, description: "best albums from Lorde")
+  end
+
   describe "validations" do
-    user = User.create!(name: "bob")
-    work = Work.create!(category: "album", title: "purple rain", creator: "prince", publication_year: 1984, description: "one of the best albums of the year")
+    user = User.create!(name: "snoopy")
 
     it "can be created with all fields" do
 
-      v = Vote.new(user: user, work: work)
-      result = v.valid?
+      vote = Vote.new(user: user, work: @work)
+      result = vote.valid?
       result.must_equal true
     end
 
     it "requires a work id" do
-      u = User.new(name: "cheetara")
-      v = Vote.new(user_id: u)
-      result = v.valid?
+      user = User.new(name: "yellowlion")
+      vote = Vote.new(user_id: user)
+      result = vote.valid?
       result.must_equal false
 
-      v.errors.messages.must_include :work_id
+      vote.errors.messages.must_include :work_id
     end
 
     it "requires a user id" do
-      w = Work.new(category: "album", title: "purple rain", creator: "prince", publication_year: 1984, description: "one of the best albums of the year")
-      v = Vote.new(work_id: w)
-      result = v.valid?
+
+      vote = Vote.new(work_id: @work)
+      result = vote.valid?
       result.must_equal false
 
-      v.errors.messages.must_include :user_id
+      vote.errors.messages.must_include :user_id
     end
 
   end
 
   describe "relationships" do
+    before do
+      @user = users(:yellowlion)
+      @work = works(:best_movie)
+      @vote = Vote.new(user_id: @user.id, work_id: @work.id)
+    end
     it "has a user" do
-      v = Vote.new(user_id: user.id, work_id: work.id)
-      u = User.new(name: "cheetara")
 
-      v.must_respond_to :user
-      v.user.must_equal u
-      v.user_id.must_equal u.id
+      @vote.must_respond_to :user_id
+      @vote.user.must_equal @user
+      @vote.user_id.must_equal @user.id
     end
 
     it "has a work" do
-      v = Vote.new
-
-      v.must_respond_to :work
-      v.work.must_equal work
-      v.work_id.must_equal work.id
+      @vote.must_respond_to :work_id
+      @vote.work_id.must_equal @work.id
     end
+
+
+
+
+
   end
 
 end
