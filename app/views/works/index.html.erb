@@ -1,45 +1,15 @@
 <section>
-  <h><strong>List of works</strong></h2>
+  <h3><strong>List of works</strong></h3>
 
-  <table>
-    <tr>
-      <th>
-        <strong>Votes</strong>
-      </th>
-      <th>
-        <strong>Title</strong>
-      </th>
-      <th>
-        <strong>Created By</strong>
-      </th>
-      <th>
-        <strong>Published</strong>
-      </th>
-      <th>
-        <strong>Upvote</strong>
-      </th>
-    </tr>
+  <h4><strong>Albums</strong></h4>
+  <%= render partial: 'list', locals: { works: @works.albums } %>
 
-    <% @works.each do |work| %>
-    <tr>
-      <td>
-        <%= work.category %>
-      </td>
-      <td>
-        <%= link_to(work.title, work_path(work)) %>
-      </td>
-      <td>
-        <%= work.creator %>
-      </td>
-      <td>
-        <%= work.publication_year %>
-      </td>
-      <td>
-        Upvote button
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <h4><strong>Books</strong></h4>
+  <%= render partial: 'list', locals: { works: @works.books } %>
+
+  <h4><strong>Movies</strong></h4>
+  <%= render partial: 'list', locals: { works: @works.movies } %>
+
 
 <ul>
   <li>

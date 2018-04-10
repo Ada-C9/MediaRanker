@@ -6,7 +6,7 @@
 
 <%= form_for @work do |f| %>
   <%= f.label :category, "Category" %>
-  <%= f.text_field :category %>
+  <%= f.select :category, ["album", "book", "movie"] %>
 
   <%= f.label :title, "Title" %>
   <%= f.text_field :title %>
@@ -20,5 +20,5 @@
   <%= f.label :description, "Description" %>
   <%= f.text_field :description %>
 
-  <%= f.submit action_name%>
+  <%= f.submit action_name, class: "hallow button"%>
 <%end%>
