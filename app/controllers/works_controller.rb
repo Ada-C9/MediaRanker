@@ -2,6 +2,13 @@ class WorksController < ApplicationController
   include GetUsername
   before_action :get_username
 
+  def top
+    @top_albums = Work.top_10(categorize('album'))
+    @top_books = Work.top_10(categorize('book'))
+    @top_movies = Work.top_10(categorize('movie'))
+    @top = Work.top_work
+  end
+
   def index
     if params[:books]
       @books = Work.where(category_id: categorize('book'))
