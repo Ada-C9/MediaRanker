@@ -2,9 +2,14 @@ class WorksController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def new
   end
 
-  def show
-  end
+
+  #create
+  #edit
+  #update
 end
