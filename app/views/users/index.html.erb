@@ -1,12 +1,9 @@
 <h2>List of users</h2>
 <%@user.each do |user|%>
 <ul>
-
   <li><span><%= link_to user.username, user_path(user)%></span></li>
-  <li><span><%= user.votes%></span></li>
+  <li><span><%= user.total_votes%></span></li>
   <li><span><%= user.created_at%></span></li>
-
-
-
 </ul>
 <%end%>
+<%= link_to "View top media", root_path%>

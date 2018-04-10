@@ -13,8 +13,6 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     end
-
-
   end
 
   def show

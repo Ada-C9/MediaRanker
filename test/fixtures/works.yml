@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+movie:
+  title: la vida es bella
   created_by: MyString
   published: 2018-04-09
-  type: 
-  votes: 1
+  category: movie
+  votes: 0
 
-two:
-  name: MyString
-  created_by: MyString
+book:
+  title: how to kill a mockingbird
+  created_by: Harper Lee
   published: 2018-04-09
-  type: 
+  category: book
   votes: 1

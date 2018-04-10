@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   resources :works
 
-  resources :users , only: [:index, :new, :create, :update]
+  resources :users , only: [:index, :new, :create, :show]
 
-  get '/login', to: 'sessions#new', as: 'login'
+  get '/login', to: 'sessions#login', as: 'login'
   post '/login', to: 'sessions#create'
+  delete '/logout' , to: 'sessions#logout', as: 'logout'
 
 
 
