@@ -8,9 +8,7 @@
 
 require 'csv'
 
-categories = ["album", "book", "movie"]
-
-categories.each do |c|
+["album", "book", "movie"].each do |c|
   Category.create!( name: c )
 end
 

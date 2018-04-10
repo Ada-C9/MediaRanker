@@ -1,13 +1,32 @@
-<h3>HELLO</h3>
+<h3>List of Works</h3>
 
-<p>below are all the works we have so far: </p>
+<% @categories.each do |category| %>
+<section class = "media-table">
 
-<ul>
-  <% @works.each do |w| %>
-    <li><%= w.category.name %></li>
-    <li><%= w.title %></li>
-    <li><%= w.creator %></li>
-    <li><%= w.publication_year %></li>
-    <li><%= w.description %></li>
-  <% end %>
-</ul>
+  <h4><%= category.name.capitalize %>s</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @works.where(category: category).each do |work| %>
+      <tr>
+        <td>26</td>
+        <td>work.title</td>
+        <td>work.creator</td>
+        <td>work.publication_year</td>
+        <td>UPVOTE</td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
+
+
+</section>
+<% end %>

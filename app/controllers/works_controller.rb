@@ -1,7 +1,8 @@
 class WorksController < ApplicationController
 
   def index
-    @works = Work.all
+    @works = Work.top_ten
+    @categories = Category.all
   end
 
   def new
@@ -30,6 +31,7 @@ class WorksController < ApplicationController
 
   def top
     @works = Work.all
+    @categories = Category.all
   end
 
 

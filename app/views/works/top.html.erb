@@ -1,13 +1,19 @@
-<h3>HELLO</h3>
-<h3>These are sorted by category</h3>
-<p>below are all the works we have so far: </p>
+<section class="spotlight">
+  <h3>THIS IS THE SPOTLIGHT</h3>
+</section>
 
-<ul>
-  <% @works.each do |w| %>
-    <li><%= w.category.name %></li>
-    <li><%= w.title %></li>
-    <li><%= w.creator %></li>
-    <li><%= w.publication_year %></li>
-    <li><%= w.description %></li>
+<section class="top-ten-container">
+  <% @categories.each do |category| %>
+  <section class="top-ten">
+    <h3>Top <%= category.name.capitalize %>s</h3>
+    <ul>
+    <% @works.where(category: category).each do |work| %>
+    <li>
+      <h4>work.name <small>work.creator</small></h4>
+      <p>5 votes</p>
+    </li>
+    <% end%>
+    </ul>
+  </section>
   <% end %>
-</ul>
+</section>
