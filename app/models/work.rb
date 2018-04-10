@@ -1,6 +1,6 @@
 class Work < ApplicationRecord
 
-  validates :title, :creator, presence: true
+  validates :title, presence: true
 
 
   def self.books

@@ -1,4 +1,4 @@
-<section>
+<article class="media-details">
   <h3><strong><%= @work.title %></strong></h3>
 
   <h5>Created by: <%= @work.creator %></h5>
@@ -8,18 +8,13 @@
   <h5><%= @work.description %></h5>
 
 
-  <button class="button-selects">
-    <%= link_to("Back to media ranks") %>
-  </button>
-  <button class="button-selects">
-    <%= link_to("Edit", edit_work_path(@work)) %>
-  </button>
-  <button class="button-selects">
+  <section>
+    <%= link_to("Back to media ranks", root_path, class: "button") %>
+    <%= link_to("Edit", edit_work_path(@work), class: "button") %>
     <%= link_to("Upvote") %>
-  </button>
-  <button class="delete-button">
-    <%= link_to("Delete", work_path(@work.id), method: :delete, data: { confirm: "Are you sure?" }) %>
-  </button>
+    <%= link_to("Delete", work_path(@work.id), class: "button alert", method: :delete, data: { confirm: "Are you sure?" }) %>
+  </section>
+
 
 
   <table>

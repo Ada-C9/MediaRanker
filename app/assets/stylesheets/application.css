@@ -1,19 +1,39 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *= require normalize-rails
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*= require normalize-rails
 
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+*
+*= require foundation_and_overrides
+*= require_tree .
+*= require_self
 
- */
+*/
+
+.button {
+  background-color: #26A69A;
+  vertical-align: middle;
+}
+
+
+header .nav {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: 2em 0;
+}
+
+.bottom-nav {
+  display: inline-block;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 30px 15px;
+}
