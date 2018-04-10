@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'votes/index'
+
+  get 'votes/new'
+
+  get 'votes/create'
+
+  get 'votes/show'
+
+  get 'votes/update'
+
+  get 'votes/edit'
+
+  get 'votes/destroy'
+
   get 'users/index'
 
   get 'users/new'
