@@ -1,0 +1,19 @@
+<%= form_for @work do |w| %>
+
+  <%= w.label : %>
+  <%= w.select :category, ['album' ,'book', 'movie'] %>
+
+  <%= w.label :title %>
+  <%= w.text_field :title %>
+
+  <%= w.label :creator %>
+  <%= w.text_field :creator %>
+
+  <%= w.label :publication_year %>
+  <%= w.text_field :publication_year %>
+
+  <%= w.label :description %>
+  <%= w.text_field :description %>
+
+  <%= w.submit class: "button" %>
+<% end %>
