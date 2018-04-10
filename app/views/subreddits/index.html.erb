@@ -1,2 +1,10 @@
-<h1>Subreddits#index</h1>
-<p>Find me in app/views/subreddits/index.html.erb</p>
+<h1>Subreddits</h1>
+
+<main>
+  <%= @subreddits.each do |subreddit| %>
+      <%= subreddit.id %>
+      <%= subreddit.title %>
+      <%= subreddit.description %>
+      <%= subreddit.subscribers %>
+      <% end %>
+</main>

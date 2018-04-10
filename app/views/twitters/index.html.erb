@@ -1,2 +1,9 @@
-<h1>Twitters#index</h1>
-<p>Find me in app/views/twitters/index.html.erb</p>
+<h1>twitters</h1>
+
+<main>
+  <%= @twitters.each do |twitter| %>
+      <%= twitter.id %>
+      <%= twitter.handle %>
+      <%= twitter.followers %>
+      <% end %>
+</main>

@@ -37,12 +37,13 @@ puts "#{instagram_failures.length} instagrams failed to save"
   SUBREDDIT_FILE = Rails.root.join('db', 'seed_data', 'subreddits.csv')
 puts "Loading raw subreddit data from #{ SUBREDDIT_FILE }"
 
-  subreddit _failures = []
+  subreddit_failures = []
 CSV.foreach(SUBREDDIT_FILE , :headers => true) do |row|
     subreddit = Subreddit.new
     subreddit.id = row['id']
     subreddit.title = row['title']
     subreddit.description = row['description']
+    subreddit.subscribers = row['subscribers']
   successful = subreddit.save
   if !successful
       subreddit_failures << subreddit
@@ -59,8 +60,8 @@ TWITTER_FILE = Rails.root.join('db', 'seed_data', 'twitters.csv')
 puts "Loading raw twitter data from #{TWITTER_FILE}"
 
 twitter_failures = []
-CSV.foreach(TWITTER_FILE , :headers => true) do |row|
-  twitter = twitter.new
+CSV.foreach(TWITTER_FILE, :headers => true) do |row|
+  twitter = Twitter.new
   twitter.id = row['id']
   twitter.handle = row['handle']
   twitter.followers = row['followers']
@@ -73,5 +74,5 @@ CSV.foreach(TWITTER_FILE , :headers => true) do |row|
   end
 end
 
-puts "Added #{twitter.count} twitter records"
+puts "Added #{Twitter.count} twitter records"
 puts "#{twitter_failures.length} twitters failed to save"

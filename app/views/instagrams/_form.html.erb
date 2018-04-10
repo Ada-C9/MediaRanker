@@ -1,0 +1,33 @@
+<h4>
+  <% page_title ||= "Instagram Information" %>
+  <%= page_title %>
+</h4>
+
+<%= form_for @instagram do |f| %>
+<div>
+  <%= f.label :handle %>
+  <%= f.text_field :handle%>
+</div>
+
+<div>
+  <%= f.label :posts %>
+  <%= f.integer :posts %>
+</div>
+
+<div>
+  <%= f.label :followers %>
+  <%= f.integer :followers %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<div>
+<%= link_to "List of Instagrams", instagrams_path %>
+</div>
+
+
+<% end %>

@@ -1,2 +1,9 @@
-<h1>Instagrams#index</h1>
-<p>Find me in app/views/instagrams/index.html.erb</p>
+<h1>Instagram</h1>
+<main>
+  <%= @instagrams.each do |instagram| %>
+      <%= instagram.id %>
+      <%= instagram.handle %>
+      <%= instagram.posts %>
+      <%= instagram.followers %>
+      <% end %>
+</main>

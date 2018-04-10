@@ -1,0 +1,30 @@
+<h4>
+  <% page_title ||= "Subreddit Information" %>
+  <%= page_title %>
+</h4>
+
+<%= form_for @subreddit do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</div>
+
+<div>
+  <%= f.label :subscribers %>
+  <%= f.integer :subscribers %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<div>
+<%= link_to "List of Subreddits", subreddits_path %>
+</div>
