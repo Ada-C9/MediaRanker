@@ -2,16 +2,6 @@ class Work < ApplicationRecord
   has_many :votes
   validates :title, presence: true, uniqueness: true
 
-  def self.show_top_ten
-    works = self.all
-    top_ten = works.sort_by { |work| work.votes.count }
-    # if top_ten.length <= 10
-    #   return top_ten
-    # end
-    #
-    # return top_ten.first(10)
-  end
-
   def self.show_spotlight
     works = self.all
     return works.max_by {|work| work.votes.count}

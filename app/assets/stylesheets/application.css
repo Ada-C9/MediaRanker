@@ -17,3 +17,11 @@
  *= require foundation_and_overrides
 
  */
+
+ul {
+  list-style-type: none;
+}
+
+body nav ul li{
+  display: inline-block;
+}

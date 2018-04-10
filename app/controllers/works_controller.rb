@@ -3,6 +3,10 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
+  def homepage
+    @works = Work.all
+  end
+
   def new
     @work = Work.new
   end
@@ -12,7 +16,9 @@ class WorksController < ApplicationController
 
     if @work.save
       redirect_to work_path(@work)
+      flash[:success] = "Successfully added"
     else
+      flash.now[:falture] = "Failed to add"
       render :new
     end
   end
