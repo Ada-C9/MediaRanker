@@ -1,14 +1,12 @@
 class WorksController < ApplicationController
   def index
-    if params[:author_id]
-      @works = Category.find(params[:category_id]).works
-    else
-      @works = Work.all
-    end
+
+    @works = Work.all
+
   end
 
   def new
-    @work = Work.new(author_id: params[:author_id])
+    @work = Work.new
   end
 
   def create
@@ -63,6 +61,6 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    return params.require(:work).permit(:category_id, :title, :creator, :publication_year, :description])
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description])
   end
 end
