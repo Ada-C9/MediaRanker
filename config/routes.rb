@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'works#index'
 
   resources :works
-  resources :users
   resources :votes
+  resources :users
+  get '/login', to: 'users#new', as: 'login'
+  post '/login', to: 'users#create'
+  delete '/logout', to: 'users#destroy', as: 'logout'
 end
