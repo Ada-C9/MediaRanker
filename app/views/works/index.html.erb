@@ -1,1 +1,125 @@
-<h2>Yay Im working!</h2>
+<h2>List of works</h2>
+
+<h3>Music Albums</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @works.each do |work| %>
+    <% work.category == :album%>
+    <tr>
+      <td>
+        <%= work.votes.name %>
+      </td>
+      <td>
+        <%= link_to work.title, work_path(work)%>
+      </td>
+      <td>
+        <%=work.created_by%>
+      </td>
+      <td>
+        <%=work.published_year%>
+      </td>
+      <td>
+        <%= link_to 'Upvote', class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
+
+<h3>Books</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= book.votes.name %>
+      </td>
+      <td>
+        <%= link_to book.title, work_path(book)%>
+      </td>
+      <td>
+        <%= book.created_by%>
+      </td>
+      <td>
+        <%=book.published_year%>
+      </td>
+      <td>
+        <%= link_to 'Upvote', class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
+
+<h3>Movies</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @movies.each do |movie| %>
+    <tr>
+      <td>
+        <%= movie.votes.name %>
+      </td>
+      <td>
+        <%= link_to movie.title, work_path(movie)%>
+      </td>
+      <td>
+        <%=movie.created_by%>
+      </td>
+      <td>
+        <%=movie.published_year%>
+      </td>
+      <td>
+        <%= link_to 'Upvote', class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
