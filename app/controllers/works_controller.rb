@@ -13,7 +13,7 @@ class WorksController < ApplicationController
     flash[:success] = "Successfully created #{@work.category @work.id}"
     redirect_to works_path
     else
-
+      flash.now[:alert] = ""
       render :new
     end
 
