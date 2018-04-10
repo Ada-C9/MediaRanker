@@ -17,3 +17,29 @@
  *= require foundation_and_overrides
 
  */
+
+.section {
+  display: block;
+}
+
+ .top-ten-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-column-gap: 2em;
+ }
+
+ .top-ten h3 {
+   border-bottom: 2px solid;
+   border-bottom-color: #B2DFDB;
+ }
+
+ .top-ten ul {
+   list-style-type: none;
+   margin-left: 0px;
+ }
+
+ .spotlight {
+   border-bottom: 1px solid;
+   border-bottom-color: grey;
+   padding-bottom: 20px;
+ }
