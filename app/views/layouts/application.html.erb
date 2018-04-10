@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<link href='https://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' />
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,6 +13,22 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+  <header class="page-header row">
+    <h2>
+      <strong><a href="/">Media Ranker</a></strong>
+      <small>Ranking the Best of Everything</small>
+    </h2>
+
+    <nav>
+      <a class="button" href="/">View top media</a>
+      <a class="button" href="/publications">View all media</a>
+      <a class="button" href="/publications/new">Add a new work</a>
+      <a class="button" href="/users">View all users</a>
+      <div class="float-right">
+          <a class="button float-right" href="/login">Log In</a>
+      </div>
+    </nav>
+  </header>
 
   <body>
 

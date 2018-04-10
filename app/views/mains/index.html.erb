@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag "mains" %>
+
+<main class="row">
+     <section class="row spotlight">
+     <h3><span class="media-spotlight-header">Media Spotlight</span>
+       <%= link_to @spotlight.title, publication_path(@spotlight.id) %> by <%= @spotlight.creator %></h3>
+ </section>
+
+<hr class="root-hr"/>
+<section class="top-ten-container">
+  <section class="top-ten">
+    <table>
+      <col width="200">
+      <tr>
+        <th>Movies</th>
+      </tr>
+      <% @movies.each do |movie| %>
+      <tr><%= movie.title %> by <%= movie.creator%> </tr>
+      <% end %>
+  </section>
+
+  <section class="top-ten">
+    <table>
+      <col width="200">
+      <tr>
+        <th>Books</th>
+      </tr>
+      <% @books.each do |book| %>
+      <tr><td><%= book.title %> by <%= book.creator %></td> </tr>
+      <% end %>
+  </section>
+
+  <section class="top-ten">
+    <table>
+      <col width="200">
+      <tr>
+        <th>Albums</th>
+      </tr>
+      <% @albums.each do |album| %>
+      <tr><td><%= album.title %> by <%=album.creator%></td></tr>
+      <% end %>
+  </section>
+</section>
