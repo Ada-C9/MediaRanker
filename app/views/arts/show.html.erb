@@ -4,7 +4,7 @@
 
     <p>Created by: <%= @art.creator %></p>
     <p>Published: <%= @art.pub_year %></p>
-    <p><%= @art.description %></p>
+    <p>Description: <%= @art.description %></p>
 
     <section>
       <%= link_to "Back to media ranks", arts_path(@art), {class: "button"} %>

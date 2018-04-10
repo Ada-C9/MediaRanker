@@ -35,6 +35,17 @@ class ArtsController < ApplicationController
     @art = Art.find(params[:id])
   end
 
+  def update
+    @art = Art.find(params[:id])
+
+    @art.assign_attributes(art_params)
+
+    if @art.save
+      redirect_to art_path(@art)
+    else
+      render :edit
+    end
+  end
 
   private
   def art_params
