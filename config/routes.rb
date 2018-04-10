@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # get '/signup', to:
   # post '/signup', to:
 
+  post '//works/:id/upvote', to: 'works#upvote', as: :upvote
+
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#login'
   delete '/logout', to: 'sessions#logout', as: :logout

@@ -49,6 +49,24 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
+  def upvote
+    @work = Work.find(params[:id])
+    @current_user = User.find_by(id: session[:user_id])
+
+    if @current_user
+      vote = Vote.new(user: @login_user, work: @work)
+      if vote.save
+        flash.notice = "Successfully upvoted #{@work.title}"
+      else
+        flash.now[:status] = :failure
+        flash.now[:result_text] = "Could not upvote"
+        flash.now[:messages] = vote.errors.messages
+      end
+    else
+      flash.alert = "You must log in to do that"
+    end
+  end
+
   private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
