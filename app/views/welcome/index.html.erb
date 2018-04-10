@@ -16,7 +16,7 @@ by <%= @spotlight.creator %>
   <ul>
   <% @albums.each do |album| %>
     <li>
-      <%= album.title %> by
+      <%= link_to album.title, work_path(album) %> by
       <%= album.creator %>
     TBD votes
     </li>
@@ -29,7 +29,7 @@ by <%= @spotlight.creator %>
   <ul>
   <% @books.each do |book| %>
     <li>
-      <%= book.title %> by
+      <%= link_to book.title, work_path(book) %> by
       <%= book.creator %>
     TBD votes
     </li>
@@ -42,7 +42,7 @@ by <%= @spotlight.creator %>
   <ul>
   <% @movies.each do |movie| %>
     <li>
-      <%= movie.title %> by
+      <%= link_to movie.title, work_path(movie) %> by
       <%= movie.creator %>
     TBD votes
     </li>
