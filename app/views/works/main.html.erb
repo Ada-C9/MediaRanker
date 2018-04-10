@@ -1,5 +1,12 @@
-<h3><span class="media-spotlight-header">Media Spotlight:</span> MOST_VOTES_TITLE_LINK by CREATOR</h3>
-<p>WORK.VOTE_COUNT - WORK.DESCRIPTION</p>
+<section class="row-spotlight">
+  <h3>
+    <span class="media-spotlight-header">Media Spotlight:
+    </span>
+    <span class="most-popular"><%= link_to("#{@works.first.title}") %></span>
+    by <%= @works.first.creator %>
+  </h3>
+  <p>WORK.VOTE_COUNT - WORK.DESCRIPTION</p>
+</section>
 
 <hr class="root-hr">
 

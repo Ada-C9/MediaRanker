@@ -19,10 +19,7 @@
 
  */
 
- .flash {
-   background-color: #e6e6e6;
-   color: #8a8a8a;
- }
+
 
  h3 {
    color: #26A69A;
@@ -53,4 +50,18 @@
 .root-hr {
   color: #EEEEEE;
   margin: 0px auto 75px auto;
+}
+
+.most-popular {
+  text-decoration: underline;
+}
+
+/* Flash */
+.flash {
+  background-color: #e6e6e6;
+  color: #8a8a8a;
+}
+
+.success {
+  color: #8a8a8a;
 }
