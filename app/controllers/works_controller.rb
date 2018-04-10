@@ -3,6 +3,10 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
+  def main
+    @works = Work.all
+  end
+
   def new
     @work = Work.new
   end
