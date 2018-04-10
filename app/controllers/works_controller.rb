@@ -7,7 +7,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.find(works_params)
+    @work = Work.find(params[:id])
   end
 
   def new
@@ -26,7 +26,7 @@ class WorksController < ApplicationController
   end
 
   private
-  def works_params
+  def work_params
     return params.require(:work).permit(:title, :creator, :publication_year, :category, :description)
   end
 end
