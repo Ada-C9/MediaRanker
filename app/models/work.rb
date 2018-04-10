@@ -19,6 +19,13 @@ class Work < ApplicationRecord
     return category_hash
   end
 
+  def self.num_runs(array)
+    runs = 0
+    hash = Work.make_category_hash
+    array.length > 10 ? runs = 10 : runs = array.length
+    return runs
+  end
+
   def self.spotlight
 
   end
