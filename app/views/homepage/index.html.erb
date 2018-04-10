@@ -1,2 +1,26 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<h1>Homepage</h1>
+<h2>Top Media</h2>
+
+<ul>
+  <%@books.ordereach do |work|%>
+    <li>
+      <%=link_to work.title, work_path(work[:id])%>
+    </li>
+  <%end%>
+</ul>
+
+<ul>
+  <%@works.where(category: "album").each do |work|%>
+    <li>
+      <%=link_to work.title, work_path(work[:id])%>
+    </li>
+  <%end%>
+</ul>
+
+<ul>
+  <%@works.where(category: "movie").each do |work|%>
+    <li>
+      <%=link_to work.title, work_path(work[:id])%>
+    </li>
+  <%end%>
+</ul>

@@ -5,6 +5,6 @@ class Work < ApplicationRecord
   validates :title, presence: true
   validates :title, length: { in: 1..25 }
   validates :publication_year, numericality: true
-
+  validates :publication_year, length: { is: 4 }
 
 end

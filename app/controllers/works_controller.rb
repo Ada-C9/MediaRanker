@@ -7,12 +7,15 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new(work_params)
   end
 
   def edit
   end
 
   def show
+    id = params[:id]
+    @work = Work.find_by(id: id)
   end
 
   def update
@@ -20,4 +23,10 @@ class WorksController < ApplicationController
 
   def destroy
   end
+
+  private
+
+def work_params
+  return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+end
 end
