@@ -1,1 +1,12 @@
 <h1>Show</h1>
+<article class="media-details"
+<h3><%= @work.title %></h3>
+<p>Created by: <%= @work.creator %></p>
+<p>Published: <%= @work.publication_year %></p>
+<p>Description: <%= @work.description %></p>
+<section>
+  <%= link_to "Back to media ranks", works_path, class: "button" %>
+  <%= link_to "Edit", edit_work_path(@work), class: "button" %>
+  <%= link_to("Delete", @work, class: "alert button", method: :delete, data: { confirm: "Are you sure you want to delete: #{ @work.title }?" }) %>
+</section>
+</article>

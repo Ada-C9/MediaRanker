@@ -1,4 +1,8 @@
 class WorksController < ApplicationController
+  def root
+    @works = Work.all
+  end
+
   def index
     @works = Work.all
     @books = @works.books
@@ -14,6 +18,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
+      flash[:success] = "<h3>Successfully created #{@work.category} #{@work.id}</h3>"
       redirect_to works_path
     else
       render :new
@@ -33,7 +38,7 @@ class WorksController < ApplicationController
     @work.assign_attributes(work_params)
 
     if @work.save
-      redirect_to work_path(work)
+      redirect_to work_path(@work)
     else
       render :edit
     end
@@ -46,6 +51,6 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    return params.require(:work).permit(:format, :title, :creator, :publication_year, :description)
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
   end
 end
