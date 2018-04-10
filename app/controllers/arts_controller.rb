@@ -25,6 +25,17 @@ class ArtsController < ApplicationController
     end
   end
 
+  def show
+    art_id = params[:id]
+
+    @art = Art.find(art_id)
+  end
+
+  def edit
+    @art = Art.find(params[:id])
+  end
+
+
   private
   def art_params
     return params.require(:art).permit(:category, :title, :creator, :pub_year, :description)

@@ -1,0 +1,21 @@
+<main class="row">
+  <article class="media-details">
+    <h3><%= @art.title %></h3>
+
+    <p>Created by: <%= @art.creator %></p>
+    <p>Published: <%= @art.pub_year %></p>
+    <p><%= @art.description %></p>
+
+    <section>
+      <%= link_to "Back to media ranks", arts_path(@art), {class: "button"} %>
+
+      <%= link_to "Edit", edit_art_path(@art), {class: "button"} %>
+      <!-- TODO PUT IN PATH TO UPVOTE ABILITY -->
+      <a class="button">Upvote</a>
+      <!-- TODO: PUT IN LINK AND PATH TO DESTROY ABILITY -->
+      <a class="alert button" data-confirm="Are you sure?"rel="nofollow" data-method="delete" href="/">Delete</a>
+    </section>
+
+  </article>
+</main>
+<!-- TODO: ONCE BUILT VOTE MODEL ADD IN LISTING FOR IT -->
