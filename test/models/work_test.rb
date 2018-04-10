@@ -18,7 +18,7 @@ describe Work do
   end
 
   it "will not be valid with the same title and category" do
-    work.title = "Might Boosh"
+    work.title = "Mighty Boosh"
     work.category = "movie"
     work.valid?.must_equal false
   end

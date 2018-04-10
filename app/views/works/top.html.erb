@@ -1,0 +1,14 @@
+<section>
+<% @types.each do |type| %>
+  <h3>Top <%= type.capitalize %>s</h3>
+    <ul>
+      <% Work.top_ten(type.to_sym).each do |work| %>
+      <li>
+        <h4><%=link_to work.title, work_path(work.id)%> by <%=work.created_by%></h4>
+        <%= work.votes.count %> votes
+        <%= link_to "Upvote", vote_path(work.id), method: :post %>
+      </li>
+      <%end%>
+    </ul>
+</section>
+<% end %>
