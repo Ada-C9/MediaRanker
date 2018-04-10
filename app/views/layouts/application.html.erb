@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <header class="page-header row">
+      <h2><%= link_to "Media Ranker", root_path %><small>Ranking the Best of Everything</small></h2>
+      <nav>
+        <%= link_to "View Top Media", root_path, class: "button" %>
+      </nav>
+    </header>
 
     <%= yield %>
 
