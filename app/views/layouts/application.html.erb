@@ -16,6 +16,13 @@
       <h2><%= link_to "Media Ranker", root_path %><small>Ranking the Best of Everything</small></h2>
       <nav>
         <%= link_to "View Top Media", root_path, class: "button" %>
+        <%= link_to "View All Media", works_path, class: "button" %>
+        <%= link_to "Add a new work", new_work_path, class: "button" %>
+        <%= link_to "View all users", users_path, class: "button" %>
+        <div class="float-right">
+          <!-- <%= link_to "Logged in as ", user_path(:id), class: "button" %> -->
+          <a href="#" class="button float-right">Log In</a>
+        </div>
       </nav>
     </header>
 
