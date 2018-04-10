@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'works#index'
+  root to: 'works#welcome'
   resources :works
   resources :users, :except => [:destroy, :edit]
 
