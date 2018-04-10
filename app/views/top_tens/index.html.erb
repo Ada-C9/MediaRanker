@@ -2,11 +2,11 @@
 <section>
 
   <h3>Media Spotlight
-  <%= link_to "work placeholder", root_path %>
-  by <%= "creator name placeholder" %>
+  <%= link_to @top_work.title, work_path(@top_work) %>
+  by <%= @top_work.creator %>
   </h3>
   <p>
-    <%= "placeholder votes - work type placeholder" %>
+    <%= @top_work.votes.count %> votes - <%= @top_work.category %>
   </p>
 
 </section>
