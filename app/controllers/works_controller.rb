@@ -45,6 +45,9 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    if Work.destroy(params[:id])
+      redirect_to works_path
+    end 
   end
 
   private
