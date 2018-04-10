@@ -1,0 +1,16 @@
+<%= render partial: "layouts/error_messages", locals: { model: @work } %>
+
+<%= form_for @work do |w| %>
+<%= w.label :category %>
+<%= w.text_field :category %>
+<%= w.label :title %>
+<%= w.text_field :title %>
+<%= w.label :created_by %>
+<%= w.text_field :creator %>
+<%= w.label :publication_year %>
+<%= w.number_field :publication_year %>
+<%= w.label :description %>
+<%= w.text_area :description %>
+
+<%= w.submit "Add!", class: "button" %>
+<% end %>

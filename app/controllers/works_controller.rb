@@ -5,7 +5,8 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new(work_params)
+    @work = Work.new
+
   end
 
   def create
@@ -42,7 +43,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    return params.require(:work).permit(:title, :publication_year, :description, :creator, :category)
+    return params.require(:work).permit(:title, :publication_year, :creator, :category, :description)
   end
 
 end

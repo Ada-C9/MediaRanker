@@ -18,9 +18,9 @@
         <small>Ranking the Best of Everything</small>
       </h2>
       <nav>
-        <%= link_to('View Top Media', works_path) %>
-        <%= link_to('View All Media', works_path ) %>
-        <%= link_to('Add a New Work', new_work_path) %>
+        <a class="button" href="/">View top media</a>
+        <%= link_to 'View All Media', works_path, class: "button" %>
+        <%= link_to 'Add a New Work', new_work_path, class: "button" %>
       </nav>
     </header>
 

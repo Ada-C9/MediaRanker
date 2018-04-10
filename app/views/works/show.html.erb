@@ -1,0 +1,9 @@
+<h4>Details</h4>
+<p>Category: <%= @works.category %></p>
+<p>Title: <%= @works.title %></p>
+<p>Created by: <% @works.creator %></p>
+<p>Publication: <%= @works.publication_year %></p>
+<p>Description: <%= @works.description%></p>
+
+
+<%= link_to "Edit", edit_work_path(@works), class: "button" %>
