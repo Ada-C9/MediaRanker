@@ -12,8 +12,21 @@
   </head>
 
   <body>
-
-    <%= yield %>
-
+    <header>
+      <h2>
+        <%= link_to "Media Ranker", root_path %>
+        <sub>Ranking the Best of Everything</sub>
+      </h2>
+      <nav>
+        <%= link_to "View top media", root_path %>
+        <%= link_to "View all media", publications_path %>
+        <%= link_to "Add a new work", new_publication_path %>
+        <%= link_to "View all users: Path Needed", root_path %>
+        <%= link_to "Log In: Path Needed", root_path %>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
