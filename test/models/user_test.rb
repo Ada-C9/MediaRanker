@@ -19,6 +19,16 @@ describe User do
       result.must_equal false
     end
 
+    it "is invalid with a duplicate username" do
+      dup_name = "duplicate"
+
+      user1 = User.create!(username: dup_name)
+      user2 = User.new(username: dup_name)
+
+      result = user2.valid?
+
+      result.must_equal false
+    end
 
   end
 
