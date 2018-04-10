@@ -20,7 +20,7 @@
           <td><%= work.creator %></td>
           <td><%= work.publication_year %></td>
           <td><%= work.category %></td>
-          <td><%= work.vote.created_at %></td>
+          <td><%= display_date(work.vote.created_at) %></td>
         </tr>
       <% end %>
     </tbody>
