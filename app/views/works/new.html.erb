@@ -3,7 +3,8 @@
   <%= form_for @work do |f| %>
 
     <%= f.label :category %>
-    <%= f.select :category, Work.all.map{ |work| [work.category]}.uniq %>
+    <%= f.select :category, ['album', 'book', 'movie'] %>
+    <!-- f.select :category, Work.all.map{ |work| [work.category]}.uniq ] -->
 
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -17,7 +18,7 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
 
-    <%= f.submit %>
+    <%= f.submit class: "button small" %>
   <% end %>
 
 </section>
