@@ -7,5 +7,15 @@
     <li>Joined</li>
   </ul>
 
-
+  <ul class="user-list">
+  <% @users.each do |u| %>
+    <li>
+      <%= link_to("#{u.name}", user_path(u)) %>
+    </li>
+    <li>Vote Count TBD</li>
+    <li>
+      <%= u.created_at.to_date.to_formatted_s(:long)%>
+    </li>
+  <% end %>
+  </ul>
 </section>

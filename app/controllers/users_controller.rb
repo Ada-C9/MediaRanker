@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def new
@@ -14,6 +15,17 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    user_id = params[:id]
+
+    @user = User.find_by(id: user_id)
+
+    if @user == nil
+      #redirect_to catch_all_index_path
+    end
+      
   end
 
   def vote
