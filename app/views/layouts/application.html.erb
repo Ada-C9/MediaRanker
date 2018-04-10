@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel=“icon” type=“image/jpg” href=“/assets/images/owl.jpg” />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+  <h2>Media Ranker | Ranking the Best of Everything</h2>
+
+
+    <nav>
+      <ul>
+        <li><%=link_to "View top media", root_path%></li>
+        <li><%=link_to "View all media", works_path%></li>
+        <li><%=link_to "Add a new work", new_work_path%></li>
+        <li><%=link_to "View all users", users_path%></li>
+        <li><%=link_to "Login", users_path%></li>
+      </ul>
+    </nav>
+    
   </head>
 
   <body>
