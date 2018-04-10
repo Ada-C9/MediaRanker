@@ -1,11 +1,24 @@
-<h2>Works</h2>
+<h1>List of Works</h1>
 
-<ol>
+<table>
+  <tr>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+  </tr>
+
   <% @works.each do |work| %>
-    <div class="work">
-        <strong>
-          <li><%= link_to work.title, work_path(work.id) %></li>
-        </strong>
-    </div>
+  <tr>
+    <td><%= Vote.all.where(work_id: work.id).count %></td>
+    <td><%= link_to work.title, work_path(work.id) %></td>
+    <td><%= link_to work.creator, work_path(work.id) %></td>
+    <td><%= link_to work.publication_year, work_path(work.id) %></td>
+    <td><%= link_to work.publication_year, work_path(work.id) %></td>
+    <td>
+    
+    </td>
+  </tr>
   <% end %>
-</ol>
+</table>
