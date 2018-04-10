@@ -36,6 +36,21 @@
    color: #FF5722;
  }
 
+ .sub-header {
+   color: white;
+ }
+
  ul {
    list-style-type: none;
  }
+
+ /* Main Page */
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.root-hr {
+  color: #EEEEEE;
+  margin: 0px auto 75px auto;
+}
