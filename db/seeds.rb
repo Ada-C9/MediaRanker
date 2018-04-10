@@ -1,17 +1,19 @@
-def load_media()
-  all_works = []
+require 'csv'
 
-  works = CSV.open('media_seeds.csv', headers: true)
+def process_seed_data()
+  works = CSV.open('./db/media_seeds.csv', headers: true)
 
   works.each do |work|
-    work[:category] = work[0]
-    work[:title] = work[1]
-    work[:created_by] = work[2]
-    work[:publication_date] = work[3]
-    work[:description] = work[4]
+    data = {}
 
-    all_works << Work.new(work)
+    data[:category] = work[0]
+    data[:title] = work[1]
+    data[:created_by] = work[2]
+    data[:publication_date] = work[3]
+    data[:description] = work[4]
+
+    w = Work.create(data)
   end
-
-  return all_works
 end
+
+process_seed_data()
