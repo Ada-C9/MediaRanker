@@ -14,6 +14,19 @@ class ArtsController < ApplicationController
   end
 
   def create
+    @art = Art.new(art_params)
 
+    if @art.save
+      flash[:success] = "Art created successfully"
+      redirect_to art_path
+    else
+      flash.now[:failure] = "Validations Failed"
+      render :new
+    end
+  end
+
+  private
+  def art_params
+    return params.require(:art).permit(:category, :title, :creator, :pub_year, :description)
   end
 end
