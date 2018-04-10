@@ -1,15 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyText
+hp:
+  category: book
+  title: Harry Potter and the Philosopher's Stone
+  creator: JK Rowling
+  publication_year: 1997
+  description: The plot follows Harry Potter, a young wizard who discovers his magical heritage.
 
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyText
+coco:
+  category: movie
+  title: Coco
+  creator: Lee Unkrich
+  publication_year: 2017
+  description: The story follows a 12-year-old boy named Miguel Rivera who is accidentally transported to the land of the dead.
+
+imagine:
+  category: album
+  title: Imagine
+  creator: John Lennon
+  publication_year: 1971
+  description: 
