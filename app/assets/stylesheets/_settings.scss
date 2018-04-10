@@ -68,6 +68,7 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
+// TODO: CHANGE ME FOR COLOR MATCH
 $foundation-palette: (
   primary: #1779ba,
   secondary: #767676,
@@ -866,4 +867,3 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
-

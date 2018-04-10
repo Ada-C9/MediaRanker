@@ -2,7 +2,7 @@
 
 <%= form_for @art do |f| %>
 <%= f.label :category %>
-<%= f.select :category, w%[album book movie] %>
+<%= f.select :category, ['album', 'book', 'movie'] %>
 
 <%= f.label :title %>
 <%= f.text_field :title %>
@@ -17,6 +17,5 @@
 <%= f.text_field :description %>
 
 
-<%= f.submit <input type="button" value="Create Work"> %>
-
+<%= f.submit "Create Work" %>
 <% end %>
