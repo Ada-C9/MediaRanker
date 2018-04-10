@@ -12,7 +12,15 @@ class SessionsController < ApplicationController
       flash[:success] = "#{ user.username } is successfully logged in."
       redirect_to root_path
     else
-
+      user = User.new(username: params[:user][:username])
+      if user.save
+        session[:user_id] = user.id
+        flash[:success] = "#{ user.username } is successfully logged in."
+        redirect_to root_path
+      else
+        flash[:failure] = "Unsuccessful. Please try again."
+        render :new
+      end
     end
   end
 

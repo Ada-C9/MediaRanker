@@ -6,7 +6,8 @@ class WorksController < ApplicationController
   end
 
   def new
-
+    @work = Work.new
+    @categories = Category.all
   end
 
   def create
@@ -33,8 +34,5 @@ class WorksController < ApplicationController
     @works = Work.all
     @categories = Category.all
   end
-
-
-
 
 end
