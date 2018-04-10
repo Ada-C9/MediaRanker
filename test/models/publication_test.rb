@@ -2,19 +2,32 @@ require "test_helper"
 
 describe Publication do
   let(:publication) { Publication.new }
+  let(:sailor_moon) { publications(:sailormoon) }
 
-  describe 'publication validity'
+  describe 'publication validity' do
     it 'must be valid' do
+      sailor_moon.valid?.must_equal true
     end
     it 'requires a title and category' do
+      sailor_stars = publications(:sailorstars)
+
+      sailor_moon.title = nil
+      sailor_stars.category = nil
+
+      sailor_moon.valid?.must_equal false
+      sailor_stars.valid?.must_equal false
     end
     it 'wont a take an empty string for a title' do
+      sailor_moon.title = ""
+
+      sailor_moon.valid?.must_equal false
     end
     it 'wont make a duplicate record' do
+      duplicate_moon = Publication.new(category: "Book", title: "Sailor Moon", creator: "Naoko Takeuchi")
     end
   end
 
-  describe 'publication relationships'
+  describe 'publication relationships' do
     it 'can have zero or more votes' do
     end
   end

@@ -1,4 +1,6 @@
 class Publication < ApplicationRecord
+  has_many :votes
+  
   def self.find_spotlight_publication
     Publication.first
   end
