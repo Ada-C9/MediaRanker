@@ -13,6 +13,20 @@
 
   <body>
 
+    <header>
+      <h2>
+      <%= link_to "Media Ranker", root_path %>
+      <small> Ranking the Best of Everything</small>
+      </h2>
+
+      <nav>
+        <%= link_to "View Top Media", root_path, class: "button" %>
+        <%= link_to "View All Media", works_path, class: "button" %>
+        <%= link_to "Add a New Work", new_work_path, class: "button" %>
+        <%= link_to "View All Users", user_index_path , class: "button"%>
+      </nav>
+    </header>
+
     <%= yield %>
 
   </body>

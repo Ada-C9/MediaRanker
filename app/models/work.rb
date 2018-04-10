@@ -1,8 +1,10 @@
 class Work < ApplicationRecord
   has_many :votes
 
-  validates :category, pressence: {message: "Must provide a category"}
+# validates_presence_of :title, :category
 
-  validates :title, pressence: {message: "Please provide a title"}
+  validates :category, presence:  {message: "Must provide a category"}
+
+  validates :title, presence: {message: "Please provide a title"}
   validates :title, uniqueness: {message: "Work already exists" }
 end
