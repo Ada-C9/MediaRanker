@@ -1,4 +1,6 @@
 class MainpageController < ApplicationController
+  include GetUsername
+  before_action :get_username
 
   def index
     @top = Work.top_work

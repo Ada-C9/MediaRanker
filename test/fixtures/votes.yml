@@ -4,16 +4,8 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-
-noscrubs:
-  title: Fanmail
-  category: album
-  creator: TLC
-  publication_year: 1999
-  description: Album of the best song - No Scrubs
-
-backtoblack:
-  title: Back to Black
-  category: album
-  creator: Amy Winehouse
-  publication_year: 2006
+one: {}
+# column: value
+#
+two: {}
+# column: value

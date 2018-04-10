@@ -5,12 +5,19 @@ describe User do
   end
 
   describe 'relations' do
-    it 'relates users and works' do
+    let(:user) { User.first }
+
+    it 'relates works and users' do
       work = Work.first
-      user = User.first
 
       user.works << work
       user.work_ids.must_include work.id
+    end
+
+    it 'relates vote and vote_id' do
+      vote = Vote.create!(user_id: user.id, work_id: Work.first.id)
+
+      user.vote_ids.must_include vote.id
     end
   end
 
@@ -22,6 +29,16 @@ describe User do
     it 'cannot be created without a username' do
       @user.username = nil
       result = @user.valid?
+
+      result.must_equal false
+    end
+
+    it 'cannot be created if the username has been taken' do
+      @user.save
+      username = @user.username
+      user2 = User.new(username: username)
+
+      result = user2.valid?
 
       result.must_equal false
     end

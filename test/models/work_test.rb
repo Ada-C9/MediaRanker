@@ -2,7 +2,9 @@ require "test_helper"
 
 describe Work do
   describe 'relations' do
-    it 'connects works and users' do
+    let(:work) { Work.first }
+
+    it 'connects user_ids and users' do
       user = User.first
       work = Work.create(title: 'No Scrubs')
 
@@ -12,10 +14,15 @@ describe Work do
 
     it 'belongs to a category' do
       category = Category.first
-      work = Work.first
 
       work.category = category
       work.category_id.must_equal category.id
+    end
+
+    it 'connects vote and vote_id' do
+      vote = Vote.create!(user_id: User.first.id, work_id: work.id)
+      
+      work.vote_ids.must_include vote.id
     end
 
   end

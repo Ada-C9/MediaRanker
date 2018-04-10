@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'CSV'
 
-FILE = 'db/media_seeds.csv'
+FILE = 'db/media_seeds.csv' # will need to change this for deploying to Heroku
 
-categories = {album: Category.create!(name: 'album'), book: Category.create!(name: 'book')}
+categories =  {album: Category.create!(name: 'album'), book: Category.create!(name: 'book')}
 
 unsaved = []
 CSV.read(FILE, headers: true).each do |row|
@@ -29,5 +29,5 @@ CSV.read(FILE, headers: true).each do |row|
     unsaved << work
   end
 
-  puts "#{unsaved.length} works not saved"
 end
+puts "#{unsaved.length} works not saved"

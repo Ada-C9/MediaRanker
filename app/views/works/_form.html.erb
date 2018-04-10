@@ -3,7 +3,7 @@
 </h3>
 
 <%= form_for @work do |f| %>
-  <%= f.label :category %>
+  <%= f.label :category_id %>
   <%= f.select :category_id, Category.all.map { |category| [category.name, category.id]} %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -13,5 +13,5 @@
   <%= f.text_field :publication_year %>
   <%= f.label :description %>
   <%= f.text_area :description %>
-  <%= f.submit action_name %>
+  <%= f.submit action_name, class: 'button' %>
 <% end %>
