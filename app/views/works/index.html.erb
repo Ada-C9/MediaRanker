@@ -2,13 +2,13 @@
   <h3><strong>List of works</strong></h3>
 
   <h4><strong>Albums</strong></h4>
-  <%= render partial: 'list', locals: { works: @works.albums } %>
+  <%= render partial: 'work_table', locals: { works: @works.albums } %>
 
   <h4><strong>Books</strong></h4>
-  <%= render partial: 'list', locals: { works: @works.books } %>
+  <%= render partial: 'work_table', locals: { works: @works.books } %>
 
   <h4><strong>Movies</strong></h4>
-  <%= render partial: 'list', locals: { works: @works.movies } %>
+  <%= render partial: 'work_table', locals: { works: @works.movies } %>
 
 
 <ul>
