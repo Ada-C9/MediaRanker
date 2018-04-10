@@ -3,6 +3,7 @@ class WorksController < ApplicationController
   end
 
   def index
+    @works = Work.all
   end
 
   def new
