@@ -1,39 +1,29 @@
-<h1 class="page-header"></h1>
-<section class="row spotlight">
-  <div>
-    <h3><span class="media-spotlight-header">Media Spotlight</span> </h3>
-    <p></p>
-  </div>
-</section>
+<h3 class="page-header">List of works</h3>
 
-<section class="top-ten-container">
-  <section class="top-ten">
-    <h3>Top Movies</h3>
-    <li>
-      <h4>
-
-      </h4>
-      <p> </p>
-    </li>
-    <ul>
-
-    </ul>
+<section class="media-table">
+  <h4>Albums</h4>
+  <table>
+    <thead>
+      <tr>
+        <th width=80>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th width=100>Published</th>
+        <th width=100>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @works.each do |work| %>
+        <td> Num </td>
+        <td> <%= link_to work.work_title, work_path(work.id) %> </td>
+        <td> <%= work.work_creator %> </td>
+        <td> <%= work.work_publication_year %> </td>
+        <td> <a class="button upvote" rel="nofollow" data-method="post" href="/works/351/upvote">Upvote</a> </td>
+        <% end%>
+      </tr>
+    </table>
   </section>
 
-  <section class="top-ten">
-    <h3>Top Books</h3>
-    <ul>
-
-    </ul>
-    <!-- <a href="/works.books">View More Books</a> -->
-  </section>
-
-  <section class="top-ten">
-    <h3>Top Albums</h3>
-    <ul>
-
-    </ul>
-    <!-- <a href="/works.albums">View More Albums</a> -->
-  </section>
-
-</section>
+  <a class="button" href="/">View top media</a>
+  <a class="button" href="/works/new">Add a new work</a>

@@ -1,2 +1,32 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<h1 class="page-header"></h1>
+<article class="media-details">
+  <h3><%= @work.work_title %></h3>
+  <p>Created by: <%= @work.work_creator %></p>
+  <p>Published: <%= @work.work_publication_year %></p>
+  <p><%= @work.work_description %></p>
+  <section>
+    <a class="button" href="/">Back to media ranks</a>
+    <a class="button" href="/works/314/edit">Edit</a>
+    <a class="button" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a>
+    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/314">Delete</a>
+  </section>
+</article>
+
+
+
+<article class="voting-users">
+  <h3>XX Votes for this Album</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+
+
+  </li>
+</ul>
+</article>

@@ -10,21 +10,21 @@
 <section class="form">
   <%= form_for @work do |f| %>
 
-    <%= f.label :work_category %>
+    <%= f.label :Category %>
     <%= f.select :work_category, [
       "album", "book", "movie"
     ] %>
 
-    <%= f.label :work_title %>
+    <%= f.label :Title %>
     <%= f.text_field :work_title %>
 
-    <%= f.label :work_creator %>
+    <%= f.label :Creator %>
     <%= f.text_field :work_creator %>
 
-    <%= f.label :work_publication_year %>
+    <%= f.label :Publication_year %>
     <%= f.text_field :work_publication_year %>
 
-    <%= f.label :work_description %>
+    <%= f.label :Description %>
     <%= f.text_area :work_description %>
 
   <%= f.submit  %>
