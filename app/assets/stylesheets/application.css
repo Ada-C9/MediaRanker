@@ -30,6 +30,11 @@ html {
 
 body, h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
+  letter-spacing: 0.008em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 body {
@@ -53,10 +58,6 @@ section {
   display: block;
 }
 
-h1, h2, h3, h4, h5 {
-  font-weight: bold;
-}
-
 a {
   line-height: inherit;
   color: #1779ba;
@@ -64,9 +65,19 @@ a {
   cursor: pointer;
 }
 
+a, h3 {
+  color: #26A69A;
+}
+
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
   margin: 0;
   padding: 0;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: block;
 }
 
 .page-header {
@@ -125,6 +136,47 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 .float-right {
   float: right !important;
+}
+
+section.spotlight>div {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+.root-hr {
+  margin: 0px auto 75px auto;
+  color: #EEEEEE;
+}
+
+hr {
+  clear: both;
+  max-width: 75rem;
+  height: 0;
+  margin: 1.25rem auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #cacaca;
+  border-left: 0;
+  box-sizing: content-box;
+  overflow: visible;
+}
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
 }
 
 @media print, screen and (min-width: 40em)
