@@ -10,7 +10,7 @@
   <% works = @works.where(category: category) %>
   <% i = 0 %>
   <% while i < Work.num_runs(works) %>
-    <strong><%= works[i].title %></strong>
+    <strong><%= link_to works[i].title, work_path(works[i][:id]) %></strong>
     <span> by <%= works[i].creator %></span>
     <br>
     <% i += 1%>
