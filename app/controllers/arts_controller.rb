@@ -8,4 +8,12 @@ class ArtsController < ApplicationController
 
     @movies = Art.where(category: 'movie')
   end
+
+  def new
+    @art = Art.new(category: params[:category], title: params[:title])
+  end
+
+  def create
+
+  end
 end
