@@ -34,11 +34,11 @@ end
 puts "Added #{Instagram.count} instagram records"
 puts "#{instagram_failures.length} instagrams failed to save"
 
-  SUBREDDIT_FILE  = Rails.root.join('db', 'seed_data', 'subreddits.csv')
-puts "Loading raw   subreddit data from #{  SUBREDDIT_FILE }"
+  SUBREDDIT_FILE = Rails.root.join('db', 'seed_data', 'subreddits.csv')
+puts "Loading raw subreddit data from #{ SUBREDDIT_FILE }"
 
   subreddit _failures = []
-CSV.foreach(  SUBREDDIT_FILE , :headers => true) do |row|
+CSV.foreach(SUBREDDIT_FILE , :headers => true) do |row|
     subreddit = Subreddit.new
     subreddit.id = row['id']
     subreddit.title = row['title']
