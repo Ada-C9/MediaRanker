@@ -7,10 +7,10 @@ describe Work do
   end
 
   it "is invalid without a title" do
-    work = Work.new
+    works(:aja).title = nil
 
-    work.valid?.must_equal false
-    work.errors.messages.must_include :title
+    works(:aja).valid?.must_equal false
+    works(:aja).errors.messages.must_include :title
   end
 
 end
