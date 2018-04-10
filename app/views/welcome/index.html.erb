@@ -14,20 +14,38 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Albums</h3>
   <ul>
-    <li></li>
+  <% @albums.each do |album| %>
+    <li>
+      <%= album.title %> by
+      <%= album.creator %>
+    TBD votes
+    </li>
+  <% end %>
   </ul>
 </section>
 
 <section class="top-ten">
   <h3>Top Books</h3>
   <ul>
-    <li></li>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title %> by
+      <%= book.creator %>
+    TBD votes
+    </li>
+  <% end %>
   </ul>
 </section>
 
 <section class="top-ten">
   <h3>Top Movies</h3>
   <ul>
-    <li></li>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= movie.title %> by
+      <%= movie.creator %>
+    TBD votes
+    </li>
+  <% end %>
   </ul>
 </section>

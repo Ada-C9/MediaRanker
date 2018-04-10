@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
   def index
     @spotlight = Work.first
-    @movies = Work.where(category: 'movie')
-    @books = Work.where(category: 'book')
-    @albums = Work.where(category: 'album')
+    @albums = Work.where(category: 'album').take(10)
+    @books = Work.where(category: 'book').take(10)
+    @movies = Work.where(category: 'movie').take(10)
   end
 end
