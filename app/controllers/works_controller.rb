@@ -18,22 +18,31 @@ class WorksController < ApplicationController
   end
 
   def show
-    @works = Work.
+    @works = Work.find(params[:id])
   end
 
   def edit
+    @work = Work.find(params[:id])
   end
 
   def update
+    @work = Work.find(params[:id])
+    @work.assign_attributes(work_params)
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    Work.destroy(params[:id])
+    redirect_to works_path
   end
 
   private
   def work_params
     return params.require(:work).permit(:title, :publication_year, :description, :creator, :category)
-  end
   end
 
 end
