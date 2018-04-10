@@ -1,6 +1,10 @@
 class Publication < ApplicationRecord
   has_many :votes
-  
+
+  validates :category, presence: true
+  validates :title, presence: true, length: { minimum: 1 }
+  validates :category, uniqueness: {scope: [:creator, :title]}
+
   def self.find_spotlight_publication
     Publication.first
   end

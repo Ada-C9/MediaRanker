@@ -24,6 +24,8 @@ describe Publication do
     end
     it 'wont make a duplicate record' do
       duplicate_moon = Publication.new(category: "Book", title: "Sailor Moon", creator: "Naoko Takeuchi")
+
+      duplicate_moon.valid?.must_equal false
     end
   end
 
