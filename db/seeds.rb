@@ -9,10 +9,16 @@ require 'CSV'
 
 FILE = 'db/media_seeds.csv'
 
+categories = {album: Category.create!(name: 'album'), book: Category.create!(name: 'book')}
+
 unsaved = []
 CSV.read(FILE, headers: true).each do |row|
   work = Work.new
-  work.category = row['category']
+  if row['category'] == 'album'
+    work.category = categories[:album]
+  elsif row['category'] == 'book'
+    work.category = categories[:book]
+  end
   work.title = row['title']
   work.creator = row['creator']
   work.publication_year = row['publication_year'].to_i
