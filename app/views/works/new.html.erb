@@ -1,7 +1,19 @@
 <h2>Create new work</h2>
+
+<% if @work.errors.messages.length > 0 %>
+<section class="error_messages">
+  <ul>
+    <% @work.errors.messages.each do |field, problems| %>
+      <li>
+        <strong><%= field %></strong>
+        <%= problems %>
+      </li>
+      <% end%>
+  </ul>
+</section>
+<% end %>
+
 <%= form_for @work do |f| %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
