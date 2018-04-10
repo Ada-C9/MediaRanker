@@ -1,15 +1,43 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  work_title: MyString
-  work_creator: MyString
-  work_description: MyString
-  work_category: MyString
-  work_publication_year: 1
+babe:
+  work_title: Babe
+  work_creator: George Miller
+  work_description: Tale about a gallant sheep pig
+  work_category: movie
+  work_publication_year: 1995
 
-two:
-  work_title: MyString
-  work_creator: MyString
-  work_description: MyString
-  work_category: MyString
-  work_publication_year: 1
+post:
+  work_title: Post
+  work_creator: Bjork
+  work_description: Bjorks second solo studio album
+  work_category: album
+  work_publication_year: 1995
+
+dancer:
+  work_title: Dancer in the Dark
+  work_creator: Lars Von Trier
+  work_description: A terrible date movie
+  work_category: movie
+  work_publication_year: 2000
+
+aim:
+  work_title: AIM
+  work_creator: MIA
+  work_description: fifth studio album by English-Sri Lankan rapper and record producer
+  work_category: album
+  work_publication_year: 2016
+
+thinking:
+  work_title: Thinking Fast and Slow
+  work_creator:  	Daniel Kahneman
+  work_description: The central thesis is a dichotomy between two modes of thought
+  work_category: book
+  work_publication_year: 2011
+
+math:
+  work_title: Weapons of Math Destruction
+  work_creator: Cathy ONeil
+  work_description: How big data increases inequality and threatens democracy
+  work_category: book
+  work_publication_year: 2016
