@@ -11,9 +11,19 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new
   end
 
   def create
+    @work = Work.new(work_params)
+    if @work.save
+      flash[:success] = "Successfully created #{@work.category} #{@work.id}"
+      redirect_to work_path(@work)
+    else
+      # include error messages
+      flash.now[:failure] = "A problem occurred: Could not create #{@work.category}"
+      render :new
+    end
   end
 
   def edit

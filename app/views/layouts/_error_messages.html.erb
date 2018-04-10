@@ -1,0 +1,12 @@
+<section class="error-message">
+  <% model.errors.messages.each do |field, message| %>
+    <% if !message.empty? %>
+    <p>
+      ERROR:
+      <% message.each do |error| %>
+        <%= field.capitalize %> <%= error %>.
+      <% end %>
+    </p>
+    <% end %>
+  <% end %>
+</section>
