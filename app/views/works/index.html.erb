@@ -1,0 +1,39 @@
+<section>
+ <div>
+   <h2>
+     <strong>
+       List of works
+     </strong>
+   </h2>
+ </div>
+
+  <ul>
+    <h2>
+      <strong>
+        Albums
+      </strong>
+    </h2>
+    <% @works.show_albums.each do |work| %>
+    <li>
+      <%= link_to(work.title, work_path(work)) %>
+      <%= work.creator%>
+      <%= work.publication_year %>
+    </li>
+    <% end %>
+  </ul>
+
+  <ul>
+    <h2>
+      <strong>
+        Books
+      </strong>
+    </h2>
+    <% @works.show_books.each do |work| %>
+    <li>
+      <%= link_to(work.title, work_path(work)) %>
+      <%= work.creator%>
+      <%= work.publication_year %>
+    </li>
+    <% end %>
+  </ul>
+</section>

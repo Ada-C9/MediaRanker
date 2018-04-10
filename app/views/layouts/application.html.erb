@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
+  <header>
+    Media Ranker
+  </header>
 
-    <%= yield %>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", works_path %></li>
+      <li><%= link_to "All Works", works_path %></li>
+      <li><%= link_to "Add a new work", new_work_path %></li>
+      <li><%= link_to "All Users", users_path %></li>
+    </ul>
+  </nav>
+  <%= yield %>
 
-  </body>
+</body>
 </html>
