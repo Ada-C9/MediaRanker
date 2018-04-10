@@ -1,0 +1,21 @@
+<section>
+  <h3><%= @work.title %></h3>
+  <p>
+    Created_by: <%= @work.created_by %>
+  </p>
+  <p>
+    Published: <%= @work.published_year %>
+  </p>
+  <p>
+    Description: <%= @work.description %>
+  </p>
+
+</section>
+
+<section>
+  <%= link_to 'Back to ranks',root_path, class:'button' %>
+  <%= link_to 'Edit',edit_work_path, class:'button' %>
+  <%= link_to 'Upvote', root_path, class:'button' %>
+  <%= link_to 'Delete',work_path, method: :delete,  class:'alert button'%>
+
+</section>
