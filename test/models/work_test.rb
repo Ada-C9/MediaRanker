@@ -1,9 +1,15 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new }
+  describe "validations" do
 
-  it "must be valid" do
-    value(work).must_be :valid?
-  end
+    it "must have a title" do
+      new_work = Work.new
+
+      result = new_work.valid?
+
+      result.must_equal false
+    end
+
+  end # validationts
 end
