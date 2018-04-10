@@ -1,5 +1,4 @@
-class VotesController < ApplicationController
-
+class VoteinfosController < ApplicationController
   def index
 
   end
@@ -27,5 +26,4 @@ class VotesController < ApplicationController
   def destroy
 
   end
-
 end
