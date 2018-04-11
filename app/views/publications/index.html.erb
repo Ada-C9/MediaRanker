@@ -1,36 +1,79 @@
-<main>
-<section class="publication-container">
-  <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Movies</th>
-      </tr>
-      <% @movies.each do |movie| %>
-      <tr><%= movie.title %> by <%= movie.creator%> </tr>
-      <% end %>
-  </section>
+<main class="row">
+  <h3>List of works</h3>
 
-  <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Books</th>
-      </tr>
-      <% @books.each do |book| %>
-      <tr><td><%= book.title %> by <%= book.creator %></td> </tr>
-      <% end %>
-  </section>
+  <section class="media-table">
+      <table>
+        <thead>
+          <h4>Albums</h4>
+          <tr>
+            <th width=80>Votes</th>
+            <th>Title</th>
+            <th>Created By</th>
+            <th width=100>Published</th>
+            <th width=100>Upvote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @albums.each do |album| %>
+            <tr>
+              <td>27</td>
+              <td><%= album.title %></td>
+              <td><%=album.creator%></td>
+              <td>2300</td>
+              <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Albums</th>
-      </tr>
-      <% @albums.each do |album| %>
-      <tr><td><%= album.title %> by <%=album.creator%></td></tr>
-      <% end %>
-  </section>
-</section>
+
+      <table>
+        <thead>
+          <h4>Books</h4>
+          <tr>
+            <th width=80>Votes</th>
+            <th>Title</th>
+            <th>Created By</th>
+            <th width=100>Published</th>
+            <th width=100>Upvote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td>27</td>
+              <td><%= book.title %></td>
+              <td><%= book.creator %></td>
+              <td>2300</td>
+              <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      <table>
+        <thead>
+          <h4>Movies</h4>
+          <tr>
+            <th width=80>Votes</th>
+            <th>Title</th>
+            <th>Created By</th>
+            <th width=100>Published</th>
+            <th width=100>Upvote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @movies.each do |movie| %>
+            <tr>
+              <td>27</td>
+              <td><%= movie.title %></td>
+              <td><%= movie.creator %></td>
+              <td>2300</td>
+              <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
 </main>
