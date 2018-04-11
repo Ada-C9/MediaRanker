@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  creator: MyString
-  published: 1
-  description: MyString
-  category: MyString
+work1:
+  title: My first book
+  creator: Me
+  published: 1990
+  description: my first book is about this
+  category: book
 
-two:
-  title: MyString
-  creator: MyString
-  published: 1
-  description: MyString
-  category: MyString
+work2:
+  title: My second book
+  creator: You
+  published: 2017
+  description: and this book is about something else
+  category: book

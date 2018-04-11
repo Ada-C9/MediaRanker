@@ -4,7 +4,7 @@ class Work < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :creator, presence: true
-  validates :published, format: { with: /\d{4}/ }, numericality: { less_than_or_equal_to: 2018 }
+  validates :published, format: { with: /\d{4}/ }, numericality: { less_than_or_equal_to: Time.now.strftime("%Y").to_i }
 
   def self.make_category_hash
     categories = []

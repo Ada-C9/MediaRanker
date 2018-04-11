@@ -9,7 +9,7 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    @work.published.to_i
+    # @work.published.to_i
     if @work.save
       # flash[:success] = "Work Created"
       redirect_to works_path
