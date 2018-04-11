@@ -5,4 +5,8 @@ class Work < ApplicationRecord
 
   validates :title, presence: {message: "Please provide a title"}
   validates :title, uniqueness: {message: "Work already exists" }
+
+  def self.valid_category
+    %w[album book movie]
+  end
 end
