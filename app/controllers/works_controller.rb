@@ -4,7 +4,7 @@ class WorksController < ApplicationController
     @works = Work.all
 
     @albums = Work.where(category:'album')
-    
+
     @books = Work.where(category:'book')
 
     @movies = Work.where(category:'movie')
@@ -16,6 +16,13 @@ class WorksController < ApplicationController
 
   def create
     work = Work.new(work_params)
+
+    if work.save
+      flash[:success] = 'Work added successfully'
+      redirect_to works_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -35,11 +42,13 @@ class WorksController < ApplicationController
 
     if work.save
       redirect_to work_path(work)
+    else
+      render :edit
     end
   end
 
   def destroy
-    @work = Work.find(params[:id])
+    Work.destroy(params[:id])
 
     redirect_to works_path
   end

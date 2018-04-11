@@ -16,6 +16,6 @@
   <%= link_to 'Back to ranks',root_path, class:'button' %>
   <%= link_to 'Edit',edit_work_path, class:'button' %>
   <%= link_to 'Upvote', root_path, class:'button' %>
-  <%= link_to 'Delete',work_path, method: :delete,  class:'alert button'%>
+  <%= link_to 'Delete',work_path, method: :delete, data: {confirm: "Are you sure?"}, class:'alert button'%>
 
 </section>

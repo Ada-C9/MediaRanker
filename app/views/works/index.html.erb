@@ -19,20 +19,19 @@
     <strong>Upvote</strong>
   </th>
   <tr>
-    <% @works.each do |work| %>
-    <% work.category == :album%>
+    <% @albums.each do |album| %>
     <tr>
       <td>
-        <%= work.votes.name %>
+        <%= album.votes.name %>
       </td>
       <td>
-        <%= link_to work.title, work_path(work)%>
+        <%= link_to album.title, work_path(album)%>
       </td>
       <td>
-        <%=work.created_by%>
+        <%=album.created_by%>
       </td>
       <td>
-        <%=work.published_year%>
+        <%=album.published_year%>
       </td>
       <td>
         <%= link_to 'Upvote', class:'button'%>
