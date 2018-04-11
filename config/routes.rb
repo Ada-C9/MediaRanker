@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :works
+  resources :works do
+    resources :votes, only: [:create]
+  end
 
-  resources :votes
+  # resources :votes
 
 end
 
