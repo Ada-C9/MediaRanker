@@ -13,3 +13,17 @@ work2:
   published: 2017
   description: and this book is about something else
   category: book
+
+work3:
+  title: my first album!
+  creator: someone
+  published: 2000
+  description: super good i promise
+  category: album
+
+work4:
+  title: movie here
+  creator: anyone
+  published: 2001
+  description: super good i promise
+  category: movie
