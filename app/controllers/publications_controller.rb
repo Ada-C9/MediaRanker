@@ -16,17 +16,24 @@ class PublicationsController < ApplicationController
   end
 
   def destroy
+
   end
 
   def new
     @publication = Publication.new
-
   end
 
   def edit
+    @publication = Publication.find(params[:id])
   end
 
   def update
+    @publication = Publication.find_by(id: params[:id])
+    if !@publication.nil?
+      @publication.update(publication_params) ? (redirect_to publication_path(@publication.id)) : (render :edit)
+    else
+      redirect_to publications_path
+    end
   end
 
   private

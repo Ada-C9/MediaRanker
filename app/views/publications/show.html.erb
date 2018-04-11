@@ -5,7 +5,7 @@
  <p>Description: <%= @publication.description %></p>
  <section>
    <a class="button" href="/">Back to media ranks</a>
-   <a class="button" href="/works/314/edit">Edit</a>
+   <a class="button" href="/publications/<%= @publication.id %>/edit">Edit</a>
    <a class="button" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a>
    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/314">Delete</a>
  </section>
