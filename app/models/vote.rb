@@ -3,9 +3,8 @@ class Vote < ApplicationRecord
   belongs_to :users
 
 
-  def tally_votes
+  def upvote
     votes += 1
-
     return votes
   end
 
