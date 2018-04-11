@@ -2,10 +2,11 @@ class WorksController < ApplicationController
   include GetUsername
   before_action :get_username
 
+  # before action for top and index?
   def top
-    @top_albums = Work.top_10(categorize('album'))
-    @top_books = Work.top_10(categorize('book'))
-    @top_movies = Work.top_10(categorize('movie'))
+    @top_albums = Work.order_by_vote(categorize('album')).first(10)
+    @top_books = Work.order_by_vote(categorize('book')).first(10)
+    @top_movies = Work.order_by_vote(categorize('movie')).first(10)
     @top = Work.top_work
   end
 
@@ -15,9 +16,9 @@ class WorksController < ApplicationController
     elsif params[:albums]
       @albums = Work.where(category_id: categorize('album'))
     else
-      @albums = Work.where(category_id: categorize('album'))
-      @books = Work.where(category_id: categorize('book'))
-      @movies = Work.where(category_id: categorize('movie'))
+      @albums = Work.order_by_vote(categorize('album'))
+      @books = Work.order_by_vote(categorize('book'))
+      @movies = Work.order_by_vote(categorize('movie'))
     end
   end
 

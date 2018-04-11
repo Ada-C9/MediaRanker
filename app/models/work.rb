@@ -9,9 +9,14 @@ class Work < ApplicationRecord
     return self.all.max_by { |work| work.votes.length }
   end
 
-  def self.top_10(category_id)
+  # def self.top_10(category_id)
+  #   category = Work.where(category_id: category_id)
+  #   ordered = category.order_by_vote(category_id)
+  #   return ordered.first(10)
+  # end
+
+  def self.order_by_vote(category_id)
     category = Work.where(category_id: category_id)
-    ordered = category.sort_by {|work| work.votes.count}.reverse
-    return ordered.first(10)
+    return category.sort_by {|work| work.votes.count}.reverse
   end
 end
