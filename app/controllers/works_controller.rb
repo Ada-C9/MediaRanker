@@ -33,6 +33,15 @@ class WorksController < ApplicationController
   end
 
   def update
+    if !@work.nil?
+      if @work.update(work_params)
+        redirect_to work_path(@work.id)
+      else
+        render :edit
+      end
+    else
+      redirect_to works_path
+    end
   end
 
   def destroy
