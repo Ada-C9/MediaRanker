@@ -3,3 +3,10 @@
 <p>Created By: <%= @work.creator %></p>
 <p>Published: <%= @work.published %></p>
 <p>description: <%= @work.description %></p>
+
+<ul>
+  <li><%=link_to "Back to Media Ranks", root_path %></li>
+  <li><%=link_to "Edit Work", edit_work_path %></li>
+  <li><%=link_to "Delete Work", work_path(@work.id), method: :delete %></li>
+  <li><%=link_to "Upvote" %></li>
+</ul>
