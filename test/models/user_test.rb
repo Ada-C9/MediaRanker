@@ -2,13 +2,13 @@ require "test_helper"
 
 describe User do
 
-  it "has an a name" do
+  it "has a name" do
     user = users(:bob)
     user.name.must_equal "bobbins123"
   end
 
   it "requires a name" do
-    user = User.new(name:"")
+    user = User.new
     user.valid?.must_equal false
     user.errors.must_include :name
   end

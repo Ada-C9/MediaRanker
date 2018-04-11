@@ -1,7 +1,6 @@
 require "test_helper"
 
 describe Publication do
-  let(:publication) { Publication.new }
 
   describe 'publication' do
 
