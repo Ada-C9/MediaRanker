@@ -16,8 +16,8 @@ describe Work do
       works(:aja).errors.messages.must_include :title
     end
 
-    it "is invalid if the title is empty string" do
-      works(:aja).title = ""
+    it "is invalid if title is a string with only spaces" do
+      works(:aja).title = "     "
 
       works(:aja).valid?.must_equal false
       works(:aja).errors.messages.must_include :title
@@ -37,7 +37,7 @@ describe Work do
       works(:aja).votes.count.must_equal 1
     end
 
-    it "can destroy votes through Work destroy action" do
+    it "can destroy votes through destroying work" do
       votes = works(:aja).votes
 
       votes.wont_equal []
