@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head class="page-header">
-    <h2>
+    <!-- <h2>
       <strong>Media Ranker</strong>
       <small> | Ranking the Best of Everything </small>
-    </h2>
+    </h2> -->
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <header>
+    <header class="page-header row">
+      <h2>
+        <strong>Media Ranker</strong>
+        <small>  Ranking the Best of Everything </small>
+      </h2>
       <nav>
 
             <%= link_to "View top media", root_path, class: "button" %>
@@ -23,9 +27,11 @@
 
             <%= link_to "View all users", users_path, class: "button" %>
 
+            <div class="float-right">
             <%= link_to "Login", new_user_path, class: "button" %>
+            </div>
             <!-- not sure how Login works yet, also if these need to be buttons -->
-      
+
       </nav>
     </header>
     <%= yield %>

@@ -1,0 +1,20 @@
+<h2><%= page_title %></h2>
+
+<%= form_for @work do |f| %>
+  <%= f.label "Category" %>
+  <%= f.select :category, [ 'album', 'book', 'movie', 'banana'], :prompt => 'Select One' %>
+
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label "Creator" %>
+  <%= f.text_field :creator %>
+
+  <%= f.label "Publication Year" %>
+  <%= f.text_field :publication_year %>
+
+  <%= f.label "Description" %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
+<% end %>
