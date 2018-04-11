@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :works
 
-  root 'works#index'
+  root 'works#home'
 end
