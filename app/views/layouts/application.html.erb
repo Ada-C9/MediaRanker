@@ -37,11 +37,20 @@
       </nav>
     </header>
 
-    <section class="row status">
-      <% flash.each do |name, message| %>
-      <div class="<%= name %>"><%= message %></div>
-      <% end %>
-    </section>
+    <% if !flash.empty? %>
+      <section class="row status">
+        <% flash.each do |name, message| %>
+          <div class="<%= name %>"><%= message %></div>
+        <% end %>
+
+        <% if @user %>
+          <%= relay_errors(@user) %>
+        <% elsif @work %>
+          <%= relay_errors(@work) %>
+        <% end %>
+
+      </section>
+    <% end %>
 
     <main>
       <%= yield %>
