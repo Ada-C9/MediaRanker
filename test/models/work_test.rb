@@ -27,14 +27,17 @@ describe Work do
     movie.valid?.must_equal false
   end
 
-  # it "has validation for uniqueness" do
-  #   book1 = book.works(:hp)
-  #   book2 = works(:hp)
-  #
-  #   book1.valid?.must_equal true
-  #   book2.valid?.must_equal false
-  #
-  # end
+  it "has validation for uniqueness but only scoped to category" do
+    book1 = Work.create({ category: "book", title: "The Alchemist", creator: "Paulo Coelho", publication_year: 1988, description: "A fable about destiny"})
+    book1.valid?.must_equal true
+
+    book2 = Work.create({ category: "book", title: "The Alchemist", creator: "Paulo Coelho", publication_year: 1988, description: "A fable about destiny"})
+    book2.valid?.must_equal false
+
+    movie1 = Work.create({ category: "movie", title: "The Alchemist", creator: "Paulo Coelho", publication_year: 1988, description: "A fable about destiny"})
+    movie1.valid?.must_equal true
+
+  end
 
   it "has validation for empty category" do
     book.category = nil
@@ -139,7 +142,5 @@ describe Work do
     album.valid?.must_equal true
     movie.valid?.must_equal true
   end
-
-
 
 end
