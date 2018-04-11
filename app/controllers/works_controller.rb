@@ -15,10 +15,10 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:success] = "Successfully saved #{params[:category]} #{params[:work_id]}"
-      redirect_to work_path(params[:id])
+      flash[:success] = "Successfully saved #{work_params[:category]} #{work_params[:id]}"
+      redirect_to work_path(work_params[:id])
     else
-      flash[:failure] = "A problem occurred: Could not create #{params[:category]}"
+      flash[:failure] = "A problem occurred: Could not create #{work_params[:category]}"
       render :new
     end
   end

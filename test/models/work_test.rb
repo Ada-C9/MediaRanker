@@ -3,7 +3,7 @@ require "test_helper"
 describe Work do
   describe 'validations' do
      before do
-       @work = Work.new(title: 'test movie', category: movie)
+       @work = Work.new(title: 'test movie', category: 'movie')
      end
 
      it 'can be created with all required fields' do
