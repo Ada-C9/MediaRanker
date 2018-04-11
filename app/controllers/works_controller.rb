@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
+  # before_action :find_user
   def index
     # @media = Work.all
 
@@ -8,8 +10,9 @@ class WorksController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @work = Work.find(id)
+    # id = params[:id]
+    # @work = Work.find(id)
+    #  no need for it anymore since added controller filter
   end
 
   def new
@@ -29,12 +32,11 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find_by(id: params[:id])
+    # @work = Work.find_by(id: params[:id])
   end
 
   def update
-    @work = Work.find_by(id: params[:id])
-
+    # @work = Work.find_by(id: params[:id])
     if !@work.nil?
       if @work.update(work_params)
         flash[:sucess] = "Successfully updated #{@work.category} #{@work.title}"
@@ -49,20 +51,25 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    begin
-      @work = Work.find(params[:id])
-      if @work
-        @work.destroy
-      end
+    if @work
+      @work.destroy
       flash[:sucess] = "Successfully destroyed #{@work.category} #{@work.title} "
-    rescue
+    else
       flash[:alert] = "Work does not exist"
     end
     redirect_to root_path
   end
 
+  private
+
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    # a method to DRY other methods
+    # see line with before_action at top of file.
+    @work = Work.find_by_id(params[:id])
   end
 
 end
