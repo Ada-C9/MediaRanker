@@ -24,6 +24,10 @@ class Work < ApplicationRecord
     return find_votes_received
   end
 
+  def return_votes_count
+    return count_votes_received
+  end
+
   private
 
   def find_all_works
@@ -44,6 +48,10 @@ class Work < ApplicationRecord
 
   def find_votes_received
     return self.upvotes
+  end
+
+  def count_votes_received
+    return self.upvotes.count
   end
 
 end
