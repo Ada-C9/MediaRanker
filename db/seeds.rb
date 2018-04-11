@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'CSV'
+require 'csv'
 
 FILE = Rails.root.join('db', 'media_seeds.csv')
 
-categories =  {album: Category.create!(name: 'album'), book: Category.create!(name: 'book')}
+categories =  {album: Category.find_by(name: 'album'), book: Category.find_by(name: 'book')}
 
 unsaved = []
 CSV.read(FILE, headers: true).each do |row|
