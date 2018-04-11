@@ -49,7 +49,15 @@ describe Work do
   end
 
   describe 'Methods' do
+    describe 'total_votes' do
+      it 'returns the right vote count' do
+        works(:parable).total_votes.must_equal 2
+      end
 
+      it 'returns 0 if no vote exists' do
+        works(:coco).total_votes.must_equal 0
+      end
+    end
   end
 
 end

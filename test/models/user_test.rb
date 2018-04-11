@@ -49,7 +49,15 @@ describe User do
   end
 
   describe 'Methods' do
+    describe 'total_votes' do
+      it 'returns the right vote count' do
+        users(:user_4).total_votes.must_equal 2
+      end
 
+      it 'returns 0 if no vote exists' do
+        users(:user_3).total_votes.must_equal 0
+      end
+    end
   end
 
 end
