@@ -8,12 +8,12 @@
 <ul>
   <li><%= link_to "Back to media ranks", root_path%>  </li>
   <li><%= link_to "Edit", edit_work_path%>  </li>
-  <li><%= link_to "Upvote", root_path%>  </li>
+  <li><%= link_to "Upvote", new_vote_path%>  </li>
   <li><%= link_to "Delete", delete_work_path, method: :delete%>  </li>
 </ul>
 
 
-<h3> Votes for this <%= @work.category.capitalize %></h3>
+<h3> <%= @work.votes.length %> Votes for this <%= @work.category.capitalize %></h3>
 
 <table>
   <thead>
@@ -24,8 +24,11 @@
   </thead>
   <tbody>
     <tr>
-      <td>Put user</td>
-      <td>Put vote date</td>
+      <% @work.votes.each do |vote| %>
+
+      <td><%= vote.user %></td>
+      <td><%= vote.created_at.strftime("%B %d, %Y") %></td>
+      <% end %>
     </tr>
   </tbody>
 </table>
