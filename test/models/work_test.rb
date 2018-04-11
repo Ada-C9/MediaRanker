@@ -27,6 +27,15 @@ describe Work do
     movie.valid?.must_equal false
   end
 
+  # it "has validation for uniqueness" do
+  #   book1 = book.works(:hp)
+  #   book2 = works(:hp)
+  #
+  #   book1.valid?.must_equal true
+  #   book2.valid?.must_equal false
+  #
+  # end
+
   it "has validation for empty category" do
     book.category = nil
     book.valid?.must_equal false
@@ -118,6 +127,11 @@ describe Work do
     movie.valid?.must_equal false
     movie.creator = ""
     movie.valid?.must_equal false
+  end
+
+  it "checks description can be max 500" do
+    book.description = (0...505).map { ('a'..'z').to_a[rand(26)] }.join
+    book.valid?.must_equal false
   end
 
   it "returns true if valid" do
