@@ -12,13 +12,12 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new(work_params)
+    @work = Work.create(work_params)
     if @work.save
-      flash[:success] = "#{@work.title} saved"
-      redirect_to works_path
+      flash[:success] = "#{@work.title} created"
+      redirect_to work_path(@work.id)
     else
       flash.now[:alert] = @work.errors
-
       render :new
     end
   end
@@ -39,8 +38,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    return
-    params.require(:work).permit(:creator, :publication_year, :title)
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
 
   end
 end
