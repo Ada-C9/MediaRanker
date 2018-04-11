@@ -1,4 +1,5 @@
 class Work < ApplicationRecord
+    has_many :upvotes
   validates :work_title, presence: true #uniqueness
   validates :work_creator, presence: true
   validates :work_category, presence: true

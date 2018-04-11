@@ -7,8 +7,8 @@ babe:
   work_category: movie
   work_publication_year: 1995
 
-post:
-  work_title: Post
+debut:
+  work_title: Debut
   work_creator: Bjork
   work_description: Bjorks second solo studio album
   work_category: album
@@ -62,5 +62,5 @@ inc_album:
   work_title: Weapons of Math Destruction
   work_creator: Cathy ONeil
   work_description: How big data increases inequality and threatens democracy
-  work_category: 
+  work_category:
   work_publication_year: 2016
