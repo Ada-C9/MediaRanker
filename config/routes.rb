@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :votes
+  get '/login', to:'sessions#new', as:'login'
+  post '/login', to:'sessions#create'
 
-  get "work/:id/votes", to: "votes#create", as: "create_vote"
-  post "work/:id/votes", to: "votes#create"
+  delete '/logout', to:'sessions#destroy', as: 'logout'
+
+  post "work/:id/votes", to: "votes#create", as: "create_vote"
+
 end
