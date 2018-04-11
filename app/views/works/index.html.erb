@@ -18,7 +18,7 @@
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td>
-      <a class="button upvote" rel="nofollow" data-method="post" href="/works/id/upvote">Upvote</a>
+      <a class="button upvote" href="create_vote_path">Upvote</a>
       </td>
     </tr>
     <% end %>
