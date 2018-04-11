@@ -91,7 +91,6 @@ raw_movies = [
 ]
 
 movie_failures = []
-
 raw_movies.each do |movie|
   work = Work.new
   work.category = movie[:category]
@@ -107,3 +106,20 @@ raw_movies.each do |movie|
     puts "created work: #{work.inspect}"
   end
 end
+
+raw_users = %W[James David Christopher John Ronald Richard Daniel Mary Jennifer Lisa Sandra Coco Jane]
+
+user_failures = []
+raw_users.each do |user|
+  new_user = User.new
+  new_user.name = user
+  successful = new_user.save
+  if !successful
+    user_failures << new_user
+    puts "Failed to save new user: #{new_user.inspect}"
+  else
+    puts "created new user: #{new_user.inspect}"
+  end
+end
+
+puts "Done"

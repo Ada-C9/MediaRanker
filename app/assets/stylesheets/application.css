@@ -22,10 +22,10 @@ ul {
   list-style-type: none;
 }
 
-body nav ul li{
-  display: inline-block;
-}
-
 header {
   text-align: center;
+}
+
+.nav_bar {
+  padding: 25px 20px;
 }
