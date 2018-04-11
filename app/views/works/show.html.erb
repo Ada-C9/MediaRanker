@@ -15,7 +15,7 @@
 <%@work.votes.zip(@work.users).each do |vote,user|%>
 <tr>
   <td><%=user.name%></td>
-  <td><%=vote.vote_date%></td>
+  <td><%=vote.created_at%></td>
 </tr>
 <%end%>
 </table>
