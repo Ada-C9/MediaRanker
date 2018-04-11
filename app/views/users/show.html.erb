@@ -1,4 +1,4 @@
-<h3>User Summary: <%= link_to @user.user, user_path(@user) %></h3>
+<h3>User Summary: <%= link_to @user.name, user_path(@user) %></h3>
 <p>Joined site <%=  @user.created_at %></p>
 
 <h4>Votes</h4>
@@ -15,11 +15,11 @@
   <tbody>
     <% @user.votes.each do |vote| %>
       <tr>
-        <td>link_to vote.work.title, work_path(vote.work) </td>
-        <td>vote.work.creator</td>
-        <td>vote.work.publication_year</td>
-        <td>vote.work.category.capitalize</td>
-        <td>vote.created_at </td>
+        <td><%= link_to vote.work.title, work_path(vote.work) %> </td>
+        <td><%= vote.work.creator%></td>
+        <td><%= vote.work.publication_year%></td>
+        <td><%= vote.work.category.capitalize%></td>
+        <td><%= vote.created_at %></td>
       </tr>
     <% end %>
   </tbody>

@@ -53,8 +53,10 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
     # @current_user = User.find_by(id: session[:user_id])
 
-    if @current_user
-      vote = Vote.new(user: @login_user, work: @work)
+    if session[:user_id]
+      @current_user = User.where(id: session[:user_id]).first
+
+      vote = Vote.new(user: @current_user, work: @work)
       if vote.save
         flash.notice = "Successfully upvoted #{@work.title}"
       else
