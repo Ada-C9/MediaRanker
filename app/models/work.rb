@@ -1,4 +1,6 @@
 class Work < ApplicationRecord
+  has_many :upvotes
+
   validates :title, presence: true, uniqueness: { scope: [:category]}
   validates :category, presence: true
   validates :publication_year, presence: true, numericality: { only_integer: true,  }, length: {is: 4 }
