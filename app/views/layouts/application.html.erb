@@ -15,13 +15,18 @@
 
 
 <body>
-  <header>
-    <div>
-      <%=link_to "View top media", works_path, method: :get%>
-      <%=link_to "View all media", works_path, method: :get%>
-      <%=link_to "Add a new work", new_work_path, method: :get%>
-      <%=link_to "View all users", new_work_path, method: :get%>
-    </div>
+  <header class ="page-header row">
+    <h2>Media Ranker <small>Ranking the Best of Everything</small></h2>
+    <nav>
+      <a class="button" href="/">View top media</a>
+      <a class="button" href="/works">View all media</a>
+      <a class="button" href="/works/new">Add a new work</a>
+      <a class="button" href="/users">View all users</a>
+      <div class="float-right">
+        <a class="button" href="/users/id">Logged in as</a>
+        <a class="button" rel="nofollow" data-method="post" href="/">Log Out</a>
+      </div>
+    </nav>
   </header>
 
   <main>
