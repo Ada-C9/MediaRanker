@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   def edit
+    @work = Work.find_by(id: params[:id])
   end
 
   def index
@@ -10,14 +11,14 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
   end
 
   def create
   end
 
   def destroy
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
     if @work != nil
       @work.destroy
     end
