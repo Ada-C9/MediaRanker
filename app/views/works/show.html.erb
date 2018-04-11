@@ -9,24 +9,28 @@ Published: <%=@work.year%>
     <%= link_to "Upvote", vote_path(@work.id), method: :post%>
     <%= link_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"}%>
 
-  <%=@work.votes.count%> Votes for this <%=@work.category.capitalize%>
-  <table>
-      <tr>
-        <th>
-          User
-        </th>
-        <th>
-          Date
-        </th>
-      </tr>
-      <%@work.votes.each do |vote| %>
-      <tr>
-        <td>
-          <%= link_to vote.user.name, user_path(vote.user.id)%>
-        </td>
-        <td>
-          <%=vote.created_at%> <%#need to get this to be the date in english%>
-        </td>
-      </tr>
-      <%end%>
-  </table>
+    <h3><%=@work.votes.count%> Votes for this <%=@work.category.capitalize%></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            User
+          </th>
+          <th>
+            Date
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@work.votes.each do |vote| %>
+          <tr>
+            <td>
+              <%=vote.user.name%>
+            </td>
+            <td>
+              <%=vote.created_at%> <%#need to get this to be the date in english%>
+            </td>
+          </tr>
+          <%end%>
+      </tbody>
+    </table>

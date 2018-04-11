@@ -1,14 +1,21 @@
+<!-- spotlight -->
+<%@top_work = Work.top%>
+<h3>Work Spotlight: <%= link_to @top_work.title, work_path(@top_work.id) %> by: <%= @top_work.created_by %></h3>
+<p>
+  <%=@top_work.votes.count%> votes <%= @top_work.description%>
+</p>
+
 <section>
 <% @types.each do |type| %>
-  <h3>Top <%= type.capitalize %>s</h3>
-    <ul>
-      <% Work.top_ten(type.to_sym).each do |work| %>
-      <li>
-        <h4><%=link_to work.title, work_path(work.id)%> by <%=work.created_by%></h4>
-        <%= work.votes.count %> votes
-        <%= link_to "Upvote", vote_path(work.id), method: :post %>
-      </li>
-      <%end%>
-    </ul>
+<h3>Top <%= type.capitalize %>s</h3>
+<ul>
+  <% Work.top_ten(type.to_sym).each do |work| %>
+  <li>
+    <h4><%=link_to work.title, work_path(work.id)%> by <%=work.created_by%></h4>
+    <%= work.votes.count %> votes
+    <%= link_to "Upvote", vote_path(work.id), method: :post %>
+  </li>
+  <%end%>
+</ul>
 </section>
 <% end %>
