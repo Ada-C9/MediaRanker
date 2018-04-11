@@ -1,1 +1,29 @@
 <h1>Works#index</h1>
+
+<section>
+<ul class='works-view'>
+  <li class='columns'>
+    <a>Votes</a> <a>Title</a><a>Created By</a><a>Year Released</a><a>Upvote</a>
+  </li>
+  <% @works.each do |work| %>
+
+    <li>
+      <span>
+      <a> # of votes </a>
+      </span>
+      <span>
+      <%= link_to work.title, work_path(work[:id]) %>
+      </span>
+      <span>
+      <%= work.creator %>
+      </span>
+      <span>
+      <%= work.year_released %>
+      </span>
+      <span>
+      <%= link_to work.title, work_path(work[:id]) %>
+      </span>
+    </li>
+  <% end%>
+</ul>
+</section>

@@ -5,7 +5,7 @@ class VotesController < ApplicationController
 
   def show
     id = params[:id]
-    @vote = votes.find(id)
+    @vote = Vote.find(id)
   end
 
   def new
@@ -16,7 +16,7 @@ class VotesController < ApplicationController
     vote = Vote.new(vote_params)
 
     if vote.save #it worked
-      redirect_to votes_path
+      redirect_to root_path
     else
       render :new
     end
@@ -25,7 +25,7 @@ class VotesController < ApplicationController
   def edit
     @vote = Vote.find_by(id: params[:id])
     if @vote.nil?
-      redirect_to votes_path
+      redirect_to root_path
     end
   end
 
