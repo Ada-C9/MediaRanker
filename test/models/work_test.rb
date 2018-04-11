@@ -22,12 +22,12 @@ describe Work do
       work2.errors.messages.must_include :category
     end
 
-    it "is not valid when work titles are not unique" do
-      work2_title = work2.title
-      creator = "me"
-      dup_work = Work.create(title: work2_title, creator: creator)
-      dup_work.valid?.must_equal false
-    end
+    # it "is not valid when work titles are not unique" do
+    #   work2_title = work2.title
+    #   creator = "me"
+    #   dup_work = Work.create(title: work2_title, creator: creator)
+    #   dup_work.valid?.must_equal false
+    # end
 
     it "is not valid when published field is not 4 digit integer <= current year" do
       work1.published = "not a year"

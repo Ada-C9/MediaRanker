@@ -2,8 +2,7 @@ class Work < ApplicationRecord
   has_many :votes
   has_many :users, through: :votes
 
-  validates :title, presence: true, uniqueness: true
-  validates :creator, :category, presence: true
+  validates :title, :creator, :category, presence: true
   validates :published, format: { with: /\d{4}/ }, numericality: { less_than_or_equal_to: Time.now.strftime("%Y").to_i }
 
   def self.make_category_hash
