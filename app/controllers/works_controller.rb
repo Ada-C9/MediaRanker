@@ -1,11 +1,9 @@
 class WorksController < ApplicationController
-  def index
-    def index
-      @albums = Work.where(category: "album")
-      @books  = Work.where(category: "book")
-      @movies = Work.where(category: "movie")
-    end
 
+  def index
+    @albums = Work.where(category: "album")
+    @books  = Work.where(category: "book")
+    @movies = Work.where(category: "movie")
   end
 
   def show
@@ -13,9 +11,16 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new
   end
 
   def create
+    @work = Work.new(work_params)
+    if @work.save
+      redirect_to root_path
+    else
+      render :new
+    end  
   end
 
   def edit
