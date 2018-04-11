@@ -6,4 +6,60 @@ up_one:
 
 up_two:
   work: debut
+  user: peanut
+
+up_three:
+  work: babe
+  user: peanut
+
+up_four:
+  work: aim
+  user: peanut
+
+up_five:
+  work: babe
   user: pickles
+
+up_six:
+  work: dancer
+  user: pickles:
+
+up_seven:
+  work: math
+  user: pickles
+
+up_eight:
+  work: debut
+  user: pickles
+
+up_nine:
+  work: dancer
+  user: pete
+
+up_ten: aim
+  work: babe
+  user: pete
+
+up_eleven:
+  work: math
+  user: pete
+
+up_twelve:
+  work: thinking
+  user: pete
+
+up_thirteen:
+  work: babe
+  user: petunia
+
+up_fourteen:
+  work: aim
+  user: petunia
+
+up_fifeteen:
+  work: debut
+  user: petunia
+
+up_sixteen:
+  work: thinking
+  user: petunia
