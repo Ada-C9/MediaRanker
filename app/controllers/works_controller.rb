@@ -1,8 +1,4 @@
 class WorksController < ApplicationController
-  def home
-    @works = Work.all
-  end
-
   def index
     @works = Work.all
   end
@@ -44,6 +40,11 @@ class WorksController < ApplicationController
     Work.destroy(params[:id])
 
     redirect_to works_path
+  end
+
+  def home
+    @spotlight = Work.top_work
+    @works = Work.all
   end
 
   private

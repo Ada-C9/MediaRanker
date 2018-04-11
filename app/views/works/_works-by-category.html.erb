@@ -1,7 +1,2 @@
-<ul>
-  <li><%= item.votes.count %></li>
-  <li><%= link_to "#{item.title}", item %></li>
-  <li><%= item.creator %></li>
-  <li><%= item.publication_year %></li>
-  <li>Upvote</li>
-</ul>
+<h3><%= link_to "#{item.title}", item %> by <%= "#{item.creator}" %></h3>
+<p><%= item.votes.count %> votes</p>
