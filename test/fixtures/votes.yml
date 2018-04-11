@@ -20,3 +20,8 @@ three:
   date: Date.today
   user: richard
   work: three
+
+four:
+  date: Date.today
+  user: richard
+  work: two

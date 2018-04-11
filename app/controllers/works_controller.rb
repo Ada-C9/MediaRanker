@@ -36,8 +36,10 @@ class WorksController < ApplicationController
     @work.assign_attributes(work_params)
     if @work.save
       redirect_to work_path(@work)
+      flash[:success] = "Successfully updated"
     else
       render :edit
+      flash.now[:failure] = "Failed to update"
     end
   end
 

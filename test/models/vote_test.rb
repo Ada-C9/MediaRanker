@@ -3,7 +3,7 @@ require "test_helper"
 describe Vote do
   describe "relations" do
     before do
-      @vote = users(:jane)
+      @vote = votes(:one)
     end
     it "is valid when a vote connects a user" do
       user = User.first
