@@ -1,24 +1,78 @@
-<h1>List of Works</h1>
+<h3>List of Works</h3>
+<section class="media-table">
+  <h4>Albums</h4>
+  <table>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Upvote</th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Votes</th>
-    <th>Title</th>
-    <th>Created By</th>
-    <th>Published</th>
-    <th>Upvote</th>
-  </tr>
+    <% Work.all_albums.each do |work| %>
+    <tr>
+      <td><%= Vote.all.where(work_id: work.id).count %></td>
+      <td><%= link_to work.title, work_path(work.id) %></td>
+      <td><%= link_to work.creator, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td>
 
-  <% @works.each do |work| %>
-  <tr>
-    <td><%= Vote.all.where(work_id: work.id).count %></td>
-    <td><%= link_to work.title, work_path(work.id) %></td>
-    <td><%= link_to work.creator, work_path(work.id) %></td>
-    <td><%= link_to work.publication_year, work_path(work.id) %></td>
-    <td><%= link_to work.publication_year, work_path(work.id) %></td>
-    <td>
-    
-    </td>
-  </tr>
-  <% end %>
-</table>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+
+<section class="media-table">
+  <h4>Books</h4>
+  <table>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Upvote</th>
+    </tr>
+
+    <% Work.all_books.each do |work| %>
+    <tr>
+      <td><%= Vote.all.where(work_id: work.id).count %></td>
+      <td><%= link_to work.title, work_path(work.id) %></td>
+      <td><%= link_to work.creator, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td>
+
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+
+<section class="media-table">
+  <h4>Movies</h4>
+  <table>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Upvote</th>
+    </tr>
+
+    <% Work.all_movies.each do |work| %>
+    <tr>
+      <td><%= Vote.all.where(work_id: work.id).count %></td>
+      <td><%= link_to work.title, work_path(work.id) %></td>
+      <td><%= link_to work.creator, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td>
+
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</section>

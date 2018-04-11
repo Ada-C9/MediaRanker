@@ -2,29 +2,46 @@ class Work < ApplicationRecord
 
   has_many :votes
 
-  # validates :category, presence: {message: "Select a category"}
+  validates :category, presence: {message: "Select a category"}
   validates :title, presence: {message: "Enter a title"}
-  # validates :creator,presence: {message: "Enter a creator"}
-  # validates :publication_year, presence: {message: "Enter publication_year year"}
+  validates :creator,presence: {message: "Enter a creator"}
+  validates :publication_year, presence: {message: "Enter publication_year year"}
   def self.media_spotlight
     works = Work.all
     works.max_by do |work|
       work.votes.count
+    works.max_by { |work| work.votes.count}
     end
+    return
   end
 
   def self.top_ten_albums
   album = Work.where(category: "album")
-  return album.sort_by {|work| -work.votes.count }.take(10)
+  return album.sort_by {|work| work.votes.count }.take(10)
   end
 
   def self.top_ten_movies
   movie = Work.where(category: "movie")
-  return movie.sort_by {|work| -work.votes.count }.take(10)
+  return movie.sort_by {|work| work.votes.count }.take(10)
   end
 
   def self.top_ten_books
   book = Work.where(category: "book")
-  return book.sort_by {|work| -work.votes.count }.take(10)
+  return book.sort_by {|work| work.votes.count }.take(10)
+  end
+
+  def self.all_books
+  book = Work.where(category: "book")
+  return book
+  end
+
+  def self.all_albums
+  book = Work.where(category: "album")
+  return book
+  end
+
+  def self.all_movies
+  book = Work.where(category: "movie")
+  return book
   end
 end
