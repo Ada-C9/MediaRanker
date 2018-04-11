@@ -9,4 +9,11 @@ class User < ApplicationRecord
     return stripped_date
   end
 
+  def exists?
+    if self.id == nil
+      return false
+    else
+      return true
+  end
+
 end
