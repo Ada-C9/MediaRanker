@@ -1,2 +1,8 @@
-<h1>Works#edit</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<article class="media-details">
+  <h3><%= @work.title %></h3>
+  <p>Created by: <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_date %></p>
+  <p><%= @work.description %></p>
+  <%# TODO: add links to homepage, edit, upvote, delete  %>
+  <%# TODO: add number of votes for piece of work and list of user and date voted for http://media-ranker-2-0.herokuapp.com/works/314 %>
+</article>
