@@ -42,6 +42,11 @@ class InstagramsController < ApplicationController
     #if delete works.delete
   end
 
+  def upvote
+
+  end
+
+
 
 
   private

@@ -1,9 +1,32 @@
 require "test_helper"
 
 describe User do
-  let(:user) { User.new }
+  describe 'validations' do
 
-  it "must be valid" do
-    value(user).must_be :valid?
+    before do
+      @user = User.new(name: 'test-user', joined: 2017-2-2)
+    end
+
+    it 'is valid when all fields are present' do
+
+      #act
+      result = @user.valid?
+
+      result.must_equal true
+    end
+
+    it 'is invalid without a name' do
+      #arrange
+      @user.name = nil
+
+      #act
+      result = @user.valid?
+
+      #assert
+      result.must_equal false
+      @user.errors.messages.must_include :name
+      end
+
+
   end
 end
