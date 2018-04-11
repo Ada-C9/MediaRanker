@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/index', as: 'users'
+
+  get 'users/show'
+
   resources :votes
-  resources :users
+  resources :sessions
   resources :publications
 
   root 'mains#index', as: 'main'
