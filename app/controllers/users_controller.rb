@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = user.all
+    @users = User.all
   end
 
   def show
     id = params[:id]
-    @user = user.find_by(id)
+    @user = User.find_by(id)
   end
 
   def edit
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = user.new
+    @user = User.new
   end
 
   def create
@@ -25,9 +25,8 @@ class UsersController < ApplicationController
 
   end
 
-# do i need this?
-  # private
-  # def user_params
-  #   return params.require(:user).permit(:username, :id)
-  # end
+  private
+  def user_params
+    return params.require(:user).permit(:username, :id)
+  end
 end
