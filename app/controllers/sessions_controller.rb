@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by name: params[:user][:name]
 
-    if @user
+    @user = User.find_by name: params[:user][:name]
+    if @user != nil
       session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.name}"
     else

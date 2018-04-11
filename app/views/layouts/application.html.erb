@@ -23,9 +23,13 @@
       <%= link_to "View all media", works_path %>
       <%= link_to "Add a new work", new_work_path %>
       <%= link_to "View all users", users_path %>
-      <div class="float-right">
-        TODO: Log In
-      </div>
+      <% if @user.name %>
+      <%= link_to "Logged in as #{@user.name}", login_path, method: :post%>
+      <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+      <%= link_to "Login", login_form_path, method: :get %>
+      <% end %>
+
     </nav>
   </header>
 
