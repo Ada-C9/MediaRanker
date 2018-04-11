@@ -1,36 +1,18 @@
 class Work < ApplicationRecord
   has_many :votes
+  validates :title, presence: true
+  validates :category, presence: true
+
 
   def self.books
-    works = Work.all
-    books = []
-    works.each do |work|
-      if work.category == "book"
-        books << work
-      end
-    end
-    return books
+    Work.where(category: "book")
   end
 
   def self.albums
-    works = Work.all
-    albums = []
-    works.each do |work|
-      if work.category == "album"
-        albums << work
-      end
-    end
-    return albums
+    Work.where(category: "album")
   end
 
   def self.movies
-    works = Work.all
-    movies = []
-    works.each do |work|
-      if work.category == "movie"
-        movies << work
-      end
-    end
-    return movies
+    Work.where(category: "movie")
   end
 end

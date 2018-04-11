@@ -40,4 +40,9 @@ class VotesController < ApplicationController
     Vote.destroy(params[:id])
     redirect_to votes_path
   end
+
+  private
+  def vote_params
+    params.require(:vote).permit(:user_id, :work_id)
+  end
 end

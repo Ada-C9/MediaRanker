@@ -1,31 +1,32 @@
-<section>
+<main class="row">
+  <section>
   <h3><strong>List of works</strong></h3>
 
   <table>
     <h4><strong>Albums</strong></h4>
     <tr>
-      <th>
+      <td width="80">
         <strong>Votes</strong>
-      </th>
-      <th>
+      </td>
+      <td>
         <strong>Title</strong>
-      </th>
-      <th>
+      </td>
+      <td>
         <strong>Created By</strong>
-      </th>
-      <th>
+      </td>
+      <td width="100">
         <strong>Pubthshed</strong>
-      </th>
-      <th>
+      </td>
+      <td width="100">
         <strong>Upvote</strong>
-      </th>
+      </td>
     </tr>
 
 
     <% @works.albums.each do |work| %>
     <tr>
       <td>
-        <%= work.category %>
+         &nbsp;
       </td>
       <td>
         <%= link_to "#{work.title}", work_path(work) %>
@@ -33,13 +34,13 @@
       <td>
         <%= work.creator %>
       </td>
-      <th>
+      <td>
         <%= work.publication_year %>
       </td>
       <td>
-        <%= work.description %>
+        <%= button_to "Upvote","#", class: "upvote button" %>
       </td>
-    </td>
+    </tr>
     <% end %>
   </table>
 
@@ -47,28 +48,28 @@
 <table>
   <h4><strong>Books</strong></h4>
   <tr>
-    <th>
+    <td width="80">
       <strong>Votes</strong>
-    </th>
-    <th>
+    </td>
+    <td>
       <strong>Title</strong>
-    </th>
-    <th>
+    </td>
+    <td>
       <strong>Created By</strong>
-    </th>
-    <th>
+    </td>
+    <td width="100">
       <strong>Pubthshed</strong>
-    </th>
-    <th>
+    </td>
+    <td width="100">
       <strong>Upvote</strong>
-    </th>
+    </td>
   </tr>
 
 
   <% @works.books.each do |work| %>
   <tr>
     <td>
-      <%= work.category %>
+      &nbsp;
     </td>
     <td>
       <%= link_to "#{work.title}", work_path(work) %>
@@ -80,9 +81,9 @@
       <%= work.publication_year %>
     </td>
     <td>
-      <%= work.description %>
+      <%= button_to "Upvote","#", class: "upvote button" %>
     </td>
-  </td>
+  </tr>
   <% end %>
 </table>
 
@@ -91,28 +92,28 @@
 <table>
   <h4><strong>Movies</strong></h4>
   <tr>
-    <th>
+    <td width="80">
       <strong>Votes</strong>
-    </th>
-    <th>
+    </td>
+    <td>
       <strong>Title</strong>
-    </th>
-    <th>
+    </td>
+    <td>
       <strong>Created By</strong>
-    </th>
-    <th>
+    </td>
+    <td width="100">
       <strong>Pubthshed</strong>
-    </th>
-    <th>
+    </td>
+    <td width="100">
       <strong>Upvote</strong>
-    </th>
+    </td>
   </tr>
 
 
   <% @works.movies.each do |work| %>
   <tr>
     <td>
-      <%= work.category %>
+      &nbsp;
     </td>
     <td>
       <%= link_to "#{work.title}", work_path(work) %>
@@ -124,14 +125,13 @@
       <%= work.publication_year %>
     </td>
     <td>
-      <%= work.description %>
+      <%= button_to "Upvote","#", class: "upvote button" %>
     </td>
   </tr>
   <% end %>
 </table>
 </section>
 
-
-
 <%= link_to("View top media", root_path, class: "button") %>
 <%= link_to("Add a New work", new_work_path, class: "button") %>
+</main>
