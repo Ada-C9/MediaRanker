@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'CSV'
 
-FILE = 'db/media_seeds.csv' # will need to change this for deploying to Heroku
+FILE = Rails.root.join('db', 'media_seeds.csv')
 
 categories =  {album: Category.create!(name: 'album'), book: Category.create!(name: 'book')}
 
