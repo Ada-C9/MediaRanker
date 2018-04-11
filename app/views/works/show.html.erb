@@ -1,4 +1,5 @@
 <h2>Work Details/Show Page</h2><br>
+
 <h3><%= @work.title%></h3>
 <p>Created by: <%= @work.creator %></p>
 <p>Published: <%= @work.publication_year %></p>
@@ -6,6 +7,10 @@
 
 <%# TODO:  %>
 <h6>buttons go here</h6>
+<%= link_to("Back to media ranks", root_path, class: "button") %>
+<%= button_to("Edit", edit_work_path(@work.id)) %>
+<%= button_to("Upvote", work_votes_path(@work.id)) %>
+<%= button_to("Delete", work_path(@work.id), method: :delete) %>
 
 <%# TODO:  %>
 <h6>votes table goes here</h6>
