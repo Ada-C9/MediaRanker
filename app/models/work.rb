@@ -20,6 +20,10 @@ class Work < ApplicationRecord
     return find_top_albums
   end
 
+  def return_votes_received
+    return find_votes_received
+  end
+
   private
 
   def find_all_works
@@ -36,6 +40,10 @@ class Work < ApplicationRecord
 
   def find_top_albums
     return self.works.where(work_category: album)
+  end
+
+  def find_votes_received
+    return self.upvotes
   end
 
 end
