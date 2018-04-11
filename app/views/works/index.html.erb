@@ -10,7 +10,7 @@
       <th>Upvote</th>
     </tr>
 
-    <% Work.all_albums.each do |work| %>
+    <% @albums.each do |work| %>
     <tr>
       <td><%= Vote.all.where(work_id: work.id).count %></td>
       <td><%= link_to work.title, work_path(work.id) %></td>
@@ -18,7 +18,7 @@
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td>
-
+      <a class="button upvote" rel="nofollow" data-method="post" href="/works/id/upvote">Upvote</a>
       </td>
     </tr>
     <% end %>
@@ -36,16 +36,14 @@
       <th>Upvote</th>
     </tr>
 
-    <% Work.all_books.each do |work| %>
+    <% @books.each do |work| %>
     <tr>
       <td><%= Vote.all.where(work_id: work.id).count %></td>
       <td><%= link_to work.title, work_path(work.id) %></td>
       <td><%= link_to work.creator, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
-      <td>
 
-      </td>
     </tr>
     <% end %>
   </table>
@@ -62,7 +60,7 @@
       <th>Upvote</th>
     </tr>
 
-    <% Work.all_movies.each do |work| %>
+    <% @movies.each do |work| %>
     <tr>
       <td><%= Vote.all.where(work_id: work.id).count %></td>
       <td><%= link_to work.title, work_path(work.id) %></td>

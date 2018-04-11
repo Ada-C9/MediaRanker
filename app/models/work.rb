@@ -6,6 +6,7 @@ class Work < ApplicationRecord
   validates :title, presence: {message: "Enter a title"}
   validates :creator,presence: {message: "Enter a creator"}
   validates :publication_year, presence: {message: "Enter publication_year year"}
+
   def self.media_spotlight
     works = Work.all
     works.max_by do |work|
@@ -30,18 +31,5 @@ class Work < ApplicationRecord
     return book.sort_by {|work| work.votes.count }.take(10)
   end
 
-  def self.all_books
-    book = Work.where(category: "book")
-    return book
-  end
 
-  def self.all_albums
-    book = Work.where(category: "album")
-    return book
-  end
-
-  def self.all_movies
-    book = Work.where(category: "movie")
-    return book
-  end
 end
