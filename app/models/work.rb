@@ -21,7 +21,6 @@ class Work < ApplicationRecord
 
   end
 
-  private
   def self.num_runs(array)
     runs = 0
     array.length > 10 ? runs = 10 : runs = array.length

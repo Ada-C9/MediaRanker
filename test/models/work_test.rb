@@ -65,5 +65,21 @@ describe Work do
         all_works.make_category_hash.must_equal []
       end
     end
+
+    describe "#num_runs(array)" do
+      it "returns an integer" do
+        Work.num_runs(all_works).must_be_kind_of Integer
+      end
+
+      it "returns zero if the array is empty" do
+        #TODO: destroy all works instead of setting to []
+        all_works = []
+        Work.num_runs(all_works).must_equal 0
+      end
+
+      # it "returns ArgumentError if an array is not passed as param" do
+      #   Work.num_runs("not an array").must_raise ArgumentError
+      # end
+    end
   end
 end
