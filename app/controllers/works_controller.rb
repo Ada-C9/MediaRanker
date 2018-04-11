@@ -11,9 +11,14 @@ class WorksController < ApplicationController
     @work = Work.find_by(id: params[:id])
   end
 
-  def creates
+  def create
+    @work = Work.new
+    @work.category = params[:work][:category]
+    @work.title = params[:work][:title]
+    @work.creator = params[:work][:creator]
+    @work.publication_year = params[:work][:publication_year]
     if @work.save
-    redirect_to works_path
+      redirect_to works_path
     else
       render :new
     end
