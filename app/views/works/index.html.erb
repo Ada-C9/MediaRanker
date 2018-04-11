@@ -1,16 +1,19 @@
 
 
 <main class="row">
-  <article class="media-table">
     <h3>Top Movies</h3>
-    <%= render partial: "layouts/work", collection: @movies, as: :item %>
-  </article>
-  <article class="media-table">
-    <h3>Top Books</h3>
-    <%= render partial: "layouts/work", collection: @books, as: :item %>
-  </article>
-  <article class="media-table">
-    <h3>Top Albums</h3>
-    <%= render partial: "layouts/work", collection: @albums, as: :item %>
-  </article>
+  <table class="media-table responsive-card-table">
+    <%= render partial: "media-table-headers" %>
+    <%= render partial: "layouts/work-list-item", collection: @movies, as: :item %>
+  </table>
+  <h3>Top Books</h3>
+  <table class="media-table responsive-card-table">
+    <%= render partial: "media-table-headers" %>
+    <%= render partial: "layouts/work-list-item", collection: @books, as: :item %>
+  </table>
+  <h3>Top Albums</h3>
+  <table class="media-table responsive-card-table">
+    <%= render partial: "media-table-headers" %>
+    <%= render partial: "layouts/work-list-item", collection: @albums, as: :item %>
+  </table>
 </main>
