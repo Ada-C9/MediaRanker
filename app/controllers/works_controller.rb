@@ -37,7 +37,7 @@ class WorksController < ApplicationController
 
     if !@work.nil?
       if @work.update(work_params)
-        flash[:sucess] = "#{@work.title} saved"
+        flash[:sucess] = "Successfully updated #{@work.category} #{@work.title}"
         redirect_to work_path(@work.id)
       else
         flash.now[:alert] = "Media was not save."
@@ -49,6 +49,16 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    begin
+      @work = Work.find(params[:id])
+      if @work
+        @work.destroy
+      end
+      flash[:sucess] = "Successfully destroyed #{@work.category} #{@work.title} "
+    rescue
+      flash[:alert] = "Work does not exist"
+    end
+    redirect_to root_path
   end
 
   def work_params
