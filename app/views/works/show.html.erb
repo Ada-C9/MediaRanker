@@ -3,6 +3,14 @@
   <p>Created by: <%= @work.creator %></p>
   <p>Published: <%= @work.publication_date %></p>
   <p><%= @work.description %></p>
-  <%# TODO: add links to homepage, edit, upvote, delete  %>
-  <%# TODO: add number of votes for piece of work and list of user and date voted for http://media-ranker-2-0.herokuapp.com/works/314 %>
+
+  <section>
+    <%= link_to "Edit", edit_work_path %>
+    <%# TODO: add links to homepage, upvote %>
+    <%= link_to "Delete", work_path(@work.id), method: :delete%>
+  </section>
+
+  <article class="voting-users">
+    <%# TODO: add number of votes for piece of work and list of user and date voted for http://media-ranker-2-0.herokuapp.com/works/314 %>
+  </article>
 </article>
