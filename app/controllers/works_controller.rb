@@ -1,13 +1,10 @@
 class WorksController < ApplicationController
 
-  # TODO undestand this
   def index
-    works = Works.all
-    # @albums = Work.where(category: "album")
+    @works = Work.all
+
   end
 
-
-  # TODO undestand this
   def show
   @work = Work.find_by(id: params[:id].to_i)
   end

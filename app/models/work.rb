@@ -7,4 +7,15 @@ class Work < ApplicationRecord
 
   validates :category, inclusion: { in: %w(movie book album) }
 
+  def self.albums
+    Work.where(category: "album")
+  end
+
+  def self.movies
+    Work.where(category: "movie")
+  end
+
+  def self.books
+    Work.where(category: "book")
+  end
 end
