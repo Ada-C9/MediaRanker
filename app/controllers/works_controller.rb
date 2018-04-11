@@ -23,8 +23,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @work = Work.find(id)
+
   end
 
   def update
@@ -39,6 +38,9 @@ class WorksController < ApplicationController
   private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
 
+  def find_work
+    @work = Work.find_by(id: params[:id])
   end
 end
