@@ -11,9 +11,10 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
     # @work.published.to_i
     if @work.save
-      # flash[:success] = "Work Created"
+      flash[:success] = "#{@work.title} created"
       redirect_to works_path
     else
+      flash[:fail] = "#{@work.title} creation failed"
       render :new
     end
   end
@@ -26,9 +27,11 @@ class WorksController < ApplicationController
     @work = Work.find_by(id: params[:id])
     if !@work.nil?
       if @work.update(work_params)
-        # flash[:success] = "#{@work.title} updated"
+        flash[:success] = "#{@work.title} updated"
         redirect_to work_path(@work.id)
       else
+        flash[:alert] = {"#{@work.title}" => "failed to update"}
+        # flash[:alert] = @work.errors
         render :edit
       end
     else
@@ -44,8 +47,11 @@ class WorksController < ApplicationController
     @work = Work.find_by(id: params[:id])
     if @work
       @work.destroy
+    else
+      flash[:alert] = "Failed to destroy work"
+      redirect_to works_path
     end
-    # flash[:success] = "#{@work.title} deleted"
+    flash[:success] = "#{@work.title} deleted"
     redirect_to works_path
   end
 
