@@ -16,32 +16,32 @@ class Work < ApplicationRecord
   end
 
   def self.top_ten_albums
-  album = Work.where(category: "album")
-  return album.sort_by {|work| work.votes.count }.take(10)
+    album = Work.where(category: "album")
+    return album.sort_by {|work| work.votes.count }.take(10)
   end
 
   def self.top_ten_movies
-  movie = Work.where(category: "movie")
-  return movie.sort_by {|work| work.votes.count }.take(10)
+    movie = Work.where(category: "movie")
+    return movie.sort_by {|work| work.votes.count }.take(10)
   end
 
   def self.top_ten_books
-  book = Work.where(category: "book")
-  return book.sort_by {|work| work.votes.count }.take(10)
+    book = Work.where(category: "book")
+    return book.sort_by {|work| work.votes.count }.take(10)
   end
 
   def self.all_books
-  book = Work.where(category: "book")
-  return book
+    book = Work.where(category: "book")
+    return book
   end
 
   def self.all_albums
-  book = Work.where(category: "album")
-  return book
+    book = Work.where(category: "album")
+    return book
   end
 
   def self.all_movies
-  book = Work.where(category: "movie")
-  return book
+    book = Work.where(category: "movie")
+    return book
   end
 end
