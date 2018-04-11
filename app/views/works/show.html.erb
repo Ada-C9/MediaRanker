@@ -7,6 +7,6 @@
 <ul>
   <li><%=link_to "Back to Media Ranks", root_path %></li>
   <li><%=link_to "Edit Work", edit_work_path %></li>
-  <li><%=link_to "Delete Work", work_path(@work.id), method: :delete %></li>
+  <li><%=link_to "Delete Work", work_path(@work.id), method: :delete, data: {confirm: "Warning: Work will be deleted. Click OK to confirm."} %></li>
   <li><%=link_to "Upvote" %></li>
 </ul>

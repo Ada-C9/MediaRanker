@@ -41,6 +41,12 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    @work = Work.find_by(id: params[:id])
+    if @work
+      @work.destroy
+    end
+    # flash[:success] = "#{@work.title} deleted"
+    redirect_to works_path
   end
 
   def upvote
