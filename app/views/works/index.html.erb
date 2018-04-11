@@ -11,7 +11,7 @@
 
     <li>
       <span>
-      <a> # of votes </a>
+      <%= work.report_vote_tally(work.id) %>
       </span>
       <span>
       <%= link_to work.title, work_path(work[:id]) %>
@@ -36,7 +36,7 @@
 
     <li>
       <span>
-      <a> # of votes </a>
+      <%= work.report_vote_tally(work.id) %>
       </span>
       <span>
       <%= link_to work.title, work_path(work[:id]) %>
@@ -62,7 +62,7 @@
 
     <li>
       <span>
-      <a> # of votes </a>
+      <%= work.report_vote_tally(work.id) %>
       </span>
       <span>
       <%= link_to work.title, work_path(work[:id]) %>
