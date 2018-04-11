@@ -2,7 +2,7 @@
 
 <%= form_for @work do |f| %>
   <%= f.label "Category" %>
-  <%= f.select :category, [ 'album', 'book', 'movie', 'banana'], :prompt => 'Select One' %>
+  <%= f.select :category, [ 'album', 'book', 'movie'], :prompt => 'Select One' %>
 
   <%= f.label "Title" %>
   <%= f.text_field :title %>
