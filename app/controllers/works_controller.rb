@@ -38,7 +38,7 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.category.name.capitalize} successfully added"
       redirect_to work_path(@work)
     else
-      flash.now[:failure] = "A problem occured. Could not create #{@work.category.name.capitalize}."
+      flash.now[:failure] = "A problem occured. Could not create #{params[:work][:category]}."
       render :new
     end
   end
