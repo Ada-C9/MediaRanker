@@ -15,7 +15,8 @@
   <%= f.text_field :title %>
 
   <%= f.label :category %>
-  <%= f.text_field :category %>
+  <%= f.select :category,
+  options_for_select(%w(movie album book))%>
 
   <%= f.label :creator %>
   <%= f.text_field :creator %>
