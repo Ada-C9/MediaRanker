@@ -16,20 +16,29 @@
 
 <body>
   <header class ="page-header row">
-    <h2>Media Ranker <small>Ranking the Best of Everything</small></h2>
+    <h2>
+      <a href="/">Media Ranker</a> <small>Ranking the Best of Everything</small>
+    </h2>
     <nav>
       <a class="button" href="/">View top media</a>
       <a class="button" href="/works">View all media</a>
       <a class="button" href="/works/new">Add a new work</a>
       <a class="button" href="/users">View all users</a>
       <div class="float-right">
-        <a class="button" href="/users/id">Logged in as</a>
-        <a class="button" rel="nofollow" data-method="post" href="/">Log Out</a>
+        <% if session[:logged_in_user] %>
+           <p class="button">
+             Logged in as
+             <%= User.find(session[:logged_in_user]).name %>
+           </p>
+           <%= link_to "Log out", logout_path, class: "button", method: :delete%>
+         <% else %>
+           <%= link_to "Log in", login_path, class: "button"%>
+         <% end %>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main class="row">
     <%= yield %>
   </main>
 
