@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
 
+  before_action :find_work, only: [:show, :edit, :update]
+
   def index
     @works = Work.top_ten
     @categories = Category.all
@@ -14,13 +16,9 @@ class WorksController < ApplicationController
 
   end
 
-  def show
+  def show; end
 
-  end
-
-  def edit
-
-  end
+  def edit; end
 
   def update
 
@@ -33,6 +31,13 @@ class WorksController < ApplicationController
   def top
     @works = Work.all
     @categories = Category.all
+  end
+
+  private
+
+  def find_work
+    @work = Work.find(params[:id])
+
   end
 
 end
