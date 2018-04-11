@@ -1,7 +1,7 @@
 class HomepageController < ApplicationController
 
   def index
-    @works = Work.all
+    @votes_hmp = Vote.all
   end
 
 

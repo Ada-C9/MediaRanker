@@ -4,4 +4,6 @@ class Vote < ApplicationRecord
 
   validates_uniqueness_of :work_id, :scope => [:user_id]
 
+
+
 end

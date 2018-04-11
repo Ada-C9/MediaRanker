@@ -1,1 +1,42 @@
-<p>Welcome to the homepage</p>
+
+<h3>Media Spotlight: <%=Work.highest_rated_work.title %></h3>
+<p><%=Work.highest_rated_work.votes.count%> - <%=Work.highest_rated_work.description%></p>
+
+<section class="top-ten-container">
+<section class="top-ten">
+  <h3>Top Movies</h3>
+  <ul>
+  <%Work.where(category: "Movie").top_ten.each do |top_movie|%>
+  <li><h4><%=top_movie.title%></h4></li>
+  <small><%=top_movie.creator%></small>
+  <p><%=top_movie.votes.count%></p>
+  <%end%>
+</ul>
+</section>
+
+<section class="top-ten">
+  <h3>Top Books</h3>
+  <ul>
+  <%Work.where(category: "Book").top_ten.each do |top_movie|%>
+  <li><h4><%=top_movie.title%></h4></li>
+  <small><%=top_movie.creator%></small>
+  <p><%=top_movie.votes.count%></p>
+  <%end%>
+</ul>
+</section>
+
+
+
+<section class="top-ten">
+  <h3>Top Albums</h3>
+  <ul>
+  <%Work.where(category: "Album").top_ten.each do |top_movie|%>
+  <li><h4><%=top_movie.title%></h4></li>
+  <small><%=top_movie.creator%></small>
+  <p><%=top_movie.votes.count%></p>
+  <%end%>
+</ul>
+</section>
+
+
+</section>

@@ -7,16 +7,24 @@ class Work < ApplicationRecord
 
   validates :title, presence: true,  uniqueness: true
 
-#   def search_user(user_id)
-#     self.users.each do |a_user|
-#       if a_user.id == user_id
-#         return a_user.name
-#       else
-#         return nil
-#       end
-#   end
-#   # validates :creator, presence: true
-#   # validates :publication_year, presence: true
-#   # validates :description, presence: true
-# end
+  def self.highest_rated_work
+    works = self.all
+    return works.max_by{|a_work| a_work.votes.count}
+  end
+
+  def self.top_ten
+    works = self.all
+    top_works = {}
+
+    works.each do |work|
+      if top_works[work].nil?
+        top_works[work] = 1
+      else
+        top_works[work]+=1
+      end
+    end
+
+    return top_works.sort_by{|work_obj,votes|-votes}.first(10).map(&:first)
+  end
+
 end
