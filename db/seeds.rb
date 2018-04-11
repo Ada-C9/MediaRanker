@@ -19,3 +19,21 @@ CSV.foreach(MEDIA_FILE, :headers => true) do |row|
     puts "Created work: #{work.inspect}"
   end
 end
+
+USER_FILE = Rails.root.join('db', 'user_seeds.csv')
+puts "Loading raw user data from #{USER_FILE}"
+
+user_failures = []
+CSV.foreach(USER_FILE, :headers => true) do |row|
+  user = User.new
+  user.name = row['name']
+  user.joined = DateTime.parse(row['joined'])
+
+  successful = user.save
+  if !successful
+    user_failures << user
+    puts "Failed to save user: #{user.inspect}"
+  else
+    puts "Created user: #{user.inspect}"
+  end
+end
