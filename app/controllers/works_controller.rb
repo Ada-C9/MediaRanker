@@ -2,8 +2,8 @@ class WorksController < ApplicationController
 
   # TODO undestand this
   def index
-    @works = Works.all
-    @albums = Work.where(category: "album")
+    works = Works.all
+    # @albums = Work.where(category: "album")
   end
 
 

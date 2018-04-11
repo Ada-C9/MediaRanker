@@ -5,6 +5,6 @@ class Work < ApplicationRecord
   validates :title, presence: true
   validates :category, presence: true
 
-  validates :category, inclusion: {in: %w(movie book album) }
+  validates :category, inclusion: { in: %w(movie book album) }
 
 end

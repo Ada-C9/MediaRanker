@@ -1,15 +1,14 @@
 
 <% if @work.errors.any? %>
 
-
-
 <%= form_for @work do |f| %>
 <div>
   <%= f.label :category %>
-  <%= f.text_area :category %>
+  <%= f.select :category,
+    options_for_select(%w(movie album book))%>
 </div>
 
-<div>
+<div>``
   <%= f.label :title %>
   <%= f.text_area :title %>
 </div>
