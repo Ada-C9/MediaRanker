@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
-<h2>Media Ranker| Ranking the best of everything</h2>
+  <h2>Media Ranker| Ranking the best of everything</h2>
   <nav>
     <ul class = "nav-bar">
       <li>
-        <%= link_to "View Top Media", root_path%>
+        <%= link_to "View Top Media", root_path %>
       </li>
       <li>
-        <%= link_to "View All Media", works_path%>
+        <%= link_to "View All Media", works_path %>
       </li>
       <li>
-        <%= link_to "Add a New Work", new_work_path%>
+        <%= link_to "Add a New Work", new_work_path %>
       </li>
       <li>
-      <%= link_to "View All Users", users_path%>
+        <%= link_to "View All Users", users_path %>
       </li>
 
       <li>
-      <%= link_to "Log In", root_path%>
+        <%= link_to "Log In", root_path %>
       </li>
 
     </ul>
   </nav>
 
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>
