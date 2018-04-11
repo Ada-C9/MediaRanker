@@ -1,0 +1,31 @@
+<h4><%= section_title %></h4>
+<table>
+  <thead>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+  </thead>
+  <tbody>
+    <% (model).each do |work| %>
+    <tr>
+      <td>
+        <%# TODO: add vote count %>
+      </td>
+      <td>
+        <%= work.title %>
+      </td>
+      <td>
+        <%= work.creator %>
+      </td>
+      <td>
+        <%= work.publication_date %>
+      </td>
+      <td>
+        <%# TODO: add way to upvote media %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
