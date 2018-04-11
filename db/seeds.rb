@@ -35,21 +35,3 @@ Work.create!([
   {category: "book", title: "Practical Object-Oriented Design in Ruby", creator: "Sandi Metz", description: "Good programming book", publication_year: 2012, vote_count: 1},
   {category: "book", title: "Parable of the Sower", creator: "Octavia E. Butler", description: nil, publication_year: 1993, vote_count: 1}
 ])
-Vote.create!([
-  {work_id: 11, user_id: 1},
-  {work_id: 12, user_id: 1},
-  {work_id: 13, user_id: 1},
-  {work_id: 2, user_id: 1},
-  {work_id: 4, user_id: 1},
-  {work_id: 20, user_id: 1},
-  {work_id: 21, user_id: 1},
-  {work_id: 22, user_id: 1}
-  {work_id: 23, user_id: 2},
-  {work_id: 3, user_id: 2},
-  {work_id: 4, user_id: 2},
-  {work_id: 5, user_id: 3},
-  {work_id: 19, user_id: 2},
-  {work_id: 21, user_id: 3},
-  {work_id: 22, user_id: 3},
-  {work_id: 2, user_id: 2}
-])
