@@ -19,7 +19,7 @@
         <td><%= work.creator %></td>
         <td><%= work.publication_year %></td>
         <td><%= work.category.name %></td>
-        <td>Some date</td>
+        <td><%= WorksHelper.get_vote_date(work, @user) %></td>
       </tr>
     <% end %>
   </tbody>

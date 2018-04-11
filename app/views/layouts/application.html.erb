@@ -6,8 +6,7 @@
 
     <title> MediaRanker 2.0</title>
     <%= favicon_link_tag asset_path('owl.ico'), type: 'image/x-icon', rel: 'icon'%>
-    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Gudea", media: "all", 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -17,7 +16,14 @@
       <h2><%=link_to 'Media Ranker', root_path%> <small>Ranking the Best of Everything</small></h2>
       <nav>
         <%= link_to 'View top media', root_path, class: 'button' %>
-        <%= link_to 'View all media', works_path, class: 'button' %>
+        <div class='dropdown'>
+          <%= link_to 'View all media', works_path, class: 'button' %>
+          <div class="dropdown-content">
+            <%= link_to 'View all books', category_path('books') %>
+            <%= link_to 'View all albums', category_path('albums') %>
+            <%= link_to 'View all movies', category_path('movies') %>
+          </div>
+        </div>
         <%= link_to 'Add a new work', new_work_path, class: 'button' %>
         <%= link_to 'View all users', users_path, class: 'button' %>
         <div class='float-right'>

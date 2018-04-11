@@ -1,5 +1,5 @@
 <table class='media-table'>
-  <h4><%= category %></h4>
+  <h4><%= link_to "#{category}", category_path(category.downcase) %></h4>
   <thead>
     <tr>
       <th>Votes</th>

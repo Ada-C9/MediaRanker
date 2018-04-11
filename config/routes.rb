@@ -3,13 +3,17 @@ Rails.application.routes.draw do
 
   root 'works#top'
 
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
+
   resources :works do
     post '/upvote', to: 'works#upvote', as: 'upvote'
   end
 
+
   resources :users, only: [:index, :show]
 
-  get '/login', to: 'sessions#new', as: 'login'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/:category', to: 'works#index', as: 'category'
+  get '/:category/new', to: 'works#new', as: 'new_category'
 end

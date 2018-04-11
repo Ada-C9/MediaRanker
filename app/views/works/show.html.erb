@@ -24,7 +24,7 @@
       <% @work.users.each do |user| %>
         <tr>
           <td><%= link_to "#{user.username}", user_path(user) %></td>
-          <td> date to be entered</td>
+          <td> <%= WorksHelper.get_vote_date(@work, user) %></td>
         </tr>
       <% end %>
     </tbody>

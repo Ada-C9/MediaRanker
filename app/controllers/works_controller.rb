@@ -10,11 +10,14 @@ class WorksController < ApplicationController
     @top = Work.top_work
   end
 
+  # this needs to be dryer
   def index
-    if params[:books]
-      @books = Work.where(category_id: categorize('book'))
-    elsif params[:albums]
-      @albums = Work.where(category_id: categorize('album'))
+    if params[:category] == 'books'
+      @books = Work.order_by_vote(categorize('book'))
+    elsif params[:category] == 'albums'
+      @albums = Work.order_by_vote(categorize('album'))
+    elsif params[:category] == 'movies'
+      @movies = Work.order_by_vote(categorize('movie'))
     else
       @albums = Work.order_by_vote(categorize('album'))
       @books = Work.order_by_vote(categorize('book'))
@@ -24,6 +27,9 @@ class WorksController < ApplicationController
 
   def new
     @work = Work.new
+    if params[:category]
+      @work.category = categorize('books').name
+    end
   end
 
   def create

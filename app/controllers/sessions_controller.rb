@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     if @user.nil?
       @user = User.new(username: user[:username])
       if @user.save
+        session[:user_id] = @user.id
         flash[:success] = 'Successfully created user and logged in'
         redirect_to root_path
       else

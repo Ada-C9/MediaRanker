@@ -1,7 +1,13 @@
 <h3>List of Works</h3>
 
-<%= render partial: 'display_work', locals: {category: 'Albums', model: @albums} %>
+<% if @albums %>
+  <%= render partial: 'display_work', locals: {category: 'Albums', model: @albums} %>
+<% end %>
 
-<%= render partial: 'display_work', locals: {category: 'Books', model: @books} %>
+<% if @books %>
+  <%= render partial: 'display_work', locals: {category: 'Books', model: @books} %>
+<% end %>
 
-<%= render partial: 'display_work', locals: {category: 'Movies', model: @movies} %>
+<% if @movies %>
+  <%= render partial: 'display_work', locals: {category: 'Movies', model: @movies} %>
+<% end %>
