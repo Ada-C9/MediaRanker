@@ -12,7 +12,7 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= link_to user.name, user_path(user)%></td>
-          <td>votes to be shown</td>
+          <td><%= user.total_votes %></td>
           <td><%= user.created_at %></td>
         </tr>
       <% end %>

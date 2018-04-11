@@ -6,7 +6,7 @@
     <li>
       <%= link_to movie.title, work_path(movie)%> by <%= movie.creator %>
       <br>
-      Votes to be shown
+      <%= movie.total_votes %> votes
     </li>
   <% end %>
 </ul>
@@ -17,7 +17,7 @@
     <li>
       <%= link_to book.title, work_path(book)%> by <%= book.creator %>
       <br>
-      Votes to be shown
+      <%= book.total_votes %> votes
     </li>
   <% end %>
 </ul>
@@ -28,7 +28,7 @@
     <li>
       <%= link_to album.title, work_path(album)%> by <%= album.creator %>
       <br>
-      Votes to be shown
+      <%= album.total_votes %> votes
     </li>
   <% end %>
 </ul>
