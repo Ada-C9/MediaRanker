@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   def root
     @works = Work.all
+    @spotlight = Work.spotlight
   end
 
   def index

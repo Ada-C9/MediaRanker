@@ -2,10 +2,10 @@
 <section class="row spotlight">
     <div>
       <h3><span class="media-spotlight-header">Media Spotlight</span>
-      <%= link_to @spotlight, "#{@spotlight.title}" %>
+      <%= link_to @spotlight.title, work_path(@spotlight) %>
       by <%= @spotlight.creator %>
       </h3>
-      <p><%= @spotlight.votes %> - <%= @spotlight.description %></p>
+      <p><%= @spotlight.vote_count %> - <%= @spotlight.description %></p>
     </div>
   </section>
 <section class="top-ten-container">
