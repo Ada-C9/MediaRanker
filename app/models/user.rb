@@ -6,4 +6,5 @@ class User < ApplicationRecord
   def joined
     self.created_at.strftime("%B %d, %Y")
   end
+  
 end
