@@ -11,8 +11,8 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.username %></td>
-          <td><%= user.votes %></td>
+          <td><%= link_to "#{user.username}", user %></td>
+          <td><%= user.votes.count %></td>
           <td><%= display_date(user.created_at) %></td>
         </tr>
       <% end %>
