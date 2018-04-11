@@ -20,9 +20,8 @@ class UpvotesController < ApplicationController
     end
   end
 
-  # def upvote_params
-  #   params.require(:upvote).permit(:work_title, :work_creator, :work_description, :work_category,
-  #     :work_publication_year)
-  #   end
-
+  def upvote_params
+    params.require(:upvote).permit(:work, :user)
+  end
+  
 end
