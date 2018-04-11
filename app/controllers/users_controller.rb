@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = User.find_by(id: session[:user_id] )
   end
 
   def new
