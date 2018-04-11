@@ -2,13 +2,9 @@ class WorksController < ApplicationController
   before_action :works_all, only: [:index, :main]
   before_action :find_work, only: [:show, :edit, :update]
 
-  def index
-    # @works = Work.all
-  end
+  def index; end
 
-  def main
-    # @works = Work.all
-  end
+  def main; end
 
   def new
     @work = Work.new
@@ -25,15 +21,9 @@ class WorksController < ApplicationController
     end
   end
 
-  def show
-    # work_id = params[:id]
-    #
-    # @work = Work.find_by(id: work_id)
-  end
+  def show; end
 
-  def edit
-    # @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
     @work.assign_attributes(work_params)
