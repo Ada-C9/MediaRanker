@@ -13,10 +13,13 @@
 
 <body>
   <ul>
-    <% if @user[:author_id] %>
-    <li><%= link_to "Logout", logout_path, method: :delete %></li>
-    <% else %>
+    <% if @user %>
     <li><%= link_to "Login", login_path %></li>
+    <% else %>
+    <% if false %>
+      <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% end %>
+
     <% end %>
   </ul>
 
