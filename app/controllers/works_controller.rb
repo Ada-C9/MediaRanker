@@ -1,6 +1,8 @@
 class WorksController < ApplicationController
+
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
   before_action :find_user
-  
+
   def index
     @works = Work.all.order(params[:id])
   end
@@ -10,7 +12,6 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.all.find(params[:id])
   end
 
   def new
@@ -20,6 +21,7 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
+      flash[:success] = "Successfully created #{@work.work_category} #{@work.id} "
       redirect_to work_path(@work.id)
     else
       render :new
@@ -27,12 +29,12 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find_by(id: params[:id])
   end
 
   def update
     @work = Work.find_by(id: params[:id])
     if !@work.nil?
+       flash[:success] = "Successfully updated #{@work.work_category} #{@work.id} "
       @work.update(work_params) ? (redirect_to work_path(@work.id)) :
       (render :edit)
     else
@@ -42,12 +44,19 @@ class WorksController < ApplicationController
 
   def destroy
     Work.all.find(params[:id]).destroy
+     flash[:success] = "Successfully destroyed #{@work.work_category} #{@work.id} "
     redirect_to works_path
   end
+
+  private
 
   def work_params
     params.require(:work).permit(:work_title, :work_creator, :work_description, :work_category,
       :work_publication_year)
-    end
+  end
+
+  def find_work
+    @work = Work.find_by id: params[:id]
+  end
 
   end

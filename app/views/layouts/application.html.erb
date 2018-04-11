@@ -25,11 +25,11 @@
       <%= link_to "Add a new work", new_work_path, class: "button" %>
       <%= link_to "View all users", users_path, class: "button" %>
       <div class="float-right">
-        <% if @user %>
-          <%= link_to "Logged in as #{@user.username}", user_path(@user.id), class: "button" %>
-          <%= link_to "Logout", root_path, class: "button" %>
+        <% if @user && @user.id %>
+        <%= link_to "Logged in as #{@user.username}", user_path(@user.id), class: "button" %>
+        <%= link_to "Logout", logout_path, class: "button" %>
         <% else %>
-          <%= link_to "Login", login_path, class: "button" %>
+        <%= link_to "Login", login_form_path, class: "button" %>
         <% end %>
       </div>
     </nav>
@@ -37,6 +37,26 @@
 
 
   <main class="row">
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <section class="callout <%= name %>">
+        <% if name == "alert" %>
+        <ul>
+          <% flash[:alert].each do |field, message| %>
+          <li>
+            <strong><%= field %>: </strong>
+            <%= message %>
+          </li>
+          <% end %>
+        </ul>
+        <% else %>
+        <p>
+          <%= message %>
+        </p>
+        <% end %>
+      </section>
+      <% end %>
+    </section>
     <%= yield %>
   </main>
 
