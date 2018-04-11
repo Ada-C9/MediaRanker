@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   get 'users', to: 'users#index', as: 'users'
-
   get 'users/:id',to: 'users#show', as: 'user'
+  get 'login', to: 'sessions#new', as: 'login_form'
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/login', to: 'sessions#destroy', as: 'logout'
 
   resources :votes
-  resources :sessions
   resources :publications
 
   root 'mains#index', as: 'main'
