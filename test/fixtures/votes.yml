@@ -1,9 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  work: one
-  user: one
+  work: aja
+  user: user_1
 
 two:
-  work: two
-  user: two
+  work: nvm
+  user: user_2
+
+three:
+  work: kindred
+  user: user_3
+
+four:
+  work: parable
+  user: user_4
+
+five:
+  work: coco
+  user: user_5
