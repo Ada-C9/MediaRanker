@@ -34,6 +34,26 @@ describe User do
 
   describe "relations" do
 
+    it "connects collection of votes" do
+      work = Work.first
+      test_user = User.create!( username: "test_username" )
+      vote = Vote.create!( user: test_user, work: work )
+
+      test_user.votes.must_include vote
+    end
+
+  end
+
+  describe "#join_date" do
+
+    it "returns string of join date" do
+      user = User.create!(username: "test_user")
+
+      result = user.join_date
+
+      result.must_be_kind_of String
+    end
+
   end
 
 end
