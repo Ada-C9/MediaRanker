@@ -7,33 +7,46 @@
 </section>
 
 <section class="top-ten-container">
-  <section class="top-ten">'
+  <section class="top-ten">
     <h3>Top Movies</h3>
-    <li>
-      <h4>
-
-      </h4>
-      <p> </p>
-    </li>
     <ul>
-
+      <% @works.each do |work| %>
+      <% if work.work_category == "movie"%>
+      <li>
+        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
+        <p>1 votes</p>
+      </li>
+      <% end%>
+      <% end%>
     </ul>
   </section>
 
   <section class="top-ten">
     <h3>Top Books</h3>
     <ul>
-
+      <% @works.each do |work| %>
+      <% if work.work_category == "book"%>
+      <li>
+        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
+        <p>1 votes</p>
+      </li>
+      <% end%>
+      <% end%>
     </ul>
-
   </section>
 
   <section class="top-ten">
     <h3>Top Albums</h3>
     <ul>
-
+      <% @works.each do |work| %>
+      <% if work.work_category == "album"%>
+      <li>
+        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
+        <p>1 votes</p>
+      </li>
+      <% end%>
+      <% end%>
     </ul>
-
   </section>
 
 </section>

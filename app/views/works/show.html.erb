@@ -3,7 +3,7 @@
   <h3><%= @work.work_title %></h3>
   <p>Created by: <%= @work.work_creator %></p>
   <p>Published: <%= @work.work_publication_year %></p>
-  <p><%= @work.work_description %></p>
+  <p></p>
   <section>
     <%= link_to "Back to media ranks", root_path, class: "button" %>
     <%= link_to "Edit", edit_work_path, class: "button" %>
@@ -25,6 +25,7 @@
     <tbody>
       <tr>
 
-      </li>
-    </ul>
-  </article>
+      </tr>
+    </tbody>
+  </table>
+</article>
