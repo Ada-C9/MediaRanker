@@ -1,17 +1,25 @@
 class Work < ApplicationRecord
-  # relationships
   has_many :votes
-  # validations
+
   # validates {:title, presence: true, :created_by, presence: true, :publication_date, presence: true, :category, presence: true}
 
-  TOP_MEDIA = [0..10]
-
-  def all_albums
+  def self.all_albums
     return Work.where(category: "album")
   end
 
   def all_movies
-  end 
+    return Work.where(category: "movie")
+  end
+
+  def all_books
+    return Work.where(category: "books")
+  end
+
+  def self.top_albums
+    return top_albums = all_albums.limit(10)
+  end
+
+
   # movies = works.where.not(category: nil)
   # movies = movies.order(category: :asc)
 

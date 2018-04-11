@@ -2,12 +2,7 @@ class WorksController < ApplicationController
   # nic, used
   def index
     @works = Work.all
-    # @albums = @works.all_albums
-    # @movies = works.all_albums
-
-    # @works = Work.all
-    # return @works.all_albums
-
+    @albums = @works.top_albums
   end
 
   def new
@@ -22,7 +17,7 @@ class WorksController < ApplicationController
     work_id = params[:id]
 
     @works =  Work.find(work_id)
-  end 
+  end
 
   private
   def work_params
