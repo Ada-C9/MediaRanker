@@ -1,3 +1,4 @@
+<main class="row"
 <section>
   <h3><strong>List of works</strong></h3>
 
@@ -11,12 +12,13 @@
   <%= render partial: 'work_table', locals: { works: @works.movies } %>
 
 
-<ul class="bottom-nav">
-  <li>
-    <%= link_to("View top media", root_path, class: "button") %>
-  </li>
-  <li>
-    <%= link_to("Add a new wook", new_work_path, class: "button") %>
-  </li>
-</ul>
+  <ul class="bottom-nav">
+    <li>
+      <%= link_to("View top media", root_path, class: "button") %>
+    </li>
+    <li>
+      <%= link_to("Add a new wook", new_work_path, class: "button") %>
+    </li>
+  </ul>
 </section>
+</main>

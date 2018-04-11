@@ -1,6 +1,6 @@
-<h4>
+<h3>
   <%= page_title%>
-</h4>
+</h3>
 
 <%= render partial: "layouts/error_messages", locals: { model: @work } %>
 
@@ -18,7 +18,7 @@
   <%= f.text_field :publication_year %>
 
   <%= f.label :description, "Description" %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description %>
 
   <%= f.submit action_name, class: "hallow button"%>
 <%end%>

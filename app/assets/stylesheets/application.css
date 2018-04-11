@@ -18,6 +18,14 @@
 
 */
 
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 .button {
   background-color: #26A69A;
   vertical-align: middle;
@@ -63,7 +71,19 @@
   margin: 30px 15px;
 }
 
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-*, *::before, *::after {
-    box-sizing: inherit;
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: block;
+}
+
+.float-right {
+  float: right;
 }
