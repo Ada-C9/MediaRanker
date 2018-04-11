@@ -13,17 +13,17 @@
 </head>
 
 <body>
-  <header>
-    <h2><%= link_to("Media Ranker", root_path)%> | <small>Ranking the Best of Everything</small></h2>
-  </header>
+  <header class="page-header row">
+    <h2><%= link_to("Media Ranker", root_path)%> | <small class="small-header">Ranking the Best of Everything</small></h2>
 
   <nav class="nav">
-        <%= link_to("View top media", works_path, class: "button") %>
+        <%= link_to("View top media", root_path, class: "button") %>
         <%= link_to("View all media", works_path, class: "button") %>
         <%= link_to("Add a new work", new_work_path, class: "button") %>
         <%= link_to("View all users", works_path, class: "button") %>
         <%= link_to("Log in", class: "hollow button") %>
   </nav>
+</header>
 
 
   <main>

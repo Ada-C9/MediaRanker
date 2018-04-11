@@ -23,12 +23,25 @@
   vertical-align: middle;
 }
 
-
-header .nav {
+.page-header .nav {
   display: inline-block;
   list-style-type: none;
   padding: 0;
   margin: 2em 0;
+}
+
+.page-header {
+max-width: 100%;
+background-color: #B2DFDB;
+}
+
+.page-header .small-header {
+  color: white;
+  font-weight: bold;
+}
+
+.page-header h2 {
+  color: white;
 }
 
 .bottom-nav {
