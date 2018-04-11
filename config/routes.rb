@@ -1,28 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/show'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'users/create'
-
-  get 'users/index'
-
-  get 'sessions/create'
-
-  get 'sessions/new'
-
-  get 'sessions/destroy'
-
   root to: 'works#top'
 
   get '/works/top', to: 'works#top', as: 'top_works'
   resources :works
+  resources :users
   resources :votes
   post 'votes/:id', to: 'votes#create', as: 'votes_path'
 
