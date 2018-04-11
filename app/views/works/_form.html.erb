@@ -1,0 +1,20 @@
+
+
+<%= form_for @work do |f| %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.label :title %>
+  <%= f.number_field :title %>
+
+  <%= f.label :creator %>
+  <%= f.text_area :creator %>
+
+  <%= f.label :publication_year %>
+  <%= f.text_area :publication_year %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit class: "button" %>
+<% end %>

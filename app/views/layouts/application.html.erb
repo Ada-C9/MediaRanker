@@ -12,6 +12,22 @@
   </head>
 
   <body>
+    <header>
+      <h1> Media Ranker </h1>
+      <nav>
+        <%= link_to "View top media", votes_path, class: "button" %>
+        <%= link_to "View all works", works_path, class: "button" %>
+        <%= link_to "View all users", users_path, class: "button" %>
+        <li>
+            <% if session[:user_id] %>
+              <%= link_to "Logout", logout_path, method: :delete %>
+            <% else %>
+              <%= link_to "Login", login_path %>
+            <% end %>
+          </li>
+      </nav>
+    </header>
+
 
     <%= yield %>
 
