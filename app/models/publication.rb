@@ -8,7 +8,7 @@ class Publication < ApplicationRecord
   validates :category, uniqueness: {scope: [:title]}
 
   def find_total_votes
-    self.votes.length
+    self.votes.empty? ? 0 : self.votes.length
   end
   def self.find_spotlight_publication
     publications_with_votes = Publication.all.find_all{ |publication| !publication.votes.empty? }
@@ -30,7 +30,24 @@ class Publication < ApplicationRecord
     categories
   end
   def self.find_top_ten_by category
-    Publication.first(10)
+    if !Publication.return_all_categories.include?(category)
+      raise StandardError.new("Category does not exist")
+    end
+    publications_of_category = Publication.where(category: category).order(created_at: :asc)
+    sorted_by_recent_vote = publications_of_category.sort_by do |publication|
+      if publication.most_recent_vote.nil?
+        0
+      else
+        publication.most_recent_vote.created_at.to_i
+      end
+    end
+    sorted_by_vote_length = sorted_by_recent_vote.sort_by { |publication| publication.votes.length }
+    sorted_by_vote_length.reverse!
+    if sorted_by_vote_length.length <= 10
+      return sorted_by_vote_length
+    else
+      return sorted_by_vote_length.first(10)
+    end
   end
 
 # helper method for finding spotlight publication

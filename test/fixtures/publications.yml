@@ -68,6 +68,7 @@ bebop:
   creator: Sunrise
   publication_year:
   description: classic
+  created_at: <%= DateTime.new(2016,2,1) %>
 
 # book, total is 10
 sailormoon:
