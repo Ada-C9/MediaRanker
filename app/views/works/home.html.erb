@@ -1,28 +1,24 @@
-<h1>List of works</h1>
+<h2>Media Spotlight: <%= link_to @works.order(votes).first.name, work_path(@works.order(votes).first.id) %></h2>
 
 <section>
-  <h2>Albums</h2>
+  <h2>Top Movies</h2>
+</section>
+
+<section>
+  <h2>Top Books</h2>
+</section>
+
+<section>
+  <h2>Top Albums</h2>
   <ul>
     <% @works.each do |work|  %>
       <li>
         <% if work.category == "album" %>
-          <%=work.vote%>
           <%= link_to work.title, work_path(work.id) %>
-          <%=work.creator%>
-          <%=work.publication_year%>
-          <%= "Upvote" %>
           <%= link_to "Edit", edit_user_path(user.id) %>
           <%= link_to "Delete", work_path(work.id), method: :delete %>
         <% end %>
       </li>
     <% end %>
   </ul>
-</section>
-
-<section>
-  <h2>Books</h2>
-</section>
-
-<section>
-  <h2>Movies</h2>
 </section>

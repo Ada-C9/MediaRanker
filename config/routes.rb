@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'works/index'
+  resources :users
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :votes
+
+  resources :works
+
+  root 'works#index'
 end
