@@ -7,13 +7,13 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <header>
-    <p> <%= link_to "Media Ranker", root_path %> | Ranking the Best of Everything
+    <p> <%= link_to "Media Ranker ", root_path %> <sub>| Ranking the Best of Everything</sub>
     </p>
   <nav>
     <ul>
@@ -32,10 +32,28 @@
     </ul>
   </nav>
 </header>
-
+<main>
+  <section class="flash">
+    <% flash.each do |name, message| %>
+    <section class="callout <%= name %>">
+      <% if name == "alert" %>
+      <ul>
+        <% flash[:alert].each do |field, message| %>
+        <li>
+          <strong><%= field %>: </strong>
+          <%= message %>
+        </li>
+        <% end %>
+      </ul>
+      <% else %>
+      <p>
+        <%= message %>
+      </p>
+      <% end %>
+  </section>
+  <% end %>
+</main>
   <body>
-
     <%= yield %>
-
   </body>
 </html>

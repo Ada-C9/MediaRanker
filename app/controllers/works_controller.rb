@@ -8,6 +8,7 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.all
   end
 
   def show
@@ -15,25 +16,38 @@ class WorksController < ApplicationController
   end
 
   def create
-  end
-
-  def destroy
-    @work = Work.find_by(id: params[:id])
-    if @work != nil
-      @work.destroy
+    @work = Work.new(work_params)
+    if @work.save
+      flash[:success] = "Media created"
+      redirect_to works_path
+    else
+      flash.now[:alert] = @work.errors
+      render :new
     end
-    redirect_to works_path
   end
 
   def update
     @work = Work.find_by(id: params[:id])
     if @work.update(driver_params)
+      flash[:success] = "#{work.category} updated"
       redirect_to work_path
     else
       render :edit
     end
   end
 
+  def destroy
+    begin
+      @work = Work.find_by(id: params[:id])
+      if @work != nil
+        @work.destroy
+      end
+      flash[:success] = "#{work.category} deleted"
+    rescue
+      flash.now[:alert] = "Item does not exist"
+    end
+    redirect_to works_path
+  end
 
   private
 
