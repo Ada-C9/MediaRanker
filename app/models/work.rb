@@ -1,7 +1,7 @@
 class Work < ApplicationRecord
-  has_many :users, through :votes
+  has_many :users
 
-  validates :category, :title, :creator, :publication_year, :description, :presence: true
+  validates :category, :title, :creator, :publication_year, :description, presence: true
 
-  validates :title, :creator  length: { in: 2..25 }
+  validates :title, :creator,  length: { in: 2..25 }
 end
