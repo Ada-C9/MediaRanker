@@ -22,7 +22,12 @@
         <%= link_to "View all media", publications_path %>
         <%= link_to "Add a new work", new_publication_path %>
         <%= link_to "View all users", users_path %>
-        <%= link_to "Log In: Path Needed", root_path %>
+        <% if @user.name %>
+          <%= link_to "Logged in as #{@user.name}", user_path(@user.id) %>
+          <%= link_to "Log Out", logout_path %>
+        <% else %>
+          <%= link_to "Log In", login_form_path %>
+        <% end %>
       </nav>
     </header>
     <main>

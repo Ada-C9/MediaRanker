@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'homepage#index'
+  get '/login', to: 'sessions#new', as: 'login_form'
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/login', to: 'sessions#destroy', as: 'logout'
 
-  resources :homepage, only: [:index]
+  resources :users, only: [:index, :show]
 
   resources :publications
 
-  resources :users, only: [:index, :show]
+  resources :homepage, only: [:index]
+
+  root 'homepage#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
