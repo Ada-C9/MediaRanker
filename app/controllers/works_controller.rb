@@ -37,9 +37,6 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    # find it first
-    # check the result of destroy
-
     Work.destroy(params[:id])
 
     redirect_to works_path
