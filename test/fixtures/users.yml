@@ -1,7 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+user_1:
+  name: user_1
 
-one:
-  name: MyString
+user_2:
+  name: user_2
 
-two:
-  name: MyString
+user_3:
+  name: user_3
+
+user_4:
+  name: user_4
+
+user_5:
+  name: user_5
