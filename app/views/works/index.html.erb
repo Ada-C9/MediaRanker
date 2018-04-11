@@ -2,11 +2,12 @@
 
 <section>
 <ul class='works-view'>
+  <h2> ALBUMS </h2>
   <li class='columns'>
     <a>Votes</a> <a>Title</a><a>Created By</a><a>Year Released</a><a>Upvote</a>
   </li>
 
-  <% @works.each do |work| %>
+  <% @works.where(category: "album").each do |work| %>
 
     <li>
       <span>
@@ -26,97 +27,57 @@
       </span>
     </li>
   <% end%>
+  <h2> BOOKS </h2>
+  <li class='columns'>
+    <a>Votes</a> <a>Title</a><a>Created By</a><a>Year Released</a><a>Upvote</a>
+  </li>
+
+  <% @works.where(category: "book").each do |work| %>
+
+    <li>
+      <span>
+      <a> # of votes </a>
+      </span>
+      <span>
+      <%= link_to work.title, work_path(work[:id]) %>
+      </span>
+      <span>
+      <%= work.creator %>
+      </span>
+      <span>
+      <%= work.year_released %>
+      </span>
+      <span>
+        <a> upvote </a>
+      </span>
+    </li>
+  <% end%>
+
+  <h2> MOVIES </h2>
+  <li class='columns'>
+    <a>Votes</a> <a>Title</a><a>Created By</a><a>Year Released</a><a>Upvote</a>
+  </li>
+
+  <% @works.where(category: "movie").each do |work| %>
+
+    <li>
+      <span>
+      <a> # of votes </a>
+      </span>
+      <span>
+      <%= link_to work.title, work_path(work[:id]) %>
+      </span>
+      <span>
+      <%= work.creator %>
+      </span>
+      <span>
+      <%= work.year_released %>
+      </span>
+      <span>
+        <a> upvote </a>
+      </span>
+    </li>
+  <% end%>
+
 </ul>
 </section>
-
-
-
-
-
-
-
-
-<body>
-
-
-  <main class="row">
-    <h3>List of works</h3>
-
-  <section class="media-table">
-    <h4>Albums</h4>
-    <table>
-      <thead>
-        <tr>
-          <th width=80>Votes</th>
-          <th>Title</th>
-          <th>Created By</th>
-          <th width=100>Published</th>
-          <th width=100>Upvote</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td>20</td>
-            <td><a href="/works/314">The Purple Album</a></td>
-            <td>Prince, Probably</td>
-            <td>2300</td>
-            <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a></td>
-          </tr>
-
-      </tbody>
-    </table>
-  </section>
-  <section class="media-table">
-    <h4>Books</h4>
-    <table>
-      <thead>
-        <tr>
-          <th width=80>Votes</th>
-          <th>Title</th>
-          <th>Created By</th>
-          <th width=100>Published</th>
-          <th width=100>Upvote</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td>14</td>
-            <td><a href="/works/246">Death with Interruptions</a></td>
-            <td>Saramago</td>
-            <td>1099</td>
-            <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/246/upvote">Upvote</a></td>
-          </tr>
-
-      </tbody>
-    </table>
-  </section>
-  <section class="media-table">
-    <h4>Movies</h4>
-    <table>
-      <thead>
-        <tr>
-          <th width=80>Votes</th>
-          <th>Title</th>
-          <th>Created By</th>
-          <th width=100>Published</th>
-          <th width=100>Upvote</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td>3</td>
-            <td><a href="/works/379">Parent Trap</a></td>
-            <td></td>
-            <td>2005</td>
-            <td><a class="button upvote" rel="nofollow" data-method="post" href="/works/379/upvote">Upvote</a></td>
-          </tr>
-
-      </tbody>
-    </table>
-  </section>
-
-<a class="button" href="/">View top media</a>
-<a class="button" href="/works/new">Add a new work</a>
-
-  </main>
-</body>
