@@ -19,7 +19,22 @@
 
  */
  /* General */
+ h1, h2, h3, h4, h5 {
+   font-weight: bold;
+ }
 
+ h3 {
+   color: #26A69A;
+   font-size: 1.1875rem;
+   line-height: 1.4;
+   margin-top: 0;
+   margin-bottom: 0.5rem;
+ }
+
+ h4 {
+   font-size: 1.125rem;
+   line-height: 1.4;
+ }
 
  ul {
    list-style-type: none;
@@ -30,9 +45,6 @@
 
 /*Application ERB Header*/
 
- h3 {
-   color: #26A69A;
- }
 
  .main-header {
    background-color: #B2DFDB;
@@ -73,10 +85,15 @@
   margin-left: 0px;
 }
 
+
 .top-ten-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 2em
+}
+
+.top-ten-container small {
+  color: slategrey;
 }
 
 .top-ten-category {

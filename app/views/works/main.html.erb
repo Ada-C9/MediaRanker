@@ -5,7 +5,7 @@
     <span class="most-popular"><%= link_to("#{@works.first.title}") %></span>
     by <%= @works.first.creator %>
   </h3>
-  <p>WORK.VOTE_COUNT - WORK.DESCRIPTION</p>
+  <p>WORK.MAX_VOTE_COUNT - WORK.MAX_VOTE_COUNT.DESCRIPTION</p>
 </section>
 
 <hr class="root-hr">
@@ -17,11 +17,11 @@
       <% @works.each do |work| %>
       <% if work.category == "movie" %>
       <li>
-        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
       </li>
-      <li>
-        WORK.VOTE_COUNT
-      </li>
+      <p>
+        work.vote_count
+      </p>
       <% end %>
       <% end %>
     </ul>
@@ -33,27 +33,27 @@
       <% @works.each do |work| %>
       <% if work.category == "book" %>
       <li>
-        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
       </li>
-      <li>
-        WORK.VOTE_COUNT
-      </li>
+      <p>
+        work.vote_count
+      </p>
       <% end %>
       <% end %>
     </ul>
   </section>
 
   <section class="top-ten">
-    <h3 class="top-ten-category">Top Books</h3>
+    <h3 class="top-ten-category">Top Albums</h3>
     <ul>
       <% @works.each do |work| %>
       <% if work.category == "album" %>
       <li>
-        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
       </li>
-      <li>
-        WORK.VOTE_COUNT
-      </li>
+      <p>
+        work.vote_count
+      </p>
       <% end %>
       <% end %>
     </ul>
