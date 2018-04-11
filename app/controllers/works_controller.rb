@@ -45,7 +45,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    @votes = Vote.where(work_id: work_id)
+    @votes = Vote.where(work_id: @work.id)
   end
 
   def edit; end
