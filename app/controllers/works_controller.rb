@@ -43,20 +43,25 @@ class WorksController < ApplicationController
 
   def upvote
     if User.find(session[:user_id]) !=nil
-    user_id = User.find(session[:user_id]).id
+    user = User.find(session[:user_id])
   else
-    flash[:failure] = "You need to sign in to be able to vote"
+    flash[:failure] = "You must log in to do that"
     redirect_to works_path
     end
 
     work_id = params[:id]
 
 
-    vote = Vote.new(user_id: user_id, work_id: work_id)
+    vote = Vote.new(user_id: user.id, work_id: work_id)
 
     if vote.save
+      flash[:success] = "Successfully upvoted!"
       redirect_to works_path
-      flash[:success] = "You just voted for #{params[:title]}"
+    else
+      flash[:failure] = "Could not upvote"
+      flash[:errors] = vote.errors.messages[:user_id]
+      redirect_to works_path
+
     end
 
   end
