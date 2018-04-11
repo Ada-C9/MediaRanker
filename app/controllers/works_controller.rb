@@ -12,7 +12,7 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new
+    @work = Work.new(work_params)
 
     if @work.save
       flash[:success] = "Successfully saved #{params[:category]} #{params[:work_id]}"
