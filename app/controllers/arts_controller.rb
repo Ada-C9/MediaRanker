@@ -1,4 +1,7 @@
 class ArtsController < ApplicationController
+  before_action :find_art, only: [:show, :edit, :update]
+
+
   def index
     @arts = Art.all
 
@@ -25,19 +28,12 @@ class ArtsController < ApplicationController
     end
   end
 
-  def show
-    art_id = params[:id]
+  #Preferred style to indicate an intentional blank method
+  def show; end
 
-    @art = Art.find(art_id)
-  end
-
-  def edit
-    @art = Art.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @art = Art.find(params[:id])
-
     @art.assign_attributes(art_params)
 
     if @art.save
@@ -55,9 +51,17 @@ class ArtsController < ApplicationController
 
 
   private
+
+  #Strong Params
   def art_params
     return params.require(:art).permit(:category, :title, :creator, :pub_year, :description)
   end
+
+  #Controller Filter
+  def find_art
+    @art = Art.find(params[:id])
+  end
+
 end
 
-# TODO: ADD LAST TWO BUTTONS TO BOTTOM OF INDEX
+# TODO: Build successfully added/destroy grey message bar
