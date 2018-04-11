@@ -1,15 +1,44 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: MyString
-  description: MyString
-
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: MyString
-  description: MyString
+Beyonce:
+  category: Album
+  title: Dangerous in Love
+  creator: Beyonce
+  publication_year: 2003
+  description: Great album
+Jidenna:
+  category: Album
+  title: Sound of Nigera
+  creator: Jidenna
+  publication_year: 2016
+  description: Hip hop classic
+AndersonPaak:
+  category: Album
+  title: Malibu
+  creator: Anderson.Paak
+  publication_year: 2015
+  description: Jazz and Hip hop cross over
+GetOut:
+  category: Movie
+  title: Get Out
+  creator: Jordan Peele
+  publication_year: 2017
+  description: One of the best movies ever made
+Ratatouille:
+  category: Movie
+  title: Ratatouille
+  creator: Pixar
+  publication_year: 2002
+  description: Family film
+Confessions:
+  category: Book
+  title: Confessions of an Economic Hitman
+  creator: JKD
+  publication_year: 2004
+  description: The CIA and NSA are not so great
+Firefury:
+  category: Book
+  title: Fire and Fury
+  creator: Michael Wolff
+  publication_year: 2018
+  description: So much drama in the Trump Administration
