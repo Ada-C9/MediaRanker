@@ -11,7 +11,7 @@ class Work < ApplicationRecord
     works = Work.all
     works.max_by do |work|
       work.votes.count
-    works.max_by { |work| work.votes.count}
+      works.max_by { |work| work.votes.count}
     end
     return
   end
@@ -31,5 +31,8 @@ class Work < ApplicationRecord
     return book.sort_by {|work| work.votes.count }.take(10)
   end
 
+  def self.upvote(id)
+    self.where(:id => id).update_all("upvotes = upvotes + 1")
+  end
 
 end
