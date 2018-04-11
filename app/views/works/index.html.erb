@@ -1,6 +1,7 @@
-<h2> List of Works</h2>
-<h2>Top Albums</h2>
+<h3>List of Works</h3>
+<h4>Albums</h4>
 <table>
+  <thead>
   <tr>
     <th>
       Votes
@@ -18,11 +19,13 @@
       Upvote
     </th>
   </tr>
+</thead>
+
   <% @works.each do |work| %>
   <% if work.category == "album" %>
     <tr>
       <td>
-
+        <%= work.votes.count %>
       </td>
       <td>
         <%=link_to work.title, work_path(work.id)%>
@@ -34,16 +37,17 @@
         <%=work.publication_year%>
       </td>
       <td>
-
+        <%=link_to "Upvote", upvote_path(work.id), method: :post, class: "button upvote"  %>
       </td>
     </tr>
   <% end %>
   <% end %>
 
 </table>
-<h2>Top Books</h2>
+<h4>Books</h4>
 
 <table>
+  <thead>
   <tr>
     <th>
       Votes
@@ -61,11 +65,13 @@
       Upvote
     </th>
   </tr>
+</thead>
+
   <% @works.each do |work| %>
   <% if work.category == "book" %>
     <tr>
       <td>
-
+        <%= work.votes.count %>
       </td>
       <td>
         <%= link_to work.title, work_path(work.id)%>
@@ -77,7 +83,7 @@
         <%=work.publication_year%>
       </td>
       <td>
-
+        <%=link_to "Upvote", upvote_path(work.id), method: :post, class: "button upvote"  %>
       </td>
     </tr>
   <% end %>
@@ -86,8 +92,10 @@
 </table>
 
 
-<h2> Top Movies</h2>
+<h4> Movies</h4>
 <table>
+  <thead>
+
   <tr>
     <th>
       Votes
@@ -105,11 +113,12 @@
       Upvote
     </th>
   </tr>
+</thead>
   <% @works.each do |work| %>
-  <% if work.category == "movie" %> 
+  <% if work.category == "movie" %>
     <tr>
       <td>
-
+        <%= work.votes.count %>
       </td>
       <td>
         <%= link_to work.title, work_path(work.id)%>
@@ -121,10 +130,11 @@
         <%=work.publication_year%>
       </td>
       <td>
-
+        <%=link_to "Upvote", upvote_path(work.id), method: :post, class: "button upvote"  %>
       </td>
     </tr>
   <% end %>
   <% end %>
-
 </table>
+<%=link_to "View Top Media", root_path, class: "button"  %>
+<%=link_to "Add a New Work", new_work_path, class: "button"  %>

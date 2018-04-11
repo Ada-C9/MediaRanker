@@ -70,9 +70,9 @@ puts "#{vote_failures.length} vote failed to save"
 # tables, we've got to tell postgres to reload the latest ID
 # values. Otherwise when we create a new record it will try
 # to start at ID 1, which will be a conflict.
-puts "Manually resetting PK sequence on each table"
-ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
-end
-
-puts "done"
+# puts "Manually resetting PK sequence on each table"
+# ActiveRecord::Base.connection.tables.each do |t|
+#   ActiveRecord::Base.connection.reset_pk_sequence!(t)
+# end
+#
+# puts "done"

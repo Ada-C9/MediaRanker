@@ -17,3 +17,13 @@
  *= require foundation_and_overrides
 
  */
+ body {
+   display:block;
+     margin: 0;
+     padding: 0;
+     background: #fefefe;
+     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+     font-weight: normal;
+     line-height: 1.5;
+     color: #0a0a0a;
+   }

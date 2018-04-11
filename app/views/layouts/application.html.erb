@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -12,6 +12,24 @@
   </head>
 
   <body>
+    <header>
+    <h1>
+
+      <%=link_to "Media Ranker|ranking the Best of Everything", '/', method: :get%>
+    </h1>
+    <%=link_to "View top media", root_path, method: :get%>
+      <%=link_to "View all media", works_path, method: :get%>
+      <%=link_to "Add a new work", new_work_path, method: :get%>
+      <%=link_to "View all users", users_path, method: :get%>
+      <% if @user %>
+            <li>
+              Welcome <%= @user.username %>
+              <%= link_to "Logout", logout_path, method: :delete %>
+            </li>
+          <% else %>
+             <%= link_to "Login", login_form_path %>
+          <% end %>
+
 
     <%= yield %>
 
