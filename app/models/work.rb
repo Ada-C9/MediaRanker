@@ -7,52 +7,24 @@ class Work < ApplicationRecord
     return Work.where(category: "album")
   end
 
-  def all_movies
+  def self.all_movies
     return Work.where(category: "movie")
   end
 
-  def all_books
-    return Work.where(category: "books")
+  def self.all_books
+    return Work.where(category: "book")
   end
 
   def self.top_albums
     return top_albums = all_albums.limit(10)
   end
 
+  def self.top_movies
+    return top_movies = all_movies.limit(10)
+  end
 
-  # movies = works.where.not(category: nil)
-  # movies = movies.order(category: :asc)
-
-  # def self.top_movies
-  #   top_movies = []
-  #
-  #   until top_movies.length == TOP_MEDIA
-  #     works.each do |work|
-  #       if work.category == 'album'
-  #         top_movies << work
-  #       end
-  #     end
-  #   end
-  #
-  #   return top_movies
-  # end
-  #
-  # def top_books
-  #   top_books = []
-  #
-  #   until top_books.length == TOP_MEDIA
-  #     works.each do |work|
-  #       if work.category == 'book'
-  #         top_books << work
-  #       end
-  #     end
-  #   end
-  #
-  #   return top_books
-  # end
-
-  # def inspect
-  #   "#<#{self.class.name}:0x#{self.object_id.to_s(16)}>"
-  # end
+  def self.top_books
+    return top_books = all_books.limit(10)
+  end
 
 end

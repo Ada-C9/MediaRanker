@@ -1,18 +1,10 @@
 <!-- Contains home page data -->
 
-<p>Media Spotlight:
-  <!-- <% if @author %>
-    by <%= @author.name %>
-  <% end %> -->
-</p>
-
-<ul>
+<ul> List of Works
   <% @works.each do |work| %>
   <li>
-      <strong><%= link_to(work.title, work_path(work)) %></strong>
-      <%= link_to(work.created_by, work_path(work)) %>
+    <strong><%= link_to(work.title, work_path(work)) %></strong>
+    <%= link_to(work.created_by, work_path(work)) %>
   </li>
-
-
 </ul>
 <% end %>
