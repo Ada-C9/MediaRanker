@@ -51,7 +51,7 @@ class WorksController < ApplicationController
 
   def upvote
     @work = Work.find(params[:id])
-    @current_user = User.find_by(id: session[:user_id])
+    # @current_user = User.find_by(id: session[:user_id])
 
     if @current_user
       vote = Vote.new(user: @login_user, work: @work)
@@ -65,6 +65,7 @@ class WorksController < ApplicationController
     else
       flash.alert = "You must log in to do that"
     end
+    redirect_to work_path(@work)
   end
 
   private

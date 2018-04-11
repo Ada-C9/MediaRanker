@@ -1,0 +1,24 @@
+
+<section class="row spotlight">
+    <div>
+      <h3><span class="media-spotlight-header">Media Spotlight</span>
+      <%= link_to @spotlight, "#{@spotlight.title}" %>
+      by <%= @spotlight.creator %>
+      </h3>
+      <p><%= @spotlight.votes %> - <%= @spotlight.description %></p>
+    </div>
+  </section>
+<section class="top-ten-container">
+  <article class="top-ten columns large-4 small-12">
+    <h3>Top Movies</h3
+    <%= render partial: "layouts/work", collection: @movies, as: :item %>
+  </article>
+  <article class="top-ten columns large-4 small-12">
+    <h3>Top Books</h3>
+    <%= render partial: "layouts/work", collection: @books, as: :item %>
+  </article>
+  <article class="top-ten columns large-4 small-12">
+    <h3>Top Albums</h3>
+    <%= render partial: "layouts/work", collection: @albums, as: :item %>
+  </article>
+</section>
