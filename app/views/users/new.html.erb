@@ -1,4 +1,7 @@
 <section>
+
+  <%= render partial: "layouts/error_messages", locals: { model: @user } %>
+
   <%= form_for @user do |f| %>
 
     <%= f.label :name, "User Name: " %>
