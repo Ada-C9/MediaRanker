@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :votes
   end
 
-  resources :users do
+  resources :users, except: [:edit, :update, :destroy] do
     resources :votes
   end
 
