@@ -32,6 +32,7 @@ describe Work do
       result.must_equal false
       @work.errors.messages.must_include :title
     end
+
     it "is invalid without a category" do
       @work.category = nil
 
@@ -54,6 +55,6 @@ describe Work do
       # Act
       # Assert
 
-    end
+    # end
   end
 end

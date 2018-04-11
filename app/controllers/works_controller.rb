@@ -15,9 +15,9 @@ class WorksController < ApplicationController
   end
 
   def create
-    work = Work.new(work_params)
+    @work = Work.new(work_params)
 
-    if work.save
+    if @work.save
       flash[:success] = 'Work added successfully'
       redirect_to works_path
     else
@@ -37,11 +37,11 @@ class WorksController < ApplicationController
   end
 
   def update
-    work = Work.find(params[:id])
+    @work = Work.find(params[:id])
 
-    work.assign_attributes(work_params)
+    @work.assign_attributes(work_params)
 
-    if work.save
+    if @work.save
       redirect_to work_path(work)
     else
       render :edit
