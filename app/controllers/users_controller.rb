@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all
@@ -8,32 +9,32 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
-    @users = User.find(params[:id])
-  end
+  def show ; end
+
+  def edit ; end
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-    flash[:success] = "#{ user.name } is successfully logged in."
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
-      flash.now[:failure] = "Validations Failed"
-      render :new
+      render :edit
     end
   end
 
   def destroy
-    user.delete(:user_id)
-    flash[:success] = "Logged out successfully."
-    redirect_to root_path
+    User.destroy(params[:id])
+    redirect_to users_path
   end
 
   private
+
   def user_params
     return params.require(:user).permit(:name)
   end
 
+  def find_user
+    @user = User.find(params[:id])
+  end
 
 end

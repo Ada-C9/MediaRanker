@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th width="100">Votes</th>
+      <th width="200">Joined</th>
+    </tr>
+  </thead>
+</table>
+
+<tbody>
+  <% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.name, user_path(user) %></li>
+    <li><%= user.joined %></li>
+  </ul>
+  <% end %>
+</tbody>
