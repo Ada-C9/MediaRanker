@@ -50,3 +50,12 @@ header h2 small {
     color: white;
     font-family: 'Gudea';
 }
+
+.top-ten {
+  margin-left: 10px;
+}
+
+.form-style {
+  margin-left: 100px;
+  margin-right: 100px;
+}
