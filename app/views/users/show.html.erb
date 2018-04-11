@@ -1,15 +1,19 @@
 <h2>User Summary: <%= link_to @user.username, user_path(@user)%></h2>
 <p><%= @user.created_at.strftime("Join site %b %d, %Y")  %></p>
 
-<h3>Votes<h3>
+<h3>Votes</h3>
 
-  <%= @user.votes.each do |vote| %>
-  <ul>
+<div class="">
+    <ul>
+  <% @user.votes.each do |vote| %>
     <% work = Work.find(vote.work_id)%>
     <li><%= work.title%></li>
     <li><%= work.created_by%></li>
     <li><%= work.published%></li>
     <li><%= work.category%></li>
     <li><%= vote.created_at.strftime("%b %d, %Y")%></li>
-  </ul>
   <%end%>
+    </ul>
+  </div>
+  <%= link_to "See all users", users_path, class: "button"%>
+  <%= link_to "Back to media list", root_path, class: "button"%>
