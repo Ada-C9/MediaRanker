@@ -19,6 +19,22 @@ class WorksController < ApplicationController
     end
   end
 
+  def update
+    @work = Work.find_by(id: params[:id])
+    @work.category = params[:work][:category]
+    @work.title = params[:work][:title]
+    @work.creator = params[:work][:creator]
+    @work.publication_year = params[:work][:publication_year]
+    @work.description = params[:work][:description]
+    if @work.save
+      redirect_to work_path(@work.id)
+    else
+      render :edit
+    end
+
+  end
+
+
   def show
     @work = Work.find_by(id: params[:id])
   end
