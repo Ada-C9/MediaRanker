@@ -17,11 +17,11 @@ class ArtsController < ApplicationController
   end
 
   def create
-    @art = Art.new(art_params)
+    @art = Art.create art_params
 
-    if @art.save
+    if @art.id != nil
       flash[:success] = "Art created successfully"
-      redirect_to art_path
+      redirect_to arts_path
     else
       flash.now[:failure] = "Validations Failed"
       render :new

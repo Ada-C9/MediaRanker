@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header class='page-header row'>
-      <h2>
-        <a href="/">Media Ranker</a>
-        <small>Ranking The Best Of Everything</small>
-      </h2>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class='page-header row'>
+    <h2>
+      <a href="/">Media Ranker</a>
+      <small>Ranking The Best Of Everything</small>
+    </h2>
 
-      <nav>
-        <!-- TODO: Link this button to Top Media once I make it -->
-        <a class="button" href="/">View Top Media</a>
+    <nav>
+      <!-- TODO: Link this button to Top Media once I make it -->
+      <a class="button" href="/">View Top Media</a>
 
-        <a class="button" href="/arts">View All Media</a>
+      <a class="button" href="/arts">View All Media</a>
 
-        <a class="button" href="/arts/new">Add a New Work</a>
-        <!-- TODO: Link this button to users when I make it -->
-        <a class="button" href="/">View All Users</a>
-        <!-- TODO: Link this button to login when I make it -->
-        <div class="float-right">
-          <a class="button float-right" href="/">Log In</a>
-        </div>
-      </nav>
-      
-    </header>
-
-    <%= yield %>
-
-  </body>
+      <a class="button" href="/arts/new">Add a New Work</a>
+      <!-- TODO: Link this button to users when I make it -->
+      <a class="button" href="/">View All Users</a>
+      <!-- TODO: Link this button to login when I make it -->
+      <div class="float-right">
+        <a class="button float-right" href="/">Log In</a>
+      </div>
+    </nav>
+  </header>
+  <% unless flash.empty? %>
+  <section class="callout secondary">
+    <% flash.each do |name, message| %>
+    <div class="<%= name %>"><%= message %></div>
+    <% end %>
+  </section>
+  <% end %>
+  <%= yield %>
+</body>
 </html>
