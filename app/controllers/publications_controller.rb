@@ -45,6 +45,6 @@ class PublicationsController < ApplicationController
   private
 
   def publication_params
-    return params.require(:book).permit(:category, :title, :creator, :publication_year, :description)
+    return params.require(:publication).permit(:category, :title, :creator, :publication_year, :description)
   end
 end

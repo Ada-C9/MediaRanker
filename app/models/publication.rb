@@ -10,10 +10,6 @@ class Publication < ApplicationRecord
   def find_total_votes
     self.votes.length
   end
-
-  def most_recent_vote
-    self.votes.max_by { |vote| vote.created_at }
-  end
   def self.find_spotlight_publication
     publications_with_votes = Publication.all.find_all{ |publication| !publication.votes.empty? }
     return nil if publications_with_votes.empty?
@@ -26,9 +22,19 @@ class Publication < ApplicationRecord
     spotlight
   end
   def self.return_all_categories
-    media = ['album', 'book']
+    categories = []
+    Publication.all.each do |publication|
+      next if categories.include?(publication.category)
+      categories << publication.category
+    end
+    categories
   end
   def self.find_top_ten_by category
     Publication.first(10)
+  end
+
+# helper method for finding spotlight publication
+  def most_recent_vote
+    self.votes.max_by { |vote| vote.created_at }
   end
 end
