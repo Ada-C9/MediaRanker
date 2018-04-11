@@ -8,9 +8,19 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new
   end
 
   def create
+    @work = Work.new(work_params)
+    if @work.save
+      flash[:success] = "#{@work.title} saved"
+      redirect_to works_path
+    else
+      flash.now[:alert] = @work.errors
+
+      render :new
+    end
   end
 
   def show
@@ -25,5 +35,12 @@ class WorksController < ApplicationController
   end
 
   def edit
+  end
+
+  private
+  def work_params
+    return
+    params.require(:work).permit(:creator, :publication_year, :title)
+
   end
 end
