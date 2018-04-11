@@ -44,3 +44,21 @@ end
 
 puts "Added #{User.count} user records"
 puts "#{user_failures.length} users failed to save"
+
+UPVOTE_FILE = Rails.root.join('db', 'upvote_seeds.csv')
+puts "Loading raw upvote data from #{UPVOTE_FILE}"
+
+upvote_failures = []
+CSV.foreach(UPVOTE_FILE, :headers => true) do |row|
+  upvote = Upvote.new
+  upvote.user_id = row['user_id']
+  upvote.work_id = row['work_id']
+  puts "Created upvote: #{upvote.inspect}"
+  successful = upvote.save
+  if !successful
+    upvote_failures << upvote
+  end
+end
+
+puts "Added #{Upvote.count} upvote records"
+puts "#{upvote_failures.length} upvotes failed to save"
