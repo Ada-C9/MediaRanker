@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-
+  root 'homepage#index'
 
   get '/works/new', to: 'works#new', as:'new_work'
   post '/works', to:'works#create', as: 'works'
