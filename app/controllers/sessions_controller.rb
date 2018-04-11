@@ -12,11 +12,15 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       #need logic here if a new user
-      @user = User.new(name: params[:name])
-
-      session[:user_id] = @user.id
-      flash[:success] = "Successfully created new user #{@user.name} with ID #{@user.id}"
-      redirect_to root_path
+      @user = User.new(name: params[:user][:name])
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "Successfully created new user #{@user.name} with ID #{@user.id}"
+        redirect_to root_path
+      else
+        flash[:error] = "A problem occurred: Could not log in"
+        redirect_to login_path
+      end
     end
   end
 

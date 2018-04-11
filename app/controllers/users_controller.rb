@@ -8,12 +8,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    user = User.new(user_params)
 
-    if @user.save
+    if user.save
       redirect_to users_path
-    else
-      render :new
     end
   end
 
@@ -22,10 +20,10 @@ class UsersController < ApplicationController
 
     @user = User.find_by(id: user_id)
 
-    if @user == nil
-      #redirect_to catch_all_index_path
-    end
-      
+    # if @user == nil
+    #   #redirect_to catch_all_index_path
+    # end
+
   end
 
   def vote
