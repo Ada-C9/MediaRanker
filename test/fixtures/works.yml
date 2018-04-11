@@ -1,22 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 book:
-  category: Book
-  title: myBook
-  creator: MyString
+  category: book
+  title: A good movie
+  creator: A good director
   publication_year: 1991
   description: This is a very important book
 
 movie:
-  category: Movie
-  title: myMovie
-  creator: MyString
+  category: movie
+  title: Hidden Figures
+  creator: Margot Lee Shetterly
   publication_year: 1979
   description: A scary movie.
 
 album:
-  category: Album
-  title: myAlbum
-  creator: MyString
-  publication_year: 2013
+  category: album
+  title: Can't Buy a Thrill
+  creator: Steely Dan
+  publication_year: 1972
   description: An awesome album
