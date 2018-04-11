@@ -58,6 +58,6 @@ class WorksController < ApplicationController
   end
 
   def find_work
-    @work = Work.find_by(:id params[:id])
+    @work = Work.find_by(id: params[:id])
   end
 end

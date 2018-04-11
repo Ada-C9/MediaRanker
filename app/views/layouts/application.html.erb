@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel=“icon” type=“image/png” href=“/assets/owl.jpg”>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <link rel=“icon” type=“image/png” href=“/assets/owl.jpg”>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
+<body>
   <header>
     <p> <%= link_to "Media Ranker ", root_path %> <sub>| Ranking the Best of Everything</sub>
     </p>
-  <nav>
-    <ul>
-      <li>
-        <%= link_to "View top media" %>
-      </li>
-      <li>
-        <%= link_to "View all media", works_path %>
-      </li>
-      <li>
-        <%= link_to "Add a new work", new_work_path %>
-      </li>
-      <li>
-        <%= link_to "View all users", users_path %>
-      </li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <section class="flash">
-    <% flash.each do |name, message| %>
-    <section class="callout <%= name %>">
-      <% if name == "alert" %>
+    <nav>
       <ul>
-        <% flash[:alert].each do |field, message| %>
-        <li>
-          <strong><%= field %>: </strong>
-          <%= message %>
-        </li>
-        <% end %>
+        <div class="header-float-right">
+          <li><%= link_to "View top media" %></li>
+          <li><%= link_to "View all media", works_path %></li>
+          <li><%= link_to "Add a new work", new_work_path %></li>
+          <li><%= link_to "View all users", users_path %></li>
+        </div>
+        <div class="header-float-left">
+          <% if @user %>
+          <li>
+            Welcome <%= @user.name %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+          </li>
+          <% else %>
+          <%= link_to "Login", login_form_path %>
+          <% end %>
+        </div>
       </ul>
-      <% else %>
-      <p>
-        <%= message %>
-      </p>
+    </nav>
+  </header>
+
+  <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <section class="callout <%= name %>">
+        <% if name == "alert" %>
+        <ul>
+          <% flash[:alert].each do |field, message| %>
+          <li>
+            <strong><%= field %>: </strong>
+            <%= message %>
+          </li>
+          <% end %>
+        </ul>
+        <% else %>
+        <p>
+          <%= message %>
+        </p>
+        <% end %>
+      </section>
       <% end %>
-  </section>
-  <% end %>
-</main>
-  <body>
+    </section>
     <%= yield %>
-  </body>
+  </main>
+
+</body>
 </html>
