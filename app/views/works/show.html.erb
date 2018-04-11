@@ -1,3 +1,13 @@
-<h3><%=@work.title%></h3>
-<p>Created by: <%=@work.creator%></p>
-<p>Published: <%=@work.publication_year%></p>
+<article class="media-details">
+  <h3><%=@work.title%></h3>
+  <p>Created by:
+    <%=@work.creator%></p>
+  <p>Published:
+    <%=@work.publication_year%></p>
+  <section>
+    <a class="button" href="/">Back to media ranks</a>
+    <a class="button" href="/works/<%=@work.id%>/edit">Edit</a>
+    <a class="button" rel="nofollow" data-method="post" href="/works/<%=@work.id%>/upvote">Upvote</a>
+    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/<%=@work.id%>">Delete</a>
+  </section>
+</article>

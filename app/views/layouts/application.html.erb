@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <header class="page-header row">
+      <h2>
+        <a href="/">Media Ranker</a>
+        <small>Ranking the Best of Everything</small>
+      </h2>
 
-    <%= yield %>
+      <nav>
+        <a class="button" href="/">View top media</a>
+        <a class="button" href="/works">View all media</a>
+        <a class="button" href="/works/new">Add a new work</a>
+        <a class="button" href="/users">View all users</a>
+        <div class="float-right">
+          <%if @user %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
+          <% else %>
+            <%= link_to "Login", login_path, class: "button float-right" %>
+          <%end%>
+        </div>
+      </header>
+      <% flash.each do |name, message|%>
+        <% if name == "alert" %>
+          <section class="row status failure ">
+            <ul>
+              <% flash[:alert].each do |field, message|%>
+                <strong>
+                  <%= field.capitalize %></strong>
+                <li>
+                  <%= message %>
+                </li>
+              <%end%>
+            </ul>
+          <% else %>
+            <section class="row status success">
+              <p>
+                <%= message.capitalize %>
+              </p>
+            <%end%>
+          </section>
+        <%end%>
 
-  </body>
-</html>
+        <%= yield %>
+
+      </body>
+    </html>

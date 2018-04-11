@@ -1,26 +1,45 @@
-<h1>Homepage</h1>
-<h2>Top Media</h2>
+<h3>
+  <span class="media-spotlight-header">Media Spotlight</span>
+  <a href="/works/1"><%= @works.find_by(id: 1).title %></a>
+  by
+  <%=@works.find_by(id: 1).creator%>
+</h3>
 
-<ul>
-  <%@books.ordereach do |work|%>
-    <li>
-      <%=link_to work.title, work_path(work[:id])%>
-    </li>
-  <%end%>
-</ul>
+<p><%= @works.find_by(id: 1).votes.count %></p>
 
-<ul>
-  <%@works.where(category: "album").each do |work|%>
-    <li>
-      <%=link_to work.title, work_path(work[:id])%>
-    </li>
-  <%end%>
-</ul>
+<hr class="root-hr">
 
-<ul>
-  <%@works.where(category: "movie").each do |work|%>
-    <li>
-      <%=link_to work.title, work_path(work[:id])%>
-    </li>
-  <%end%>
-</ul>
+<section class="top-ten-container">
+  <section class="top-ten">
+    <h3>Top Books</h3>
+    <ul>
+      <% @books.each do |work| %>
+        <li>
+          <%=link_to work.title, work_path(work[:id])%>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3>Top Albums</h3>
+    <ul>
+      <%@albums.each do |work|%>
+        <li>
+          <%=link_to work.title, work_path(work[:id])%>
+        </li>
+      <%end%>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3>Top Movies</h3>
+    <ul>
+      <%@movies.each do |work|%>
+        <li>
+          <%=link_to work.title, work_path(work[:id])%>
+        </li>
+      <%end%>
+    </ul>
+  </section>
+</section>

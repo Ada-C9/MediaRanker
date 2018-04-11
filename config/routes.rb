@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'homepage/index'
+
+  root 'homepage#index'
 
   resources :votes
 
-  resources :users
+  resources :works do
+    resources :votes, only: [:new, :create]
+  end
 
-  resources :works
+
+  get '/login', to: 'users#new', as: 'login_form'
+  post'/login', to: 'users#create', as: 'login'
+  delete '/login', to: 'users#destroy', as: 'logout'
 
 end

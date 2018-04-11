@@ -8,9 +8,10 @@ describe Vote do
     vote.errors.must_include :user_id
   end
 
-  it "must have a work" do
+  it "must have a work id" do
     vote.valid?.must_equal false
     vote.errors.must_include :work_id
   end
+
 
 end
