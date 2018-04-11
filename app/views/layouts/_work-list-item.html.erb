@@ -1,0 +1,7 @@
+<tr>
+  <td><%= item.vote_count %> </td>
+  <td><%= link_to item.title, item %></td>
+  <td><%= item.creator %></td>
+  <td><%= item.publication_year%></td>
+  <td><%= link_to "Upvote", upvote_path(item), class: "button", method: :post %></td>
+</tr>
