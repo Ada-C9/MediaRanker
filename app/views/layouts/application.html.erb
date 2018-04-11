@@ -16,20 +16,23 @@
 
     <header class="nav">
       <nav>
-        <h1>Media Ranker</h1>
-        <h2>Ranking the Best of Everything</h2>
+        <h2><%= link_to("Media Ranker", root_path)%> | <small>Ranking the Best of Everything</small></h2>
+
         <ul>
           <li>
-            <%= link_to("View top media") %>
+            <%= link_to("View top media", root_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("View all media", works_path) %>
+            <%= link_to("View all media", works_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("View all users") %>
+            <%= link_to("Add a New work", new_work_path, class: "button") %>
           </li>
           <li>
-            <%= link_to("Log in", new_work_path) %>
+            <%= link_to("View all users", users_path, class: "button") %>
+          </li>
+          <li>
+            <%= link_to("Log in", new_work_path, class: "button") %>
           </li>
         </ul>
       </nav>

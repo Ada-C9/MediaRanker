@@ -19,11 +19,27 @@
  */
  .nav ul {
    display: grid;
-   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+   grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr 0.5fr;
    list-style-type: none;
  }
 
-.nav ul li {
-  border: 1px solid black;
-  margin-right: 5px;
-}
+ header {
+   background-color: #B2DFDB;
+   padding-top: 50px;
+ }
+
+ .nav h2 {
+   text-align: center;
+ }
+
+ .nav ul {
+   padding-top: 40px;
+ }
+
+ .nav {
+    color: white;
+ }
+
+ .button {
+   background-color: #26A69A;
+ }
