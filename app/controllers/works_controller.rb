@@ -8,9 +8,19 @@ class WorksController < ApplicationController
     @work = Work.new
   end
 
-  # def create
-  #   @works = Work.new(work_params)
-  # end
+  def create
+    @work = Work.new(work_params)
+
+    if @work.save
+      # redirect_to '/books'
+      flash[:success] = "Work added successfully"
+      redirect_to works_path
+    else
+      flash.now[:failure] = "Failed to create work"
+      render :new
+    end 
+  end
+
   def top_media
     @top_albums = Work.top_albums
     @top_movies = Work.top_movies
