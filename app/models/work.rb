@@ -1,7 +1,10 @@
-
 class Work < ApplicationRecord
   has_many :votes
   has_many :users, through: :votes
+
+  validates :title, presence: true, uniqueness: true
+  validates :creator, presence: true
+  validates :published, format: { with: /\d{4}/ }, numericality: { less_than_or_equal_to: 2018 }
 
   def self.make_category_hash
     categories = []

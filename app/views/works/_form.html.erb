@@ -2,7 +2,7 @@
 
 <%= form_for @work do |f| %>
   <%= f.label :category %>
-  <%= f.select(:category, ["Book", "Album", "Music"]) %>
+  <%= f.select(:category, ["book", "album", "music"]) %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -10,7 +10,7 @@
   <%= f.label :creator %>
   <%= f.text_field :creator %>
 
-  <%= f.label :published %>
+  <%= f.label "Publication Year" %>
   <%= f.text_field :published %>
 
   <%= f.label :description %>
