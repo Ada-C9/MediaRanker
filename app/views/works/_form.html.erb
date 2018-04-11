@@ -1,0 +1,20 @@
+<h2 class="my-class"><%= page_title %></h2>
+
+<%= form_for @work do |f| %>
+  <%= f.label :category %>
+  <%= f.select :category, Work.all.map { |work| [work.category]}, :include_blank => true %>
+  <br>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+
+  <%= f.label :creator %>
+  <%= f.text_area :creator %>
+  <br>
+
+  <%= f.label :publication_year %>
+  <%= f.text_area :publication_year %>
+
+  <%= f.submit class: button%>
+<% end %>

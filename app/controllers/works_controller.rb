@@ -9,6 +9,7 @@ class WorksController < ApplicationController
   end
 
   def new
+    @work = Work.new
   end
 
   def create
@@ -23,4 +24,10 @@ class WorksController < ApplicationController
   def destroy
     #add loop to delete all votes assoc. with particular user?
   end
+
+  private
+  def work_params
+
+  end
+
 end
