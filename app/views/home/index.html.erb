@@ -1,7 +1,80 @@
-<h2> Media Spotlight: </h2>
+<h2>All Media</h2>
 
-<h3>Top Twitters<h3>
 
-<h3>Top Instagrams<h3>
+<h3> Twitters<h3>
+  <section class = "add-link">
+  <%= link_to "Add a New Twitter", new_twitter_path%>
+  </section>
+  <section>
 
-<h3>Top Subreddits </h3>
+    <% @twitters.each do |twitter| %>
+    <ul>
+    <li>
+      <strong>
+      <%= link_to twitter.id, twitter_path(twitter) %>
+      </strong>
+    </li>
+    <li>Handle:
+      <%= twitter.handle %>
+    </li>
+    <li>Followers:
+      <%= twitter.followers %>
+    </li>
+    </ul>
+  <% end %>
+
+  </section>
+
+
+<h3>Instagrams<h3>
+  <section class = "add-link">
+  <%= link_to "Add a New Instagram", new_instagram_path%>
+  </section>
+  <section>
+
+    <% @instagrams.each do |instagram| %>
+    <ul>
+    <li>
+        <%= link_to instagram.id, instagram_path(instagram) %>
+    </li>
+    <li>Handle:
+      <%= instagram.handle %>
+    </li>
+    <li>Posts:
+      <%= instagram.posts %>
+    </li>
+    <li>Followers:
+      <%= instagram.followers %>
+    </li>
+    </ul>
+  <% end %>
+
+  </section>
+
+
+<h3>Subreddits </h3>
+<section class = "add-link">
+<% link_to "Add a New Subreddit", new_subreddit_path%>
+</section>
+<section>
+
+  <%= @subreddits.each do |subreddit| %>
+  <ul>
+  <li>
+    <strong>
+    <%= link_to subreddit.id, subreddit_path(subreddit) %>
+    </strong>
+  </li>
+  <li>Title:
+    <%= subreddit.title %>
+  </li>
+  <li>Description:
+    <%= subreddit.description %>
+  </li>
+  <li> Subscribers:
+    <%= subreddit.subscribers %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

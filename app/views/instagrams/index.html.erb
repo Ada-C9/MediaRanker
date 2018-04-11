@@ -7,7 +7,7 @@
   <%= @instagrams.each do |instagram| %>
   <ul>
   <li>
-    <%= instagram.id %>
+      <%= link_to instagram.id, instagram_path(instagram) %>
   </li>
   <li>Handle:
     <%= instagram.handle %>

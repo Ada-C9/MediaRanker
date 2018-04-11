@@ -4,6 +4,4 @@ class VotesController < ApplicationController
   end
 
 #controllers are only for talking to web browsers
-
-
 end
