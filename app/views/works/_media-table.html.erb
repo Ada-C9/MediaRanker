@@ -13,13 +13,13 @@
       <td>
         <%# TODO: add vote count %>
       </td>
-      <td>
-        <%= work.title %>
+      <td class="work-title">
+        <%= link_to work.title, work_path(work.id) %>
       </td>
-      <td>
+      <td class="work-creator">
         <%= work.creator %>
       </td>
-      <td>
+      <td class="work-pub-year">
         <%= work.publication_date %>
       </td>
       <td>
