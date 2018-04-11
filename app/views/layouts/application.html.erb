@@ -14,24 +14,25 @@
 
 <body>
   <header>
-    <p> <%= link_to "Media Ranker ", root_path %> <sub>| Ranking the Best of Everything</sub>
+    <p>
+      <%= link_to "Media Ranker ", root_path %> | Ranking the Best of Everything
     </p>
     <nav>
       <ul>
-        <div class="header-float-right">
+        <div class="nav-float-right">
           <li><%= link_to "View top media" %></li>
           <li><%= link_to "View all media", works_path %></li>
           <li><%= link_to "Add a new work", new_work_path %></li>
           <li><%= link_to "View all users", users_path %></li>
         </div>
-        <div class="header-float-left">
+        <div class="nav-float-left">
           <% if @user %>
+          <li>Logged in as <%= @user.name %></li>
           <li>
-            Welcome <%= @user.name %>
             <%= link_to "Logout", logout_path, method: :delete %>
           </li>
           <% else %>
-          <%= link_to "Login", login_form_path %>
+          <li><%= link_to "Login", login_form_path %></li>
           <% end %>
         </div>
       </ul>

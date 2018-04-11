@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+  before_action :find_user
+
   def edit
   end
 
   def index
-    @user = User.find_by(id: session[:user_id] )
+    @users = User.all
   end
 
   def new
