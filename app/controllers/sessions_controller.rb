@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "#{ user.name } is successfully logged in."
       redirect_to votes_path
     else
+      redirect_to users_path
       # other logic that does more stuff
     end
   end
