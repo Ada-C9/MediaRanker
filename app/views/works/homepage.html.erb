@@ -18,6 +18,9 @@
           <%= link_to(movie.title, work_path(movie)) %>
           by <%= movie.creator %>
         </li>
+        <li>
+           <%= movie.votes.count %> votes
+        </li>
         <% end %>
       </ul>
     </div>
@@ -32,6 +35,9 @@
           <%= link_to(book.title, work_path(book)) %>
           by <%= book.creator %>
         </li>
+        <li>
+           <%= book.votes.count %> votes
+        </li>
         <% end %>
       </ul>
     </div>
@@ -45,6 +51,9 @@
         <li>
           <%= link_to(album.title, work_path(album)) %>
           by <%= album.creator %>
+        </li>
+        <li>
+           <%= album.votes.count %> votes
         </li>
         <% end %>
       </ul>
