@@ -22,5 +22,13 @@ nav ul li {
   list-style: none;
   float: left;
   margin: 1em;
-  padding-bottom: 2em;
+}
+
+.error-messages {
+  color: red;
+}
+
+.failure {
+  background-color: pink;
+  color: red;
 }
