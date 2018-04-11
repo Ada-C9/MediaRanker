@@ -17,3 +17,15 @@ backtoblack:
   category: album
   creator: Amy Winehouse
   publication_year: 2006
+
+avatar:
+  title: Avatar
+  category: movie
+  creator: James Cameron
+  publication_year: 2009
+
+hill:
+  title: The Miseducation of Lauryn Hill
+  category: album
+  creator: Lauryn Hill
+  publication_year: 1998
