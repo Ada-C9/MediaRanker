@@ -1,2 +1,46 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<main>
+  <article class="media-details">
+    <h5><strong><%= @work.title %></strong></h5>
+    <p>
+      Created by: <%= @work.creator %>
+    </p>
+    <p>
+      Published: <%= @work.publication_year %>
+    </p>
+    <p>
+      <%= @work.description %>
+    </p>
+    <section class="media-options">
+      <p>
+        <%= link_to "Edit", edit_work_path(@work.id) %>
+      </p>
+      <p>
+        Upvote button
+      </p>
+      <p>
+        <%= link_to "Delete", work_path(@work.id), method: :delete, data: { confirm: "Confirm deletion" } %>
+      </p>
+    </section>
+  </article>
+  <article class="albums">
+    <h5><strong># Votes for this <%= @work.category.capitalize %></strong></h5>
+    <table>
+      <tr>
+        <th>
+          User
+        </th>
+        <th>
+          Date
+        </th>
+      </tr>
+      <tr>
+        <td>
+          User with path link
+        </td>
+        <td>
+          Vote date
+        </td>
+      </tr>
+    </table>
+  </article>
+</main>
