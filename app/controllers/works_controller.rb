@@ -8,6 +8,7 @@ class WorksController < ApplicationController
   end
 
   def create
+  
     @work = Work.new(work_params)
     if @work.save
     redirect_to works_path
@@ -21,7 +22,7 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find(params[:id])
-    
+
   end
 
 

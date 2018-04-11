@@ -9,15 +9,13 @@
       <th>Date</th>
     </tr>
   </thead>
-<h3><%=@work.votes.count%> for this book</h3>
-<%@work.votes.each do |vote|%>
-  <tr>
-    <td>
-      <%-#link to user,%>
-    </td>
-    <td>
-      <%=@work.vote_date%>
-    </td>
-  </tr>
-  <%end%>
+
+<h3><%=@work.votes.count%> Votes for this <%=@work.category%></h3>
+
+<%@work.votes.zip(@work.users).each do |vote,user|%>
+<tr>
+  <td><%=user.name%></td>
+  <td><%=vote.vote_date%></td>
+</tr>
+<%end%>
 </table>
