@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :find_user, only: [:create, :destroy]
 
   def new
-    @user = User.new
+    @potential_user = User.new
   end
 
   def create
@@ -18,15 +18,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:success] = "Successfully logged out"
-    redirect_to root_path
-  end
-
-  private
-
-  def find_user
-    @user = User.find_by(name: params[:user][:name])
+    if @user
+      session[:user_id] = nil
+      flash[:success] = "Successfully logged out"
+      redirect_to root_path
+    end
   end
 
 end

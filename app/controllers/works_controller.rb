@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:index, :show, :new, :edit]
 
   def index
     @albums = Work.all.where(category: "album")
