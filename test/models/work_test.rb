@@ -95,6 +95,13 @@ describe Work do
     movie.valid?.must_equal false
   end
 
+  it "checks publication year must be in past" do
+    album.publication_year = 2019
+    album.valid?.must_equal false
+    album.publication_year = 2050
+    album.valid?.must_equal false
+  end
+
 
   it "has validation for empty creator" do
     book.creator = nil
