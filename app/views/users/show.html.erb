@@ -1,5 +1,5 @@
 User Summary: <%= @user.name %>
-Joined site <%=@user.created_at%>
+Joined site <%=@user.created_at.to_datetime.to_formatted_s(:long_ordinal)%>
 
 <h1>Votes</h1>
 <table>
@@ -41,3 +41,11 @@ Joined site <%=@user.created_at%>
         </td>
       </tr>
       <%end%>
+
+
+
+
+
+
+      <%= link_to "See all Users", users_path, class:"button"  %>
+      <%= link_to "Back to Media List", works_path, class:"button"  %>
