@@ -21,7 +21,11 @@ class UsersController < ApplicationController
 
   end
 
-  def show; end
+  def show
+
+    @works = Work.all
+
+  end
 
   def edit; end
 
