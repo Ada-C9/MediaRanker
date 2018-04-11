@@ -1,6 +1,6 @@
 <% if model.errors.messages.any? %>
   <section class="alert callout">
-    <h3>A problem occurred: how do get this to be dynamic?? </h3>
+    <h3>A problem occurred: Could not *action* <%= "#{model.category}" %> </h3>
     <ul>
       <% model.errors.messages.each do |field, problems| %>
         <% problems.each do |problem| %>
