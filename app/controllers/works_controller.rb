@@ -78,8 +78,12 @@ class WorksController < ApplicationController
     work = Work.find(params[:work_id])
     vote = Vote.new(user_id: user_id, work_id: work.id)
 
-    if vote.save
-      flash[:success] = 'Successfully upvoted!'
+    if session[:user_id]
+      if vote.save
+        flash[:success] = 'Successfully upvoted!'
+      else
+        flash[:failure] = 'Unable to upvote'
+      end
     else
       flash[:failure] = 'You must log in to do that'
     end
