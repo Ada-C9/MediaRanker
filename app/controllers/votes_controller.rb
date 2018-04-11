@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
 
   def new
-
+    @vote = Vote.all
   end
 
   def create

@@ -43,6 +43,9 @@
       <td><%= link_to work.creator, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
+      <td>
+      <%= button_to "Upvote", create_vote_path(work.id), method: :post %>
+      </td>
 
     </tr>
     <% end %>
@@ -68,7 +71,7 @@
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td><%= link_to work.publication_year, work_path(work.id) %></td>
       <td>
-
+      <%= button_to "Upvote", create_vote_path(work.id), method: :post %>
       </td>
     </tr>
     <% end %>
