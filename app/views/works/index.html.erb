@@ -60,7 +60,7 @@
     <th width="100">Published</th>
     <th width="100">Upvote</th>
   </tr>
-<%Work.where(category:'book').each do |movie|%>
+<%Work.where(category:'movie').each do |movie|%>
   <tr>
     <td>
       <%=movie.votes.count%>

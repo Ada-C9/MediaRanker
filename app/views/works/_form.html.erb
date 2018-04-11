@@ -2,7 +2,7 @@
 
 
 <%=form_for @work do |f| %>
-<%= f.select :category, [['Movie'],['Book'],['Album']], :prompt => 'Select a Category' %>
+<%= f.select :category, [['movie'],['book'],['album']], :prompt => 'Select a Category' %>
 <%= f.label :title%>
 <%= f.text_field :title%>
 
