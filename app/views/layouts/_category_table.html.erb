@@ -1,26 +1,30 @@
-<section class=category>
-  <ul class=labels>
-    <li>Votes</li>
-    <li>Title</li>
-    <li>Created By</li>
-    <li>Published</li>
-    <li>Upvote</li>
-  </ul>
-<% @works.each do |w| %>
-  <ul>
-    <li>Vote Count TBD</li>
-    <li><%= link_to("#{w.title}", work_path(w.id)) %></li>
-    <li><%= "#{w.creator}" %></li>
+<table>
+  <thead>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Upvote</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @works.each do |w| %>
+    <tr>
+      <td>Vote Count TBD</td>
+      <td><%= link_to("#{w.title}", work_path(w.id)) %></td>
+      <td><%= "#{w.creator}" %></td>
     <% if w.publication_year != nil %>
-      <li><%= "#{w.publication_year.year}" %></li>
+      <td><%= "#{w.publication_year.year}" %></td>
     <% else %>
-      <li>
+      <td>
         <%= "#{w.publication_year}" %>
-      </li>
+      </td>
     <% end %>
-    <li>
-      <%= link_to("Upvote", new_vote_path(w.id)) %>
-    </li>
-  </ul>
-<% end %>
-</section>
+      <td>
+        <%= link_to("Upvote", new_vote_path(w.id), class: "button") %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+<table>
