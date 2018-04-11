@@ -1,6 +1,11 @@
 class WorksController < ApplicationController
   def index
     @works = Work.all
+
+    @books = Work.where(category: "book")
+    @albums = Work.where(category: "album")
+    @movies = Work.where(category: "movie")
+
   end
 
   def show
@@ -13,6 +18,12 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
+
+    if @work.save
+      redirect_to works_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -26,10 +37,16 @@ class WorksController < ApplicationController
       redirect_to work_path(@work.id)
     else
       render :edit
+    end
   end
 
   def destroy
-    params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+
   end
 
+  private
+
+  def work_params
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
 end

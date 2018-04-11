@@ -1,2 +1,11 @@
-<h1>Works#index</h1>
-<p>Find me in app/views/works/index.html.erb</p>
+<h1>works List</h1>
+
+<section class="work-card">
+    <% @works.each do |work| %>
+      <section class="work-details">
+        <p class="work-title">
+          <%=  link_to work.title, work_path(work.id), class: 'work-link' %>
+        </p>
+      </section>
+    <% end %>
+</section>
