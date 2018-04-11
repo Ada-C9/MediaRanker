@@ -17,6 +17,7 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.title} added successfully!"
       redirect_to work_path(@work)
     else
+      flash.now[:failure] = "Requested action could not be completed"
       render :new
     end
   end
