@@ -9,37 +9,38 @@
   <table>
     <thead>
       <tr>
-        <th width="80">Votes</th>
-        <th>Title</th>
+        <th>Media Title</th>
         <th>Created By</th>
-        <th width="100">Published</th>
-        <th width="100">Upvote</th>
+        <th>Published</th>
+        <th>Category</th>
+        <th>Voted On</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @works.each do |work| %>
+      <% @user.votes.each do |vote| %>
       <tr>
         <td>
-          <%=  %>
+          <%= link_to(vote.work.title, work_path(vote.work))  %>
         </td>
         <td>
-          <%= link_to(work.title, work_path(work)) %>
+          <%= vote.work.creator %>
         </td>
         <td>
-          <%= work.creator %>
+          <%= vote.work.publication_year %>
         </td>
         <td>
-          <%= work.publication_year %>
+          <%= vote.work.category %>
         </td>
         <td>
-          Upvote
+          <%= vote.work.created_at %>
         </td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
+  <%= link_to("See all Users", users_path, class: "button") %>
   <%= link_to("Back to Media List", root_path, class: "button") %>
 
 </main>
