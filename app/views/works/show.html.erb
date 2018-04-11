@@ -1,2 +1,34 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<article class="media-detials">
+  <h3><%= @work.title %></h3>
+  <p>Created By: <%= @work.creator %></p>
+  <p>Publihsed: <%= @work.publication_year %></p>
+  <p><%= @work.description %></p>
+  <section>
+    <%= link_to "Back to media ranks", root_path, class: "button"%>
+    <%= link_to "Edit", edit_work_path, class: "button"%>
+    <%= link_to "Upvote", work_votes_path(@work), mehtod: :post, class: "button"%>
+    <%= link_to "Delete", work_path(@work.id), method: :delete, class: "button"%>
+  </section>
+
+
+  <article class="voting-users">
+    <h3> number of votres for this <%= @work.category %></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>user</th>
+          <th>Date</th>
+        </tr>
+        <tbody>
+          <tr>
+            <%= link_to "user", user_path %>
+          </tr>
+          <tr>
+            date placeholder
+          </tr>
+        </tbody>
+      </thead>
+    </table>
+  </article>
+
+</article>
