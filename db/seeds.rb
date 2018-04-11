@@ -30,5 +30,5 @@ CSV.foreach(MEDIA_FILE, :headers => true) do |row|
   end
 end
 
-puts "Added #{Passenger.count} work records"
+puts "Added #{Work.count} work records"
 puts "#{work_failures.length} works failed to save"
