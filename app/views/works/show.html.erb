@@ -5,12 +5,27 @@
 <p>Published: <%= @work.publication_year %></p>
 <p>Description: <%= @work.description %></p>
 
-<%# TODO:  %>
-<h6>buttons go here</h6>
 <%= link_to("Back to media ranks", root_path, class: "button") %>
-<%= button_to("Edit", edit_work_path(@work.id)) %>
-<%= button_to("Upvote", work_votes_path(@work.id)) %>
-<%= button_to("Delete", work_path(@work.id), method: :delete) %>
+<%= link_to("Edit", edit_work_path(@work.id), class: "button") %>
+<%= link_to("Upvote", work_votes_path(@work.id), class: "button", method: :post) %>
+<%= link_to("Delete", work_path(@work.id), class: "button", method: :delete) %>
 
 <%# TODO:  %>
 <h6>votes table goes here</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @work.votes.each do |vote| %>
+    <tr>
+      <td><%= vote.user.name %></td>
+      <td><%= vote.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
