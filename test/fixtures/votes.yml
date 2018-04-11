@@ -128,7 +128,7 @@ vote22:
   publication: hostclub
   created_at: <%= DateTime.new(2017,5,10) %>
 
-# fifth place and sixth - with 2
+# fifth and sixth - with 2
 vote23:
   user: usako
   publication: tsubasa
@@ -159,7 +159,3 @@ vote29:
   user: usako
   publication: rurouni
   created_at: <%= DateTime.new(2017,10,10) %>
-vote30:
-  user: usako
-  publication: codenamev
-  created_at: <%= DateTime.new(2017,11,10) %>

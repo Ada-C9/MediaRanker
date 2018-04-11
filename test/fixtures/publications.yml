@@ -13,6 +13,7 @@ sailorcrystal:
   creator: Naoko Takeuchi
   publication_year: 2014
   description: Oh no....
+  created_at: <%= DateTime.new(2016,1,1) %>
 cardcaptor:
   category: TV Show
   title: Cardcaptor Sakura
@@ -137,15 +138,18 @@ spirited:
   creator: Hayao Miyazaki
   publication_year: 2002
   description: careful what paths you follow
+  created_at: <%= DateTime.new(2017,1,27)%>
 appleseed:
   category: Movie
   title: Appleseed
   creator:
   publication_year: 2004
   description:
+  created_at: <%= DateTime.new(2017,3,18)%>
 vampire:
   category: Movie
   title: Vampire Hunter D
   creator:
   publication_year: 1985
   description: Another classic
+  created_at: <%= DateTime.new(2017,6,13)%>
