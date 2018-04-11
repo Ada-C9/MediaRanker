@@ -1,6 +1,21 @@
 <header>
 <h2> Media Spotlight: </h2>
-     <%= @instagrams.first %>
+     <% spotlight = @instagrams.first %>
+     <ul>
+     <li>
+         <%= link_to spotlight.id, instagram_path(spotlight) %>
+     </li>
+     <li>Handle:
+       <%= spotlight.handle %>
+     </li>
+     <li>Posts:
+       <%= spotlight.posts %>
+     </li>
+     <li>Followers:
+       <%= spotlight.followers %>
+     </li>
+     </ul>
+
 </header>
 <main>
 <section>
