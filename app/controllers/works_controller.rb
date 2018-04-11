@@ -7,6 +7,10 @@ class WorksController < ApplicationController
     @work = Work.new
   end
 
+  def edit
+    @work = Work.find_by(id: params[:id])
+  end
+
   def creates
     if @work.save
     redirect_to works_path
@@ -15,16 +19,18 @@ class WorksController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def show
-    @work = Work.find(params[:id])
-
+    @work = Work.find_by(id: params[:id])
   end
 
 
   def destroy
+    @work = Work.find_by(id: params[:id])
+    if @work.destroy
+      redirect_to works_path
+    else
+      render :show
+    end
   end
 
   private

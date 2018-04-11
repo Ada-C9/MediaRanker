@@ -9,9 +9,8 @@
       <th>Date</th>
     </tr>
   </thead>
-
+<%= link_to "Delete", delete_work_path, method: :delete%>
 <h3><%=@work.votes.count%> Votes for this <%=@work.category%></h3>
-
 <%@work.votes.zip(@work.users).each do |vote,user|%>
 <tr>
   <td><%=user.name%></td>
