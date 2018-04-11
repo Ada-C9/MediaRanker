@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if !@user.nil?
       session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.username}"
+      redirect_to root_path
     else
       @user = User.create(username: params[:user][:username])
 
@@ -14,12 +15,11 @@ class UsersController < ApplicationController
       else
         session[:user_id] = @user.id
         flash[:success] = "Welcome #{@user.username}"
-
       end
       redirect_to root_path
     end
   end
-  
+
   def new
     @user = User.new
   end

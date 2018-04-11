@@ -1,7 +1,7 @@
 <main class="row">
 <h3>Edit this <%= @work.category %></h3>
 <section>
-  <form class="edit_work" id="edit_work_<%= @work.id %>" action="/works/<%= @work.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="Cse1mV9XdQdYalNMQuBc3nVTBHlMskiOlxNGgaZpUxAaaAMTt3WcHJOXV5PjiHgheQaOpYs6mzf4j96cS5HT4g==">
+  <form class="edit_work" id="edit_work_<%= @work.id %>" action="/works/<%= @work.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" >
     <label for="work_category">Category</label>
     <select name="work[category]" id="work_category"><option selected="selected" value="album">album</option>
 <option value="book">book</option>

@@ -4,4 +4,5 @@ class Vote < ApplicationRecord
 
   validates :user_id, presence: true
   validates :work_id, presence: true
+  validates :word_id, uniqueness: { scope: :user_id }
 end

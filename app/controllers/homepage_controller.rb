@@ -5,5 +5,6 @@ class HomepageController < ApplicationController
     @books = @works.where(category: "book")
     @albums = @works.where(category: "album")
     @movies = @works.where(category: "movie")
+    @sample = @works.sample
   end
 end

@@ -1,11 +1,12 @@
 <h3>
   <span class="media-spotlight-header">Media Spotlight</span>
-  <a href="/works/1"><%= @works.find_by(id: 1).title %></a>
+  <a href="/works/<%=@sample.id%>"><%= @sample.title %></a>
   by
-  <%=@works.find_by(id: 1).creator%>
+  <%=@sample.creator%>
 </h3>
 
-<p><%= @works.find_by(id: 1).votes.count %></p>
+<p><%= @sample.votes.count %> votes - <%= @sample.description %></p>
+
 
 <hr class="root-hr">
 

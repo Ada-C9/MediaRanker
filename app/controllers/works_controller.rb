@@ -3,11 +3,13 @@ class WorksController < ApplicationController
 
   before_action :find_work, only: [:edit, :show, :update, :destroy]
 
+
   def index
     @works = Work.all
   end
 
   def create
+
     @work = Work.new(work_params)
     if @work.save
       flash[:success] = "#{@work[:category]} Created"
