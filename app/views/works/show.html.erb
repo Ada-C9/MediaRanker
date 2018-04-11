@@ -1,2 +1,29 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<h3><%= @work.title %></h3>
+
+<p>Create by: <%= @work.creator %> </p>
+<p>Published on: <%= @work.publication_year %> </p>
+
+<ul>
+  <li><%= link_to "Back to media ranks", root_path%>  </li>
+  <li><%= link_to "Edit", edit_work_path%>  </li>
+  <li><%= link_to "Upvote", root_path%>  </li>
+  <li><%= link_to "Delete", delete_work_path, method: :delete%>  </li>
+</ul>
+
+
+<h3> Votes for this <%= @work.category.capitalize %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Put user</td>
+      <td>Put vote date</td>
+    </tr>
+  </tbody>
+</table>

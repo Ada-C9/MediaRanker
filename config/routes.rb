@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   patch 'works/:id', to: 'works#update'
 
-  delete 'works/:id', to: 'works#destroy'
+  delete 'works/:id', to: 'works#destroy', as: 'delete_work'
 
 
   # Users
