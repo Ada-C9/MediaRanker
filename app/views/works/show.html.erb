@@ -6,7 +6,7 @@
 <ul>
   <li>Back to media ranks to be linked</li>
   <li><%= link_to "Edit", edit_work_path(@work.id) %></li>
-  <li>Upvote to be linked</li>
+  <li><%= link_to "Upvote", work_votes_path(@work), method: :post %></li>
   <li><%= link_to "Delete", work_path(@work.id), :data => {:confirm => 'Are you sure?'}, method: :delete %></li>
 </ul>
 

@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   resources :mains, only: [:index]
 
-  resources :works
+  resources :works do
+    resources :votes, only: [:create]
+  end
 
   resources :users, only: [:index, :show]
-
-  resources :votes, only: [:create]
 
 end
