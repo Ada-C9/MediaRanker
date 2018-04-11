@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index', as: 'users'
+  get 'users', to: 'users#index', as: 'users'
 
-  get 'users/show'
+  get 'users/:id',to: 'users#show', as: 'user'
 
   resources :votes
   resources :sessions

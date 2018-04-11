@@ -1,0 +1,26 @@
+<main class="row">
+  <h3>User Summary: <%= @user.name %> </h3>
+  <p>Joined site <%= @user.created_at %></p>
+
+  <h4>Votes</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Media Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Category</th>
+        <th>Voted On</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><a href="/works/246">Death with Interruptions</a></td>
+          <td>Saramago</td>
+          <td>1099</td>
+          <td>Book</td>
+          <td>Oct 10, 2017</td>
+        </tr>
+    </tbody>
+  </table>
+</main>
