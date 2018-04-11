@@ -16,7 +16,9 @@ class PublicationsController < ApplicationController
   end
 
   def destroy
-
+    @publication = Publication.find(params[:id])
+    @publication.destroy if @publication
+    redirect_to publications_path
   end
 
   def new
