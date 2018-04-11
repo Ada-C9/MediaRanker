@@ -30,7 +30,7 @@ Work.create!([
   {category: "book", title: "Hidden Figures", creator: "Margot Lee Shetterly", description: "Good book that came before the movie", publication_year: 2016, vote_count: 1},
   {category: "book", title: "Kindred", creator: "Octavia E. Butler", description: "Good sci-fi book", publication_year: 1979, vote_count: 1},
   {category: "album", title: "The Woods", creator: "Sleater-Kinney", description: nil, publication_year: 2005, vote_count: 1},
-  {category: "album", title: "The Princess Bride", creator: "Rob Reiner", description: "While home sick in bed, a young boy's grandfather reads him a story called The Princess Bride.", publication_year: 1987, vote_count: 1},
+  {category: "movie", title: "The Princess Bride", creator: "Rob Reiner", description: "While home sick in bed, a young boy's grandfather reads him a story called The Princess Bride.", publication_year: 1987, vote_count: 1},
   {category: "movie", title: "Zootopia", creator: "Disney", description: "In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.", publication_year: 2016, vote_count: 1},
   {category: "book", title: "Practical Object-Oriented Design in Ruby", creator: "Sandi Metz", description: "Good programming book", publication_year: 2012, vote_count: 1},
   {category: "book", title: "Parable of the Sower", creator: "Octavia E. Butler", description: nil, publication_year: 1993, vote_count: 1}
