@@ -1,7 +1,7 @@
 class PublicationsController < ApplicationController
 
   before_action :find_user
-  
+
   def index
     @publications = Publication.all.order(:category)
   end
@@ -19,6 +19,7 @@ class PublicationsController < ApplicationController
     if @publication.save
       redirect_to publication_path(@publication.id)
     else
+      flash.now[:alert] = { "create #{@publication.category}" => @publication.errors }
       render :new
     end
   end
@@ -32,6 +33,7 @@ class PublicationsController < ApplicationController
     if @publication.update(publication_params)
       redirect_to publication_path(@publication.id)
     else
+            flash.now[:alert] = { "update #{@publication.category}" => @publication.errors }
       render :edit
     end
   end

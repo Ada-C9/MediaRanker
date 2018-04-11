@@ -22,14 +22,34 @@
         <%= link_to "View all media", publications_path %>
         <%= link_to "Add a new work", new_publication_path %>
         <%= link_to "View all users", users_path %>
-        <% if @user.name %>
+        <% if @user %>
           <%= link_to "Logged in as #{@user.name}", user_path(@user.id) %>
-          <%= link_to "Log Out", logout_path %>
+          <%= link_to "Log Out", logout_path, method: :delete %>
         <% else %>
           <%= link_to "Log In", login_form_path %>
         <% end %>
       </nav>
     </header>
+    <section>
+      <% flash.each do | name, message | %>
+        <% if name == "alert" %>
+          <% flash[:alert].each do |field, messages| %>
+            <h3>A problem occurred: Could not <%= field %></h3>
+            <ul>
+              <% messages.each do | field, message | %>
+                <li>
+                  <%= field %>: <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        <% else %>
+          <h3>
+            <%= message %>
+          </h3>
+        <% end %>
+      <% end %>
+    </section>
     <main>
       <%= yield %>
     </main>
