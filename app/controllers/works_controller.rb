@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   include GetUsername
   before_action :get_username
+  before_action :find_work, only: [:show, :edit, :update]
 
   # before action for top and index?
   def top
@@ -44,19 +45,12 @@ class WorksController < ApplicationController
   end
 
   def show
-    work_id = params[:id]
-    @work = Work.find(work_id)
     @votes = Vote.where(work_id: work_id)
   end
 
-  def edit
-    work_id = params[:id]
-
-    @work = Work.find(work_id)
-  end
+  def edit; end
 
   def update
-    @work = Work.find(params[:id])
     @work.assign_attributes(work_params)
 
     if @work.save
@@ -102,5 +96,8 @@ class WorksController < ApplicationController
     return params.require(:work).permit(:title, :category_id, :creator, :publication_year, :description)
   end
 
+  def find_work
+    @work = Work.find(params[:id])
+  end
 
 end
