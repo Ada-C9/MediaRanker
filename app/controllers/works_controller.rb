@@ -1,7 +1,10 @@
 class WorksController < ApplicationController
   def root
-    @works = Work.all
-    @spotlight = Work.spotlight
+    works = Work.all
+    @spotlight = works.spotlight
+    @books = works.top_ten("book")
+    @albums = works.top_ten("album")
+    @movies = works.top_ten("movie")
   end
 
   def index
@@ -61,6 +64,7 @@ class WorksController < ApplicationController
       if vote.save
         flash.notice = "Successfully upvoted #{@work.title}"
       else
+        #failure is not working, fix
         flash.now[:status] = :failure
         flash.now[:result_text] = "Could not upvote"
         flash.now[:messages] = vote.errors.messages
@@ -68,7 +72,7 @@ class WorksController < ApplicationController
     else
       flash.alert = "You must log in to do that"
     end
-    redirect_to work_path(@work)
+    redirect_to root_path
   end
 
   private

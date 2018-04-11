@@ -5,12 +5,12 @@
       <%= link_to @spotlight.title, work_path(@spotlight) %>
       by <%= @spotlight.creator %>
       </h3>
-      <p><%= @spotlight.vote_count %> - <%= @spotlight.description %></p>
+      <p><%= @spotlight.vote_count %> votes - <%= @spotlight.description %></p>
     </div>
   </section>
 <section class="top-ten-container">
   <article class="top-ten columns large-4 small-12">
-    <h3>Top Movies</h3
+    <h3>Top Movies</h3>
     <%= render partial: "layouts/work", collection: @movies, as: :item %>
   </article>
   <article class="top-ten columns large-4 small-12">
