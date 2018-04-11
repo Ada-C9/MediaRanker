@@ -11,12 +11,23 @@
     <%= csrf_meta_tags %>
   </head>
 
+
+
   <body>
     <%= link_to "View top works", top_works_path, class:"button" %>
           <%= link_to "View all works", works_path, class:"button"  %>
           <%= link_to "Add a new work", new_work_path, class:"button"  %>
           <%= link_to "View all users", users_path, class:"button"  %>
     <%= yield %>
+
+        <% if @user %>
+          <li>
+            Welcome <%= @user.name %>
+            <%= link_to "Logout", logout_path, method: :delete %>
+          </li>
+        <% else %>
+           <%= link_to "Login", login_path %>
+        <% end %>
 
   </body>
 </html>

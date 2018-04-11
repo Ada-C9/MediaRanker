@@ -32,18 +32,33 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-     redirect_to user_path(@user.id)
-   else
-     render :edit
-   end
- end
-
+      redirect_to user_path(@user.id)
+    else
+      render :edit
+    end
+  end
 
 
   def login
+    @user = User.find_by(name: params[:user][:name])
+
+    if @user
+      session[:logged_in] = @user
+      redirect_to users_path
+    else
+      create
+    end
+
+    flash[:success] = "Successfully logged in as #{@user['name']}"
+  end
+
+  def login_form
   end
 
   def logout
+    session[:logged_in] = nil
+    redirect_to users_path
+    flash[:success] = "You've been logged out"
   end
 
 
