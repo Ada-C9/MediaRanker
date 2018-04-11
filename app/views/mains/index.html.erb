@@ -1,4 +1,5 @@
-<h3>Media Spotlight placeholder</h3>
+<h3>Media Spotlight: <%= link_to @top_work.title, work_path(@top_work)%> by <%= @top_work.creator %></h3>
+<p><%= @top_work.total_votes %> votes - <%= @top_work.description %></p>
 
 <h3>Top Movies</h3>
 <ul>
