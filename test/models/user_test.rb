@@ -1,7 +1,6 @@
 require "test_helper"
 
 describe User do
-  let(:user) { User.new }
 
   it "has an a name" do
     user = users(:bob)
