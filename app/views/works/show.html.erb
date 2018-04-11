@@ -1,0 +1,36 @@
+<h2><%= @work.title %></h2>
+<p>
+  <ul>
+    <li>
+      <%= "Created by: #{@work.creator}" %>
+    </li>
+    <li>
+      <%= "Published: #{@work.publication_year}" %>
+    </li>
+    <li>
+      <%= "#{@work.description}" %>
+    </li>
+  </ul>
+</p>
+
+<p>
+  <ul>
+    <li><%= link_to "Back to media ranks", root_path %></li>
+    <li><%= link_to "Edit", edit_work_path(@work.id) %></li>
+    <li><%= "Upvote"%></li>
+    <li><%= link_to "Delete", delete_work_path(@work.id),
+    method: :delete %></li>
+  </ul>
+</p>
+
+<h2><%= "#{@work.votes} Votes for this #{@work.category.capitalize}" %></h2>
+
+<ul>
+  <!-- how do I list all the users that voted for this? -->
+  <!-- Go from works > votes > users -->
+  <!-- Go directly for users -> Votes -->
+  <!-- Go to votes -> if vote.work_id == work.id print users.find(vote.user_id) -->
+
+  <li>username</li>
+  <li>voted on</li>
+</ul>
