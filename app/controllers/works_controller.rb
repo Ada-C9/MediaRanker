@@ -1,14 +1,14 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update, :upvote]
+  before_action :work_list, only: [:root, :index]
   def root
-    works = Work.all
-    @spotlight = works.spotlight
-    @books = works.top_ten("book")
-    @albums = works.top_ten("album")
-    @movies = works.top_ten("movie")
+    @spotlight = @works.spotlight
+    @books = @works.top_ten("book")
+    @albums = @works.top_ten("album")
+    @movies = @works.top_ten("movie")
   end
 
   def index
-    @works = Work.all
     @books = @works.books
     @albums = @works.albums
     @movies = @works.movies
@@ -29,16 +29,11 @@ class WorksController < ApplicationController
     end
   end
 
-  def show
-    @work = Work.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @work = Work.find(params[:id])
     @work.assign_attributes(work_params)
 
     if @work.save
@@ -54,9 +49,6 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    @work = Work.find(params[:id])
-    # @current_user = User.find_by(id: session[:user_id])
-
     if session[:user_id]
       @current_user = User.where(id: session[:user_id]).first
 
@@ -67,7 +59,6 @@ class WorksController < ApplicationController
       else
         flash.now[:notice] = "Could not upvote"
         render :show
-        # flash[:messages] =
       end
     else
       flash.alert = "You must log in to do that"
@@ -77,5 +68,13 @@ class WorksController < ApplicationController
   private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    @work = Work.find(params[:id])
+  end
+
+  def work_list
+    @works = Work.all
   end
 end

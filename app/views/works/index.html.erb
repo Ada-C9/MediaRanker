@@ -1,16 +1,16 @@
 
 
-<section class="top-ten-container css-grid">
-  <article class="top-ten columns large-4 small-12">
+<main class="row">
+  <article class="media-table">
     <h3>Top Movies</h3>
     <%= render partial: "layouts/work", collection: @movies, as: :item %>
   </article>
-  <article class="top-ten columns large-4 small-12">
+  <article class="media-table">
     <h3>Top Books</h3>
     <%= render partial: "layouts/work", collection: @books, as: :item %>
   </article>
-  <article class="top-ten columns large-4 small-12">
+  <article class="media-table">
     <h3>Top Albums</h3>
     <%= render partial: "layouts/work", collection: @albums, as: :item %>
   </article>
-</section>
+</main>
