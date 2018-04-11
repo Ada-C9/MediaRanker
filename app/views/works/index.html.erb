@@ -22,7 +22,7 @@
     <% @albums.each do |album| %>
     <tr>
       <td>
-        <%# TODO:  %><%=album.votes.count %>
+        <%= album.votes.count %>
       </td>
       <td>
         <%= link_to album.title, work_path(album)%>
@@ -34,7 +34,7 @@
         <%=album.published_year%>
       </td>
       <td>
-        <%= link_to 'Upvote', class:'button'%>
+      <%# TODO:  %>  <%= link_to 'Upvote', '#', class:'button'%>
       </td>
     </tr>
   </tr>
@@ -63,7 +63,7 @@
     <% @books.each do |book| %>
     <tr>
       <td>
-        <%# TODO:  %><%=  %>
+        <%=book.votes.count  %>
       </td>
       <td>
         <%= link_to book.title, work_path(book)%>
@@ -75,7 +75,7 @@
         <%=book.published_year%>
       </td>
       <td>
-        <%= link_to 'Upvote', class:'button'%>
+        <%# TODO:  %><%= link_to 'Upvote','#', class:'button'%>
       </td>
     </tr>
   </tr>
@@ -104,7 +104,7 @@
     <% @movies.each do |movie| %>
     <tr>
       <td>
-        <%# TODO:  %><%=  %>
+        <%=movie.votes.count %>
       </td>
       <td>
         <%= link_to movie.title, work_path(movie)%>
@@ -116,7 +116,7 @@
         <%=movie.published_year%>
       </td>
       <td>
-        <%= link_to 'Upvote', class:'button'%>
+        <%# TODO:  %><%= link_to 'Upvote','#',  class:'button'%>
       </td>
     </tr>
   </tr>
