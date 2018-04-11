@@ -1,39 +1,18 @@
 class Work < ApplicationRecord
 
-  validates :title, presence: true
+  validates :title, :category, presence: true
 
 
   def self.books
-    books = []
-    works = Work.all
-    works.each do |work|
-      if work.category == "book"
-        books << work
-      end
-    end
-    return books
+    Work.where(category: "book")
   end
 
   def self.albums
-    albums = []
-    works = Work.all
-    works.each do |work|
-      if work.category == "album"
-        albums << work
-      end
-    end
-    return albums
+    Work.where(category: "album")
   end
 
   def self.movies
-    movies = []
-    works = Work.all
-    works.each do |work|
-      if work.category == "movie"
-        movies << work
-      end
-    end
-    return movies
+    Work.where(category: "movie")
   end
 
 end
