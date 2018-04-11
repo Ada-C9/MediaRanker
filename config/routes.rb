@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :votes
   get "/homepage", to: "works#homepage", as: "homepage"
-  get "/login", to: "sessions#login", as: "login"
+  get "/login", to: "sessions#new", as: "login"
+  post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout", as: "logout"
 end

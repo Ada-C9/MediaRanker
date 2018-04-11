@@ -113,6 +113,7 @@ user_failures = []
 raw_users.each do |user|
   new_user = User.new
   new_user.name = user
+  new_user.joined = Date.today
   successful = new_user.save
   if !successful
     user_failures << new_user

@@ -4,8 +4,24 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  title: Practical Objet-Oriented Design in Ruby
+  creator: Sandi Metz
+  publication_year: 2000
+  description: perfect for rubyists
+  category: book
 # column: value
 #
-two: {}
-# column: value
+two:
+  title: Take me apart
+  creator: Kelela
+  publication_year: 2017
+  description: So much forward-thinking pop and R&B succumbs to innovation fatigue, offering intricate futurescapes that nonetheless start to sound interchangeable.
+  category: album
+  # column: value
+three:
+  title: Cooking with love
+  creator: Ali Liebert
+  publication_year: 2018
+  description: Tonight Hallmark continues its Countdown to Valentine's series with Cooking with Love, another delightfully romantic movie with a fun, comedic touch. Tonight's movie premieres at 9 p.m. Eastern (8 p.m. Central) on Sunday, February 11, 2018.
+  category: movie
