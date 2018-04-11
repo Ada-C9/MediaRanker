@@ -19,16 +19,6 @@
 
 */
 
-
-.css-grid {
-  display: grid;
-  grid-template-columns: ;
-}
-
-.css-grid ul {
-  list-style-type: none;
-}
-
 .top-ten-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
