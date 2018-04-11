@@ -1,4 +1,7 @@
 <section>
+
+  <%= render partial: "layouts/error_messages", locals: { model: @work } %>
+
   <%= form_for @work do |f| %>
 
     <%= f.label :category %>
