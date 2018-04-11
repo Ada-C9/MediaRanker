@@ -16,11 +16,13 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    if @work.save
-      redirect_to root_path
+    if @work.id != nil
+      flash[:success] = "Succesfully added #{@work.category} #{@work.id}"
+      redirect_to works_path
     else
+      flash.now[:failure] = "Could not add work"
       render :new
-    end  
+    end
   end
 
   def edit
@@ -30,6 +32,8 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    @work = Work.find_by(id: params[:id].to_i)
+    @work.destroy
   end
 
   private

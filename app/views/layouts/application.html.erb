@@ -11,6 +11,7 @@
   <%= csrf_meta_tags %>
 
   <h2>Media Ranker| Ranking the best of everything</h2>
+
   <nav>
     <ul class = "nav-bar">
       <li>
@@ -33,10 +34,14 @@
     </ul>
   </nav>
 
-
 </head>
 
 <body>
+  <section class="flash">
+  <% flash.each do |name, message| %>
+    <div class="<%= name %>"><%= message %></div>
+  <% end %>
+</section>
 
   <%= yield %>
 
