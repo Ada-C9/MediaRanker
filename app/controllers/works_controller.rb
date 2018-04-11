@@ -33,6 +33,19 @@ class WorksController < ApplicationController
   end
 
   def update
+    @work = Work.find_by(id: params[:id])
+
+    if !@work.nil?
+      if @work.update(work_params)
+        flash[:sucess] = "#{@work.title} saved"
+        redirect_to work_path(@work.id)
+      else
+        flash.now[:alert] = "Media was not save."
+        render :edit
+      end
+    else
+      redirect_to works_path
+    end
   end
 
   def destroy
