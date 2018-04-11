@@ -1,5 +1,11 @@
 class WorksController < ApplicationController
+  before_action :find_user
+  
   def index
+    @works = Work.all.order(params[:id])
+  end
+
+  def welcome
     @works = Work.all.order(params[:id])
   end
 
