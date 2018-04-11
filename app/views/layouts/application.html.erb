@@ -30,11 +30,12 @@
           <li>
             <%= link_to("View all users", users_path, class: "button") %>
           </li>
-          <li>
+          <li class="float-right">
             <% if session[:user_id] %>
-            <%= link_to "Log Out", logout_path, class: "button", method: :delete %>
+              <%= link_to "Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button" %>
+              <%= link_to "Log Out", logout_path, class: "button", method: :delete %>
             <% else %>
-            <%= link_to "Login", login_path, class: "button" %>
+              <%= link_to "Login", login_path, class: "button" %>
             <% end %>
           </li>
         </ul>

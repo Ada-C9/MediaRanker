@@ -10,50 +10,52 @@
 
 <hr class="root-hr">
 
-<section class="top-ten">
-  <h3>Top Movies</h3>
+<section class="top-ten-container">
+  <section class="top-ten">
+    <h3 class="top-ten-category">Top Movies</h3>
     <ul>
       <% @works.each do |work| %>
-        <% if work.category == "movie" %>
-          <li>
-            <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
-          </li>
-          <li>
-            WORK.VOTE_COUNT
-          </li>
-        <% end %>
+      <% if work.category == "movie" %>
+      <li>
+        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+      </li>
+      <li>
+        WORK.VOTE_COUNT
+      </li>
+      <% end %>
       <% end %>
     </ul>
-</section>
+  </section>
 
-<section class="top-ten">
-  <h3>Top Books</h3>
-  <ul>
-    <% @works.each do |work| %>
+  <section class="top-ten">
+    <h3 class="top-ten-category">Top Books</h3>
+    <ul>
+      <% @works.each do |work| %>
       <% if work.category == "book" %>
-        <li>
-          <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
-        </li>
-        <li>
-          WORK.VOTE_COUNT
-        </li>
+      <li>
+        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+      </li>
+      <li>
+        WORK.VOTE_COUNT
+      </li>
       <% end %>
-    <% end %>
-  </ul>
-</section>
+      <% end %>
+    </ul>
+  </section>
 
-<section class="top-ten">
-  <h3>Top Books</h3>
-  <ul>
-    <% @works.each do |work| %>
+  <section class="top-ten">
+    <h3 class="top-ten-category">Top Books</h3>
+    <ul>
+      <% @works.each do |work| %>
       <% if work.category == "album" %>
-        <li>
-          <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
-        </li>
-        <li>
-          WORK.VOTE_COUNT
-        </li>
+      <li>
+        <%= link_to("#{work.title}", work_path(work)) %> by <%= work.creator %>
+      </li>
+      <li>
+        WORK.VOTE_COUNT
+      </li>
       <% end %>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
+  </section>
 </section>

@@ -18,8 +18,17 @@
 
 
  */
+ /* General */
 
 
+ ul {
+   list-style-type: none;
+   margin-bottom: 1rem;
+   list-style-position: outside;
+   line-height: 1.6;
+ }
+
+/*Application ERB Header*/
 
  h3 {
    color: #26A69A;
@@ -27,6 +36,14 @@
 
  .main-header {
    background-color: #B2DFDB;
+   max-width: 100%;
+   border-bottom: 1px solid #EEEEEE;
+   margin-bottom: 10px;
+   padding: 25px 20px 10px 20px;
+ }
+
+ .main-header h2 {
+   text-align: center;
  }
 
  .header-title a {
@@ -35,10 +52,6 @@
 
  .sub-header {
    color: white;
- }
-
- ul {
-   list-style-type: none;
  }
 
  /* Main Page */
@@ -54,6 +67,21 @@
 
 .most-popular {
   text-decoration: underline;
+}
+
+.top-ten ul {
+  margin-left: 0px;
+}
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em
+}
+
+.top-ten-category {
+  border-bottom: 2px solid;
+  border-color: #B2DFDB;
 }
 
 /* Flash */
