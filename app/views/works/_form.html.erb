@@ -1,6 +1,6 @@
 <%= form_for @work do |w| %>
 
-  <%= w.label : %>
+  <%= w.label :category %>
   <%= w.select :category, ['album' ,'book', 'movie'] %>
 
   <%= w.label :title %>
@@ -15,5 +15,5 @@
   <%= w.label :description %>
   <%= w.text_field :description %>
 
-  <%= w.submit class: "button" %>
+  <%= w.submit %>
 <% end %>

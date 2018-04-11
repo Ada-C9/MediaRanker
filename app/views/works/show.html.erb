@@ -1,3 +1,13 @@
-<h3><%= @work.title %></h3>
-<p>Created by: <%= @work.creator %></p>
-<p>Published: <%= @work.publication_year %></p>
+<article>
+  <h3><%= @work.title %></h3>
+  <p>Created by: <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_year %></p>
+  <section>
+    <ul>
+      <li><%= link_to "Back to media ranks", works_path %></li>
+      <li><%= link_to "Edit", edit_work_path(@work) %></li>
+      <li><%= link_to "Delete", work_path(@work), method: :delete, data: { confirm: "Are you sure?" } %></li> 
+    </ul>
+  </section>
+
+</article>
