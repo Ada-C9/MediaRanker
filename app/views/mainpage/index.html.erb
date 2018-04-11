@@ -12,7 +12,9 @@
 
 <ul>
   <h2>Top Books</h2>
+<%books = []%>
   <%@works.where(category: "book").each do |work|%>
+<%books << work%>
   <li>
     <span><%= link_to work.title, work_path(work)%></span>
     <span><%= work.created_by%></span>

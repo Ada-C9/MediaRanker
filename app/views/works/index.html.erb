@@ -7,7 +7,7 @@
     <span><%= link_to work.title, work_path(work)%></span>
     <span><%= work.created_by%></span>
     <span><%= work.published%></span>
-    <span>Upvote</span>
+    <span><%= link_to "Upvote", upvote_path(work), method: :post%></span>
 
   </li>
   <%end%>
@@ -31,18 +31,18 @@
 <ul>
   <h2>Movies</h2>
   <%@works.where(category: "movie").each do |work|%>
+
   <li>
     <span><%= work.total_votes%></span>
     <span><%= link_to work.title, work_path(work)%></span>
     <span><%= work.created_by%></span>
     <span><%= work.published%></span>
     <span>Upvote</span>
-
-
   </li>
+
   <%end%>
 </ul>
 <ul>
-  <li><%= link_to "View top media", root_path%></li>
-  <li><%= link_to "Add a new work", new_work_path%></li>
+  <li><%= link_to "View top media", root_path, class: "button"%></li>
+  <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
 </ul>

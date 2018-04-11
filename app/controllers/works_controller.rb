@@ -41,6 +41,26 @@ class WorksController < ApplicationController
     end
   end
 
+  def upvote
+    if User.find(session[:user_id]) !=nil
+    user_id = User.find(session[:user_id]).id
+  else
+    flash[:failure] = "You need to sign in to be able to vote"
+    redirect_to works_path
+    end
+
+    work_id = params[:id]
+
+
+    vote = Vote.new(user_id: user_id, work_id: work_id)
+
+    if vote.save
+      redirect_to works_path
+      flash[:success] = "You just voted for #{params[:title]}"
+    end
+
+  end
+
   def destroy
     Work.destroy(params[:id])
     redirect_to root_path

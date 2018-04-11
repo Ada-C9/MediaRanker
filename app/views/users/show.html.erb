@@ -1,5 +1,5 @@
 <h2>User Summary: <%= link_to @user.username, user_path(@user)%></h2>
-<p>Joined site <%= @user.created_at %></p>
+<p><%= @user.created_at.strftime("Join site %b %d, %Y")  %></p>
 
 <h3>Votes<h3>
 
@@ -10,6 +10,6 @@
     <li><%= work.created_by%></li>
     <li><%= work.published%></li>
     <li><%= work.category%></li>
-    <li><%= vote.created_at%></li>
+    <li><%= vote.created_at.strftime("%b %d, %Y")%></li>
   </ul>
   <%end%>

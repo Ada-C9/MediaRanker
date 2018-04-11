@@ -3,7 +3,7 @@
 <ul>
   <li><span><%= link_to user.username, user_path(user)%></span></li>
   <li><span><%= user.total_votes%></span></li>
-  <li><span><%= user.created_at%></span></li>
+  <li><span><%= user.created_at.strftime("%b %d, %Y")%></span></li>
 </ul>
 <%end%>
-<%= link_to "View top media", root_path%>
+<%= link_to "View top media", root_path, class: "button"%>
