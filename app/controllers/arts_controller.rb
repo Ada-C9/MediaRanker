@@ -59,3 +59,5 @@ class ArtsController < ApplicationController
     return params.require(:art).permit(:category, :title, :creator, :pub_year, :description)
   end
 end
+
+# TODO: ADD LAST TWO BUTTONS TO BOTTOM OF INDEX

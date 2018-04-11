@@ -1,14 +1,20 @@
 <h3>List Of Works</h3>
 
 <h3>Albums</h3>
-
-<%= render partial: "table", locals: {arts: @albums} %>
+<section>
+  <%= render partial: "table", locals: {arts: @albums} %>
+</section>
 
 <h3>Books</h3>
-
-<%= render partial: "table", locals: {arts: @books} %>
-
+<section>
+  <%= render partial: "table", locals: {arts: @books} %>
+</section>
 
 <h3>Movies</h3>
+<section>
+  <%= render partial: "table", locals: {arts: @movies} %>
+</section>
 
-<%= render partial: "table", locals: {arts: @movies} %>
+<a class="button" href="/">View Top Media</a>
+
+<a class="button" href="/arts/new">Add a New Work</a>
