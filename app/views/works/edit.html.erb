@@ -1,2 +1,2 @@
 <h2> Edit this <%= @work.category %></h2>
-<%= render partial: "form" %>
+<%= render partial: "form", locals: { model: @work } %>

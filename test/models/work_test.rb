@@ -39,4 +39,12 @@ describe Work do
     end
   end
 
+  describe 'relations' do
+    before do
+      @work = Work.create(title: "test work", creator: "Van Gogh", publication_year: 1993)
+    end
+
+  end
+
+
 end
