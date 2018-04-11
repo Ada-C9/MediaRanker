@@ -1,4 +1,5 @@
 require "test_helper"
+require 'date'
 
 describe Publication do
   let(:publication) { Publication.new }
