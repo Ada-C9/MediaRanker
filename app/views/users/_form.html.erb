@@ -14,15 +14,15 @@
   </ul>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user,  url: {action: "create"},html: {class: 'form'} do |f| %>
 <div>
   <%= f.label :name %>
   <%= f.text_field :name %>
 </div>
 
 <div>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.label :joined %>
+  <%= f.date_field :joined %>
 </div>
 
 <div>

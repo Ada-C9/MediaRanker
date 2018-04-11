@@ -46,6 +46,6 @@ class InstagramsController < ApplicationController
 
   private
   def instagram_params
-    return params.permit(:handle, :posts, :followers)
+    return params.require(:instagram).permit(:handle, :posts, :followers)
   end
 end

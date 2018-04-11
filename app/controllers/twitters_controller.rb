@@ -50,6 +50,6 @@ class TwittersController < ApplicationController
 
   private
   def twitter_params
-    params.permit(:handle,:followers)
+    params.require(:twitter).permit(:handle,:followers)
   end
 end
