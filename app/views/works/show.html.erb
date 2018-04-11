@@ -1,5 +1,3 @@
-<h2>Work Details/Show Page</h2><br>
-
 <h3><%= @work.title%></h3>
 <p>Created by: <%= @work.creator %></p>
 <p>Published: <%= @work.publication_year %></p>
@@ -10,9 +8,8 @@
 <%= link_to("Upvote", work_votes_path(@work.id), class: "button", method: :post) %>
 <%= link_to("Delete", work_path(@work.id), class: "button", method: :delete) %>
 
-<%# TODO:  %>
-<h6>votes table goes here</h6>
-
+<%# TODO: Fix time signature in work show table %>
+<h3><%= @work.vote_count %> Votes for this <%= @work.category.capitalize %></h3>
 <table>
   <thead>
     <tr>
@@ -21,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @work.votes.each do |vote| %>
+    <% @work.votes.each do |vote| %>
     <tr>
       <td><%= vote.user.name %></td>
       <td><%= vote.created_at %></td>
