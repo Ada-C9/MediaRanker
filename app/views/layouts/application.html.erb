@@ -20,8 +20,8 @@
       <small>Ranking the Best of Everything</small>
     </h2>
     <nav>
-      <%= link_to "View top media", works_path, class: "button" %>
-      <%= link_to "View all media", root_path, class: "button" %>
+      <%= link_to "View top media", root_path, class: "button" %>
+      <%= link_to "View all media", works_path, class: "button" %>
       <%= link_to "Add a new work", new_work_path, class: "button" %>
       <%= link_to "View all users", users_path, class: "button" %>
       <div class="float-right">
@@ -40,7 +40,12 @@
 
   <section class="flash">
     <% flash.each do |name, message| %>
-    <div class="callout <%= name %>"><%= message %></div>
+    <div class="callout <%= name %>">
+    <%= message %>
+    <% if @vote %>
+    <%= render partial: 'layouts/error-messages', locals: {model: @vote } %>
+    <% end %>
+  </div>
     <% end %>
   </section>
 

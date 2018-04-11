@@ -60,19 +60,18 @@ class WorksController < ApplicationController
     if session[:user_id]
       @current_user = User.where(id: session[:user_id]).first
 
-      vote = Vote.new(user: @current_user, work: @work)
-      if vote.save
+      @vote = Vote.new(user: @current_user, work: @work)
+      if @vote.save
         flash.notice = "Successfully upvoted #{@work.title}"
+        redirect_to root_path
       else
-        #failure is not working, fix
-        flash.now[:status] = :failure
-        flash.now[:result_text] = "Could not upvote"
-        flash.now[:messages] = vote.errors.messages
+        flash.now[:notice] = "Could not upvote"
+        render :show
+        # flash[:messages] =
       end
     else
       flash.alert = "You must log in to do that"
     end
-    redirect_to root_path
   end
 
   private

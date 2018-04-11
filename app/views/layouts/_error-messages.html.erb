@@ -1,8 +1,4 @@
 <% if model.errors.messages.any? %>
-  <section class="callout alert">
-
-    <h3>There were some problems</h3>
-
     <ul>
       <% model.errors.messages.each do |field, problem| %>
       <li><strong><%= field.capitalize%></strong>
@@ -12,6 +8,4 @@
       </li>
       <% end %>
     </ul>
-
-  </section>
 <% end %>
