@@ -38,7 +38,7 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.category.name.capitalize} successfully added"
       redirect_to work_path(@work)
     else
-      flash.now[:failure] = "A problem occured. Could not create #{params[:work][:category]}."
+      flash.now[:failure] = "A problem occured. Could not create #{@work.category.name.capitalize}."
       render :new
     end
   end
@@ -99,7 +99,7 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    return params.require(:work).permit(:title, :category, :creator, :publication_year, :description)
+    return params.require(:work).permit(:title, :category_id, :creator, :publication_year, :description)
   end
 
 
