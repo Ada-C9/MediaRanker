@@ -21,6 +21,7 @@ class WorksController < ApplicationController
       flash[:success] = 'Work added successfully'
       redirect_to works_path
     else
+      flash.now[:failure] = "Validations Failed"
       render :new
     end
   end

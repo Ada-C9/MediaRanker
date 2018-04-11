@@ -4,8 +4,33 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+life:
+  category: movie
+  title: life
+  published_year: 1999
+
+victory:
+  category: album
+  title: victory lap
+  published_year: 2018
+
+acri:
+  category: movie
+  title: acrimony
+  published_year: 2018
+
+cold:
+  category: book
+  title: coldest winter ever
+  published_year: 2000
+
+her:
+  category: album
+  title: her
+  published_year: 2016
+
+magic:
+  category: book
+  title: the magic
+  published_year: 2013

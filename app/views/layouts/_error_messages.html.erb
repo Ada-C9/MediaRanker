@@ -1,6 +1,6 @@
-<% if model.errors.messages.any? %>
-  <section class="error-messages">
-    <h3>There were some problems with the data entered</h3>
+#<%# QUESTION:  %><% if model.errors.messages.any? %>
+  <section class="alert callout">
+    <h3>There were some problems</h3>
     <ul>
       <% model.errors.messages.each do |field, problems| %>
         <% problems.each do |problem| %>
