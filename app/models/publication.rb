@@ -16,7 +16,7 @@ class Publication < ApplicationRecord
   end
   def self.find_spotlight_publication
     publications_with_votes = Publication.all.find_all{ |publication| !publication.votes.empty? }
-    return "There are no votes" if publications_with_votes.empty?
+    return nil if publications_with_votes.empty?
     sorted_publications = publications_with_votes.sort_by do |publication|
       publication.most_recent_vote.created_at
     end

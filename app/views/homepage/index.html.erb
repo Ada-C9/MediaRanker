@@ -1,12 +1,16 @@
 <section class="spotlight">
   <% spotlight_publication = Publication.find_spotlight_publication%>
-  <h3>Media Spotlight:
-    <%= link_to spotlight_publication.title, publication_path(spotlight_publication.id)%>
-     by <%= spotlight_publication.creator %>
-   </h3>
-   <p>
-     <%= spotlight_publication.find_total_votes%> votes - <%= spotlight_publication.description %>
-   </p>
+  <% if spotlight_publication%>
+    <h3>Media Spotlight:
+      <%= link_to spotlight_publication.title, publication_path(spotlight_publication.id)%>
+      by <%= spotlight_publication.creator %>
+    </h3>
+    <p>
+       <%= spotlight_publication.find_total_votes%> votes - <%= spotlight_publication.description %>
+    </p>
+    <% else%>
+      <h3>There are no votes yet</h3>
+    <% end %>
 </section>
 
 <section class="top-ten-container">

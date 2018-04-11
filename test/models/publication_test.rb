@@ -56,13 +56,13 @@ describe Publication do
         Publication.find_spotlight_publication.must_equal sailor_moon
       end
 
-      it 'returns string if there are no votes yet' do
+      it 'returns nil if there are no votes yet' do
         Publication.all.each do |publication|
           publication.votes.each do | vote |
             vote.destroy
           end
         end
-        Publication.find_spotlight_publication.must_equal "There are no votes"
+        Publication.find_spotlight_publication.must_be_nil
       end
     end
     describe 'self.return_all_categories' do
