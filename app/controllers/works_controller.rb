@@ -13,7 +13,14 @@ class WorksController < ApplicationController
   end
 
   def create
+    @work = Work.new(work_params)
+    @category = Category.find(params[:work][:category])
 
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :new
+    end
   end
 
   def show; end
@@ -35,9 +42,12 @@ class WorksController < ApplicationController
 
   private
 
+  def work_params
+    return params.require(:work).permit(:category_id, :title, :creator, :publication_year, :description)
+  end
+
   def find_work
     @work = Work.find(params[:id])
-
   end
 
 end

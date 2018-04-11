@@ -14,6 +14,15 @@
     </tr>
   </thead>
   <tbody>
+    <% @user.votes.each do |v| %>
+    <tr>
+      <td><%= link_to v.work.title, work_path(v.work) %></td>
+      <td><%= v.work.creator %></td>
+      <td><%= v.work.publication_year %></td>
+      <td><%= v.work.category.name.capitalize %></td>
+      <td><%= v.created_at %></td>
+    </tr>
+    <% end %>
 
   </tbody>
 </table>
