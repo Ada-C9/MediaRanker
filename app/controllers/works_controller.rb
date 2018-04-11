@@ -2,6 +2,9 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all
+    @albums = Work.where(category: "album")
+    @books = Work.where(category: "book")
+    @movies = Work.where(category: "movie")
   end
 
   def new
@@ -41,7 +44,7 @@ class WorksController < ApplicationController
 
   def destroy
     work = Work.find(params[:id])
-    work.destroy 
+    work.destroy
 
     redirect_to works_path
   end
