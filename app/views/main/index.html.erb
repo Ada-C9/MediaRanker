@@ -1,9 +1,13 @@
 <h1>Media Spotlight</h1>
+<% if @media_spotlight %>
 <%= link_to @media_spotlight.title, work_path(@media_spotlight.id) %> by <%= @media_spotlight.creator %>
+<%end %>
+<hr>
 
 <section class="top-ten-container">
   <section class = "top-ten">
     <h2>Top Movies</h2>
+    <hr>
     <ul>
       <% Work.top_ten_movies.each do |work| %>
       <li>
@@ -18,6 +22,7 @@
 
   <section class="top-ten">
     <h2>Top Albums</h2>
+    <hr>
     <ul>
       <% Work.top_ten_albums.each do |work| %>
       <li>
@@ -32,6 +37,7 @@
 
   <section class="top-ten">
     <h2>Top Books</h2>
+    <hr>
     <ul>
       <% Work.top_ten_books.each do |work| %>
       <li>
