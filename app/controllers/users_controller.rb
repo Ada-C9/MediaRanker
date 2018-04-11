@@ -17,9 +17,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.delete(:user_id)
-    flash.now[:success] "logged out successfully "
-    redirect_to root_path
+    
   end
 
 private
