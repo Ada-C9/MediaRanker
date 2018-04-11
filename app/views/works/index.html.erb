@@ -1,1 +1,68 @@
 <h3>List of works</h3>
+<section class= "media-table">
+  <h4>Albums</h4>
+  <table>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+    <tr>
+      <% @albums.each do |album| %>
+      <tr>
+        <td>vote count</td>
+        <td><%= album.title %></td>
+        <td><%= album.creator %></td>
+        <td><%= album.publication_year %></td>
+        <td class='button'>link for upvoting</td>
+      </tr>
+      <% end %>
+    </tr>
+  </table>
+</section>
+<section class= "media-table">
+  <h4>Books</h4>
+  <table>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+    <tr>
+      <% @books.each do |book| %>
+      <tr>
+        <td>vote count</td>
+        <td><%= book.title %></td>
+        <td><%= book.creator %></td>
+        <td><%= book.publication_year %></td>
+        <td class='button'>link for upvoting</td>
+      </tr>
+      <% end %>
+    </tr>
+  </table>
+</section>
+<section class= "media-table">
+  <h4>Movies</h4>
+    <table>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Upvote</th>
+      <tr>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td>vote count</td>
+          <td><%= movie.title %></td>
+          <td><%= movie.creator %></td>
+          <td><%= movie.publication_year %></td>
+          <td class='button'>link for upvoting</td>
+        </tr>
+        <% end %>
+      </tr>
+    </table>
+</section>
+<ul>
+  <li class='button'><%= link_to "View top media", works_path %></li>
+  <li class='button'><%= link_to "Add a new work", new_work_path %></li>
+</ul>
