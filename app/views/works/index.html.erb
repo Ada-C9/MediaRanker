@@ -12,7 +12,7 @@
   <tr>
 <% @works.each do |work| %>
 <%if work.category == "album" %>
-  <td> # </td>
+  <td> <%= work.vote_count%> </td>
   <td>
     <%=link_to work.title, work_path(work[:id]) %>
   </td>
@@ -37,7 +37,7 @@
   <tr>
 <% @works.each do |work| %>
 <%if work.category == "book" %>
-  <td> # </td>
+  <td> <%= work.vote_count%> </td>
   <td>
     <%=link_to work.title, work_path(work[:id]) %>
   </td>
@@ -63,7 +63,7 @@
   <tr>
 <% @works.each do |work| %>
 <%if work.category == "movie" %>
-  <td> # </td>
+  <td> <%= work.vote_count%> </td>
   <td>
     <%=link_to work.title, work_path(work[:id]) %>
   </td>
