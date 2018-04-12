@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  # before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @show_user = User.find_by(id: params[:id])
   end
 
   def edit
@@ -47,9 +48,9 @@ class UsersController < ApplicationController
     return params.require(:work).permit(:user_name)
   end
 
-  def find_user
-    @user = User.find_by(id: params[:id])
-  end
+  # def find_user
+  #   @user = User.find_by(id: params[:id])
+  # end
 
 
 end
