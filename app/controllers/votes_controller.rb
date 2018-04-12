@@ -6,13 +6,18 @@ class VotesController < ApplicationController
   end
 
   def upvote
+    # errors if user already voted
+    # how to use redirect back
     if session[:user_id]
       @vote = Vote.new(user_id: session[:user_id], work_id: params[:work_id])
 
       if @vote.save
-        redirect_to work_path(params[:work_id])
+        flash[:success] = "successfully upvoted"
+        redirect_to works_path
+
       else
-        redirect_to work_path(params[:work_id])
+        flash[:failure] = "Could not upvote"
+        redirect_to works_path
       end
 
     else

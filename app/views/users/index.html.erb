@@ -26,7 +26,7 @@
           <%= user.votes.count %>
         </td>
         <td>
-          <%= user.created_at %>
+          <%= user.created_at.to_date.strftime("%b %d, %Y") %>
         </td>
       </tr>
       <% end %>

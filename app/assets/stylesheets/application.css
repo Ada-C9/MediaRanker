@@ -18,20 +18,18 @@
 
  */
 
-ul {
-  list-style-type: none;
-}
-
-header {
-  text-align: center;
-}
-
 .nav_bar {
   padding: 25px 20px;
 }
 
-.main {
+main {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 32px auto;
+}
+
+main .grid-x div > ul, .show-info {
+  list-style-type: none;
+  margin-left: 0;
 }

@@ -14,15 +14,14 @@ class SessionsController < ApplicationController
       @user = User.new(name: params[:user][:name])
       if @user.save
         session[:user_id] = @user.id
-        flash[:success] = "#{ @user.name } is successfully logged in"
-        redirect_to user_path(@user)
+        flash[:success] = "Successfully logged in as existing user #{ @user.name }"
+        redirect_to root_path
       else
         # bad name or something
         flash.now[:failure] = "A problem occurred: Could not log in"
-        render :new 
+        render :new
       end
     end
-
   end
 
   def logout
