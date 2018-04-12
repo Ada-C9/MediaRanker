@@ -12,25 +12,46 @@
   </head>
 
   <body>
-    <header>
+    <header class="page-header row">
     <h1>
 
       <%=link_to "Media Ranker|ranking the Best of Everything", '/', method: :get%>
     </h1>
-    <%=link_to "View top media", root_path, method: :get%>
-      <%=link_to "View all media", works_path, method: :get%>
-      <%=link_to "Add a new work", new_work_path, method: :get%>
-      <%=link_to "View all users", users_path, method: :get%>
-      <% if @user %>
-            <li>
-              Welcome <%= @user.username %>
-              <%= link_to "Logout", logout_path, method: :delete %>
-            </li>
-          <% else %>
-             <%= link_to "Login", login_form_path %>
-          <% end %>
+    <%=link_to "View top media", root_path, method: :get,class: "button"%>
+      <%=link_to "View all media", works_path, method: :get,class: "button"%>
+      <%=link_to "Add a new work", new_work_path, method: :get,class:"button"%>
+      <%=link_to "View all users", users_path, method: :get,class:"button"%>
+        <% if @user && @user.id %>
+        <%= link_to "logged in as #{@user.username}", user_path(@user.id), method: :get,class: "button" %>
+          <%= link_to "Log out", logout_path, class: "button", method: :delete%>
+        <% else %>
+          <%= link_to "Log in", login_path, class: "button"%>
+        <% end %>
+     </div>
 
-
+      </nav>
+    </header>
+    <main>
+      <section >
+        <% flash.each do |name, message| %>
+          <section class="callout <%= name %>">
+            <% if name == "alert" %>
+              <ul>
+              <% flash[:alert].each do |field, message| %>
+                  <li>
+                  <strong><%= field %>: </strong>
+                    <%= message %>
+                  </li>
+              <% end %>
+                </ul>
+            <% else %>
+            <p>
+              <%= message %>
+            </p>
+            <% end %>
+          </section>
+        <% end %>
+      </section>
     <%= yield %>
 
   </body>

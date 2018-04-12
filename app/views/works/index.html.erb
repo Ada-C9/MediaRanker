@@ -114,6 +114,7 @@
     </th>
   </tr>
 </thead>
+<tbody>
   <% @works.each do |work| %>
   <% if work.category == "movie" %>
     <tr>
@@ -135,6 +136,7 @@
     </tr>
   <% end %>
   <% end %>
+</tbody>
 </table>
 <%=link_to "View Top Media", root_path, class: "button"  %>
 <%=link_to "Add a New Work", new_work_path, class: "button"  %>

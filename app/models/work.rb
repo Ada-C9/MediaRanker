@@ -1,5 +1,6 @@
 class Work < ApplicationRecord
   has_many :votes
+  
 
 
   def self.top_work
