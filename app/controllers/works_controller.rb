@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   def index
-    @user = User.find_by(id: session[:user_id]) || User.new
+    @user = User.find_by(id: session[:user_id])
     @albums = Work.where(category:"album")
     @books = Work.where(category:"book")
     @movies = Work.where(category:"movie")

@@ -1,18 +1,19 @@
 class UpvotesController < ApplicationController
   def create
-    @upvote = Upvote.new(user_id:session[:user_id], work_id:params[:id])
-    if @upvote.save
-      flash[:success] = "Successfully upvoted!"
-      redirect_to works_path
+    @user = User.find_by(id: session[:user_id])
+    if !@user
+      flash[:notice] = "You must log in to do that"
+      redirect_back fallback_location: :works_path
     else
-      error = @upvote.errors
-      if !error[:user].empty?
-        flash[:error] = "You must log in to do that"
+      @upvote = Upvote.new(user_id:session[:user_id], work_id:params[:work_id])
+      if @upvote.save
+        flash[:success] = "Successfully upvoted!"
+        redirect_to works_path
       else
-        flash[:error] = "You can't upvote more than once!"
+        flash[:notice] = "Could not upvote"
+        flash[:alert] = { user: "has already voted for this work" }
+        redirect_back fallback_location: :works_path
       end
-      redirect_to works_path
     end
-
   end
 end

@@ -23,8 +23,8 @@
       <%= link_to "View all media", works_path %>
       <%= link_to "Add a new work", new_work_path %>
       <%= link_to "View all users", users_path %>
-      <% if @user.name %>
-      <%= link_to "Logged in as #{@user.name}", login_path, method: :post%>
+      <% if @user && @user.id %>
+      <%= link_to "Logged in as #{@user.name}", user_path(@user.id), method: :get %>
       <%= link_to "Logout", logout_path, method: :delete %>
       <% else %>
       <%= link_to "Login", login_form_path, method: :get %>
