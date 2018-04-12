@@ -22,4 +22,9 @@ class Work < ApplicationRecord
     return movies.sort_by{|movie| movie.votes.count}.reverse[0..9]
   end
 
+  def self.find_spotlight
+    works = Work.all
+    return works.sort_by{|work| work.votes.count}.reverse[0]
+  end
+
 end
