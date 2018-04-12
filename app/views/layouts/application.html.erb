@@ -12,8 +12,15 @@
   </head>
 
   <body>
-  
-
+    <main>
+      <section class="flash">
+      <ul>
+        <%flash.each do |field,message|%>
+        <li><%=message%></li>
+        <%end%>
+      <ul>
+      </section>
+    </main>
     </section>
     <%= yield %>
 
