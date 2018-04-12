@@ -81,3 +81,7 @@
 
 </ul>
 </section>
+
+<% (@works.where(category: "movie")).works_with_vote_tallies %>
+<% @works.get_top_ten_works_with_tallies %>
+<% @works.get_top_work_with_tally %>
