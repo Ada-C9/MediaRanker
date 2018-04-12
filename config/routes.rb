@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
+  resources :votes, only: [:new, :create]
+
   get '/login', to: 'sessions#new', as: 'login_form'
   post '/login', to: 'sessions#create', as: 'login'
   delete '/login', to: 'sessions#destroy', as: 'logout'
