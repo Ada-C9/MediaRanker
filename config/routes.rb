@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'works#home'
 
   resources :works do
-    resources :votes, only: [:create]
+    post '/upvote', to: 'votes#create', as: 'upvote'
   end
 
   resources :users, only: [:index, :show]
