@@ -12,7 +12,7 @@
     <% @users.each do |user| %>
     <tr>
       <td><%= link_to user.name, user_path(user.id) %></td>
-      <td>TODO: User upvote count</td>
+      <td><%=user.upvotes.count%></td>
       <td><%=user.created_at.strftime("%b %d, %Y")%></td>
     </tr>
     <% end %>
