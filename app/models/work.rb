@@ -12,4 +12,5 @@ class Work < ApplicationRecord
     %w[album movie book]
   end
 
+
 end
