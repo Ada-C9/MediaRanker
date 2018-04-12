@@ -1,6 +1,6 @@
 <h1>List of Users</h1>
 <% @users.each do |user| %>
-  <span><%=user.name%></span>
+  <span><%=link_to user.name, user_path(user.id)%></span>
   <span><%=user.created_at.to_s(:long)%></span>
   <br>
 <% end %>
