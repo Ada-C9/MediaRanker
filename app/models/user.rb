@@ -12,16 +12,13 @@ class User < ApplicationRecord
       user_indices[user] = User.calculate_jaccard(new_user, user)
     end
 
-    # p user_indces
-    user_indices = user_indices.sort_by { |user, index| index } # is this ascending or descending?
-    top_similar_raw = user_indices.last(2) # can change this to last(5) if ascending - format [user, jaccard]
-    # p top_similar_raw
+    user_indices = user_indices.sort_by { |user, index| index }
+    top_similar_raw = user_indices.last(5)
 
     top_similar = Array.new
     top_similar_raw.each do |user_index|
       top_similar << user_index[0]
     end
-    # p top_similar
 
     recommendations = User.get_recommendations(top_similar, new_user) # this should probably not be a class method but it is for now for testing
 
