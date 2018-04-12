@@ -1,6 +1,12 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
 
+  def home
+    @top_albums = Work.top_works("album")
+    @top_movies = Work.top_works("movie")
+    @top_books = Work.top_works("book")
+  end
+
   def index
     @works = Work.all
   end

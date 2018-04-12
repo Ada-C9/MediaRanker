@@ -1,7 +1,14 @@
 class Work < ApplicationRecord
   has_many :votes
 
-  validates :category, :title, :creator, :publication_year, :description, presence: true
+  validates :category, :title, :creator, presence: true
 
-  validates :title, :creator,  length: { in: 2..25 }
+  def self.all_works (type)
+    return Work.where(category: type)
+  end
+
+  def self.top_works (type)
+    return Work.where(category: type).limit(10)
+  end
+
 end
