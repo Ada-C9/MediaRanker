@@ -16,37 +16,51 @@ describe Work do
       work.errors.messages.must_include :title
     end
 
-    it "must have a category" do
-      work = works(:best_book)
-      result = work.valid?
-      result.must_equal false
-      work.errors.messages.must_include :category
-    end
+    it "requires a unique title" do
 
-    it "must have a publication_year" do
-      work = works(:watch_worthy)
-      result = work.valid?
-      result.must_equal false
-      work.errors.messages.must_include :publication_year
-    end
-
-    it "must have a creator" do
-      work = works(:must_book)
-      result = work.valid?
-      result.must_equal false
-      work.errors.messages.must_include :creator
     end
   end
 
   describe "relations" do
     it "must have votes" do
-        work = works(:best_movie)
-        work.votes.count.must_equal 1
-      end
+      work = works(:best_movie)
+      work.votes.count.must_equal 1
+    end
 
     it "does not have votes" do
       work = works(:watch_worthy)
       work.votes.count.must_equal 0
     end
-   end
+  end
+
+  describe 'popular_works' do
+    user = User.first
+    work = Work.first
+    vote = Vote.new(work: work, user: user)
+
+    work2 = Work.first 
+
+    it "identifies the top 10" do
+      Work.top_ten_albums("album").first.title.must_equal "Harry Potter"
+    end
+  end
+
+  # describe "top " do
+  #   user = User.first
+  #   work = Work.first
+  #
+  #   user1 = User.last
+  #   work1=Work.last
+  #
+  #   user2=User.first + 1
+  #
+  #   vote = Vote.new(work: work, user: user)
+  #   vote = Vote.new(work: work1, user: user1)
+  #   vote2 = Vote.new(work: work, user: user2)
+  #
+  #   it "finds the most voted for work" do
+  #     Work.top.title.must_equal "Harry Potter"
+  #   end
+  # end
+
 end
