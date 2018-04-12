@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+kate:
+  name: Kate
 
-one:
-  name: MyString
+joe:
+  name: Joe
 
-two:
-  name: MyString
+north:
+  name: North

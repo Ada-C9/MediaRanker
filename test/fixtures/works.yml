@@ -1,15 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+redfern:
+  title: Where the Red Fern Grows
+  creator: Wilson Rawls
+  publication_date: 1961
+  description: Children's novel about a boy who buys and trains two Redbone Coonhound hunting dogs.
+  category: book
 
-one:
-  title: MyString
-  creator: MyString
-  publish_date: 1
-  description: MyString
-  category: MyString
+wonderwoman:
+  title: Wonder Woman
+  creator: Heinberg, Zack Snyder, and Jason Fuchs
+  publication_date: 2017
+  description: In Wonder Woman, the story of Diana is told, who is the daughter of Hippolyta and grows up on the Amazon island of Themyscira. After American pilot and spy Steve Trevor crashes offshore of the island and is rescued by her, he tells the Amazons about the ongoing World War. Diana, thinking the war is caused by an old enemy of the Amazons, then leaves her home in order to end the conflict.
+  category: movie
 
-two:
-  title: MyString
-  creator: MyString
-  publish_date: 1
-  description: MyString
-  category: MyString
+waitress:
+  title: What's Inside - Songs from Waitress
+  creator: Sara Bareilles
+  publication_date: 2015
+  category: album
