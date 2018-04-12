@@ -1,0 +1,8 @@
+<ul> List of Users
+  <% @users.each do |user| %>
+  <li>
+    <strong><%= link_to(user.name, user_path(user)) %></strong>
+    Joined <%= user.created_at %>
+  </li>
+</ul>
+<% end %>
