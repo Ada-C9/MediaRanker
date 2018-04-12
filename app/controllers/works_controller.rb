@@ -51,11 +51,23 @@ class WorksController < ApplicationController
     if session[:user_id] != nil
       @user = User.find(session[:user_id])
       if @user
-        vote = Vote.create(work_id: @work.id, user_id: @user.id, created_at: Time.now)
+        @voted_works = []
+        @user.votes.each do |v|
+          @voted_works << v.work_id
+        end
+        if @voted_works.include?(@work.id)
+          flash[:error] = "Could not upvote"
+        else
+          vote = Vote.create(work_id: @work.id, user_id: @user.id, created_at: Time.now)
+          flash[:success] = "Successfully upvoted!"
+        end
+        redirect_to work_path(@work)
       end
 
-      flash[:success] = "Successfully upvoted!"
-      redirect_to work_path(@work)
+      #instructor imp redirects to /works if the user started at /works
+      # else redirects to /work/id if the user started at /work/id
+
+
     else
       flash[:error] = "You must log in to do that"
       redirect_to work_path(@work)
