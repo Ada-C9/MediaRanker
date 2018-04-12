@@ -54,8 +54,7 @@ class WorksController < ApplicationController
         vote = Vote.create(work_id: @work.id, user_id: @user.id, created_at: Time.now)
       end
 
-      # # do other stuff to create a vote with this user_id and work_id
-      flash[:success] = "I'm grabbing session id  #{session[:user_id]} from #{@user.name} successfully and work  #{@work.id}"
+      flash[:success] = "Successfully upvoted!"
       redirect_to work_path(@work)
     else
       flash[:error] = "You must log in to do that"
