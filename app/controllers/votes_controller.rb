@@ -1,7 +1,5 @@
 class VotesController < ApplicationController
 
-  before_action :find_user, only: [:create]
-
   def index
   end
 
@@ -12,7 +10,7 @@ class VotesController < ApplicationController
   end
 
   def create
-    
+
   end
 
   def edit
@@ -27,7 +25,7 @@ class VotesController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by(id: params[:id])
+
   end
 
 

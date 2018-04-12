@@ -1,5 +1,8 @@
 class WorksController < ApplicationController
 
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
+
+
   def index
     @albums = Work.where(category: "album")
     @books  = Work.where(category: "book")
@@ -7,7 +10,6 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.find_by(id: params[:id].to_i )
   end
 
   def new
@@ -26,11 +28,9 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find_by(id: params[:id].to_i)
   end
 
   def update
-    @work = Work.find_by(id: params[:id].to_i)
     if !@work.nil?
       if @work.update(work_params)
         flash[:success] = "Work added category #{@work.category} #{@work.title}"
@@ -46,8 +46,10 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    @work = Work.find_by(id: params[:id].to_i)
-    @work.destroy
+    if @work
+      @work.destroy
+      flash[:success] = "Successfully destroyed #{@work.category} #{@work.title}"
+    end
     redirect_to works_path
   end
 
@@ -56,4 +58,9 @@ class WorksController < ApplicationController
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
   end
+
+  def find_work
+    @work = Work.find_by(id: params[:id].to_i)
+  end
+
 end
