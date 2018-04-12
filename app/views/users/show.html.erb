@@ -1,2 +1,7 @@
 <h1>User Summary: <%=@user.name%></h1>
 <p>Joined Site: <%=@user.created_at.to_s(:long) %></p>
+
+<ul>
+  <li><%=link_to "See All Users", users_path %></li>
+  <li><%=link_to "Back To Media List", root_path %></li>
+</ul>
