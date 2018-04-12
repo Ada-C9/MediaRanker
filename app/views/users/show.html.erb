@@ -14,22 +14,15 @@
     </tr>
   </thead>
   <tbody>
-    <%@user.votes.each do |i|%>
+    <%@user.votes.each do |vote|%>
     <tbody>
-        <td><%=link_to item.work.title, work_path(work[:id])%></td>
-        <td><%=item.work.creator%></td>
-        <td><%=item.work.publication_year%></td>
-        <td><%=item.work.category%></td>
-        <td><%=item.created_at%></td>
+        <td><%=link_to vote.work.title, work_path(work[:id])%></td>
+        <td><%=vote.work.creator%></td>
+        <td><%=vote.work.publication_year%></td>
+        <td><%=vote.work.category%></td>
+        <td><%=vote.created_at.to_formatted_s(:long)%></td>
   </tbody>
     <%end%>
-      <tr>
-        <td><a href="/works/284">Harry Potter</a></td>
-        <td>J.K.Rowling</td>
-        <td>1997</td>
-        <td>Book</td>
-        <td>Oct 10, 2017</td>
-      </tr>
   </tbody>
 </table>
 

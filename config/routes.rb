@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
 
   get '/login', to: 'users#new', as: 'login_form'
-  get '/users', to: 'user#index', as: 'users'
-  get '/user', to: 'user#show', as: 'user'
+  get '/users', to: 'users#index', as: 'users'
+  get '/user', to: 'users#show', as: 'user'
   post'/login', to: 'users#create', as: 'login'
   delete '/login', to: 'users#destroy', as: 'logout'
 

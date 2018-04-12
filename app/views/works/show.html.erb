@@ -7,8 +7,8 @@
   <p>Published:
     <%=@work.description%></p>
   <section>
-    <a class="button" href="/">Back to media ranks</a>
-    <a class="button" href="/works/<%=@work.id%>/edit">Edit</a>
+    <%= link_to 'Back to media ranks', root_path, class: "button" %>
+    <%= link_to 'Edit', edit_work_path[@work.id], class: "button" %>
     <%= link_to "Upvote", work_votes_path(@work.id), method: :post, :class=>"button" %>
     <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/<%=@work.id%>">Delete</a>
   </section>
