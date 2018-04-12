@@ -24,9 +24,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="/users/540">sgf</a></td>
-        <td>Apr 11, 2018</td>
+        <% @work.votes.each do |vote| %>
+        <td><%= vote.user.username %></td>
+        <td><%= vote.created_at %></td>
+        <% end %>
       </tr>
+
     </tbody>
   </table>
 </article>
