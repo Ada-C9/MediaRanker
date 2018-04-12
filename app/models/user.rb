@@ -3,6 +3,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def joined
-    self.created_at.strftime("%B %D, %Y")
+    self.created_at.strftime("%B %d, %Y")
   end
 end

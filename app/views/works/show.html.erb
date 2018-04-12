@@ -11,3 +11,33 @@
 <%= link_to("Upvote", work_path(@work), class: "button") %>
 <%= link_to("Delete", work_path(@work.id), class: "button", method: :delete, data: {confirm: "Are you sure you want to delete Work #{@work.title}"}) %>
 </main>
+<main class="row">
+  <section>
+    <h3><strong>votes for this <%= @work.category%></strong></h3>
+
+    <table>
+      <tr>
+        <td width="100">
+          <strong>User</strong>
+        </td>
+        <td width="100">
+          <strong>Date</strong>
+        </td>
+
+      </tr>
+
+
+      <% @work.votes.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to "#{vote.user.name}", work_path(vote.work) %>
+        </td>
+        <td>
+          <%= vote.created_at.strftime("%B %d, %Y") %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </section>
+
+</main>
