@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
-  before_action :find_user
-  
+  # before_action :find_user
+
   def index
     @works = Work.all
   end
@@ -16,7 +16,7 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.title} created"
       redirect_to works_path
     else
-      flash[:fail] = "#{@work.title} creation failed"
+      flash[:alert] = {"#{@work.title}" => "creation failed"}
       render :new
     end
   end
