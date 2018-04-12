@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+user1:
+  name: me
   joined: 2018-04-09
 
-two:
-  name: MyString
-  joined: 2018-04-09
+user1:
+  name: you
+  joined: 2018-04-10
