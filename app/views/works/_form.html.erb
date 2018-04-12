@@ -1,35 +1,19 @@
-
-<% if @work.errors.any? %>
-
 <%= form_for @work do |f| %>
-<div>
-  <%= f.label :category %>
-  <%= f.select :category,
-    options_for_select(%w(movie album book))%>
-</div>
 
-<div>``
+  <%= f.label :category %>
+  <%= f.select :category, options_for_select(%w(movie album book)) %>
+
   <%= f.label :title %>
   <%= f.text_area :title %>
-</div>
 
-<div>
   <%= f.label :creator %>
   <%= f.text_area :creator %>
-</div>
 
-<div>
   <%= f.label :publication_year %>
   <%= f.text_area :publication_year %>
-</div>
 
-<div>
   <%= f.label :description %>
   <%= f.text_area :description %>
-</div>
 
-<div>
   <%= f.submit %>
-</div>
-
 <% end %>

@@ -1,0 +1,31 @@
+
+<main class="row">
+  <section class="row spotlight">
+    <div>
+      <h3><span class="media-spotlight-header">Media Spotlight</span> <a href="/works/366">Wonder Woman</a> by </h3>
+      <p>15 votes - Badass female lead, but otherwise tooooootally created by men for men.</p>
+    </div>
+  </section>
+
+  <hr class="root-hr">
+
+  <section class="top-ten-container">
+    <section class="top-ten">
+      <h3>Top Movies</h3>
+      <%= render partial: "works", locals: {model: @movies} %>
+
+    </section>
+
+    <section class="top-ten">
+      <h3>Top Books</h3>
+      <%= render partial: "works", locals: {model: @books} %>
+    </section>
+
+    <section class="top-ten">
+      <h3>Top Albums</h3>
+      <%= render partial: "works", locals: {model: @albums} %>
+    </section>
+
+  </section>
+
+</main>
