@@ -1,5 +1,6 @@
 class Work < ApplicationRecord
-  has_many :votes, :through => :users
+  has_many :votes
+  has_many :upvoted_users, through: :votes, source: :user
 
   validates :category, presence: true
   validates :title, presence: true, uniqueness: { scope: :category }
