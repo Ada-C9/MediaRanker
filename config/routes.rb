@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # need to check only the ones that are used
   resources :works
 
-  resources :users
+  resources :users, only: [:index, :show]
 
   get '/login', to:'sessions#new', as:'login'
   post '/login', to:'sessions#create'
@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   delete '/logout', to:'sessions#destroy', as: 'logout'
 
   post "work/:id/votes", to: "votes#create", as: "create_vote"
+  # post "/votes/:work_id", to: "votes#create", as: "create_vote"
 
 end
