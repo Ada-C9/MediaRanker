@@ -29,6 +29,7 @@ class WorksController < ApplicationController
     @work.assign_attributes(work_params)
 
     if @work.save
+      flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
       redirect_to work_path(@work)
     else
       render :edit
@@ -42,6 +43,21 @@ class WorksController < ApplicationController
     flash[:success] = "Successfully destroyed #{@work.category} #{@work.id}"
 
     redirect_to root_path
+  end
+
+  def upvote
+    @work = Work.find(params[:id])
+
+    if session[:user_id] != nil
+      # user = User.find_by(name: session[:user_id])
+      # session[:user_id] = user.id
+      # # do other stuff to create a vote with this user_id and work_id
+      flash[:success] = "I'm grabbing session id successfully and work  #{@work.id}"
+      redirect_to works_path
+    else
+      flash[:error] = "You must log in to do that"
+      redirect_to work_path(@work)
+    end
   end
 
 
