@@ -34,7 +34,15 @@
     <main>
       <section class="flash">
         <% flash.each do |name, message| %>
-            <strong><%= message %></strong>
+          <% if name == "alert" %>
+            <ul>
+              <% flash[:alert].each do |type, message| %>
+                <li><%= type %>: <%= message %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <%= message %>
+          <% end %>
         <% end %>
       </section>
 
