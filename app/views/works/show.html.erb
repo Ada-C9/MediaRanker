@@ -4,8 +4,8 @@
     <%=@work.creator%></p>
   <p>Published:
     <%=@work.publication_year%></p>
-    <p>Published:
-      <%=@work.description%></p>
+  <p>Published:
+    <%=@work.description%></p>
   <section>
     <a class="button" href="/">Back to media ranks</a>
     <a class="button" href="/works/<%=@work.id%>/edit">Edit</a>
@@ -13,7 +13,9 @@
     <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/<%=@work.id%>">Delete</a>
   </section>
 
-  <h3><%= @work.votes.count %> Votes for this <%= @work.category %></h3>
+  <h3><%= @work.votes.count %>
+    Votes for this
+    <%= @work.category %></h3>
 
   <table>
     <thead>
@@ -23,13 +25,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <% @work.votes.each do |vote| %>
-        <td><%= vote.user.username %></td>
-        <td><%= vote.created_at %></td>
-        <% end %>
-      </tr>
+      <% @work.votes.each do |vote| %>
+        <tr>
 
+          <td><%= vote.user.username %></td>
+          <td><%= vote.created_at %></td>
+
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </article>

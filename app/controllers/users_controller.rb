@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.find_by(username: params[:user][:username])
 
@@ -23,7 +27,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
 
   def destroy
     session[:user_id] = nil

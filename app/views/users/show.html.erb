@@ -1,2 +1,39 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<main class="row">
+    <h3>User Summary: <%=@user.username%></h3>
+<p>Joined site <%= @user.created_at %></p>
+
+<h4>Votes</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@user.votes.each do |i|%>
+    <tbody>
+        <td><%=link_to item.work.title, work_path(work[:id])%></td>
+        <td><%=item.work.creator%></td>
+        <td><%=item.work.publication_year%></td>
+        <td><%=item.work.category%></td>
+        <td><%=item.created_at%></td>
+  </tbody>
+    <%end%>
+      <tr>
+        <td><a href="/works/284">Harry Potter</a></td>
+        <td>J.K.Rowling</td>
+        <td>1997</td>
+        <td>Book</td>
+        <td>Oct 10, 2017</td>
+      </tr>
+  </tbody>
+</table>
+
+<a class="button" href="/users">See all Users</a>
+<a class="button" href="/">Back to Media List</a>
+
+  </main>

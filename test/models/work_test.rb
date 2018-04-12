@@ -43,8 +43,11 @@ describe Work do
   end
 
   describe 'self.top_ten_books' do
-    it "must "
+    it "must return an array of 10 or less books"
+      Work.top_ten_books.must_be_kind_of Array
+      Work.top_ten_books.each do |work|
+        work.category.must_equal "book"
+      end
+      Work.top_ten_books.length.must_equal 2
+    end
   end
-  end
-
-end
