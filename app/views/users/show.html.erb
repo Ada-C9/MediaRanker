@@ -1,6 +1,6 @@
 <main class="row">
     <h3>User Summary: <%=@user.username%></h3>
-<p>Joined site <%= @user.created_at %></p>
+<p>Joined site <%= @user.created_at.to_formatted_s(:long) %></p>
 
 <h4>Votes</h4>
 <table>
@@ -26,7 +26,9 @@
   </tbody>
 </table>
 
-<a class="button" href="/users">See all Users</a>
-<a class="button" href="/">Back to Media List</a>
+
+<%=link_to 'See all Users', users_path, class: "button"%>
+<%=link_to 'Back to Media List', root_path, class: "button"%>
+
 
   </main>

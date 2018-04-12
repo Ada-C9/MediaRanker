@@ -1,8 +1,6 @@
 require "test_helper"
 
 describe Work do
-
-
   it "must be valid" do
     hp = works(:harry_potter)
     value(hp).must_be :valid?
@@ -41,13 +39,33 @@ describe Work do
     work = Work.create(category: 'book', title: 'work', publication_year: 1999)
     work.valid?.must_equal true
   end
-
-  describe 'self.top_ten_books' do
-    it "must return an array of 10 or less books"
-      Work.top_ten_books.must_be_kind_of Array
-      Work.top_ten_books.each do |work|
-        work.category.must_equal "book"
-      end
-      Work.top_ten_books.length.must_equal 2
+end
+describe "self methods" do
+  it "must return an array of 10 or less books" do
+    books = Work.top_ten_books
+    books.each do |work|
+      work.category.must_equal "book"
     end
+    books.length.must_equal 2
+
+    albums = Work.top_ten_albums
+    albums.each do |work|
+      work.category.must_equal "album"
+    end
+    albums.length.must_equal 1
+
+    movies = Work.top_ten_movies
+    movies.each do |work|
+      work.category.must_equal "movie"
+    end
+    movies.length.must_equal 2
   end
+
+  it "must return array with work with highest number of votes at index 0" do
+    books = Work.top_ten_books
+    (books[0].votes.count >= books[1].votes.count).must_equal true
+
+    movies = Work.top_ten_movies
+    (movies[0].votes.count >= movies[1].votes.count).must_equal true
+  end
+end

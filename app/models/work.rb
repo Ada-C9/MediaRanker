@@ -12,11 +12,11 @@ class Work < ApplicationRecord
   end
 
   def self.top_ten_albums
-    Work.includes(:votes).where(category: "album").sort_by{|album| album.votes.count}.reverse.first(10)
+    Work.where(category: "album").sort_by{|album| album.votes.count}.reverse.first(10)
   end
 
   def self.top_ten_movies
-    Work.includes(:votes).where(category: "movie").sort_by{|movie| movie.votes.count}.reverse
+    Work.where(category: "movie").sort_by{|movie| movie.votes.count}.reverse
   end
 
 end
