@@ -9,10 +9,14 @@
   <h3><%= category %></h3>
   <% works = @works.where(category: category) %>
   <% i = 0 %>
-  <% while i < Work.num_runs(works) %>
-    <strong><%= link_to works[i].title, work_path(works[i][:id]) %></strong>
-    <span> by <%= works[i].creator %></span>
-    <br>
-    <% i += 1%>
-  <% end %>
+  <ul>
+    <% while i < Work.num_runs(works) %>
+      <li>
+        <h4><%= link_to works[i].title, work_path(works[i][:id])%> by <%= works[i].creator %></h4>
+        <p><%= works[i].votes.count %> votes</p>
+      </li>
+      <% i += 1%>
+    <% end %>
+  </ul>
+
 <% end %>
