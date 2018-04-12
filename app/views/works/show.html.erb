@@ -23,13 +23,15 @@
       <th>Date</th>
     </thead>
     <tbody>
+      <% @works.each do |work| %>
       <tr>
         <%= link_to "user", user_path %>
       </tr>
 
       <tr>
-        vote created on : <%= @work.created_at.to_date.to_formatted_s(:long_ordinal)%>
+        vote created on : <%= work.created_at.to_date.to_formatted_s(:long_ordinal)%>
       </tr>
+      <%end%>
     </tbody>
   </table>
 

@@ -5,7 +5,5 @@ class WelcomesController < ApplicationController
     @books = Work.where(category: "book")
     @albums = Work.where(category: "album")
 
-    binding.pry
-
   end
 end

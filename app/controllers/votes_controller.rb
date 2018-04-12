@@ -3,6 +3,7 @@ class VotesController < ApplicationController
   end
 
   def new
+    @vote = Vote.new
   end
 
   def show

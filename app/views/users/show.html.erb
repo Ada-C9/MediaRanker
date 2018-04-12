@@ -1,2 +1,40 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<article class="user-details">
+
+
+<h3> User Summary: <%= User.user_name%></h3>
+<p>Joined site: <%= @show_user.created_at.to_date.to_formatted_s(:long_ordinal)%></p>
+</article>
+
+<article class="user-votes">
+  <h4>Votes</h4>
+  <table>
+    <thead>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </thead>
+    <tbody>
+      <% @user.votes.each do |vote| %>
+      <tr>
+        <%= link_to vote.work.title, work_path(work[:id]) %>
+      </tr>
+      <tr>
+        <%=vote.work.creator%>
+      </tr>
+      <tr>
+        <%=vote.work.publication_year%>
+      </tr>
+      <tr>
+        <%=vote.work.category%>
+      </tr>
+      <tr>
+        <%=vote.created_at.to_date.to_formatted_s(:long_ordinal)%>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+
+</article>

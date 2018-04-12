@@ -15,9 +15,6 @@ class UsersController < ApplicationController
     @show_user = User.find_by(id: params[:id])
   end
 
-  def edit
-  end
-
   def create
     @user = User.create(user_params)
     if @user.save
