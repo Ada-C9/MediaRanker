@@ -13,7 +13,7 @@
       <li>
         <%= link_to "#{work.title}", work_path(work.id) %> by <%= "#{work.creator}" %>
         <p>
-          <%= "#{work.votes.count} votes" %>
+          <%= "#{work.total_votes} votes" %>
         </p>
       </li>
       <% end %>
