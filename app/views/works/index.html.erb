@@ -3,7 +3,7 @@
 <ul> List of Works
   <% @works.each do |work| %>
   <li>
-    <strong><%= link_to(work.title, works_path(work)) %></strong>
+    <strong><%= link_to(work.title, work_path(work)) %></strong>
     <%= work.created_by %>
   </li>
 </ul>
