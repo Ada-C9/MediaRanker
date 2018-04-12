@@ -16,8 +16,8 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    if @work.id != nil
-      flash[:success] = "Succesfully added #{@work.category} #{@work.id}"
+    if @work.save
+      flash[:success] = "Succesfully added #{@work.category} #{@work.title}"
       redirect_to root_path
     else
       flash.now[:failure] = "Could not add work"
