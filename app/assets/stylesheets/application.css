@@ -19,7 +19,7 @@
  */
  .nav ul {
    display: grid;
-   grid-template-columns: 0.5fr 0.5fr 0.5fr 3fr 0.5fr;
+   /* grid-template-columns: 0.5fr 0.5fr 0.5fr 3fr 0.5fr; */
    list-style-type: none;
  }
 
@@ -102,4 +102,8 @@ main a {
 
 main a:hover {
   color: rgba(59, 115, 119, 1);
+}
+
+article h3 {
+  font-weight: bold;
 }

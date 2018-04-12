@@ -7,9 +7,9 @@
     <table>
       <tr>
         <td>
-          <strong>Username</strong>
+          <strong>Media title</strong>
         </td>
-        <td width="100">
+        <td width="200">
           <strong>Created By</strong>
         </td>
         <td width="200">
@@ -33,10 +33,10 @@
           <%= vote.work.creator %>
         </td>
         <td>
-          <%= vote.work.creator %>
+          <%= vote.work.publication_year %>
         </td>
         <td>
-          <%= vote.work.publication_year %>
+          <%= vote.work.category %>
         </td>
         <td>
           <%= vote.created_at.strftime("%B %d, %Y") %>
