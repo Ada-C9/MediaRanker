@@ -1,2 +1,47 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<main>
+  <article class="user-details">
+    <h3><strong>User Summary: <%= @user.name %></strong></h3>
+    <p>
+      Joined site: <%= @user.created_at.strftime("%b %d, %Y") %>
+    </p>
+  </article>
+  <article class="user-voted-works">
+    <h5><strong>Votes</strong></h5>
+    <table>
+      <tr>
+        <th>
+          Media Title
+        </th>
+        <th>
+          Created By
+        </th>
+        <th>
+          Published
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Voted On
+        </th>
+      </tr>
+      <tr>
+        <td>
+          work.title with link
+        </td>
+        <td>
+          work.creator
+        </td>
+        <td>
+          work.publication_year
+        </td>
+        <td>
+          work.category
+        </td>
+        <td>
+          date voted on
+        </td>
+      </tr>
+    </table>
+  </article>
+</main>
