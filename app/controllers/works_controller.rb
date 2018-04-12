@@ -29,9 +29,19 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @work = Work.find_by(id: params[:id])
   end
 
   def update
+    @work = Work.find_by(id: params[:id])
+    if @work
+      if @work.update(work_params)
+        flash[:success] = "#{@work.title} updated"
+        redirect_to work_path
+      else
+        render :edit
+      end
+    end
   end
 
   def destroy
