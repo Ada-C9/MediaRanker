@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :find_work, only: [:show, :update, :edit, :destroy]
+  before_action :find_work, only: [:show, :update, :edit, :destroy, :upvote]
 
   def index
     @movies = Work.where(category: 'movie')
@@ -40,6 +40,17 @@ class WorksController < ApplicationController
     @work.destroy
 
     redirect_to works_path
+  end
+
+  def upvote
+    # if @work.votes.create(user_id: @current_user.id)
+      @work.votes.create
+      flash[:success] = "Thank you for upvoting!"
+      redirect_to(@work)
+    # else
+    #   flash[:failure] = "You have already upvoted this!"
+    #   redirect_to(works_path)
+    # end
   end
 
   private

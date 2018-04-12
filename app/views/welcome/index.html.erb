@@ -18,7 +18,7 @@ by <%= @spotlight.creator %>
     <li>
       <%= link_to album.title, work_path(album) %> by
       <%= album.creator %>
-    TBD votes
+      <%= pluralize(album.votes.count, "vote") %>
     </li>
   <% end %>
   </ul>

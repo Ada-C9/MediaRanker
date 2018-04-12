@@ -32,12 +32,4 @@ describe User do
 
   end
 
-  # describe "#created_date" do
-  #   new_user = User.create(name: 'test user')
-  #
-  #   result = new_user.created_date
-  #
-  #   result.must_equal Date.today
-  # end
-
 end
