@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
   def login
     user = User.find_by(name: params[:user][:name])
 
@@ -24,5 +28,7 @@ class SessionsController < ApplicationController
     redirect_to root_path
 
   end
+
+  helper_method :current_user
 
 end
