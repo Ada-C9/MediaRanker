@@ -47,7 +47,30 @@ class WorksController < ApplicationController
   def destroy
     if Work.destroy(params[:id])
       redirect_to works_path
-    end 
+    end
+  end
+
+  def upvote
+
+    if session[:user_id]
+
+      user = User.find(session[:user_id])
+      work = Work.find(params[:format])
+      vote = Vote.new
+      vote.assign_attributes(user: user, work: work)
+
+      if vote.save
+        flash[:success] = "Successfully upvoted!"
+        redirect_back(fallback_location: root_path)
+      elsif !vote.valid?
+        flash[:failure] = "Could not upvote"
+        redirect_back(fallback_location: root_path)
+      end
+
+    else
+      flash[:failure] = "You must log in to do that"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
