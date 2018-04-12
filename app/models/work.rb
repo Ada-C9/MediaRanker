@@ -15,8 +15,12 @@ class Work < ApplicationRecord
     end
   end
 
-  def self.top(count, category)
-    works = self.where(category: category)
+  def self.top(count, category=nil)
+    if category
+      works = self.where(category: category)
+    else
+      works = self.all
+    end
     sorted_works = works.sort_by { |work| work.upvotes.count }.reverse!
     actual_count = [count, sorted_works.count].min
     top_works = sorted_works[0...actual_count]
