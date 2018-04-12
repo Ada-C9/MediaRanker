@@ -39,7 +39,7 @@ class WorksController < ApplicationController
   def show;end
 
   def destroy
-    work.destroy
+    @work.destroy
 
     redirect_to works_path
   end

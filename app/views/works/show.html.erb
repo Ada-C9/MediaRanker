@@ -1,14 +1,35 @@
-<h2>Show a work</h2>
+<article class="media-details columns large-6 small-12">
+  <h3><%=@work.title%></h3>
 
-<h2>Category: <%= @work.category %></h2>
-<h3>Title: <%= @work.title %></h3>
-<h3>Created by:  <%= @work.creator %></h3>
-<h3>Published: <%= @work.publication_year %></h3>
-<h3>Description: <%= @work.description %></h3>
+  <p>Created by:  <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_year %></p>
+  <p>Description: <%= @work.description %></p>
 
 
-<div>
-  <%= button_to "Upvote", create_vote_path(@work.id), method: :post %>
-  <%= button_to "Edit", edit_work_path(@work.id), method: :get %>
-  <%= button_to "Delete", work_path(@work.id), method: :delete %>
-</div>
+  <section>
+    <%= button_to "Back to media ranks", root_path(@work.id), method: :post, class: "button"%>
+    <%= button_to "Edit", edit_work_path(@work.id), method: :get, class: "button" %>
+    <%= button_to "Upvote", create_vote_path(@work.id), method: :post, class: "button" %>
+    <%= button_to "Delete", work_path(@work.id), method: :delete, data:{confirm: 'Are you sure?'}, class:"button"%>
+  </section>
+</article>
+
+<article class="voting-users columns large-6 small-12">
+  <h3><%= "#{@work.votes.count} Votes for this work" %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @work.votes.each do |vote| %>
+        <td><a><%= link_to vote.user.name, user_path(vote.user_id)  %></a></td>
+        <td> <%= vote.created_at.strftime("%b %d, %Y") %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</article>
