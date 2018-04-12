@@ -17,28 +17,21 @@
       <a href="/">Media Ranker</a>
       <small>Ranking the Best of Everything</small>
     </h2>
-  <nav>
-    <a class="button"><%= link_to "View top media", root_path%></a>
-    <a class="button"><%= link_to "View all media", works_index_path%></a>
-    <a class="button"><%= link_to "Add a new work", new_work_path %></a>
-    <a class="button"><%= link_to "View all users", users_index_path%></a>
-    <div>
-      <a class="button" ><%= link_to "Login",login_path%></a>
-      <a class="button" ><%= link_to "Logout", logout_path%></a>
-    </div>
+    <nav>
+      <a class="button"><%= link_to "View top media", root_path%></a>
+      <a class="button"><%= link_to "View all media", works_index_path%></a>
+      <a class="button"><%= link_to "Add a new work", new_work_path %></a>
+      <a class="button"><%= link_to "View all users", users_index_path%></a>
+      <div>
+        <% if session[:user_id] %>
+        <a class="button" ><%= link_to "Logout", logout_path, method: :delete %></a>
+        <% else %>
+        <a class="button" ><%= link_to "Login",login_path%></a>
+        <%end%>
+      </div>
 
-  </nav>
+    </nav>
   </header>
-  <ul>
-    <% if @user %>
-    <li><%= link_to "Login", login_path %></li>
-    <% else %>
-    <% if false %>
-      <li><%= link_to "Logout", logout_path, method: :delete %></li>
-      <% end %>
-
-    <% end %>
-  </ul>
 
   <%= yield %>
 

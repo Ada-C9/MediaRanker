@@ -11,15 +11,14 @@ class SessionsController < ApplicationController
       flash[:success] = "#{ user.user_name } is successfully logged in."
       redirect_to root_path
     else
-      # other logic that does more stuff
-      @user = User.new
-      flash[:success] = "#{ @user.user_name } You successfully created a user!"
-      redirect_to root_path
+      @user = User.new(user_name:params[:user][:user_name])
+      if @user.save
+        redirect_to user_path(@user.id)
+      end
     end
   end
 
   def destroy
-    session[:user_id] = nil
     session.delete(:user_id)
     flash[:success] = "Logged out successfully."
 
