@@ -31,5 +31,15 @@ describe User do
       result.must_equal false
     end
   end
+
+  describe 'relationships' do
+    before do
+      @user = users(:c_dagger)
+    end
+
+    # VOTES******************
+    it 'a votes attribute' do
+      @user.must_respond_to :votes
+    end
+  end
 end
-# TODO: BUILD TESTS FOR USER MODEL BASED ON RELATIONSHIPS

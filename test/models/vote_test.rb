@@ -5,7 +5,7 @@ describe Vote do
     before do
       # Arrange
       @vote = Vote.new(user_id: users(:c_dagger).id, art_id: arts(:one).id)
-      # Using fixtures 
+      # Using fixtures
     end
 
     it 'is valid with an associated user_id and art_id' do
@@ -29,20 +29,26 @@ describe Vote do
       result.must_equal false
     end
 
-
-
-
-
   end
+  # TODO: WRITE TESTS FOR RELATIONSHIPS FOR VOTES
 
-
-
-
-
-
-
-
+  # describe 'relationships' do
+  #   before do
+  #
+  #   end
+  #
+  #   it 'responds to user' do
+  #
+  #   end
+  #
+  #   it 'connects the user_id to the correct instance of User class' do
+  #
+  #   end
+  #
+  #   it 'responds to art' do
+  #
+  #   end
+  #
+  #   it 'connects the art_id to the correct instance of Art class'
+  # end
 end
-# TODO: WRITE TESTS FOR VALIDATIONS FOR VOTES
-
-# TODO: WRITE TESTS FOR RELATIONSHIPS FOR VOTES
