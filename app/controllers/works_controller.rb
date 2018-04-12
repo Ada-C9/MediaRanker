@@ -14,9 +14,9 @@ class WorksController < ApplicationController
   end
 
   def create
-    work = Work.new(work_params)
+    @work = Work.new(work_params)
 
-    if work.save #it worked
+    if @work.save #it worked
       redirect_to works_path
     else
       render :new
@@ -61,7 +61,6 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    # You don't need an explicit return here, but if it helps keep things straight in your head, it's okay to do it.
-    params.require(:work, :category, :title).permit(:creator, :year_released, :description )
+    params.require(:work).permit(:category, :creator, :title, :year_released, :description )
   end
 end
