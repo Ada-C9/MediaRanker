@@ -21,6 +21,8 @@ class WorksController < ApplicationController
       flash[:success] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to work_path(@work)
     else
+      flash[:notice] = "A problem occurred: Could not create album"
+      flash.now[:alert] = @work.errors
       render :new
     end
   end
@@ -34,6 +36,8 @@ class WorksController < ApplicationController
         flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
         redirect_to work_path
       else
+        flash[:notice] = "A problem occurred: Could not update album"
+        flash.now[:alert] = @work.errors
         render :edit
       end
     else

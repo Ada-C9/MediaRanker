@@ -10,11 +10,12 @@ class VotesController < ApplicationController
         flash[:success] = "Successfully upvoted!"
         redirect_back fallback_location: :work_path
       else
+        flash[:notice] = "Could not upvote"
         flash[:alert] = { user: "has already voted for this work" }
         redirect_back fallback_location: :works_path
       end
     else
-      flash[:alert] = "You must log in to do that"
+      flash[:notice] = "You must log in to do that"
       redirect_back fallback_location: :works_path
     end
   end
