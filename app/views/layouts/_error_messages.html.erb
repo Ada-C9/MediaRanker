@@ -1,7 +1,7 @@
-<% if model.errors.messages.any? %>
+<% if @work.errors.messages.any? %>
   <section class=" alert callout">
     <ul>
-      <% @book.errors.messages.each do |field, problems| %>
+      <% @work.errors.messages.each do |field, problems| %>
       <% problems.each do |problem| %>
         <li>
           <strong><%= field %></strong>

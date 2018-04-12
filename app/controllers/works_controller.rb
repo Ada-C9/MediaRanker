@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update]
+
   def index
     @works = Work.all
     @albums = Work.where(category: 'album')
@@ -16,29 +18,23 @@ class WorksController < ApplicationController
 
     if @work.save
       flash[:success] = "Successfully saved #{work_params[:category]} #{work_params[:id]}"
-      redirect_to work_path(work_params[:id])
+      redirect_to work_path(@work)
     else
       flash[:failure] = "A problem occurred: Could not create #{work_params[:category]}"
       render :new
     end
   end
 
-  def show
-    @work = Work.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
-    updated_info = params[:work]
-    @work = Work.find(params[:id])
     @work.assign_attributes(updated_info)
 
     if @work.save
       flash[:success] = "Successfully saved #{params[:category]} #{params[:work_id]}"
-      redirect_to work_path(work)
+      redirect_to work_path(@work)
     else
       flash[:failure] = "A problem occurred: Could not update #{params[:category]}"
       render :edit
@@ -55,5 +51,10 @@ class WorksController < ApplicationController
 
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    @work = Work.find(params[:id])
+
   end
 end
