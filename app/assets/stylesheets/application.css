@@ -214,12 +214,3 @@ hr {
     list-style-type: none;
     margin-left: 0px;
 }
-
-@media print, screen and (min-width: 40em)
-h2, .h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 1.9375rem;
-}
