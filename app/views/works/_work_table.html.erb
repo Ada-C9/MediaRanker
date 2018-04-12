@@ -25,7 +25,7 @@
         <%= work.publication_year %>
       </td>
       <td>
-        Upvote
+        <%= link_to("Upvote", works_path, class: "button") %>
       </td>
     </tr>
     <% end %>
