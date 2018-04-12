@@ -1,7 +1,8 @@
 class VotesController < ApplicationController
+
+  before_action :find_user, only: [:create]
+
   def index
-    # @user = User.find_by(id:)
-    # @work = Work.find_by(id:
   end
 
   def show
@@ -11,6 +12,7 @@ class VotesController < ApplicationController
   end
 
   def create
+    
   end
 
   def edit
@@ -21,4 +23,14 @@ class VotesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def find_user
+    @user = User.find_by(id: params[:id])
+  end
+
+
+
+
 end
