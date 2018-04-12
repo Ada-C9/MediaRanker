@@ -7,19 +7,19 @@ class Work < ApplicationRecord
   validates :creator, presence: true
   validates :publication_year, presence: true
 
-  def self.top_ten_albums
+  def self.order_albums
     albums = Work.where(category: 'album')
-    return albums.sort_by{|album| album.votes.count}.reverse[0..9]
+    return albums.sort_by{|album| album.votes.count}.reverse
   end
 
-  def self.top_ten_books
+  def self.order_books
     books = Work.where(category: 'book')
-    return books.sort_by{|book| book.votes.count}.reverse[0..9]
+    return books.sort_by{|book| book.votes.count}.reverse
   end
 
-  def self.top_ten_movies
+  def self.order_movies
     movies = Work.where(category: 'movie')
-    return movies.sort_by{|movie| movie.votes.count}.reverse[0..9]
+    return movies.sort_by{|movie| movie.votes.count}.reverse
   end
 
   def self.find_spotlight

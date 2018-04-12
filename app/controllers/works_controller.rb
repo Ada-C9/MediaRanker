@@ -2,9 +2,9 @@ class WorksController < ApplicationController
   before_action :find_work, only: [:show, :update, :edit, :destroy, :upvote]
 
   def index
-    @movies = Work.where(category: 'movie')
-    @books = Work.where(category: 'book')
-    @albums = Work.where(category: 'album')
+    @movies = Work.order_movies
+    @books = Work.order_books
+    @albums = Work.order_albums
   end
 
   def new
