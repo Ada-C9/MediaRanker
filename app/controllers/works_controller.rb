@@ -64,6 +64,7 @@ class WorksController < ApplicationController
       user_id = session[:user_id]
       @vote = Vote.create(work_id: work_id, user_id: user_id)
       flash[:success] = "Successfully Voted!"
+      redirect_back fallback_location: :works_path
     else
       flash[:alert] = "You must login to vote"
       redirect_to work_path(@work.id)
