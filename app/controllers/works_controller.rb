@@ -30,7 +30,7 @@ class WorksController < ApplicationController
   def edit; end
 
   def update
-    @work.assign_attributes(updated_info)
+    @work.assign_attributes(work_params)
 
     if @work.save
       flash[:success] = "Successfully saved #{params[:category]} #{params[:work_id]}"
@@ -45,6 +45,12 @@ class WorksController < ApplicationController
     Work.destroy(params[:id])
     flash[:success] = "Successfully destroyed #{params[:category]} #{params[:work_id]}"
     redirect_to works_path
+  end
+
+  def topmedia
+    @albums = Work.where(category: 'album')
+    @books = Work.where(category: 'book')
+    @movies = Work.where(category: 'movie')
   end
 
   private
