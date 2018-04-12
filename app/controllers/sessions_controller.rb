@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
 
     else
       user = User.create(name: params[:user][:name])
-      flash[:success] = "New user #{ user.name } is successfully logged in."
+      session[:user_id] = user.id
+      flash[:success] = "New user #{ user.name } is successfully logged in with ID #{user.id}."
     end
     redirect_to root_path
   end
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      flash[:success] = "#{ user.name } is successfully logged in"
+      flash[:success] = "#{ user.name } is successfully logged in."
       redirect_to root_path
     end
   end

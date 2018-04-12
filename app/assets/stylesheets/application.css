@@ -74,8 +74,6 @@
   }
 
   .float_left {
-    display: block;
-    text-align: left;
     margin-left: 20px;
   }
 

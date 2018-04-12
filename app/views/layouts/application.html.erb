@@ -26,13 +26,16 @@
           <%= link_to("Add a New work", new_work_path, class: "button") %>
 
           <%= link_to("View all users", users_path, class: "button") %>
-          <% if session[:user_id] %>
-          <%= link_to("Log out", logout_path, method: :delete, class: "button") %>
-          <%= link_to("Logged in as #{User.find(session[:user_id]).name}", root_path, class: "button")%>
-          <% else %>
-          <%= link_to "Log in", login_path, class: "button" %>
-          <% end %>
-        </div>
+          
+            <% if session[:user_id] %>
+            <%= link_to("Log out", logout_path, method: :delete, class: "button") %>
+            <%= link_to("Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button")%>
+            <% else %>
+            <%= link_to "Log in", login_path, class: "button" %>
+            <% end %>
+          </div>
+
+
 
 
       </nav>
