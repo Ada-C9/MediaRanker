@@ -8,7 +8,7 @@
       <th>Published</th>
       <th>upvotes</th>
     </tr>
-    <% @works.each do |work| %>
+    <% @works.albums.each do |work| %>
     <tr>
       <td><%=" "%></td>
       <td><%= link_to(work.title, work_path(work)) %></td>
@@ -18,4 +18,45 @@
     </tr>
     <% end %>
   </table>
+
+  <!-- <table>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created by</th>
+      <th>Published</th>
+      <th>upvotes</th>
+    </tr>
+
+    <% @works.books.each do |work| %>
+    <tr>
+      <td><%=" "%></td>
+      <td><%= link_to(work.title, work_path(work)) %></td>
+      <td><%= work.creator%></td>
+      <td><%= work.publication_year%></td>
+      <td><%=""%></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <table>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created by</th>
+      <th>Published</th>
+      <th>upvotes</th>
+    </tr>
+
+    <% @works.movies.each do |work| %>
+    <tr>
+      <td><%=" "%></td>
+      <td><%= link_to(work.title, work_path(work)) %></td>
+      <td><%= work.creator%></td>
+      <td><%= work.publication_year%></td>
+      <td><%=""%></td>
+    </tr>
+    <% end %>
+
+  </table> -->
 </main>
