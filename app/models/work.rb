@@ -18,7 +18,21 @@ class Work < ApplicationRecord
   end
 
   def self.spotlight
+    work_spotlight = Work.first
+    max = Work.first.votes.count
+    Work.all.each do |work|
+      if work.votes.count > max
+        max = work.votes.count
+        work_spotlight = work
+      end
+    end
+    return work_spotlight
+  end
 
+  def self.sort_by_vote
+    all_works = Work.all
+    sorted_works = all_works.sort_by { |work| -work.votes.count }
+    return sorted_works
   end
 
   def self.num_runs(array)

@@ -2,7 +2,8 @@ class WorksController < ApplicationController
   # before_action :find_user
 
   def index
-    @works = Work.all
+    # @works = Work.all
+    @works = Work.sort_by_vote
   end
 
   def new

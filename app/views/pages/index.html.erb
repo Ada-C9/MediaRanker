@@ -1,13 +1,15 @@
 <h1>Media Ranker</h1>
 
 <section>
-  <h3>Media Spotlight Section</h3>
+  <h3>Media Spotlight: </h3>
+  <%= link_to Work.spotlight.title, work_path(Work.spotlight.id)%> by <%= Work.spotlight.creator %>
+  <p><%= Work.spotlight.votes.count %> votes</p>
 </section>
 
 <% categories = Work.make_category_hash %>
 <% categories.each do |category| %>
   <h3><%= category %></h3>
-  <% works = @works.where(category: category) %>
+  <% works = @works.find_all {|work| work.category == category} %>
   <% i = 0 %>
   <ul>
     <% while i < Work.num_runs(works) %>

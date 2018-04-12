@@ -3,13 +3,15 @@
 <% categories = Work.make_category_hash %>
 <% categories.each do |category| %>
   <h3><%= category %></h3>
-  <% works_by_category = @works.where(category: category) %>
+  <% works_by_category = @works.find_all {|work| work.category == category} %>
   <% i = 0 %>
   <ul>
     <% while i < works_by_category.length %>
 
-      <% work = works_by_category[i] %>
-      <li><%= link_to works_by_category[i].title, work_path(works_by_category[i][:id])%> by <%= works_by_category[i].creator%> <%=link_to "Upvote", upvote_path(work.id), method: :post %></li>
+      <% one_work = works_by_category[i] %>
+      <li>
+        <p><%= one_work.votes.count %> <%= link_to one_work.title, work_path(one_work[:id])%> by <%= one_work.creator%> <%=link_to "Upvote", upvote_path(one_work.id), method: :post %></p>
+      </li>
       <% i += 1%>
     <% end %>
   </ul>
