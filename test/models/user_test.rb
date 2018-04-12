@@ -48,4 +48,40 @@ describe User do
       result.must_equal true
     end
   end
+
+  describe 'recommender' do
+    before do
+      @tor = users(:tor)
+      @roo = users(:roo)
+      @hill = works(:hill)
+      @noscrubs = works(:noscrubs)
+
+      Vote.create!(user_id: @tor.id, work_id: @noscrubs.id)
+      Vote.create!(user_id: @roo.id, work_id: @noscrubs.id)
+      Vote.create!(user_id: @roo.id, work_id: @hill.id)
+
+    end
+
+    it 'must calculate a jaccard index between a two users' do
+      result = User.calculate_jaccard(@tor, @roo)
+
+      result.must_equal 0.5
+    end
+
+    it 'recommends works that other users have upvoted' do
+      top_similar = [@roo]
+      test_result = User.get_recommendations(top_similar, @tor)
+
+      expected_result = [works(:hill)]
+      test_result.must_equal expected_result
+    end
+
+    it 'recommends works from users who have liked similar things' do
+      recommended_works = [@hill]
+
+      test_result = User.recommendations(@tor)
+
+      test_result.must_equal recommended_works
+    end
+  end
 end
