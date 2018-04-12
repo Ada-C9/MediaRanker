@@ -2,7 +2,7 @@
 <%= form_for @user, url: login_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.submit 'Log In'%>
+  <%= f.submit 'Log In', class: "button"%>
 <% end %>
 <article>
   <h4>A note about logging in</h4>

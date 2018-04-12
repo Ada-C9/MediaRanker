@@ -21,12 +21,12 @@
           <td><%= link_to publication.title, publication_path(publication.id) %></td>
           <td><%= publication.creator %></td>
           <td><%= publication.publication_year %></td>
-          <td><%= link_to "Upvote", publication_votes_path(publication.id), method: :post %></td>
+          <td><%= link_to "Upvote", publication_votes_path(publication.id), method: :post, class: "button upvote" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
   <% end %>
 </section>
-<%= link_to "View top media", root_path %>
-<%= link_to "Add a new work", new_publication_path %>
+<%= link_to "View top media", root_path, class: "button" %>
+<%= link_to "Add a new work", new_publication_path, class: "button" %>

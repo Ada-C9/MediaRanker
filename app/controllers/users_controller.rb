@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user_model = User.find_by(id: params[:id])
   end
 
 end

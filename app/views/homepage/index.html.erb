@@ -1,18 +1,20 @@
-<section class="spotlight">
-  <% spotlight_publication = Publication.find_spotlight_publication%>
-  <% if spotlight_publication%>
-    <h3>Media Spotlight:
-      <%= link_to spotlight_publication.title, publication_path(spotlight_publication.id)%>
-      by <%= spotlight_publication.creator %>
-    </h3>
-    <p>
-       <%= spotlight_publication.find_total_votes%> votes - <%= spotlight_publication.description %>
-    </p>
+<section class="row spotlight">
+  <div>
+    <% spotlight_publication = Publication.find_spotlight_publication%>
+    <% if spotlight_publication%>
+      <h3>Media Spotlight:
+        <%= link_to spotlight_publication.title, publication_path(spotlight_publication.id)%>
+        by <%= spotlight_publication.creator %>
+      </h3>
+      <p>
+         <%= spotlight_publication.find_total_votes%> votes - <%= spotlight_publication.description %>
+      </p>
     <% else%>
       <h3>There are no votes yet</h3>
     <% end %>
+  </div>
 </section>
-
+<hr class="root-hr">
 <section class="top-ten-container">
   <% categories = Publication.return_all_categories%>
   <% categories.each do | category | %>
@@ -24,12 +26,12 @@
           <li>
             <h4>
               <%= link_to publication.title, publication_path(publication.id) %>
-              <span>by <%= publication.creator%></span>
+              <small>by <%= publication.creator%></small>
             </h4>
             <p><%= publication.find_total_votes %> votes</p>
           </li>
         <% end %>
       </ul>
     </section>
-    <% end %>
+  <% end %>
 </section>

@@ -1,5 +1,5 @@
-<h3>User Summary: <%= @user.name%></h3>
-<p>Joined site <%= @user.created_at %></p>
+<h3>User Summary: <%= link_to @user_model.name, user_path(@user_model.id)%></h3>
+<p>Joined site <%= @user_model.created_at %></p>
 <h4>Votes</h4>
 <table>
   <thead>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @user.votes.each do | vote | %>
+    <% @user_model.votes.each do | vote | %>
       <tr>
         <% publication = vote.publication %>
         <td><%= link_to publication.title, publication_path(publication.id) %></td>
@@ -24,5 +24,5 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "See all Users", users_path %>
-<%= link_to "Back to Top Media", root_path %>
+<%= link_to "See all Users", users_path, class: "button" %>
+<%= link_to "Back to Top Media", root_path, class: "button" %>

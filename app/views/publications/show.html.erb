@@ -3,14 +3,14 @@
   <p>Created by: <%= @publication.creator %></p>
   <p>Published: <%= @publication.publication_year %></p>
   <p><%= @publication.description %></p>
-  <nav>
-    <%= link_to "Back to media ranks", root_path %>
-    <%= link_to "Edit", edit_publication_path(@publication.id) %>
-    <%= link_to "Upvote", publication_votes_path(@publication.id), method: :post %>
-    <%= link_to "Delete", publication_path(@publication.id), method: :delete%>
-  </nav>
+  <section>
+    <%= link_to "Back to media ranks", root_path, class: "button" %>
+    <%= link_to "Edit", edit_publication_path(@publication.id), class: "button" %>
+    <%= link_to "Upvote", publication_votes_path(@publication.id), method: :post, class: "button" %>
+    <%= link_to "Delete", publication_path(@publication.id), method: :delete, class: "alert button", data: {confirm: "Are you sure?"}%>
+  </section>
 </article>
-<article class="publication-votes">
+<article class="voting-users">
   <h3><%= @publication.find_total_votes %> Votes for this <%= @publication.category.capitalize %></h3>
   <table>
     <thead>

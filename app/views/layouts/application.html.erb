@@ -12,31 +12,35 @@
   </head>
 
   <body>
-    <header>
+    <header class="page-header row">
       <h2>
         <%= link_to "Media Ranker", root_path %>
-        <span class="tagline">Ranking the Best of Everything</span>
+        <small class="tagline">Ranking the Best of Everything</small>
       </h2>
       <nav>
-        <%= link_to "View top media", root_path %>
-        <%= link_to "View all media", publications_path %>
-        <%= link_to "Add a new work", new_publication_path %>
-        <%= link_to "View all users", users_path %>
-        <% if @user && @user.valid? %>
-          <%= link_to "Logged in as #{@user.name}", user_path(@user.id) %>
-          <%= link_to "Log Out", logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Log In", login_form_path %>
-        <% end %>
+        <%= link_to "View top media", root_path, class: "button" %>
+        <%= link_to "View all media", publications_path, class: "button" %>
+        <%= link_to "Add a new work", new_publication_path, class: "button" %>
+        <%= link_to "View all users", users_path,  class: "button" %>
+        <div class="float-right">
+          <% if @user && @user.valid? %>
+            <%= link_to "Logged in as #{@user.name}", user_path(@user.id),  class: "button" %>
+            <%= link_to "Log Out", logout_path, method: :delete,  class: "button" %>
+          <% else %>
+            <%= link_to "Log In", login_form_path,  class: "button float-right" %>
+          <% end %>
+        </div>
       </nav>
     </header>
-    <section>
-      <% flash.each do | name, message | %>
-        <% if name == "alert" %>
-          <% if message.class == String %>
-            <h3><%= message %></h3>
-          <% else %>
-            <% flash[:alert].each do |field, messages| %>
+    <% flash.each do | name, message | %>
+      <% if name == "alert" %>
+        <% if message.class == String %>
+          <section class="row status failure">
+            <h3><%= message %></h3 >
+          </section>
+        <% else %>
+          <% flash[:alert].each do |field, messages| %>
+            <section class="row status failure">
               <h3>A problem occurred: Could not <%= field %></h3>
               <ul>
                 <% messages.each do | field, message | %>
@@ -45,14 +49,16 @@
                   </li>
                 <% end %>
               </ul>
-            <% end %>
+            </section>
           <% end %>
-        <% else %>
-          <h3><%= message %></h3>
         <% end %>
+      <% else %>
+        <section class="row status success">
+          <h3><%= message %></h3>
+        </section>
       <% end %>
-    </section>
-    <main>
+    <% end %>
+    <main class="row">
       <%= yield %>
     </main>
   </body>
