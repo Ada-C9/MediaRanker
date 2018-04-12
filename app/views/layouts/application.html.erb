@@ -12,6 +12,14 @@
   </head>
 
   <body>
+    <nav>
+        <%if @user.nil? %>
+            <%=link_to "Login", login_path%>
+        <%else%>
+          <li>Logged in as<%=@user.name%></li><%=link_to "Logout",method: :delete%>
+        <%end%>
+    </nav>
+
     <main>
       <section class="flash">
       <ul>
