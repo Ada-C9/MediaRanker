@@ -42,4 +42,9 @@ describe Work do
     work.valid?.must_equal true
   end
 
+  describe 'self.top_ten_books' do
+    it "must "
+  end
+  end
+
 end

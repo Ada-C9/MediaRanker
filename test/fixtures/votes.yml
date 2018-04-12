@@ -1,9 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  work_id: 1
+vote_one:
+  user_id: pixie
+  work_id: harry_potter
 
-two:
-  user_id: 1
-  work_id: 1
+vote_two:
+  user_id: pixie
+  work_id: fantastic_beasts
+
+vote_three:
+  user_id: mary
+  work_id: harry_potter
+
+vote_four:
+  user_id: ko
+  work_id: darkness
+
+vote_five:
+  user_id: pickles
+  work_id: ilym
