@@ -49,11 +49,11 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     if session[:user_id] != nil
-      # user = User.find_by(name: session[:user_id])
-      # session[:user_id] = user.id
+      @user = User.find(session[:user_id])
+
       # # do other stuff to create a vote with this user_id and work_id
-      flash[:success] = "I'm grabbing session id successfully and work  #{@work.id}"
-      redirect_to works_path
+      flash[:success] = "I'm grabbing session id  #{session[:user_id]} from #{@user.name} successfully and work  #{@work.id}"
+      redirect_to work_path(@work)
     else
       flash[:error] = "You must log in to do that"
       redirect_to work_path(@work)

@@ -2,7 +2,7 @@
 
 <p>Created by: <%= @work.creator %></p>
 
-<p>Published: <%= @work.publication_year %></p>
+<p>Published: <%= @work.publication_year.year %></p>
 
 <p><%= @work.description %></p>
 
@@ -12,3 +12,5 @@
     <%= link_to("Upvote", upvote_work_path(@work), class: "button") %>
     <%= link_to("Delete", work_path(@work), class: "alert button", method: :delete, data: { confirm: "Are you sure?"}) %>
 </nav>
+
+<%= render partial: "vote" %>
