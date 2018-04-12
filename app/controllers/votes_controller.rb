@@ -9,11 +9,11 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new
-    @vote.work_id = Work.find_by(id: params[:work_id]).id
-    @vote.user_id =
-    # need to add conditional that checks if user is logged in, in order to be able to upvote...and use flash notices to remind user to login first
+    # @vote = Vote.new
+    # @vote.work_id = Work.find_by(id: params[:work_id]).id
+    # @vote.user_id = 
   end
+    # need to add conditional that checks if user is logged in, in order to be able to upvote...and use flash notices to remind user to login first
 
   def edit
   end
@@ -23,4 +23,5 @@ class VotesController < ApplicationController
 
   def destroy
   end
+
 end
