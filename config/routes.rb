@@ -3,10 +3,9 @@ Rails.application.routes.draw do
 
   root 'homepage#index'
 
-  resources :votes
 
   resources :works do
-    resources :votes, only: [:new, :create]
+    resources :votes, only: [:create]
   end
 
 

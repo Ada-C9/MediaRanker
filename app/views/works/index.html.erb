@@ -13,7 +13,7 @@
           <th width="100">Upvote</th>
         </tr>
       </thead>
-      <%@works.where(category: "album").each do |work|%>
+      <%@works.each do |work|%>
       <tbody>
           <td><%=work.votes.count%></td>
           <td><%=link_to work.title, work_path(work[:id])%></td>

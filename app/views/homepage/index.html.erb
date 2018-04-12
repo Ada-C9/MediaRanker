@@ -5,8 +5,9 @@
   <%=@sample.creator%>
 </h3>
 
-<p><%= @sample.votes.count %> votes - <%= @sample.description %></p>
-
+<p><%= @sample.votes.count %>
+  votes -
+  <%= @sample.description %></p>
 
 <hr class="root-hr">
 
@@ -16,7 +17,13 @@
     <ul>
       <% @books.each do |work| %>
         <li>
-          <%=link_to work.title, work_path(work[:id])%>
+          <h4>
+            <%=link_to work.title, work_path(work[:id])%>
+
+            <small>by
+              <%= work.creator%></small>
+          </h4>
+          <p><%=work.votes.count%> votes</p>
         </li>
       <% end %>
     </ul>
@@ -26,9 +33,15 @@
     <h3>Top Albums</h3>
     <ul>
       <%@albums.each do |work|%>
-        <li>
+      <li>
+        <h4>
           <%=link_to work.title, work_path(work[:id])%>
-        </li>
+
+          <small>by
+            <%= work.creator%></small>
+        </h4>
+        <p><%=work.votes.count%> votes</p>
+      </li>
       <%end%>
     </ul>
   </section>
@@ -37,9 +50,15 @@
     <h3>Top Movies</h3>
     <ul>
       <%@movies.each do |work|%>
-        <li>
+      <li>
+        <h4>
           <%=link_to work.title, work_path(work[:id])%>
-        </li>
+
+          <small>by
+            <%= work.creator%></small>
+        </h4>
+        <p><%=work.votes.count%> votes</p>
+      </li>
       <%end%>
     </ul>
   </section>

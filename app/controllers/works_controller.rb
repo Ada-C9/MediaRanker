@@ -2,14 +2,14 @@ require 'pry'
 class WorksController < ApplicationController
 
   before_action :find_work, only: [:edit, :show, :update, :destroy]
-
+  before_action :logged_in, only: [:edit,:update, :new, :create, :destroy]
 
   def index
     @works = Work.all
+    @top_books = Work.top_ten_books
   end
 
   def create
-
     @work = Work.new(work_params)
     if @work.save
       flash[:success] = "#{@work[:category]} Created"
@@ -65,4 +65,5 @@ class WorksController < ApplicationController
   def find_work
     @work = Work.find_by(id: params[:id])
   end
+
 end

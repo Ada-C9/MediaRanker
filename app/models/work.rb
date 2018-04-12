@@ -7,7 +7,17 @@ class Work < ApplicationRecord
   validates :publication_year, numericality: true
   validates :publication_year, length: { is: 4 }
 
-  def top_ten_books
-    Work.includes(:book).order('vote.count asc')
+  def self.top_ten_books
+    Work.includes(:votes).where(category: "book").sort_by{|book| book.votes.count}.reverse.first(10)
   end
+
+  def self.top_ten_albums
+    Work.includes(:votes).where(category: "album").sort_by{|album| album.votes.count}.reverse.first(10)
+  end
+
+  def self.top_ten_movies
+    Work.includes(:votes).where(category: "movie").sort_by{|movie| movie.votes.count}.reverse
+  end
+
+
 end

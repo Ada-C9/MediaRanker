@@ -1,24 +1,23 @@
 class VotesController < ApplicationController
-  
-  def index
-  end
+  before_action :logged_in
 
   def create
-  end
-
-  def new
     @vote = Vote.new
+    @vote.user_id = session[:user_id]
+    @vote.work_id = params[:work_id]
+
+    if @vote.save
+      flash[:success] = "You voted for #{@vote.work.title}"
+      redirect_to work_path(params[:work_id])
+    else
+      flash[:alert] = @vote.errors
+      redirect_to work_path(params[:work_id])
+    end
   end
 
-  def edit
-  end
+  private
 
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
+  def vote_params
+    params.require(:vote).permit(:user_id, :work_id)
   end
 end
