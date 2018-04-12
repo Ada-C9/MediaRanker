@@ -17,6 +17,18 @@ describe Work do
     value(work).wont_be :valid?
   end
 
+  it "must not have a nil title" do
+    work.title = nil
+    value(work).wont_be :valid?
+  end
+
+  it "only allows unique titles per category" do
+    work.save
+    another_work = Work.new(title: "Title", category: "book")
+
+    value(another_work).wont_be :valid?
+  end
+
 
 
 
