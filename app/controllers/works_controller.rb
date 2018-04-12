@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  # TODO: Add before action to support controller filters :show,:edit and update
 
   def index
     @works = Work.all
@@ -29,15 +30,15 @@ class WorksController < ApplicationController
   def show
     work_id = params[:id]
 
-    @work = Work.find(work_id)
+    @work = Work.find(work_id)# TODO: add controller filters to all duplicate user.find
   end
 
   def edit
-    @work = Work.find(params[:id])
+    @work = Work.find(params[:id]) # TODO: add controler filter
   end
 
   def update
-    @work = Work.find(params[:id])
+    @work = Work.find(params[:id]) # TODO: add controller filters
 
     @work.assign_attributes(work_params)
 
@@ -54,7 +55,12 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
+  def top
+    @works = Work.all # TODO: add all media types and filter by votes top 10.
+  end
+
   private
+  # TODO: add method for find a work to support controller filter
   def work_params
     return params.require(:work).permit(:category, :title, :created_by, :votes, :published_year, :description)
   end

@@ -10,13 +10,26 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:success] = "#{user.name} is successfully logged in."
-
       redirect_to root_path
-      # FIXME:redirect_to root_path
+
     else
-      flash.now[:failure] = 'Validations Failed'
-      # FIXME: redirect_to root_path
-      
+
+      if session[:user_id] == nil
+        @user = User.new(name: params[:user][:name])
+
+
+        if @user.save
+          flash[:success] = "#{@user.name} successfully created a new log in."
+          session[:user_id] = @user.id
+          redirect_to root_path
+        end
+
+        else
+
+          flash.now[:failure] = 'Validations Failed'
+
+          render :new
+      end
     end
   end
 
