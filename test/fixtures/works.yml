@@ -1,11 +1,152 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+kindred:
+  category: book
+  title: Kindred
+  creator: Octavia E. Butler
+  year_released: 1979
+  description: A good sci-fi book
+parable:
+  title: Parable of the Sower
+  category: book
+  creator: Octavia E. Butler
+  year_released: 1993
+  description: Fire drugs?
+green:
+  title: Green Memories
+  category: album
+  creator: Shahrokh Yadegari
+  year_released: 2008
+  description: Gorgeous and thought-provoking philosophical electronica
+shakespeare:
+  title: Shakespeare My Butt
+  category: album
+  creator: Lowest of the Low
+  year_released: 1991
+  description: Engaging, folky maple-pop.
+breakfast:
+  title: Breakfast at Tiffany's
+  category: movie
+  creator: Blake Edwards
+  year_released: 1961
+  description:
+devil:
+  title: The Devil's Backbone
+  category: movie
+  creator: Guillermo del Toro
+  year_released: 2001
+  description:
+young:
+  title: Young Adults
+  category: book
+  creator: Daniel Pinkwater
+  year_released: 1985
+  description: If you're going to read Pinkwater's 'Young Adult Novel', you're also going to want the Kevin Shapiro letters and 'The Dada Boys in Collitch.' This is how you get them.
+fully:
+  title: Fully Completely
+  category: album
+  creator: The Tragically Hip
+  year_released: 1992
+  description: We are all just lost without Gord Downie.
+get:
+  title: Get Out
+  category: movie
+  creator: Jordan Peele
+  year_released: 2017
+  description:
+carsick:
+  title: Carsick
+  category: book
+  creator: John Waters
+  year_released: 2014
+  description:
+big:
+  title: The Big Don't Argue
+  category: album
+  creator: Weddings Parties Anything
+  year_released: 1989
+  description: The entirety of my twenties was about this.
+once:
+  title: Once Upon a Time in Anatolia
+  category: movie
+  creator: Nuri Bilge Ceylan
+  year_released: 2011
+  description: Want to watch something really long? Here you go!!
+ill:
+  title: I'll Be Gone in the Dark
+  category: book
+  creator: Michelle McNamara
+  year_released: 2018
+  description: A unique and un-put-downable true crime document.
+world:
+  title: World War Live: Battle of the Baltic Sea
+  category: album
+  creator: Sabaton
+  year_released: 2011
+  description:  It's embarassing, but I can't live without this.
+synedoche:
+  title: Synecdoche, New York
+  category: movie
+  creator: Charlie Kauffman
+  year_released: 2008
+  description:
+manuscript:
+  title: Manuscript Found in Saragossa
+  category: book
+  creator: Jan Potocki
+  year_released: 1814
+  description:
+underwater:
+  title: Underwater Music
+  category: album
+  creator: Michel Redolfi
+  year_released: 2002
+  description:
+strange:
+  title: Strange Angels
+  category: album
+  creator: Laurie Anderson
+  year_released: 1989
+  description:
+rebirth:
+  title: Rebirth
+  category: album
+  creator: Angra
+  year_released: 2001
+  description:
+wish:
+  title: Wish You Were Here
+  category: album
+  creator: Pink Floyd
+  year_released: 1975
+  description:
+dolls:
+  title: The Doll's Alphabet
+  category: book
+  creator: Camilla Grudova
+  year_released: 2017
+  description:
+little:
+  title: Little, Big
+  category: book
+  creator: John Crowley
+  year_released: 1981
+  description:
+big:
+  title: The Big Heat
+  category: album
+  creator: Stan Ridgway
+  year_released: 1986
+  description:
+all:
+  title: All Hail West Texas
+  category: album
+  creator: The Mountain Goats
+  year_released: 2002
+  description:
+hate:
+  title: Bird Seeds of Vengeance
+  category: album
+  creator: Hatebeak
+  year_released: 2005
+  description:
