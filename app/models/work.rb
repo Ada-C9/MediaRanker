@@ -1,9 +1,9 @@
 class Work < ApplicationRecord
-  has_many :votes
+  has_many :votes, dependent: :destroy
   has_many :users, through: :votes
 
   validates :category, presence: :true
-  validates :title, presence: :true, uniqueness: :true
+  validates :title, presence: :true, uniqueness: { scope: :category }
 
   def self.top_albums
     albums = self.where(category: :album)
