@@ -14,25 +14,13 @@
    <small>Ranking the best of everything</small></h2>
 
   <nav>
-    <ul>
-      <li class = "button"
-        <%= link_to "View Top Media", root_path %>
-      </li>
-    <li class = "button"
-        <%= link_to "View All Media", works_path %>
-      </li>
-      <li class = "button"
-        <%= link_to "Add a New Work", new_work_path %>
-      </li>
-      <li class = "button"
-        <%= link_to "View All Users", users_path %>
-      </li>
-
-      <li class = "button"
-        <%= link_to "Log In", root_path %>
-      </li>
-
-    </ul>
+    <%= link_to "View Top Media", root_path, :class => "button" %>
+    <%= link_to "View All Media", works_path, :class => "button" %>
+    <%= link_to "Add a New Work", new_work_path, :class => "button" %>
+    <%= link_to "View All Users", users_path, :class => "button" %>
+    <div class="float-right">
+      <%= link_to "Log In", users_path, :class => "button float-right" %>
+    </div>
   </nav>
 
 </head>
