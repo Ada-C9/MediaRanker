@@ -3,14 +3,9 @@ class WorksController < ApplicationController
   before_action :find_user, only: [:index, :show, :new, :edit]
 
   def index
-    @albums = Work.all.where(category: "album").to_a
-    @albums.sort_by! { |album| -album.total_votes }
-
-    @books = Work.all.where(category: "book").to_a
-    @books.sort_by! { |book| -book.total_votes }
-
-    @movies = Work.all.where(category: "movie").to_a
-    @movies.sort_by! { |movie| -movie.total_votes }
+    @albums = Work.sorted_list("album")
+    @books = Work.sorted_list("book")
+    @movies = Work.sorted_list("movie")
   end
 
   def show
