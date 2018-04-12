@@ -7,4 +7,11 @@ class Work < ApplicationRecord
   validates :creator, presence: true
   validates :publication_year, presence: true
 
+  def find_top_ten(category)
+    top_ten = []
+    works = self.where(category: category)
+    ordered_votes = works.order(category.votes.count)
+    return ordered_votes
+  end
+
 end
