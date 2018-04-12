@@ -2,10 +2,10 @@ class Work < ApplicationRecord
 
   has_many :votes
 
-  validates :category, presence: {message: "Select a category"}
   validates :title, presence: {message: "Enter a title"}
-  validates :creator,presence: {message: "Enter a creator"}
-  validates :publication_year, presence: {message: "Enter publication_year year"}
+  validates :title, uniqueness: {message:"Please choose a different title. Titles cannot be duplicated"}
+  validates :description, length: {maximum: 500, message: "Description is too long"}
+
 
   def self.media_spotlight
     works = Work.all
@@ -31,8 +31,15 @@ class Work < ApplicationRecord
     return book.sort_by {|work| work.votes.count }.take(10)
   end
 
-  def self.upvote(id)
-    self.where(:id => id).update_all("upvotes = upvotes + 1")
+  def self.top
+    sorted = Work.all.sort_by{|work| work.votes.count}
+    top= sorted.first
+    return top
+  end
+
+  def total_votes
+    total = self.votes.count
+    return total
   end
 
 end

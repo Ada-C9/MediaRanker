@@ -1,4 +1,4 @@
-class WorksController < ApplicationController
+  class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
   def index
     @works = Work.all
@@ -29,7 +29,7 @@ class WorksController < ApplicationController
     @work.assign_attributes(work_params)
 
     if @work.save
-      redirect_to work_path(work)
+      redirect_to work_path(@work)
     else
       render :edit
     end
@@ -40,7 +40,8 @@ class WorksController < ApplicationController
 
   def destroy
     @work.destroy
-
+    flash[:status] = :success
+    flash[:message] = "Successfully deleted!"
     redirect_to works_path
   end
 

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   delete '/logout', to:'sessions#destroy', as: 'logout'
 
-  post "work/:id/votes", to: "votes#create", as: "create_vote"
-  # post "/votes/:work_id", to: "votes#create", as: "create_vote"
+  # post "work/:id/votes", to: "votes#create", as: "create_vote"
+  post "/votes/:work_id", to: "votes#create", as: "create_vote"
 
 end
