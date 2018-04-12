@@ -10,21 +10,23 @@
   </thead>
   <tbody>
     <% @works.each do |w| %>
-    <tr>
-      <td>Vote Count TBD</td>
-      <td><%= link_to("#{w.title}", work_path(w.id)) %></td>
-      <td><%= "#{w.creator}" %></td>
-    <% if w.publication_year != nil %>
-      <td><%= "#{w.publication_year.year}" %></td>
-    <% else %>
-      <td>
-        <%= "#{w.publication_year}" %>
-      </td>
-    <% end %>
-      <td>
-        <%= link_to("Upvote", upvote_work_path(w.id), class: "button") %>
-      </td>
-    </tr>
+      <% if w.category == category %>
+      <tr>
+        <td><%= w.votes.count%></td>
+        <td><%= link_to("#{w.title}", work_path(w.id)) %></td>
+        <td><%= "#{w.creator}" %></td>
+        <% if w.publication_year != nil %>
+        <td><%= "#{w.publication_year.year}" %></td>
+        <% else %>
+        <td>
+          <%= "#{w.publication_year}" %>
+        </td>
+        <% end %>
+        <td>
+          <%= link_to("Upvote", upvote_work_path(w.id), class: "button") %>
+        </td>
+      </tr>
+      <% end %>
     <% end %>
   </tbody>
 <table>

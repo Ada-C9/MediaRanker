@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy", as: "logout"
 
   get "/works/:id/upvote", to: "works#upvote", as: "upvote_work"
-
+  post "/works/:id/upvote", to: "works#upvote"
 end
