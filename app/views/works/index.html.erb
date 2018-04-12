@@ -1,47 +1,85 @@
 <h2>List of works</h2>
 <ul>
   <h2>Albums</h2>
-  <%@works.where(category: "album").each do |work|%>
-  <li>
-    <span><%= work.total_votes%></span>
-    <span><%= link_to work.title, work_path(work)%></span>
-    <span><%= work.created_by%></span>
-    <span><%= work.published%></span>
-    <span><%= link_to "Upvote", upvote_path(work), method: :post%></span>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created by</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
 
-  </li>
-  <%end%>
-</ul>
+      <%@works.where(category: "album").each do |work|%>
+      <tr>
+        <td><%= work.total_votes%></td>
+        <td><%= link_to work.title, work_path(work)%></td>
+        <td><%= work.created_by%></td>
+        <td><%= work.published%></td>
+        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
+      </tr>
+      <%end%>
 
-<ul>
-  <h2>Books</h2>
-  <%@works.where(category: "book").each do |work|%>
-  <li>
-    <span><%= work.total_votes%></span>
-    <span><%= link_to work.title, work_path(work)%></span>
-    <span><%= work.created_by%></span>
-    <span><%= work.published%></span>
-    <span>Upvote</span>
+    </tbody>
+  </table>
 
+<h2>Books</h2>
 
-  </li>
-  <%end%>
-</ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created by</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
 
-<ul>
+      <%@works.where(category: "book").each do |work|%>
+      <tr>
+        <td><%= work.total_votes%></td>
+        <td><%= link_to work.title, work_path(work)%></td>
+        <td><%= work.created_by%></td>
+        <td><%= work.published%></td>
+        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
+      </tr>
+      <%end%>
+
+    </tbody>
+  </table>
+
   <h2>Movies</h2>
-  <%@works.where(category: "movie").each do |work|%>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created by</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
 
-  <li>
-    <span><%= work.total_votes%></span>
-    <span><%= link_to work.title, work_path(work)%></span>
-    <span><%= work.created_by%></span>
-    <span><%= work.published%></span>
-    <span>Upvote</span>
-  </li>
+      <%@works.where(category: "movie").each do |work|%>
+      <tr>
+        <td><%= work.total_votes%></td>
+        <td><%= link_to work.title, work_path(work)%></td>
+        <td><%= work.created_by%></td>
+        <td><%= work.published%></td>
+        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
+      </tr>
+      <%end%>
 
-  <%end%>
-</ul>
+    </tbody>
+  </table>
+
+
 <ul>
   <li><%= link_to "View top media", root_path, class: "button"%></li>
   <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>

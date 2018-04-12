@@ -6,8 +6,11 @@ class Work < ApplicationRecord
     return total
   end
 
-def top_ten(works)
-  top_ten = works.all.order(votes: :desc, limit: 10)
+
+
+def self.top_ten
+  top_ten = Work.all.order(votes: :desc, limit: 10)
+  return top_ten
 end
 
 end

@@ -56,14 +56,14 @@ class WorksController < ApplicationController
 
     if vote.save
       flash[:success] = "Successfully upvoted!"
-      redirect_back(fallback_location: root_path)
+
     else
       flash[:failure] = "Could not upvote"
       flash[:errors] = vote.errors.messages[:user_id]
-      redirect_back(fallback_location: root_path)
+    
 
     end
-
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

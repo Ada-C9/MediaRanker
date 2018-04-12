@@ -1,0 +1,12 @@
+
+
+
+<%model.where(category: "album").each do |work|%>
+<tr>
+  <td><%= work.total_votes%></td>
+  <td><%= link_to work.title, work_path(work)%></td>
+  <td><%= work.created_by%></td>
+  <td><%= work.published%></td>
+  <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
+</tr>
+<%end%>
