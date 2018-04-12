@@ -28,6 +28,7 @@ class WorksController < ApplicationController
     @top_books = Work.top_books
   end
 
+
   def show
     work_id = params[:id]
     @work =  Work.find(work_id)

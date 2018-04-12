@@ -25,6 +25,14 @@
         <li><%= link_to "View All Media", works_path, class: "hollow button" %> </li>
         <li><%= link_to "Add New Work", new_work_path, class: "hollow button" %></li>
         <li> View All Users </li>
+
+        <li>
+          <% if session[:user_id] %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "hollow button" %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "hollow button" %>
+          <% end %>
+        </li>
       </ul>
     </nav>
 
