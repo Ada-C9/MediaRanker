@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   # nic, used
+  # raise params.inspect to view params output
   def index
     @works = Work.all
   end
@@ -18,7 +19,7 @@ class WorksController < ApplicationController
     else
       flash.now[:failure] = "Failed to create work"
       render :new
-    end 
+    end
   end
 
   def top_media
@@ -28,8 +29,30 @@ class WorksController < ApplicationController
   end
 
   def show
-    # work_id = params[:id]
-    # @works =  Work.find(work_id)
+    work_id = params[:id]
+    @work =  Work.find(work_id)
+  end
+
+  def update
+    @work = Work.find(params[:id])
+
+    @work.assign_attributes(work_params)
+
+    if @work.save
+      redirect_to work_path(work)
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @work = Work.find(params[:id])
+  end
+
+  def destroy
+    Work.destroy(params[:id])
+
+    redirect_to works_path
   end
 
   private

@@ -1,0 +1,27 @@
+<h4>
+  <% page_title %>
+  <%= page_title %>
+</h4>
+
+<%= render partial: "layouts/error_messages", locals: { model: @work } %>
+
+<%= form_for @work do |f| %>
+  <%= f.label :category %>
+  <%= f.select :category, ['album' ,'movie', 'book'] %>
+
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :created_by %>
+  <%= f.number_field :created_by %>
+
+  <%= f.label :publication_date %>
+  <%= f.text_area :publication_date %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit class: "button" %>
+
+<% end %>

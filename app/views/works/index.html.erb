@@ -1,10 +1,10 @@
-<!-- must list by category -->
+<!-- must list by cate-->
 
 <ul> List of Works
   <% @works.each do |work| %>
   <li>
-    <strong><%= link_to(work.title, work_path(work)) %></strong>
-    <%= link_to(work.created_by, work_path(work)) %>
+    <strong><%= link_to(work.title, works_path(work)) %></strong>
+    <%= work.created_by %>
   </li>
 </ul>
 <% end %>
