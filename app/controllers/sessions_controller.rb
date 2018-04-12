@@ -9,24 +9,30 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      flash[:success] = "#{@user.name} is successfully logged in"
-      redirect_to user_path(user)
+      flash[:success] = "#{user.name} is successfully logged in"
       session[:logged_in_user] = true
+
+      redirect_to user_path(user)
+
 
     else
-      user = User.create(name: params[:user][:name], joined: params[:user][:joined])
-      redirect_to user_path(user)
-
+      @user = User.create(name: params[:user][:name], joined: params[:user][:joined])
       session[:logged_in_user] = true
+      session[:user_id] = @user.id
 
+
+
+      redirect_to user_path(@user)
     end
+
+
   end
 
 
 
   def destroy
     reset_session
-    redirect_to root_path 
+    redirect_to root_path
   end
 
 

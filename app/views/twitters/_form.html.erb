@@ -4,6 +4,7 @@
   <%= page_title %>
 </h4>
 
+<section class = "alert callout">
 <% if @twitter.errors.any? %>
   <ul class="errors">
     <% @twitter.errors.each do |column, message| %>
@@ -13,6 +14,7 @@
     <% end %>
   </ul>
 <% end %>
+</section>
 
 <%= form_for @twitter do |f| %>
 <div>
