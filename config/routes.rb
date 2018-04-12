@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root "works#homepage"
   resources :works
   resources :users
-  resources :votes
+  get "/works/:work_id/upvote", to: "votes#upvote", as: "upvote"
+  # resources :votes
   get "/homepage", to: "works#homepage", as: "homepage"
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#login"

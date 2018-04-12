@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.joined = Date.today
   end
 
   def create

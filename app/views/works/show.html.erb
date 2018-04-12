@@ -8,7 +8,32 @@
   <li>
     <%= link_to("Back to media ranks", works_path, class: "button") %>
     <%= link_to("Edit", edit_work_path(@work), class: "button") %>
-    <%= link_to("Upvote", work_path(@work), class: "button") %>
+    <%= link_to("Upvote", upvote_path(@work), class: "button") %>
     <%= link_to("Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure to delete #{@work.category} #{@work.title}? "}, class: "button") %>
   </li>
+  <div>
+    <%= @work.votes.count %> Votes for this <%= @work.category.capitalize %>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Users</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @work.votes.each do |vote| %>
+      <tr>
+        <td>
+          <%= vote.user.name %>
+        </td>
+        <td>
+          <%= vote.created_at %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </ul>

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
     @user = User.new
-    @user.joined = Date.today
   end
 
   def login
@@ -12,10 +11,16 @@ class SessionsController < ApplicationController
       flash[:success] = "#{ user.name } is successfully logged in"
       redirect_to user_path(user)
     else
-      @user = User.create(name: params[:user][:name])
-      session[:user_id] = @user.id
-      flash[:success] = "#{ @user.name } is successfully logged in"
-      redirect_to user_path(@user)
+      @user = User.new(name: params[:user][:name])
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "#{ @user.name } is successfully logged in"
+        redirect_to user_path(@user)
+      else
+        # bad name or something
+        flash.now[:failure] = "A problem occurred: Could not log in"
+        render :new 
+      end
     end
 
   end

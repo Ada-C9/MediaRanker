@@ -1,3 +1,5 @@
+<%= render partial: "layouts/error_messages", locals: {model: @user} %>
+
 
 <%= form_for @user, url: login_path do |f| %>
   <%= f.label :name %>
@@ -5,5 +7,3 @@
 
   <%= f.submit "Login" %>
 <% end %>
-
-<%# form_tag %>

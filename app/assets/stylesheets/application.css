@@ -29,3 +29,9 @@ header {
 .nav_bar {
   padding: 25px 20px;
 }
+
+.main {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}

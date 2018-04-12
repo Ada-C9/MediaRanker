@@ -41,7 +41,7 @@
           <%= work.publication_year %>
         </td>
         <td>
-          <%= link_to("Upvote", vote_path(work))%>
+          <%= link_to("Upvote", upvote_path(work), class: "button")%>
         </td>
       </tr>
       <% end %>
@@ -81,7 +81,7 @@
           <%= work.publication_year %>
         </td>
         <td>
-          <%= link_to("Upvote", vote_path(work))%>
+          <%= link_to("Upvote", upvote_path(work), class: "button")%>
         </td>
       </tr>
       <% end %>
@@ -121,7 +121,7 @@
           <%= work.publication_year %>
         </td>
         <td>
-          <%= link_to("Upvote", vote_path(work))%>
+          <%= link_to("Upvote", upvote_path(work), class: "button")%>
         </td>
       </tr>
       <% end %>
