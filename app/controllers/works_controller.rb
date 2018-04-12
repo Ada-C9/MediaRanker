@@ -26,10 +26,23 @@ class WorksController < ApplicationController
   end
 
   def edit
-  @work = Work.find_by(id: params[:id].to_i)
+    @work = Work.find_by(id: params[:id].to_i)
   end
 
   def update
+    @work = Work.find_by(id: params[:id].to_i)
+    if !@work.nil?
+      if @work.update(work_params)
+        flash[:success] = "Work added category #{@work.category} #{@work.title}"
+        redirect_to work_path
+      else
+        flash[:notice] = "A problem occurred: Could not update work"
+        flash.now[:alert] = @work.errors
+        render :edit
+      end
+    else
+      redirect_to works_path
+    end
   end
 
   def destroy
