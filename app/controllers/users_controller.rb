@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    # POST method
     user = User.new(name: params[:name])
   end
 

@@ -14,16 +14,23 @@
 
   <body>
     <header>
-      <h2><%= link_to("Rankster", root_path)%></h2>
-      <h4>Ranking the Best of Everything</h4><br>
+      <h2><%= link_to("Rankster", root_path)%>
+        <small>Ranking the Best of Everything</small>
+      </h2>
     </header>
     <nav>
       <%= link_to("Back to media ranks", root_path, class: "button") %>
       <%= link_to("View all media", works_path, class: "button") %>
       <%= link_to("Add new work", new_work_path, class: "button") %>
       <%= link_to("View all users", users_path, class: "button") %>
-      <strong>*Logged in as link?*  </strong>
-      <strong>*Logout button*</strong>
+
+  <% if session[:user_id] %>
+    <% @user = User.find(session[:user_id])%>
+    <%= link_to("Logged in as #{@user.name}", user_path(@user.id), class: "button") %>
+    <%= link_to("Logout", logout_path, class: "button", method: :delete) %>
+  <% else %>
+      <%= link_to("Login", login_path, class: "button") %>
+  <% end %>
     </nav>
 
     <%= yield %>

@@ -4,4 +4,5 @@ class HomesController < ApplicationController
     @books = Work.where(category: 'book')
     @movies = Work.where(category: 'movie')
   end
+
 end
