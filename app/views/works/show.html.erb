@@ -1,12 +1,11 @@
 <article class="media-details">
   <h3><strong><%= @work.title %></strong></h3>
 
-  <h5>Created by: <%= @work.creator %></h5>
+  <p>Created by: <%= @work.creator %></p>
 
-  <h5>Published: <%= @work.publication_year %></h5>
+  <p>Published: <%= @work.publication_year %></p>
 
-  <h5><%= @work.description %></h5>
-
+  <p><%= @work.description %></p>
 
   <section>
     <%= link_to("Back to media ranks", root_path, class: "button") %>
@@ -14,24 +13,32 @@
     <%= link_to("Upvote") %>
     <%= link_to("Delete", work_path(@work.id), class: "button alert", method: :delete, data: { confirm: "Are you sure?" }) %>
   </section>
+</article>
 
-
+<article>
+  <h3><%= @work.votes.count %> Votes for this <%= @work.category %></h3>
   <table>
-    <tr>
-      <th>
-        <strong>User</strong>
-      </th>
-      <th>
-        <strong>Date</strong>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <%=  %>
-      </td>
-      <td>
-        <%=  %>
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th>
+          <strong>User</strong>
+        </th>
+        <th>
+          <strong>Date</strong>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.votes.each do |vote| %>
+      <tr>
+        <td>
+          <%= link_to(vote.work.creater, user_path(@user))  %>
+        </td>
+        <td>
+          <%= vote.work.created_at %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
-</section>
+</article>

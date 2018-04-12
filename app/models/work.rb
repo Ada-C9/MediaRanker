@@ -17,4 +17,5 @@ class Work < ApplicationRecord
     Work.where(category: "movie")
   end
 
+
 end
