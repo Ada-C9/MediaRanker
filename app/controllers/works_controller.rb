@@ -66,8 +66,7 @@ class WorksController < ApplicationController
 
       #instructor imp redirects to /works if the user started at /works
       # else redirects to /work/id if the user started at /work/id
-
-
+      #how to store location and redirect to it?
     else
       flash[:error] = "You must log in to do that"
       redirect_to work_path(@work)

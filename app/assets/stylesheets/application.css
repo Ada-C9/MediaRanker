@@ -101,3 +101,7 @@
 .success {
   color: #8a8a8a;
 }
+
+.error {
+  color: #C70039;
+}
