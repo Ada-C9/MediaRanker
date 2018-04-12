@@ -1,4 +1,9 @@
 <main>
+  <% if session[:user_id] %>
+    <% @vote = @work.votes.find_by(user_id: session[:user_id]) %>
+    <%= render partial: "layouts/error-messages", locals: { model: @vote } %>
+  <% end %>
+  
   <article>
     <h2><%= @work.title %></h2>
     <h3>Created by: <%= @work.creator %></h3>

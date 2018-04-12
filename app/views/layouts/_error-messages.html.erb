@@ -3,7 +3,7 @@
 
     <ul>
       <% model.errors.messages.each do |field, problem| %>
-      <li><strong><%= field.capitalize%></strong>
+      <li><%= field%>
         <% problem.each do |message| %>
         <%= message %>
         <% end %>

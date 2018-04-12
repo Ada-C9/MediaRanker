@@ -13,7 +13,7 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
-      flash.now[:failure] = "A problem occurred: Could not create work"
+      flash.now[:failure] = "A problem occurred: Could not create #{@work.category}"
       render :new
     end
   end
@@ -33,14 +33,15 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
+      flash.now[:failure] = "A problem occurred: Could not update #{@work.category}"
       render :edit
     end
   end
 
   def destroy
     Work.destroy(params[:id])
-
-    redirect_to works_path
+    flash[:success] = "Successfully destroyed"
+    redirect_to root_path
   end
 
   def home
