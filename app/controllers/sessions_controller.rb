@@ -8,13 +8,11 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by name: params[:user][:name]
-    # binding.pry
     if @user
       session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.name}!"
     else
       @user = User.create(user_params)
-      # @user = User.create(name: params[:user][:name], joined: Time.now.strftime("%m%Y"))
       session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.name}!"
     end
