@@ -4,19 +4,15 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
-
   def login
     @user = User.find_by(name: params[:user][:name])
 
     if @user
       session[:user_id] = @user.id
-      flash[:success] = "#{ user.name } is successfully logged in"
+      flash[:success] = "#{ @user.name } is successfully logged in"
     else
       @user = User.create(name: params[:user][:name])
-      flash[:success] = "New user #{ user.name } successfully created"
+      flash[:success] = "New user #{ @user.name } successfully created"
     end
     redirect_to root_path
   end
@@ -26,9 +22,16 @@ class SessionsController < ApplicationController
     flash[:success] = "Logged out successfully"
 
     redirect_to root_path
-
   end
 
-  helper_method :current_user
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
+  def logged_in?
+    @current_user.nil? ? false : true
+  end
+
+  helper_method :current_user, :logged_in?
 
 end

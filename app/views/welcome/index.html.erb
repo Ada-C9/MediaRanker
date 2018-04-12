@@ -5,7 +5,7 @@ by <%= @spotlight.creator %>
 </h3>
 
 <p>
-  TBD votes
+  <%= pluralize(@spotlight.votes.count, "vote") %>
   <%= @spotlight.description %>
 </p>
 
@@ -31,7 +31,7 @@ by <%= @spotlight.creator %>
     <li>
       <%= link_to book.title, work_path(book) %> by
       <%= book.creator %>
-    TBD votes
+      <%= pluralize(book.votes.count, "vote") %>
     </li>
   <% end %>
   </ul>
@@ -44,7 +44,7 @@ by <%= @spotlight.creator %>
     <li>
       <%= link_to movie.title, work_path(movie) %> by
       <%= movie.creator %>
-    TBD votes
+      <%= pluralize(movie.votes.count, "vote") %>
     </li>
   <% end %>
   </ul>
