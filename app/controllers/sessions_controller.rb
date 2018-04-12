@@ -24,14 +24,4 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
-
-  def logged_in?
-    @current_user.nil? ? false : true
-  end
-
-  helper_method :current_user, :logged_in?
-
 end
