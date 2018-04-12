@@ -1,8 +1,6 @@
 <% if model.errors.messages.any? %>
   <section>
 
-    <h3>Error messages:</h3>
-
     <ul>
       <% model.errors.messages.each do |field, problem| %>
       <li><strong><%= field.capitalize%></strong>

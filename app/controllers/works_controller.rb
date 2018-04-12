@@ -13,6 +13,7 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
+      flash[:failure] = "A problem occurred: Could not create work"
       render :new
     end
   end

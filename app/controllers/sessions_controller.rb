@@ -4,19 +4,22 @@ class SessionsController < ApplicationController
   end
 
   def create
-    input = params[:user][:username]
-    user = User.find_by(username: input)
+    @user = User.find_by(username: params[:user][:username])
 
-    if user
-      session[:user_id] = user.id
-      flash[:success] = "Successfully logged in as existing user #{user.username}"
+    if @user
+      session[:user_id] = @user.id
+      flash[:success] = "Successfully logged in as existing user #{@user.username}"
       redirect_to root_path
     else
-      user = User.new(username: input)
-      user.save
-      session[:user_id] = user.id
-      flash[:success] = "Successfully created new user #{user.username} with ID #{user.id}"
-      redirect_to root_path
+      @user = User.new(username: params[:user][:username])
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "Successfully created new user #{@user.username} with ID #{@user.id}"
+        redirect_to root_path
+      else
+        flash[:failure] = "A problem occurred: Could not login"
+        render :new
+      end
     end
   end
 
