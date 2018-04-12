@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
-  before_action :find_user, only: [:create, :destroy]
+  before_action :find_user, only: [:destroy]
 
   def new
     @potential_user = User.new
   end
 
   def create
+    @user = User.find_by(name: params[:user][:name])
     if @user
       session[:user_id] = @user.id
       flash[:notice] = "Successfully logged in as existing user #{@user.name}"
