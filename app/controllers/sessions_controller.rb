@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :find_user
   def create
     @user = User.find_by name: params[:user][:name]
     if @user
@@ -6,7 +7,7 @@ class SessionsController < ApplicationController
       # session[:user_name] = @user.name
       flash[:success] = "Welcome back #{@user.name}"
     else
-      @user = User.create name: params[:user][:name]
+      @user = User.create(name: params[:user][:name])
       session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.name}"
     end
