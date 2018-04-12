@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :votes
-  resources :publications
+
+  resources :publications do
+    resources :votes, only: [:new, :create, :index]
+  end
 
   root 'mains#index', as: 'main'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
