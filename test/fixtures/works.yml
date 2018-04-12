@@ -5,3 +5,11 @@ four_hour_chef:
   created_by: Tim Ferriss
   publication_date: 12-23-2008
   description: The simple path to cooking like a pro, learning anything and living the good life.
+  category: book
+
+fooled_by_randomness:
+  title: Fooled By Randomness
+  created_by: Nassim Taleb
+  publication_date: 12-23-2012
+  description: A compilation of random stories about chance playing a larger role in our personal and professional success than your actual ability.
+  category: book 
