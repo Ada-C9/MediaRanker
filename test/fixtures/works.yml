@@ -1,34 +1,54 @@
-aja:
+# album
+work_0:
   category: album
-  title: Aja
-  creator: Steely Dan
-  publication_year: 1977
-  description: something I don't know
-
-nvm:
+  title: work_0
+work_1:
   category: album
-  title: NVM
-  creator: Tacocat
-  publication_year: 2014
-  description: something I don't know
+  title: work_1
+work_2:
+  category: album
+  title: work_2
+work_3:
+  category: album
+  title: work_3
+work_4:
+  category: album
+  title: work_4
+work_5:
+  category: album
+  title: work_5
+work_6:
+  category: album
+  title: work_6
+work_7:
+  category: album
+  title: work_7
+work_8:
+  category: album
+  title: work_8
+work_9:
+  category: album
+  title: work_9
+work_10:
+  category: album
+  title: work_10
+work_11:
+  category: album
+  title: work_11
 
-kindred:
+# book
+work_12:
   category: book
-  title: Kindred
-  creator: Octavia E. Butle
-  publication_year: 1979
-  description: something I don't know
-
-parable:
+  title: work_12
+work_13:
   category: book
-  title: Parable of the Sower
-  creator: Octavia E. Butle
-  publication_year: 1993
-  description: something I don't know
-
-coco:
-  category: movie
-  title: Coco
-  creator: Walt Disney Pictures
-  publication_year: 2017
-  description: a sad story
+  title: work_13
+work_14:
+  category: book
+  title: work_14
+work_15:
+  category: book
+  title: work_15
+work_16:
+  category: book
+  title: work_16

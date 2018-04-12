@@ -42,15 +42,15 @@ describe User do
 
   describe 'Relations' do
     it "can access votes through 'votes'" do
-      users(:user_1).votes.count.must_equal 1
+      users(:user_11).votes.count.must_equal 11
     end
 
     it "can destroy votes when destroy user" do
-      votes = users(:user_1).votes
+      votes = users(:user_11).votes
 
-      votes.wont_equal []
+      votes.count.must_equal 11
 
-      users(:user_1).destroy
+      users(:user_11).destroy
 
       votes.must_equal []
     end
@@ -59,11 +59,11 @@ describe User do
   describe 'Methods' do
     describe 'total_votes' do
       it 'returns the right vote count' do
-        users(:user_4).total_votes.must_equal 2
+        users(:user_11).total_votes.must_equal 11
       end
 
       it 'returns 0 if no vote exists' do
-        users(:user_3).total_votes.must_equal 0
+        users(:user_12).total_votes.must_equal 0
       end
     end
   end
