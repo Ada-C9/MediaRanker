@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
-
+    <%= favicon_link_tag '/Users/marikoanderson/documents/ada/rails/MediaRanker/app/assets/images/owl.jpg' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -28,25 +28,25 @@
     </header>
 
     <section class="flash">
-            <% flash.each do |name, message| %>
-              <section class="callout <%= name %>">
-                <% if name == "alert" %>
-                  <ul>
-                  <% flash[:alert].each do |field, message| %>
-                      <li>
-                      <strong><%= field %>: </strong>
-                        <%= message %>
-                      </li>
-                  <% end %>
-                    </ul>
-                <% else %>
-                <p>
+      <% flash.each do |name, message| %>
+        <section class="callout <%= name %>">
+          <% if name == "alert" %>
+            <ul>
+            <% flash[:alert].each do |field, message| %>
+                <li>
+                <strong><%= field %>: </strong>
                   <%= message %>
-                </p>
-                <% end %>
-              </section>
+                </li>
             <% end %>
-          </section>
+              </ul>
+          <% else %>
+          <p>
+            <%= message %>
+          </p>
+          <% end %>
+        </section>
+      <% end %>
+    </section>
 
     <%= yield %>
 

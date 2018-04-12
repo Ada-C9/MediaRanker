@@ -1,9 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  work_id: 1
+vote_one:
+  user_id:
+  work_id:
 
-two:
-  user_id: 1
-  work_id: 1
+vote_two:
+  user_id:
+  work_id:
+
+vote_three:
+  user_id:
+  work_id:
+
+vote_four:
+  user_id:
+  work_id:
+
+vote_five:
+  user_id:
+  work_id:
+
+vote_six:
+  user_id:
+  work_id:
+
+vote_seven:
+  user_id:
+  work_id:
+
+vote_eight:
+  user_id:
+  work_id:
+
+vote_nine:
+  user_id:
+  work_id:
+
+vote_ten:
+  user_id:
+  work_id:

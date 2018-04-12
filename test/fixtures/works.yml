@@ -1,9 +1,212 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  creator: MyString
+work_one:
+  category: book
+  title: book title 1
+  creator: Creator 
+  publication_year: 1995
+  description: description description description
 
-two:
-  category: MyString
-  creator: MyString
+work_two:
+  category: book
+  title: book title 2
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_three:
+  category: book
+  title: book title 3
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_four:
+  category: book
+  title: book title 4
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_five:
+  category: book
+  title: book title 5
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_six:
+  category: book
+  title: book title 6
+  creator: Creator
+  publication_year: 1995
+  description: description description description
+
+work_seven:
+  category: book
+  title: book title 7
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_eight:
+  category: book
+  title: book title 8
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+
+work_nine:
+  category: book
+  title: book title 9
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_ten:
+  category: book
+  title: book title 10
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_eleven:
+  category: album
+  title: album title 1
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_twelve:
+  category: album
+  title: album title 2
+  creator: Creator
+  publication_year: 1995
+  description: description description description
+
+work_:
+  category: album
+  title: album title 3
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: album
+  title: album title 4
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: album
+  title: album title 5
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 1
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 2
+  creator: Creator
+  publication_year: 1995
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 3
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 4
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 5
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 6
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 7
+  creator: Creator
+  publication_year: 1995
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 8
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 9
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 10
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 11
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 12
+  creator: Creator
+  publication_year: 2000
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 13
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 14
+  creator: Creator
+  publication_year: 2018
+  description: description description description
+
+work_:
+  category: movie
+  title: movie title 15
+  creator: Creator
+  publication_year: 2018
+  description: description description description
