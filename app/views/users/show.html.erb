@@ -1,0 +1,45 @@
+<h3>User Summary: <%=link_to @user.name %> </h3>
+<p>
+  Joined site <%= @user.created_at.strftime("%B %d,%Y")%>
+</p>
+
+<h4>Votes</h4>
+
+<table>
+  <th>
+    Media Title
+  </th>
+  <th>
+    Created By
+  </th>
+  <th>
+    Published
+  </th>
+  <th>
+    Category
+  </th>
+  <th>
+    Voted On
+  </th>
+    <tr>
+      <%# QUESTION:  %><% @user.votes.each do |vote| %>
+      <tr>
+        <td>
+          <%= works.title%>
+        </td>
+        <td>
+          <%= works.created_by %>
+        </td>
+        <td>
+          <%= works.published_year %>
+        </td>
+        <td>
+          <%= work.category %>
+        </td>
+        <td>
+          <%= vote.created_at.strftime("%B %d,%Y")%>
+        </td>
+      </tr>
+    </tr>
+    <% end %>
+</table>
