@@ -1,7 +1,9 @@
 class WorksController < ApplicationController
 
   def index
-    @works = Work.all
+    @movies = Work.all_movies
+    @books = Work.all_books
+    @albums = Work.all_albums
   end
 
   def show
@@ -30,7 +32,7 @@ class WorksController < ApplicationController
     work = Work.new(work_params)
 
     if work.save
-      redirect_to works_path
+      redirect_to work_path(work.id)
     else
       render :new
     end

@@ -1,24 +1,16 @@
-<h2>Work details</h2>
+<h3><%= @work.title %></h3>
 
-<%= "Category: #{@work.category}" %>
-<br>
+<p><%= "Created by: #{@work.creator}" %></p>
+<p><%= "Published: #{@work.publication_year}" %></p>
+<p><%= @work.description %></p>
 
-<%= "Title: #{@work.title}" %>
-<br>
 
-<%= "Creator: #{@work.creator}" %>
-<br>
+<section>
+<%= link_to "Back to media ranks", works_path, class: "button" %>
 
-<%= "Publication Year: #{@work.publication_year}" %>
-<br>
+<%= link_to "Edit", edit_work_path(@work), class: "button" %>
 
-<%= "Description: #{@work.description}" %>
-<br>
+<%= link_to "Upvote", edit_work_path(@work), class: "button" %>
 
-<%= link_to "Back to media ranks", works_path %>
-<br>
-
-<%= link_to "Edit", edit_work_path(@work) %>
-<br>
-
-<%= link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure you want to delete #{@work.title}?"} %>
+<%= link_to "Delete", work_path(@work), class: "alert button", method: :delete, data: {confirm: "Are you sure you want to delete #{@work.title}?"} %>
+</section>

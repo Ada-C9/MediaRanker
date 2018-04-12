@@ -2,6 +2,18 @@ class Work < ApplicationRecord
   has_many :votes
   has_many :users, through: :votes
 
+  def self.all_movies
+    where(category: "movie")
+  end
+
+  def self.all_books
+    where(category: "book")
+  end
+
+  def self.all_albums
+    where(category: "album")
+  end
+
   def self.media_spotlight
     all.sort_by{ |w| w.votes.count }.first
   end

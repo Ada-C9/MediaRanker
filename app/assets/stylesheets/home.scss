@@ -6,12 +6,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2em;
-    padding: 2em;
 }
 
-
-.spotlight h3 {
-  color: black;
+.spotlight span, .spotlight p {
+  color: #5c5c5c;
 }
 
 .spotlight a {
@@ -19,14 +17,11 @@
 }
 
 .spotlight {
-    border-bottom: 1px solid #e6e6e6;
-    margin: 2em;
+    border-bottom: 1px solid #cacaca;
+    padding: 2em 0em 1em 0em;
+    margin-bottom: 5em;
 }
 
 .top-ten h3 {
     border-bottom: 2px solid  #B2DFDB;
-}
-
-a, h3 {
-    color: #26A69A;
 }

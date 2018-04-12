@@ -1,7 +1,28 @@
-<h2>List of users</h2>
+<h3>
+  List of Users
+</h3>
 
-<% @users.each do |u| %>
-  <%= u.username %>
-  <%= u.votes.count %>
-  <%= u.created_at %>
-<% end %>
+<table>
+  <thead>
+    <tr class="user-row">
+      <th>Username</th>
+      <th>Votes</th>
+      <th>Joined</th>
+    </tr>
+  <thead>
+
+  <tbody>
+    <% @users.each do |u| %>
+
+      <tr class="user-row">
+        <td><%= u.username %></td>
+        <td><%= u.votes.count %></td>
+        <td><%= u.created_at %></td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "View top media", root_path, class:"button" %>
