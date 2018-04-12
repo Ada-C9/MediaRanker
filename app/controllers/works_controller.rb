@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update]
   def index
     @works = Work.all
   end
@@ -22,7 +23,11 @@ class WorksController < ApplicationController
   end
 
   def update
+    work.assign_attributes(work_params)
 
+    if work.save
+      redirect_to work_path(work)
+    end
   end
 
   def show
@@ -35,9 +40,12 @@ class WorksController < ApplicationController
 
   private
   def work_params
-      return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
-    end
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
 
+  def find_work
+    work = params[:id]
+    @work = Work.find(work)
 
-
+  end
 end
