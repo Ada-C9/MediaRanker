@@ -1,41 +1,69 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 vote_one:
-  user_id:
-  work_id:
+  user_id: user_one
+  work_id: work_one
 
 vote_two:
-  user_id:
-  work_id:
+  user_id: user_two
+  work_id: work_one
 
 vote_three:
-  user_id:
-  work_id:
+  user_id: user_three
+  work_id: work_one
 
 vote_four:
-  user_id:
-  work_id:
+  user_id: user_four
+  work_id: work_one
 
 vote_five:
-  user_id:
-  work_id:
+  user_id: user_one
+  work_id: work_two
 
 vote_six:
-  user_id:
-  work_id:
+  user_id: user_two
+  work_id: work_two
 
 vote_seven:
-  user_id:
-  work_id:
+  user_id: user_one
+  work_id: work_eleven
 
 vote_eight:
-  user_id:
-  work_id:
+  user_id: user_two
+  work_id: work_eleven
 
 vote_nine:
-  user_id:
-  work_id:
+  user_id: user_three
+  work_id: work_eleven
 
 vote_ten:
-  user_id:
-  work_id:
+  user_id: user_one
+  work_id: work_twelve
+
+vote_eleven:
+  user_id: user_two
+  work_id: work_twelve
+
+vote_twelve:
+  user_id: user_three
+  work_id: work_twelve
+
+vote_thirteen:
+  user_id: user_one
+  work_id: work_twenty
+
+vote_fourteen:
+  user_id: user_two
+  work_id: work_twenty
+
+vote_fifteen:
+  user_id: user_three
+  work_id: work_twenty
+
+vote_sixteen:
+  user_id: user_one
+  work_id: work_twenty_one
+
+vote_seventeen:
+  user_id: user_one
+  work_id: work_twenty_two
