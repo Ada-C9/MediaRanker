@@ -25,25 +25,21 @@
 
  h3 {
    color: #26A69A;
-   margin-top: 0;
-   margin-bottom: 0.5rem;
  }
 
  ul {
    list-style-type: none;
-   margin-bottom: 1rem;
-   list-style-position: outside;
-   line-height: 1.6;
  }
 
 /*Application ERB Header*/
 
+ .float-right {
+   float: right !important;
+ }
 
  .main-header {
    background-color: #B2DFDB;
-   max-width: 100%;
    border-bottom: 1px solid #EEEEEE;
-   margin-bottom: 10px;
    padding: 25px 20px 10px 20px;
  }
 
