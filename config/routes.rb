@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'users#new', as: 'login_form'
   get '/users', to: 'users#index', as: 'users'
-  get '/user', to: 'users#show', as: 'user'
+  get '/user/:id', to: 'users#show', as: 'user'
   post'/login', to: 'users#create', as: 'login'
   delete '/login', to: 'users#destroy', as: 'logout'
 

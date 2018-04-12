@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-
   end
 
   def create
@@ -16,6 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.username}"
       redirect_to root_path
+
     else
       @user = User.create(username: params[:user][:username])
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+      @user = User.new
   end
 
   def destroy
