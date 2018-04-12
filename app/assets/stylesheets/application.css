@@ -18,6 +18,12 @@
 
  */
 
+body {
+  display: grid;
+  grid-template-rows: 222px;
+
+}
+
 body, h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
 }
@@ -26,17 +32,21 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
+a, h3 {
+  color: #26A69A;
+}
+
 .page-header {
-  max-width: 100%;
+  display: grid;
   background-color: #B2DFDB;
   border-bottom: 1px solid #EEEEEE;
   margin-bottom: 10px;
-  padding: 25px 20px 10px;
+  padding: 25px 20px 10px 20px;
 }
 
 .page-header h2 {
   text-align: center;
-  margin: 25px auto 40px;
+  margin: 25px auto 40px auto;
 }
 
 .page-header h2 a {
@@ -50,12 +60,28 @@ h1, h2, h3, h4, h5 {
   color: white;
 }
 
-.row {
-  max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
+
+
+
+
+.status {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
 }
 
-small {
-  font-size: 80%;
+.status.failure h3 {
+  color: #C70039;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.status.failure h3, .status.success h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.status.success h3 {
+  color: #8a8a8a;
 }

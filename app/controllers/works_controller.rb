@@ -14,9 +14,9 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    @category = Category.find(params[:work][:category])
 
     if @work.save
+      flash[:success] = "Successfully created #{@work.category.name} #{@work.id}"
       redirect_to work_path(@work)
     else
       render :new

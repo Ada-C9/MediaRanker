@@ -1,12 +1,13 @@
 <% if @work.errors.messages.any? %>
 <section class="row status failure">
-  <h3>A problem occured: Could not create <%= @category.name.capitalize %></h3>
-
+  <h3>A problem occured: Could not create <%= @work.category.name %></h3>
+  <ul>
   <% @work.errors.messages.each do |title, messages| %>
     <% messages.each do |m| %>
       <li><%= title %> : <%= m %></li>
     <% end %>
   <% end %>
+  </ul>
 </section>
 <% end %>
 
@@ -16,7 +17,7 @@
   <%= form_for @work do |f| %>
 
   <%= f.label :category %>
-  <%= f.select :category, Category.all.map { |cat| [cat.name, cat.id] } %>
+  <%= f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] } %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>

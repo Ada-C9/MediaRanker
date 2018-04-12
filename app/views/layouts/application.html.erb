@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <% @user = User.find(session[:user_id])%>
+
 
   <header class="page-header row">
     <h2><%= link_to("Media Ranker", root_path) %><small>Ranking the Best of Everything</small></h2>
@@ -22,7 +22,8 @@
       <%= link_to("Add a new work", new_work_path, class: "button") %>
       <%= link_to("View all users", users_path, class: "button") %>
       <div class="float-right">
-        <% if @user %>
+        <% if session[:user_id] %>
+        <% @user = User.find(session[:user_id])%>
         <%= link_to("Logged in as #{@user.username}", user_path(@user.id), class: "button")%>
         <%= link_to("Logout", logout_path, method: :delete, class: "button") %>
         <% else %>
@@ -33,6 +34,13 @@
   </header>
 
   <main class="row">
+
+    <% flash.each do |type, message| %>
+      <section class="row status success">
+        <h3><%= message %></h3>
+        </section>
+    <% end %>
+
     <%= yield %>
   </main>
 
