@@ -27,7 +27,7 @@ user_failures = []
 CSV.foreach(USER_FILE, :headers => true) do |row|
   user = User.new
   user.name = row['name']
-  user.joined = DateTime.parse(row['joined'])
+  # user.joined = DateTime.parse(row['joined'])
 
   successful = user.save
   if !successful
@@ -35,5 +35,23 @@ CSV.foreach(USER_FILE, :headers => true) do |row|
     puts "Failed to save user: #{user.inspect}"
   else
     puts "Created user: #{user.inspect}"
+  end
+end
+
+VOTE_FILE = Rails.root.join('db', 'vote_seeds.csv')
+puts "Loading raw vote data from #{VOTE_FILE}"
+
+vote_failures = []
+CSV.foreach(VOTE_FILE, :headers => true) do |row|
+  vote = Vote.new
+  vote.work_id = row['work_id']
+  vote.user_id = row['user_id']
+
+  successful = vote.save
+  if !successful
+    vote_failures << vote
+    puts "Failed to save vote: #{vote.inspect}"
+  else
+    puts "Created vote: #{vote.inspect}"
   end
 end
