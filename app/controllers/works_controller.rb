@@ -56,7 +56,7 @@ class WorksController < ApplicationController
       redirect_to root_path
     else
       # this feels wrong, I am unsure of the @work.error
-      flash.now[:alert] = "A problem occurred: Could not create #{@work.category} #{@work.error}"
+      flash.now[:alert] = "A problem occurred: Could not create #{@work.category} #{@work.errors}"
       render :new
     end
   end
