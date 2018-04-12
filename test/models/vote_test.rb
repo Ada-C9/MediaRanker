@@ -14,6 +14,16 @@ describe Vote do
       same_user_vote.valid?.must_equal true
       same_publication_vote.valid?.must_equal true
     end
+    it 'must not be valid without a user or a publication' do
+      some_vote.user = nil
+
+      some_vote.valid?.must_equal false
+
+      some_vote.user = users(:usako)
+      some_vote.publication = nil
+      
+      some_vote.valid?.must_equal false
+    end
     it 'must not be valid if a vote already exists with both the same user and same publication' do
       duplicate_vote = Vote.new(user: users(:usako), publication: publications(:cardcaptor))
 
@@ -23,8 +33,8 @@ describe Vote do
 
   describe 'vote relationships' do
     it 'it has a user and a publication' do
-       some_vote.user.must_equal user: users(:usako)
-       some_vote.publication.must_equal publication: publications(:cardcaptor)
+       some_vote.user.must_equal users(:usako)
+       some_vote.publication.must_equal publications(:cardcaptor)
     end
   end
 end
