@@ -5,7 +5,7 @@ describe User do
   describe 'validations' do
     before do
       # Arrange
-      @user = User.new(user_name: users(:c_dagger).user_name, join_date: users(:c_dagger).join_date)
+      @user = users(:c_dagger)
     end
 
     it 'is valid when it has a user_name and join_date' do
@@ -38,7 +38,7 @@ describe User do
     end
 
     # VOTES******************
-    it 'a votes attribute' do
+    it 'has a votes attribute' do
       @user.must_respond_to :votes
     end
   end
