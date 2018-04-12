@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :works
   resources :votes
   resources :users
-  get '/login', to: 'users#new', as: 'login'
-  post '/login', to: 'users#create'
-  delete '/logout', to: 'users#destroy', as: 'logout'
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
 end

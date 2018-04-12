@@ -1,0 +1,20 @@
+<h4>User Summary: <%= @user.name %></h4>
+<small> Joined site <%= @user.joined %> </small>
+
+<p><h5>Votes</h5></p>
+<table>
+  <thead>
+    <tr>
+      <th width="100">Media Title</th>
+      <th width="100">Created By</th>
+      <th width="100">Published</th>
+      <th width="100">Category</th>
+      <th width="100">Voted On</th>
+    </tr>
+  </thead>
+</table>
+
+
+<%= link_to "Edit", edit_user_path(@user), class: "button" %>
+<a class="button" href="/users">View all users</a>
+<a class="button" href="/works">Back to Media List</a>

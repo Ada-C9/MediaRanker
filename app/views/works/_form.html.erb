@@ -4,7 +4,7 @@
 
 <%= form_for @work do |w| %>
 <%= w.label :category %>
-<%= w.text_field :category %>
+<%= w.select :category, ['album', 'book', 'movie'] %>
 <%= w.label :title %>
 <%= w.text_field :title %>
 <%= w.label :created_by %>

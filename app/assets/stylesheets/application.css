@@ -46,3 +46,33 @@ display: inline-block;
   margin-right: 15px;
   border-right: white 2px solid;
 }
+
+/*
+.row {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main {
+  display: block;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+} */

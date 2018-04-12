@@ -1,22 +1,17 @@
 <table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th width="100">Votes</th>
-      <th width="100">Joined</th>
-      <th width="100">Edit</th>
-    </tr>
-  </thead>
-</table>
-
-<tbody>
+  <tr>
+    <th>Username</th>
+    <th>Votes</th>
+    <th>Joined</th>
+    <th>Edit</th>
+  </tr>
   <% @users.each do |user| %>
-  <ul>
-    <li><%= link_to user.name, user_path(user) %></li>
-    <li>(votes)</li>
-    <li><%= user.joined %></li>
-    <li><%= link_to "Edit", edit_user_path(user) %></li>
-    <li><%= link_to("Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.name}?" }) %></li>
-  </ul>
+  <tr>
+    <th><%= link_to user.name, user_path(user) %></th>
+    <th>(votes)</th>
+    <th><%= user.joined %></th>
+    <th><%= link_to "Edit", edit_user_path(user) %></th>
+    <th><%= link_to("Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.name}?" }) %></th>
+  </tr>
   <% end %>
-</tbody>
+</table>
