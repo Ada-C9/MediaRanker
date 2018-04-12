@@ -15,15 +15,15 @@
   </head>
   <header class="page-header row">
     <h2>
-      <strong><a href="/">Media Ranker</a></strong>
+      <strong><%= link_to "Media Ranker", main_path %></strong>
       <small>Ranking the Best of Everything</small>
     </h2>
 
     <nav>
-      <a class="button" href="/">View top media</a>
-      <a class="button" href="/publications">View all media</a>
-      <a class="button" href="/publications/new">Add a new work</a>
-      <a class="button" href="/users">View all users</a>
+      <%= link_to "View top media", main_path, class: "button" %>
+      <%= link_to "View all media", publications_path, class: "button" %>
+      <%= link_to "Add a new work", new_publication_path, class: "button" %>
+      <%= link_to "View all users", users_path, class: "button" %>
       <div class="float-right">
         <% if @user %>
           <% if @user.id != nil %>
@@ -36,6 +36,27 @@
       </div>
     </nav>
   </header>
+  <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+        <section class="callout <%= name %>">
+          <% if name == "alert" %>
+            <ul>
+              <% flash[:alert].each do |field, message| %>
+                <li>
+                  <strong> <%= field.capitalize %> </strong> <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>
+              <%= message %>
+            </p>
+          <% end %>
+        </section>
+      <% end %>
+    </section>
+  </main>
 
   <body>
 
