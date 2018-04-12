@@ -25,7 +25,14 @@
       <a class="button" href="/publications/new">Add a new work</a>
       <a class="button" href="/users">View all users</a>
       <div class="float-right">
-          <a class="button float-right" href="/login">Log In</a>
+        <% if @user %>
+          <% if @user.id != nil %>
+            <%= link_to "Logged in as #{@user.name}", user_path(@user.id), class: "button" %>
+            <%= link_to "logout", logout_path, method: :delete, class: "button" %>
+          <% end %>
+        <% else %>
+          <%= link_to "Log In", login_form_path, class: "button" %>
+        <% end %>
       </div>
     </nav>
   </header>

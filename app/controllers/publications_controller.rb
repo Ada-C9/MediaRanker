@@ -1,4 +1,7 @@
 class PublicationsController < ApplicationController
+  before_action :find_user  
+
+
   def index
     @albums = Publication.where(category: "album")
     @books = Publication.where(category: "book")

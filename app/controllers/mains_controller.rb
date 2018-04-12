@@ -1,4 +1,5 @@
 class MainsController < ApplicationController
+  before_action :find_user
 
   def index
     @albums = Publication.where(category: "album").limit(10)

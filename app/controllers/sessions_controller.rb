@@ -1,38 +1,27 @@
 class SessionsController < ApplicationController
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
 
   def create
-    @user = User.create(user_params)
-    if @user.id != nil
-      flash[:success] = "Welcome #{@user.name}!"
-      redirect_back(fallback_location: main_path)
+    @user = User.find_by(name: params[:user][:name])
+
+    if @user
+      session[:user_id] = @user.id
+      flash[:success] = "Successfully logged in as existing user #{@user.name}"
     else
-      flash.now[:alert] = "Could not create user"
-      render :new
+      @user = User.create(name: params[:user][:name])
+      session[:user_id] = @user.id
+      flash[:success] = "Successfully created new user #{@user.name} with ID #{@user.id}"
     end
+
+    redirect_to main_path
   end
 
   def destroy
+    session[:user_id] = nil
+    flash[:success] = "Successfully logged out"
+    redirect_to main_path
   end
 
-  def update
-  end
-
-  def edit
-  end
-
-  def show
-  end
-
-  private
-
-  def user_params
-    return params.require(:user).permit(:name, :id)
-  end
 end

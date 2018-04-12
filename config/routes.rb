@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/:id',to: 'users#show', as: 'user'
   get 'login', to: 'sessions#new', as: 'login_form'
   post '/login', to: 'sessions#create', as: 'login'
-  delete '/login', to: 'sessions#destroy', as: 'logout'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :votes
   resources :publications
