@@ -2,17 +2,17 @@ class Work < ApplicationRecord
   has_many :votes
 
   def self.albums
-    self.where(category: "album")
+    Work.where(category: "album")
 
   end
 
   def self.books
-    self.where(category: "book")
+    Work.where(category: "book")
 
   end
 
   def self.movies
-    self.where(category: "movie")
+    Work.where(category: "movie")
 
   end
 end
