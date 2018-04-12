@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :works
+  post '/works/:id/upvote', to: 'works#upvote', as: 'upvote'
 
   resources :users, only: [:index, :show]
 
