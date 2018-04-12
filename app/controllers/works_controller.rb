@@ -38,6 +38,9 @@ class WorksController < ApplicationController
 
   def destroy
     @work = Work.find(params[:id])
+    @work.votes.each do |v|
+      v.delete
+    end
 
     @work.delete
     flash[:success] = "Successfully destroyed #{@work.category} #{@work.id}"

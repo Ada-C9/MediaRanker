@@ -5,7 +5,7 @@
     <span class="most-popular"><%= link_to("#{@works.first.title}") %></span>
     by <%= @works.first.creator %>
   </h3>
-  <p>WORK.MAX_VOTE_COUNT - WORK.MAX_VOTE_COUNT.DESCRIPTION</p>
+  <p><%= @most_popular %> - WORK.MAX_VOTE_COUNT.DESCRIPTION</p>
 </section>
 
 <hr class="root-hr">
