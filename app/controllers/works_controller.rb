@@ -42,6 +42,11 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
+  def upvote
+    @work.votes.create
+    redirect_to(@work)
+  end
+
   private
 
   def work_params
