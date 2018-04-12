@@ -2,7 +2,6 @@ class WorksController < ApplicationController
   before_action :find_work, only: [:edit, :show, :update]
 
   def edit
-    # @work = Work.find_by(id: params[:id])
   end
 
   def index
@@ -14,7 +13,6 @@ class WorksController < ApplicationController
   end
 
   def show
-    # @work = Work.find_by(id: params[:id])
   end
 
   def create
@@ -29,7 +27,6 @@ class WorksController < ApplicationController
   end
 
   def update
-    # @work = Work.find_by(id: params[:id])
     if @work.update(driver_params)
       flash[:success] = "#{work.category} updated"
       redirect_to work_path

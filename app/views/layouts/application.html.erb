@@ -14,13 +14,11 @@
 
 <body>
   <header>
-    <p>
-      <%= link_to "Media Ranker", root_path %> | Ranking the Best of Everything
-    </p>
+    <h2>
+      <span><%= link_to "Media Ranker", root_path %></span><small>Ranking the Best of Everything</small>
+    </h2>
     <nav>
       <ul>
-
-      <div class="nav-float-right">
         <li>
           <%= link_to "View top media", root_path, :class => "button" %>
         </li>
@@ -33,11 +31,9 @@
         <li>
           <%= link_to "View all users", users_path, :class => "button" %>
         </li>
-      </div>
-      <div class="nav-float-left">
         <% if @user && @user.id %>
         <li>
-          <%= link_to "Logged in as", @user.name %>
+          <%= link_to "Logged in as #{@user.name}", user_path(@user.id), :class => "button" %>
           <%= link_to "Logout", logout_path, method: :destroy, :class => "button" %>
         </li>
         <% else %>
@@ -45,7 +41,6 @@
           <%= link_to "Login", login_path, :class => "button" %>
         </li>
         <% end %>
-      </div>
       </ul>
     </nav>
   </header>
