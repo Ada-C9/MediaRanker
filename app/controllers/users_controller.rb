@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @show_user = User.find_by name: params[:user][:name]
   end
 
   def new
