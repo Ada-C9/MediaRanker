@@ -76,18 +76,21 @@ class WorksController < ApplicationController
   def upvote
     user_id = session[:user_id]
     work = Work.find(params[:work_id])
-    vote = Vote.new(user_id: user_id, work_id: work.id)
+    @vote = Vote.new(user_id: user_id, work_id: work.id)
 
     if session[:user_id]
-      if vote.save
+      if @vote.save
         flash[:success] = 'Successfully upvoted!'
       else
-        flash[:failure] = 'Unable to upvote'
+        flash[:failure] = 'Could not upvote'
+
+        # this will only flash the first message for the column
+        flash[:error] = @vote.errors.messages.map { |k,v| "#{k} - #{v[0]}" }.join('<br>').html_safe
       end
     else
       flash[:failure] = 'You must log in to do that'
     end
-    redirect_to work_path(work.id)
+    redirect_back(fallback_location: root_path)
   end
 
   private
