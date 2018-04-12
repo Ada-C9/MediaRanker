@@ -17,15 +17,13 @@ class WorksController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: session[:user_id] )
-    # If we are in a nested route (/authors/7/books), we don't want @books to be Book.all, we want @books to just be the author's books
-    if params[:author_id]
-      author = Author.find_by(id: params[:author_id])
-      @books = author.books
+    if @work
+      @creation = "Created by: #{@work.creator}"
+      @publish = "Published: #{@work.publication_year}"
+      @describe = @work.description
     else
-      # we don't need to find a specific author's books, we just need to list all books
-      @books = Book.all
-
+      flash[:fail] = "Unable to find work"
+      redirect_to root_path
     end
   end
 
@@ -66,15 +64,15 @@ class WorksController < ApplicationController
       @work.destroy
       flash[:success] = "Sucessfully destroyed #{@work.category} #{@work.id}"
 
-  # there was no flash if I deleted an item that has already been deleted.
+      # there was no flash if I deleted an item that has already been deleted.
     else
       # flash[:alert] = {book: "Book does not exist"}
     end
-    redirect_to books_path
+    redirect_to root_path
   end
 
   private
-  def user_params
+  def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description, :id, :votes)
   end
 

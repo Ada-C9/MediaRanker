@@ -2,13 +2,13 @@
 <p>
   <ul>
     <li>
-      <%= "Created by: #{@work.creator}" %>
+      <%= @creation %>
     </li>
     <li>
-      <%= "Published: #{@work.publication_year}" %>
+      <%= @publish %>
     </li>
     <li>
-      <%= "#{@work.description}" %>
+      <%= @describe %>
     </li>
   </ul>
 </p>
@@ -18,7 +18,7 @@
     <li><%= link_to "Back to media ranks", root_path %></li>
     <li><%= link_to "Edit", edit_work_path(@work.id) %></li>
     <li><%= "Upvote"%></li>
-    <li><%= link_to "Delete", delete_work_path(@work.id),
+    <li><%= link_to "Delete", work_path(@work.id),
     method: :delete %></li>
   </ul>
 </p>
