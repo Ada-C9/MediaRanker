@@ -42,7 +42,7 @@
         <td><%= link_to book.title, work_path(book.id) %></td>
         <td><%= book.creator %></td>
         <td><%= book.publication_year %></td>
-        <td>upvote button</td>
+        <td><%= button_to("Upvote", work_votes_path(book.id)) %></td>
       </tr>
     <% end %>
   </tbody>

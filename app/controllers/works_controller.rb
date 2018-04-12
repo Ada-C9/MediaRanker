@@ -14,6 +14,23 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
   end
 
+  def create
+    @work = Work.new(work_params)
+    # TODO: need validations
+
+    if @work.save
+      flash[:success] = "Work added successfully"
+      redirect_to works_path
+    else
+      flash.now[:failure] = "Failed"
+      render :new 
+    end
+  end
+
+  def new
+    @work = Work.new
+  end
+
   def update
     @work = Work.find(params[:id])
 
@@ -22,7 +39,6 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path
     end
-
   end
 
   private
