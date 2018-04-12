@@ -48,6 +48,7 @@ class WorksController < ApplicationController
     vote = Vote.new(user_id: user.id, work_id: @work.id)
 
     if vote.save
+      # @work.vote_count += 1
       flash[:success] =  "Thank you for upvoting!"
       redirect_to(works_path)
     else

@@ -14,14 +14,14 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Albums</h3>
   <ul>
-    <%= find_top_ten(@albums) %>
-  <!-- <% @albums.each do |album| %>
+    <!--  find_top_ten(@albums)  -->
+  <% @albums.each do |album| %>
     <li>
       <%= link_to album.title, work_path(album) %> by
       <%= album.creator %>
       <%= pluralize(album.votes.count, "vote") %>
     </li>
-  <% end %> -->
+  <% end %>
   </ul>
 </section>
 

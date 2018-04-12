@@ -9,9 +9,17 @@ class Work < ApplicationRecord
 
   def find_top_ten(category)
     top_ten = []
+    works_hash = {}
     works = self.where(category: category)
-    ordered_votes = works.order(category.votes.count)
-    return ordered_votes
+
+    works.each do |work|
+      works_hash[work] = work.votes.count
+    end
+
+    ordered_votes = works_hash.sort_by{|k, v| v}.reverse
+
+    top_ten = ordered_votes.sort_by{|k, v| -v}[0..9]
+    return top_ten
   end
 
 end
