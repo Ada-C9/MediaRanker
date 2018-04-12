@@ -29,14 +29,15 @@ class WorksController < ApplicationController
   end
 
   def create
-    work = Work.new(work_params)
+    @work = Work.new(work_params)
 
-    if work.save
-      redirect_to work_path(work.id)
+    if @work.save
+      flash[:success] = "Successfully added #{@work.title}"
+      redirect_to work_path(@work.id)
     else
+      flash.now[:failure] = "Filed to add #{@work.title}"
       render :new
     end
-
   end
 
   def destroy

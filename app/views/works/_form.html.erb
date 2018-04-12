@@ -3,6 +3,7 @@
 </h3>
 
 <%= form_for @work do |f| %>
+
 <%= f.label :category, "Category" %>
 <%= f.select :category, options_for_category, :prompt => 'Select One' %>
 

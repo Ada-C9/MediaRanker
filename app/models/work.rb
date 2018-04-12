@@ -2,6 +2,10 @@ class Work < ApplicationRecord
   has_many :votes
   has_many :users, through: :votes
 
+  validates :category, presence: { message: "You must choose a category" }
+
+  validates :title, presence: { message: "Title can't be blank" }
+
   def self.all_movies
     where(category: "movie")
   end
