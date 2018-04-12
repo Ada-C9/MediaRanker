@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
 
+  before_action :find_publication, only: [:show, :edit, :update, :destroy]
   before_action :find_user
 
   def index
@@ -7,7 +8,6 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    @publication = Publication.find(params[:id])
   end
 
   def new
@@ -16,7 +16,10 @@ class PublicationsController < ApplicationController
 
   def create
     @publication = Publication.new(publication_params)
+    # need to change categories to a constant that include Movie
+    # and then right flash message: category: is not include in the list
     if @publication.save
+      flash[:success] = "Successfully created book 489"
       redirect_to publication_path(@publication.id)
     else
       flash.now[:alert] = { "create #{@publication.category}" => @publication.errors }
@@ -25,12 +28,13 @@ class PublicationsController < ApplicationController
   end
 
   def edit
-    @publication = Publication.find(params[:id])
   end
 
   def update
-    @publication = Publication.find(params[:id])
+    # need to change categories to a constant that include Movie
+    # and then right flash message: category: is not include in the list
     if @publication.update(publication_params)
+      flash[:success] = "Successfully updated #{@publication.category} #{@publication.id}"
       redirect_to publication_path(@publication.id)
     else
       flash.now[:alert] = { "update #{@publication.category}" => @publication.errors }
@@ -39,11 +43,21 @@ class PublicationsController < ApplicationController
   end
 
   def destroy
-    @publication = Publication.find(params[:id])
-    if @publication.destroy
-      redirect_to publications_path
+    if !@publication
+      flash[:alert] = "A problem occurred: Could not delete record that does not exist"
     else
-      render :show
+      if !@publication.votes.empty?
+        @publication.votes.each do | vote |
+          vote.destroy
+        end
+      end
+      if @publication.destroy
+        flash[:success] = "Successfully destroyed #{@publication.category} #{@publication.id}"
+        redirect_to root_path
+      else
+        flash.now[:alert] = { "delete #{@publication.category}" => @publication.errors }
+        render :show
+      end
     end
   end
 
@@ -51,5 +65,9 @@ class PublicationsController < ApplicationController
 
   def publication_params
     return params.require(:publication).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_publication
+    @publication = Publication.find_by(id: params[:id])
   end
 end
