@@ -43,16 +43,21 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    if @user.logged_in?
-      @work.votes.create(user_id: @current_user.id)
-      flash[:success] = "Thank you for upvoting!"
-      redirect_to(@work)
+    user = User.find_by(id: session[:user_id])
+
+    vote = Vote.new(user_id: user.id, work_id: @work.id)
+    # @work.votes.create(user_id: user.id)
+
+
+    if vote.save
+      flash[:notice] =  "Thank you for upvoting!"
+      redirect_to(works_path)
+    else
+      flash[:notice] =  "You have already upvoted this!"
+      redirect_to(works_path)
     end
   end
 
-# else
-#   flash[:failure] = "You have already upvoted this!"
-#   redirect_to(works_path)
 
   private
 

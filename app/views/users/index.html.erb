@@ -13,7 +13,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.name, user_path(user) %></td>
-        <td>TBD</td>
+        <td><%= pluralize(user.votes.count, "vote") %></td>
         <td><%= user_creation_date(user) %></td>
       </tr>
     <% end %>
