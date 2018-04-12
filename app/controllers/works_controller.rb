@@ -23,7 +23,7 @@ class WorksController < ApplicationController
       redirect_to works_path
     else
       flash.now[:failure] = "Failed"
-      render :new 
+      render :new
     end
   end
 
