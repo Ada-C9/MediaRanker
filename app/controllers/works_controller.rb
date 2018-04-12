@@ -5,12 +5,14 @@ class WorksController < ApplicationController
     @top_albums = Work.top_works("album")
     @top_movies = Work.top_works("movie")
     @top_books = Work.top_works("book")
+
+    # this is temporary until highest votes is calculated
+    @spotlight = Work.first
   end
 
   def index
     @works = Work.all
   end
-
 
   def show
     @user = User.find_by(id: session[:user_id] )
