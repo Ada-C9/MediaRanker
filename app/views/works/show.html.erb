@@ -28,7 +28,7 @@
       </tr>
 
       <tr>
-        vote created on : (date placeholder)
+        vote created on : <%= @work.created_at.to_date.to_formatted_s(:long_ordinal)%>
       </tr>
     </tbody>
   </table>
