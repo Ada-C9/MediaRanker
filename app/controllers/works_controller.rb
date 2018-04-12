@@ -1,13 +1,14 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
+  before_action :find_user
+
   def index
-    @user = User.find_by(id: session[:user_id])
     @albums = Work.where(category:"album")
     @books = Work.where(category:"book")
     @movies = Work.where(category:"movie")
   end
 
   def show
-    @work = Work.find(params[:id])
   end
 
   def new
@@ -26,11 +27,9 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @work = Work.find_by(id: params[:id])
   end
 
   def update
-    @work = Work.find_by(id: params[:id])
     if !@work.nil?
       if @work.update(work_params)
         flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
@@ -45,22 +44,23 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    id = params[:id]
-    begin
-      @work = Work.find(id)
-      if @work
-        @work.destroy
-      end
+    if @work
+      @work.destroy
       flash[:success] = "#{@work.title} deleted"
-    rescue
+    else
       flash[:alert]= "Work does not exist"
     end
     redirect_to works_path
   end
-end
 
-private
+  private
 
-def work_params
-  return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  def work_params
+    return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    @work = Work.find_by(id: params[:id])
+  end
+
 end

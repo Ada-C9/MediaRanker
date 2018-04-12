@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
+  before_action :find_user
+
   def index
-    @user = User.find_by(id: session[:user_id])
     @spotlight = Work.top(1)[0]
     @albums = Work.top(10, "album")
     @books = Work.top(10, "book")
