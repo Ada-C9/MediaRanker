@@ -1,9 +1,16 @@
 require "test_helper"
 
 describe Vote do
-  let(:vote) { Vote.new }
 
-  it "must be valid" do
-    value(vote).must_be :valid?
+  it "must have a user" do
+    vote = Vote.new
+    vote.valid?.must_equal false
+    vote.errors.must_include :user_id
+  end
+
+  it "has a publication" do
+    vote = Vote.new
+    vote.valid?.must_equal false
+    vote.errors.must_include :publication_id
   end
 end
