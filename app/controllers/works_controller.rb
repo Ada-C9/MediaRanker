@@ -13,9 +13,10 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
+      flash[:success] = "Work added successfully"
       redirect_to works_path
     else
-      # Validations failed! What do we do now? See below...
+      flash[:failure] = "Validations Failed"
       render :new
     end
 

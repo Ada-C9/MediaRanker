@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      # Validations failed! What do we do now? See below...
       render :new
     end
 
