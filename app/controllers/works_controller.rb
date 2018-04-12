@@ -45,7 +45,18 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    #add loop to delete all votes assoc. with particular user?
+    if @work
+      @work.votes.each do |vote|
+        vote.destroy
+      end
+      @work.destroy
+      flash[:success] = "#{@work.title} deleted"
+      redirect_back fallback_location: :root_path
+    else
+      flash[:alert] = "Work does not exist"
+      # redirect_back fallback_location: :works_path
+    end
+    # redirect_back fallback_location: :works_path
   end
 
   def work_params

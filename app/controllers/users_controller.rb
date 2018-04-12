@@ -18,5 +18,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    #add loop to delete all votes assoc. with particular user?
   end
 end
