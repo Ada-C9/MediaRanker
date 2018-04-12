@@ -30,6 +30,14 @@ describe User do
       user.valid?.must_equal false
       user.errors.messages.must_include :name
     end
+
+    # length
+    it "is invalid if length of name is smaller than 1" do
+      users(:user_1).name = ""
+
+      users(:user_1).valid?.must_equal false
+      users(:user_1).errors.messages.must_include :name
+    end
   end
 
   describe 'Relations' do
@@ -37,7 +45,7 @@ describe User do
       users(:user_1).votes.count.must_equal 1
     end
 
-    it "can destroy votes through destroying user" do
+    it "can destroy votes when destroy user" do
       votes = users(:user_1).votes
 
       votes.wont_equal []
