@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-    <header>
-      <h1>Media Ranker | Ranking the best of everything</h1>
+<body>
+  <header>
+    <h1>Media Ranker | Ranking the best of everything</h1>
 
-      <ul>
-      <li>
+<nav>
+    <ul>
+      <li class = "button">
         <%= link_to 'View Top Media', root_path %>
       </li>
-      <li> <%= link_to 'View all Media', home_index_path %>
+      <li class = "button"> <%= link_to 'View all Media', home_index_path %>
       </li>
-      <li><%= link_to 'Add a New Work', new_home_path %>
+      <li class = "button"><%= link_to 'Add a New Work', new_home_path %>
       </li>
-      <li><%= link_to 'View all users', users_path %>
-      </li>
-      <li>Log In
+      <li class = "button"><%= link_to 'View all users', users_path %>
       </li>
 
+
       <ul>
-      <li>
-      <%= link_to 'View Instagrams', new_instagram_path %>
-    </li>
-    <li>
-      <%= link_to 'View Twitters',
-      twitters_path %>
-    </li>
-    <li>
-      <%= link_to "View Subreddits", subreddits_path %>
-    </li>
-  </ul>
-</header>
+        <li class = "button">
+          <%= link_to 'View Instagrams', new_instagram_path %>
+        </li>
+        <li class = "button">
+          <%= link_to 'View Twitters',
+          twitters_path %>
+        </li>
+        <li class = "button">
+          <%= link_to "View Subreddits", subreddits_path %>
+        </li>
+      </ul>
+
+      <ul>
+
+        <% if session[:logged_in_user] %>
+        Logged in as <%= @user.name %>
+
+      
+        <%= link_to("Logout", logout_path, method: :delete) %>
+        <% else %>
+
+        <li class = "button"><%= link_to 'Login', login_path %>
+        </li>
+        <% end %>
+
+      </ul>
+    </nav>
+    </header>
+
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <div class="<%= name %>"><%= "You are logged in now" %></div>
+      <% end %>
+    </section>
 
     <%= yield %>
 
   </body>
-</html>
+  </html>
