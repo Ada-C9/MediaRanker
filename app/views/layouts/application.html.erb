@@ -25,8 +25,29 @@
         </div>
       </nav>
     </header>
-
-    <%= yield %>
+      <main>
+        <section class="flash">
+          <% flash.each do |name, message| %>
+            <section class="callout <%= name %>">
+              <% if name == "alert" %>
+              <ul>
+                <% flash[:alert].each do |field, message| %>
+                <li>
+                <strong><%= field %>: </strong>
+                  <%= message %>
+                </li>
+                <% end %>
+              </ul>
+              <% else %>
+              <p>
+                <%= message %>
+              </p>
+              <% end %>
+            </section>
+          <% end %>
+        </section>
+        <%= yield %>
+      </main>
 
   </body>
 </html>
