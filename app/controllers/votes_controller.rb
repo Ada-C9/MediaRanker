@@ -9,7 +9,7 @@ class VotesController < ApplicationController
     elsif session[:user_id] == nil
       flash[:failures] = "You must login to do that"
     else
-      flash[:failures] = "Could not update"
+      flash[:failures] = "Could not update" + @vote.errors.full_messages.to_s
     end
     redirect_back(fallback_location: root_path)
   end

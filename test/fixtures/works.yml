@@ -1,15 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  category: MyString
-  creator: MyString
-  publication_year: 2018-04-09
-  description: MyString
+graceland:
+  title: Graceland
+  category: album
 
-two:
-  title: MyString
-  category: MyString
-  creator: MyString
-  publication_year: 2018-04-09
-  description: MyString
+rhythm:
+  title: The Rhythm of the Saints
+  category: album
