@@ -19,14 +19,14 @@ book_three:
   title: Mickey Turtle
   creator: Mickey
   publication_year: 1996
-  description: description
+  description: How a little turtle became turtley awesome
 
 book_four:
   category: book
-  title: Hoppity Hop
+  title: Hip Hoppity Hop
   creator: Percy Rabbit
   publication_year: 2018
-  description: description
+  description: rad rapping rabbits
 
 book_five:
   category: book
