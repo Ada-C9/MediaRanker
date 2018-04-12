@@ -8,7 +8,7 @@
 <ul>
   <li><%= link_to "Back to media ranks", root_path%>  </li>
   <li><%= link_to "Edit", edit_work_path%>  </li>
-  <li><%= link_to "Upvote", new_vote_path%>  </li>
+  <li><%= link_to "Upvote", new_vote_path(@work[:id])%>  </li>
   <li><%= link_to "Delete", delete_work_path, method: :delete%>  </li>
 </ul>
 
