@@ -21,7 +21,7 @@
           <td><%= link_to publication.title, publication_path(publication.id) %></td>
           <td><%= publication.creator %></td>
           <td><%= publication.publication_year %></td>
-          <td><%= link_to "Upvote: Path Needed", root_path %></td>
+          <td><%= link_to "Upvote", publication_votes_path(publication.id), method: :post %></td>
         </tr>
         <% end %>
       </tbody>

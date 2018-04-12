@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+
   get '/login', to: 'sessions#new', as: 'login_form'
   post '/login', to: 'sessions#create', as: 'login'
   delete '/login', to: 'sessions#destroy', as: 'logout'
+  post '/upvote', to: 'publication#upvote', as: 'upvote'
 
   resources :users, only: [:index, :show]
 
-  resources :publications
+  resources :publications do
+    resources :votes, only: [:create]
+  end
 
   resources :homepage, only: [:index]
 

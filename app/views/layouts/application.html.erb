@@ -33,20 +33,22 @@
     <section>
       <% flash.each do | name, message | %>
         <% if name == "alert" %>
-          <% flash[:alert].each do |field, messages| %>
-            <h3>A problem occurred: Could not <%= field %></h3>
-            <ul>
-              <% messages.each do | field, message | %>
-                <li>
-                  <%= field %>: <%= message %>
-                </li>
-              <% end %>
-            </ul>
+          <% if message.class == String %>
+            <h3><%= message %></h3>
+          <% else %>
+            <% flash[:alert].each do |field, messages| %>
+              <h3>A problem occurred: Could not <%= field %></h3>
+              <ul>
+                <% messages.each do | field, message | %>
+                  <li>
+                    <%= field %>: <%= message %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
           <% end %>
         <% else %>
-          <h3>
-            <%= message %>
-          </h3>
+          <h3><%= message %></h3>
         <% end %>
       <% end %>
     </section>

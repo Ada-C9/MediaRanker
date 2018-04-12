@@ -33,7 +33,7 @@ class PublicationsController < ApplicationController
     if @publication.update(publication_params)
       redirect_to publication_path(@publication.id)
     else
-            flash.now[:alert] = { "update #{@publication.category}" => @publication.errors }
+      flash.now[:alert] = { "update #{@publication.category}" => @publication.errors }
       render :edit
     end
   end

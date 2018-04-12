@@ -6,7 +6,7 @@
   <nav>
     <%= link_to "Back to media ranks", root_path %>
     <%= link_to "Edit", edit_publication_path(@publication.id) %>
-    <%= link_to "Upvote: Path Needed", root_path %>
+    <%= link_to "Upvote", publication_votes_path(@publication.id), method: :post %>
     <%= link_to "Delete", publication_path(@publication.id), method: :delete%>
   </nav>
 </article>
