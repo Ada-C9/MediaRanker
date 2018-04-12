@@ -10,15 +10,16 @@ class Work < ApplicationRecord
   def self.top_ten_albums
     albums = Work.where(category: 'album')
     return albums.sort_by{|album| album.votes.count}.reverse[0..9]
+  end
 
-    # works.each do |work|
-    #   works_hash[work] = work.votes.count
-    # end
-    #
-    # ordered_votes = works_hash.sort_by{|k, v| v}.reverse
-    #
-    # top_ten = ordered_votes.sort_by{|k, v| -v}[0..9]
-    # return top_ten
+  def self.top_ten_books
+    books = Work.where(category: 'book')
+    return books.sort_by{|book| book.votes.count}.reverse[0..9]
+  end
+
+  def self.top_ten_movies
+    movies = Work.where(category: 'movie')
+    return movies.sort_by{|movie| movie.votes.count}.reverse[0..9]
   end
 
 end

@@ -27,25 +27,25 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Books</h3>
   <ul>
-  <% @books.each do |book| %>
+    <% Work.top_ten_books.each do |work| %>
     <li>
-      <%= link_to book.title, work_path(book) %> by
-      <%= book.creator %>
-      <%= pluralize(book.votes.count, "vote") %>
+      <%= link_to work.title, work_path(work) %> by
+      <%= work.creator %>
+      <%= work.votes.count %>
     </li>
-  <% end %>
+    <% end %>
   </ul>
 </section>
 
 <section class="top-ten">
   <h3>Top Movies</h3>
   <ul>
-  <% @movies.each do |movie| %>
+    <% Work.top_ten_movies.each do |work| %>
     <li>
-      <%= link_to movie.title, work_path(movie) %> by
-      <%= movie.creator %>
-      <%= pluralize(movie.votes.count, "vote") %>
+      <%= link_to work.title, work_path(work) %> by
+      <%= work.creator %>
+      <%= work.votes.count %>
     </li>
-  <% end %>
+    <% end %>
   </ul>
 </section>
