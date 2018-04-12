@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:user][:name])
-    if @user
-      session[:user_id] = @user.id
-      flash[:notice] = "Successfully logged in as existing user #{@user.name}"
+    @this_user = User.find_by(name: params[:user][:name])
+    if @this_user
+      session[:user_id] = @this_user.id
+      flash[:notice] = "Successfully logged in as existing user #{@this_user.name}"
     else
-      @user = User.create(name: params[:user][:name])
-      session[:user_id] = @user.id
-      flash[:notice] = "Successfully created new user #{@user.name} with ID #{@user.id}"
+      @this_user = User.create(name: params[:user][:name])
+      session[:user_id] = @this_user.id
+      flash[:notice] = "Successfully created new user #{@this_user.name} with ID #{@this_user.id}"
     end
     redirect_to root_path
   end
