@@ -14,7 +14,7 @@
       <tr>
         <td><%= link_to user.name, user_path(user) %></td>
         <td>TBD</td>
-        <td><%= user.created_date %></td>
+        <td><%= user_creation_date(user) %></td>
       </tr>
     <% end %>
   </tbody>
