@@ -23,7 +23,7 @@
   <tbody>
     <% @work.votes.reverse.each do |vote| %>
     <tr>
-      <td><%=vote.user.name%></td>
+      <td><%=link_to vote.user.name, user_path(vote.user.id)%></td>
       <td><%=vote.created_at.to_s(:long) %></td>
     </tr>
     <% end %>

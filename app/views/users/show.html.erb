@@ -1,6 +1,30 @@
 <h1>User Summary: <%=@user.name%></h1>
 <p>Joined Site: <%=@user.created_at.to_s(:long) %></p>
 
+<p>Votes</p>
+<table>
+  <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.votes.each do |vote| %>
+    <tr>
+      <td><%=link_to vote.work.title, work_path(vote.work.id)%></td>
+      <td><%=vote.work.creator%></td>
+      <td><%=vote.work.published%></td>
+      <td><%=vote.work.category%></td>
+      <td><%=vote.created_at.to_s(:long)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <ul>
   <li><%=link_to "See All Users", users_path %></li>
   <li><%=link_to "Back To Media List", root_path %></li>
