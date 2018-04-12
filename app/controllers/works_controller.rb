@@ -11,7 +11,9 @@ class WorksController < ApplicationController
   end
 
   def index
-    @works = Work.all
+    @albums = Work.all_works("album")
+    @movies = Work.all_works("movie")
+    @books = Work.all_works("book")
   end
 
   def show

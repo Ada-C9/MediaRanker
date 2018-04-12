@@ -1,28 +1,46 @@
-<h1>List of works</h1>
+<h1>List of albums</h1>
 
 <section>
   <h2>Albums</h2>
   <ul>
-    <% @works.each do |work|  %>
-      <li>
-        <% if work.category == "album" %>
-          <%=work.vote%>
-          <%= link_to work.title, work_path(work.id) %>
-          <%=work.creator%>
-          <%=work.publication_year%>
-          <%= "Upvote" %>
-          <%= link_to "Edit", edit_user_path(user.id) %>
-          <%= link_to "Delete", work_path(work.id), method: :delete %>
-        <% end %>
-      </li>
+    <% @albums.each do |album|  %>
+    <li>
+      <%= link_to album.title, work_path(album.id) %>
+      <%=album.creator%>
+      <%=album.publication_year%>
+      <%= link_to "Edit", edit_work_path(album.id) %>
+      <%= link_to "Delete", work_path(album.id), method: :delete %>
+    </li>
     <% end %>
   </ul>
 </section>
 
 <section>
   <h2>Books</h2>
+  <ul>
+    <% @books.each do |book|  %>
+    <li>
+      <%= link_to book.title, work_path(book.id) %>
+      <%=book.creator%>
+      <%=book.publication_year%>
+      <%= link_to "Edit", edit_work_path(book.id) %>
+      <%= link_to "Delete", work_path(book.id), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
 </section>
 
 <section>
   <h2>Movies</h2>
+  <ul>
+    <% @movies.each do |movie|  %>
+    <li>
+      <%= link_to movie.title, work_path(movie.id) %>
+      <%=movie.creator%>
+      <%=movie.publication_year%>
+      <%= link_to "Edit", edit_work_path(movie.id) %>
+      <%= link_to "Delete", work_path(movie.id), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
 </section>
