@@ -36,11 +36,11 @@
     </header>
 
     <section class="flash">
-        <% flash.each do |name, message| %>
-        <section class="callout <% name%>">
+        <%flash.each do |name, message| %>
+        <section class="callout <%= name%>">
           <% if name == "alert" %>
           <ul>
-            <% flash[:alert].each do  |field, message| %>
+            <%flash.each do |field, message| %>
             <li>
               <strong> <%=field%> : </strong> <%= message%>
             </li>
