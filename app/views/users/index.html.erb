@@ -1,1 +1,23 @@
 <h1>Users#index</h1>
+
+<ul class='works-view'>
+  <h2> List of Users </h2>
+  <li class='columns'>
+    <a>Name</a> <a>Total Votes</a><a>Joined</a>
+  </li>
+
+  <% @users.each do |user| %>
+
+    <li>
+      <span>
+      <%= link_to user.name, user_path(user.id) %>
+      </span>
+      <span>
+      <%= user.report_user_votes(user.id).count %>
+      </span>
+      <span>
+      <%= user.created_at %>
+      </span>
+    </li>
+  <% end%>
+</ul>

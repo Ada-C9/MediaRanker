@@ -52,7 +52,7 @@ class WorksController < ApplicationController
     @work = Work.find(id)
 
     if @work.destroy #it worked
-      redirect_to index_path
+      redirect_to works_path
     else
       render :destroy
     end

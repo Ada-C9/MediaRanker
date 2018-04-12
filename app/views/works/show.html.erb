@@ -8,9 +8,13 @@
 <span><%= @work.description %></span>
 
 <span>(unfinishd) Back to media ranks</span>
-<span>(unfinishd) Edit</span>
+<span>
+  <%= link_to "Edit Work", edit_work_path %>
+</span>
 <span>(unfinishd) Upvote</span>
-<span>(unfinishd) Delete</span>
+<span>
+  <%= link_to 'Delete Work',work_path(@work.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?" }  %>
+</span>
 
 <h2><%= @work.report_vote_tally(@work.id) %> votes for this <%= @work.category %> </h2>
 

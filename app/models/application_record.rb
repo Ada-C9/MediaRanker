@@ -9,5 +9,9 @@ class ApplicationRecord < ActiveRecord::Base
     @upvoted_by = Vote.where(work_id: id_for_work)
   end
 
+  def report_user_votes(id_for_user)
+    @works_upvoted = Vote.where(work_id: id_for_user)
+  end
+
 
 end
