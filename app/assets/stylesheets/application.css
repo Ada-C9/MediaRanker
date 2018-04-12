@@ -39,12 +39,12 @@ body, h1, h2, h3, h4, h5 {
   background-color: #0C8076;
 }
 
-.page-header .nav {
+/* .page-header .nav {
   display: inline-block;
   list-style-type: none;
   padding: 0;
   margin: 2em 0;
-}
+} */
 
 .page-header {
   max-width: 100%;
@@ -52,6 +52,12 @@ body, h1, h2, h3, h4, h5 {
   border-bottom: 1px solid #EEEEEE;
   margin-bottom: 10px;
   padding: 25px 20px 10px 20px;
+}
+
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .page-header h2 a {
@@ -73,7 +79,6 @@ a {
 }
 
 .page-header h2 {
-  color: white;
   text-align: center;
   margin: 25px auto 40px auto;
 }
@@ -85,11 +90,6 @@ a {
   margin: 30px 15px;
 }
 
-.row {
-  max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
-}
 
 main {
   padding-top: 2rem;
@@ -106,11 +106,11 @@ article, aside, footer, header, nav, section {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: #fefefe;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #0a0a0a;
+  margin: 0;
+  padding: 0;
+  background: #fefefe;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #0a0a0a;
 }
