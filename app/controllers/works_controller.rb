@@ -51,7 +51,7 @@ class WorksController < ApplicationController
     if session[:user_id] != nil
       @user = User.find(session[:user_id])
       if @user
-        vote = Vote.new(vote_params)
+        vote = Vote.create(work_id: @work.id, user_id: @user.id, created_at: Time.now)
       end
 
       # # do other stuff to create a vote with this user_id and work_id
@@ -68,10 +68,6 @@ class WorksController < ApplicationController
 
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
-  end
-
-  def vote_params
-
   end
 
   def works_all
