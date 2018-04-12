@@ -12,9 +12,11 @@ class SessionsController < ApplicationController
       flash[:success] = "#{user.name} is successfully logged in."
 
       redirect_to root_path
+      # FIXME:redirect_to root_path
     else
       flash.now[:failure] = 'Validations Failed'
-      redirect_to root_path
+      # FIXME: redirect_to root_path
+      
     end
   end
 
