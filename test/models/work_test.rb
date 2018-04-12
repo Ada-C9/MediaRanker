@@ -30,6 +30,14 @@ describe Work do
       work.valid?.must_equal false
       work.errors.messages.must_include :title
     end
+
+    # length
+    it "is invalid if length of title is smaller than 1" do
+      works(:aja).title = ""
+
+      works(:aja).valid?.must_equal false
+      works(:aja).errors.messages.must_include :title
+    end
   end
 
   describe 'Relations' do
@@ -37,7 +45,7 @@ describe Work do
       works(:aja).votes.count.must_equal 1
     end
 
-    it "can destroy votes through destroying work" do
+    it "can destroy votes when destroy work" do
       votes = works(:aja).votes
 
       votes.wont_equal []
@@ -49,15 +57,29 @@ describe Work do
   end
 
   describe 'Methods' do
+
     describe 'total_votes' do
-      it 'returns the right vote count' do
+      it "returns the right vote count" do
         works(:parable).total_votes.must_equal 2
       end
 
-      it 'returns 0 if no vote exists' do
+      it "returns 0 if no vote exists" do
         works(:coco).total_votes.must_equal 0
       end
     end
+
+    describe 'sorted_list' do
+
+    end
+
+    describe 'top_10' do
+
+    end
+
+    describe 'top_1' do
+
+    end
+
   end
 
 end
