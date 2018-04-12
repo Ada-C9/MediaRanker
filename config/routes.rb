@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'sessions/create'
+  get '/login', to: 'sessions#new', as: 'login_path'
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/login', to: 'sessions#destroy', as: 'logout'
 
-  get 'sessions/new'
-
-  get 'sessions/destroy'
 
   root 'welcomes#index'
-  
+
   resources :users, only: [:index, :show]
   resources :works do
     resources :votes, only: [:create]

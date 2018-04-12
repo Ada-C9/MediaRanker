@@ -22,13 +22,4 @@ class VotesController < ApplicationController
   def destroy
   end
 
-  private
-
-  def find_user
-
-  end
-
-
-
-
 end

@@ -24,10 +24,4 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  private
-
-  def find_user
-    @user = User.find_by(id: params[:id])
-  end
-
 end
