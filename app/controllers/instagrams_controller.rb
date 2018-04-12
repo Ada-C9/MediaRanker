@@ -1,4 +1,5 @@
 class InstagramsController < ApplicationController
+  before_action :find_instagram, only:[:show, :edit, :update]
   def index
     @instagrams = Instagram.all
   end
@@ -13,37 +14,35 @@ class InstagramsController < ApplicationController
 
     if @instagram.save
       #works.create
+      flash[:success] = "Instagram added successfully"
       redirect_to instagrams_path
     else
+      flash.now[:failure]= "Validations failed."
       render :new
     end
   end
 
 
 
-  def show
-    @instagram = Instagram.find(params[:id])
-  end
+  def show;end
 
-  def edit
-    @instagram = Instagram.find(params[:id])
-  end
+  def edit;end
 
   def update
-    instagram = Instagram.find(params[:id])
-    instagram.assign_attributes(instagram_params)
-    if instagram.save
+
+    @instagram.assign_attributes(instagram_params)
+    if @instagram.save
       redirect_to instagram_path(instagram)
+    else
+      render :edit
     end
   end
 
   def delete
     Instagram.destroy(params[:id])
     #if delete works.delete
-  end
 
-  def upvote
-
+    redirect_to instagrams_path
   end
 
 
@@ -52,5 +51,9 @@ class InstagramsController < ApplicationController
   private
   def instagram_params
     return params.require(:instagram).permit(:handle, :posts, :followers)
+  end
+
+  def find_instagram
+    @instagram = Instagram.find(params[:id])
   end
 end

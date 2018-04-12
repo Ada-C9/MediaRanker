@@ -19,6 +19,11 @@
     <%= instagram.followers %>
   </li>
   </ul>
+
+  <%= link_to "Edit", edit_instagram_path(instagram) %>
+    <%= link_to("Delete", instagram_path(instagram), method: :delete, data: { confirm: "Really really?" }) %>
 <% end %>
+
+
 
 </section>

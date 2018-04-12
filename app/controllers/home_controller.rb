@@ -6,9 +6,6 @@ class HomeController < ApplicationController
     @twitters = Twitter.all
   end
 
-  def show
-  end
-
   def landingpage
     @instagrams = Instagram.all
     @subreddits = Subreddit.all

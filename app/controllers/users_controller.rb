@@ -9,12 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    user = User.new(user_params)
 
-    if @user.save
+    if user.save
       flash[:success] = "You are logged in"
       redirect_to users_path
-
       #work.create
     else
       render :new
@@ -40,17 +39,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    User.find(params[:id])
 
-    if user.destroy
-      redirect_to users_path
-      #if delete works.delete
-    end
+    redirect_to users_path
+    #if delete works.delete
   end
 
 
-  private
-  def user_params
-    params.require(:user).permit(:name, :joined)
-  end
+
+private
+def user_params
+  params.require(:user).permit(:name)
+end
 end

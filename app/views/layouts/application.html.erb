@@ -11,55 +11,54 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body >
+<body>
   <header>
-    <h1>Media Ranker |  Ranking the best of everything</h1>
-  </header>
+    <h1>
+      <%image_tag "owl.jpg", alt: "Site logo f an owl", class: "logo" %>
+      Media Ranker |  Ranking the best of everything
+    </h1>
 
-
-<nav class = "main bar">
-    <ul>
-      <li class = "button">
-        <%= link_to 'View Top Media', root_path %>
-      </li>
-      <li class = "button"> <%= link_to 'View all Media', home_index_path %>
-      </li>
-      <li class = "button"><%= link_to 'Add a New Work', new_home_path %>
-      </li>
-      <li class = "button"><%= link_to 'View all users', users_path %>
-      </li>
-  </ul>
+    <nav class = "main bar">
+      <ul>
+        <li class = "button"> <%= link_to 'View Top Media', root_path %></li>
+        <li class = "button"> <%= link_to 'View all Media', home_index_path %></li>
+        <li class = "button"><%= link_to 'Add a New Work', new_home_path %></li>
+        <li class = "button"><%= link_to 'View all users', users_path %></li>
+      </ul>
 
       <ul>
-        <li class = "small button">
-          <%= link_to 'View Instagrams', new_instagram_path %>
-        </li>
-        <li class = "small button">
-          <%= link_to 'View Twitters',
-          twitters_path %>
-        </li>
-        <li class = "small button">
-          <%= link_to "View Subreddits", subreddits_path %>
-        </li>
+        <li class = "small button"><%= link_to 'View Instagrams', new_instagram_path %></li>
+        <li class = "small button"><%= link_to 'View Twitters',
+        twitters_path %></li>
+        <li class = "small button"><%= link_to "View Subreddits", subreddits_path %></li>
       </ul>
 
-      <ul class = "button">
-
-        <% if session[:logged_in_user] %>
-  <% @user = User.find(session[:user_id])%>
-        Logged in as <%= @user.name %>
-
-        <%= link_to("Logout", logout_path, method: :delete) %>
-        <% else %>
-        <li class = "button"><%= link_to 'Login', login_path %>
+      <ul>
+        <li class = "button">
+          <% if session[:user_id] %>
+          Logged in as <%= session[:user_id] %>
+          <%= "#{User.find(session[:user_id]).name}" %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "hollow button" %>
+          <% else %>
+          <%= link_to "Login", login_path, class: "hollow button" %>
+          <% end %>
         </li>
-        <% end %>
       </ul>
     </nav>
+  </header>
 
-  </main>
+  <main>
+      <section class="flash">
+        <% flash.each do |name, message| %>
+          <div class="<%= name %>"><%= message %></div>
+        <% end %>
+      </section>
 
-    <%= yield %>
+      <%= yield %>
+    </main>
+<footer>
+  <p>&copy; Media Ranker, 2018</p>
+</footer>
 
-  </body>
-  </html>
+</body>
+</html>

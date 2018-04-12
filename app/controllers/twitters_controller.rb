@@ -1,4 +1,5 @@
 class TwittersController < ApplicationController
+  before_action :find_twitter, only: [:show, :edit, :update]
   def index
     @twitters = Twitter.all
   end
@@ -13,43 +14,47 @@ class TwittersController < ApplicationController
 
 
     if @twitter.save
+      flash[:success] = "Twitter added successfully"
       redirect_to twitters_path
       #work.create
     else
+      flash.now[:failure] = "Validations Failed"
       render :new
     end
   end
 
-  def show
-    @twitter = Twitter.find(params[:id])
-  end
+  def show;end
 
-  def edit
-    @twitter = Twitter.find(params[:id])
-  end
+  def edit;end
 
   def update
-    twitter = Twitter.find(params[:id])
 
-    twitter.assign_attributes(twitter_params)
+
+    @twitter.assign_attributes(twitter_params)
 
     if twitter.save
       redirect_to twitter_path(twitter)
+    else
+      render :edit
     end
   end
 
   def destroy
-    twitter = Twitter.find(params[:id])
 
-    if twitter.destroy
-      redirect_to twitters_path
-      #if delete works.delete
-    end
+    Twitter.destroy(params[:idea])
+
+    redirect_to twitters_path
+    #if delete works.delete
   end
+
 
 
   private
   def twitter_params
     params.require(:twitter).permit(:handle,:followers)
+  end
+
+  def find_twitter
+    @twitter = Twitter.find(params[:id])
   end
 end
