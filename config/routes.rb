@@ -15,16 +15,23 @@ Rails.application.routes.draw do
 #logout, or delete session
   delete '/logout', to: 'sessions#destroy'
 
+
+
   resources :home
 
-  resources :instagrams
+  resources :instagrams do
+    post '/upvote', to: 'instagrams#upvote', as: 'upvote'
+  end
+
 
   resources :twitters
 
   resources :subreddits
 
-  resources :users
+  resources :users do
+    resources :votes, only: [:index, :new, :create]
+  end
 
-  resources :votes
+
 
 end
