@@ -17,6 +17,10 @@ describe Work do
     end
 
     it "requires a unique title" do
+      title = "My Test Book"
+      work = Work.create!(title: title)
+      work2 = Work.new(title: title)
+      work2.wont_be :valid?
 
     end
   end
@@ -33,34 +37,10 @@ describe Work do
     end
   end
 
-  describe 'popular_works' do
-    user = User.first
-    work = Work.first
-    vote = Vote.new(work: work, user: user)
+  describe "custom methods" do
+    it "finds the work with more votes" do
 
-    work2 = Work.first 
-
-    it "identifies the top 10" do
-      Work.top_ten_albums("album").first.title.must_equal "Harry Potter"
     end
+
   end
-
-  # describe "top " do
-  #   user = User.first
-  #   work = Work.first
-  #
-  #   user1 = User.last
-  #   work1=Work.last
-  #
-  #   user2=User.first + 1
-  #
-  #   vote = Vote.new(work: work, user: user)
-  #   vote = Vote.new(work: work1, user: user1)
-  #   vote2 = Vote.new(work: work, user: user2)
-  #
-  #   it "finds the most voted for work" do
-  #     Work.top.title.must_equal "Harry Potter"
-  #   end
-  # end
-
 end

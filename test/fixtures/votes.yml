@@ -6,7 +6,7 @@
 #
 vote_1:
   user: yellowlion
-  work: best_movie
+  work: harrypotter
 
 vote_2:
   user: yellowlion
@@ -15,3 +15,11 @@ vote_2:
 vote_3:
   user: rabbit
   work: best_book
+
+vote_4:
+  user: rabbit
+  work: best_movie
+
+vote_3:
+  user: yellowlion
+  work: harrypotter
