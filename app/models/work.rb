@@ -5,32 +5,27 @@ class Work < ApplicationRecord
   validates :category, presence: :true
   validates :title, presence: :true, uniqueness: { scope: :category }
 
-  def self.top_albums
-    albums = self.where(category: :album)
-    top_albums = albums.sort_by(&:total_votes).reverse.first(10)
-    return top_albums
-  end
+  # scope :albums, where(category: :album)
+  # scope :books, where(category: "books")
+  # scope :movies, where(category: "movies")
 
-  def self.top_books
-    books = self.where(category: :book)
-    top_books = books.sort_by(&:total_votes).reverse.first(10)
-    return top_books
-  end
-
-  def self.top_movies
-    movies = self.where(category: :movie)
-    top_movies = movies.sort_by(&:total_votes).reverse.first(10)
-    return top_movies
+  def self.ordered_works
+    self.joins(:votes).group(:id).order('COUNT(votes.id) DESC')
   end
 
   def self.top_work
-    top_work = Work.all.max_by do |work|
-      work.votes.count
-    end
-    return top_work
+    self.ordered_works.first
   end
 
-  def total_votes
-    self.votes.count
+  def self.top_ten_albums
+    self.where(category: :album).limit(10)
+  end
+
+  def self.top_ten_books
+    self.where(category: :book).limit(10)
+  end
+
+  def self.top_ten_movies
+    self.where(category: :movie).limit(10)
   end
 end

@@ -46,7 +46,7 @@ class WorksController < ApplicationController
 
   def home
     @spotlight = Work.top_work
-    @works = Work.all
+    @works = Work.ordered_works
   end
 
   private
