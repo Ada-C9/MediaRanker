@@ -5,9 +5,10 @@
   <p><%= @work.description %></p>
 
   <section>
-    <%= link_to "Edit", edit_work_path %>
-    <%# TODO: add links to homepage, upvote %>
-    <%= link_to "Delete", work_path(@work.id), method: :delete%>
+    <%= link_to "Edit", edit_work_path, class: "button" %>
+    <%# TODO: add links to homepage %>
+    <%= link_to "Upvote", upvote_path(@work.id), method: :post, class: "button" %>
+    <%= link_to "Delete", work_path(@work.id), method: :delete, class: "alert button"%>
   </section>
 
   <article class="voting-users">

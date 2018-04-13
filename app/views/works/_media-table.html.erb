@@ -23,7 +23,7 @@
         <%= work.publication_date %>
       </td>
       <td>
-        <%# TODO: add way to upvote media %>
+        <%= link_to "Upvote", upvote_path(work.id), method: :post, class: "button" %>
       </td>
     </tr>
     <% end %>
