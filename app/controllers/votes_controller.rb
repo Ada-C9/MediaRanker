@@ -22,7 +22,6 @@ class VotesController < ApplicationController
           flash[:success] = "Thank you for voting"
           redirect_back fallback_location: :main_path
         else
-          # this makes the error messages into a flash hash so it can be used by application.html.erb
           flash.now[:alert] = @vote.errors
           redirect_back fallback_location: :main_path
         end

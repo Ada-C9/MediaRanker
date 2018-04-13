@@ -20,7 +20,7 @@
               <td><%= album.get_votes %></td>
               <td><%= link_to album.title, publication_path(album.id) %></td>
               <td><%=album.creator%></td>
-              <td>2300</td>
+              <td><%= album.publication_year %></td>
               <td><%= link_to "Upvote", new_publication_vote_path(album.id), class: "button upvote" %> </td>
             </tr>
           <% end %>
@@ -45,7 +45,7 @@
               <td><%= book.get_votes %></td>
               <td><%= link_to book.title, publication_path(book.id) %></td>
               <td><%= book.creator %></td>
-              <td>2300</td>
+              <td><%= book.publication_year %></td>
                 <td><%= link_to "Upvote", new_publication_vote_path(book.id), class: "button upvote" %> </td>
             </tr>
           <% end %>
@@ -70,7 +70,7 @@
               <td><%= movie.get_votes %></td>
               <td><%= link_to movie.title, publication_path(movie.id) %></td>
               <td><%= movie.creator %></td>
-              <td>2300</td>
+              <td><%= movie.publication_year %></td>
                 <td><%= link_to "Upvote", new_publication_vote_path(movie.id), class: "button upvote" %> </td>
             </tr>
           <% end %>
