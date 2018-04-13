@@ -1,0 +1,78 @@
+<main class="row", class="tables">
+<h3 class="works">List of works</h3>
+
+<section class="media-table">
+  <h4>Albums</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="80">Votes</th>
+          <th>Title</th>
+          <th>Created by</th>
+          <th width ="100">Published</th>
+          <th width="100">Upvote</th>
+        </tr>
+      </thead>
+      <%@works.each do |work|%>
+      <tbody>
+          <td><%=work.votes.count%></td>
+          <td><%=link_to work.title, work_path(work[:id])%></td>
+          <td><%=work.creator%></td>
+          <td><%=work.publication_year%></td>
+          <td><%= link_to "Upvote", work_votes_path(work.id), method: :post, :class=>"button" %></td>
+    </tbody>
+      <%end%>
+    </table>
+</section>
+
+<section class="media-table">
+  <h4>Books</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="80">Votes</th>
+          <th>Title</th>
+          <th>Created by</th>
+          <th width ="100">Published</th>
+          <th width="100">Upvote</th>
+        </tr>
+      </thead>
+        <%@works.where(category: "book").each do |work|%>
+      <tbody>
+          <td><%=work.votes.count%></td>
+          <td><%=link_to work.title, work_path(work[:id])%></td>
+          <td><%=work.creator%></td>
+          <td><%=work.publication_year%></td>
+          <td><%= link_to "Upvote", work_votes_path(work.id), method: :post, :class=>"button" %></td>
+        </tbody>
+      <%end%>
+
+    </table>
+</section>
+
+<section class="media-table">
+  <h4>Movies</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="80">Votes</th>
+          <th>Title</th>
+          <th>Created by</th>
+          <th width ="100">Published</th>
+          <th width="100">Upvote</th>
+        </tr>
+      </thead>
+        <%@works.where(category: "movie").each do |work|%>
+      <tbody>
+
+          <td><%=work.votes.count%></td>
+          <td><%=link_to work.title, work_path(work[:id])%></td>
+          <td><%=work.creator%></td>
+          <td><%=work.publication_year%></td>
+          <td><a class="button" href="/works/<%=work.id%>/votes/new">Upvote</a></td>
+        </tbody>
+      <%end%>
+
+    </table>
+</section>
+</main>

@@ -1,0 +1,24 @@
+<main class="row">
+<h3>Edit this <%= @work.category %></h3>
+<section>
+  <form class="edit_work" id="edit_work_<%= @work.id %>" action="/works/<%= @work.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" >
+    <label for="work_category">Category</label>
+    <select name="work[category]" id="work_category"><option selected="selected" value="album">album</option>
+<option value="book">book</option>
+<option value="movie">movie</option></select>
+
+    <label for="work_title">Title</label>
+    <input type="text" value= '<%= @work.title %>' name="work[title]" id="work_title">
+
+    <label for="work_creator">Creator</label>
+    <input type="text" value='<%=@work.creator%>' name="work[creator]" id="work_creator">
+
+    <label for="work_publication_year">Publication year</label>
+    <input type="text" value="<%= @work.publication_year%>" name="work[publication_year]" id="work_publication_year">
+
+    <label for="work_description">Description</label>
+    <textarea name="work[description]" id="work_description"></textarea>
+
+    <input type="submit" name="commit" value="Update Work" class="button" data-disable-with="Update Work">
+</form></section>
+</main>

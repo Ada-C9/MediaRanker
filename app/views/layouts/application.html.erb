@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag "application" %>
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header class="page-header row", class="page-header">
+      <h2>
+        <%= link_to 'Media Ranker',root_path, id: "bold" %>
+        <small id: "bold">Ranking the Best of Everything</small>
+      </h2>
+
+      <nav>
+        <%= link_to 'View top media', root_path, class: "button" %>
+          <%= link_to 'View all media', works_path, class: "button" %>
+        <%= link_to 'Add a new work', new_work_path, class: "button"%>
+        <%= link_to 'View all users', users_path, class: "button" %>
+        <div class="float-right">
+          <%if !@user %>
+            <%= link_to "Login", login_path, class: "button float-right" %>
+          <% else %>
+          <% session[:user_id] == @user.id %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
+          <a class="button float-right logged-in" href="/user/<%= @user.id %>">Logged in as <%= @user.username %></a>
+
+          <%end%>
+        </div>
+      </header>
+      <% flash.each do |name, message|%>
+        <% if name == "alert" %>
+          <section class="row status failure">
+            <% if message.class == String %>
+              <span class="alert-message"><%= message.capitalize %></span>
+            <ul>
+              <% else %>
+                <% flash[:alert].each do |field, message|%>
+                  <strong>
+                    <%= field.capitalize %></strong>
+                  <li>
+                    <span class="alert-message"><%= message %></span>
+                  </li>
+                <%end%>
+              <%end%>
+            </ul>
+          <% else %>
+            <section class="row status success">
+              <p>
+                <span class="success-message"><%= message.capitalize %></span>
+              </p>
+            <%end%>
+          </section>
+        <%end%>
+
+        <%= yield %>
+
+      </body>
+    </html>

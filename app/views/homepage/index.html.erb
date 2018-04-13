@@ -1,0 +1,67 @@
+<h3 class="sample">
+  <span class="media-spotlight-header">Media Spotlight: </span>
+  <a class="title", id="underline" href="/works/<%=@sample.id%>"><%= @sample.title %></a>
+  <p class="title">by
+  <%=@sample.creator%></p>
+</h3>
+
+<p class="description"><%= @sample.votes.count %>
+  votes -
+  <%= @sample.description %></p>
+
+
+
+<hr class="root-hr">
+
+<section class="top-ten-container">
+  <section class="top-ten">
+    <h3 id="top-header">Top Books</h3>
+    <ul>
+      <% @books.each do |work| %>
+        <li>
+          <h4>
+            <%=link_to work.title, work_path(work[:id])%>
+
+            <small id: "byline">by
+              <%= work.creator%></small>
+          </h4>
+          <p><%=work.votes.count%> votes</p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3 id="top-header">Top Albums</h3>
+    <ul>
+      <%@albums.each do |work|%>
+      <li>
+        <h4>
+          <%=link_to work.title, work_path(work[:id])%>
+
+          <small>by
+            <%= work.creator%></small>
+        </h4>
+        <p><%=work.votes.count%> votes</p>
+      </li>
+      <%end%>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3 id="top-header">Top Movies</h3>
+    <ul>
+      <%@movies.each do |work|%>
+      <li>
+        <h4>
+          <%=link_to work.title, work_path(work[:id])%>
+
+          <small>by
+            <%= work.creator%></small>
+        </h4>
+        <p><%=work.votes.count%> votes</p>
+      </li>
+      <%end%>
+    </ul>
+  </section>
+</section>

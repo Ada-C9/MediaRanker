@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vote_one:
+  user: pixie
+  work: harry_potter
+
+vote_two:
+  user: pixie
+  work: fantastic_beasts
+
+vote_three:
+  user: mary
+  work: harry_potter
+
+vote_four:
+  user: ko
+  work: darkness
+
+vote_five:
+  user: pickles
+  work: ilym

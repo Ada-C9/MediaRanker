@@ -1,0 +1,344 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require normalize-rails
+
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ .page-header {
+    width: 100%;
+    background-color: #B2DFDB;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 10px;
+    padding: 25px 20px 10px 20px;
+}
+.row {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+
+.page-header h2 {
+    text-align: center;
+    margin: 25px 0px 40px 0px;
+    font-size: 2.5em;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+}
+
+body, h1, h2, h3, h4, h5 {
+    font-family: "Gudea", sans-serif;
+}
+
+h2, .h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+
+    font-style: normal;
+    color: inherit;
+    text-rendering: optimizeLegibility;
+}
+
+.page-header h2 a {
+    color: #FF5722;
+    padding-right: 25px;
+    margin-right: 15px;
+    border-right: white 2px solid;
+    font-weight: bold;
+  }
+
+  a, h3 {
+    color: #26A69A;
+
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-header h2 small {
+    color: white;
+}
+
+h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small {
+    line-height: 0;
+  }
+
+    small {
+    font-size: 80%;}
+
+    .button {
+    background-color: #26A69A;
+}
+
+
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    color: #fefefe;
+}
+
+a {
+    text-decoration: none;
+}
+
+.row:not(.expanded) .row {
+    max-width: none;
+
+  }
+
+  .row .row {
+    margin-right: -0.625rem;
+    margin-left: -0.625rem;
+}
+
+  article, aside, footer, header, nav, section {
+    display: block;
+}
+
+a, h3 {
+    color: #26A69A;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+}
+body, h1, h2, h3, h4, h5 {
+    font-family: "Gudea", sans-serif;
+}
+h3, .h3 {
+    font-size: 1.1875rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    display: block;
+
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+
+  .media-spotlight-header {
+    color: #424242;
+    font-size: 1.6em
+}
+
+
+p {
+    font-size: inherit;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+p {
+
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.root-hr {
+    margin: 0px auto 50px auto;
+    color: #EEEEEE;
+}
+
+
+hr {
+    clear: both;
+    max-width: 75rem;
+    height: 0;
+    margin: 1.25rem auto;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #cacaca;
+    border-left: 0;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+.top-ten-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+    padding: 1.5em;
+}
+
+.top-ten ul {
+    list-style-type: none;
+    margin-left: 0px;
+}
+
+.top-ten h3 {
+  font-size: 1.6em;
+  border-bottom: 2px solid;
+  font-weight: bolder;
+}
+
+ul, ol, dl {
+    margin-bottom: 1rem;
+    list-style-position: outside;
+    line-height: 1.6;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+li {
+    font-size: inherit;
+}
+
+
+a .media-spotlight-header {
+      border-bottom: 2px solid;
+      font-size: 1.5em;
+  }
+
+  .sample .media-spotlight-header p {
+      margin-bottom: 0px;
+      font-size: 2em;
+      display: inline-block;
+  }
+
+.title {
+  display:inline;
+  font-size: 1.5em;
+}
+
+#underline {
+  text-decoration: underline;
+}
+
+.sample {
+  margin-left: 1.2em;
+  margin-top: 2em;
+}
+
+.description {
+  margin-left: 1.2em;
+  margin-bottom: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0;
+}
+
+table {
+    display: table;
+
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+thead, tbody, tfoot {
+    border: 1px solid #f1f1f1;
+    background-color: #fefefe;
+}
+
+.works {
+  font-size: 2em;
+  margin-top: 1.8em;
+  margin-bottom: 1.1em;
+}
+
+.tables {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+#works{
+  font-size: 2em;
+  margin-top: 1.8em;
+  margin-bottom: 1.1em;
+}
+
+#top-header {
+  font-size: 1.9em;
+  font-weight: bolder;
+}
+
+.row.status.failure {
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin-top: 30px;
+}
+
+.alert-message {
+  color: red;
+}
+
+.row.status.failure ul {
+  margin-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.row.status.success {
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin-top: 30px;
+}
+
+.logged-in {
+  margin-right: .25rem;
+}
+
+.show-page-buttons {
+  margin-top: 1.5em;
+}
+
+.media-details {
+  margin: 2em;
+}
