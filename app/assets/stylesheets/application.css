@@ -27,6 +27,14 @@ body, h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
 }
 
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+main a:hover {
+  color: #0C8076;
+}
+
 @media print, screen and (min-width: 40em)
 h3, .h3 {
   font-size: 1.9375rem;
@@ -130,4 +138,8 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
+}
+
+.row table tr td .button {
+  margin-bottom: 0px;
 }

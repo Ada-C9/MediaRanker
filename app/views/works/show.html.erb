@@ -1,4 +1,4 @@
-<article class="media-details">
+<article class="media-details row">
   <h3><strong><%= @work.title %></strong></h3>
 
   <p>Created by: <%= @work.creator %></p>
@@ -15,7 +15,7 @@
   </section>
 </article>
 
-<article>
+<article class="row">
   <h3><%= @work.votes.count %> Votes for this <%= @work.category %></h3>
   <table>
     <thead>

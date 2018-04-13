@@ -1,6 +1,5 @@
 class Work < ApplicationRecord
   has_many :votes
-  # has_many :users, through: :votes
 
   validates :title, :category, presence: true
 
@@ -23,13 +22,21 @@ class Work < ApplicationRecord
     return new_array
   end
 
-  def top_work
-    works.each do |work|
-      votes.each do |vote|
-        top = work.vote.count.max
-      end
-    end
-    return top
+  def self.top_books
+    books.first(10)
+  end
+
+  def self.top_albums
+    albums.first(10)
+  end
+
+  def self.top_movies
+    movies.first(10)
+  end
+
+
+  def self.top_work
+    self.all.sort_by{ |item| item.votes.count }.reverse.first
   end
 
 end

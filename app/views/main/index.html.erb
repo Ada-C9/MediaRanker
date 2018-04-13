@@ -3,20 +3,21 @@
   <section class="row spotlight">
     <h3>
       <span class="media-spotlight-header">
-        Media Spotlight:
-        
-      </span> by
+        Media Spotlight:</span> <%= link_to(@top_work.title, work_path(@top_work)) %>
+      by <%= @works.top_work.creator %>
     </h3>
     <p>
-
+      <%= @works.top_work.votes.count %> votes - <%= @works.top_work.description %>
     </p>
   </section>
+
+  <hr class="root-hr">
 
   <section class="top-ten-container">
     <section class="top-ten">
       <h3>Top Movies</h3>
       <ul>
-        <% @works.movies.each do |work| %>
+        <% @works.top_movies.each do |work| %>
         <li>
           <h4>
             <%= link_to(work.title, work_path(work)) %>
@@ -31,7 +32,7 @@
     <section class="top-ten">
       <h3>Top Books</h3>
       <ul>
-        <% @works.books.each do |work| %>
+        <% @works.top_books.each do |work| %>
         <li>
           <h4>
             <%= link_to(work.title, work_path(work)) %>
@@ -46,7 +47,7 @@
     <section class="top-ten">
       <h3>Top Albums</h3>
       <ul>
-        <% @works.albums.each do |work| %>
+        <% @works.top_albums.each do |work| %>
         <li>
           <h4>
             <%= link_to(work.title, work_path(work)) %>
