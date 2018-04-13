@@ -6,3 +6,7 @@ tr.works-table {
   display: grid;
   grid-template-columns: 1fr 6fr 2fr 2fr 2fr;
 }
+
+section.work-actions a.button:last-child {
+  background-color: #FF5722;
+}

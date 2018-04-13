@@ -13,11 +13,11 @@
     <%= @work.description %>
   </p>
 
-  <section>
-    <%= link_to 'Back to media ranks', root_path %>
-    <%= link_to 'Edit', edit_work_path %>
-    <%= link_to 'Upvote', upvote_path(@work), method: :post %>
-    <%= link_to 'Delete', work_path(@work), method: :delete, data: { confirm: "Are you sure?" }%>
+  <section class="work-actions">
+    <%= link_to 'Back to media ranks', root_path, class: "button" %>
+    <%= link_to 'Edit', edit_work_path, class: "button" %>
+    <%= link_to 'Upvote', upvote_path(@work), method: :post, class: "button" %>
+    <%= link_to 'Delete', work_path(@work), method: :delete, data: { confirm: "Are you sure?" }, class: "button" %>
   </section><!-- action items for work -->
 
 </article><!-- work details -->
@@ -48,7 +48,7 @@
           <%= link_to vote.user.username, user_path(vote.user) %>
         </td>
         <td>
-          <%= vote.created_at %>
+          <%= vote.created_at.strftime("%b %d, %Y") %>
         </td>
       </tr>
       <% end %>
