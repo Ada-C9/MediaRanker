@@ -20,6 +20,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Gudea:400,700');
 
+/********** global **********/
 body, h1, h2, h3, h4, h5 {
   font-family: 'Gudea', sans-serif;
 }
@@ -36,18 +37,26 @@ a, h3 {
   color: #26A69A;
 }
 
+.button {
+  background-color: #26A69A;
+}
+
+.delete.button {
+  background-color: #cc4b37;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .row {
   max-width: 75rem;
   margin-right: auto;
   margin-left: auto;
 }
 
-main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-/********** page-header **********/
+/********** header **********/
 .page-header {
   max-width: 100%;
   background-color: #B2DFDB;
@@ -72,14 +81,6 @@ main {
   color: white;
 }
 
-.button {
-  background-color: #26A69A;
-}
-
-.delete.button {
-  background-color: #cc4b37;
-}
-
 /********** status **********/
 .status {
   margin-top: 30px;
@@ -92,11 +93,12 @@ main {
   margin: 0;
 }
 
-/********** main **********/
+/********** spotlight **********/
 .spotlight {
   border-bottom: 1px solid #cacaca;
 }
-section.spotlight>div {
+
+.spotlight div {
   padding: 0 2rem 2rem 2rem;
 }
 
@@ -112,6 +114,7 @@ section.spotlight>div {
   margin-bottom: 0px;
 }
 
+/********** top-ten **********/
 .top-ten-container {
   margin-top: 75px;
   display: grid;
@@ -129,6 +132,7 @@ section.spotlight>div {
   margin-left: 0px;
 }
 
+/********** media-table **********/
 .media-table .upvote.button {
     margin: 0;
 }
