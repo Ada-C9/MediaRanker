@@ -84,4 +84,17 @@ describe User do
       test_result.must_equal recommended_works
     end
   end
+
+  describe 'larger sample size recommender tests' do
+    it 'recommends works from users who have liked similar things' do
+      user = User.find(3)
+
+      test_result = User.recommendations(user)
+      work = test_result[0]
+
+      test_result.must_be_kind_of Array
+      test_result.wont_be_empty
+      user.works.wont_include work
+    end
+  end
 end

@@ -1,3 +1,4 @@
+require 'faker'
 # users
 unsaved_users =[]
 20.times do
