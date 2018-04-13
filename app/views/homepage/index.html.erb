@@ -1,13 +1,15 @@
 <h3 class="sample">
   <span class="media-spotlight-header">Media Spotlight: </span>
-  <a href="/works/<%=@sample.id%>"><%= @sample.title %></a>
-  <p>by
+  <a class="title", id="underline" href="/works/<%=@sample.id%>"><%= @sample.title %></a>
+  <p class="title">by
   <%=@sample.creator%></p>
 </h3>
 
-<p><%= @sample.votes.count %>
+<p class="description"><%= @sample.votes.count %>
   votes -
   <%= @sample.description %></p>
+
+
 
 <hr class="root-hr">
 

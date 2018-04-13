@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:new]
-  
+  before_action :find_user, only: [:new, :index]
+
   def index
     @users = User.all
   end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def new
-      @user = User.new
+      @new_user = User.new
   end
 
   def destroy

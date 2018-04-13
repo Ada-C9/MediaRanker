@@ -37,7 +37,7 @@ article, aside, footer, header, nav, section {
 
 .page-header h2 {
     text-align: center;
-    margin: 25px auto 40px auto;
+    margin: 25px 0px 40px 0px;
     font-size: 2.5em;
 }
 h1, h2, h3, h4, h5 {
@@ -214,6 +214,8 @@ hr {
     padding: 1.5em;
 }
 
+
+
 .top-ten ul {
     list-style-type: none;
     margin-left: 0px;
@@ -221,7 +223,8 @@ hr {
 
 .top-ten h3 {
   font-size: 1.6em;
-    border-bottom: 2px solid;
+  border-bottom: 2px solid;
+  font-weight: bolder;
 }
 
 ul, ol, dl {
@@ -239,7 +242,7 @@ li {
 }
 
 
-  .sample .media-spotlight-header a {
+a .media-spotlight-header {
       border-bottom: 2px solid;
       font-size: 1.5em;
   }
@@ -250,9 +253,46 @@ li {
       display: inline-block;
   }
 
-
-
-#byline {
-  display:inline-block;
+.title {
+  display:inline;
   font-size: 1.5em;
+}
+
+#underline {
+  text-decoration: underline;
+}
+
+.sample {
+  margin-left: 1.2em;
+  margin-top: 2em;
+}
+
+.description {
+  margin-left: 1.2em;
+  margin-bottom: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0;
+}
+
+table {
+    display: table;
+
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+thead, tbody, tfoot {
+    border: 1px solid #f1f1f1;
+    background-color: #fefefe;
+}
+
+.works {
+  font-size: 2em;
+  margin-top: 1.8em;
+  margin-bottom: 1.1em;
 }
