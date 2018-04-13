@@ -22,4 +22,24 @@
 
 <section>
   <h2>Votes section goes here</h2>
+  <table>
+    <th>
+      <strong>User</strong>
+    </th>
+    <th>
+      <strong>Date</strong>
+    </th>
+    <tr>
+      <% @work.votes.each do |vote| %>
+      <tr>
+        <td class='text-center'>
+          <%= vote.user.name %>
+        </td>
+        <td class='text-center'>
+          <%= vote.created_at.strftime('%B %d, %Y') %>
+        </td>
+      </tr>
+    </tr>
+    <% end %>
+  </table>
 </section>
