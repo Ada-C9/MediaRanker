@@ -11,7 +11,7 @@
   <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.name, user_path(user)%></td>
+          <td><%= link_to user.name, user_path(user) %></td>
           <td><%= user.total_votes %></td>
           <td><%= pretty_date(user.created_at) %></td>
         </tr>

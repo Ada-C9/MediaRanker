@@ -38,19 +38,19 @@
 
     <section class="row status">
       <% flash.each do |name, message| %>
-      <section class="callout">
-        <% if name == "alert" %>
-        <ul>
-          <% flash[:alert].each do |type, message| %>
-          <li><%= type %>: <%= message %></li>
-          <% end %>
-        </ul>
-        <% else %>
-        <p><%= message %><p>
+        <section class="callout">
+          <% if name == "alert" %>
+            <ul>
+              <% flash[:alert].each do |type, message| %>
+                <li><%= type %>: <%= message %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p><%= message %><p>
           <% end %>
         </section>
-        <% end %>
-      </section>
+      <% end %>
+    </section>
 
     <main class="row">
 
