@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-
+  before_action :find_user
   def index
     @works = Work.all
     @types = ["movie", "book", "album"]
@@ -54,7 +54,7 @@ class WorksController < ApplicationController
 
   private
     def work_params
-      return params.require(:work).permit(:title, :description, :category, :year)
+      return params.require(:work).permit(:title, :description, :category, :created_by, :year)
     end
 
 end
