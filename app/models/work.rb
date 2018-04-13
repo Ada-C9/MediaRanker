@@ -2,8 +2,8 @@ class Work < ApplicationRecord
 
   has_many :votes
 
-  validates :title, presence: {message: "Enter a title"}
-  validates :title, uniqueness: {message:"Please choose a different title. Titles cannot be duplicated"}
+  validates :title, presence: {message: "can't be blank"}
+  validates :title, uniqueness: {message:"has already been taken"}
   validates :description, length: {maximum: 500, message: "Description is too long"}
 
 
