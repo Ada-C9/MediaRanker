@@ -93,6 +93,14 @@ main {
   margin: 0;
 }
 
+.callout .success {
+  color: #8a8a8a;
+}
+
+.callout .notice {
+  color: #C70039;
+}
+
 /********** spotlight **********/
 .spotlight {
   border-bottom: 1px solid #cacaca;

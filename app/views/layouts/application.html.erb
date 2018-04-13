@@ -43,11 +43,13 @@
               <% if name == "alert" %>
                 <ul>
                   <% flash[:alert].each do |type, message| %>
-                    <li><%= type %>: <%= message %></li>
+                    <li class="alert"><%= type %>: <%= message %></li>
                   <% end %>
                 </ul>
-              <% else %>
-                <p><%= message %><p>
+              <% elsif name == "success" %>
+                <p class="success"><%= message %></p>
+              <% elsif name == "notice" %>
+                <p class="notice"><%= message %></p>
               <% end %>
           <% end %>
         </section>
