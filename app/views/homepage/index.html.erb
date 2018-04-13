@@ -1,4 +1,5 @@
 <% most_votes = Work.top_work(@works) %>
+
 <main>
   <section class="row-spotlight">
     <h3>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %>
@@ -15,16 +16,34 @@
   <section class="top-ten-container">
     <section class="top-ten">
       <h3>Top Albums</h3>
+      <% Work.category_list(@works, "album").each do |i| %>
+      <%= i.title %>
+      <% if i.creator %>
+      by <%= i.creator %>
+      <% end %>
+      <%= i.votes.count %> votes<br />
+      <% end %>
     </section>
     <section class="top-ten">
       <h3>Top Books</h3>
+      <% Work.category_list(@works, "book").each do |i| %>
+      <%= i.title %>
+      <% if i.creator %>
+      by <%= i.creator %>
+      <% end %>
+      <%= i.votes.count %> votes<br />
+      <% end %>
     </section>
     <section class="top-ten">
       <h3>Top Movies</h3>
-
+      <% Work.category_list(@works, "movie").each do |i| %>
+      <%= i.title %>
+      <% if i.creator %>
+      by <%= i.creator %>
+      <% end %>
+      <%= i.votes.count %> votes<br />
+      <% end %>
     </section>
-
-
   </section>
 
 </main>

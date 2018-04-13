@@ -25,23 +25,26 @@
           Voted On
         </th>
       </tr>
+      <% @user.votes.each do |vote| %>
+      <% w = Work.find(vote.work_id) %>
       <tr>
         <td>
-          work.title with link
+        <%= w.title %>
         </td>
         <td>
-          work.creator
+          <%= w.creator %>
         </td>
         <td>
-          work.publication_year
+          <%= w.publication_year %>
         </td>
         <td>
-          work.category
+          <%= w.category %>
         </td>
         <td>
-          date voted on
+          <%= vote.created_at.strftime("%b %d, %Y") %>
         </td>
       </tr>
+      <% end %>
     </table>
   </article>
 </main>

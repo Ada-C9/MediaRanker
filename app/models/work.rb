@@ -14,4 +14,14 @@ class Work < ApplicationRecord
     return highest
   end
 
+  def self.category_list(works, category)
+    list = []
+    works.each do |work|
+      if work.category == category && list.length < 10
+        list << work
+      end
+    end
+    return list
+  end
+
 end

@@ -20,7 +20,7 @@
           <%= link_to user.name, user_path(user.id) %>
         </td>
         <td>
-          # Votes
+          <%= user.votes.count %>
         </td>
         <td>
           <%= user.created_at.strftime("%b %d, %Y") %>
