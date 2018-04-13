@@ -22,6 +22,10 @@
   font-family: "Gudea", sans-serif;
 }
 
+/*
+  NAVIGATION MENU STYLES
+*/
+
 header {
   background-color: #B2DFDB;
   padding: 25px 20px 10px 20px;
@@ -55,3 +59,7 @@ header h2 > small {
 nav div.float-right {
   float: right;
 }
+
+/*
+  FLASH & ERROR MESSAGE STYLES
+*/
