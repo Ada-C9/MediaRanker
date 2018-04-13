@@ -8,7 +8,7 @@ describe User do
       @user = users(:c_dagger)
     end
 
-    it 'is valid when it has a user_name and join_date' do
+    it 'is valid when it has a user_name' do
       # Act
       result = @user.valid?
 
@@ -22,12 +22,6 @@ describe User do
       # Act
       result = @user.valid?
       # Assert
-      result.must_equal false
-    end
-
-    it 'is invalid when it has no join_date' do
-      @user.join_date = nil
-      result = @user.valid?
       result.must_equal false
     end
   end
