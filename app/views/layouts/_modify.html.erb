@@ -1,11 +1,17 @@
 <h1><%= page_title %></h1>
 
-<%= render partial: "layouts/error-messages", locals: {model: @work, class: "callout error-handling"} %>
-
+<% category_from_url(request.fullpath)  %>
 <%= form_for @work, html: {class: "modify-input"} do |f| %>
 <% options_array = ["album", "book", "movie"] %>
+
 <%= f.label :category %>
+
+<% if @content %>
+<% f.hidden_field :category, value: @content_title[0].downcase %>
+<%= f.select :category, options_for_select([@content_title[0].downcase])%>
+<% else %>
 <%= f.select :category, options_for_select(options_array) %>
+<% end %>
 
 <%= f.label :title %>
 <%= f.text_field :title %>
