@@ -33,14 +33,16 @@
           Date
         </th>
       </tr>
+      <% @work.votes.each do |vote| %>
       <tr>
         <td>
-          user who voted for this work
+          <%= User.find_by(id: vote.user_id).name %>
         </td>
         <td>
-          Vote date
+          <%= vote.created_at.strftime("%b %d, %Y") %>
         </td>
       </tr>
+      <% end %>
     </table>
   </article>
 </main>
