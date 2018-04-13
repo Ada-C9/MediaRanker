@@ -13,18 +13,24 @@ describe Work do
   it "has validation for empty title" do
     book.title = nil
     book.valid?.must_equal false
+    book.errors.messages.must_include :title
     book.title = ""
     book.valid?.must_equal false
+    book.errors.messages.must_include :title
 
     album.title = nil
     album.valid?.must_equal false
+    album.errors.messages.must_include :title
     album.title = ""
     album.valid?.must_equal false
+    album.errors.messages.must_include :title
 
     movie.title = nil
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :title
     movie.title = ""
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :title
   end
 
   it "has validation for uniqueness but only scoped to category" do
@@ -42,94 +48,126 @@ describe Work do
   it "has validation for empty category" do
     book.category = nil
     book.valid?.must_equal false
+    book.errors.messages.must_include :category
     book.category = ""
     book.valid?.must_equal false
+    book.errors.messages.must_include :category
 
     album.category = nil
     album.valid?.must_equal false
+    album.errors.messages.must_include :category
     album.category = ""
     album.valid?.must_equal false
+    album.errors.messages.must_include :category
 
     movie.category = nil
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :category
     movie.category = ""
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :category
   end
 
   it "has validation for empty publication year" do
     book.publication_year = nil
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
     book.publication_year = ""
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
 
     album.publication_year = nil
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
     album.publication_year = ""
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
 
     movie.publication_year = nil
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
     movie.publication_year = ""
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
   end
 
   it "checks publication year length is four" do
     book.publication_year = 234
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
     book.publication_year = 23456
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
 
     album.publication_year = 22
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
     album.publication_year = 1
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
 
     movie.publication_year = 0
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
     movie.publication_year = 0234
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
   end
 
   it "checks publication year is integer" do
     book.publication_year = "1300AD"
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
     book.publication_year = "ninty"
     book.valid?.must_equal false
+    book.errors.messages.must_include :publication_year
 
     album.publication_year = -1986
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
     album.publication_year = "one"
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
 
     movie.publication_year = "!@@#"
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
     movie.publication_year = 23_1
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :publication_year
   end
 
   it "checks publication year must be in past" do
     album.publication_year = 2019
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
     album.publication_year = 2050
     album.valid?.must_equal false
+    album.errors.messages.must_include :publication_year
   end
 
 
   it "has validation for empty creator" do
     book.creator = nil
     book.valid?.must_equal false
+    book.errors.messages.must_include :creator
     book.creator = ""
     book.valid?.must_equal false
+    book.errors.messages.must_include :creator
 
     album.creator = nil
     album.valid?.must_equal false
+    album.errors.messages.must_include :creator
     album.creator = ""
     album.valid?.must_equal false
+    album.errors.messages.must_include :creator
 
     movie.creator = nil
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :creator
     movie.creator = ""
     movie.valid?.must_equal false
+    movie.errors.messages.must_include :creator
   end
 
   it "checks description can be max 500" do
@@ -142,5 +180,25 @@ describe Work do
     album.valid?.must_equal true
     movie.valid?.must_equal true
   end
+
+  it "has relations" do
+    book.upvotes[0].id.must_equal upvotes(:one_up).id
+    book.upvotes.count.must_equal 3
+  end
+
+  it "Work#top must return top works upvoted in category " do
+    Work.top(10, "book").count.must_equal 1
+    Work.top(10, "album").count.must_equal 1
+    Work.top(10, "movie").count.must_equal 1
+    Work.top(10).count.must_equal 3
+    Work.top(1)[0].must_equal book
+  end
+
+  it "Work#upvote_count must return upvote count"  do
+    work.upvotes_count.must_equal 0
+    book.upvotes_count.must_equal 3
+  end
+
+
 
 end

@@ -2,7 +2,7 @@ require "test_helper"
 
 describe Upvote do
   let(:upvote) { Upvote.new }
-  let(:vote) { upvotes(:one) }
+  let(:vote) { upvotes(:one_up) }
 
 
   it "has validation for empty parameters" do

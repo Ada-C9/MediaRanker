@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-  has_many :upvotes
+  has_many :upvotes, dependent: :destroy
 
   validates :title, presence: true, uniqueness: { scope: [:category]}
   validates :category, presence: true
@@ -7,6 +7,10 @@ class Work < ApplicationRecord
   validates :creator, presence: true
   validates :description, length: { maximum: 500 }
   validate :publication_year_must_be_in_the_past
+
+  def upvotes_count
+    return upvotes.count
+  end
 
   private
   def publication_year_must_be_in_the_past
@@ -26,4 +30,5 @@ class Work < ApplicationRecord
     top_works = sorted_works[0...actual_count]
     return top_works
   end
+
 end

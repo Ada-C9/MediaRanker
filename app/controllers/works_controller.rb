@@ -46,7 +46,7 @@ class WorksController < ApplicationController
   def destroy
     if @work
       @work.destroy
-      flash[:success] = "#{@work.title} deleted"
+      flash[:success] = "Successfully destroyed #{@work.category} #{@work.id}"
     else
       flash[:alert]= "Work does not exist"
     end

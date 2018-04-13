@@ -4,12 +4,20 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+one_up:
   user: one
   work: hp
 # column: value
 #
-two:
+two_up:
   user: two
   work: coco
 # column: value
+
+three_up:
+  user: two
+  work: hp
+
+four_up:
+  user: three
+  work: hp

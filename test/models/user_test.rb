@@ -15,14 +15,18 @@ describe User do
   it "has validation for empty name" do
     user_1.name = nil
     user_1.valid?.must_equal false
+    user_1.errors.messages.must_include :name
+
     user_1.name = ""
     user_1.valid?.must_equal false
-
+    user_1.errors.messages.must_include :name
   end
 
   it "has validation for uniqueness" do
     user = User.new(name: user_1.name)
 
     user.valid?.must_equal false
+    user.errors.messages.must_include :name
+
   end
 end
