@@ -22,7 +22,7 @@
         <%= link_to("#{v.user.name}", user_path(v.user.id))%>
       </td>
       <td>
-        <%= v.created_at.year %>
+        <%= v.created_at.to_date.to_formatted_s(:long) %>
       </td>
     </tr>
     <% end %>

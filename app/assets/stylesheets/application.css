@@ -19,10 +19,7 @@
 
  */
  /* General */
- * {
-     font-family: 'Gudea';
-     font-size: 22px;
- }
+
 
  h1, h2, h3, h4, h5 {
    font-weight: bold;
@@ -121,4 +118,9 @@
 
 .circle-list {
   list-style-type: disc;
+}
+
+* {
+    font-family: 'Gudea';
+    font-size: 22px;
 }

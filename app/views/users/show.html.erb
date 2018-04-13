@@ -18,7 +18,7 @@
       <tr>
         <% work = Work.find(v.work_id) %>
 
-        <td><%= work.title %></td>
+        <td><%= link_to("#{work.title}", work_path(work)) %></td>
         <td><%= work.creator %></td>
         <td>
           <% if work.publication_year != nil %>
