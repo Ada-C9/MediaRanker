@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @this_user = User.new
   end
 
   def destroy

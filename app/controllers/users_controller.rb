@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :find_user
-
   def edit
   end
 
@@ -12,6 +10,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @this_user = @user
+
   end
 
   def create
