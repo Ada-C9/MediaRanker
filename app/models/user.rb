@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :votes
-  validates :username, presence: true
+  validates :username, presence: {message: "You need to provide a username" }
   validates :date_joined, presence: true
 
 

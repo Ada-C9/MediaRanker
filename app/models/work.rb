@@ -1,6 +1,6 @@
 class Work < ApplicationRecord
-  has_many :votes
-  validates :title, presence: true
+  has_many :votes,dependent: :destroy
+  validates :title, presence:true
   validates :category, presence: true
 
 

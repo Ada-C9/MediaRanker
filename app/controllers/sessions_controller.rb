@@ -1,16 +1,4 @@
 class SessionsController < ApplicationController
-  # def create
-  #   #@user = User.find_by(username: params[:user][:username])
-  #   @new_user = User.new(username: params[:username],date_joined: Date.today)
-  #   if @new_user.save(username: params[:username],date_joined: Date.today)
-  #     session[:user_id] = @new_user.id
-  #     flash[:success] = "Successfully created new user #{params[:username]} with ID #{@new_user.id}"
-  #     redirect_to root_path
-  #   else
-  #     flash.now[:error] = "Username #{params[:username]} was not created"
-  #
-  #   end
-  # end
 
 
   def create
@@ -20,13 +8,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
 
       flash[:success] = "Welcome back #{@user.username}"
+      redirect_to root_path
     else
       @user = User.create(username: params[:user][:username],date_joined: Date.today)
       if session[:user_id] = @user.id
         flash[:success] = "Welcome #{@user.username}"
         redirect_to root_path
       else
-        flash.now[:error] = "Username was not created"
+        flash.now[:error] = "You are not logged in. Please login"
         render :new
       end
     end

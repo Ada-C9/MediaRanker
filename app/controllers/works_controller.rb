@@ -15,11 +15,19 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to works_path
     else
+      flash[:alert] = "Could not create #{@work.category}"
       render :new
     end
   end
 
   def show
+    work = find_work
+    if work == nil
+      flash[:alert] = "work was deleted"
+      redirect_to works_path
+    else
+      @work = work
+    end
 
   end
 
@@ -31,8 +39,10 @@ class WorksController < ApplicationController
 
   def update
     if @work.update(work_params)
+      flash[:success] = "#{@work.title} updated"
       redirect_to work_path(@work.id)
     else
+      flash[:alert] = "A problem occured"
       render :edit
     end
   end
@@ -42,12 +52,12 @@ class WorksController < ApplicationController
         current_user = User.find_by(id: session[:user_id])
         @work = Work.find(params[:id])
         @work.destroy
-        flash[:status] = :success
+
         flash[:message] = "Deleted #{@work.category} #{@work.title}"
         redirect_to works_path
       else
         flash[:status] = :failure
-        flash[:message] = "You must be logged in to do that!"
+        flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
         redirect_to works_path
         return
       end
@@ -79,12 +89,12 @@ class WorksController < ApplicationController
       @vote.work = Work.find_by(id: params[:id])
       @vote.date =  Date.today
       if @vote.save
-        flash[:status] = :success
+        #flash[:status] = :success
         flash[:message] = "Successfully upvoted "
         redirect_back fallback_location: {action: "index"}
       else
-        flash[:status] =:failure
-        flash[:message]= "Could not upvote.#{@user.username} has already upvoted for "
+        #flash[:status] =:failure
+        flash[:message]= "Could not upvote.#{@user.username} has already upvoted for #{@work.title}"
         redirect_back fallback_location: {action: "index"}
       end
     end
