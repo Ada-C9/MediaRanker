@@ -20,25 +20,25 @@
     </h2>
 
 
-  <nav>
-    <ul>
-      <%=link_to "View top media", root_path, class: "button" %>
-      <%=link_to "View all media", works_path, class: "button"%>
-      <%=link_to "Add a new work", new_work_path, class: "button"%>
-      <%=link_to "View all users", users_path, class: "button"%>
+    <nav>
+      <ul>
+        <%=link_to "View top media", root_path, class: "button" %>
+        <%=link_to "View all media", works_path, class: "button"%>
+        <%=link_to "Add a new work", new_work_path, class: "button"%>
+        <%=link_to "View all users", users_path, class: "button"%>
 
-      <div class="float-right">
-      <% if @user && @user.name != nil %>
-      <%= link_to "Logged in as #{@user.name}", user_path(@user[:id]), class: "button" %>
-      <%= link_to "Logout", logout_path, method: :delete , class: "button"  %>
-      <% else %>
-      <%= link_to "Login", login_path, class: "button" %>
-      <% end %>
-    </div>
+        <div class="float-right">
+          <% if @user && @user.name != nil %>
+          <%= link_to "Logged in as #{@user.name}", user_path(@user[:id]), class: "button" %>
+          <%= link_to "Logout", logout_path, method: :delete , class: "button"  %>
+          <% else %>
+          <%= link_to "Login", login_path, class: "button" %>
+          <% end %>
+        </div>
 
-    </ul>
-  </nav>
-</header>
+      </ul>
+    </nav>
+  </header>
 </head>
 
 <body>
@@ -48,16 +48,12 @@
     <section class="callout <%= name %>">
 
       <% if name == "alert" %>
-      <ul>
 
-        <% flash[:alert].each do |field, message| %>
-        <li>
-          <strong> <%= field %>: </strong> <%=message%>
-        </li>
-        <% end %>
-      </ul>
+          <strong> <%= name.capitalize %>: </strong> <%=message%>
+
 
       <% else %>
+
       <p><%= message %></p>
       <% end%>
     </section>

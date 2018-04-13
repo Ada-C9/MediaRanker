@@ -9,8 +9,13 @@ class VotesController < ApplicationController
   end
 
   def new
-    @vote = Vote.new
-    create
+    if @user.nil?
+      flash[:alert] = "Please login to vote."
+      redirect_to login_path
+    else
+      @vote = Vote.new
+      create
+    end
   end
 
   def create
