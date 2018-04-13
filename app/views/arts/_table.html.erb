@@ -2,6 +2,9 @@
   <thead>
     <tr>
       <th>
+        Votes
+      </th>
+      <th>
         Title
       </th>
       <th>
@@ -17,6 +20,9 @@
   </thead>
   <% arts.each do |art| %>
   <tr>
+    <td>
+      <%= art.vote_count %>
+    </td>
       <td>
         <%= link_to(art.title, art_path(art)) %>
       </td>

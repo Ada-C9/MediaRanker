@@ -1,10 +1,6 @@
 class SessionsController < ApplicationController
   def login_form; end
 
-  def new
-    @user = User.new
-  end
-
 # FIXME: CURRENTLY CANNOT LOGIN TO COMPLETE A VOTE
   def login
     user_name = params[:user_name]
