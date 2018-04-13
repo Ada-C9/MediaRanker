@@ -34,4 +34,8 @@ class Work < ApplicationRecord
     movies.first(10)
   end
 
+  def self.spotlight
+    self.all.sort_by{|item| item.votes.count}.reverse.first
+  end
+
 end

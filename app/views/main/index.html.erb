@@ -1,8 +1,8 @@
 <main class="row">
       <section class="row spotlight">
     <div>
-      <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to  %> by </h3>
-      <p></p>
+      <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to(@works.spotlight.title)  %> by <%= @works.spotlight.creator %></h3>
+      <p> <%= @works.spotlight.votes.count %> votes - <%= @works.spotlight.description %></p>
     </div>
   </section>
 

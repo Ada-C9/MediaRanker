@@ -93,7 +93,7 @@
     padding-bottom: 2rem;
   }
 
-  body, h1, h2, h3, h4 {
+  body, h1, h2, h3, h4, h5 {
     font-family: "Gudea", sans-serif;
 }
 h1, h2, h3, h4 {
@@ -110,4 +110,20 @@ main a:hover {
 
 article h3 {
   font-weight: bold;
+}
+
+.top-ten-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+  }
+
+  .top-ten h3 {
+    border-bottom: solid;
+    margin-top: 50px;
+    font-size: 1.8em;
+  }
+
+.create {
+  color: #26A69A;
 }
