@@ -86,3 +86,10 @@ body small {
 body ul {
   list-style-type: none;
 }
+
+.category-line {
+    border: none;
+    height: 2px;
+    color: #B2DFDB; /* old IE */
+    background-color: #B2DFDB; /* Modern Browsers */
+}
