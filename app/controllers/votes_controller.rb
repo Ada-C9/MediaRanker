@@ -11,7 +11,6 @@ class VotesController < ApplicationController
   end
 
   def show
-    @vote = Vote.find_by(id: params[:id])
   end
 
   def edit

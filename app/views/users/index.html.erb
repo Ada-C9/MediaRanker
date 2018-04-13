@@ -9,8 +9,8 @@
 <tr>
   <% @users.each do |user| %>
   <td><%=link_to user.user_name, user_path(user[:id]) %></td>
-  <td>user.votes.count</td>
-  <td>user.created_at.to_date.to_formatted_s(:long_ordinal)</td>
+  <td><%=user.votes.count%></td>
+  <td><%=user.created_at.to_date.to_formatted_s(:long_ordinal)%></td>
 </tr>
 <%end%>
 </table>

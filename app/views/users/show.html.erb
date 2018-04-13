@@ -2,8 +2,8 @@
 <article class="user-details">
 
 
-<h3> User Summary: <%= User.user_name%></h3>
-<p>Joined site: <%= @show_user.created_at.to_date.to_formatted_s(:long_ordinal)%></p>
+<h3> User Summary: <%= @user.user_name%></h3>
+<p>Joined site: <%= @user.created_at.to_date.to_formatted_s(:long_ordinal)%></p>
 </article>
 
 <article class="user-votes">

@@ -12,8 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # # if !(session[:user_id])
-    # @show_user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def create
