@@ -28,7 +28,9 @@ class ArtsController < ApplicationController
   end
 
   # Preferred style to indicate an intentional blank method
-  def show; end
+  def show
+    @votes = @art.votes.order(created_at: :desc)
+  end
 
   def edit; end
 
@@ -36,15 +38,41 @@ class ArtsController < ApplicationController
     @art.assign_attributes(art_params)
 
     if @art.save
+      flash[:status] = :success
+      flash[:result_text] = "Successfully updated #{@art.name} #{art.id}."
       redirect_to art_path(@art)
     else
-      render :edit
+      flash[:status] =:failure
+      flash[:result_text] = "Could not update #{@art.name}"
+      flash.now[:messages] = @art.errors.messages
+      render :edit, status: :not_found
     end
   end
 
   def destroy
     Art.destroy(params[:id])
 
+    redirect_to arts_path
+    # TODO: ADD FLASH ALERTS
+  end
+
+  def upvote
+    flash[:staus] = :failure
+    if @login_user
+      vote = Vote.new(user: @login_user, art: @art)
+      if vote.save
+        flash[:status] = :success
+        flash[:result_text] = "Successfully voted!"
+        status = :found
+      else
+        flash[:result_text] = "Could not upvote."
+        flash[:messages] = vote.errors.messages
+        status = :conflict
+      end
+    else
+      flash[:result_text] = "You must log in to do that..."
+      status = :unauthorized
+    end
     redirect_to arts_path
   end
 

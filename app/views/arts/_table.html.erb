@@ -27,7 +27,7 @@
         <%= art.pub_year %>
       </td>
       <td>
-        <button class="button">Upvote</button>
+        <%= link_to "Upvote", upvote_path(art), class: "button upvote", method: :post %>
       </td>
   </tr>
   <% end %>

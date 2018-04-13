@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+# FIXME: CURRENTLY CANNOT LOGIN TO COMPLETE A VOTE
   def login
     user_name = params[:user_name]
 
@@ -29,7 +30,7 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy
+  def logout
     session[:user_id] = nil
     flash[:status] = :success
     flash[:result_text] = "Logged out successfully."
