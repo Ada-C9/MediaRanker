@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
       flash[:success] = "Welcome back #{@user.username}"
     else
-      @user = User.create(username: params[:user][:username])
+      @user = User.create(username: params[:user][:username],date_joined: Date.today)
       session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.username}"
     end
