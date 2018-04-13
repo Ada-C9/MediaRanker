@@ -17,12 +17,12 @@ describe User do
   end
 
   describe "relations" do
-    it "must have votes" do
+    it "can have votes" do
       u = users(:yellowlion)
       u.votes.count.must_equal 2
     end
 
-    it "must have votes" do
+    it "shows zero if user has not voted" do
       u = users(:littlepony)
       u.votes.count.must_equal 0
     end

@@ -2,9 +2,9 @@
   before_action :find_work, only: [:show, :edit, :update, :destroy]
   def index
     @works = Work.all
-    @albums = Work.where(category: "album")
-    @books = Work.where(category: "book")
-    @movies = Work.where(category: "movie")
+    @albums = Work.where(category: "album").sort_by {|work| work.votes.count }.reverse
+    @books = Work.where(category: "book").sort_by {|work| work.votes.count }.reverse
+    @movies = Work.where(category: "movie").sort_by {|work| work.votes.count }.reverse
   end
 
   def new
