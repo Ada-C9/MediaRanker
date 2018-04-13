@@ -26,8 +26,4 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  # def session_params
-  #   return params.require(:session).permit(:user, :name)
-  # end
-
 end

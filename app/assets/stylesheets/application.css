@@ -38,3 +38,7 @@ main {
 .page-header h2 small {
   color: white;
 }
+
+.button {
+  background-color: #26A69A;
+}

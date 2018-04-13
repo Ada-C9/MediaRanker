@@ -40,7 +40,7 @@
 
   def destroy
     @work.destroy
-    flash[:sucess] = "Successfully deleted!"
+    flash[:sucess] = "Successfully destroyed"
     redirect_to works_path
   end
 
