@@ -22,7 +22,7 @@
     <section class="top-ten">
       <h3>Top <%= category.capitalize %>s</h3>
       <ul>
-        <% top_ten = Publication.find_top_ten_by(category) %>
+        <% top_ten = find_top_ten_by(category) %>
         <% top_ten.each do |publication| %>
           <li>
             <h4>

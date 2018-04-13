@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <% publications = Publication.where(category: category) %>
+        <% publications = sort_by_votes(Publication.where(category: category)) %>
         <% publications.each do | publication | %>
         <tr>
           <td><%= publication.find_total_votes %></td>

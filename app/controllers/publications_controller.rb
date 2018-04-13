@@ -1,10 +1,12 @@
 class PublicationsController < ApplicationController
 
+  include PublicationsHelper
+
   before_action :find_publication, only: [:show, :edit, :update, :destroy]
   before_action :find_user
 
   def index
-    @publications = Publication.all.order(:category)
+    @publications = Publication.all
   end
 
   def show
