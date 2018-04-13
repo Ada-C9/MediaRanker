@@ -2,6 +2,8 @@ class Work < ApplicationRecord
   has_many :votes
 
   validates :title, :category, presence: true
+  validates :category, inclusion: { in: %w(album book movie),
+    message: "Could not create work" }
 
 
   def self.books
