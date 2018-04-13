@@ -15,7 +15,7 @@
     <th>Voted On</th>
   </thead>
   <tbody>
-    <% @user.votes.each do |vote| %>
+    <% @this_user.votes.each do |vote| %>
     <tr>
       <td><%= vote.work.title %></td>
       <td><%= vote.work.creator %></td>
