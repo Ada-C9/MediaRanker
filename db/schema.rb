@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20180410191540) do
     t.datetime "updated_at", null: false
   end
 
+  # votes have users and works due to its schema
+  # works have numerous votes via join table
+  # users have numbers votes via join table
+
   add_foreign_key "votes", "users"
   add_foreign_key "votes", "works"
 end

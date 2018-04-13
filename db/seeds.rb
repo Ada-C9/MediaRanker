@@ -46,5 +46,17 @@ puts "#{work_failures.length} works failed to save"
 
   p "Created #{Work.count - 29} Hey Arnold movies"
 
+  25.times do |index|
+    Work.create!(category: "book",
+      title: Faker::RuPaul.queen,
+      creator: Faker::Name.name,
+      publication_year:
+      Faker::Number.between(1995, 2018),
+      description:
+      Faker::RuPaul.quote)
+    end
+
+    p "Created #{Work.count - 29} RuPaul books"
+
 
 puts "done"
