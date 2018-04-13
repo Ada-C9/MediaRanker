@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: 'login'
   delete '/login', to: 'sessions#destroy', as: 'logout'
 
-  resources :works
 
-  resources :users do
+
+  resources :works do
     resources :votes, only: [:new, :create]
   end
+
+  resources :users
 
   resources :votes, except: [:new, :create]
 

@@ -23,7 +23,7 @@
       <%= work.year_released %>
       </span>
       <span>
-        <a> upvote </a>
+      <%= button_to "Upvote", work_votes_path(work[:id]), method: :post, class: 'button' %>
       </span>
     </li>
   <% end%>
@@ -47,9 +47,7 @@
       <span>
       <%= work.year_released %>
       </span>
-      <span>
-        <a> upvote </a>
-      </span>
+      <%= button_to "Upvote", work_votes_path(work[:id]), method: :post, class: 'button' %>
     </li>
   <% end%>
 
@@ -74,7 +72,7 @@
       <%= work.year_released %>
       </span>
       <span>
-        <a> upvote </a>
+      <%= button_to "Upvote", work_votes_path(work[:id]), method: :post, class: 'button' %>
       </span>
     </li>
   <% end%>

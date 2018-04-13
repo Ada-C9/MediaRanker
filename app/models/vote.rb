@@ -6,7 +6,6 @@ class Vote < ApplicationRecord
   validates :work_id, presence: true
 
 
-
   def report_works_voted_for(id_for_user)
     @upvoted_works = self.where(user_id: id_for_user)
   end
