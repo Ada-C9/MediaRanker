@@ -122,3 +122,20 @@ section.spotlight > div {
   margin: 0px auto 75px auto;
   color: #eee;
 }
+
+/* top ten styling containers */
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten h3 {
+  border-bottom: 2px solid #b2dfd8;
+}
+
+.top-ten ul {
+  list-style-type: none;
+  margin-left: 0px;
+}
