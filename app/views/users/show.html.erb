@@ -1,6 +1,6 @@
 <h3><%= "User Summary: #{@user.username}" %></h3>
 
-<p><%= "Joined site #{@user.created_at}" %></p>
+<p><%= "Joined site #{@user.created_at.strftime("%b %d, %Y")}" %></p>
 
 <section>
 <%= link_to "See all Users", users_path, class: "button" %>

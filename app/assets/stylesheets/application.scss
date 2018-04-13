@@ -10,14 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *= require normalize-rails
-
  *
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
 
+
+// APPLICATION
 .page-header {
   background-color: #B2DFDB;
   margin-bottom: 10px;
@@ -46,4 +46,55 @@
 
 main {
   margin: 1.25em;
+}
+
+
+// HOME
+.top-ten-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+}
+
+.spotlight span, .spotlight p {
+  color: #5c5c5c;
+}
+
+.spotlight a {
+  text-decoration: underline;
+}
+
+.spotlight {
+    border-bottom: 1px solid #cacaca;
+    padding: 2em 0em 1em 0em;
+    margin-bottom: 4em;
+}
+
+.top-ten h3 {
+    border-bottom: 2px solid  #B2DFDB;
+}
+
+
+// USERS
+.user-row {
+  display: grid;
+  grid-template-columns: auto 80px 220px;
+}
+
+.login {
+  margin-top: 1em;
+}
+
+
+// WORKS
+h3 {
+  color: #26A69A;
+}
+
+.upvote {
+  width: 100px;
+}
+
+.created {
+  width: 500px;
 }
