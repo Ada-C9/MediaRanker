@@ -1,8 +1,17 @@
-<h1>Media Spotlight</h1>
-<% if @media_spotlight %>
-<%= link_to Work.top.title, work_path(@media_spotlight.id) %> by <%= @media_spotlight.creator %>
-<%end %>
-<hr>
+<body>
+  <main class="row">
+
+  <section class="row spotlight">
+    <div>
+      <h3>
+        <span class="media-spotlight-header">Media Spotlight:</span>
+        <a><%= link_to Work.top.title, work_path(@media_spotlight.id)%> by <%=@media_spotlight.creator %></a>
+      </h3>
+      <p><%= Work.top.votes.count %> of votes <%= Work.top.description %></p>
+    </div>
+  </section>
+
+<hr class="root-hr">
 
 <section class="top-ten-container">
   <section class = "top-ten">
