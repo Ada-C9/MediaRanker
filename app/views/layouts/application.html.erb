@@ -34,15 +34,19 @@
   </header>
 
 
-  <section class="row status success">
-    <% flash.each do |name, message| %>
-    <div class="<%= name %>">
-      <h3><%= message %></h3>
-    </div>
-    <% end %>
-  </section>
 
   <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <div class="callout <%= name %>">
+        <%= message %>
+        <% if @vote %>
+        <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+        <% end %>
+      </div>
+      <% end %>
+    </section>
+
     <%= yield %>
   </main>
 

@@ -25,6 +25,8 @@ class VotesController < ApplicationController
         flash[:alert] = "Could not upvote"
         flash[:notice] = @vote.errors.full_messages
       end
+    else
+      flash[:notice] = "You must log in to do that"
     end
     redirect_to request.referer
   end

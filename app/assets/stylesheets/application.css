@@ -64,21 +64,15 @@ h3, .h3 {
   border-right: white 2px solid;
 }
 
-
-section .status {
+.flash .callout {
   border-radius: 5px;
   background-color: #e6e6e6;
   padding: 20px 25px;
-  margin-top: 30px;
-}
-
-
-section .status.failure h3, .status.success h3 {
+  margin-left: 50px;
+  margin-right: 50px;
+  border: none;
   font-weight: normal;
   font-size: 1em;
-}
-
-section .status.success h3 {
   color: #8a8a8a;
 }
 
@@ -142,4 +136,21 @@ body {
 
 .row table tr td .button {
   margin-bottom: 0px;
+}
+
+.secondary h3 {
+  color: #C70039;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.secondary li {
+  font-size: inherit;
+}
+
+.secondary {
+  border-radius: 5px;
+  border: none;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
 }
