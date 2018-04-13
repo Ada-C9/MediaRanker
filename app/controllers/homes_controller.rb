@@ -1,9 +1,9 @@
 class HomesController < ApplicationController
   def index
-    @works = Work.all
-    @albums = Work.where(category: 'album')
-    @books = Work.where(category: 'book')
-    @movies = Work.where(category: 'movie')
+    @top_work = Work.top_overall
+    @albums = Work.top('album')
+    @books = Work.top('book')
+    @movies = Work.top('movie')
   end
 
 end
