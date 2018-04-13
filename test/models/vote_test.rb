@@ -13,4 +13,8 @@ describe Vote do
     vote.valid?.must_equal false
     vote.errors.must_include :publication_id
   end
+
+  it "cannot be a duplicate" do
+  end
+
 end

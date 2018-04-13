@@ -3,13 +3,12 @@ class PublicationsController < ApplicationController
 
 
   def index
-
     albums = Publication.where(category: "album")
-    @albums = albums.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+    @albums = albums.find_votes
     books = Publication.where(category: "book")
-    @books = books.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+    @books = books.find_votes
     movies = Publication.where(category: "movie")
-    @movies = movies.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+    @movies = movies.find_votes
   end
 
   def show

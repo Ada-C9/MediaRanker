@@ -8,4 +8,5 @@ class Vote < ApplicationRecord
   def find_publication
     publication = Publication.find_by(id: self.publication_id)
   end
+
 end

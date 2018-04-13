@@ -7,5 +7,7 @@ class Publication < ApplicationRecord
   validates :publication_year, presence: true, length: { is: 4 }
   validates :publication_year, numericality: { only_integer: true, less_than_or_equal_to: 2018 }
 
-
+  def self.find_votes
+    self.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+  end
 end
