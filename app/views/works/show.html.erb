@@ -1,12 +1,12 @@
 <article class="media-details">
-  <h3><%=@work.title%></h3>
+  <h3 class="works"><%=@work.title%></h3>
   <p>Created by:
     <%=@work.creator%></p>
   <p>Published:
     <%=@work.publication_year%></p>
   <p>Published:
     <%=@work.description%></p>
-  <section>
+  <section class="show-page-buttons">
     <%= link_to 'Back to media ranks', root_path, class: "button" %>
     <%= link_to 'Edit', edit_work_path[@work.id], class: "button" %>
     <%= link_to "Upvote", work_votes_path(@work.id), method: :post, :class=>"button" %>
