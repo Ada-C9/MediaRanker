@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :find_user
+  before_action :find_session_user
 
   def index
     @spotlight = Work.top(1)[0]

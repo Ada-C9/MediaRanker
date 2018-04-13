@@ -1,8 +1,8 @@
 class UpvotesController < ApplicationController
-  before_action :find_user
+  before_action :find_session_user
 
   def create
-    if !@user
+    if !@session_user
       flash[:notice] = "You must log in to do that"
       redirect_back fallback_location: :works_path
     else

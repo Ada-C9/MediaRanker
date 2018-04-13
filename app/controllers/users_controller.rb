@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  before_action :find_user
-
+  before_action :find_session_user
   def index
     @users = User.all.order(created_at: :asc)
   end
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   def new
