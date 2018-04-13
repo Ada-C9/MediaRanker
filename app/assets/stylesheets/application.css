@@ -1,19 +1,46 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
  *= require normalize-rails
-
- *
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
+
+/* general styles for the page */
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+
+
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row::before, .row::after {
+  display: table;
+  content: " ";
+}
+
+.row::after {
+  clear: both;
+}
+/* styles for the header on all pages */
+
+.page-header {
+  max-width: 100%;
+  background-color: #b2dfdb;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding: 25px 20px 10px 20px;
+}
+
+.page-header h2 {
+  text-align: center;
+  margin: 25px auto 40px auto;
+}
