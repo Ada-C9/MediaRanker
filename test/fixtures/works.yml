@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+w:
+  category: movie
+  title: Wonder
+  creator: Stephen Chbosky
+  publication_year: 2017
+  description: Based on the book
 
-two:
-  category: MyString
-  title: MyString
-  creator: MyString
-  publication_year: 1
-  description: MyString
+ww:
+  category: book
+  title: Wonder Woman
+  creator: William Moulton Marston
+  publication_year: 1941
+  description: Superhero comic book

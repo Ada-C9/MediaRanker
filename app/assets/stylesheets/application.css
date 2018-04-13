@@ -93,7 +93,7 @@
     padding-bottom: 2rem;
   }
 
-  body, h1, h2, h3, h4, h5 {
+  body, h1, h2, h3, h4, h5, h6 {
     font-family: "Gudea", sans-serif;
 }
 h1, h2, h3, h4 {
@@ -149,4 +149,29 @@ article h3 {
 .top-ten h3 {
   border-bottom: 2px solid;
   border-bottom-color: #B2DFDB;
+}
+
+.top-ten ul li {
+  list-style-type: none;
+}
+
+.flash .callout {
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.secondary h3 {
+  color: red;
+  font-size: 1em;
+}
+.secondary {
+
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
 }
