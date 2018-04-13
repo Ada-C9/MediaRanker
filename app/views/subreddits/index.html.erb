@@ -20,6 +20,9 @@
   <li> Subscribers:
     <%= subreddit.subscribers %>
   </li>
+  <%= link_to "Edit", edit_subreddit_path(subreddit) %>
+    <%= link_to("Delete", subreddit_path(subreddit), method: :delete, data: { confirm: "You would like to delete this subreddit?" }) %>
+    <%=link_to "Upvote", subreddit_upvote_path(subreddit), method: :post %>
   </ul>
 <% end %>
 

@@ -21,7 +21,8 @@
   </ul>
 
   <%= link_to "Edit", edit_instagram_path(instagram) %>
-    <%= link_to("Delete", instagram_path(instagram), method: :delete, data: { confirm: "Really really?" }) %>
+    <%= link_to("Delete", instagram_path(instagram), method: :delete, data: { confirm: "You would like to delete this instagram?" }) %>
+      <%=link_to "Upvote", instagram_upvote_path(instagram), method: :post %>
 <% end %>
 
 

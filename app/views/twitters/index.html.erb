@@ -18,6 +18,11 @@
   <li>Followers:
     <%= twitter.followers %>
   </li>
+  <li>
+    <%= link_to "Edit", edit_subreddit_path(twitter) %>
+      <%= link_to("Delete", subreddit_path(twitter), method: :delete, data: { confirm: "You would like to delete this twitter?" }) %>
+      <%=link_to "Upvote", subreddit_upvote_path(twitter), method: :post %>
+  </li>
   </ul>
 <% end %>
 

@@ -13,7 +13,7 @@ class SubredditsController < ApplicationController
     @subreddit = Subreddit.new(subreddit_params)
     if @subreddit.save
       #works.create
-      flash[:success] = "Book added successfully"
+      flash[:success] = "Subreddit added successfully"
       redirect_to subreddits_path
     else
       flash.now[:failure] = "Validations Failed"
@@ -52,7 +52,7 @@ class SubredditsController < ApplicationController
         flash[:success] = "You voted!"
         redirect_to root_path
       else
-        flash[:failure] = "You couldn't vote! #{@vote} #{@vote.subreddit_id} #{@vote.user_id}"
+        flash[:failure] = "You couldn't vote! Did you vote for this already?"
         redirect_to subreddits_path
       end
     else

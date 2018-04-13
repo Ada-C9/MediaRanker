@@ -49,9 +49,9 @@ class InstagramsController < ApplicationController
     if session[:user_id]
       user_id = session[:user_id]
 
-      @vote = Vote.new(user_id: user_id, instagram_id: params[:instagram_id], subreddit_id: nil, twitter_id: nil)
+      @vote = Vote.new(user_id: user_id, instagram_id: params[:instagram_id])
 
-      if @vote.save
+      if @vote.save!
         flash[:success] = "You upvoted!"
         redirect_to root_path
       else
