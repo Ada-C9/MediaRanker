@@ -12,27 +12,33 @@
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <h2>Media Ranker | Ranking the Best of Everything</h2>
+
+  <header class="page-header row">
+    <h2>
+      <strong><%= link_to "Media Ranker", root_path %></strong>
+      <small>Ranking the Best of Everything</small>
+    </h2>
 
 
   <nav>
     <ul>
-      <li><%=link_to "View top media", root_path%></li>
-      <li><%=link_to "View all media", works_path%></li>
-      <li><%=link_to "Add a new work", new_work_path%></li>
-      <li><%=link_to "View all users", users_path%></li>
+      <%=link_to "View top media", root_path, class: "button" %>
+      <%=link_to "View all media", works_path, class: "button"%>
+      <%=link_to "Add a new work", new_work_path, class: "button"%>
+      <%=link_to "View all users", users_path, class: "button"%>
 
-
+      <div class="float-right">
       <% if @user && @user.name != nil %>
-      <li>Logged in as <%= @user.name %></li>
-      <%= link_to "Logout", logout_path, method: :delete %>
+      <%= link_to "Logged in as #{@user.name}", login_path, class: "button" %>
+      <%= link_to "Logout", logout_path, method: :delete , class: "button"  %>
       <% else %>
-      <%= link_to "Login", login_path %>
+      <%= link_to "Login", login_path, class: "button" %>
       <% end %>
+    </div>
 
     </ul>
   </nav>
-
+</header>
 </head>
 
 <body>

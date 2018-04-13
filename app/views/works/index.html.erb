@@ -1,7 +1,8 @@
-<h2>List of Works</h2>
+<sectionn class="row">
+<h3>List of Works</h3>
 
 <h4>Albums</h4>
-
+  <section class="media-table">
 <table>
   <thead>
     <tr>
@@ -20,7 +21,7 @@
       <td><%=link_to album.title, work_path(album[:id])%> </td>
       <td> <%= album.creator %></td>
       <td> <%= album.publication_year %></td>
-      <td> <%=link_to "Upvote", new_work_vote_path(album.id) %></td>
+      <td> <%=link_to "Upvote", new_work_vote_path(album.id), class: "button upvote" %></td>
 
     </tr>
     <% end%>
@@ -47,7 +48,7 @@
       <td> <%=link_to book.title, work_path(book[:id])%></td>
       <td> <%= book.creator %></td>
       <td> <%= book.publication_year %></td>
-      <td> <%=link_to "Upvote", new_work_vote_path(book.id) %></td>
+      <td> <%=link_to "Upvote", new_work_vote_path(book.id), class: "button upvote" %></td>
     </tr>
     <% end%>
   </tbody>
@@ -73,13 +74,13 @@
       <td><%=link_to movie.title, work_path(movie[:id])%> </td>
       <td> <%= movie.creator %></td>
       <td> <%= movie.publication_year %></td>
-      <td> <%=link_to "Upvote", new_work_vote_path(movie.id) %></td>
+      <td> <%=link_to "Upvote", new_work_vote_path(movie.id),class: "button upvote" %></td>
     </tr>
     <% end%>
   </tbody>
 </table>
+</section>
+<%=link_to "View top media", root_path, class: "button"%>
+<%=link_to "Add a new work", new_work_path, class: "button"%>
 
-<ul>
-  <li><%=link_to "View top media", root_path%></li>
-  <li><%=link_to "Add a new work", new_work_path%></li>
-</ul>
+</section>
