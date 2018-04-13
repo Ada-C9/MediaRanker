@@ -10,7 +10,7 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def report_user_votes(id_for_user)
-    @works_upvoted = Vote.where(work_id: id_for_user)
+    @works_upvoted = Vote.where(user_id: id_for_user)
   end
 
 
