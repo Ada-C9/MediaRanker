@@ -11,8 +11,8 @@ describe User do
 
   end
 
-  it "does not  accept a nil input" do
-    user.user_name =
+  it "does not accept a nil input" do
+    user.user_name = nil
     user.user_name.wont_be nil
   end
 

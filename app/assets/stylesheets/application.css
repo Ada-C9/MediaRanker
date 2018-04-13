@@ -21,6 +21,10 @@
   float: right;
 }
 
+.button {
+  background-color: #26A69A;
+}
+
 .media-spotlight-header {
   color: #424242;
 }

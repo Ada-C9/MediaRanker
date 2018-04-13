@@ -10,7 +10,7 @@ class VotesController < ApplicationController
 
   def create
     if !@user
-      flash[:alert] = "Please login to vote!"
+      flash[:login_alert] = "Please login to vote!"
       redirect_back fallback_location: :works_path
     else
       @vote = Vote.new
@@ -21,8 +21,8 @@ class VotesController < ApplicationController
         flash[:success] = "Successfully upvoted!"
         redirect_back fallback_location: :works_path
       else
-        flash.now[:alert] = @vote.errors
-        render :new
+        flash[:alert] = @vote.errors
+        redirect_back fallback_location: :works_path
       end
     end
   end
