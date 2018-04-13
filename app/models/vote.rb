@@ -1,6 +1,6 @@
 class Vote < ApplicationRecord
-  belongs_to :user, counter_cache: true
-  belongs_to :publication, counter_cache: true
+  belongs_to :user
+  belongs_to :publication
 
   validates :user_id, numericality: { only_integer: true}
   validates :publication_id, numericality: { only_integer: true}
