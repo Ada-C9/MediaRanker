@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_user
+
   def index
     @works = Work.all
   end
@@ -19,7 +20,8 @@ class WorksController < ApplicationController
     @work.creator = params[:work][:creator]
     @work.publication_year = params[:work][:publication_year]
     if @work.save
-      redirect_to works_path
+      redirect_to work_path(@work.id)
+      flash[:success] = "Successfully created #{@work.category} #{@work.id}"
     else
       render :new
     end
@@ -49,11 +51,24 @@ class WorksController < ApplicationController
   def destroy
     @work = Work.find_by(id: params[:id])
     if @work.destroy
+      flash[:success] = "Your selection was successfully destroyed."
       redirect_to works_path
     else
       render :show
     end
   end
+
+  def upvote
+      @work = Work.find_by(id: params[:work])
+    
+      if @work && session[:user_id] != nil
+        Vote.create(user_id:@user.id,work_id:@work.id)
+        redirect_to works_path
+      else
+        render :index
+      end
+  end
+
 
   private
   def work_params

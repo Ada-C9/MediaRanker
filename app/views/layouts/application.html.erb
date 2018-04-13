@@ -13,11 +13,14 @@
 
   <body>
     <nav>
-        <%if @user.nil? %>
-            <%=link_to "Login", login_path%>
+      <ul>
+        <%if @user && @user.name %>
+          <li><%=link_to "Logout", logout_path, method: :delete%></li>
+          <li><%=link_to "Logged in as #{@user.name}", user_path(@user.id)%></li>
         <%else%>
-          <li>Logged in as<%=@user.name%></li><%=link_to "Logout",method: :delete%>
+            <li><%=link_to "Login", login_path%></li>
         <%end%>
+      </ul>
     </nav>
 
     <main>

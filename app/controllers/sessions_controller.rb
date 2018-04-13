@@ -18,14 +18,13 @@ end
 
 def new
   @user = User.new
+
 end
 
 def destroy
-  #create destroy method!!!
   session[:user_id] = nil
   flash[:success] = "Successfully logged out"
   redirect_to root_path
-
 end
 
 end
