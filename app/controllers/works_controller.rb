@@ -49,7 +49,13 @@ class WorksController < ApplicationController
   end
 
   def top
-    @works = Work.all # TODO: add all media types and filter by votes top 10.
+    @works = Work.all 
+
+    @albums = Work.where(category:'album')
+
+    @books = Work.where(category:'book')
+
+    @movies = Work.where(category:'movie')
   end
 
   def upvote
