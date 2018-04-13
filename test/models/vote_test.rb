@@ -21,10 +21,6 @@ describe Vote do
   end
 
   describe "validation" do
-    before do
-      @vote = votes(:two)
-    end
-
     it "is valid when the vote is unique" do
       vote1 = Vote.new(user_id: users(:coco).id, work_id: works(:three).id)
       result = vote1.valid?
