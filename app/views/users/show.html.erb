@@ -1,6 +1,6 @@
 <h3>User Summary: <%= link_to @user.user_name, user_path(@user) %></h3>
 <p>
-  Joined site <%= @user.created_at.strftime("%FT%T") %>
+  Joined site <%= @user.created_at.strftime("%B %d, %Y") %>
 </p>
 
 <h4>Votes</h4>
@@ -15,22 +15,22 @@
     </tr>
   </thead>
   <tbody>
-    <% @users.votes.each do |vote| %>
+    <% @user.votes.each do |vote| %>
     <tr>
       <td>
-        <%= link_to @vote.art.title, art_path(vote.art) %>
+        <%= link_to vote.art.title, art_path(vote.art) %>
       </td>
       <td>
-        <%= @vote.art.creator %>
+        <%= vote.art.creator %>
       </td>
       <td>
-        <%= @vote.art.pub_year %>
+        <%= vote.art.pub_year %>
       </td>
       <td>
-        <%= @vote.art.category.capitalize %>
+        <%= vote.art.category.capitalize %>
       </td>
       <td>
-        <%= Vote.created_at.strftime("%FT%T") %>
+        <%= vote.created_at.strftime("%B %d, %Y") %>
       </td>
     </tr>
     <% end %>

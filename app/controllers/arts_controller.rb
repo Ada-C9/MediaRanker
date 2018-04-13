@@ -58,9 +58,10 @@ class ArtsController < ApplicationController
   end
 
   def upvote
-    flash[:staus] = :failure
+    flash[:status] = :failure
     if @user
-      vote = Vote.new(user_id: @user, art_id: @art)
+      @art = Art.find(params[:id])
+      vote = Vote.new(user: @user, art: @art)
       if vote.save
         flash[:status] = :success
         flash[:result_text] = "Successfully voted!"

@@ -30,7 +30,15 @@
       <a class="button" href="/users">View All Users</a>
       <!-- TODO: PUT IN LOGIC FOR LOGOUT BUTTON AND LOGOUT STATUS -->
       <div class="float-right">
-        <a class="button float-right" href="/login">Log In</a>
+        <a class="login_and_logout">
+          <% if @user %>
+          <p class="button">Logged in as <%= link_to @user.user_name, user_path(@user) %>
+          </p>
+          <%= link_to "Log Out", logout_path, method: :post, class: "button float-right" %>
+          <% else %>
+          <%= link_to "Log In", login_path, class: "button float-right" %>
+          <% end %>
+        </a>
       </div>
     </nav>
   </header>
