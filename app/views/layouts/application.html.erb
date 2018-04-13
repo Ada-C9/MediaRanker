@@ -19,7 +19,15 @@
     <%= link_to "Add a New Work", new_work_path, :class => "button" %>
     <%= link_to "View All Users", users_path, :class => "button" %>
     <div class="float-right">
-      <%= link_to "Log In", users_path, :class => "button float-right" %>
+      <% if @user %>
+            <li>
+              Welcome <%= @user.user_name %>
+              <%= link_to "Logout", logout_path, method: :delete, :class => "button"%>
+            </li>
+          <% else %>
+             <%= link_to "Log In", login_path, :class => "button float-right" %>
+          <% end %>
+      <!-- <%= link_to "Log In", login_path, :class => "button float-right" %> -->
     </div>
   </nav>
 
