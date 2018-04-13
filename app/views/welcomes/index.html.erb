@@ -20,7 +20,7 @@
           <h4><%= link_to movie.title, work_path(movie.id) %>
           <small>by <%= movie.creator %></small>
           </h4>
-          <p>num votes</p>
+          <p><%= movie.vote_count %> votes</p>
         </li>
         <% end %>
       </ul>
@@ -33,7 +33,7 @@
           <h4><%= link_to book.title, work_path(book.id) %>
           <small>by <%= book.creator %></small>
           </h4>
-          <p>num votes</p>
+          <p><%= book.vote_count %> votes</p>
         </li>
         <% end %>
       </ul>
@@ -46,7 +46,7 @@
           <h4><%= link_to album.title, work_path(album.id) %>
           <small>by <%= album.creator %></small>
           </h4>
-          <p>num votes</p>
+          <p><%= album.vote_count %> votes</p>
         </li>
         <% end %>
       </ul>
