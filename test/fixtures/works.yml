@@ -11,7 +11,7 @@ harrypotter:
   creator: JK Rowling
   publication_year: 1993
   description: a great Read
-  
+
 best_movie:
   title: Terminator II
   category: movie
@@ -19,6 +19,7 @@ best_movie:
   creator: James Cameron
 
 best_album:
+  title: Yeah
   category: album
   publication_year: 1984
   creator: Prince

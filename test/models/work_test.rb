@@ -40,6 +40,7 @@ describe Work do
   describe "custom methods" do
     before do
       @work = works(:harrypotter)
+
     end
 
     it 'calculates the total votes for a work' do
@@ -49,39 +50,16 @@ describe Work do
       total.must_equal 2
 
     end
-    # it "finds the work with more votes" do
-    #   let(:user) {User.first }
-    #   let(:work) {Work.first }
-    #
-    #   let(:user1) { User.last }
-    #   let(:work1) { Work.last }
-    #
-    #   let(:user2) {User.first + 1  }
-    #
-    #   let(:vote) {Vote.new(work: work, user: user) }
-    #   let(:vote1) {Vote.new(work: work1, user: user1) }
-    #   let(:vote2) {Vote.new(work: work, user: user2) }
-    #
-    # Work.top.title.must_equal "Harry Potter"
-    #
-    # end
-    # #
-    # # it "finds the top ten albums" do
-    # # end
-    # #
-    # # it "finds the top ten movies" do
-    # # end
-    # #
-    # # it "find the top ten books" do
-    # # end
-    # #
-    # # it "no models with category" do
-    # #
-    # # end
-    # #
-    # # it "if there is a tie" do
-    # #
-    # # end
+    it "finds the work with more votes" do
+      user = users(:yellowlion)
+      user2 = users(:rabbit)
+      user3 = users(:littlepony)
+      vote = Vote.create(work: works(:harrypotter), user: user)
+      vote1 = Vote.create(work: works(:harrypotter), user: user2)
+      vote2 = Vote.create(work: works(:best_movie), user: user3)
+
+      Work.top.title.must_equal works(:harrypotter).title
+    end
 
   end
 end
