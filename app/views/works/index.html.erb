@@ -1,37 +1,54 @@
-List of works
+<h3>List of works</h3>
 
 <% @types.each do |type| %>
-<%= type.capitalize %>s
-<table>
+<section class="media-table">
+<h4>  <%= type.capitalize %>s</h4>
+  <table>
+    <thead>
+      <tr>
+    <th width="80">
+      Votes
+    </th>
+    <th>
+      Title
+    </th>
+    <th>
+      Created By
+    </th>
+    <th width="100">
+      Published
+    </th>
+    <th width="100">
+      Upvote
+    </th>
+  </tr>
+</thead>
 
-  <th>
-    Votes
-  </th>
-  <th>
-    Title
-  </th>
-  <th>
-    Created By
-  </th>
-  <th>
-    Published
-  </th>
-  <th>
-    Upvote
-  </th>
+    <tbody>
+    <% Work.sort.each do |work| %>
+    <% if work.category == type %>
+    <tr>
+      <td>
 
-  <% Work.sort.each do |work| %>
-  <% if work.category == type %>
+    <%= work.votes.count %>
+  </td>
+  <td>
 
-  <%= work.votes.count %>
-
-  <%=link_to work.title, work_path(work.id) %>
-
-  <%=work.created_by%>
-
-  <%=work.year%>
-
-  <%= link_to "Upvote", vote_path(work.id),  method: :post %>
-  <%end%>
-  <%end%>
-  <%end%>
+    <%=link_to work.title, work_path(work.id) %>
+  </td>
+  <td>
+    <%=work.created_by%>
+  </td>
+  <td>
+    <%=work.year%>
+  </td>
+  <td>
+    <%= link_to "Upvote", vote_path(work.id),  method: :post, class:"button" %>
+  </td>
+          </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+  </table>
+</section>
+<% end %>

@@ -18,9 +18,7 @@
           <%= link_to "View all works", works_path, class:"button"  %>
           <%= link_to "Add a new work", new_work_path, class:"button"  %>
           <%= link_to "View all users", users_path, class:"button"  %>
-          <%= link_to "Log in", login_path, class:"button"%>
-    <%= yield %>
-
+     <%= yield %>
     <% if session[:logged_in]%>
           <% @user = session[:logged_in]%>
           <%= link_to "Logged in as #{@user['name']}", user_path(@user['id']), class:"button" %>
@@ -28,6 +26,8 @@
         <%else%>
           <%= link_to "Log in", login_path, class:"button"%>
         <%end%>
+
+
 
   </body>
 </html>
