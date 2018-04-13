@@ -17,6 +17,9 @@
 *= require_self
 
 */
+body {
+  font-family: "Gueda", sans-serif;
+}
 body small {
   color: white;
   font-weight: bold;
@@ -25,8 +28,9 @@ body small {
 header {
 max-width: 100%;
 background-color: #b2e0db;
+border-bottom: 10px solid white;
 margin-bottom: 10px;
-padding: 25px, 20px, 10px, 20px;
+padding: 25px 20px 10px 20px;
 text-align: center;
 }
 
@@ -54,9 +58,21 @@ margin-left: auto;
 font-size: 2.5rem;
 line-height: 1.4;
 }
+h3 {
+  color: #26a69a;
+  font-weight: bold;
+  font-size: 1.9375rem
+}
+h4{
+  font-weight: bold;
+}
 a.button {
 background-color: #26a69a;
 }
 a {
   color: #26a69a;
+}
+
+tbody {
+  padding: 0.5rem 0.625rem 0.625rem;
 }
