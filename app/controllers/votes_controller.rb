@@ -17,9 +17,14 @@ class VotesController < ApplicationController
     @vote = Vote.new(user_id: session[:user_id], work_id: params[:work_id])
 
     if @vote.save #it worked
-      redirect_to work_path(@vote.work_id)
+      flash[:success] = "Successfully upvoted"
     else
-      redirect_to works_path
+      if @vote.id.nil?
+        flash[:fail] = "You must be logged in to vote."
+      else
+        flash.now[:alert] = @vote.errors
+      end
+      redirect_to login_form_path
     end
   end
 

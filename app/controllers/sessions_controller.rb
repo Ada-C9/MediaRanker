@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     else
       @user = User.create name: params[:user][:name]
       session[:user_id] = @user.id
-      flash[:success] = "Successfully logged in as user #{@user.name}."
+      if !@user.id.nil?
+        flash[:success] = "Successfully logged in as user #{@user.name}."
+      else
+        flash[:alert] = @user.errors
+      end
     end
     redirect_to root_path
   end

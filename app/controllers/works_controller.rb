@@ -17,9 +17,9 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save #it worked
-      redirect_to works_path
+      flash[:success] = "#{@work.title} succesfully created!"
     else
-      render :new
+      flash.now[:alert] = @work.errors
     end
   end
 
@@ -38,8 +38,9 @@ class WorksController < ApplicationController
       # @book.update(title: params[:book][:title], author: params[:book][:author], description: params[:book][:description])
 
       if @work.update(work_params)
-        redirect_to work_path(@work.id)
+        flash[:success] = "#{@work.title} succesfully edited!"
       else
+        flash.now[:alert] = @work.errors
         render :edit
       end
     else
@@ -50,10 +51,10 @@ class WorksController < ApplicationController
   def destroy
     id = params[:id]
     @work = Work.find(id)
-
     if @work.destroy #it worked
-      redirect_to works_path
+      flash[:success] = "#{@work.title} deleted"
     else
+      flash.now[:alert] = @work.errors
       render :destroy
     end
   end
