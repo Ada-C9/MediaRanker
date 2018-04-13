@@ -2,7 +2,7 @@
 <table>
 
   <thead>
-    <tr>
+    <tr class="users-table">
       <th>
         Username
       </th>
@@ -17,7 +17,7 @@
 
   <tbody>
     <% @users.each do |user| %>
-    <tr>
+    <tr class="users-table">
       <td>
         <%= link_to user.username, user_path(user) %>
       </td>
