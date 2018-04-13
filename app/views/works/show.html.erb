@@ -9,7 +9,7 @@
   <%= link_to("Back to media ranks", work_path(@work) ,class: "button") %>
   <%= link_to("Edit", edit_work_path(@work), class: "button") %>
   <%= link_to("Upvote", upvote_path(@work), class: "button") %>
-  <%= link_to("Delete", work_path(@work.id), class: "button", method: :delete, data: {confirm: "Are you sure you want to delete Work #{@work.title}"}) %>
+  <%= link_to("Delete", work_path(@work.id), class: "button alert", method: :delete, data: {confirm: "Are you sure you want to delete Work #{@work.title}"}) %>
 </section>
 </article>
 </main>

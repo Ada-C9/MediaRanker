@@ -12,9 +12,10 @@
  *= require normalize-rails
 
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+
 
  */
  .nav ul {
@@ -94,6 +95,9 @@
 
   body, h1, h2, h3, h4 {
     font-family: "Gudea", sans-serif;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
 }
 
 main a {
