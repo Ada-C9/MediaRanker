@@ -8,8 +8,8 @@
 <ul>
   <li><%= link_to "Back to media ranks", root_path%>  </li>
   <li><%= link_to "Edit", edit_work_path%>  </li>
-  <li><%= link_to "Upvote", new_vote_path(@work[:id])%>  </li>
-  <li><%= link_to "Delete", delete_work_path, method: :delete%>  </li>
+  <li><%= link_to "Upvote", new_work_vote_path(@work.id)%>  </li>
+  <li><%= link_to "Delete", work_path(@work.id), method: :delete%>  </li>
 </ul>
 
 
@@ -23,10 +23,11 @@
     </tr>
   </thead>
   <tbody>
+    <% @work.votes.each do |vote| %>
     <tr>
-      <% @work.votes.each do |vote| %>
 
-      <td><%= vote.user %></td>
+
+      <td><%= vote.user.name %></td>
       <td><%= vote.created_at.strftime("%B %d, %Y") %></td>
       <% end %>
     </tr>

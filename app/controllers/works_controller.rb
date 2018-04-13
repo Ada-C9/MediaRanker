@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
+  before_action :find_active_user
   # before_action :find_user
   def index
     # @media = Work.all
@@ -52,6 +53,9 @@ class WorksController < ApplicationController
 
   def destroy
     if @work
+      @work.votes.each do |vote|
+        vote.destroy
+      end
       @work.destroy
       flash[:sucess] = "Successfully destroyed #{@work.category} #{@work.title} "
     else

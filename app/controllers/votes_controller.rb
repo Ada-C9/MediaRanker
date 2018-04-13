@@ -1,4 +1,7 @@
 class VotesController < ApplicationController
+  before_action :find_vote, only: [:show, :edit, :update, :destroy]
+  before_action :find_active_user
+
   def index
   end
 
@@ -7,14 +10,17 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-      @vote.creator = Work.find(params[:creator_id])
+    # @vote.creator = Work.find(params[:creator_id])
+    create
   end
 
   def create
-    @vote = Vote.new(work_id: @work.id)
-    @vote.creator = Work.find(params[:creator_id])
+    @vote = Vote.create(user_id: @user.id, work_id: params[:work_id])
+    # @vote = Vote.new
+    # @vote.creator = Work.find(params[:creator_id])
+    # @vote.creator = @work.creator
 
-    if @work.save
+    if @vote.save
       flash[:sucess] = "Vote saved"
       redirect_to works_path
     else
@@ -30,5 +36,9 @@ class VotesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def find_vote
+    # @vote = Vote.find_by_id(params[:id])
   end
 end
