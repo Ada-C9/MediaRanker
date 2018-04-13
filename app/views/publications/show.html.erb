@@ -14,7 +14,7 @@
 </article>
 
 <section>
-  <h3><%= @publication.votes.count %> Votes for this <%= @publication.category %></h3>
+  <h3><% total = @publication.votes %> <%= total.count %> Votes for this <%= @publication.category %></h3>
   <table>
     <thead>
       <tr>
