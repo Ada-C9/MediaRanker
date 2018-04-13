@@ -3,7 +3,7 @@ class Work < ApplicationRecord
   has_many :voted_users, through: :votes, source: :user
 
   validates :title, presence: true,
-                  uniqueness: { scope: :category }
+                  uniqueness: { scope: :creator}
 
   validates :category,  presence: true,
                       inclusion: { in: %w(album book movie) }
