@@ -11,12 +11,14 @@ class VotesController < ApplicationController
 
     if @vote.save
       flash[:success] = "Successfully upvoted!"
-      redirect_to works_path
     else
-
-      flash[:failure] = "Could not upvote.You have already voted for this work"
-      redirect_to works_path
+      if @vote.user_id == nil
+        flash[:failure] = "You must log in to do that!"
+      else
+        flash[:failure] = "Could not upvote.You have already voted for this work"
+      end
     end
+    redirect_to works_path
   end
 
   private

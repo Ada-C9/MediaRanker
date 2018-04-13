@@ -42,5 +42,22 @@ describe Work do
 
     end
 
+    it "finds the top ten albums" do
+    end
+
+    it "finds the top ten movies" do
+    end
+
+    it "find the top ten books" do
+    end
+
+    it "no models with category" do
+
+    end
+
+    it "if there is a tie" do
+      
+    end
+
   end
 end
