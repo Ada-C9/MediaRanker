@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @this_user.id
       flash[:success] = "Successfully logged in as existing user #{@this_user.name}"
     else
-      @this_user = User.new(name: name)
+      @this_user = User.create(name: name)
       if @this_user.name.length < 1
         flash[:notice] = "A problem occurred: Could not login"
         flash[:alert] = { username: "can't be blank"}
