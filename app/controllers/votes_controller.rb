@@ -12,19 +12,19 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new
-    @vote.work_id = Work.find_by(id: params[:work_id]).id
-    @vote.user_id = @user.id
-    if @vote.save
-      flash[:success] = "Successfully upvoted!"
-      redirect_back fallback_location: :works_path
+    if @user
+      @vote = Vote.new
+      @vote.work_id = Work.find_by(id: params[:work_id]).id
+      @vote.user_id = @user.id
+      if @vote.save
+        flash[:success] = "Successfully upvoted!"
+        redirect_back fallback_location: :works_path
+      end
     else
-      flash.now[:alert] = @vote.errors
-      render :new
+      flash[:error] = "You must be logged in to vote."
+      redirect_back fallback_location: :works_path
     end
   end
-
-    # need to add conditional that checks if user is logged in, in order to be able to upvote...and use flash notices to remind user to login first
 
   def edit
   end
@@ -34,7 +34,6 @@ class VotesController < ApplicationController
 
   def destroy
   end
-
 
 
 end
