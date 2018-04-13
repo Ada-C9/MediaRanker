@@ -18,9 +18,6 @@
 
 */
 
-a, h3 {
-  color: #26A69A;
-}
 
 h1, h2, h3, h4, h5 {
   font-weight: bold;
@@ -28,6 +25,11 @@ h1, h2, h3, h4, h5 {
 
 body, h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
+}
+
+@media print, screen and (min-width: 40em)
+h3, .h3 {
+  font-size: 1.9375rem;
 }
 
 .button {
@@ -39,25 +41,12 @@ body, h1, h2, h3, h4, h5 {
   background-color: #0C8076;
 }
 
-/* .page-header .nav {
-display: inline-block;
-list-style-type: none;
-padding: 0;
-margin: 2em 0;
-} */
-
 .page-header {
   max-width: 100%;
   background-color: #B2DFDB;
   border-bottom: 1px solid #EEEEEE;
   margin-bottom: 10px;
   padding: 25px 20px 10px 20px;
-}
-
-.row {
-  max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .page-header h2 a {
@@ -67,10 +56,38 @@ margin: 2em 0;
   border-right: white 2px solid;
 }
 
+
+section .status {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
+}
+
+
+section .status.failure h3, .status.success h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+section .status.success h3 {
+  color: #8a8a8a;
+}
+
+section .row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 a {
   line-height: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+a, h3 {
+  color: #26A69A;
 }
 
 .page-header .small-header {
@@ -113,8 +130,4 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-}
-
-.float-right {
-  float: right !important;
 }

@@ -23,5 +23,13 @@ class Work < ApplicationRecord
     return new_array
   end
 
+  def top_work
+    works.each do |work|
+      votes.each do |vote|
+        top = work.vote.count.max
+      end
+    end
+    return top
+  end
 
 end
