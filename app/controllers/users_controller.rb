@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def show
     @this_user = @user
-
   end
 
   def create

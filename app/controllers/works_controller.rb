@@ -18,7 +18,7 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      flash[:success] = "Item added"
+      flash[:success] = "Item added!"
       redirect_to works_path
     else
       flash.now[:alert] = @work.errors

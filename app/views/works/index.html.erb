@@ -36,7 +36,11 @@
           <%= album.publication_year %>
         </td>
         <td>
-          upvote button
+          <% if album.id != @user.id %>
+            <%= link_to "Upvote", new_vote_path, :class => "button" %>
+            <% else %>
+            <span class="button">Already upvoted</span>
+            <% end %>
         </td>
       </tr>
       <% end %>
@@ -130,10 +134,10 @@
   <nav>
     <ul>
       <li>
-        <%= link_to "View top media", root_path %>
+        <%= link_to "View top media", root_path, :class => "button" %>
       </li>
       <li>
-        <%= link_to "Add a new work", new_work_path %>
+        <%= link_to "Add a new work", new_work_path, :class => "button" %>
       </li>
     </ul>
   </nav>
