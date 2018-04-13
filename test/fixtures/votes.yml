@@ -1,0 +1,161 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+# cardcaptor - most votes at 10
+vote1:
+  user: usako
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,1,1) %>
+vote2:
+  user: mamochan
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,2,2) %>
+vote3:
+  user: sailorv
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,3,3) %>
+vote4:
+  user: chibiusa
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,4,4) %>
+vote5:
+  user: sailormars
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,5,5) %>
+vote6:
+  user: sailorm
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,6,6) %>
+vote7:
+  user: sailorj
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,7,7) %>
+vote8:
+  user: sailoru
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,8,8) %>
+vote9:
+  user: sailorp
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,9,9) %>
+vote10:
+  user: sailorn
+  publication: cardcaptor
+  created_at: <%= DateTime.new(2016,10,1) %>
+# books order based votes - with 6 votes
+
+vote31:
+  user: usako
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+vote32:
+  user: mamochan
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+vote33:
+  user: sailorv
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+vote34:
+  user: chibiusa
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+vote35:
+  user: sailormars
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+vote36:
+  user: sailorm
+  publication: sailormoon
+  created_at: <%= DateTime.new(2017,2,10) %>
+
+# second votes - fruits with 5 votes
+vote11:
+  user: usako
+  publication: fruits
+  created_at: <%= DateTime.new(2017,3,10) %>
+vote12:
+  user: mamochan
+  publication: fruits
+  created_at: <%= DateTime.new(2017,3,10) %>
+vote13:
+  user: sailorm
+  publication: fruits
+  created_at: <%= DateTime.new(2017,3,10) %>
+vote14:
+  user: sailorv
+  publication: fruits
+  created_at: <%= DateTime.new(2017,3,10) %>
+vote15:
+  user: sailorn
+  publication: fruits
+  created_at: <%= DateTime.new(2017,3,10) %>
+
+# third place - bleach with 4
+
+vote16:
+  user: chibiusa
+  publication: bleach
+  created_at: <%= DateTime.new(2017,4,10) %>
+vote17:
+  user: usako
+  publication: bleach
+  created_at: <%= DateTime.new(2017,4,10) %>
+vote18:
+  user: sailoru
+  publication: bleach
+  created_at: <%= DateTime.new(2017,4,10) %>
+vote19:
+  user: sailorp
+  publication: bleach
+  created_at: <%= DateTime.new(2017,4,10) %>
+
+# fourth place hostclub - with 3
+vote20:
+  user: usako
+  publication: hostclub
+  created_at: <%= DateTime.new(2017,5,10) %>
+vote21:
+  user: chibiusa
+  publication: hostclub
+  created_at: <%= DateTime.new(2017,5,10) %>
+vote22:
+  user: sailorj
+  publication: hostclub
+  created_at: <%= DateTime.new(2017,5,10) %>
+
+# fifth and sixth - with 2
+vote23:
+  user: usako
+  publication: tsubasa
+  created_at: <%= DateTime.new(2017,6,10) %>
+vote24:
+  user: chibiusa
+  publication: tsubasa
+  created_at: <%= DateTime.new(2017,6,10) %>
+vote25:
+  user: usako
+  publication: dgray
+  created_at: <%= DateTime.new(2017,7,10) %>
+vote26:
+  user: mamochan
+  publication: dgray
+  created_at: <%= DateTime.new(2017,7,10) %>
+
+# sixth - tenth place - with 1
+vote27:
+  user: usako
+  publication: inuyasha
+  created_at: <%= DateTime.new(2017,8,10) %>
+vote28:
+  user: usako
+  publication: mars
+  created_at: <%= DateTime.new(2017,9,10) %>
+vote29:
+  user: usako
+  publication: rurouni
+  created_at: <%= DateTime.new(2017,10,10) %>

@@ -1,0 +1,156 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#albums, total is 11
+sailorstars:
+  category: album
+  title: Sailor Moon Stars
+  creator: Naoko Takeuchi
+  publication_year: 1996
+  description:
+sailorcrystal:
+  category: album
+  title: Sailor Moon Crystal
+  creator: Naoko Takeuchi
+  publication_year: 2014
+  description: Oh no....
+  created_at: <%= DateTime.new(2016,1,1) %>
+cardcaptor:
+  category: album
+  title: Cardcaptor Sakura
+  creator: Madhouse
+  publication_year: 1998
+  description: Absolutely amazing magical adventures
+yuyuhakusho:
+  category: album
+  title: Yu Yu Hakusho
+  creator:
+  publication_year: 1992
+  description: adventures of Yusuke, the spirit detective
+trigun:
+  category: album
+  title: Trigun
+  creator: Madhouse
+  publication_year: 1998
+  description: Western scifi anime
+deadlysins:
+  category: album
+  title: Seven Deadly Sins
+  creator: A-1 Pictures
+  publication_year: 2014
+  description: Hilarious fantasy with demons, angels, and fairies
+alchemist:
+  category: album
+  title: Fullmetal Alchemist Brotherhood
+  creator: Bones
+  publication_year: 2009
+  description: One of the best things ever...
+elfen:
+  category: album
+  title: Elfen Lied
+  creator:
+  publication_year:
+  description: sadness TT_TT
+hellsing:
+  category: album
+  title: Hellsing
+  creator: Gonzo
+  publication_year: 2001
+  description:
+geass:
+  category: album
+  title: Code Geass
+  creator: Sunrise
+  publication_year: 2006
+  description:
+bebop:
+  category: album
+  title: Cowboy Bepop
+  creator: Sunrise
+  publication_year:
+  description: classic
+  created_at: <%= DateTime.new(2016,2,1) %>
+
+# book, total is 10
+sailormoon:
+  category: book
+  title: Sailor Moon
+  creator: Naoko Takeuchi
+  publication_year: 1992
+  description: Magical girl goes on adventures...
+codenamev:
+  category: book
+  title: Codename Sailor V
+  creator: Naoko Takeuchi
+  publication_year: 1991
+  description: Someone should know about this....
+tsubasa:
+  category: book
+  title: Tsubasa Resevoir Chronicles
+  creator: Clamp
+  publication_year: 2003
+  description: Freaking I don't even know...
+bleach:
+  category: book
+  title: Bleach
+  creator: Tite Kubo
+  publication_year:
+  description: Shinigami
+fruits:
+  category: book
+  title: Fruits Basket
+  creator: Natsuki Takaya
+  publication_year:
+  description: Chinese zodiac fantasy high school romance
+rurouni:
+  category: book
+  title: Rurouni Kenshin
+  creator: Nobuhiro Watsuki
+  publication_year: 1994
+  description:
+hostclub:
+  category: book
+  title: Ouran High School Host Club
+  creator: Bisco Hatori
+  publication_year: 2002
+  description:
+dgray:
+  category: book
+  title: D. Gray-man
+  creator: Katsura Hoshino
+  publication_year: 2004
+  description: Will you ever end???
+inuyasha:
+  category: book
+  title: InuYasha
+  creator: Rumiko Takahashi
+  publication_year: 1996
+  description:
+mars:
+  category: book
+  title: Mars
+  creator: Fuyumi Soryo
+  publication_year: 1996
+  description:
+
+# movies, total is 3
+spirited:
+  category: movie
+  title: Spirited Away
+  creator: Hayao Miyazaki
+  publication_year: 2002
+  description: careful what paths you follow
+  created_at: <%= DateTime.new(2017,1,27)%>
+appleseed:
+  category: movie
+  title: Appleseed
+  creator:
+  publication_year: 2004
+  description:
+  created_at: <%= DateTime.new(2017,3,18)%>
+vampire:
+  category: movie
+  title: Vampire Hunter D
+  creator:
+  publication_year: 1985
+  description: Another classic
+  created_at: <%= DateTime.new(2017,6,13)%>

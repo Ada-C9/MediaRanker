@@ -1,0 +1,31 @@
+<article class="publication-details">
+  <h3><%= @publication.title %></h3>
+  <p>Created by: <%= @publication.creator %></p>
+  <p>Published: <%= @publication.publication_year %></p>
+  <p><%= @publication.description %></p>
+  <section>
+    <%= link_to "Back to media ranks", root_path, class: "button" %>
+    <%= link_to "Edit", edit_publication_path(@publication.id), class: "button" %>
+    <%= link_to "Upvote", publication_votes_path(@publication.id), method: :post, class: "button" %>
+    <%= link_to "Delete", publication_path(@publication.id), method: :delete, class: "alert button", data: {confirm: "Are you sure?"}%>
+  </section>
+</article>
+<article class="voting-users">
+  <h3><%= @publication.find_total_votes %> Votes for this <%= @publication.category.capitalize %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @publication.votes.each do | vote | %>
+        <tr>
+          <td><%= link_to vote.user.name, user_path(vote.user_id) %></td>
+          <td><%= vote.created_at.strftime("%b %d, %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</article>

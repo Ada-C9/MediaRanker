@@ -1,0 +1,28 @@
+<h3>User Summary: <%= link_to @user_model.name, user_path(@user_model.id)%></h3>
+<p>Joined site <%= @user_model.created_at.strftime("%b %d, %Y") %></p>
+<h4>Votes</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_model.votes.each do | vote | %>
+      <tr>
+        <% publication = vote.publication %>
+        <td><%= link_to publication.title, publication_path(publication.id) %></td>
+        <td><%= publication.creator %></td>
+        <td><%= publication.publication_year %></td>
+        <td><%= publication.category.capitalize %></td>
+        <td><%= vote.created_at.strftime("%b %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "See all Users", users_path, class: "button" %>
+<%= link_to "Back to Top Media", root_path, class: "button" %>

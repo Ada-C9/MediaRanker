@@ -1,0 +1,32 @@
+<h3>List of works</h3>
+<section class="category-table">
+  <% categories = Publication.return_all_categories.reverse %>
+  <% categories.each do |category| %>
+    <h4><%= category.capitalize %>s</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Votes</th>
+          <th>Title</th>
+          <th>Created By</th>
+          <th>Published</th>
+          <th>Upvote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% publications = sort_by_votes(Publication.where(category: category)) %>
+        <% publications.each do | publication | %>
+        <tr>
+          <td><%= publication.find_total_votes %></td>
+          <td><%= link_to publication.title, publication_path(publication.id) %></td>
+          <td><%= publication.creator %></td>
+          <td><%= publication.publication_year %></td>
+          <td><%= link_to "Upvote", publication_votes_path(publication.id), method: :post, class: "button upvote" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</section>
+<%= link_to "View top media", root_path, class: "button" %>
+<%= link_to "Add a new work", new_publication_path, class: "button" %>
