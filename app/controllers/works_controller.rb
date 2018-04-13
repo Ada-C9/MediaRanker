@@ -15,9 +15,9 @@ class WorksController < ApplicationController
     # @work.published.to_i
     if @work.save
       flash[:success] = "#{@work.title} created"
-      redirect_to works_path
+      redirect_to works_pathc
     else
-      flash[:alert] = {"#{@work.title}" => "creation failed"}
+      flash[:alert] = "Creation failed"
       render :new
     end
   end
@@ -33,7 +33,7 @@ class WorksController < ApplicationController
         flash[:success] = "#{@work.title} updated"
         redirect_to work_path(@work.id)
       else
-        flash[:alert] = {"#{@work.title}" => "failed to update"}
+        flash[:alert] = "#{@work.title} failed to update"
         # flash[:alert] = @work.errors
         render :edit
       end
@@ -67,9 +67,14 @@ class WorksController < ApplicationController
     if current_user != nil
       work_id = @work.id
       user_id = session[:user_id]
-      @vote = Vote.create(work_id: work_id, user_id: user_id)
-      flash[:success] = "Successfully Voted!"
-      redirect_back fallback_location: :works_path
+      @vote = Vote.new(work_id: work_id, user_id: user_id)
+      if @vote.save
+        flash[:success] = "Successfully Voted!"
+        redirect_back fallback_location: :works_path
+      else
+        flash[:alert] = "Could not upvote"
+        redirect_back fallback_location: :works_path
+      end
     else
       flash[:alert] = "You must login to vote"
       redirect_to work_path(@work.id)
