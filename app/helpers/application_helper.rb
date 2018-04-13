@@ -9,5 +9,9 @@ def define_user(model)
   end
 end
 
+def format_date(date)
+  date.strftime("%m/%d/%Y")
+end
+
 
 end

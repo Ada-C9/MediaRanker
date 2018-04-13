@@ -1,5 +1,5 @@
 <h3>User Summary: <%= link_to @user.name, user_path(@user) %></h3>
-<p>Joined site <%=  @user.created_at %></p>
+<p>Joined site <%=  @format_date(user.created_at) %></p>
 <!-- dry up with view helper and variable partial rendering -->
 <h4>Votes</h4>
 <table>
@@ -19,7 +19,7 @@
         <td><%= vote.work.creator%></td>
         <td><%= vote.work.publication_year%></td>
         <td><%= vote.work.category.capitalize%></td>
-        <td><%= vote.created_at %></td>
+        <td><%= format_date(vote.created_at) %></td>
       </tr>
     <% end %>
   </tbody>
