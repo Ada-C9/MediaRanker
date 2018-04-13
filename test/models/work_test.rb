@@ -5,7 +5,6 @@ describe Work do
   #   @post = Post.create!(name:'Awesome Post')
   # end
   before do
-    # @movies = Work.all_movies
     @work = works(:four_hour_chef)
   end
 

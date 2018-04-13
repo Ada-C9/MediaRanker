@@ -36,4 +36,7 @@ ActiveRecord::Schema.define(version: 20180412222637) do
     t.string "category"
   end
 
+  add_foreign_key :votes, :works
+  add_foreign_key :votes, :users 
+
 end
