@@ -48,19 +48,19 @@ class InstagramsController < ApplicationController
   def upvote
     if session[:user_id]
       user_id = session[:user_id]
-      @vote = Vote.new(user_id: user_id, insta_id: params[:instagram_id])
 
-      if @vote.save
+      @vote = Vote.new(user_id: user_id, instagram_id: params[:instagram_id], subreddit_id: nil, twitter_id: nil)
+
+      if @vote.save!
         flash[:success] = "You voted!"
         redirect_to root_path
       else
-        flash[:failure] = "You couldn't vote!"
+        flash[:failure] = "You couldn't vote! #{@vote} #{@vote.instagram_id} #{@vote.user_id}"
         redirect_to instagrams_path
       end
     else
-      flash[:failure] = "You need to be logged in to vote!"
+      flash.now[:failure] = "You need to be logged in to vote!"
     end
-
   end
 
 

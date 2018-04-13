@@ -7,5 +7,6 @@
     <%= link_to "Edit", edit_subreddit_path(@subreddit) %>
     <%= link_to("Delete", subreddit_path(@subreddit), method: :delete, data: { confirm: "Are you sure you want to delete this subreddit?" }) %>
     <%= link_to "List of subreddits", subreddits_path %>
+      <%=link_to "Upvote", subreddit_upvote_path(@subreddit), method: :post %>
   </li>
 </section>

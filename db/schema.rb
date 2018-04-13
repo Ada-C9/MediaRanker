@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411021326) do
+ActiveRecord::Schema.define(version: 20180413001630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,16 @@ ActiveRecord::Schema.define(version: 20180411021326) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "insta_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "twitter_id"
+    t.bigint "instagram_id"
+    t.bigint "subreddit_id"
+    t.bigint "user_id"
+    t.index ["instagram_id"], name: "index_votes_on_instagram_id"
+    t.index ["subreddit_id"], name: "index_votes_on_subreddit_id"
+    t.index ["twitter_id"], name: "index_votes_on_twitter_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   create_table "works", force: :cascade do |t|
@@ -64,4 +70,8 @@ ActiveRecord::Schema.define(version: 20180411021326) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "votes", "instagrams"
+  add_foreign_key "votes", "subreddits"
+  add_foreign_key "votes", "twitters"
+  add_foreign_key "votes", "users"
 end

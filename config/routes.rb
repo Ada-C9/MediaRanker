@@ -24,9 +24,13 @@ Rails.application.routes.draw do
   end
 
 
-  resources :twitters
+  resources :twitters do
+    post '/upvote', to: 'twitters#upvote', as: 'upvote'
+  end
 
-  resources :subreddits
+  resources :subreddits do
+    post '/upvote', to: 'subreddits#upvote', as: 'upvote'
+  end
 
   resources :users do
     resources :votes, only: [:index, :new, :create]
