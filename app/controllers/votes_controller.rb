@@ -7,15 +7,13 @@ class VotesController < ApplicationController
   end
 
   def new
-    new_vote = Vote.new(user_id: @user.id)
-    redirect_to works_path
   end
 
   def show
   end
 
   def create
-    @vote = Vote.new(new_vote)
+    @vote = Vote.new(user_id: @user.id, work_id: params[:work_id])
     if @vote.save
       flash[:success] = "Successfully upvoted!"
       redirect_to works_path

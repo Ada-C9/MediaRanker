@@ -24,7 +24,8 @@
       <% @works.where(category: "album").each do |album| %>
       <tr>
         <td>
-          num votes
+          <% votes = Vote.where(work_id: album.id).all %>
+          <%= votes.count %>
         </td>
         <td>
           <%= link_to album.title, work_path(album.id) %>
@@ -36,11 +37,7 @@
           <%= album.publication_year %>
         </td>
         <td>
-          <% if album.id != @user.id %>
-            <%= link_to "Upvote", new_vote_path, :class => "button" %>
-            <% else %>
-            <span class="button">Already upvoted</span>
-            <% end %>
+          <%= link_to "Upvote", work_votes_path(album.id), method: :post, :class => "button" %>
         </td>
       </tr>
       <% end %>
