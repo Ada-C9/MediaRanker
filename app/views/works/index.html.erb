@@ -24,8 +24,7 @@
       <% @works.where(category: "album").each do |album| %>
       <tr>
         <td>
-          <% votes = Vote.where(work_id: album.id).all %>
-          <%= votes.count %>
+          <%= votes = Vote.where(work_id: album.id).all.count %>
         </td>
         <td>
           <%= link_to album.title, work_path(album.id) %>
@@ -37,7 +36,12 @@
           <%= album.publication_year %>
         </td>
         <td>
+          <% votes = Vote.where("user_id = ? AND work_id = ?", @user.id, album.id) %>
+          <% if votes.count > 0 %>
+          <span class="button orange">Upvoted</span>
+          <% else %>
           <%= link_to "Upvote", work_votes_path(album.id), method: :post, :class => "button" %>
+          <% end %>
         </td>
       </tr>
       <% end %>

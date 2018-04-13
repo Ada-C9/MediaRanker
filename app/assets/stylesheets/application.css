@@ -42,6 +42,10 @@
     }
 }
 
+.button.orange {
+  background-color: #ffbf80;
+}
+
 
 html {
   font-family: sans-serif;
