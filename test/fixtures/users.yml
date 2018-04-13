@@ -14,8 +14,6 @@ kelsey:
   name: Kelsey Jannings
 margot:
   name: Character Actress Margot Martindale
-pinky:
-  name: Pinky Penguin
 sarah:
   name: Sarah Lynn
 ana:
@@ -30,3 +28,5 @@ jill:
   name: Jill Pill
 vincent:
   name: Vincent Adultman
+cuddlywhiskers:
+  name: Cuddlywhiskers
