@@ -5,7 +5,12 @@
      <h3><span class="media-spotlight-header">Media Spotlight:</span>
        <% if @spotlight != nil %>
         <%= link_to @spotlight.title, publication_path(@spotlight.id) %> by <%= @spotlight.creator %></h3>
-        <p><%= @spotlight.votes.count %> votes - <%= @spotlight.description %></p>
+        <p><% total = @spotlight.votes.count %>
+          <% if total == 1 %>
+            <%= total %> vote - <%= @spotlight.description %></p>
+          <% else %>
+            <%= total %> votes - <%= @spotlight.description %></p>
+          <% end %>
       <% end %>
  </section>
 
@@ -21,7 +26,12 @@
         <li><h4>
           <%= link_to movie.title, publication_path(movie.id) %>
           <small>by <%= movie.creator%></small></h4>
-          <p><%= movie.votes.count %> votes</p>
+            <% total = movie.votes.count %>
+            <% if total == 1 %>
+              <p><%= total %> vote</p>
+            <% else %>
+              <p><%= total %> votes</p>
+            <% end %>
         </li>
       <% end %>
     </ul>
@@ -35,7 +45,12 @@
         <li><h4>
           <%= link_to book.title, publication_path(book.id) %>
           <small>by <%= book.creator%></small></h4>
-          <p><%= book.votes.count %> votes</p>
+          <% total = book.votes.count %>
+          <% if total == 1 %>
+            <p><%= total %> vote</p>
+          <% else %>
+            <p><%= total %> votes</p>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -49,7 +64,12 @@
         <li><h4>
           <%= link_to album.title, publication_path(album.id) %>
           <small>by <%= album.creator%></small></h4>
-          <p><%= album.votes.count %> votes</p>
+          <% total = album.votes.count %>
+          <% if total == 1 %>
+            <p><%= total %> vote</p>
+          <% else %>
+            <p><%= total %> votes</p>
+          <% end %>
         </li>
       <% end %>
     </ul>

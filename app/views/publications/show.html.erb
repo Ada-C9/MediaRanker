@@ -1,35 +1,44 @@
-<article class="media-details">
-  <h3><%= @publication.title %></h3>
-  <p>Created by: <%= @publication.creator %></p>
-  <p>Published: <%= @publication.publication_year %></p>
-  <p>Description: <%= @publication.description %></p>
+<main class="show">
+  <article class="media-details">
+    <h3><%= @publication.title %></h3>
+    <p>Created by: <%= @publication.creator %></p>
+    <p>Published: <%= @publication.publication_year %></p>
+    <p>Description: <%= @publication.description %></p>
+    <section>
+
+      <%= link_to "Back to media ranks", main_path, class: "button" %>
+      <%= link_to "Edit", edit_publication_path(@publication.id), class: "button" %>
+      <%= link_to "Upvote", new_publication_vote_path(@publication.id), class: "button" %>
+      <%= link_to "Delete", publication_path, method: :delete, :data => {:confirm => 'Are you sure?'}, class: "alert button" %>
+
+    </section>
+  </article>
+
   <section>
-
-    <%= link_to "Back to media ranks", main_path, class: "button" %>
-    <%= link_to "Edit", edit_publication_path(@publication.id), class: "button" %>
-    <%= link_to "Upvote", new_publication_vote_path(@publication.id), class: "button" %>
-    <%= link_to "Delete", publication_path, method: :delete, :data => {:confirm => 'Are you sure?'}, class: "alert button" %>
-
-  </section>
-</article>
-
-<section>
-  <h3><%= @publication.votes.count %> Votes for this <%= @publication.category %></h3>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @publication.votes.each do |vote| %>
-       <% user = User.find(vote.user_id) %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= vote.get_date %></td>
-        </tr>
+    <h3>
+      <% total = @publication.votes.count %>
+      <% if total == 1 %>
+        <%= total %> Vote for this <%= @publication.category %>
+      <% else %>
+        <%= total %> Votes for this <%= @publication.category %>
       <% end %>
-    </tbody>
-  </table>
-</section>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @publication.votes.each do |vote| %>
+         <% user = User.find(vote.user_id) %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= vote.get_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</main>
