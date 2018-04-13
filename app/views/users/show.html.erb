@@ -1,8 +1,9 @@
 User Summary: <%= @user.name %>
 Joined site <%=@user.created_at.to_datetime.to_formatted_s(:long_ordinal)%>
 
-<h1>Votes</h1>
+<h4>Votes</h4>
 <table>
+  <thead>
     <tr>
       <th>
         Media Title
@@ -20,6 +21,7 @@ Joined site <%=@user.created_at.to_datetime.to_formatted_s(:long_ordinal)%>
         Voted On
       </th>
     </tr>
+  </thead>
   <tbody>
 
 <%@user.votes.each do |vote| %>
@@ -44,7 +46,8 @@ Joined site <%=@user.created_at.to_datetime.to_formatted_s(:long_ordinal)%>
 
 
 
-
+</tbody>
+</table>
 
 
       <%= link_to "See all Users", users_path, class:"button"  %>
