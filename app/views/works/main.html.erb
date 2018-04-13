@@ -2,8 +2,13 @@
   <h3>
     <span class="media-spotlight-header">Media Spotlight:
     </span>
-    <span class="most-popular"><%= link_to("#{@works.first.title}") %></span>
-    by <%= @works.first.creator %>
+    <span class="most-popular">
+      <% if @works.first != nil %>
+        <%= link_to("#{@works.first.title}") %></span>
+        by <%= @works.first.creator %>
+      <% else %>
+        <%= link_to("Add some works!", new_work_path) %>
+      <% end %>
   </h3>
   <p>vote count - description of work</p>
 </section>
