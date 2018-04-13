@@ -1,6 +1,6 @@
 class Work < ApplicationRecord
 
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   validates :title, presence: {message: "can't be blank"}
   validates :title, uniqueness: {message:"has already been taken"}

@@ -1,17 +1,11 @@
+
+<%= render partial: "layouts/error_messages", locals: { model: @user } %>
 <h2 class="login">Log In</h2>
 
-<!-- <%= form_for @user, url: login_path do |f| %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.submit "Login In" %>
-
-<% end%> -->
 <%= form_tag do %>
 
 <%= label_tag(:name, "User Name") %>
-<%= text_field_tag :name, params[:name], required: true %>
+<%= text_field_tag :name, params[:name]%>
 
 <input type="submit" class="button"<%= submit_tag("Login") %>
 

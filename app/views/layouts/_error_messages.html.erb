@@ -1,15 +1,14 @@
-<% if @work.errors.messages.any? %>
-<section class = "row status failure">
-  <ul class="errors">
-    <% @work.errors.messages.each do |field, problems| %>
+<% if model.errors.messages.any? %>
+<section class = "error-messages">
+  <ul>
+    <% model.errors.messages.each do |field, problems| %>
     <% problems.each do |problem| %>
-      <li>
-        <strong><%= field %></strong>
-        <%= problem %>
-      </li>
+    <li>
+      <strong><%= field %></strong>
+      <%= problem %>
+    </li>
     <% end %>
     <% end %>
 
-  </ul>
 </section>
 <% end %>

@@ -15,7 +15,7 @@ class VotesController < ApplicationController
       if @vote.user_id == nil
         flash[:failure] = "You must log in to do that!"
       else
-        flash[:failure] = "Could not upvote.You have already voted for this work"
+        flash[:failure] = "Could not upvote."
       end
     end
     redirect_to works_path

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
-  validates :name, presence: { message: "Enter a username"}
+  validates :name, presence: { message: "can't be blank"}
 end
