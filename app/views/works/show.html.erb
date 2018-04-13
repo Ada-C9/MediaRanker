@@ -1,30 +1,33 @@
-<h1><%= @work.title %></h1>
+<article class="media-details">
+  <h3><%= @work.title %></h3>
 
-<p>Created By: <%= @work.creator %></p>
-<p>Published: <%= @work.published %></p>
-<p>description: <%= @work.description %></p>
+  <p>Created By: <%= @work.creator %></p>
+  <p>Published: <%= @work.published %></p>
+  <p><%= @work.description %></p>
+  <section>
+    <%=link_to "Back to Media Ranks", root_path, class: "button" %>
+    <%=link_to "Edit", edit_work_path, class: "button" %>
+    <%=link_to "Upvote", upvote_path(@work.id), method: :post, class: "button" %>
+    <%=link_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Warning: Work will be deleted. Click OK to confirm."}, class: "alert button" %>
+  </section>
+</article>
 
-<ul>
-  <li><%=link_to "Back to Media Ranks", root_path %></li>
-  <li><%=link_to "Edit", edit_work_path %></li>
-  <li><%=link_to "Upvote", upvote_path(@work.id), method: :post %></li>
-  <li><%=link_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Warning: Work will be deleted. Click OK to confirm."} %></li>
-</ul>
-
-<p><%=@work.votes.count%> votes</p>
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @work.votes.reverse.each do |vote| %>
-    <tr>
-      <td><%=link_to vote.user.name, user_path(vote.user.id)%></td>
-      <td><%=vote.created_at.to_s(:long) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<article class="voting-users">
+  <h3><%=@work.votes.count%> Votes for this Album</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.votes.reverse.each do |vote| %>
+      <tr>
+        <td><%=link_to vote.user.name, user_path(vote.user.id)%></td>
+        <td><%=vote.created_at.to_s(:long) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</article>
