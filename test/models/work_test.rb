@@ -42,6 +42,7 @@ describe Work do
   end
 
   describe "relations" do
+    it "can set a vote"
 
   end
 

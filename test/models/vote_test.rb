@@ -26,6 +26,6 @@ describe Vote do
   end
 
   describe "relations" do
-    
+    it can set
   end
 end
