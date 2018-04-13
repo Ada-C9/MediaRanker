@@ -1,17 +1,19 @@
-<section class="row-spotlight">
+<div>
   <h3>
-    <span class="media-spotlight-header">Media Spotlight:
-    </span>
-    <span class="most-popular">
+    <span class="media-spotlight-header">Media Spotlight:</span>
       <% if @works.first != nil %>
-        <%= link_to("#{Work.most_popular.title}", work_path(Work.most_popular)) %></span>
+        <%= link_to("#{Work.most_popular.title}", work_path(Work.most_popular)) %>
         by <%= Work.most_popular.creator %>
       <% else %>
         <%= link_to("Add some works!", new_work_path) %>
       <% end %>
   </h3>
-  <p><%= "#{Work.most_popular.votes.count} votes - #{@works.first.description}"%></p>
-</section>
+  <p><%= "#{Work.most_popular.votes.count} votes" %>
+  <% if Work.most_popular.description != nil %>
+    <%= "- #{Work.most_popular.description}"%>
+  <% end %>
+  </p>
+</div>
 
 <hr class="root-hr">
 

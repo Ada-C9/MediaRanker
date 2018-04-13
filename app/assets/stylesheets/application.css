@@ -69,6 +69,10 @@
   color: #424242;
 }
 
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
 .root-hr {
   color: #EEEEEE;
   margin: 0px auto 75px auto;
