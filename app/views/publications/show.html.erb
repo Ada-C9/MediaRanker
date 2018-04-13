@@ -22,8 +22,8 @@
     <tbody>
       <% @publication.votes.each do | vote | %>
         <tr>
-          <td><%= vote.user.name %></td>
-          <td><%= vote.created_at %></td>
+          <td><%= link_to vote.user.name, user_path(vote.user_id) %></td>
+          <td><%= vote.created_at.strftime("%b %d, %Y") %></td>
         </tr>
       <% end %>
     </tbody>

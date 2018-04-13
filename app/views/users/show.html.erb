@@ -1,5 +1,5 @@
 <h3>User Summary: <%= link_to @user_model.name, user_path(@user_model.id)%></h3>
-<p>Joined site <%= @user_model.created_at %></p>
+<p>Joined site <%= @user_model.created_at.strftime("%b %d, %Y") %></p>
 <h4>Votes</h4>
 <table>
   <thead>
@@ -19,7 +19,7 @@
         <td><%= publication.creator %></td>
         <td><%= publication.publication_year %></td>
         <td><%= publication.category %></td>
-        <td><%= vote.created_at %></td>
+        <td><%= vote.created_at.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
   </tbody>

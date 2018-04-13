@@ -144,3 +144,23 @@ section.spotlight > div {
   list-style-type: none;
   margin-left: 0px;
 }
+
+/* publications index tables by category */
+.category-table th:last-child, .category-table th:first-child, .category-table th:nth-child(5) {
+  width: 100px;
+}
+
+/* users index page table */
+.users-index-table th:last-child {
+  width: 200px;
+}
+
+.users-index-table th:nth-child(2) {
+  width: 100px;
+}
+
+/* form style */
+
+select {
+  -webkit-appearance: none;
+}
