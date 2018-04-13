@@ -4,16 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by name: params[:user][:name]
+    @user = User.find_by username: params[:user][:username]
 
     if @user
       session[:user_id] = @user.id
-      # session[:user_name] = @user.name
-      flash[:success] = "Welcome back #{@user.name}"
+      flash[:success] = "Welcome back #{@user.username}"
     else
-      @user = User.create name: params[:user][:name]
+      @user = User.create username: params[:user][:username]
       session[:user_id] = @user.id
-      flash[:success] = "Welcome #{@user.name}"
+      flash[:success] = "Welcome #{@user.username}"
     end
     redirect_to root_path
   end
@@ -23,5 +22,5 @@ class SessionsController < ApplicationController
     flash[:success] = "You logged out!"
     redirect_to root_path
   end
-  
+
 end
