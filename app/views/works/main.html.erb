@@ -6,6 +6,7 @@
     by <%= @works.first.creator %>
   </h3>
   <p><%= @most_popular %> - WORK.MAX_VOTE_COUNT.DESCRIPTION</p>
+  
 </section>
 
 <hr class="root-hr">
@@ -15,14 +16,14 @@
     <h3 class="top-ten-category">Top Movies</h3>
     <ul>
       <% @works.each do |work| %>
-      <% if work.category == "movie" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        work.vote_count
-      </p>
-      <% end %>
+        <% if work.category == "movie" %>
+          <li>
+            <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
+          </li>
+          <p>
+            @work.vote.count
+          </p>
+        <% end %>
       <% end %>
     </ul>
   </section>
@@ -31,14 +32,14 @@
     <h3 class="top-ten-category">Top Books</h3>
     <ul>
       <% @works.each do |work| %>
-      <% if work.category == "book" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        work.vote_count
-      </p>
-      <% end %>
+        <% if work.category == "book" %>
+          <li>
+            <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
+          </li>
+          <p>
+            @work.vote.count
+          </p>
+        <% end %>
       <% end %>
     </ul>
   </section>
@@ -47,14 +48,14 @@
     <h3 class="top-ten-category">Top Albums</h3>
     <ul>
       <% @works.each do |work| %>
-      <% if work.category == "album" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        work.vote_count
-      </p>
-      <% end %>
+        <% if work.category == "album" %>
+          <li>
+            <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
+          </li>
+          <p>
+            @work.vote.count
+          </p>
+        <% end %>
       <% end %>
     </ul>
   </section>

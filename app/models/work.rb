@@ -4,6 +4,12 @@ class Work < ApplicationRecord
 
   validates :title, presence: true
 
+  def self.top_ten_movies
+    @top_ten_movies = []
+    @top_ten_movies = self.order(votes.count).first(10)
+    return @top_ten_movies
+  end
+
   def most_popular
     @works = Work.all
     @most_popular = Work.first
