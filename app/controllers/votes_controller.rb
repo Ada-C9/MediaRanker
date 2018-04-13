@@ -15,16 +15,14 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(user_id: session[:user_id], work_id: params[:work_id])
-
     if @vote.save #it worked
       flash[:success] = "Successfully upvoted"
     else
       if @vote.id.nil?
-        raise
-        flash.now[:alert] = @vote.errors
+        flash[:alert] = @vote.errors
       end
     end
-    redirect_to root_path
+    redirect_to work_path(params[:work_id])
   end
 
   # def edit
