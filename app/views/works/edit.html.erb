@@ -1,1 +1,21 @@
-<%= render partial: 'form', locals: { page_title: 'Edit this album', error_method: 'update' } %>
+<h3>Edit this <%= @work.category %></h3>
+
+<%= form_for @work do |f| %>
+ <%= f.label :category %>
+ <%= f.select :category, [["album"], ["book"], ["movie"]] %>
+
+
+ <%= f.label :title %>
+ <%= f.text_area :title %>
+
+ <%= f.label :creator %>
+ <%= f.text_area :creator %>
+
+ <%= f.label :publication_year %>
+ <%= f.text_area :publication_year %>
+
+ <%= f.label :description %>
+ <%= f.text_area :description %>
+
+ <%= f.submit "Update Work", class: "button" %>
+<% end %>

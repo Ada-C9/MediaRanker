@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>Username</th>
-      <th>Votes</th>
-      <th>Joined</th>
+      <th width="100">Votes</th>
+      <th width="200">Joined</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +19,4 @@
   </tbody>
 </table>
 
-<ul>
-  <li><%= link_to "Back to Media List", mains_path(@user) %></li>
-</ul>
+<%= link_to "Back to Media List", mains_path(@user), class: "button" %>

@@ -1,1 +1,20 @@
-<%= render partial: 'form', locals: { page_title: 'Add a new work', error_method: 'create' } %>
+<h3>Add a new work</h3>
+
+<%= form_for @work do |f| %>
+ <%= f.label :category %>
+ <%= f.select :category, [["album"], ["book"], ["movie"]] %>
+
+ <%= f.label :title %>
+ <%= f.text_area :title %>
+
+ <%= f.label :creator %>
+ <%= f.text_area :creator %>
+
+ <%= f.label :publication_year %>
+ <%= f.text_area :publication_year %>
+
+ <%= f.label :description %>
+ <%= f.text_area :description %>
+
+ <%= f.submit "Create Work", class: "button" %>
+<% end %>
