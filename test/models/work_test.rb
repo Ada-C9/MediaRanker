@@ -133,23 +133,20 @@ describe Work do
 
   end
 
-  # describe "self.find_spotlight" do
-  #
-  #   it "returns the work with the most overall votes" do
-  #     album = works(:album)
-  #     book = works(:book)
-  #     movie = works(:movie)
-  #
-  #     5.times do
-  #       album.votes << Vote.new
-  #     end
-  #
-  #     book.votes << Vote.new
-  #
-  #     result = Work.find_spotlight
-  #
-  #     result.must_equal album
-  #   end
+  describe "self.find_spotlight" do
+
+    it "returns the work with the most overall votes" do
+      album = works(:album)
+      book = works(:book)
+      movie = works(:movie)
+
+      album.votes << Vote.new(user_id: users(:one).id)
+      album.votes << Vote.new(user_id: users(:two).id)
+
+      result = Work.find_spotlight
+
+      result.must_equal album
+    end
 
   end
 

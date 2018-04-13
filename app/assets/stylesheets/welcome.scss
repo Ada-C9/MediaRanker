@@ -1,11 +1,11 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 h3 a {
   border-bottom: 2px solid;
   color: #26A69A;
   text-decoration: none;
+  font-size: 1.9375rem;
 }
 
 a {
@@ -20,6 +20,8 @@ a {
 .top-ten h3 {
   color: #26A69A;
   border-bottom: #26A69A 1px solid;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .top-ten ul {
@@ -32,6 +34,10 @@ h4 {
 }
 
 .columns {
-  padding: 1em;
-  font-weight: bold;
+  padding: .5em;
+  line-height: .1em;
+}
+
+li{
+  color: #778899;
 }

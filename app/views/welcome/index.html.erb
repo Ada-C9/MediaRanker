@@ -17,8 +17,8 @@
   <ul>
     <% @albums.each do |work| %>
     <li>
-      <h4><%= link_to work.title, work_path(work) %> </h4> by
-      <%= work.creator %>
+      <h4><%= link_to work.title, work_path(work) %> </h4> <small>by
+      <%= work.creator %></small>
       <%= work.votes.count %>
     </li>
     <% end %>
