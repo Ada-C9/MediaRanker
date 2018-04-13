@@ -34,9 +34,9 @@
             <li><%= link_to "View all users", users_path %></li>
             <li>
               <ul>
-                <% if @user %>
+                <% if find_user %>
                 <li>
-                  Welcome <%= @user.username %>
+                  Welcome <%= find_user.username %>
                   <%= link_to "Logout", logout_path, method: :delete %>
                 </li>
                 <% else %>
@@ -66,9 +66,9 @@
         <p>
           <%= message %>
         </p>
-        <%end%>
+        <% end %>
       </section>
-      <%end%>
+      <% end %>
     </section>
     <%= yield %>
   </main>

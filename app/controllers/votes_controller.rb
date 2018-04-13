@@ -1,8 +1,6 @@
 class VotesController < ApplicationController
   before_action :find_vote, only: [:show, :edit, :update, :destroy]
 
-  before_action :find_user
-
   # I want to add new to make sure that no previous vote occur. using find_where (vote.user_id & vote.work_id match the new vote
   def index
     @votes = Vote.all
@@ -52,7 +50,4 @@ class VotesController < ApplicationController
     @vote = Vote.find_by(id: params[:id])
   end
 
-  def find_user
-    @user = User.find_by(id: params[:user_id])
-  end
 end

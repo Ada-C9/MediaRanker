@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
   # log in
 
   # finds user based on session
+  helper_method :find_user
+
   def find_user
-    @user = User.find_by(session[:user_id])
+    # id: is the column id refers to the id column of the user model
+    User.find_by(id: session[:user_id])
   end
 end

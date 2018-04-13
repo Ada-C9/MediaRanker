@@ -1,8 +1,8 @@
-<h2>User Summary:<%= @user.username %></h2>
+<h2>User Summary:<%= find_user.username %></h2>
 
 <ul>
   <li>
-    <%= "Joined site #{@user.created_at}" %>
+    <%= "Joined site #{find_user.created_at}" %>
   </li>
 </ul>
 
@@ -21,7 +21,7 @@
 <ul>
   <ul>
     <!-- is this right? -->
-    <% Vote.votes_by_user(@user).each do |vote|  %>
+    <% Vote.votes_by_user(find_user).each do |vote|  %>
     <li>
       <%= link_to Work.find(vote.work_id).title, work_path(Work.find(vote.work_id).id) %>
     </li>
