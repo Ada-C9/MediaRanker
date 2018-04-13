@@ -54,10 +54,6 @@ describe Vote do
       @vote.work_id.must_equal @work.id
     end
 
-
-
-
-
   end
 
 end
