@@ -11,38 +11,41 @@
 <section class="top-ten-container">
 
   <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Movies</th>
-      </tr>
+    <h3>Top Movies</h3>
+      <ul>
       <% @movies.each do |movie| %>
-      <tr><td><%= movie.title %> by <%= movie.creator%></td></tr>
+        <li><h4>
+          <%= link_to movie.title, publication_path(movie.id) %>
+          <small>by <%= movie.creator%></small></h4>
+          <p><%= movie.votes.count %> votes</p>
+        </li>
       <% end %>
-    </table>
+    </ul>
   </section>
 
   <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Books</th>
-      </tr>
+    <h3>Top Books</h3>
+      <ul>
       <% @books.each do |book| %>
-      <tr><td><%= book.title %> by <%= book.creator %></td> </tr>
+        <li><h4>
+          <%= link_to book.title, publication_path(book.id) %>
+          <small>by <%= book.creator%></small></h4>
+          <p><%= book.votes.count %> votes</p>
+        </li>
       <% end %>
-    </table>
+    </ul>
   </section>
 
   <section class="top-ten">
-    <table>
-      <col width="200">
-      <tr>
-        <th>Albums</th>
-      </tr>
+    <h3>Top Albums</h3>
+      <ul>
       <% @albums.each do |album| %>
-      <tr><td><%= album.title %> by <%=album.creator%></td></tr>
+        <li><h4>
+          <%= link_to album.title, publication_path(album.id) %>
+          <small>by <%= album.creator%></small></h4>
+          <p><%= album.votes.count %> votes</p>
+        </li>
       <% end %>
-    </table>
+    </ul>
   </section>
 </section>
