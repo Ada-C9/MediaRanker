@@ -14,6 +14,12 @@ describe User do
   end
 
   describe "relations" do
+    it "must respond to votes" do
+      user1.must_respond_to :votes
+    end
 
+    it "must respond to works" do
+      user1.must_respond_to :works
+    end
   end
 end
