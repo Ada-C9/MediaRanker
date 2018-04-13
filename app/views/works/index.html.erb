@@ -5,7 +5,7 @@
   <table>
 
     <thead>
-      <tr>
+      <tr class="works-table">
         <th>Votes</th>
         <th>Title</th>
         <th>Created By</th>
@@ -16,7 +16,7 @@
 
     <tbody>
       <% @albums.each do |album| %>
-      <tr>
+      <tr class="works-table">
         <td><%= album.votes.count %></td>
         <td><%= link_to album.title, work_path(album) %></td>
         <td><%= album.creator %></td>
