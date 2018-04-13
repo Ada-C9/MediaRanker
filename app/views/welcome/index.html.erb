@@ -1,29 +1,31 @@
-
-<h3 class="media-spotlight">
-<span >Media Spotlight: </span>
-<%= link_to @spotlight.title, work_path(@spotlight)%>
-by <%= @spotlight.creator %>
-</h3>
+<div class= "welcome-wrapper">
+  <h3>
+    Media Spotlight:
+    <%= link_to @spotlight.title, work_path(@spotlight)%>
+    by <%= @spotlight.creator %>
+  </h3>
   <%= pluralize(@spotlight.votes.count, "vote") %>
   <%= @spotlight.description %>
 </p>
 
 <hr />
 
-<section class="top-ten">
+<div class="grid-x">
+
+<section class="top-ten small-4 columns">
   <h3>Top Albums</h3>
   <ul>
-     <% @albums.each do |work| %>
-     <li>
-       <%= link_to work.title, work_path(work) %> by
-       <%= work.creator %>
-       <%= work.votes.count %>
-     </li>
-     <% end %>
+    <% @albums.each do |work| %>
+    <li>
+      <h4><%= link_to work.title, work_path(work) %> </h4> by
+      <%= work.creator %>
+      <%= work.votes.count %>
+    </li>
+    <% end %>
   </ul>
 </section>
 
-<section class="top-ten">
+<section class="top-ten small-4 columns">
   <h3>Top Books</h3>
   <ul>
     <% @books.each do |work| %>
@@ -36,7 +38,7 @@ by <%= @spotlight.creator %>
   </ul>
 </section>
 
-<section class="top-ten">
+<section class="top-ten small-4 columns">
   <h3>Top Movies</h3>
   <ul>
     <% @movies.each do |work| %>
@@ -48,3 +50,5 @@ by <%= @spotlight.creator %>
     <% end %>
   </ul>
 </section>
+</div>
+</div>
