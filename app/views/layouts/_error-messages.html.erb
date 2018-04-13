@@ -1,5 +1,5 @@
-<h3>A problem occurred: Could not create <%= @work.category %></h3>
-<% if model.errors.messages.any? %>
+
+
     <ul>
       <% model.errors.messages.each do |field, problem| %>
       <li><strong><%= field.capitalize%></strong>
@@ -9,4 +9,3 @@
       </li>
       <% end %>
     </ul>
-<% end %>

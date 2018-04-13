@@ -41,17 +41,18 @@
   <section class="flash">
     <% flash.each do |name, message| %>
     <div class="callout <%= name %>">
-    <%= message %>
-    <% if @vote %>
-    <%= render partial: 'layouts/error-messages', locals: {model: @vote} %>
-    <% end %>
-    <% if @work %>
-    <%= render partial: "layouts/error-messages", locals: {model: @work, class: "error-handling"} %>
-    <% end %>
-    <% if @user %>
-    <%= render partial: 'layouts/error-messages', locals: {model: @user} %>
-    <% end %>
-  </div>
+      <%= message %>
+      <% if @vote || @user || @work %>
+      <% models = [@vote, @user, @work]%>
+          <% models.each do |model| %>
+          <% if model %>
+          <% render_error(model) %>
+
+          <%= render partial: 'layouts/error-messages', locals: {model: model} %>
+          <% end %>
+      <% end %>
+      <% end %>
+    </div>
     <% end %>
   </section>
 
