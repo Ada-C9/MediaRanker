@@ -6,7 +6,7 @@ class WorksController < ApplicationController
     @top_movies = Work.top_works("movie")
     @top_books = Work.top_works("book")
 
-    # this is temporary until highest votes is calculated
+    #use the top work thing here.
     @spotlight = Work.first
   end
 

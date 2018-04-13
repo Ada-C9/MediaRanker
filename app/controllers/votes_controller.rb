@@ -26,12 +26,13 @@ class VotesController < ApplicationController
   end
 
   def create
-    @author = Author.create(author_params)
-    if @author.id != nil
-      flash[:success] = "Author Created"
-      redirect_to authors_path
+    @vote = Vote.create(vote_params)
+    if @vote.id != nil
+      Vote.voted(@vote)
+      flash[:success] = "Upvoted"
+      redirect_to :back
     else
-      flash.now[:alert] = @author.errors
+      flash.now[:alert] = @vote.errors
       render :new
     end
   end
