@@ -22,4 +22,16 @@ class Work < ApplicationRecord
     return b
   end
 
+  def self.top_ten_books
+    books.first(10)
+  end
+
+  def self.top_ten_albums
+    albums.first(10)
+  end
+
+  def self.top_ten_movies
+    movies.first(10)
+  end
+
 end

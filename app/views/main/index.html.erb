@@ -12,7 +12,7 @@
   <section class="top-ten">
   <h3>Top Movies</h3>
   <ul>
-    <% @works.albums.each do |work| %>
+    <% @works.top_ten_albums.each do |work| %>
       <li>
         <h4>
           <%= link_to(work.title, work_path(work)) %>
