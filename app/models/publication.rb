@@ -1,5 +1,3 @@
-require 'pry'
-
 class Publication < ApplicationRecord
   has_many :votes
 
