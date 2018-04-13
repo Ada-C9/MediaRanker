@@ -4,7 +4,7 @@
     </span>
     <span class="most-popular">
       <% if @works.first != nil %>
-        <%= link_to("#{Work.most_popular.title}") %></span>
+        <%= link_to("#{Work.most_popular.title}", work_path(Work.most_popular)) %></span>
         by <%= Work.most_popular.creator %>
       <% else %>
         <%= link_to("Add some works!", new_work_path) %>
