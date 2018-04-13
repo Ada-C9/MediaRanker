@@ -1,0 +1,34 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vote1:
+  date: 2018-04-11
+  work: blackpanther
+  user: user1
+
+vote2:
+  date: 2018-04-12
+  work: lifeisbeautiful
+  user: user2
+
+vote3:
+  date: 2018-04-13
+  work: liqidspirit
+  user: user3
+
+vote4:
+  date: 2018-04-13
+  work: book1
+  user: user4
+
+vote5:
+  date: 2018-04-13
+  work: spirit
+  user: user5
+vote3:
+  date: 2018-04-13
+  work: liqids
+  user: user6
+vote3:
+  date: 2018-04-13
+  work: book4
+  user: user7
