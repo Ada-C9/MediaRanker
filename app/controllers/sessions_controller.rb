@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     @newuser = User.new
   end
@@ -7,7 +6,7 @@ class SessionsController < ApplicationController
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
-  
+
   def logged_in?
     !current_user.nil?
   end
@@ -17,8 +16,8 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:user][:name])
 
     if user
-      session[:user_id] = user.id
       flash[:success] = "#{user.name} has successfully logged in"
+      session[:user_id] = user.id
       redirect_to root_path
     else
       @user = User.create(name: params[:user][:name])
@@ -34,5 +33,4 @@ class SessionsController < ApplicationController
 
     redirect_to root_path
   end
-
 end

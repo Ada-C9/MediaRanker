@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :works do
-    resources :votes, only: [:create]
+    resources :votes, only: [:create, :index]
     resources :users, only: [:index]
   end
 
