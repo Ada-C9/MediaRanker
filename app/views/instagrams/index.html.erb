@@ -5,8 +5,14 @@
 </section>
 <section>
 
-  <%= @instagrams.each do |instagram| %>
+
+  <% count = 0 %>
+  <% @instagrams.each do |instagram| %>
+  <% count += 1 %>
   <ul>
+    <li> Instagram Rank:
+      <%= count %>
+    </li>
   <li>
       <%= link_to instagram.id, instagram_path(instagram) %>
   </li>
@@ -19,6 +25,10 @@
   <li>Followers:
     <%= instagram.followers %>
   </li>
+  <li>Votes:
+    <%= instagram.votes.count %>
+  </li>
+
   </ul>
 
   <%= link_to "Edit", edit_instagram_path(instagram) %>

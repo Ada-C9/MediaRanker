@@ -1,7 +1,7 @@
 class TwittersController < ApplicationController
   before_action :find_twitter, only: [:show, :edit, :update]
   def index
-    @twitters = Twitter.all
+    @twitters = Twitter.first_10(Twitter.mostVoted)
   end
 
   def new

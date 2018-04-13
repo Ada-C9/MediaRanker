@@ -5,10 +5,18 @@ class Instagram < ApplicationRecord
   has_many :votes, dependent: :destroy
 
 
+  def self.mostVoted
+    sorted = Instagram.all.sort_by do |instagram|
+      (instagram.votes.count)
+    end
+    return sorted.reverse
+  end
 
+def spotlight
+  self.first(1)
+end
 
-
-  def first_10
-     self.first(10)
+  def self.first_10(array)
+    array.first(10)
   end
 end

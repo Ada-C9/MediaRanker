@@ -1,7 +1,7 @@
 class InstagramsController < ApplicationController
   before_action :find_instagram, only:[:show, :edit, :update]
   def index
-    @instagrams = Instagram.all
+    @instagrams = Instagram.first_10(Instagram.mostVoted)
   end
 
 
@@ -59,7 +59,8 @@ class InstagramsController < ApplicationController
         redirect_to instagrams_path
       end
     else
-      flash.now[:failure] = "You need to be logged in to vote!"
+      flash[:failure] = "You need to be logged in to vote!"
+      redirect_to instagrams_path
     end
   end
 

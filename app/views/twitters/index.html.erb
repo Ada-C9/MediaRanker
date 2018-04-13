@@ -5,8 +5,13 @@
 </section>
 <section>
 
+  <% count = 0 %>
   <% @twitters.each do |twitter| %>
+  <% count += 1 %>
   <ul>
+    <li> Twitter Rank:
+      <%= count %>
+    </li>
   <li>
     <strong>
     <%= link_to twitter.id, twitter_path(twitter) %>

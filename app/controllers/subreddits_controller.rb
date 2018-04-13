@@ -2,7 +2,7 @@ class SubredditsController < ApplicationController
 
   before_action :find_subreddit, only: [:show, :edit, :update]
   def index
-    @subreddits = Subreddit.all
+    @subreddits = Subreddit.first_10(Subreddit.mostVoted)
   end
 
   def new

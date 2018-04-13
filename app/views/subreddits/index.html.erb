@@ -5,7 +5,13 @@
 </section>
 <section>
 
+  <% count = 0 %>
   <% @subreddits.each do |subreddit| %>
+  <% count += 1 %>
+  <ul>
+    <li> Subreddit Rank:
+      <%= count %>
+    </li>
   <ul>
   <li>
     <strong>
