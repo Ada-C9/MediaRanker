@@ -20,21 +20,24 @@
  */
 
 body, h1, h2, h3, h4, h5 {
-   font-family: 'Gudea', sans-serif;
- }
+  font-family: 'Gudea', sans-serif;
+}
 
 h1, h2, h3, h4, h5 {
-   font-weight: bold;
-   color: #26A69A;
- }
+  font-weight: bold;
+}
+
+a, h3 {
+  color: #26A69A;
+}
 
 body small {
   color: slategrey;
 }
 
-.main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .page-header {
@@ -62,14 +65,58 @@ body small {
   color: white;
 }
 
+.status {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
+}
 
+.status.failure h3, .status.success h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
 
-.spotlight > div {
-  padding: 0 2rem 2rem 2rem;
+.status.failure h3 {
+  color: #C70039;
+}
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+section.spotlight > div {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.root-hr {
+  margin: 0px auto 75px auto;
+  color: #EEEEEE;
+}
+
+.top-ten h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
 }
 
 .top-ten-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
+}
+
+.media-table .first {
+  width: 80px;
+}
+
+.media-table .last {
+  width: 100px;
+}
+
+.media-table .upvote.button {
+  margin: 0;
 }

@@ -1,6 +1,5 @@
 <% if model.errors.messages.any? %>
-  <section>
-
+  <section class="row status failure">
     <ul>
       <% model.errors.messages.each do |field, problem| %>
       <li><%= field%>
