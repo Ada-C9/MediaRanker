@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in
     unless find_user
-      flash[:alert] = ["You must be logged in to do that"]
+      flash[:alert] = "You must be logged in to do that"
       redirect_to login_form_path
     end
   end

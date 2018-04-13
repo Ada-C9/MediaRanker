@@ -11,7 +11,7 @@ class VotesController < ApplicationController
       redirect_to work_path(params[:work_id])
       else
         if @vote.errors.include?(:work_id)
-          flash[:alert] = ["You already voted for that!"]
+          flash[:alert] = "You already voted for that!"
           redirect_to work_path(params[:work_id])
         else
           flash[:alert] = @vote.errors
