@@ -1,0 +1,15 @@
+<h3>List of Users</h3>
+
+<table>
+  <th>Username</th>
+  <th>Votes</th>
+  <th>Joined on</th>
+
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td>TBF</td>
+    <td><%= user.created_at.strftime("%b %e, %Y") %></td>
+  </tr>
+  <% end %>
+</table>
