@@ -34,7 +34,7 @@
         <% if @user && @user.id %>
         <li>
           <%= link_to "Logged in as #{@user.name}", user_path(@user.id), :class => "button" %>
-          <%= link_to "Logout", logout_path, method: :destroy, :class => "button" %>
+          <%= link_to "Logout", logout_path, method: :delete, :class => "button" %>
         </li>
         <% else %>
         <li>

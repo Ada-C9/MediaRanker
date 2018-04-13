@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @this_user = @user
+    @user = User.find(params[:id])
   end
 
   def create

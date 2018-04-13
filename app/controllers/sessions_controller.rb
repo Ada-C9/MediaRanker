@@ -7,14 +7,18 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome back #{@user.name}"
     else
       @user = User.create(name: params[:user][:name])
-      session[:user_id] = @user.id
-      flash[:success] = "Welcome #{@user.name}"
+      if session[:user_id] = @user.id
+        flash[:success] = "Welcome #{@user.name}"
+        redirect_to root_path
+      else
+        flash.now[:error] = "Not logged in"
+        render :new
+      end
     end
-    redirect_to root_path
   end
 
   def new
-    @this_user = User.new
+    @user = User.new
   end
 
   def destroy
