@@ -41,6 +41,7 @@ class WorksController < ApplicationController
     else
       render :edit
       flash.now[:failure] = "Failed to update"
+      flash.now[:error] = @work.errors.messages[:name]
     end
   end
 

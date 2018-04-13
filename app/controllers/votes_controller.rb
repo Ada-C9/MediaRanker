@@ -17,13 +17,13 @@ class VotesController < ApplicationController
 
       else
         flash[:failure] = "Could not upvote"
-        flash[:error] = @vote.errors.messages[:name]
+        flash[:error] = @vote.errors.messages[:name][0]
         redirect_back fallback_location: root_path
       end
 
     else
       flash[:failure] = "You must log in to do that"
-      redirect_to work_path(params[:work_id])
+      redirect_back fallback_location: works_path
     end
   end
 end

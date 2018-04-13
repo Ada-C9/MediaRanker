@@ -1,22 +1,22 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *= require normalize-rails
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*= require normalize-rails
 
- *
+*
 
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
- */
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+*/
 
 .nav_bar {
   padding: 25px 20px;
@@ -42,11 +42,12 @@ header h2 small {
   color: white;
 }
 
-main {
+.main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 32px auto;
 }
 
 main .grid-x div > ul, .show-info {
@@ -70,14 +71,46 @@ ul {
   background-color: rgba(59,115,119,1)
 }
 
-.spotlight {
-  padding: 0 32px 32px 32px;
-  height: 76px;
-}
-
 main .name {
   border-radius: 5px;
   background-color: #e6e6e6;
   padding: 20px 25px;
   margin-top: 30px;
+}
+
+body small {
+  color: slategrey;
+}
+
+.grid-x .cell h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+.cell {
+  padding-left: : 1em;
+  padding-right: 1em;
+}
+
+body a, h3 {
+  color: #26A69A;
+  font-weight: bold;
+}
+
+.spotlight h3 .media-spotlight {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+.spotlight {
+  padding: 0 32px 32px 32px;
+  border-bottom: 1px solid lightgray;
+}
+
+.root-hr {
+  margin: 0px auto 75px auto;
+  color: #EEEEEE;
 }

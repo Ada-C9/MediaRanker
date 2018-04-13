@@ -32,18 +32,18 @@
   </header>
 
 
-  <main>
+  <main class="main">
     <section>
       <% flash.each do |name, message| %>
       <div class="<%= name %>">
-        <% if name != :error%>
+        <!-- <% if name != :error%> -->
         <p class="flash-message"><%= message %></p>
-        <% else%>
+        <!-- <% else%>
         <ul class="flash-errors">
           <% name.each do |error_name, error_mes| %>
           <li class="<% error_name %>">
             <%= error_name %>: <%= error_mes %>
-          </li>
+          </li> -->
           <% end %>
         </ul>
         <% end %>
