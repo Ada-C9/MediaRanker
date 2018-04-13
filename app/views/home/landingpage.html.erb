@@ -1,21 +1,21 @@
 
+<section class = "row spotlight">
+  <div>
+    <h3> <span class= "media-spotlight-header">Media Spotlight:</span
+      <% spotlight = @instagrams.first %>
+      <a>  <%= link_to spotlight.id, instagram_path(spotlight) %></a>
 
-<h2> Media Spotlight: </h2>
-<% spotlight = @instagrams.first %>
-<ul>
-  <li>
-    <%= link_to spotlight.id, instagram_path(spotlight) %>
-  </li>
-  <li>Handle:
-    <%= spotlight.handle %>
-  </li>
-  <li>Posts:
-    <%= spotlight.posts %>
-  </li>
-  <li>Followers:
-    <%= spotlight.followers %>
-  </li>
-</ul>
+      Handle:
+      <%= spotlight.handle %>
+    </h3>
+    <p>
+      Posts:
+      <%= spotlight.posts %>
+      Followers:
+      <%= spotlight.followers %>
+    </p>
+  </div>
+</section>
 
 <main class = "categories">
   <section>
@@ -81,4 +81,4 @@
         </ul>
         <% end %>
 
-    </main>
+      </main>

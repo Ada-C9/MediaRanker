@@ -4,62 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 2.0" %></title>
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://media-ranker-2-0.herokuapp.com/assets/favicon-910822ff6cd5f6d37119171c4b716f1d4e5fe0e8ad5e408627659ebf8d7f16b1.ico", alt: "site logo, an owl">
 </head>
 
 <body>
-  <header>
-    <h1>
-      <%image_tag "owl.jpg", alt: "Site logo f an owl", class: "logo" %>
-      Media Ranker |  Ranking the best of everything
-    </h1>
+  <header class= 'page-header row'>
 
-    <nav class = "main bar">
-      <ul>
-        <li class = "button"> <%= link_to 'View Top Media', root_path %></li>
-        <li class = "button"> <%= link_to 'View all Media', home_index_path %></li>
-        <li class = "button"><%= link_to 'Add a New Work', new_home_path %></li>
-        <li class = "button"><%= link_to 'View all users', users_path %></li>
+    <h2>  Media Ranker |
+      <small>
+        Ranking the best of everything
+      </small>
+    </h2>
+
+    <nav>
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a><%= link_to 'View Top Media', root_path, class: "button" %></a></li>
+        <li><a> <%= link_to 'View all Media', home_index_path, class: "button" %></a>
+          <ul class="menu">
+            <li><a><%= link_to 'View Instagrams', instagrams_path, class: "button" %></a></li>
+            <li><a><%= link_to 'View Twitters',
+            twitters_path, class: "button"%></a></li>
+            <li><a><%= link_to "View Subreddits", subreddits_path,class: "button" %></a></li>
+          </ul>
+        </li>
+        <li><a><%= link_to 'Add a New Work', new_home_path,class: "button" %></a></li>
+        <li><a><%= link_to 'View all users', users_path, class: "button" %></a></li>
       </ul>
 
-      <ul>
-        <li class = "small button"><%= link_to 'View Instagrams', instagrams_path %></li>
-        <li class = "small button"><%= link_to 'View Twitters',
-        twitters_path %></li>
-        <li class = "small button"><%= link_to "View Subreddits", subreddits_path %></li>
-      </ul>
 
       <ul>
-        <li class = "button">
+        <li class = "float-right">
           <% if session[:user_id] %>
           Logged in as <%= session[:user_id] %>
           <%= "#{User.find(session[:user_id]).name}" %>
-          <%= link_to "Logout", logout_path, method: :delete, class: "hollow button" %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "button" %>
           <% else %>
-          <%= link_to "Login", login_path, class: "hollow button" %>
+          <%= link_to "Login", login_path, class: "button" %>
           <% end %>
-        </li>
-      </ul>
-    </nav>
-  </header>
+          </li>
+          </ul>
+          </nav>
+          </header>
 
-  <main>
-      <section class="flash">
-        <% flash.each do |name, message| %>
-          <div class="<%= name %>"><%= message %></div>
-        <% end %>
-      </section>
+          <main>
+          <section class="flash">
+          <% flash.each do |name, message| %>
+            <div class="<%= name %>"><%= message %></div>
+            <% end %>
+          </section>
 
-      <%= yield %>
-    </main>
+          <%= yield %>
+        </main>
 
-    <footer>
-      <p>&copy; Media Ranker, 2018</p>
-    </footer>
-</body>
+        <footer>
+          <p>&copy; Media Ranker, 2018</p>
+        </footer>
+      </body>
 
-</html>
+      </html>
