@@ -22,7 +22,7 @@
               <small><%= movie.creator %> </small>
             </h4>
             <br>
-            <p>number of votes placeholder</p>
+            <p><%= movie.votes.count %> votes</p>
           </li>
         <% end %>
       </ul>
@@ -38,7 +38,7 @@
               <small><%= book.creator %> </small>
             </h4>
             <br>
-            <p>number of votes</p>
+            <p><%= book.votes.count %> votes</p>
           </li>
         <% end %>
       </ul>
@@ -54,7 +54,7 @@
               <small><%= album.creator %> </small>
             </h4>
             <br>
-            <p>number of votes</p>
+            <p><%= album.votes.count %> votes</p>
           </li>
         <% end %>
       </ul>

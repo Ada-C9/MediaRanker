@@ -12,7 +12,7 @@
     <tbody>
       <% @user.votes.each do |vote| %>
         <tr>
-          <td><%= link_to vote.work.title, work_path(work[:id]) %></td>
+          <td><%= link_to vote.work.title, work_path(vote.work_id) %></td>
           <td><%= vote.work.creator %> </td>
           <td><%= vote.work.publication_year %></td>
           <td><%= vote.work.category %></td>

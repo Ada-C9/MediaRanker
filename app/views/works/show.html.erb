@@ -6,13 +6,13 @@
   <section>
     <%= link_to "Back to media ranks", root_path, class: "button"%>
     <%= link_to "Edit", edit_work_path, class: "button"%>
-    <%= link_to "Upvote", work_votes_path(@work), mehtod: :post, class: "button"%>
+    <%= link_to "Upvote", work_votes_path(@work.id), methrailVoteod: :post, class: "button"%>
     <%= link_to "Delete", work_path(@work.id), method: :delete, class: "alert button"%>
   </section>
 
 
   <article class="voting-users">
-    <h3> number of votres for this <%= @work.category %></h3>
+    <h3> <%= @work.votes.count %> of votes for this <%= @work.category %></h3>
     <table>
       <thead>
         <tr>
@@ -22,7 +22,7 @@
         <tbody>
           <% @work.votes.each do |vote| %>
           <tr>
-            <td><%= link_to vote.user.user_name, user_path(user[:id]) %></td>
+            <td><%= link_to vote.user.user_name, user_path(vote.user_id) %></td>
             <td><%= vote.created_at.to_date.to_formatted_s(:long_ordinal) %></td>
           </tr>
           <% end %>
