@@ -1,6 +1,6 @@
 <% if @spotlight %>
 <h3>Media Spotlight: <%= link_to @spotlight.title, work_path(@spotlight.id)%> by <%= @spotlight.creator %></h3>
-<p><%= @spotlight.upvotes.count %> votes - <%= @spotlight.description %></p>
+<p><%= @spotlight.upvotes_count %> votes - <%= @spotlight.description %></p>
 <% end %>
 
 <section>
@@ -12,7 +12,7 @@
         <h4><%= link_to movie.title, work_path(movie)%>      <small>by </small>
           <%= movie.creator %>
         </h4>
-        <p><%= movie.upvotes.count %> votes</p>
+        <p><%= movie.upvotes_count %> votes</p>
       </li>
       <% end %>
     </ul>
@@ -24,7 +24,7 @@
       <li>
         <%= link_to book.title, work_path(book)%>           <small>by </small>
         <%= book.creator %>
-        <p><%= book.upvotes.count %> votes</p>
+        <p><%= book.upvotes_count %> votes</p>
       </li>
       <% end %>
     </ul>
@@ -37,7 +37,7 @@
         <%= link_to album.title, work_path(album)%>
         <small>by </small>
         <%= album.creator %>
-        <p><%= album.upvotes.count %> votes</p>
+        <p><%= album.upvotes_count %> votes</p>
       </li>
       <% end %>
     </ul>

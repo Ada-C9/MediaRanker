@@ -194,7 +194,7 @@ describe Work do
     Work.top(1)[0].must_equal book
   end
 
-  it "Work#upvote_count must return upvote count"  do
+  it "Work#upvotes_count must return upvote count"  do
     work.upvotes_count.must_equal 0
     book.upvotes_count.must_equal 3
   end

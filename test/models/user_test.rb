@@ -27,6 +27,11 @@ describe User do
 
     user.valid?.must_equal false
     user.errors.messages.must_include :name
-
   end
+
+  it "User#upvotes_count must return upvote count"  do
+    user.upvotes_count.must_equal 0
+    user_1.upvotes_count.must_equal 1
+  end
+
 end
