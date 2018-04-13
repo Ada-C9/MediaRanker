@@ -41,7 +41,21 @@ describe Work do
 
   describe 'relations' do
     before do
-      @work = Work.create(title: "test work", creator: "Van Gogh", publication_year: 1993)
+      @work = works(:lemonade)
+      @user = users(:angela)
+    end
+
+    it "connects vote and vote_id" do
+      # Arrange
+      vote = Vote.create!(user_id: @user.id, work_id: @work.id)
+
+      # Assert
+      @work.votes.must_include vote
+    end
+  end
+
+  describe 'business logic' do
+    before do
     end
 
   end

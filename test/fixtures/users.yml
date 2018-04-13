@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+angela:
   name: angela
 
-two:
+bey:
   name: beyonce
 
-three:
+hi:
   name: shelbie
