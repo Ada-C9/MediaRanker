@@ -5,17 +5,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    name = params[:user][:name]
-    user = User.find_by(name: name)
+    user = User.find_by(name: params[:name])
 
     if user
       session[:logged_in_user] = user.id
-      flash[:success] = "#{ user.name } is successfully logged in"
+      flash[:success] = "#{user.name} is successfully logged in"
       redirect_to root_path
     else
-      user = User.new(name: name, created_at: Date.today)
+      user = User.new(name: params[:name], created_at: Date.today)
       user.save
-      flash[:success] = "Successfully created new user #{name} with ID #{user.id}"
+      flash[:success] = "Successfully created new user #{user.name} with ID #{user.id}"
       session[:logged_in_user] = user.id
       redirect_to root_path
     end
@@ -27,5 +26,8 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  # def session_params
+  #   return params.require(:session).permit(:user, :name)
+  # end
 
 end
