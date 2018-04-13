@@ -45,10 +45,15 @@ class WorksController < ApplicationController
   def upvote
     user = User.find_by(id: session[:user_id])
 
+    if user == nil
+      flash[:error] = "You must be logged in to do that"
+      redirect_to login_path
+      return
+    end
+
     vote = Vote.new(user_id: user.id, work_id: @work.id)
 
     if vote.save
-      # @work.vote_count += 1
       flash[:success] =  "Thank you for upvoting!"
       redirect_to(works_path)
     else
