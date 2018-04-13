@@ -18,7 +18,7 @@ before_action :find_user
 
   def create
     if !@user
-      flash[:alert] = "You must be logged in to vote"
+      flash[:alert] = {user: "You must be logged in to vote"}
       redirect_back fallback_location: :works_path
     else
       @vote = Vote.create

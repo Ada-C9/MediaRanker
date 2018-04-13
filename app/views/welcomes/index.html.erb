@@ -1,4 +1,7 @@
-<h2 class="spotlight"> Media Spotlight Section </h2>
+
+<section class="spotlight">
+<h3 > Media Spotlight Section: <%= link_to @spotlight_work.title, work_path(@spotlight_work) %></h3> by <%= @spotlight_work.creator %><p><small><%= @spotlight_work.vote_count %> Votes - <%=@spotlight_work.description%></small> </p></section>
+
 
 <section class="top-ten-container">
 
