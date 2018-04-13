@@ -9,12 +9,16 @@ class Work < ApplicationRecord
   # scope :books, where(category: "books")
   # scope :movies, where(category: "movies")
 
-  def self.ordered_works
+  def self.ordered_works_exclusive
     self.joins(:votes).group(:id).order('COUNT(votes.id) DESC')
   end
 
+  def self.ordered_works_inclusive
+    self.left_outer_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+  end
+
   def self.top_work
-    self.ordered_works.first
+    self.ordered_works_exclusive.first
   end
 
   def self.albums

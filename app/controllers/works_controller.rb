@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   def index
-    @works = Work.ordered_works
+    @works = Work.ordered_works_inclusive
   end
 
   def new
@@ -46,7 +46,7 @@ class WorksController < ApplicationController
 
   def home
     @spotlight = Work.top_work
-    @works = Work.ordered_works
+    @works = Work.ordered_works_exclusive
   end
 
   private
