@@ -127,3 +127,11 @@ article h3 {
 .create {
   color: #26A69A;
 }
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: solid;
+}
