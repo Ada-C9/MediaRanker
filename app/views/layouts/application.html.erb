@@ -56,7 +56,7 @@
 
     <main class="row">
 
-      <%= render partial: "layouts/error_messages", locals: { model: @work } %>
+      <%= render partial: "layouts/error_messages", locals: { model: @work, user: user } %>
 
       <%= yield %>
 

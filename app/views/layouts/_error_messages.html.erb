@@ -1,28 +1,38 @@
-  <% if model || flash[:failure] || flash[:success] %>
-
-  <section class="status-message">
-
+<section class="status-message">
+  <% if flash[:failure] %>
     <h3 class="failure">
       <%= flash[:failure] %>
     </h3>
-    <h3>
+  <% end %>
+  <% if flash[:success] %>
+    <h3 class="success">
       <%= flash[:success] %>
     </h3>
+  <% end %>
 
-    <% if model %>
 
-      <% model.errors.messages.each do |field, message| %>
-        <% if !message.empty? %>
-        <ul>
-          <% message.each do |error| %>
-            <li>
-              <%= field %>:  <%= error %>.
-            </li>
-          <% end %>
-        </ul>
+  <% if model %>
+
+  <% duplicate_vote = false %>
+  <% user.votes.each do |vote| %>
+    <% duplicate_vote = true if vote.work_id == model.id %>
+  <% end %>
+  <% if duplicate_vote %>
+    <% model.errors.messages[:user] = ["has already voted for this work"] %>
+  <% end %>
+
+    <% model.errors.messages.each do |field, message| %>
+      <% if !message.empty? %>
+      <ul class="error-messages">
+        <% message.each do |error| %>
+          <li>
+            <%= field %>:  <%= error %>.
+          </li>
         <% end %>
+      </ul>
       <% end %>
-
     <% end %>
-  </section>
-<% end %>
+
+  <% end %>
+
+</section>

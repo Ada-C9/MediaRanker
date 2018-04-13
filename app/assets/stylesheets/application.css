@@ -88,14 +88,26 @@ section.flash {
 section.status-message {
   border-radius: 5px;
   background-color: #e6e6e6;
-  padding: 20px 25px;
   margin-top: 30px;
 }
 
 section.status-message h3 {
   font-size: 1em;
+  font-weight: normal;
+}
+
+section.status-message h3 {
+  padding: 20px 25px;
 }
 
 section.status-message h3.failure {
   color: #C70039;
+}
+
+section.status-message h3.success {
+  color: #8a8a8a;
+}
+
+section.status-message ul {
+  padding: 0 25px 20px 25px;
 }
