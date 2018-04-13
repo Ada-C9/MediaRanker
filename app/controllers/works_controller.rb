@@ -1,4 +1,4 @@
-require 'pry'
+
 class WorksController < ApplicationController
 
   before_action :find_work, only: [:edit, :show, :update, :destroy]

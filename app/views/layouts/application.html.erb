@@ -7,8 +7,9 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag "application" %>
-  
+
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
 
