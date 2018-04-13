@@ -1,7 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update]
 
-
   def main
     @works = Work.all
     @albums = Work.albums
@@ -47,7 +46,6 @@ class WorksController < ApplicationController
 
   def destroy
     Work.destroy(params[:id])
-
     redirect_to works_path
   end
 
@@ -61,6 +59,5 @@ class WorksController < ApplicationController
   def find_work
     @work = Work.find(params[:id])
   end
-
 
 end
