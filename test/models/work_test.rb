@@ -31,4 +31,23 @@ describe Work do
   end
 
 
+  describe "relations" do
+    before do
+      @work = Work.new(title: 'test work')
+    end
+
+    # author
+    it "connects work and work_id" do
+      # Arrange
+      vote = Vote.first
+
+      # Act
+      @work.vote = vote
+
+      # Assert
+      @work.vote_id.must_equal vote.id
+    end
+  end
+
+
 end
