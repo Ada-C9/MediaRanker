@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
+
+  before_action :find_user, only: [:show]
+
   def index
+    @users = User.all
   end
 
   def show
-    @show_user = User.find_by name: params[:user][:name]
+    # @show_user = User.find(session[:user_id])
   end
 
   def new
