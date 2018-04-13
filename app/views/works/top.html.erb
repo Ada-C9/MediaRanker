@@ -1,10 +1,10 @@
 <h2>Media Spotlight: </h2>
-<section>
+<section class='top-media'>
   <section>
     <h3>Top Movies</h3>
     <% @works.each do |work| %>
     <% work.category == 'movie'%>
-    <ul>
+    <ul class="no-bullet">
       <li>
         <strong> <%= work.title %> </strong> <%= work.created_by%>
       </li>
@@ -19,7 +19,7 @@
     <h3>Top Books</h3>
     <% @works.each do |work| %>
     <% work.category == 'book'%>
-    <ul>
+    <ul class="no-bullet">
       <li>
         <strong> <%= work.title %> </strong> <%= work.created_by%>
       </li>
@@ -34,7 +34,7 @@
     <h3>Top Albums</h3>
     <% @works.each do |work| %>
     <% work.category == 'album'%>
-    <ul>
+    <ul class="no-bullet">
       <li>
         <strong> <%= work.title %> </strong> <%= work.created_by%>
       </li>

@@ -21,19 +21,19 @@
   <tr>
     <% @albums.each do |album| %>
     <tr>
-      <td>
+      <td class="text-center">
         <%= album.votes.count %>
       </td>
-      <td>
+      <td class="text-center">
         <%= link_to album.title, work_path(album)%>
       </td>
-      <td>
+      <td class="text-center">
         <%=album.created_by%>
       </td>
-      <td>
+      <td class="text-center">
         <%=album.published_year%>
       </td>
-      <td>
+      <td class="text-center">
       <%# TODO:  %>  <%= link_to 'Upvote', '#', class:'button'%>
       </td>
     </tr>
@@ -62,19 +62,19 @@
   <tr>
     <% @books.each do |book| %>
     <tr>
-      <td>
+      <td class="text-center">
         <%=book.votes.count  %>
       </td>
-      <td>
+      <td class="text-center">
         <%= link_to book.title, work_path(book)%>
       </td>
-      <td>
+      <td class="text-center">
         <%= book.created_by%>
       </td>
-      <td>
+      <td class="text-center">
         <%=book.published_year%>
       </td>
-      <td>
+      <td class="text-center">
         <%# TODO: broken link %><%= link_to 'Upvote','#', class:'button'%>
       </td>
     </tr>
@@ -103,19 +103,19 @@
   <tr>
     <% @movies.each do |movie| %>
     <tr>
-      <td>
+      <td class="text-center">
         <%=movie.votes.count %>
       </td>
-      <td>
+      <td class="text-center">
         <%= link_to movie.title, work_path(movie)%>
       </td>
-      <td>
+      <td class="text-center">
         <%=movie.created_by%>
       </td>
-      <td>
+      <td class="text-center">
         <%=movie.published_year%>
       </td>
-      <td>
+      <td class="text-center">
         <%# TODO:  %><%= link_to 'Upvote','#',  class:'button'%>
       </td>
     </tr>

@@ -13,13 +13,13 @@
     <tr>
       <% @users.each do |user| %>
       <tr>
-        <td>
+        <td class="text-center">
           <%= link_to user.name, user_path(user)%>
         </td>
-        <td>
+        <td class="text-center">
           <%= user.votes.count %>
         </td>
-        <td>
+        <td class="text-center">
           <%=user.created_at.strftime("%B %d,%Y")%>
         </td>
 

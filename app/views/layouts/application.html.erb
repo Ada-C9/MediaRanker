@@ -13,7 +13,7 @@
 
   <body>
     <header class='page-header'>
-      <h2><%= link_to 'Media Ranker',root_path %> <span>Ranking the best of everything</span></h2>
+      <h2 class='page-title'><%= link_to 'Media Ranker',root_path %> <small>Ranking the best of everything</small></h2>
       <nav>
       <%= link_to 'View top media',root_path, class: 'button'%>
         <%= link_to 'View all media', works_path, class: 'button' %>
@@ -41,7 +41,7 @@
       <%= yield %>
     </main>
 
-    <footer>
+    <footer class="text-right">
       &copy Kiera Thomasson, 2018
     </footer>
   </body>
