@@ -25,14 +25,13 @@ class Work < ApplicationRecord
     return @top_ten_albums
   end
 
-  def most_popular
-    @works = Work.all
+  def self.most_popular
     @most_popular = Work.first
-    # @works.each do |w|
-    #   if w.votes.count > @most_popular.votes.count
-    #     @most_popular = w
-    #   end
-    # end
+    Work.all.each do |w|
+      if w.votes.count > @most_popular.votes.count
+        @most_popular = w
+      end
+    end
     return @most_popular
   end
 
