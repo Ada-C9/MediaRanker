@@ -33,10 +33,6 @@ class WorksController < ApplicationController
   def update
     @work = Work.find_by(id: params[:id])
     if !@work.nil?
-
-      # Materials commented out because we are now using strong params.
-      # @book.update(title: params[:book][:title], author: params[:book][:author], description: params[:book][:description])
-
       if @work.update(work_params)
         flash[:success] = "#{@work.title} succesfully edited!"
       else
