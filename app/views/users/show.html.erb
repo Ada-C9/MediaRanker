@@ -1,0 +1,7 @@
+<article class="media-details">
+<h3>User Summary: <%= @user.name %></h3>
+<p><%= @user.created_at.strftime("%b %e, %Y") %></p>
+<h1>Vote List to be shown</h1>
+
+<%= link_to("See all users", users_path, :class => "button") %>
+<%= link_to("Back to Media List", root_path, :class => "button") %>
