@@ -33,7 +33,7 @@
           <%= vote.work.category %>
         </td>
         <td>
-          <%= vote.work.created_at %>
+          <%= vote.work.created_at.strftime("%B %d, %Y") %>
         </td>
       </tr>
       <% end %>
