@@ -36,7 +36,7 @@
       <% @work.votes.each do |vote| %>
       <tr>
         <td>
-          <%= User.find_by(id: vote.user_id).name %>
+          <%= link_to User.find(vote.user_id).name, user_path(vote.user_id) %>
         </td>
         <td>
           <%= vote.created_at.strftime("%b %d, %Y") %>

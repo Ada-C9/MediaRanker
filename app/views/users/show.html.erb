@@ -29,7 +29,7 @@
       <% w = Work.find(vote.work_id) %>
       <tr>
         <td>
-        <%= w.title %>
+        <%= link_to w.title, work_path(w.id)%>
         </td>
         <td>
           <%= w.creator %>
