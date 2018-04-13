@@ -60,12 +60,14 @@ class WorksController < ApplicationController
 
   def upvote
       @work = Work.find_by(id: params[:work])
-    
+
       if @work && session[:user_id] != nil
         Vote.create(user_id:@user.id,work_id:@work.id)
         redirect_to works_path
+        flash[:success] = "Successfully upvoted!"
       else
         render :index
+        raise
       end
   end
 

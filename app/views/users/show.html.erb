@@ -1,5 +1,5 @@
 <h3>User Summary: <%=link_to @user.name, user_path(@user.id)%></h3>
-<p>Joined site <%=@user.created_at%></h3>
+<p>Joined site  : <%=@user.created_at%></h3>
 
 <h4>Votes</h4>
 <table>
@@ -7,22 +7,29 @@
   <tr>
     <th>Media Title</th>
     <th>Created By</th>
+    <th>Published</th>
     <th>Category</th>
     <th>Voted On</th>
   </tr>
-</thead>
-<tbody>
-  <tr>
+  </thead>
+
+
     <%@user.works.each do |work|%>
-      <td><%=link_to work.title ,work_path(work.id)%></td>
-      <td><%=work.creator%></td>
-      <td><%=work.publication_year%><td>
-      <td><%=work.category%><td>
-      <td><%=work.votes[0].created_at%><td>
-  </tr>
+    <tr>
+      <td>
+        <%=link_to work.title ,work_path(work.id)%>
+      </td>
+      <td>
+        <%=work.creator%>
+      </td>
+      <td><%=work.publication_year%></td>
+      <td><%=work.category%></td>
+      <td><%=work.votes[0].created_at%></td>
+      </tr>
   <%end%>
-</tbody>
+
+
 </table>
 
-<a class="button" href="/users">See all Users</a>
-<a class="button" href="/">Back to Media List</a>
+<%=link_to "See all Users", users_path, class: "button"%>
+<%=link_to "Back to Media List",works_path, class: "button"%>
