@@ -6,6 +6,10 @@ main.row > section {
   padding: 0 2rem;
 }
 
+/*
+  MEDIA SPOTLIGHT STYLES
+*/
+
 h3 {
   font-weight: bold;
   color: #26A69A;
@@ -17,4 +21,33 @@ h3 span.media-spotlight-header {
 
 h3 span.media-spotlight-header + a {
   text-decoration: underline;
+}
+
+/*
+  TOP TENS STYLES
+*/
+
+section.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+section.top-ten h3 {
+  border-bottom: solid 2px #B2DFDB;
+}
+
+section.top-ten ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+section.top-ten h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+section.top-ten h4 small {
+  font-size: 0.8em;
+  color: slategrey;
 }

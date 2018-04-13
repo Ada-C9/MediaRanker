@@ -52,6 +52,10 @@ h2 a {
   margin-right: 15px;
 }
 
+h2 a:hover {
+  color: #FF5722;
+}
+
 header h2 > small {
   color: #FFFFFF;
 }

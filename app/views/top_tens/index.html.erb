@@ -15,17 +15,19 @@
 
 <!-- top tens -->
 
-<section>
+<section class="top-ten-container">
 
-  <section>
+  <section class="top-ten">
     <h3>Top Movies</h3>
     <ul>
       <% @top_movies.each do |movie| %>
         <li>
-          <%= link_to movie.title, work_path(movie) %> by
-          <small>
-            <%= movie.creator %>
-          </small>
+          <h4>
+            <%= link_to movie.title, work_path(movie), class: "link" %>
+            <small>
+               by <%= movie.creator %>
+            </small>
+          </h4>
           <p>
             <%= movie.votes.count %> votes
           </p>
@@ -35,15 +37,17 @@
 
   </section><!-- top ten movies -->
 
-  <section>
+  <section class="top-ten">
     <h3>Top Books</h3>
     <ul>
       <% @top_books.each do |book| %>
         <li>
-          <%= link_to book.title, work_path(book) %> by
-          <small>
-            <%= book.creator %>
-          </small>
+          <h4>
+            <%= link_to book.title, work_path(book), class: "link" %>
+            <small>
+               by <%= book.creator %>
+            </small>
+          </h4>
           <p>
             <%= book.votes.count %> votes
           </p>
@@ -53,15 +57,17 @@
 
   </section><!-- top ten books -->
 
-  <section>
+  <section class="top-ten">
     <h3>Top Albums</h3>
     <ul>
       <% @top_albums.each do |album| %>
         <li>
-          <%= link_to album.title, work_path(album) %> by
-          <small>
-            <%= album.creator %>
-          </small>
+          <h4>
+            <%= link_to album.title, work_path(album), class: "link" %>
+            <small>
+               by <%= album.creator %>
+            </small>
+          </h4>
           <p>
             <%= album.votes.count %> votes
           </p>
