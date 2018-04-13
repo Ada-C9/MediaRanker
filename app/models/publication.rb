@@ -3,7 +3,7 @@ class Publication < ApplicationRecord
 
   validates :category, presence: true
   validates :title, presence: true, length: { minimum: 1 }
-  validates :category, uniqueness: {scope: [:title]}
+  validates :title, uniqueness: {scope: [:category]}
 
   CATEGORIES = ["movie", "book", "album"]
 
