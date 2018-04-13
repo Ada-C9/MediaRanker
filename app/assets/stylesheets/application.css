@@ -1,19 +1,240 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *= require normalize-rails
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*= require normalize-rails
 
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
 
- */
+*/
+@media print, screen and (min-width:40em) {
+  .reveal,.reveal.tiny,.reveal.small,.reveal.large {
+    right:auto;left:auto;margin:0 auto
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .button-group.stacked-for-small .button{width:auto;margin-bottom:0
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .button-group.stacked-for-medium .button{width:auto;margin-bottom:0}}@media screen and (max-width: 39.9375em){.button-group.stacked-for-small.expanded{display:block}.button-group.stacked-for-small.expanded .button{display:block;margin-right:0
+  }
+}
+
+html {
+  display: block;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif;
+}
+
+body {
+  display: block;
+  font-weight: normal;
+  line-height: 1.5;
+  color: rgb(10, 10, 10);
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0px;
+  background: rgb(254, 254, 254);
+}
+
+.button {
+  background-color: #26A69A;
+}
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  /*background-color: #1779ba;*/
+  color: #fefefe;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a, h3 {
+  color: #26A69A;
+}
+
+hr {
+  clear: both;
+  max-width: 75rem;
+  height: 0;
+  margin: 1.25rem auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #cacaca;
+  border-left: 0;
+}
+
+h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small {
+  line-height: 0;
+  color: rgb(202, 202, 202);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  /*color: inherit;*/
+  text-rendering: optimizeLegibility;
+}
+
+.page-header {
+  max-width: 100%;
+  background-color: rgb(178, 223, 219);
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  padding: 25px 20px 30px;
+}
+
+.page-header h2 a {
+  color: rgb(255, 87, 34);
+  padding-right: 25px;
+  margin-right: 15px;
+  border-right: 2px solid white;
+}
+
+.page-header h2 {
+    text-align: center;
+    margin: 25px auto 40px auto;
+}
+
+.page-header h2 small {
+  color: white;
+}
+
+.row {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row::before, .row::after {
+  display: table;
+  content: " ";
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+section.spotlight > div {
+  padding: 0px 2rem 2rem;
+}
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+section.spotlight>div {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.spotlight p {
+  margin-bottom: 0px;
+}
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten h3 {
+  border-bottom: 2px solid rgb(178, 223, 219);
+}
+
+.status {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
+}
+
+.notice h3, .success h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.notice h3 {
+  color: #C70039;
+}
+
+.success h3 {
+  color: rgb(138, 138, 138);
+}
+
+.alert ul {
+  margin-left: 40px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+h4, .h4 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}

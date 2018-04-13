@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 2.0" %></title>
   <%= favicon_link_tag 'owl.jpg' %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Gudea:400,700|Hammersmith+One' %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,42 +20,43 @@
     </h2>
 
     <nav>
-      <%= link_to "View top media", root_path %>
-      <%= link_to "View all media", works_path %>
-      <%= link_to "Add a new work", new_work_path %>
-      <%= link_to "View all users", users_path %>
-      <% if @session_user && @session_user.id %>
-      <%= link_to "Logged in as #{@session_user.name}", user_path(@session_user.id), method: :get %>
-      <%= link_to "Logout", logout_path, method: :delete %>
-      <% else %>
-      <%= link_to "Login", login_form_path, method: :get %>
-      <% end %>
-
+      <%= link_to "View top media", root_path, class:"button" %>
+      <%= link_to "View all media", works_path, class:"button" %>
+      <%= link_to "Add a new work", new_work_path, class:"button" %>
+      <%= link_to "View all users", users_path, class:"button" %>
+      <div class="float-right">
+        <% if @session_user && @session_user.id %>
+        <%= link_to "Logged in as #{@session_user.name}", user_path(@session_user.id), method: :get, class:"button" %>
+        <%= link_to "Logout", logout_path, method: :delete, class:"button" %>
+        <% else %>
+        <%= link_to "Login", login_form_path, method: :get, class:"button" %>
+        <% end %>
+      </div>
     </nav>
   </header>
-
-  <main>
-    <section class = "flash">
-      <% flash.each do |name, message| %>
-      <section class="callout <% name %> ">
-        <% if name == "alert" %>
-        <ul>
-          <%flash[:alert].each do |field, message| %>
-          <li>
-            <strong><%= field %>: </strong>
-            <%= message %>
-          </li>
-          <% end %>
-        </ul>
-        <%else%>
-        <p>
-          <%=message%>
-        </p>
+  <% if flash.count > 0 %>
+  <section class="row status">
+    <% flash.each do |name, message| %>
+    <section class="<%= name %> ">
+      <% if name == "alert" %>
+      <ul>
+        <%flash[:alert].each do |field, message| %>
+        <li>
+          <%= field %>: <%= message %>
+        </li>
         <% end %>
-      </section>
-      <%end%>
-
-      <%= yield %>
-    </main>
+      </ul>
+      <%else%>
+      <h3>
+        <%=message%>
+      </h3>
+      <% end %>
+    </section>
+    <%end%>
+  </section>
+  <%end%>
+  <main class="row">
+    <%= yield %>
+  </main>
   </body>
   </html>
