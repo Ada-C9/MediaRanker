@@ -20,7 +20,7 @@
 <h3><%=@work.votes.count%> votes for this <%=@work.category%></h3>
 
 <table>
-  <thead>
+<thead>
     <tr>
       <th>
         User
@@ -29,9 +29,10 @@
         Date
       </th>
     </tr>
-  </thead>
+</thead>
 
   <% @work.votes.each do |vote|%>
+<tbody>
   <tr>
     <td>
       <%=link_to vote.user.username, user_path(vote.user_id)%>
@@ -41,5 +42,7 @@
     </td>
   </tr>
   <%end%>
+</tbody>
+
 </table>
 </article>

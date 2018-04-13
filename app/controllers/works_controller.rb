@@ -36,22 +36,38 @@ class WorksController < ApplicationController
       render :edit
     end
   end
-
   def destroy
-    user = nil
-    if session[:user_id]
-      user =  User.find_by(id: session[:user_id])
-      @work = Work.find_by(id:params[:id])
-      @work.destroy
-    else
-      flash[:status] = "Deleted "
-      redirect_to works_path
+      current_user = nil
+      if session[:user_id]
+        current_user = User.find_by(id: session[:user_id])
+        @work = Work.find(params[:id])
+        @work.destroy
+        flash[:status] = :success
+        flash[:message] = "Deleted #{@work.category} #{@work.title}"
+        redirect_to works_path
+      else
+        flash[:status] = :failure
+        flash[:message] = "You must be logged in to do that!"
+        redirect_to works_path
+        return
+      end
     end
-    flash[:alert] = {work: "does not exist"}
-
-    redirect_to works_path
-
-  end
+  # def destroy
+  #   user = nil
+  #   if session[:user_id]
+  #     user =  User.find_by(id: session[:user_id])
+  #     @work = Work.find(params[:id])
+  #     @work.destroy
+  #   else
+  #     flash[:status] = :success
+  #     flash[:message]= "Deleted #{@work.title}"
+  #     redirect_to works_path
+  #   end
+  #   flash[:alert] = {work: "does not exist"}
+  #
+  #   redirect_to works_path
+  #
+  # end
   def upvote
     if !(session[:user_id])
       flash[:status] = :failure

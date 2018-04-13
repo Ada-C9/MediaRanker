@@ -13,14 +13,17 @@
 
   <body>
     <header class="page-header row">
-    <h1>
+    <h2 class="small-12 columns">
 
-      <%=link_to "Media Ranker|ranking the Best of Everything", '/', method: :get%>
+      <%=link_to "Media Ranker", '/', method: :get%>
+        <small>|ranking the Best of Everything"</small>
     </h1>
+    <nav class="columns small-12 row">
     <%=link_to "View top media", root_path, method: :get,class: "button"%>
       <%=link_to "View all media", works_path, method: :get,class: "button"%>
       <%=link_to "Add a new work", new_work_path, method: :get,class:"button"%>
       <%=link_to "View all users", users_path, method: :get,class:"button"%>
+      <div class="float-right">
         <% if @user && @user.id %>
         <%= link_to "logged in as #{@user.username}", user_path(@user.id), method: :get,class: "button" %>
           <%= link_to "Log out", logout_path, class: "button", method: :delete%>
@@ -31,8 +34,8 @@
 
       </nav>
     </header>
-    <main>
-      <section >
+    <main >
+      <section class="row flash">
         <% flash.each do |name, message| %>
           <section class="callout <%= name %>">
             <% if name == "alert" %>
@@ -52,6 +55,7 @@
           </section>
         <% end %>
       </section>
+      <main class="row">
     <%= yield %>
 
   </body>

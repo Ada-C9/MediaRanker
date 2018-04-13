@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :votes
   validates :username, presence: true
+  validates :date_joined, presence: true
+
 
 
   def count_vote
