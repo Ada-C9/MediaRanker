@@ -10,22 +10,27 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new(vote_params)
+    if session[:user_id]
 
-    if @vote.save
-      redirect_to votes_path
-    else
-      # Validations failed! What do we do now? See below...
-      render :new
+      new_vote = {
+        work_id: params[:work_id],
+        user_id: session[:user_id]
+      }
+
+      @vote = Vote.new(new_vote)
+
+      if @vote.save
+        flash[:notice] = "Successfully upvoted"
+      else
+        flash[:alert] = "Could not upvote"
+        flash[:notice] = @vote.errors.full_messages
+      end
     end
-
+    # redirect_to works_path
+    redirect_to request.referer
   end
 
-  def show
-
-    @works = Work.all
-
-  end
+  def show; end
 
   def edit; end
 
@@ -48,7 +53,7 @@ class VotesController < ApplicationController
   private
 
   def vote_params
-    return params.require(:vote).permit(:name)
+    return params.require(:vote).permit(:user_id, :work_id)
   end
 
   def find_vote

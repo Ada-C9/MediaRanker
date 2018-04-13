@@ -3,8 +3,8 @@
     <tr>
       <th width="80">Votes</th>
       <th>Title</th>
-      <th>Created By</th>
-      <th width="100">Published</th>
+      <th width="400">Created By</th>
+      <th width="200">Published</th>
       <th width="100">Upvote</th>
     </tr>
   </thead>
@@ -25,7 +25,7 @@
         <%= work.publication_year %>
       </td>
       <td>
-        <%= link_to("Upvote", works_path, class: "button") %>
+        <%= link_to("Upvote", upvote_path(work), class: "button") %>
       </td>
     </tr>
     <% end %>

@@ -17,17 +17,17 @@
     <h2><%= link_to("Media Ranker", root_path)%><small class="small-header">Ranking the Best of Everything</small></h2>
 
     <nav class="nav">
+      <div>
       <%= link_to("View top media", root_path, class: "button") %>
       <%= link_to("View all media", works_path, class: "button") %>
       <%= link_to("Add a new work", new_work_path, class: "button") %>
       <%= link_to("View all users", users_path, class: "button") %>
 
-      <div>
         <% if session[:user_id] %>
-          <%= link_to("Logged in as #{ User.find(session[:user_id]).name }", user_path(session[:user_id]), class: "button") %>
-          <%= link_to("Log Out", logout_path,  method: :delete, class: "button") %>
+        <%= link_to("Log Out", logout_path,  method: :delete, class: "button float-right") %>
+        <%= link_to("Logged in as #{ User.find(session[:user_id]).name }", user_path(session[:user_id]), class: "button float-right") %>
         <% else %>
-          <%= link_to("Log In", login_path, class: "button") %>
+        <%= link_to("Log In", login_path, class: "button float-right") %>
         <% end %>
       </div>
     </nav>

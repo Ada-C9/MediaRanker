@@ -40,10 +40,10 @@ body, h1, h2, h3, h4, h5 {
 }
 
 /* .page-header .nav {
-  display: inline-block;
-  list-style-type: none;
-  padding: 0;
-  margin: 2em 0;
+display: inline-block;
+list-style-type: none;
+padding: 0;
+margin: 2em 0;
 } */
 
 .page-header {
@@ -113,4 +113,8 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
+}
+
+.float-right {
+  float: right !important;
 }
