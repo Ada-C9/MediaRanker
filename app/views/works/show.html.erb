@@ -8,11 +8,10 @@
     <%= link_to("Back to media ranks", root_path, :class => "button") %>
     <%= link_to("Edit", edit_work_path(@work.id), :class => "button") %>
 
-    <a class="button" rel="nofollow" data-method="post" href="/works/241/upvote">Upvote</a>
-    <%= link_to("Upvote", vote_path(@vote.id), :class => "button") %>
+    <%# TODO fix upvote routes %>
+    <%= link_to("Upvote", "#", :class => "button") %>
 
-    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/241">Delete</a>
-    <%= link_to("Delete", destroy_work_path(@work.id), :class => "button") %>
+    <%= link_to("Delete", work_path(@work.id), :class => "button", method: :delete, data: { confirm: "Are you sure you want to delete this work?" }) %>
   </section>
 </article>
 
