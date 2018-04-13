@@ -30,8 +30,8 @@ before_action :find_user
         flash[:success] = "Successfully upvoted!"
         redirect_to root_path
       else
-        flash.now[:alert] = @vote.errors
-        render :new
+        flash[:alert] = @vote.errors
+        redirect_to root_path
       end
 
     end
