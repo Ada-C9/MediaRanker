@@ -10,7 +10,7 @@
         <%= link_to("Add some works!", new_work_path) %>
       <% end %>
   </h3>
-  <p><%= "#{@works.first.votes.count} - #{@works.first.description}"%></p>
+  <p><%= "#{@works.first.votes.count} votes - #{@works.first.description}"%></p>
 </section>
 
 <hr class="root-hr">
@@ -19,15 +19,13 @@
   <section class="top-ten">
     <h3 class="top-ten-category">Top Movies</h3>
     <ul>
-      <% @works.each do |work| %>
-      <% if work.category == "movie" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        <%= "#{work.votes.count} votes" %>
-      </p>
-      <% end %>
+      <% Work.top_ten_movies.each do |w| %>
+        <li>
+          <h4><%= link_to("#{w.title}", work_path(w)) %> <small>by <%= w.creator %></small></h4>
+        </li>
+        <p>
+          <%= "#{w.votes.count} votes" %>
+        </p>
       <% end %>
     </ul>
   </section>
@@ -35,15 +33,13 @@
   <section class="top-ten">
     <h3 class="top-ten-category">Top Books</h3>
     <ul>
-      <% @works.each do |work| %>
-      <% if work.category == "book" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        <%= "#{work.votes.count} votes" %>
-      </p>
-      <% end %>
+      <% Work.top_ten_books.each do |w| %>
+        <li>
+          <h4><%= link_to("#{w.title}", work_path(w)) %> <small>by <%= w.creator %></small></h4>
+        </li>
+        <p>
+          <%= "#{w.votes.count} votes" %>
+        </p>
       <% end %>
     </ul>
   </section>
@@ -51,15 +47,13 @@
   <section class="top-ten">
     <h3 class="top-ten-category">Top Albums</h3>
     <ul>
-      <% @works.each do |work| %>
-      <% if work.category == "album" %>
-      <li>
-        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-      </li>
-      <p>
-        <%= "#{work.votes.count} votes" %>
-      </p>
-      <% end %>
+      <% Work.top_ten_albums.each do |w| %>
+        <li>
+          <h4><%= link_to("#{w.title}", work_path(w)) %> <small>by <%= w.creator %></small></h4>
+        </li>
+        <p>
+          <%= "#{w.votes.count} votes" %>
+        </p>
       <% end %>
     </ul>
   </section>

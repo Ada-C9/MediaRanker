@@ -18,6 +18,13 @@ class Work < ApplicationRecord
     return @top_ten_books
   end
 
+  def self.top_ten_albums
+    albums = Work.where(category: "album")
+
+    @top_ten_albums = albums.first(10)
+    return @top_ten_albums
+  end
+
   def most_popular
     @works = Work.all
     @most_popular = Work.first
