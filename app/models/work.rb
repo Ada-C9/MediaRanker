@@ -8,9 +8,10 @@ class Work < ApplicationRecord
 
 
 
-def self.top_ten
-  top_ten = Work.all.order(votes: :desc, limit: 10)
-  return top_ten
+def self.order_by_vote
+  all = Work.all.sort_by{|work| work.votes.count}.reverse
+
+  return all
 end
 
 end

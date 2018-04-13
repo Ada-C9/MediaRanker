@@ -1,9 +1,33 @@
 // Place all the styles related to the mainpage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-nav ul {
-  display: flex;
+
+
+
+main {
+  padding-top: 2rem;
+padding-bottom: 2rem;
 }
-nav ul li {
-  margin: 5px;
+
+#spotlight {
+  border-bottom: 2px solid;
+}
+#spotlight a {
+      border-bottom: 2px solid;
+      font-weight: bold;
+}
+
+#tops {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+#tops ul {
+  display: block;
+}
+
+.top-ten {
+  color: #26A69A;
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB
 }

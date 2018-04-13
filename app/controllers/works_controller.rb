@@ -2,6 +2,8 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all
+    
+
   end
 
   def new
@@ -60,7 +62,7 @@ class WorksController < ApplicationController
     else
       flash[:failure] = "Could not upvote"
       flash[:errors] = vote.errors.messages[:user_id]
-    
+
 
     end
     redirect_back(fallback_location: root_path)
