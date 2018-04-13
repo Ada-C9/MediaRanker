@@ -1,0 +1,14 @@
+<section class="top-ten">
+
+  <h3>Top <%=work_category.capitalize %>s </h3>
+  <ul>
+    <% @works.each do |work| %>
+    <% if work.work_category == work_category%>
+    <li>
+      <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
+      <p>1 votes</p>
+    </li>
+    <% end%>
+    <% end%>
+  </ul>
+</section>

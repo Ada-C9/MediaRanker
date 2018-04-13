@@ -1,52 +1,15 @@
-<h1 class="page-header"></h1>
+
 <section class="row spotlight">
   <div>
-    <h3><span class="media-spotlight-header">Media Spotlight</span> </h3>
+    <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to @spotlight.work_title %><small> by <%= @spotlight.work_creator%></small></h3>
     <p></p>
   </div>
 </section>
 
+
 <section class="top-ten-container">
-  <section class="top-ten">
-    <h3>Top Movies</h3>
-    <ul>
-      <% @works.each do |work| %>
-      <% if work.work_category == "movie"%>
-      <li>
-        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
-        <p>1 votes</p>
-      </li>
-      <% end%>
-      <% end%>
-    </ul>
-  </section>
-
-  <section class="top-ten">
-    <h3>Top Books</h3>
-    <ul>
-      <% @works.each do |work| %>
-      <% if work.work_category == "book"%>
-      <li>
-        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
-        <p>1 votes</p>
-      </li>
-      <% end%>
-      <% end%>
-    </ul>
-  </section>
-
-  <section class="top-ten">
-    <h3>Top Albums</h3>
-    <ul>
-      <% @works.each do |work| %>
-      <% if work.work_category == "album"%>
-      <li>
-        <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
-        <p>1 votes</p>
-      </li>
-      <% end%>
-      <% end%>
-    </ul>
-  </section>
+  <%= render partial: 'table', locals: {work_category: "album"} %>
+  <%= render partial: 'table', locals: {work_category: "book"} %>
+  <%= render partial: 'table', locals: {work_category: "movie"} %>
 
 </section>
