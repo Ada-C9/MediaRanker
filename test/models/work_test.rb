@@ -140,15 +140,17 @@ describe Work do
   #     book = works(:book)
   #     movie = works(:movie)
   #
-  #     album.votes.length = 5
-  #     book.votes.length = 1
-  #     movie.vote.length = 0
+  #     5.times do
+  #       album.votes << Vote.new
+  #     end
+  #
+  #     book.votes << Vote.new
   #
   #     result = Work.find_spotlight
   #
   #     result.must_equal album
   #   end
-  #
-  # end
+
+  end
 
 end
