@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  # before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @show_user = User.find_by(id: params[:id])
+    # # if !(session[:user_id])
+    # @show_user = User.find_by(id: params[:id])
   end
 
   def create

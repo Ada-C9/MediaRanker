@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head class="page-header">
-    <!-- <h2>
+<head class="page-header">
+  <!-- <h2>
+  <strong>Media Ranker</strong>
+  <small> | Ranking the Best of Everything </small>
+</h2> -->
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header class="page-header row">
+    <h2>
       <strong>Media Ranker</strong>
-      <small> | Ranking the Best of Everything </small>
-    </h2> -->
-    <%= csrf_meta_tags %>
+      <small>  Ranking the Best of Everything </small>
+    </h2>
+    <nav>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= link_to "View top media", root_path, class: "button" %>
 
-  <body>
-    <header class="page-header row">
-      <h2>
-        <strong>Media Ranker</strong>
-        <small>  Ranking the Best of Everything </small>
-      </h2>
-      <nav>
+      <%= link_to "View all media", works_path, class: "button" %>
 
-            <%= link_to "View top media", root_path, class: "button" %>
+      <%= link_to "Add a new work", new_work_path, class: "button" %>
 
-            <%= link_to "View all media", works_path, class: "button" %>
+      <%= link_to "View all users", users_path, class: "button" %>
 
-            <%= link_to "Add a new work", new_work_path, class: "button" %>
-
-            <%= link_to "View all users", users_path, class: "button" %>
-
-            <div class="float-right">
-              <% if @user %>
-                <%= @user.user_name %>
-                <%= link_to "Logout", logout_path, method: :delete, class: "button" %>
-            <% else %>
-               <%= link_to "Login", login_form_path, class: "button" %>
-            <% end %>
-            </div>
-
-      </nav>
-    </header>
-
-    <section class="flash">
-        <%flash.each do |name, message| %>
-        <section class="callout <%= name%>">
-          <% if name == "alert" %>
-          <ul>
-            <%flash.each do |field, message| %>
-            <li>
-              <strong> <%=field%> : </strong> <%= message%>
-            </li>
-            <% end %>
-          </ul>
-          <% else %>
-          <p> <%= message %></p>
-          <% end %>
-        </section>
+      <div class="float-right">
+        <% if session[:user_id] %>
+        <%= link_to "Logged in as #{User.find_by(id: session[:user_id]).user_name}", user_path(:id), class: "button"%>
+        <%= link_to "Logout", logout_path, method: :delete, class: "button" %>
+        <% else %>
+        <%= link_to "Login", login_form_path, class: "button" %>
         <% end %>
-      </section>
+      </div>
 
-    <%= yield %>
-  </body>
+    </nav>
+  </header>
+
+  <section class="flash">
+    <%flash.each do |name, message| %>
+    <section class="callout <%= name%>">
+      <% if name == "alert" %>
+      <ul>
+        <%flash.each do |field, message| %>
+        <li>
+          <strong> <%=field%> : </strong> <%= message%>
+        </li>
+        <% end %>
+      </ul>
+      <% else %>
+      <p> <%= message %></p>
+      <% end %>
+    </section>
+    <% end %>
+  </section>
+
+  <%= yield %>
+</body>
 </html>
