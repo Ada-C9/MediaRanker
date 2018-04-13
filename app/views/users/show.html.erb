@@ -25,7 +25,5 @@
   </tbody>
 </table>
 
-<ul>
-  <li><%= link_to "See all Users", users_path(@this_user) %></li>
-  <li><%= link_to "Back to Media List", mains_path(@this_user) %></li>
-</ul>
+<%= link_to "See all Users", users_path(@this_user), class: "button" %>
+<%= link_to "Back to Media List", mains_path(@this_user), class: "button" %>
