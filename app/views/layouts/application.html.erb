@@ -36,11 +36,13 @@
               <ul>
                 <% if find_user %>
                 <li>
-                  Welcome <%= find_user.username %>
+                  Logged in as <%= find_user.username %>
                   <%= link_to "Logout", logout_path, method: :delete %>
                 </li>
                 <% else %>
-                <%= link_to "Login", login_form_path %>
+                <li>
+                  <%= link_to "Login", login_form_path %>
+                </li>
                 <% end %>
               </ul>
             </li>
