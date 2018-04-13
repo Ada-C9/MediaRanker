@@ -40,8 +40,9 @@ describe Work do
     work.valid?.must_equal true
   end
 end
+
 describe "self methods" do
-  it "must return an array of 10 or less books" do
+  it "must return an array of 10 or less works of the same category" do
     books = Work.top_ten_books
     books.each do |work|
       work.category.must_equal "book"
@@ -73,4 +74,5 @@ describe "self methods" do
     movies = Work.top_ten_movies
     (movies.count == 10).must_equal true
   end
+
 end
