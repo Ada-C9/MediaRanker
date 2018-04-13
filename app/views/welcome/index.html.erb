@@ -14,7 +14,7 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Albums</h3>
   <ul>
-     <% Work.order_albums.each do |work| %>
+     <% @albums.each do |work| %>
      <li>
        <%= link_to work.title, work_path(work) %> by
        <%= work.creator %>
@@ -27,7 +27,7 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Books</h3>
   <ul>
-    <% Work.order_books.each do |work| %>
+    <% @books.each do |work| %>
     <li>
       <%= link_to work.title, work_path(work) %> by
       <%= work.creator %>
@@ -40,7 +40,7 @@ by <%= @spotlight.creator %>
 <section class="top-ten">
   <h3>Top Movies</h3>
   <ul>
-    <% Work.order_movies.each do |work| %>
+    <% @movies.each do |work| %>
     <li>
       <%= link_to work.title, work_path(work) %> by
       <%= work.creator %>

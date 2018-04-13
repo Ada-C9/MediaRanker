@@ -1,22 +1,24 @@
 <br><br><br><br>
-<h3>
-  <%= @work.title %>
-</h3>
+<article>
+  <h3>
+    <%= @work.title %>
+  </h3>
 
-<p>
-  Created by:
-  <%= @work.creator %>
-</p>
+  <p>
+    Created by:
+    <%= @work.creator %>
+  </p>
 
-<p>
-  Released:
-  <%= @work.publication_year %>
-</p>
+  <p>
+    Released:
+    <%= @work.publication_year %>
+  </p>
 
-<p>
-  Details:
-  <%= @work.description %>
-</p>
+  <p>
+    Details:
+    <%= @work.description %>
+  </p>
+</article>
 
 <section> <!-- TO DO: Add ROOT path and upvote path-->
   <%= link_to("Back to media ranks", root_path, class: "button") %>
@@ -24,3 +26,7 @@
   <%= link_to("Upvote", upvote_work_path(@work), method: :post, class: "button")%>
   <%= link_to("Delete", work_path(@work), class: "button", method: :delete, data: { confirm: "Are you sure you want to delete #{ @work.title }?" }) %>
 </section>
+
+<article>
+  <h3><%= @work.votes.count %> for this <%= @work.category %></h3>
+</article>
