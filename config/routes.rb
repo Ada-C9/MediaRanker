@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :votes
 
-  resources :works
+  resources :works do
+    resources :votes, only: [:new, :create, :edit, :update]
+  end
 
   root 'works#home'
 end

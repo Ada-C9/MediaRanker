@@ -1,0 +1,31 @@
+<h2>User Summary:<%= @user.username %></h2>
+
+<ul>
+  <li>
+    <%= "Joined site #{@user.created_at}" %>
+  </li>
+</ul>
+
+<h3>Votes</h3>
+<p>
+  <ul>
+    <li>Media Title</li>
+    <li>Created By></li>
+    <li>Published</li>
+    <li>Category</li>
+    <li>Voted On</li>
+  </ul>
+</p>
+
+<p>
+<ul>
+  <ul>
+    <!-- is this right? -->
+    <% Vote.votes_by_user(@user).each do |vote|  %>
+    <li>
+      <%= link_to Work.find(vote.work_id).title, work_path(Work.find(vote.work_id).id) %>
+    </li>
+    <% end %>
+  </ul>
+</ul>
+</p>

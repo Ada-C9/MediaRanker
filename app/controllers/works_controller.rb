@@ -1,6 +1,8 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
 
+  before_action :find_user
+
   def home
     @top_albums = Work.top_works("album")
     @top_movies = Work.top_works("movie")
@@ -78,5 +80,9 @@ class WorksController < ApplicationController
 
   def find_work
     @work = Work.find_by(id: params[:id])
+  end
+
+  def find_user
+    @user = User.find_by(id: params[:user_id])
   end
 end
