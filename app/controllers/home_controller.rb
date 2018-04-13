@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
+
+  before_action :sort_by_votes 
+
   def index
-    @movies = Work.where(category: "movie")
-    @books = Work.where(category: "book")
-    @albums = Work.where(category: "album")
+    @albums = @media[0]
+    @movies = @media[1]
+    @books = @media[2]
   end
 end

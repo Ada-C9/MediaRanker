@@ -1,52 +1,13 @@
 class WorksController < ApplicationController
+
   before_action :find_work, only: [:show, :edit, :update, :destroy]
   before_action :find_active_user
-  # before_action :find_user
+  before_action :sort_by_votes, only: [:index]
+
   def index
-    # @media = Work.all
-
-    # albums:
-    albums = Work.where(category: "album")
-
-    hasvote = []
-    empty =[]
-    albums.each do |album|
-      album.votes.first != nil ? hasvote << album : empty << album
-    end
-
-    hasvote = (hasvote.sort_by {|album| album.votes.length}).reverse
-    empty = empty.sort_by {|album| album.title}
-
-    @albums = hasvote.concat empty
-
-    # movies:
-    movies = Work.where(category: "movie")
-
-    hasvote = []
-    empty =[]
-    movies.each do |movie|
-      movie.votes.first != nil ? hasvote << movie : empty << movie
-    end
-
-    hasvote = (hasvote.sort_by {|movie| movie.votes.length}).reverse
-    empty = empty.sort_by {|movie| movie.title}
-
-    @movies = hasvote.concat empty
-
-    # books:
-    books = Work.where(category: "book")
-
-    hasvote = []
-    empty =[]
-    books.each do |book|
-      book.votes.first != nil ? hasvote << book : empty << book
-    end
-
-    hasvote = (hasvote.sort_by {|book| book.votes.length}).reverse
-    empty = empty.sort_by {|book| book.title}
-
-    @books = hasvote.concat empty
-
+    @albums = @media[0]
+    @movies = @media[1]
+    @books = @media[2]
   end
 
   def show
