@@ -40,9 +40,19 @@
       <section class="row status">
         <% flash.each do |name, message| %>
           <section class="callout <%= name %>">
-              <h3>
-                <%= message %>
-              </h3>
+            <% if name == "error" %>
+              <ul>
+                <% flash[:error].each do |field, message|%>
+                  <% if message != []%>
+                    <li><%=field%>: <%=message[0]%></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% else %>
+            <h3>
+              <%= message %>
+            </h3>
+            <% end %>
           </section>
         <% end %>
       </section>
