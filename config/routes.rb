@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#login'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  post '/logout', to: 'sessions#logout', as: 'logout'
 
   resources :arts
   post '/arts/:id/upvote', to: 'arts#upvote', as: 'upvote'

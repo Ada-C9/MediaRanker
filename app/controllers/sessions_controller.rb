@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def login_form; end
 
   def new
-    @user = User.new
+    @form_user = User.new
   end
 
 # FIXME: Will not register me as logged in so I can vote
