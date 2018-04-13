@@ -65,20 +65,24 @@ main {
   color: white;
 }
 
-.status {
+.flash .failures, .flash .success {
   border-radius: 5px;
   background-color: #e6e6e6;
   padding: 20px 25px;
   margin-top: 30px;
 }
 
-.status.failure h3, .status.success h3 {
+.flash .failures h3, .flash .success h3 {
   font-weight: normal;
   font-size: 1em;
 }
 
-.status.failure h3 {
+.flash .failures h3 {
   color: #C70039;
+}
+
+.flash .success h3 {
+  color: #8a8a8a;
 }
 
 .media-spotlight-header {

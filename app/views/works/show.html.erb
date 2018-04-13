@@ -1,20 +1,20 @@
 <main>
   <article>
-    <h2><%= @work.title %></h2>
-    <h3>Created by: <%= @work.creator %></h3>
-    <h3>Published: <%= @work.publication_year %></h3>
-    <h3>Description: <%= @work.description %></h3>
+    <h3><%= @work.title %></h3>
+    <p>Created by: <%= @work.creator %></p>
+    <p>Published: <%= @work.publication_year %></p>
+    <p><%= @work.description %></p>
   </article>
 
   <section>
     <%= link_to "Back to media ranks", root_path, class: "button" %>
     <%= link_to "Edit", edit_work_path(@work), class: "button" %>
-    <%= link_to "Upvote", work_upvote_path(@work), method: :post, class: "button" %><li>
-    <%= link_to "Delete", work_path(@work), method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?" }, class: "button" %>
+    <%= link_to "Upvote", work_upvote_path(@work), method: :post, class: "button" %>
+    <%= link_to "Delete", work_path(@work), method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?" }, class: "alert button" %>
   </section>
 
   <section>
-    <h2><%= @work.votes.count %> votes for this <%= @work.category.capitalize %></h2>
+    <h3><%= @work.votes.count %> votes for this <%= @work.category.capitalize %></h3>
     <table>
       <thead>
         <tr>
