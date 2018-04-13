@@ -21,7 +21,7 @@
         <td><%= link_to album.title, work_path(album) %></td>
         <td><%= album.creator %></td>
         <td><%= album.publication_year %></td>
-        <td><%= link_to "Upvote", upvote_path(album), method: :post %></td>
+        <td><%= link_to "Upvote", upvote_path(album), method: :post, class: "button" %></td>
       </tr>
       <% end %>
     </tbody>
@@ -34,7 +34,7 @@
   <table>
 
     <thead>
-      <tr>
+      <tr class="works-table">
         <th>Votes</th>
         <th>Title</th>
         <th>Created By</th>
@@ -45,12 +45,12 @@
 
     <tbody>
       <% @books.each do |book| %>
-      <tr>
+      <tr class="works-table">
         <td><%= book.votes.count %></td>
         <td><%= link_to book.title, work_path(book) %></td>
         <td><%= book.creator %></td>
         <td><%= book.publication_year %></td>
-        <td><%= link_to "Upvote", upvote_path(book), method: :post %></td>
+        <td><%= link_to "Upvote", upvote_path(book), method: :post, class: "button" %></td>
       </tr>
       <% end %>
     </tbody>
@@ -63,7 +63,7 @@
   <table>
 
     <thead>
-      <tr>
+      <tr class="works-table">
         <th>Votes</th>
         <th>Title</th>
         <th>Created By</th>
@@ -74,15 +74,18 @@
 
     <tbody>
       <% @movies.each do |movie| %>
-      <tr>
+      <tr class="works-table">
         <td><%= movie.votes.count %></td>
         <td><%= link_to movie.title, work_path(movie) %></td>
         <td><%= movie.creator %></td>
         <td><%= movie.publication_year %></td>
-        <td><%= link_to "Upvote", upvote_path(movie), method: :post %></td>
+        <td><%= link_to "Upvote", upvote_path(movie), method: :post, class: "button" %></td>
       </tr>
       <% end %>
     </tbody>
 
   </table>
 </section><!-- movies table -->
+
+<%= link_to "View top media", root_path, class: "button" %>
+<%= link_to "Add a new work", new_work_path, class: "button" %>

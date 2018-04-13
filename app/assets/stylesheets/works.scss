@@ -7,6 +7,14 @@ tr.works-table {
   grid-template-columns: 1fr 6fr 2fr 2fr 2fr;
 }
 
+a.button {
+  margin-bottom: 0;
+}
+
 section.work-actions a.button:last-child {
   background-color: #FF5722;
+}
+
+article {
+  margin-top: 1em;
 }
