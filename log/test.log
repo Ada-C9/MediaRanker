@@ -1,0 +1,1391 @@
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 206669143)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:47:53.510735', '2018-04-13 04:47:53.510735', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:47:53.537615', '2018-04-13 04:47:53.537615', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:47:53.537615', '2018-04-13 04:47:53.537615', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:47:53.537615', '2018-04-13 04:47:53.537615', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:47:53.537615', '2018-04-13 04:47:53.537615', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:47:53.537615', '2018-04-13 04:47:53.537615', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:47:53.548041', '2018-04-13 04:47:53.548041', 373891647)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:47:53.548041', '2018-04-13 04:47:53.548041', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:47:53.548041', '2018-04-13 04:47:53.548041', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:47:53.548041', '2018-04-13 04:47:53.548041', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:47:53.548041', '2018-04-13 04:47:53.548041', 1019702018)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+User: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Vote: test_0001_must be valid
+-----------------------------
+  [1m[36mVote Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."work_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 576709754)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 1010528733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 188498254)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 305467638)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 624042081)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 898448884)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:50:23.894781', '2018-04-13 04:50:23.894781', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:50:23.907888', '2018-04-13 04:50:23.907888', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:50:23.907888', '2018-04-13 04:50:23.907888', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:50:23.907888', '2018-04-13 04:50:23.907888', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:50:23.907888', '2018-04-13 04:50:23.907888', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:50:23.907888', '2018-04-13 04:50:23.907888', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:50:23.920429', '2018-04-13 04:50:23.920429', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:50:23.920429', '2018-04-13 04:50:23.920429', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:50:23.920429', '2018-04-13 04:50:23.920429', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:50:23.920429', '2018-04-13 04:50:23.920429', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:50:23.920429', '2018-04-13 04:50:23.920429', 1019702018)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Vote: test_0001_must be valid
+-----------------------------
+  [1m[36mVote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."work_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+User: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:51:32.416358', '2018-04-13 04:51:32.416358', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:51:32.427420', '2018-04-13 04:51:32.427420', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:51:32.427420', '2018-04-13 04:51:32.427420', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:51:32.427420', '2018-04-13 04:51:32.427420', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:51:32.427420', '2018-04-13 04:51:32.427420', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:51:32.427420', '2018-04-13 04:51:32.427420', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:51:32.433895', '2018-04-13 04:51:32.433895', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:51:32.433895', '2018-04-13 04:51:32.433895', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:51:32.433895', '2018-04-13 04:51:32.433895', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:51:32.433895', '2018-04-13 04:51:32.433895', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:51:32.433895', '2018-04-13 04:51:32.433895', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 206669143)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:52:07.652967', '2018-04-13 04:52:07.652967', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:52:07.663608', '2018-04-13 04:52:07.663608', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:52:07.663608', '2018-04-13 04:52:07.663608', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:52:07.663608', '2018-04-13 04:52:07.663608', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:52:07.663608', '2018-04-13 04:52:07.663608', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:52:07.663608', '2018-04-13 04:52:07.663608', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:52:07.669672', '2018-04-13 04:52:07.669672', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:52:07.669672', '2018-04-13 04:52:07.669672', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:52:07.669672', '2018-04-13 04:52:07.669672', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:52:07.669672', '2018-04-13 04:52:07.669672', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:52:07.669672', '2018-04-13 04:52:07.669672', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:53:11.754407', '2018-04-13 04:53:11.754407', 42601833)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:53:11.766007', '2018-04-13 04:53:11.766007', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:53:11.766007', '2018-04-13 04:53:11.766007', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:53:11.766007', '2018-04-13 04:53:11.766007', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:53:11.766007', '2018-04-13 04:53:11.766007', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:53:11.766007', '2018-04-13 04:53:11.766007', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:53:11.773770', '2018-04-13 04:53:11.773770', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:53:11.773770', '2018-04-13 04:53:11.773770', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:53:11.773770', '2018-04-13 04:53:11.773770', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:53:11.773770', '2018-04-13 04:53:11.773770', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:53:11.773770', '2018-04-13 04:53:11.773770', 1019702018)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:57:33.573305', '2018-04-13 04:57:33.573305', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:57:33.583774', '2018-04-13 04:57:33.583774', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:57:33.583774', '2018-04-13 04:57:33.583774', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:57:33.583774', '2018-04-13 04:57:33.583774', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:57:33.583774', '2018-04-13 04:57:33.583774', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:57:33.583774', '2018-04-13 04:57:33.583774', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:57:33.592377', '2018-04-13 04:57:33.592377', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:57:33.592377', '2018-04-13 04:57:33.592377', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:57:33.592377', '2018-04-13 04:57:33.592377', 315165233)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:57:33.592377', '2018-04-13 04:57:33.592377', 197155733)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:57:33.592377', '2018-04-13 04:57:33.592377', 1019702018)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:58:23.544904', '2018-04-13 04:58:23.544904', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:58:23.554543', '2018-04-13 04:58:23.554543', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:58:23.554543', '2018-04-13 04:58:23.554543', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:58:23.554543', '2018-04-13 04:58:23.554543', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:58:23.554543', '2018-04-13 04:58:23.554543', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:58:23.554543', '2018-04-13 04:58:23.554543', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:58:23.562211', '2018-04-13 04:58:23.562211', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:58:23.562211', '2018-04-13 04:58:23.562211', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:58:23.562211', '2018-04-13 04:58:23.562211', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:58:23.562211', '2018-04-13 04:58:23.562211', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:58:23.562211', '2018-04-13 04:58:23.562211', 1019702018)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 04:59:25.570302', '2018-04-13 04:59:25.570302', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 04:59:25.580021', '2018-04-13 04:59:25.580021', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 04:59:25.580021', '2018-04-13 04:59:25.580021', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:59:25.580021', '2018-04-13 04:59:25.580021', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:59:25.580021', '2018-04-13 04:59:25.580021', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 04:59:25.580021', '2018-04-13 04:59:25.580021', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 04:59:25.588171', '2018-04-13 04:59:25.588171', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 04:59:25.588171', '2018-04-13 04:59:25.588171', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 04:59:25.588171', '2018-04-13 04:59:25.588171', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 04:59:25.588171', '2018-04-13 04:59:25.588171', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 04:59:25.588171', '2018-04-13 04:59:25.588171', 1019702018)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:02:34.994951', '2018-04-13 05:02:34.994951', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:02:35.006009', '2018-04-13 05:02:35.006009', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:02:35.006009', '2018-04-13 05:02:35.006009', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:02:35.006009', '2018-04-13 05:02:35.006009', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:02:35.006009', '2018-04-13 05:02:35.006009', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:02:35.006009', '2018-04-13 05:02:35.006009', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:02:35.012949', '2018-04-13 05:02:35.012949', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:02:35.012949', '2018-04-13 05:02:35.012949', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:02:35.012949', '2018-04-13 05:02:35.012949', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:02:35.012949', '2018-04-13 05:02:35.012949', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:02:35.012949', '2018-04-13 05:02:35.012949', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:03:20.773322', '2018-04-13 05:03:20.773322', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:03:20.783820', '2018-04-13 05:03:20.783820', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:03:20.783820', '2018-04-13 05:03:20.783820', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:20.783820', '2018-04-13 05:03:20.783820', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:20.783820', '2018-04-13 05:03:20.783820', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:20.783820', '2018-04-13 05:03:20.783820', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:03:20.797565', '2018-04-13 05:03:20.797565', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:03:20.797565', '2018-04-13 05:03:20.797565', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:03:20.797565', '2018-04-13 05:03:20.797565', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:03:20.797565', '2018-04-13 05:03:20.797565', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:03:20.797565', '2018-04-13 05:03:20.797565', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 898448884)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:03:44.597133', '2018-04-13 05:03:44.597133', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:03:44.605920', '2018-04-13 05:03:44.605920', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:03:44.605920', '2018-04-13 05:03:44.605920', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:44.605920', '2018-04-13 05:03:44.605920', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:44.605920', '2018-04-13 05:03:44.605920', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:03:44.605920', '2018-04-13 05:03:44.605920', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:03:44.613941', '2018-04-13 05:03:44.613941', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:03:44.613941', '2018-04-13 05:03:44.613941', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:03:44.613941', '2018-04-13 05:03:44.613941', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:03:44.613941', '2018-04-13 05:03:44.613941', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:03:44.613941', '2018-04-13 05:03:44.613941', 1019702018)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:05:13.774943', '2018-04-13 05:05:13.774943', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:05:13.784443', '2018-04-13 05:05:13.784443', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:05:13.784443', '2018-04-13 05:05:13.784443', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:05:13.784443', '2018-04-13 05:05:13.784443', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:05:13.784443', '2018-04-13 05:05:13.784443', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:05:13.784443', '2018-04-13 05:05:13.784443', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:05:13.792070', '2018-04-13 05:05:13.792070', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:05:13.792070', '2018-04-13 05:05:13.792070', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:05:13.792070', '2018-04-13 05:05:13.792070', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:05:13.792070', '2018-04-13 05:05:13.792070', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:05:13.792070', '2018-04-13 05:05:13.792070', 1019702018)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:06:46.816182', '2018-04-13 05:06:46.816182', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:06:46.825979', '2018-04-13 05:06:46.825979', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:06:46.825979', '2018-04-13 05:06:46.825979', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:06:46.825979', '2018-04-13 05:06:46.825979', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:06:46.825979', '2018-04-13 05:06:46.825979', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:06:46.825979', '2018-04-13 05:06:46.825979', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:06:46.833229', '2018-04-13 05:06:46.833229', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:06:46.833229', '2018-04-13 05:06:46.833229', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:06:46.833229', '2018-04-13 05:06:46.833229', 315165233)[0m
+  [1m[36mFixture Insert (1.5ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:06:46.833229', '2018-04-13 05:06:46.833229', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:06:46.833229', '2018-04-13 05:06:46.833229', 1019702018)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_requires a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:07:09.871696', '2018-04-13 05:07:09.871696', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:07:09.881217', '2018-04-13 05:07:09.881217', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:07:09.881217', '2018-04-13 05:07:09.881217', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:07:09.881217', '2018-04-13 05:07:09.881217', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:07:09.881217', '2018-04-13 05:07:09.881217', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (1.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:07:09.881217', '2018-04-13 05:07:09.881217', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:07:09.890330', '2018-04-13 05:07:09.890330', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:07:09.890330', '2018-04-13 05:07:09.890330', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:07:09.890330', '2018-04-13 05:07:09.890330', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:07:09.890330', '2018-04-13 05:07:09.890330', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:07:09.890330', '2018-04-13 05:07:09.890330', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0002_requires a category
+-----------------------------------
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:08:05.973391', '2018-04-13 05:08:05.973391', 42601833)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:08:05.982003', '2018-04-13 05:08:05.982003', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:08:05.982003', '2018-04-13 05:08:05.982003', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:05.982003', '2018-04-13 05:08:05.982003', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:05.982003', '2018-04-13 05:08:05.982003', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:05.982003', '2018-04-13 05:08:05.982003', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:08:05.989943', '2018-04-13 05:08:05.989943', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:08:05.989943', '2018-04-13 05:08:05.989943', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:08:05.989943', '2018-04-13 05:08:05.989943', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:08:05.989943', '2018-04-13 05:08:05.989943', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:08:05.989943', '2018-04-13 05:08:05.989943', 1019702018)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0002_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:08:28.483898', '2018-04-13 05:08:28.483898', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:08:28.494650', '2018-04-13 05:08:28.494650', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:08:28.494650', '2018-04-13 05:08:28.494650', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:28.494650', '2018-04-13 05:08:28.494650', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:28.494650', '2018-04-13 05:08:28.494650', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:08:28.494650', '2018-04-13 05:08:28.494650', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:08:28.501756', '2018-04-13 05:08:28.501756', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:08:28.501756', '2018-04-13 05:08:28.501756', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:08:28.501756', '2018-04-13 05:08:28.501756', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:08:28.501756', '2018-04-13 05:08:28.501756', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:08:28.501756', '2018-04-13 05:08:28.501756', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0002_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 576709754)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 624042081)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 898448884)[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:11:16.087675', '2018-04-13 05:11:16.087675', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:11:16.099453', '2018-04-13 05:11:16.099453', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:11:16.099453', '2018-04-13 05:11:16.099453', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:11:16.099453', '2018-04-13 05:11:16.099453', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:11:16.099453', '2018-04-13 05:11:16.099453', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:11:16.099453', '2018-04-13 05:11:16.099453', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:11:16.110875', '2018-04-13 05:11:16.110875', 373891647)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:11:16.110875', '2018-04-13 05:11:16.110875', 681446112)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:11:16.110875', '2018-04-13 05:11:16.110875', 315165233)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:11:16.110875', '2018-04-13 05:11:16.110875', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:11:16.110875', '2018-04-13 05:11:16.110875', 1019702018)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 898448884)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:31:57.859562', '2018-04-13 05:31:57.859562', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:31:57.873901', '2018-04-13 05:31:57.873901', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:31:57.873901', '2018-04-13 05:31:57.873901', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:31:57.873901', '2018-04-13 05:31:57.873901', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:31:57.873901', '2018-04-13 05:31:57.873901', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:31:57.873901', '2018-04-13 05:31:57.873901', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:31:57.882239', '2018-04-13 05:31:57.882239', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:31:57.882239', '2018-04-13 05:31:57.882239', 681446112)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:31:57.882239', '2018-04-13 05:31:57.882239', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:31:57.882239', '2018-04-13 05:31:57.882239', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:31:57.882239', '2018-04-13 05:31:57.882239', 1019702018)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:37:37.408526', '2018-04-13 05:37:37.408526', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:37:37.418701', '2018-04-13 05:37:37.418701', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:37:37.418701', '2018-04-13 05:37:37.418701', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:37:37.418701', '2018-04-13 05:37:37.418701', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:37:37.418701', '2018-04-13 05:37:37.418701', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:37:37.418701', '2018-04-13 05:37:37.418701', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:37:37.427596', '2018-04-13 05:37:37.427596', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:37:37.427596', '2018-04-13 05:37:37.427596', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:37:37.427596', '2018-04-13 05:37:37.427596', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:37:37.427596', '2018-04-13 05:37:37.427596', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:37:37.427596', '2018-04-13 05:37:37.427596', 1019702018)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:38:35.060190', '2018-04-13 05:38:35.060190', 42601833)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:38:35.069441', '2018-04-13 05:38:35.069441', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:38:35.069441', '2018-04-13 05:38:35.069441', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:38:35.069441', '2018-04-13 05:38:35.069441', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:38:35.069441', '2018-04-13 05:38:35.069441', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:38:35.069441', '2018-04-13 05:38:35.069441', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:38:35.077591', '2018-04-13 05:38:35.077591', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:38:35.077591', '2018-04-13 05:38:35.077591', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:38:35.077591', '2018-04-13 05:38:35.077591', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:38:35.077591', '2018-04-13 05:38:35.077591', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:38:35.077591', '2018-04-13 05:38:35.077591', 1019702018)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:39:24.594024', '2018-04-13 05:39:24.594024', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:39:24.604986', '2018-04-13 05:39:24.604986', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:39:24.604986', '2018-04-13 05:39:24.604986', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:24.604986', '2018-04-13 05:39:24.604986', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:24.604986', '2018-04-13 05:39:24.604986', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:24.604986', '2018-04-13 05:39:24.604986', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:39:24.612228', '2018-04-13 05:39:24.612228', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:39:24.612228', '2018-04-13 05:39:24.612228', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:39:24.612228', '2018-04-13 05:39:24.612228', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:39:24.612228', '2018-04-13 05:39:24.612228', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:39:24.612228', '2018-04-13 05:39:24.612228', 1019702018)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:39:57.517586', '2018-04-13 05:39:57.517586', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:39:57.528875', '2018-04-13 05:39:57.528875', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:39:57.528875', '2018-04-13 05:39:57.528875', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:57.528875', '2018-04-13 05:39:57.528875', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:57.528875', '2018-04-13 05:39:57.528875', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:39:57.528875', '2018-04-13 05:39:57.528875', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:39:57.536161', '2018-04-13 05:39:57.536161', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:39:57.536161', '2018-04-13 05:39:57.536161', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:39:57.536161', '2018-04-13 05:39:57.536161', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:39:57.536161', '2018-04-13 05:39:57.536161', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:39:57.536161', '2018-04-13 05:39:57.536161', 1019702018)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 576709754)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:40:57.317605', '2018-04-13 05:40:57.317605', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:40:57.327426', '2018-04-13 05:40:57.327426', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:40:57.327426', '2018-04-13 05:40:57.327426', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:40:57.327426', '2018-04-13 05:40:57.327426', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:40:57.327426', '2018-04-13 05:40:57.327426', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:40:57.327426', '2018-04-13 05:40:57.327426', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:40:57.334719', '2018-04-13 05:40:57.334719', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:40:57.334719', '2018-04-13 05:40:57.334719', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:40:57.334719', '2018-04-13 05:40:57.334719', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:40:57.334719', '2018-04-13 05:40:57.334719', 197155733)[0m
+  [1m[36mFixture Insert (1.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:40:57.334719', '2018-04-13 05:40:57.334719', 1019702018)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:42:50.337074', '2018-04-13 05:42:50.337074', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:42:50.347241', '2018-04-13 05:42:50.347241', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:42:50.347241', '2018-04-13 05:42:50.347241', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:42:50.347241', '2018-04-13 05:42:50.347241', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:42:50.347241', '2018-04-13 05:42:50.347241', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:42:50.347241', '2018-04-13 05:42:50.347241', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:42:50.354504', '2018-04-13 05:42:50.354504', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:42:50.354504', '2018-04-13 05:42:50.354504', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:42:50.354504', '2018-04-13 05:42:50.354504', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:42:50.354504', '2018-04-13 05:42:50.354504', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:42:50.354504', '2018-04-13 05:42:50.354504', 1019702018)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 305467638)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:43:12.791226', '2018-04-13 05:43:12.791226', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:43:12.801790', '2018-04-13 05:43:12.801790', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:43:12.801790', '2018-04-13 05:43:12.801790', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:12.801790', '2018-04-13 05:43:12.801790', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:12.801790', '2018-04-13 05:43:12.801790', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:12.801790', '2018-04-13 05:43:12.801790', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:43:12.807433', '2018-04-13 05:43:12.807433', 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:43:12.807433', '2018-04-13 05:43:12.807433', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:43:12.807433', '2018-04-13 05:43:12.807433', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:43:12.807433', '2018-04-13 05:43:12.807433', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:43:12.807433', '2018-04-13 05:43:12.807433', 1019702018)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:43:38.830732', '2018-04-13 05:43:38.830732', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:43:38.841417', '2018-04-13 05:43:38.841417', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:43:38.841417', '2018-04-13 05:43:38.841417', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:38.841417', '2018-04-13 05:43:38.841417', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:38.841417', '2018-04-13 05:43:38.841417', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:43:38.841417', '2018-04-13 05:43:38.841417', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (1.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (1.9ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:43:38.847917', '2018-04-13 05:43:38.847917', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:43:38.847917', '2018-04-13 05:43:38.847917', 681446112)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:43:38.847917', '2018-04-13 05:43:38.847917', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:43:38.847917', '2018-04-13 05:43:38.847917', 197155733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:43:38.847917', '2018-04-13 05:43:38.847917', 1019702018)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:44:39.582875', '2018-04-13 05:44:39.582875', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:44:39.593998', '2018-04-13 05:44:39.593998', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:44:39.593998', '2018-04-13 05:44:39.593998', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:44:39.593998', '2018-04-13 05:44:39.593998', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:44:39.593998', '2018-04-13 05:44:39.593998', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:44:39.593998', '2018-04-13 05:44:39.593998', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:44:39.600334', '2018-04-13 05:44:39.600334', 373891647)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:44:39.600334', '2018-04-13 05:44:39.600334', 681446112)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:44:39.600334', '2018-04-13 05:44:39.600334', 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:44:39.600334', '2018-04-13 05:44:39.600334', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:44:39.600334', '2018-04-13 05:44:39.600334', 1019702018)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:45:18.381172', '2018-04-13 05:45:18.381172', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:45:18.391244', '2018-04-13 05:45:18.391244', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:45:18.391244', '2018-04-13 05:45:18.391244', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:18.391244', '2018-04-13 05:45:18.391244', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:18.391244', '2018-04-13 05:45:18.391244', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:18.391244', '2018-04-13 05:45:18.391244', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:45:18.398469', '2018-04-13 05:45:18.398469', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:45:18.398469', '2018-04-13 05:45:18.398469', 681446112)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:45:18.398469', '2018-04-13 05:45:18.398469', 315165233)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:45:18.398469', '2018-04-13 05:45:18.398469', 197155733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:45:18.398469', '2018-04-13 05:45:18.398469', 1019702018)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 206669143)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 358143215)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 576709754)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 1010528733)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 188498254)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 305467638)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 624042081)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 898448884)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:45:52.750125', '2018-04-13 05:45:52.750125', 42601833)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:45:52.776080', '2018-04-13 05:45:52.776080', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:45:52.776080', '2018-04-13 05:45:52.776080', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:52.776080', '2018-04-13 05:45:52.776080', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:52.776080', '2018-04-13 05:45:52.776080', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:45:52.776080', '2018-04-13 05:45:52.776080', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:45:52.792126', '2018-04-13 05:45:52.792126', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:45:52.792126', '2018-04-13 05:45:52.792126', 681446112)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:45:52.792126', '2018-04-13 05:45:52.792126', 315165233)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:45:52.792126', '2018-04-13 05:45:52.792126', 197155733)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:45:52.792126', '2018-04-13 05:45:52.792126', 1019702018)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username1', '2018-03-11', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 206669143)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username2', '2018-01-14', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 358143215)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username3', '2018-01-14', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 576709754)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username4', '2018-02-14', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 1010528733)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username5', '2018-02-08', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 188498254)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username6', '2018-04-08', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 305467638)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username7', '2018-01-08', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 624042081)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 898448884)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-11', '2018-04-13 05:46:18.968840', '2018-04-13 05:46:18.968840', 42601833)[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-11', '2018-04-13 05:46:18.998184', '2018-04-13 05:46:18.998184', 156850806, 206669143, 1055046044)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-12', '2018-04-13 05:46:18.998184', '2018-04-13 05:46:18.998184', 273681354, 358143215, 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:46:18.998184', '2018-04-13 05:46:18.998184', 660028255, 624042081, 581172899)[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:46:18.998184', '2018-04-13 05:46:18.998184', 959688446, 1010528733, 315165233)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2018-04-13', '2018-04-13 05:46:18.998184', '2018-04-13 05:46:18.998184', 238329453, 188498254, 933912447)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'lifeisbeautiful', 'aruna', '2013', 'Great book', '2018-04-13 05:46:19.014703', '2018-04-13 05:46:19.014703', 373891647)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at", "id") VALUES ('album', 'liquidspirit', 'brenda', '2014', 'good book', '2018-04-13 05:46:19.014703', '2018-04-13 05:46:19.014703', 681446112)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book1', 'author', '1960', '2018-04-13 05:46:19.014703', '2018-04-13 05:46:19.014703', 315165233)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book2', 'author', '1960', '2018-04-13 05:46:19.014703', '2018-04-13 05:46:19.014703', 197155733)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book3', 'author', '1960', '2018-04-13 05:46:19.014703', '2018-04-13 05:46:19.014703', 1019702018)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+Work: test_0002_reqiures a title
+--------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------
+Work: test_0001_must be valid
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Work: test_0003_requires a category
+-----------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
