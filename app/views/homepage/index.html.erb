@@ -17,30 +17,30 @@
     <section class="top-ten">
       <h3>Top Albums</h3>
       <% Work.category_list(@works, "album").each do |i| %>
-      <%= i.title %>
+      <%= link_to i.title, work_path(i.id) %>
       <% if i.creator %>
       by <%= i.creator %>
-      <% end %>
+      <% end %><br />
       <%= i.votes.count %> votes<br />
       <% end %>
     </section>
     <section class="top-ten">
       <h3>Top Books</h3>
       <% Work.category_list(@works, "book").each do |i| %>
-      <%= i.title %>
+      <%= link_to i.title, work_path(i.id) %>
       <% if i.creator %>
       by <%= i.creator %>
-      <% end %>
+      <% end %><br />
       <%= i.votes.count %> votes<br />
       <% end %>
     </section>
     <section class="top-ten">
       <h3>Top Movies</h3>
       <% Work.category_list(@works, "movie").each do |i| %>
-      <%= i.title %>
+      <%= link_to i.title, work_path(i.id) %>
       <% if i.creator %>
       by <%= i.creator %>
-      <% end %>
+      <% end %><br />
       <%= i.votes.count %> votes<br />
       <% end %>
     </section>

@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.name}"
+      redirect_to root_path
     else
       @user = User.create(name: params[:user][:name])
       if session[:user_id] = @user.id
