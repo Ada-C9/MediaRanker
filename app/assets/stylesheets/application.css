@@ -26,6 +26,11 @@ a:hover {
   color: #00796B;
 }
 
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .row {
   max-width: 75rem;
   margin-right: auto;
