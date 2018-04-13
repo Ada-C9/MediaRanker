@@ -1,19 +1,24 @@
 <h3>List of Users</h3>
 
 <table>
-  <tr>
-    <th>Username</th>
-    <th>Votes</th>
-    <th>Joined</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Votes</th>
+      <th>Joined</th>
+    </tr>
+  </thead>
+</tbody>
+<tr>
   <% @users.each do |user| %>
-  <tr>
-    <td><%= link_to user.name, user_path(user.id) %></td>
-    <td><%= Vote.all.where(user_id: user).count %></td>
-    <td><%= user.created_at.strftime("%b %d, %Y") %></td>
+  <div class="user">
+    <td><strong><%= link_to user.name, user_path(user.id) %></td>
+      <td><%= Vote.all.where(user_id: user).count %></td>
+      <td><%= user.created_at.strftime("%b %d, %Y") %></td>
+    </div>
   </tr>
   <% end %>
-
+</tbody>
 </table>
 
 <a class="button" <%= link_to "Back to Media List", root_path %> </a>
