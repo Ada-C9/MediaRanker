@@ -31,7 +31,7 @@
           <% else %>
           <% session[:user_id] == @user.id %>
           <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
-          <a class="button float-right" href="/user/<%= @user.id %>">Logged in as <%= @user.username %></a>
+          <a class="button float-right logged-in" href="/user/<%= @user.id %>">Logged in as <%= @user.username %></a>
 
           <%end%>
         </div>
