@@ -10,3 +10,21 @@
       <%=link_to "Upvote", subreddit_upvote_path(@subreddit), method: :post %>
   </li>
 </section>
+
+<section>
+  <h1>Votes</h1>
+  <% @subreddit.votes.each do |vote| %>
+  <ul>
+    <li>
+      <%= vote.id %>
+    </li>
+    <li>User Id:
+      <%= vote.user_id%>
+    </li>
+    <li>Subreddit Id:
+      <%= vote.subreddit_id %>
+    </li>
+  </ul>
+  <% end %>
+
+</section>

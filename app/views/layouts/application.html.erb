@@ -27,7 +27,7 @@
       </ul>
 
       <ul>
-        <li class = "small button"><%= link_to 'View Instagrams', new_instagram_path %></li>
+        <li class = "small button"><%= link_to 'View Instagrams', instagrams_path %></li>
         <li class = "small button"><%= link_to 'View Twitters',
         twitters_path %></li>
         <li class = "small button"><%= link_to "View Subreddits", subreddits_path %></li>
@@ -56,9 +56,10 @@
 
       <%= yield %>
     </main>
-<footer>
-  <p>&copy; Media Ranker, 2018</p>
-</footer>
 
+    <footer>
+      <p>&copy; Media Ranker, 2018</p>
+    </footer>
 </body>
+
 </html>

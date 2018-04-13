@@ -1,5 +1,5 @@
 <section>
-  <h2>instagramDetails</h2>
+  <h2>InstagramDetails</h2>
   <h3><%= @instagram.handle %></h3>
   <p><%= @instagram.posts %></p>
   <p><%= @instagram.followers %></p>
@@ -9,4 +9,22 @@
     <%= link_to "List of instagrams", instagrams_path %>
     <%=link_to "Upvote", instagram_upvote_path(@instagram), method: :post %>
   </li>
+</section>
+
+<section>
+  <h1>Votes</h1>
+  <% @instagram.votes.each do |vote| %>
+  <ul>
+    <li>
+      <%= vote.id %>
+    </li>
+    <li>User Id:
+      <%= vote.user_id%>
+    </li>
+    <li>Insta Id:
+      <%= vote.instagram_id %>
+    </li>
+  </ul>
+  <% end %>
+
 </section>

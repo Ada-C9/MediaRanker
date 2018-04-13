@@ -9,3 +9,20 @@
     <%=link_to "Upvote", twitter_upvote_path(@twitter), method: :post %>
   </li>
 </section>
+<section>
+  <h1>Votes</h1>
+  <% @twitter.votes.each do |vote| %>
+  <ul>
+    <li>
+      <%= vote.id %>
+    </li>
+    <li>User Id:
+      <%= vote.user_id%>
+    </li>
+    <li>Twitter Id:
+      <%= vote.twitter_id %>
+    </li>
+  </ul>
+  <% end %>
+
+</section>

@@ -51,11 +51,11 @@ class InstagramsController < ApplicationController
 
       @vote = Vote.new(user_id: user_id, instagram_id: params[:instagram_id], subreddit_id: nil, twitter_id: nil)
 
-      if @vote.save!
-        flash[:success] = "You voted!"
+      if @vote.save
+        flash[:success] = "You upvoted!"
         redirect_to root_path
       else
-        flash[:failure] = "You couldn't vote! #{@vote} #{@vote.instagram_id} #{@vote.user_id}"
+        flash[:failure] = "You couldn't vote! Have you already voted for this?"
         redirect_to instagrams_path
       end
     else
