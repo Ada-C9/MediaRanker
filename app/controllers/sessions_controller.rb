@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      flash[:success] = "Welcome back #{@user.user_name}"
+      flash[:success] = "Successfully logged in as existing user #{@user.user_name}"
     else
       @user = User.create user_name: params[:user][:user_name]
       session[:user_id] = @user.id

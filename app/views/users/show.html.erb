@@ -19,19 +19,22 @@
     <tbody>
       <% @user.votes.each do |vote| %>
       <tr>
-        <%= link_to vote.work.title, work_path(work[:id]) %>
-      </tr>
-      <tr>
+
+      <td>
+        <%= link_to vote.work.title, work_path(vote.work_id) %>
+      </td>
+      <td>
         <%=vote.work.creator%>
-      </tr>
-      <tr>
+      </td>
+      <td>
         <%=vote.work.publication_year%>
-      </tr>
-      <tr>
+      </td>
+      <td>
         <%=vote.work.category%>
-      </tr>
-      <tr>
+      </td>
+      <td>
         <%=vote.created_at.to_date.to_formatted_s(:long_ordinal)%>
+      </td>
       </tr>
       <%end%>
     </tbody>
