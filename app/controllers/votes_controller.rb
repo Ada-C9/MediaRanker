@@ -1,5 +1,5 @@
 class VotesController < ApplicationController
-  before_action :find_user
+  # before_action :find_user
 
   def index
   end

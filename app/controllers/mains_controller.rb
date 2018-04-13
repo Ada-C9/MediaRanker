@@ -1,5 +1,5 @@
 class MainsController < ApplicationController
-  before_action :find_user
+  # before_action :find_user
 
   def index
     albums = Publication.where(category: "album")
