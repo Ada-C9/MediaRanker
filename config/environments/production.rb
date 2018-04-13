@@ -86,6 +86,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  RAILS_ENV=production rake assets:precompile
   config.serve_static_assets = true
   config.assets.compile = true
 
