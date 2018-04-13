@@ -1,2 +1,11 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<% most_votes = Work.top_work(@works) %>
+
+<h1>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %></h1>
+
+<main>
+
+</main>
+  <p>
+
+  </p>
+</main>

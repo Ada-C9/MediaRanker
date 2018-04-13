@@ -46,6 +46,10 @@
   background-color: #ffbf80;
 }
 
+.media-options {
+  display: flex;
+  flex-direction: row;
+}
 
 html {
   font-family: sans-serif;

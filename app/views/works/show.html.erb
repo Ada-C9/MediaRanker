@@ -12,18 +12,18 @@
     </p>
     <section class="media-options">
       <p>
-        <%= link_to "Edit", edit_work_path(@work.id) %>
+        <%= link_to "Edit", edit_work_path(@work.id), :class => "button" %>
       </p>
       <p>
-        Upvote button
+        <%= link_to "Upvote", work_votes_path(@work.id), method: :post, :class => "button" %>
       </p>
       <p>
-        <%= link_to "Delete", work_path(@work.id), method: :delete, data: { confirm: "Confirm deletion" } %>
+        <%= link_to "Delete", work_path(@work.id), method: :delete, data: { confirm: "Confirm deletion" }, :class => "button" %>
       </p>
     </section>
   </article>
   <article class="albums">
-    <h5><strong># Votes for this <%= @work.category.capitalize %></strong></h5>
+    <h5><strong><%=@work.votes.count%> Votes for this <%= @work.category.capitalize %></strong></h5>
     <table>
       <tr>
         <th>
@@ -35,7 +35,7 @@
       </tr>
       <tr>
         <td>
-          User with path link
+          user who voted for this work
         </td>
         <td>
           Vote date
