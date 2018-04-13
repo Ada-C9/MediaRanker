@@ -49,6 +49,10 @@ class WorksController < ApplicationController
   def destroy
     @work = Work.find_by(id: params[:id])
     if @work
+      #iterate through works votes and delete
+      @work.votes.each do |vote|
+        vote.destroy
+      end
       @work.destroy
     else
       flash[:alert] = "Failed to destroy work"
