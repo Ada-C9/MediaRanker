@@ -17,7 +17,7 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.title} created"
       redirect_to works_path
     else
-      flash[:alert] = "Creation failed"
+      flash.now[:alert] = "Creation failed"
       flash.now[:error] = @work.errors.messages
       render :new
     end
@@ -34,7 +34,7 @@ class WorksController < ApplicationController
         flash[:success] = "#{@work.title} updated"
         redirect_to work_path(@work.id)
       else
-        flash[:alert] = "#{@work.title} failed to update"
+        flash.now[:alert] = "#{@work.title} failed to update"
         flash.now[:error] = @work.errors.messages
         render :edit
       end
