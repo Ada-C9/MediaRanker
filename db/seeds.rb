@@ -23,6 +23,7 @@ CSV.foreach(WORKS_FILE, :headers => true) do |row|
   if !successful
     work_failures << work
     puts "Failed to save work: #{work.inspect}"
+    puts "errors.messages: #{work.errors.messages}"
   else
     puts "Created work: #{work.inspect}"
   end
