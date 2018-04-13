@@ -76,7 +76,7 @@ describe Work do
       top_work = @work3
       result = Work.top_work
 
-      result.must_equal top_work      
+      result.must_equal top_work
     end
   end
 end

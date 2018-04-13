@@ -45,10 +45,9 @@
 
         <% if @user %>
           <%= relay_errors(@user) %>
-        <% elsif @work %>
+        <% end %>
+        <% if @work %>
           <%= relay_errors(@work) %>
-        <% elsif @vote %>
-          <%= relay_errors(@vote) %>
         <% end %>
 
       </section>

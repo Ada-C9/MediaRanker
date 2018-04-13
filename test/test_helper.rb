@@ -24,3 +24,7 @@ class ActiveSupport::TestCase
   fixtures :all
   # Add more helper methods to be used by all tests here...
 end
+
+
+# can load a csv for the test db
+load "#{Rails.root}/db/seeds.rb"
