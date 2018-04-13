@@ -2,11 +2,11 @@
   <h3>
     <span class="media-spotlight-header">Media Spotlight:
     </span>
-    <span class="most-popular"><%= link_to("#{@works.first.title}") %></span>
+    <span class="most-popular"><%= link_to("#{@works.first}") %></span>
     by <%= @works.first.creator %>
   </h3>
   <p><%= @most_popular %> - WORK.MAX_VOTE_COUNT.DESCRIPTION</p>
-  
+
 </section>
 
 <hr class="root-hr">
@@ -15,15 +15,12 @@
   <section class="top-ten">
     <h3 class="top-ten-category">Top Movies</h3>
     <ul>
-      <% @works.each do |work| %>
-        <% if work.category == "movie" %>
-          <li>
-            <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-          </li>
-          <p>
-            @work.vote.count
-          </p>
-        <% end %>
+      <%= @works.top_ten_movies.each do |work| %>
+        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
+
+        <!-- <p>
+          @work.vote.count
+        </p> -->
       <% end %>
     </ul>
   </section>
@@ -31,15 +28,12 @@
   <section class="top-ten">
     <h3 class="top-ten-category">Top Books</h3>
     <ul>
-      <% @works.each do |work| %>
-        <% if work.category == "book" %>
-          <li>
-            <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
-          </li>
-          <p>
-            @work.vote.count
-          </p>
-        <% end %>
+      <%= @works.top_ten_books.each do |work| %>
+        <h4><%= link_to("#{work.title}", work_path(work)) %> <small>by <%= work.creator %></small></h4>
+
+        <p>
+          @work.vote.count
+        </p>
       <% end %>
     </ul>
   </section>
