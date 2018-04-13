@@ -31,12 +31,12 @@ class WorksController < ApplicationController
 
   def edit; end
 
-  def update
+  def update # QUESTION: when I update a record on heroku I get an error that says somthing went wrong at /works/id
 
     @work.assign_attributes(work_params)
 
     if @work.save
-      redirect_to work_path(work)
+      redirect_to work_path(@work)
     else
       render :edit
     end
