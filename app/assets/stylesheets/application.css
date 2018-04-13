@@ -18,8 +18,27 @@
 
  */
 
+
+body, h1, h2, h3, h4, h5 {
+     font-family: "Gudea", sans-serif;
+}
+
+.top-ten h3 {
+    border-bottom: 2px solid;
+    border-bottom-color: #B2DFDB;
+}
+
+.top-ten h3 {
+    border-bottom: 2px solid;
+    border-bottom-color: #B2DFDB;
+}
+
 .button {
   background-color: #26A69A;
+}
+
+a, h3 {
+    color: #26A69A;
 }
 
 .page-header h2 small {

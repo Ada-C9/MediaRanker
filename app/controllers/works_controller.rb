@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update]
 
 
   def main
@@ -15,9 +16,7 @@ class WorksController < ApplicationController
     @books = Work.books
   end
 
-  def show
-    @work = Work.find_by(id: params[:id].to_i)
-  end
+  def show; end
 
   def new
     @work = Work.new
@@ -29,19 +28,27 @@ class WorksController < ApplicationController
       flash[:success] = "Work added successfully"
       redirect_to works_path
     else
-    
+
       flash.now[:failure] = "Validations Failed"
       render :new
     end
   end
 
-  def edit
-  end
+  def edit;end
 
   def update
+    @work.assign_attributes(work_params)
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    Work.destroy(params[:id])
+
+    redirect_to works_path
   end
 
   private
@@ -49,6 +56,10 @@ class WorksController < ApplicationController
   # TODO undestand this
   def work_params
     params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    @work = Work.find(params[:id])
   end
 
 

@@ -1,0 +1,64 @@
+<main class="row">
+    <article class="media-details">
+  <h3><%= @work.title %></h3>
+  <p><%= @work.creator %></p>
+  <p><%= @work.publication_year %></p>
+  <p><%= @work.description %></p>
+  <section>
+    <%= link_to("Back to media ranks", root_path, :class => "button") %>
+    <%= link_to("Edit", edit_work_path(@work.id), :class => "button") %>
+
+    <a class="button" rel="nofollow" data-method="post" href="/works/241/upvote">Upvote</a>
+    <%= link_to("Upvote", vote_path(@vote.id), :class => "button") %>
+
+    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/works/241">Delete</a>
+    <%= link_to("Delete", destroy_work_path(@work.id), :class => "button") %>
+  </section>
+</article>
+
+
+
+
+<article class="voting-users">
+  <h3>8 Votes for this Book</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/users/117">t</a></td>
+        <td>Apr 11, 2018</td>
+
+      </tr><tr>
+        <td><a href="/users/465">coolbanana</a></td>
+        <td>Apr 10, 2018</td>
+
+      </tr><tr>
+        <td><a href="/users/480">chimichangas</a></td>
+        <td>Apr  9, 2018</td>
+
+      </tr><tr>
+        <td><a href="/users/464">lillers</a></td>
+        <td>Apr  9, 2018</td>
+
+      </tr><tr>
+        <td><a href="/users/286">l33t</a></td>
+        <td>Oct 11, 2017</td>
+
+      </tr><tr>
+        <td><a href="/users/301">meta</a></td>
+        <td>Oct 10, 2017</td>
+
+      </tr><tr>
+        <td><a href="/users/298">namenamename</a></td>
+        <td>Oct 10, 2017</td>
+
+      </tr><tr>
+        <td><a href="/users/274">Wilbur</a></td>
+        <td>Oct 10, 2017</td>
+
+</tr></tbody></table></article></main>
