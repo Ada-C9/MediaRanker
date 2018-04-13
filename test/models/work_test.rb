@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new(category:"movie", title: "Pee-Wee's Big Adventure") }
+  let(:work) { Work.new(category:"movie", title: "On Bak", creator: "Prachya Pinkaew" ) }
 
   it "must be valid" do
 
