@@ -4,13 +4,13 @@
     </span>
     <span class="most-popular">
       <% if @works.first != nil %>
-        <%= link_to("#{@works.first.title}") %></span>
+        <%= link_to("#{@works.first.title}", work_path(@works.first)) %></span>
         by <%= @works.first.creator %>
       <% else %>
         <%= link_to("Add some works!", new_work_path) %>
       <% end %>
   </h3>
-  <p>vote count - description of work</p>
+  <p><%= "#{@works.first.votes.count} - #{@works.first.description}"%></p>
 </section>
 
 <hr class="root-hr">
