@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :upvote]
   before_action :work_list, only: [:root, :index]
+  # before_action :category_link_parser, only: [:index, :new, :create ]
   def root
     @spotlight = @works.spotlight
     @books = @works.top_ten("book")
@@ -15,7 +16,11 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new
+    if @work_category
+      redirect_to polymorphic_url(@work_category, new)
+    else
+      @work = Work.new
+    end
   end
 
   def create
@@ -76,5 +81,10 @@ class WorksController < ApplicationController
 
   def work_list
     @works = Work.all
+  end
+
+  def category_link_parser
+    @work = Work.find_by(id: params[:id])
+    @work_category = @work.category.downcase.pluralize
   end
 end

@@ -1,19 +1,24 @@
 
 
 <main class="row">
-    <h3>Top Movies</h3>
+    <h3>Movies</h3>
+    <% if request.fullpath == "/books" %>
+  Some hidden content
+  <% else %>
   <table class="media-table responsive-card-table">
     <%= render partial: "media-table-headers" %>
     <%= render partial: "layouts/work-list-item", collection: @movies, as: :item %>
   </table>
-  <h3>Top Books</h3>
+  <h3>Books</h3>
   <table class="media-table responsive-card-table">
     <%= render partial: "media-table-headers" %>
     <%= render partial: "layouts/work-list-item", collection: @books, as: :item %>
   </table>
-  <h3>Top Albums</h3>
+    <%= link_to "View More Books", books_path %>
+  <h3>Albums</h3>
   <table class="media-table responsive-card-table">
     <%= render partial: "media-table-headers" %>
     <%= render partial: "layouts/work-list-item", collection: @albums, as: :item %>
   </table>
+  <% end %>
 </main>

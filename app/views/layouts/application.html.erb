@@ -43,7 +43,13 @@
     <div class="callout <%= name %>">
     <%= message %>
     <% if @vote %>
-    <%= render partial: 'layouts/error-messages', locals: {model: @vote } %>
+    <%= render partial: 'layouts/error-messages', locals: {model: @vote} %>
+    <% end %>
+    <% if @work %>
+    <%= render partial: "layouts/error-messages", locals: {model: @work, class: "error-handling"} %>
+    <% end %>
+    <% if @user %>
+    <%= render partial: 'layouts/error-messages', locals: {model: @user} %>
     <% end %>
   </div>
     <% end %>
