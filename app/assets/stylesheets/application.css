@@ -1,27 +1,46 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *= require normalize-rails
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*= require normalize-rails
 
- *
- *= require_tree .
- *= require_self
+*
+*= require_tree .
+*= require_self
 
 
- */
+*/
+/* General styling */
+
 main {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+h2 {
+  text-align: center;
+  margin: 25px auto 40px auto;
+}
+tbody th, tbody td {
+  padding: 0.5rem 0.625rem 0.625rem;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+body, h1, h2, h3, h4, h5 {
+  font-family: "Gudea", sans-serif
+}
+a, h3 {
+  color: #26A69A;
+}
 
+/* Navigation  bar */
 .page-header {
   max-width: 100%;
   background-color: #B2DFDB;
@@ -39,6 +58,52 @@ main {
   color: white;
 }
 
+/* buttons */
 .button {
   background-color: #26A69A;
 }
+.button:hover, .button:focus {
+  background-color: #1b7169;
+  color: #fefefe; }
+  .media-table .upvote.button {
+    margin: 0;
+  }
+
+  /* main page */
+  section.spotlight>div {
+    padding: 0 2rem 2rem 2rem;
+  }
+  .media-spotlight-header {
+    color: #424242;
+  }
+  .spotlight a {
+    border-bottom: 2px solid;
+  }
+  .root-hr {
+    margin: 0px auto 75px auto;
+    color: #EEEEEE;
+  }
+
+  /* main page columns */
+  .top-ten h3 {
+    border-bottom: 2px solid;
+    border-bottom-color: #B2DFDB;
+  }
+  .top-ten ul {
+    list-style-type: none;
+    margin-left: 0px;
+  }
+  body small {
+    color: slategrey;
+  }
+  .login {
+    text-align: left;
+  }
+
+  /* table */
+  .status-background {
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin-top: 30px;
+  }
