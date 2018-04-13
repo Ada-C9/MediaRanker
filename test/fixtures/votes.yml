@@ -5,23 +5,23 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  date: Date.today
   user: coco
   work: one
 # column: value
 #
 two:
-  date: Date.today
   user: jane
   work: two
 # column: value
 
 three:
-  date: Date.today
   user: richard
   work: three
 
 four:
-  date: Date.today
   user: richard
+  work: two
+
+five:
+  user: jane
   work: two

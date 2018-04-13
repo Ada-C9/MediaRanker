@@ -74,8 +74,6 @@ ul {
 main .name {
   border-radius: 5px;
   background-color: #e6e6e6;
-  padding: 20px 25px;
-  margin-top: 30px;
 }
 
 body small {
@@ -113,4 +111,21 @@ body a, h3 {
 .root-hr {
   margin: 0px auto 75px auto;
   color: #EEEEEE;
+}
+
+.flash-errors > li {
+  list-style-type: disc;
+}
+
+.main .flash {
+  background-color: rgb(230, 230, 230);
+}
+
+.flash {
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  color: rgb(199, 0, 57);
 }
