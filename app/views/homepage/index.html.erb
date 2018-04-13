@@ -2,7 +2,8 @@
   <div>
     <% spotlight_publication = Publication.find_spotlight_publication%>
     <% if spotlight_publication%>
-      <h3>Media Spotlight:
+      <h3>
+        <span class='publication-spotlight-header'>Media Spotlight</span>
         <%= link_to spotlight_publication.title, publication_path(spotlight_publication.id)%>
         by <%= spotlight_publication.creator %>
       </h3>

@@ -22,6 +22,10 @@ a, h3 {
   color: #26a69a;
 }
 
+a:hover {
+  color: #00796B;
+}
+
 .row {
   max-width: 75rem;
   margin-right: auto;
@@ -92,4 +96,29 @@ a, h3 {
   color: #c70039;
 }
 
-/*  */
+/* styling for spotlight feature on main page */
+
+section.spotlight > div {
+  padding: 2rem 2rem 2rem;
+}
+
+.publication-spotlight-header {
+  color: black;
+}
+
+.publication-spotlight-header::after {
+  content: ":";
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+.spotlight p {
+  margin-bottom: 0px;
+}
+
+.root-hr {
+  margin: 0px auto 75px auto;
+  color: #eee;
+}
