@@ -61,6 +61,19 @@ nav div.float-right {
 }
 
 /*
+  MAIN STYLES
+*/
+main {
+  padding: 2rem auto;
+}
+
+main.row {
+  max-width: 75rem;
+  margin: 3rem auto;
+}
+
+
+/*
   FLASH & ERROR MESSAGE STYLES
 */
 

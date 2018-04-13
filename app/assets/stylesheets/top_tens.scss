@@ -1,3 +1,20 @@
 // Place all the styles related to the top_tens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+main.row > section {
+  padding: 0 2rem;
+}
+
+h3 {
+  font-weight: bold;
+  color: #26A69A;
+}
+
+h3 span.media-spotlight-header {
+  color: #424242;
+}
+
+h3 span.media-spotlight-header + a {
+  text-decoration: underline;
+}
