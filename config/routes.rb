@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
   root to: 'works#welcome'
-  resources :works
-  resources :users, :except => [:destroy, :edit]
+  resources :works do
+      resources :upvotes, :except => [:destroy, :edit, :update]
+  end
+
+  resources :users, :except => [:destroy, :edit] do
+    resources :upvotes, :only => [:show, :index]
+  end
   resources :upvotes, :except => [:destroy, :edit, :update]
 
   get '/login', to: 'sessions#new', as: 'login_form'

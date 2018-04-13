@@ -2,7 +2,7 @@ class UpvotesController < ApplicationController
   before_action :find_user
   def new
     @upvote = Upvote.new
-    @upvote.user = User.find(params[:user_id])
+    @upvote.user = User.find(session[:user_id])
     @upvote.work = Work.find(params[:work_id])
   end
 
@@ -25,7 +25,7 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.new
     if @upvote.save
       @upvote.user_id = session[:user_id]
-      @upvote.work_id = session[:work_id]
+      @upvote.work_id = params[:work_id]
       redirect_to upvote_path(@upvote.id)
     else
       render :new
