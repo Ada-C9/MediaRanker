@@ -75,10 +75,15 @@ describe Work do
         Work.sorted_list("album").first.must_equal works(:work_1)
         Work.sorted_list("album").last.must_equal works(:work_0)
       end
+
+      it "returns an empty list if work count is 0 in that category" do
+        Work.sorted_list("movie").count.must_equal 0
+        Work.sorted_list("movie").first.must_equal nil
+        Work.sorted_list("movie").last.must_equal nil
+      end
     end
 
     describe 'top_10' do
-
       it "returns the top 10 works by vote given a category" do
         Work.top_10("album").count.must_equal 10
         Work.top_10("album").first.must_equal works(:work_1)
@@ -94,6 +99,7 @@ describe Work do
       it "returns an empty list of works if work count is 0" do
         Work.top_10("movie").count.must_equal 0
         Work.top_10("movie").first.must_equal nil
+        Work.top_10("movie").last.must_equal nil
       end
     end
 

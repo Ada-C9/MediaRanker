@@ -57,6 +57,7 @@ describe User do
   end
 
   describe 'Methods' do
+
     describe 'total_votes' do
       it 'returns the right vote count' do
         users(:user_11).total_votes.must_equal 11
@@ -66,6 +67,7 @@ describe User do
         users(:user_12).total_votes.must_equal 0
       end
     end
+
   end
 
 end
