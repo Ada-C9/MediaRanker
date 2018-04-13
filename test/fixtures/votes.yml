@@ -2,8 +2,18 @@
 
 one:
   user_id: 1
-  insta_id: 1
+  instagram_id: 1
+  twitter_id: nil
+  subreddit_id: nil
 
 two:
   user_id: 1
-  insta_id: 1
+  instagram_id: nil
+  twitter_id: 1
+  subreddit_id: nil
+
+three:
+  user_id: 1
+  instagram_id: nil
+  twitter_id: nil
+  subreddit_id: 1

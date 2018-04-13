@@ -25,8 +25,21 @@ describe User do
       #assert
       result.must_equal false
       @user.errors.messages.must_include :name
-      end
+    end
 
+    describe 'relations' do
+      it 'can set the vote through "user"' do
+        # Create two models
+        user = User.create!(name: "test user")
+        vote = Vote.new(user: user)
+
+        # Make the models relate to one another
+        vote.user = user
+
+        # author_id should have changed accordingly
+        vote.user_id.must_equal user.id
+      end
+    end
 
   end
 end

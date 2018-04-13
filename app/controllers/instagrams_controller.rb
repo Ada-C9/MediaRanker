@@ -51,7 +51,7 @@ class InstagramsController < ApplicationController
 
       @vote = Vote.new(user_id: user_id, instagram_id: params[:instagram_id])
 
-      if @vote.save!
+      if @vote.save
         flash[:success] = "You upvoted!"
         redirect_to root_path
       else

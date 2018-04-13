@@ -57,7 +57,7 @@ class TwittersController < ApplicationController
         flash[:success] = "You voted!"
         redirect_to root_path
       else
-        flash[:failure] = "You couldn't vote! #{@vote} #{@vote.twitter_id} #{@vote.user_id}"
+        flash[:failure] = "You couldn't vote! Did you vote for this already?"
         redirect_to twitters_path
       end
     else

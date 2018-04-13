@@ -1,3 +1,4 @@
+
 <section>
   <h2>User Details</h2>
   <h3><%= @user.name %></h3>
@@ -8,3 +9,26 @@
     <%= link_to "List of users", users_path %>
   </li>
 </section>
+
+<section>
+  <h1>Votes</h1>
+  <% @user.votes.each do |vote| %>
+  <ul>
+    <li>
+      <%= vote.id %>
+    </li>
+    <li>User Id:
+      <%= vote.user_id%>
+    </li>
+    <li>Twitter Id:
+      <%= vote.twitter_id %>
+    </li>
+    <li>Instagram Id:
+      <%=vote.instagram_id %>
+    </li>
+    <li>Subreddit Id:
+      <%= vote.subreddit_id %>
+    </li>
+  </ul>
+
+    <% end %>
