@@ -10,13 +10,11 @@ class VotesController < ApplicationController
     @vote = Vote.new(user_id: user_id, work_id: work_id)
 
     if @vote.save
-      flash[:status] = :success
-      flash[:message] = "Successfully upvoted!"
+      flash[:success] = "Successfully upvoted!"
       redirect_to works_path
     else
 
-      flash[:status] = :failure
-      flash[:message] = "Could not upvote.You have already voted for this work"
+      flash[:failure] = "Could not upvote.You have already voted for this work"
       redirect_to works_path
     end
   end

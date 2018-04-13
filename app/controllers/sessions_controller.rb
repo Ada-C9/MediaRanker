@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
     else
       user = User.new(name: name, created_at: Date.today)
       user.save
-      flash[:status] = :success
-      flash[:message] = "Successfully created new user #{name} with ID #{user.id}"
+      flash[:success] = "Successfully created new user #{name} with ID #{user.id}"
       session[:logged_in_user] = user.id
       redirect_to root_path
     end
@@ -24,8 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:logged_in_user] = nil
-    flash[:status] = :success
-    flash[:message] = "Successfully logged out"
+    flash[:success] = "Successfully logged out"
     redirect_to root_path
   end
 

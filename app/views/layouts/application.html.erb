@@ -26,19 +26,24 @@
       <a class="button" href="/users">View all users</a>
       <div class="float-right">
         <% if session[:logged_in_user] %>
-           <p class="button">
-             Logged in as
-             <%= User.find(session[:logged_in_user]).name %>
-           </p>
-           <%= link_to "Log out", logout_path, class: "button", method: :delete%>
-         <% else %>
-           <%= link_to "Log in", login_path, class: "button"%>
-         <% end %>
+        <p class="button">
+          Logged in as
+          <%= User.find(session[:logged_in_user]).name %>
+        </p>
+        <%= link_to "Log out", logout_path, class: "button", method: :delete%>
+        <% else %>
+        <%= link_to "Log in", login_path, class: "button"%>
+        <% end %>
       </div>
     </nav>
   </header>
 
-  <main class="row">
+  <main>
+    <section class="row">
+      <% flash.each do |name, message| %>
+      <div class="<%= name %>"><%= message %></div>
+      <% end %>
+    </section>
     <%= yield %>
   </main>
 
