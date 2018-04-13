@@ -12,14 +12,34 @@
  *= require normalize-rails
 
  *
+
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
 
 .nav_bar {
   padding: 25px 20px;
+}
+
+header {
+  padding: 25px 20px 10px 20px;
+  background-color: #B2DFDB;
+}
+
+header h2 {
+  margin: 25px auto 40px auto;
+  font-weight: bold;
+}
+
+header h2 a {
+  color: #FF5722;
+  border-right: solid white 2px;
+  margin-right: 15px;
+}
+
+header h2 small {
+  color: white;
 }
 
 main {
@@ -32,4 +52,32 @@ main {
 main .grid-x div > ul, .show-info {
   list-style-type: none;
   margin-left: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.float-right {
+  margin-left: .2rem;
+}
+
+.button {
+  background-color: #26A69A;
+}
+
+.button:hover {
+  background-color: rgba(59,115,119,1)
+}
+
+.spotlight {
+  padding: 0 32px 32px 32px;
+  height: 76px;
+}
+
+main .name {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  padding: 20px 25px;
+  margin-top: 30px;
 }

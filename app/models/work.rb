@@ -8,30 +8,18 @@ class Work < ApplicationRecord
   end
 
   def self.show_albums
-    works = self.all
-    albums = []
-    works.each do |work|
-      albums << work if work.category == "album"
-    end
-    return albums
+    albums = Work.where(category: "album")
+    return albums.sort_by {|album| album.votes.count}.reverse!
   end
 
   def self.show_books
-    works = self.all
-    books = []
-    works.each do |work|
-      books << work if work.category == "book"
-    end
-    return books
+    books = Work.where(category: "book")
+    return books.sort_by {|book| book.votes.count}.reverse!
   end
 
   def self.show_movies
-    works = self.all
-    movies = []
-    works.each do |work|
-      movies << work if work.category == "movie"
-    end
-    return movies
+    movies = Work.where(category: "movie")
+    return movies.sort_by {|movie| movie.votes.count}.reverse!
   end
 
 end

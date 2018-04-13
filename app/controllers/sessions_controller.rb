@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
       else
         # bad name or something
         flash.now[:failure] = "A problem occurred: Could not log in"
+        flash.now[:error] = @user.errors.messages[:name]
         render :new
       end
     end

@@ -19,6 +19,7 @@ class WorksController < ApplicationController
       flash[:success] = "Successfully added"
     else
       flash.now[:falture] = "Failed to add"
+      flash.now[:error] = @work.errors.messages[:name]
       render :new
     end
   end

@@ -1,6 +1,13 @@
+
+
 class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :work
-  # validates :user_id, uniqueness: true
-  # validates :work_id, uniqueness: true
+  def unique_vote
+    unless !Vote.all.any?{|v| v.user_id == user_id && v.work_id == work_id}
+      errors[:name] << "You have already voted!"
+    end
+  end
+  validate :unique_vote
+
 end

@@ -1,9 +1,9 @@
 class VotesController < ApplicationController
-  def index; end
+  # def index; end
 
-  def new
-    @vote = Vote.new
-  end
+  # def new
+  #   @vote = Vote.new
+  # end
 
   def upvote
     # errors if user already voted
@@ -13,11 +13,12 @@ class VotesController < ApplicationController
 
       if @vote.save
         flash[:success] = "successfully upvoted"
-        redirect_to works_path
+        redirect_back fallback_location: root_path
 
       else
         flash[:failure] = "Could not upvote"
-        redirect_to works_path
+        flash[:error] = @vote.errors.messages[:name]
+        redirect_back fallback_location: root_path
       end
 
     else

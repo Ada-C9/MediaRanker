@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h2 class="text-center"><%= link_to "Media Ranker", homepage_path %> <small> | Ranking the Best of Everything</small>
+    <h2 class="text-center"><%= link_to "Media Ranker ", homepage_path %> <small> Ranking the Best of Everything</small>
     </h2>
     <nav class="nav_bar">
       <%= link_to "View top media", root_path, class: "button" %>
@@ -35,7 +35,20 @@
   <main>
     <section>
       <% flash.each do |name, message| %>
-      <div class="<%= name %>"><%= message %></div>
+      <div class="<%= name %>">
+        <% if name != :error%>
+        <p class="flash-message"><%= message %></p>
+        <% else%>
+        <ul class="flash-errors">
+          <% name.each do |error_name, error_mes| %>
+          <li class="<% error_name %>">
+            <%= error_name %>: <%= error_mes %>
+          </li>
+          <% end %>
+        </ul>
+        <% end %>
+
+      </div>
       <% end %>
     </section>
 
