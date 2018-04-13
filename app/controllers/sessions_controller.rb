@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
     else
-      @user = User.create user_name: params[:user][:name]
+      @user = User.create user: params[:user][:name]
       session[:user_id] = @user.id
     end
     redirect_to root_path

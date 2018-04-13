@@ -10,52 +10,51 @@
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <h2>
-  <a ref>Media Ranker</a>
-   <small>Ranking the best of everything</small></h2>
+    <a ref>Media Ranker</a>
+    <small>Ranking the best of everything</small></h2>
 
-  <nav>
-    <%= link_to "View Top Media", root_path, :class => "button" %>
-    <%= link_to "View All Media", works_path, :class => "button" %>
-    <%= link_to "Add a New Work", new_work_path, :class => "button" %>
-    <%= link_to "View All Users", users_path, :class => "button" %>
-    <div class="float-right">
-      <% if @user %>
-            <li>
-              Welcome <%= @user.user_name %>
-              <%= link_to "Logout", logout_path, method: :delete, :class => "button"%>
-            </li>
-          <% else %>
-             <%= link_to "Log In", login_path, :class => "button float-right" %>
-          <% end %>
-      <!-- <%= link_to "Log In", login_path, :class => "button float-right" %> -->
-    </div>
-  </nav>
-
-</head>
-
-<body>
-  <section class="flash">
-    <% flash.each do |name, message| %>
-    <section class="callout <%= name %>">
-      <% if name == "alert" %>
-      <ul>
-        <% flash[:alert].each do |field, message| %>
+    <nav>
+      <%= link_to "View Top Media", root_path, :class => "button" %>
+      <%= link_to "View All Media", works_path, :class => "button" %>
+      <%= link_to "Add a New Work", new_work_path, :class => "button" %>
+      <%= link_to "View All Users", users_path, :class => "button" %>
+      <div class="float-right">
+        <% if @user %>
         <li>
-          <strong><%= field %>: </strong>
-          <%= message %>
+          Welcome <%= @user.user_name %>
+          <%= link_to "Logout", logout_path, method: :delete, :class => "button"%>
         </li>
+        <% else %>
+        <%= link_to "Log In", login_form_path, :class => "button float-right" %>
         <% end %>
-      </ul>
-      <% else %>
-      <p>
-        <%= message %>
-      </p>
+      </div>
+    </nav>
+
+  </head>
+
+  <body>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <section class="callout <%= name %>">
+        <% if name == "alert" %>
+        <ul>
+          <% flash[:alert].each do |field, message| %>
+          <li>
+            <strong><%= field %>: </strong>
+            <%= message %>
+          </li>
+          <% end %>
+        </ul>
+        <% else %>
+        <p>
+          <%= message %>
+        </p>
+        <% end %>
+      </section>
       <% end %>
     </section>
-    <% end %>
-  </section>
 
-  <%= yield %>
+    <%= yield %>
 
-</body>
-</html>
+  </body>
+  </html>
