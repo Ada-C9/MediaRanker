@@ -2,88 +2,17 @@
 
 <section class="media-table">
   <h4>Albums</h4>
-  <table>
-    <thead>
-      <tr>
-        <th width=80>Votes</th>
-        <th>Title</th>
-        <th>Created By</th>
-        <th width=100>Published</th>
-        <th width=100>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @works.each do |work| %>
-      <% if work.work_category == "album"%>
-      <tr>
-        <td> Num </td>
-        <td> <%= link_to work.work_title, work_path(work.id) %> </td>
-        <td> <%= work.work_creator %> </td>
-        <td> <%= work.work_publication_year %> </td>
-        <td><%= link_to 'Upvote', upvote_path(work.id), class: 'button' %></td>
-
-        <td> <a class="button upvote" rel="nofollow" data-method="post" href="/works/351/upvote">Upvote</a> </td>
-      </tr>
-      <% end%>
-      <% end%>
-    </tbody>
-  </table>
+  <%= render partial: 'list', locals: {list_category: "album"} %>
 </section>
 
 <section class="media-table">
   <h4>Books</h4>
-  <table>
-    <thead>
-      <tr>
-        <th width=80>Votes</th>
-        <th>Title</th>
-        <th>Created By</th>
-        <th width=100>Published</th>
-        <th width=100>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @works.each do |work| %>
-      <% if work.work_category == "book"%>
-      <tr>
-        <td> Num </td>
-        <td> <%= link_to work.work_title, work_path(work.id) %> </td>
-        <td> <%= work.work_creator %> </td>
-        <td> <%= work.work_publication_year %> </td>
-        <td> <a class="button upvote" rel="nofollow" data-method="post" href="/works/351/upvote">Upvote</a> </td>
-      </tr>
-      <% end%>
-      <% end%>
-    </tbody>
-  </table>
+  <%= render partial: 'list', locals: {list_category: "book"} %>
 </section>
 
 <section class="media-table">
   <h4>Movies</h4>
-  <table>
-    <thead>
-      <tr>
-        <th width=80>Votes</th>
-        <th>Title</th>
-        <th>Created By</th>
-        <th width=100>Published</th>
-        <th width=100>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @works.each do |work| %>
-      <% if work.work_category == "movie"%>
-      <tr>
-        <td> Num </td>
-        <td> <%= link_to work.work_title, work_path(work.id) %> </td>
-        <td> <%= work.work_creator %> </td>
-        <td> <%= work.work_publication_year %> </td>
-        <td> <a class="button upvote" rel="nofollow" data-method="post" href="/works/351/upvote">Upvote</a> </td>
-      </tr>
-      <% end%>
-      <% end%>
-    </tbody>
-  </table>
+  <%= render partial: 'list', locals: {list_category: "movie"} %>
 </section>
 
 
