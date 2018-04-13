@@ -1,4 +1,5 @@
-<h3>User Summary: <%=@user.name %></h3>
+<main class="row">
+  <h3>User Summary: <%=@user.name %></h3>
 <p>Joined site <%= @user.created_at.strftime("%B %d, %Y")%></p>
 
 <h4>Votes</h4>
@@ -28,7 +29,7 @@
 </table>
 
 
-<ul>
-  <li><%=link_to "See all Users", users_path%></li>
-  <li><%=link_to "Back to Media List", works_path%></li>
-</ul>
+<%=link_to "See all Users", users_path, class: "button" %>
+  <%=link_to "Back to Media List", works_path, class: "button" %>
+
+</main>
