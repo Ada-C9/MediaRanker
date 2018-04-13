@@ -4,9 +4,7 @@ describe Work do
   describe "validations" do
     # all validations pass
     before do
-      @creator = "Da Vinci"
-      @publication_year = 1337
-      @work = Work.new(title: "test work", creator: @creator, publication_year: @publication_year)
+      @work = works(:lemonade)
     end
 
     it "can be created will all required fields" do
@@ -29,7 +27,7 @@ describe Work do
     # duplicate title -> fail
     it "is invalid with a duplicate title" do
       title = "duplicate"
-      Work.create!(title: title, creator: @creator, publication_year: @publication_year)
+      Work.create!(title: title, creator: "Dr. Seuss", publication_year: 1993)
       @work.title = title
 
       result = @work.valid?

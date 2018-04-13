@@ -1,41 +1,38 @@
 require "test_helper"
 
-describe Work do
+describe User do
   describe "validations" do
     # all validations pass
     before do
-      @creator = "Da Vinci"
-      @publication_year = 1337
-      @work = Work.new(title: "test work", creator: @creator, publication_year: @publication_year)
+      @user = users(:angela)
     end
 
     it "can be created will all required fields" do
       # Act
-      result = @work.valid?
+      result = @user.valid?
 
       # Assert
       result.must_equal true
     end
 
-    it "is invalid without a title" do
-      @work.title = nil
+    it "is invalid without a name" do
+      @user.name = nil
 
-      result = @work.valid?
+      result = @user.valid?
 
       result.must_equal false
-      @work.errors.messages.must_include :title
+      @user.errors.messages.must_include :name
     end
 
     # duplicate title -> fail
-    it "is invalid with a duplicate title" do
-      title = "duplicate"
-      Work.create!(title: title, creator: @creator, publication_year: @publication_year)
-      @work.title = title
+    it "is invalid with a duplicate name" do
 
-      result = @work.valid?
+      user = User.create(name: "angela")
+
+      result = user.valid?
 
       result.must_equal false
-      @work.errors.messages.must_include :title
+      user.errors.messages.must_include :name
     end
   end
 
@@ -50,7 +47,15 @@ describe Work do
       vote = Vote.create!(user_id: @user.id, work_id: @work.id)
 
       # Assert
-      @work.votes.must_include vote
+      @user.votes.must_include vote
     end
   end
+
+  describe 'business logic' do
+    before do
+    end
+
+  end
+
+
 end
