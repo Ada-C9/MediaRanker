@@ -1,22 +1,23 @@
 class VotesController < ApplicationController
-  # def index
-  #   @votes = Vote.all
-  # end
+
+  def index
+    @votes = Vote.all
+  end
 
   # def show
   #   id = params[:id]
   #   @vote = Vote.find(id)
   # end
 
-  # def new
-  #   @vote = Vote.new
-  # end
+  def new
+    @vote = Vote.new
+  end
 
   def create
-    vote = Vote.new(vote_params)
+    @vote = Vote.new(user_id: session[:user_id], work_id: params[:work_id])
 
-    if vote.save #it worked
-      redirect_to root_path
+    if @vote.save #it worked
+      redirect_to work_path(@vote.work_id)
     else
       redirect_to works_path
     end
@@ -61,6 +62,6 @@ class VotesController < ApplicationController
 
   def vote_params
     # You don't need an explicit return here, but if it helps keep things straight in your head, it's okay to do it.
-    params.require(:vote).permit(:user_id, :work_id)
+    params.require(:vote).permit(:vote, :user_id, :work_id)
   end
 end
