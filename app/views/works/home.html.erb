@@ -1,21 +1,25 @@
 <main>
-  <section>
-    <h2>Media Spotlight: <%= @spotlight.title %> by <%= @spotlight.creator %></h2>
-    <p><%= @spotlight.votes.count %> votes - <%= @spotlight.description %></p>
+  <section class="row spotlight">
+    <div>
+      <h3>Media Spotlight: <%= link_to "#{@spotlight.title}", work_path(@spotlight) %> by <%= @spotlight.creator %></h3>
+      <p><%= @spotlight.votes.count %> votes - <%= @spotlight.description %></p>
+    </div>
   </section>
 
-  <section>
-    <h2>Top Albums</h2>
-    <%= render partial: "works-by-category", collection: @works.top_albums, as: :item %>
-  </section>
+  <section class="top-ten-container">
+    <section class="top-ten">
+      <h3>Top Albums</h3>
+      <%= render partial: "works-by-category", collection: @works.top_albums, as: :item %>
+    </section>
 
-  <section>
-    <h2>Top Books</h2>
-    <%= render partial: "works-by-category", collection: @works.top_books, as: :item %>
-  </section>
+    <section class="top-ten">
+      <h3>Top Books</h3>
+      <%= render partial: "works-by-category", collection: @works.top_books, as: :item %>
+    </section>
 
-  <section>
-    <h2>Top Movies</h2>
-    <%= render partial: "works-by-category", collection: @works.top_movies, as: :item %>
+    <section class="top-ten">
+      <h3>Top Movies</h3>
+      <%= render partial: "works-by-category", collection: @works.top_movies, as: :item %>
+    </section>
   </section>
 </main>
