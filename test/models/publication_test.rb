@@ -3,8 +3,8 @@ require 'date'
 
 describe Publication do
   let(:sailor_moon) { publications(:sailormoon) }
-  let(:top_ten_books) {Publication.find_top_ten_by("Book")}
-  let(:top_ten_movies) {Publication.find_top_ten_by("Movie")}
+  let(:top_ten_books) {Publication.find_top_ten_by("book")}
+  let(:top_ten_movies) {Publication.find_top_ten_by("movie")}
 
   describe 'publication validity' do
     it 'must be valid' do
@@ -25,7 +25,7 @@ describe Publication do
       sailor_moon.valid?.must_equal false
     end
     it 'wont make a duplicate record' do
-      duplicate_moon = Publication.new(category: "Book", title: "Sailor Moon", creator: "Naoko Takeuchi")
+      duplicate_moon = Publication.new(category: "book", title: "Sailor Moon", creator: "Naoko Takeuchi")
 
       duplicate_moon.valid?.must_equal false
     end
@@ -68,7 +68,7 @@ describe Publication do
     end
     describe 'Publication.return_all_categories' do
       it 'returns an array of categories in the database' do
-        Publication.return_all_categories.must_equal ["TV Show", "Book", "Movie"]
+        Publication.return_all_categories.must_equal ["album", "book", "movie"]
       end
       # I may get rid of this method, because for the purpose of this project
       # it may make more sense to store categories as a constant instead
@@ -94,8 +94,8 @@ describe Publication do
         top_ten_books[3].must_equal publications(:hostclub)
       end
       it 'will not return more than 10 publications if more exist in a category' do
-        Publication.find_top_ten_by("TV Show").length.must_equal 10
-        Publication.find_top_ten_by("TV Show").wont_include publications(:sailorcrystal)
+        Publication.find_top_ten_by("album").length.must_equal 10
+        Publication.find_top_ten_by("album").wont_include publications(:sailorcrystal)
       end
       it 'returns no more publications than what exists in a category' do
         top_ten_movies.length.must_equal 3

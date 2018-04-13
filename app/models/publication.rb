@@ -5,6 +5,8 @@ class Publication < ApplicationRecord
   validates :title, presence: true, length: { minimum: 1 }
   validates :category, uniqueness: {scope: [:title]}
 
+  CATEGORIES = ["movie", "book", "album"]
+
   def find_total_votes
     self.votes.empty? ? 0 : self.votes.length
   end
@@ -19,13 +21,17 @@ class Publication < ApplicationRecord
 
     spotlight
   end
+
   def self.return_all_categories
-    categories = []
-    Publication.all.each do |publication|
-      next if categories.include?(publication.category)
-      categories << publication.category
-    end
-    categories
+    # original approach to categories
+    # categories = []
+    # Publication.all.each do |publication|
+    #   next if categories.include?(publication.category)
+    #   categories << publication.category
+    # end
+    # categories
+
+    CATEGORIES
   end
   def self.find_top_ten_by category
     if !Publication.return_all_categories.include?(category)

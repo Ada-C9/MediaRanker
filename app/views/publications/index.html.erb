@@ -1,8 +1,8 @@
 <h3>List of works</h3>
 <section class="category-table">
-  <% categories = Publication.return_all_categories %>
+  <% categories = Publication.return_all_categories.reverse %>
   <% categories.each do |category| %>
-    <h4><%= category.capitalize %></h4>
+    <h4><%= category.capitalize %>s</h4>
     <table>
       <thead>
         <tr>

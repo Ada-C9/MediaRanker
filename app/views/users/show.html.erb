@@ -18,7 +18,7 @@
         <td><%= link_to publication.title, publication_path(publication.id) %></td>
         <td><%= publication.creator %></td>
         <td><%= publication.publication_year %></td>
-        <td><%= publication.category %></td>
+        <td><%= publication.category.capitalize %></td>
         <td><%= vote.created_at.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
