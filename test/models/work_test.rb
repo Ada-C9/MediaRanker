@@ -1,9 +1,17 @@
 require "test_helper"
 
 describe Work do
-  let(:work) { Work.new }
+  describe 'relations' do
+    before do
+      @work = Work.new(title: 'The Fifth Element')
+    end
 
-  it "must be valid" do
-    value(work).must_be :valid?
+    it "vote connects work and user" do
+      vote = Vote.first
+
+      @work.votes << vote
+      
+      @work.votes_ids.must_include vote.id
+    end
   end
 end

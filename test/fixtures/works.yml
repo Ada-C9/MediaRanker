@@ -4,8 +4,16 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+thefifthelement:
+  title: The Fifth Element
+  category: movies
+  creator: Luc Besson
+  publication_year: 1997
+  description: In the colorful future, a cab driver unwittingly becomes the central figure in the search for a legendary cosmic weapon to keep Evil and Mr. Zorg at bay.
+
+starshiptroopers:
+    title: Startship Troopers
+    category: movies
+    creator: Paul Verhoeven
+    publication_year: 1997
+    description: Humans in a fascistic, militaristic future do battle with giant alien bugs in a fight for survival.
