@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :find_user
 
   def new
-    @user = User.new
+    @current_user = User.new
   end
 
   def login
@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def create
     # username = params[:username]
+    @user = User.find_by username: params[:user][:username]
     if @user
       session[:user_id] = @user.id
       flash[:success] = "Successfully logged in as existing user #{@user.username}"

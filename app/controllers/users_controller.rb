@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all.find(params[:id])
+    @current_user = User.all.find(params[:id])
   end
 
   def new

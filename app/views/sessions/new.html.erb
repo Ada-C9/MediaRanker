@@ -1,5 +1,5 @@
 <h2>Log In</h2>
-<%= form_for @user, url: login_path do |f| %>
+<%= form_for @current_user, url: login_path do |f| %>
   <%= f.label :Username %>
   <%= f.text_field :username %>
   <a class="button"> <%= f.submit value="Log In"  %></a>
