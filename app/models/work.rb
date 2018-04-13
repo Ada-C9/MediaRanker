@@ -28,17 +28,10 @@ class Work < ApplicationRecord
   end
 
   def total_work_vote
-    # given work, find total votes
     # votes = Vote.where(work_id: @work.work_id)
     # return votes.length
-
     total = self.votes.count
     return total
   end
 
-  def total_user_votes
-    # return total votes given a user
-    # find user
-    # call all votes on that user id
-  end
 end
