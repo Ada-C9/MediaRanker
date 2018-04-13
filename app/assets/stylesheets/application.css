@@ -19,8 +19,9 @@
 
  */
  /* General */
- body {
-     font-family: 'Gudea';font-size: 22px;
+ * {
+     font-family: 'Gudea';
+     font-size: 22px;
  }
 
  h1, h2, h3, h4, h5 {
