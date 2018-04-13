@@ -42,10 +42,10 @@ class UsersController < ApplicationController
   end
 
   private
-  def find_book
+  def find_user
     @user = User.find_by_id(params[:id])
   end
-  
+
   def user_params
     return params.require(:user).permit(:name, :created_at)
   end

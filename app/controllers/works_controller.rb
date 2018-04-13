@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show,:edit,:update]
-  
+
   def index
     @works = Work.all
 
@@ -54,7 +54,7 @@ class WorksController < ApplicationController
 
   private
 
-  def find_book
+  def find_work
     @work = Work.find_by_id(params[:id])
   end
 

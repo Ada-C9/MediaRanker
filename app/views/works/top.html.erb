@@ -1,1 +1,47 @@
 <h2>Media Spotlight: </h2>
+<section>
+  <section>
+    <h3>Top Movies</h3>
+    <% @works.each do |work| %>
+    <% work.category == 'movie'%>
+    <ul>
+      <li>
+        <strong> <%= work.title %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+
+  <section>
+    <h3>Top Books</h3>
+    <% @works.each do |work| %>
+    <% work.category == 'book'%>
+    <ul>
+      <li>
+        <strong> <%= work.title %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+
+  <section>
+    <h3>Top Albums</h3>
+    <% @works.each do |work| %>
+    <% work.category == 'album'%>
+    <ul>
+      <li>
+        <strong> <%= work.title %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+</section>
