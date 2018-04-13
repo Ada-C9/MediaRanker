@@ -13,8 +13,8 @@ class VotesController < ApplicationController
     if session[:user_id]
 
       new_vote = {
-        work_id: params[:work_id],
-        user_id: session[:user_id]
+        user_id: session[:user_id],
+        work_id: params[:work_id]
       }
 
       @vote = Vote.new(new_vote)
@@ -26,7 +26,6 @@ class VotesController < ApplicationController
         flash[:notice] = @vote.errors.full_messages
       end
     end
-    # redirect_to works_path
     redirect_to request.referer
   end
 

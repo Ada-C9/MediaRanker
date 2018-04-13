@@ -32,10 +32,10 @@
       <% @work.votes.each do |vote| %>
       <tr>
         <td>
-          <%= link_to(work.vote.creater, user_path(@user))  %>
+          <%= link_to(vote.user.name, user_path(vote.user))  %>
         </td>
         <td>
-          <%= work.vote.created_at %>
+          <%= vote.created_at.strftime("%B %d, %Y") %>
         </td>
       </tr>
       <% end %>

@@ -6,15 +6,21 @@ class Work < ApplicationRecord
 
 
   def self.books
-    Work.where(category: "book")
+    array = Work.where(category: "book")
+    new_array = array.sort_by { |item| item.votes.count }.reverse
+    return new_array
   end
 
   def self.albums
-    Work.where(category: "album")
+    array = Work.where(category: "album")
+    new_array = array.sort_by { |item| item.votes.count }.reverse
+    return new_array
   end
 
   def self.movies
-    Work.where(category: "movie")
+    array = Work.where(category: "movie")
+    new_array = array.sort_by { |item| item.votes.count }.reverse
+    return new_array
   end
 
 
