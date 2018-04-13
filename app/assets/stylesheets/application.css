@@ -19,6 +19,10 @@
 
  */
  /* General */
+ body {
+     font-family: 'Gudea';font-size: 22px;
+ }
+
  h1, h2, h3, h4, h5 {
    font-weight: bold;
  }
@@ -93,6 +97,10 @@
 }
 
 /* Flash */
+.alert {
+  background-color: #e6e6e6;
+}
+
 .flash {
   background-color: #e6e6e6;
   color: #8a8a8a;
@@ -100,4 +108,12 @@
 
 .success {
   color: #8a8a8a;
+}
+
+.error {
+  color: #C70039;
+}
+
+.circle-list {
+  list-style-type: disc;
 }

@@ -3,29 +3,38 @@
 </h3>
 <p>Joined site <%= @user.created_at.to_date.to_formatted_s(:long) %></p>
 
-<section class=vote-table><h4>Votes</h4>
-  <ul class=labels>
-    <li>Media Title</li>
-    <li>Created By</li>
-    <li>Published</li>
-    <li>Category</li>
-    <li>Voted On</li>
-  </ul>
+<table class=vote-table><h4>Votes</h4>
+  <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.votes.each do |v| %>
+      <tr>
+        <% work = Work.find(v.work_id) %>
 
-  <ul>
-    <li>Future list item
-    </li>
-  </ul>
-
-</section>
+        <td><%= work.title %></td>
+        <td><%= work.creator %></td>
+        <td>
+          <% if work.publication_year != nil %>
+            <%= work.publication_year.year %>
+          <% else %>
+            <%= work.publication_year %>
+          <% end %>
+        </td>
+        <td><%= work.category.capitalize %></td>
+        <td><%= v.created_at.to_date.to_formatted_s(:long)%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <nav class=bottom>
-  <ul>
-    <li>
-      <%= link_to("See all Users", users_path, class: "button") %>
-    </li>
-    <li>
-      <%= link_to("Back to Media List", works_path, class: "button") %>
-    </li>
-  </ul>
+  <%= link_to("See all Users", users_path, class: "button") %>
+  <%= link_to("Back to Media List", works_path, class: "button") %>
 </nav>
