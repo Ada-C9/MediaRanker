@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :find_book, only: [:show, :edit, :update]
+
   def index
     @works = Work.ordered_works_inclusive
   end
@@ -18,16 +20,11 @@ class WorksController < ApplicationController
     end
   end
 
-  def show
-    @work = Work.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @work = Work.find(params[:id])
     @work.assign_attributes(work_params)
 
     if @work.save
@@ -52,5 +49,9 @@ class WorksController < ApplicationController
   private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_book
+    @work = Work.find_by_id(params[:id])
   end
 end

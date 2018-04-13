@@ -69,6 +69,7 @@ main {
   border-radius: 5px;
   background-color: #e6e6e6;
   padding: 20px 25px;
+  margin-bottom: 30px;
 }
 
 .flash .failures h3, .flash .success h3 {
