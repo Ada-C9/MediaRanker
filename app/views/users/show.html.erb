@@ -1,5 +1,5 @@
 <h3>User Summary: <%= @user.username %></h3>
-<p>Joined site <%= @user.created_at %></p>
+<p>Joined site <%= @user.created_at.strftime("%B %d, %Y") %></p>
 
 <h4>Votes</h4>
 <table>
@@ -19,7 +19,7 @@
         <td><%= upvote.work.work_creator %></td>
         <td><%= upvote.work.work_publication_year %> </td>
         <td><%= upvote.work.work_category %> </td>
-        <td><%= upvotes.created_at %> </td>
+        <td><%= upvotes.created_at.strftime("%B %d, %Y") %> </td>
       </tr>
     <% end %>
   </tbody>
