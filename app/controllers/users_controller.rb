@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @show_user = User.find_by(id: params[:id])
   end
 
   def update

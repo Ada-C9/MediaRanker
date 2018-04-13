@@ -2,5 +2,5 @@ class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :work
 
-  # this could be a useless model....?
+  validates :user, uniqueness: {scope: :work, message: "You have already voted for this title."}
 end

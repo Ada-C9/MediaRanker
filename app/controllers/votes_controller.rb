@@ -9,15 +9,21 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new
-    @vote.work_id = Work.find_by(id: params[:work_id]).id
-    @vote.user_id = @user.id
-    if @vote.save
-      flash[:success] = "Successfully upvoted!"
+    if !@user
+      flash[:alert] = "Please login to vote!"
       redirect_back fallback_location: :works_path
     else
-      flash.now[:alert] = @vote.errors
-      render :new
+      @vote = Vote.new
+      @vote.work_id = Work.find_by(id: params[:work_id]).id
+
+      @vote.user_id = @user.id
+      if @vote.save
+        flash[:success] = "Successfully upvoted!"
+        redirect_back fallback_location: :works_path
+      else
+        flash.now[:alert] = @vote.errors
+        render :new
+      end
     end
   end
 
