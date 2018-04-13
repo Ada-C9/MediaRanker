@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <header class="page-header row">
+    <header class="page-header row", class="page-header">
       <h2>
         <%= link_to 'Media Ranker',root_path, id: "bold" %>
         <small id: "bold">Ranking the Best of Everything</small>
@@ -31,16 +31,17 @@
           <% else %>
           <% session[:user_id] == @user.id %>
           <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
-          <%= link_to 'Logged in', user_path(:id), class: "button float-right"%>
+          <a class="button float-right" href="/user/<%= @user.id %>">Logged in as <%= @user.username %></a>
+
           <%end%>
         </div>
       </header>
       <% flash.each do |name, message|%>
         <% if name == "alert" %>
-          <section class="row status failure ">
+          <section class="row status failure">
+            <% if message.class == String %>
+              <%= message.capitalize %>
             <ul>
-              <% if message.class == String %>
-                <%= message.capitalize %>
               <% else %>
                 <% flash[:alert].each do |field, message|%>
                   <strong>

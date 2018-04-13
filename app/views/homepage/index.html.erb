@@ -15,7 +15,7 @@
 
 <section class="top-ten-container">
   <section class="top-ten">
-    <h3>Top Books</h3>
+    <h3 id="top-header">Top Books</h3>
     <ul>
       <% @books.each do |work| %>
         <li>
@@ -32,7 +32,7 @@
   </section>
 
   <section class="top-ten">
-    <h3>Top Albums</h3>
+    <h3 id="top-header">Top Albums</h3>
     <ul>
       <%@albums.each do |work|%>
       <li>
@@ -49,7 +49,7 @@
   </section>
 
   <section class="top-ten">
-    <h3>Top Movies</h3>
+    <h3 id="top-header">Top Movies</h3>
     <ul>
       <%@movies.each do |work|%>
       <li>

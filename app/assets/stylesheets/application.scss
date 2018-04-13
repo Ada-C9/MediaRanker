@@ -19,7 +19,7 @@
  */
 
  .page-header {
-    max-width: 100%;
+    width: 100%;
     background-color: #B2DFDB;
     border-bottom: 1px solid #EEEEEE;
     margin-bottom: 10px;
@@ -183,14 +183,11 @@ p {
 }
 
 .root-hr {
-    margin: 0px auto 75px auto;
+    margin: 0px auto 50px auto;
     color: #EEEEEE;
 }
 
-.root-hr {
-    margin: 0px auto 75px auto;
-    color: #EEEEEE;
-}
+
 hr {
     clear: both;
     max-width: 75rem;
@@ -213,8 +210,6 @@ hr {
     grid-column-gap: 2em;
     padding: 1.5em;
 }
-
-
 
 .top-ten ul {
     list-style-type: none;
@@ -300,4 +295,27 @@ thead, tbody, tfoot {
 .tables {
   margin-left: 1.5em;
   margin-right: 1.5em;
+}
+
+#works{
+  font-size: 2em;
+  margin-top: 1.8em;
+  margin-bottom: 1.1em;
+}
+
+#top-header {
+  font-size: 1.9em;
+  font-weight: bolder;
+}
+
+.row.status.failure {
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px 25px;
+    margin-top: 30px;
+}
+
+.row.status.failure ul {
+  margin-left: 1.25rem;
+list-style-type: disc;
 }
