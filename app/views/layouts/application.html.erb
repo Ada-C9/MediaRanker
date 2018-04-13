@@ -20,8 +20,7 @@
       <%= link_to "View All Users", users_path, :class => "button" %>
       <div class="float-right">
         <% if @user %>
-        <li>
-          Welcome <%= @user.user_name %>
+        <li>Welcome <%= @user.user_name %>
           <%= link_to "Logout", logout_path, method: :delete, :class => "button"%>
         </li>
         <% else %>
@@ -29,6 +28,8 @@
         <% end %>
       </div>
     </nav>
+
+  
 
   </head>
 
