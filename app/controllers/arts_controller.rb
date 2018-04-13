@@ -1,6 +1,5 @@
 class ArtsController < ApplicationController
-  before_action :find_art, only: [:show, :edit, :update]
-
+  before_action :find_art, only: %I[show edit update]
 
   def index
     @arts = Art.all
@@ -20,15 +19,15 @@ class ArtsController < ApplicationController
     @art = Art.create art_params
 
     if @art.id != nil
-      flash[:success] = "Art created successfully"
+      flash[:success] = 'Art created successfully'
       redirect_to arts_path
     else
-      flash.now[:failure] = "Validations Failed"
+      flash.now[:failure] = 'Validations Failed'
       render :new
     end
   end
 
-  #Preferred style to indicate an intentional blank method
+  # Preferred style to indicate an intentional blank method
   def show; end
 
   def edit; end
@@ -49,19 +48,15 @@ class ArtsController < ApplicationController
     redirect_to arts_path
   end
 
-
   private
 
-  #Strong Params
+  # Strong Params
   def art_params
-    return params.require(:art).permit(:category, :title, :creator, :pub_year, :description)
+    params.require(:art).permit(:category, :title, :creator, :pub_year, :description)
   end
 
-  #Controller Filter
+  # Controller Filter
   def find_art
     @art = Art.find(params[:id])
   end
-
 end
-
-# TODO: Build successfully added/destroy grey message bar

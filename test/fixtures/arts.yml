@@ -1,15 +1,16 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# CURRENTLY USING
+# Read about fixtures at
 
 one:
-  category: MyString
-  title: MyString
+  category: 'movie'
+  title: 'Singin In The Rain'
   creator: MyString
   pub_year: MyString
   description: MyString
 
 two:
-  category: MyString
-  title: MyString
-  creator: MyString
+  category: 'album'
+  title: 'Stories'
+  creator: 'Avicii'
   pub_year: MyString
   description: MyString
