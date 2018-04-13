@@ -76,6 +76,10 @@ main {
   background-color: #26A69A;
 }
 
+.delete.button {
+  background-color: #cc4b37;
+}
+
 /********** status **********/
 .status {
   margin-top: 30px;
