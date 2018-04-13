@@ -1,6 +1,11 @@
 <% most_votes = Work.top_work(@works) %>
 
-<h1>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %></h1>
+<h1>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %><br />
+<sub><%= most_votes.votes.count %> votes
+  <% if most_votes.description %>
+  - <%= most_votes.description %></sub>
+  <% end %>
+</h1>
 
 <main>
 

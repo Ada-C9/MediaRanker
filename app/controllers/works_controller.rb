@@ -27,8 +27,8 @@ class WorksController < ApplicationController
   end
 
   def update
-    if @work.update(driver_params)
-      flash[:success] = "#{work.category} updated"
+    if @work.update(work_params)
+      flash[:success] = "#{@work.category.capitalize} updated!"
       redirect_to work_path
     else
       render :edit
@@ -41,7 +41,7 @@ class WorksController < ApplicationController
       if @work != nil
         @work.destroy
       end
-      flash[:success] = "#{work.category} deleted"
+      flash[:success] = "#{@work.category.capitalize} deleted"
     rescue
       flash.now[:alert] = "Item does not exist"
     end
