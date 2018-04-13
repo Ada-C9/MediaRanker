@@ -2,6 +2,12 @@
 
 <section class="row spotlight">
   <div>
+    <% if Work.spotlight == nil %>
+      <h3>
+        <span class="media-spotlight-header">Media Spotlight:</span>
+        There are no works
+      </h3>
+    <% end %>
     <h3>
       <span class="media-spotlight-header">Media Spotlight:</span>
       <%= link_to Work.spotlight.title, work_path(Work.spotlight.id)%> by

@@ -4,6 +4,7 @@ describe Work do
   let(:work1) { works(:work1) }
   let(:work2) { works(:work2) }
   let(:all_works) { Work.all }
+  let(:spotlight) { Work.spotlight }
 
   describe "validations" do
     it "is valid when all fields are present" do
@@ -42,8 +43,9 @@ describe Work do
   end
 
   describe "relations" do
-    it "can set a vote"
+    it "can set a vote" do
 
+    end
   end
 
   describe "custom methods" do
@@ -73,14 +75,46 @@ describe Work do
       end
 
       it "returns zero if the array is empty" do
-        #TODO: destroy all works instead of setting to []
-        all_works = []
-        Work.num_runs(all_works).must_equal 0
+        array = []
+        Work.num_runs(array).must_equal 0
       end
 
       # it "returns ArgumentError if an array is not passed as param" do
       #   Work.num_runs("not an array").must_raise ArgumentError
       # end
+    end
+
+    describe "#spotlight" do
+      it "returns a work" do
+        spotlight.must_be_kind_of Work
+      end
+
+      it "returns the work with the most votes" do
+        spotlight.title.must_equal "most votes work"
+      end
+
+      it "returns nil if there are no works" do
+        all_works.each do |work|
+          work.destroy
+        end
+        spotlight.must_be_nil
+      end
+    end
+
+    describe "#sort_by_vote" do
+      it "returns an array" do
+        Work.sort_by_vote.must_be_kind_of Array
+      end
+
+      it "returns the correct number of works" do
+        count = all_works.count
+        Work.sort_by_vote.count.must_equal count
+      end
+
+      it "returns the correct first work" do
+        work_with_most_votes = Work.spotlight
+        Work.sort_by_vote.first.must_equal work_with_most_votes
+      end
     end
   end
 end

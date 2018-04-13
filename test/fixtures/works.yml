@@ -21,9 +21,16 @@ work3:
   description: super good i promise
   category: album
 
-work4:
-  title: movie here
+most_votes:
+  title: most votes work
   creator: anyone
   published: 2001
   description: super good i promise
   category: movie
+
+no_votes:
+  title: no votes
+  creator: anyone else
+  published: 1800
+  description: old book
+  category: book

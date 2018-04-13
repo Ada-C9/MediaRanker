@@ -3,9 +3,23 @@
 vote1:
   user: user1
   work: work1
-  voted_date: 2018-04-09 21:52:28
 
 vote2:
+  user: user2
+  work: most_votes
+
+vote3:
+  user: user3
+  work: most_votes
+
+vote4:
   user: user1
+  work: most_votes
+
+vote5:
+  user: user3
   work: work2
-  voted_date: 2018-04-09 21:52:28
+
+vote6:
+  user: user2
+  work: work3
