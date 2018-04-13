@@ -25,16 +25,16 @@
       <% @user.votes.each do |vote| %>
       <tr>
         <td>
-          <%= works.title%>
+          <%= vote.work.title%>
         </td>
         <td>
-          <%= works.created_by %>
+          <%= vote.work.created_by %>
         </td>
         <td>
-          <%= works.published_year %>
+          <%= vote.work.published_year %>
         </td>
         <td>
-          <%= work.category %>
+          <%= vote.work.category %>
         </td>
         <td>
           <%= vote.created_at.strftime("%B %d,%Y")%>

@@ -31,7 +31,7 @@ class WorksController < ApplicationController
 
   def edit; end
 
-  def update # QUESTION: when I update a record on heroku I get an error that says somthing went wrong at /works/id
+  def update
 
     @work.assign_attributes(work_params)
 
@@ -50,6 +50,33 @@ class WorksController < ApplicationController
 
   def top
     @works = Work.all # TODO: add all media types and filter by votes top 10.
+  end
+
+  def upvote
+
+    if session[:user_id]
+      user = User.find(session[:user_id])
+      work = Work.find_by_id(params[:id])
+
+      @vote = Vote.new(user_id: user.id, work_id: work.id)
+
+      if @vote.save
+        flash[:success]= "Successfully voted!"
+        redirect_to work_path(work)
+      else
+        flash[:failure] = 'The vote was not saved!!!'
+        redirect_to works_path
+      end
+
+    else session[:user_id] == nil
+        flash[:failure] = "You must be logged in to vote"
+        redirect_to root_path
+
+    # else
+    #   flash[:failure] = "You can only vote once per media. We already have your vote"
+    #   redirect_to work_path
+
+    end
   end
 
   private

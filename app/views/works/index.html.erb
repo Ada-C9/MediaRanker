@@ -1,4 +1,7 @@
 <h2>List of works</h2>
+<% if @vote != nil %>
+  <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+  <% end %>
 
 <h3>Music Albums</h3>
 <table>
@@ -34,7 +37,7 @@
         <%=album.published_year%>
       </td>
       <td class="text-center">
-      <%# TODO:  %>  <%= link_to 'Upvote', '#', class:'button'%>
+       <%= link_to 'Upvote', upvote_path(album), method: :post, class:'button'%>
       </td>
     </tr>
   </tr>
@@ -75,7 +78,7 @@
         <%=book.published_year%>
       </td>
       <td class="text-center">
-        <%# TODO: broken link %><%= link_to 'Upvote','#', class:'button'%>
+        <%= link_to 'Upvote', upvote_path(book), method: :post, class:'button'%>
       </td>
     </tr>
   </tr>
@@ -116,7 +119,7 @@
         <%=movie.published_year%>
       </td>
       <td class="text-center">
-        <%# TODO:  %><%= link_to 'Upvote','#',  class:'button'%>
+        <%= link_to 'Upvote', upvote_path(movie), method: :post, class:'button'%>
       </td>
     </tr>
   </tr>

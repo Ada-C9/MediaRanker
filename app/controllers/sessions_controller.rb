@@ -20,15 +20,16 @@ class SessionsController < ApplicationController
 
         if @user.save
           flash[:success] = "#{@user.name} successfully created a new log in."
+
           session[:user_id] = @user.id
           redirect_to root_path
         end
 
-        else
+      else
 
-          flash.now[:failure] = 'Validations Failed'
+        flash.now[:failure] = 'Validations Failed'
 
-          render :new
+        render :new
       end
     end
   end

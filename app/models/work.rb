@@ -5,10 +5,5 @@ class Work < ApplicationRecord
   validates :title , uniqueness: true
 
 
-  # def votes
-  #   votes = @works.votes += 1
-  #
-  # return votes
-  #
-  # end
+  
 end
