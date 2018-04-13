@@ -43,7 +43,7 @@ class WorksController < ApplicationController
       end
       flash[:success] = "#{@work.category.capitalize} deleted"
     rescue
-      flash.now[:alert] = "Item does not exist"
+      flash.now[:alert] = "Item does not exist!"
     end
     redirect_to works_path
   end

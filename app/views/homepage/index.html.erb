@@ -1,16 +1,30 @@
 <% most_votes = Work.top_work(@works) %>
-
-<h1>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %><br />
-<sub><%= most_votes.votes.count %> votes
-  <% if most_votes.description %>
-  - <%= most_votes.description %></sub>
-  <% end %>
-</h1>
-
 <main>
+  <section class="row-spotlight">
+    <h3>Media Spotlight: <%= link_to most_votes.title, work_path(most_votes.id) %>
+      <% if most_votes.creator %>
+      by <%= most_votes.creator %><br />
+      <% end %>
+      <sub><%= most_votes.votes.count %> votes
+        <% if most_votes.description %>
+        - <%= most_votes.description %>
+      </sub>
+      <% end %>
+    </h3>
+  </section>
+  <section class="top-ten-container">
+    <section class="top-ten">
+      <h3>Top Albums</h3>
+    </section>
+    <section class="top-ten">
+      <h3>Top Books</h3>
+    </section>
+    <section class="top-ten">
+      <h3>Top Movies</h3>
 
-</main>
-  <p>
+    </section>
 
-  </p>
+
+  </section>
+
 </main>

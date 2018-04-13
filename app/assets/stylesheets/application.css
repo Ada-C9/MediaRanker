@@ -42,6 +42,15 @@
     }
 }
 
+.row-spotlight {
+  padding-bottom: 4em;
+}
+.top-ten-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .button.orange {
   background-color: #ffbf80;
 }
