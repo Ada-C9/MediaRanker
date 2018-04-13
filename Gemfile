@@ -57,6 +57,8 @@ gem 'jquery-turbolinks'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'normalize-rails'
+gem 'autoprefixer-rails'
+
 group :development, :test do
   gem 'pry-rails'
 end
