@@ -3,7 +3,7 @@
 <% categories = Work.make_category_hash %>
 <% categories.each do |category| %>
 <section class="media-table">
-  <h4><%= category %></h4>
+  <h4><%= category.capitalize %></h4>
   <% works_by_category = @works.find_all {|work| work.category == category} %>
   <% i = 0 %>
   <table>
@@ -24,7 +24,7 @@
             <td><%= one_work.votes.count %></td>
             <td><%= link_to one_work.title, work_path(one_work[:id])%></td>
             <td><%= one_work.creator%></td>
-            <td><%= one_work.published.to_s(:long)%></td>
+            <td><%= one_work.published.to_s(:db)%></td>
             <td><%=link_to "Upvote", upvote_path(one_work.id), method: :post, class: "button upvote" %></td>
             <% i += 1%>
           </tr>

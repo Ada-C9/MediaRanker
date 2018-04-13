@@ -19,7 +19,7 @@
       <td><%=vote.work.creator%></td>
       <td><%=vote.work.published%></td>
       <td><%=vote.work.category%></td>
-      <td><%=vote.created_at.to_s(:long)%></td>
+      <td><%=vote.created_at.strftime("%b %d, %Y")%></td>
     </tr>
     <% end %>
   </tbody>
