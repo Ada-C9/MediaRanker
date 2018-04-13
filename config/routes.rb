@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcomes#index'
 
   get '/login', to: 'sessions#new', as: 'login_form'
   post '/login', to: 'sessions#create', as: 'login'
@@ -9,6 +10,5 @@ Rails.application.routes.draw do
   resources :works do
     resources :votes, only: [:create]
   end
-
 
 end
