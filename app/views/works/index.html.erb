@@ -19,7 +19,7 @@
     <%=album.votes.count%>
    </td>
   <td>
-    <%=link_to album.title ,work_path(album.id)%>
+    <%=link_to album.title ,work_path(album.id),:class => 'link'%>
   </td>
   <td>
     <%=album.creator%>
@@ -28,7 +28,7 @@
     <%=album.publication_year%>
   </td>
   <td>
-    <%=link_to "Upvote", upvote_path(work:album), method: :post %>
+    <%=link_to "Upvote", upvote_path(work:album), method: :post, class: "button"%>
   </td>
 </tr>
 <%end%>
@@ -52,7 +52,7 @@
     <%=book.votes.count%>
    </td>
   <td>
-    <%=link_to book.title ,work_path(book.id)%>
+    <%=link_to book.title ,work_path(book.id),:class => 'link'%>
   </td>
   <td>
     <%=book.creator%>
@@ -61,7 +61,7 @@
     <%=book.publication_year%>
   </td>
   <td>
-    <%=link_to "Upvote", upvote_path(work:book), method: :post %>
+    <%=link_to "Upvote", upvote_path(work:book), method: :post ,class: "button"%>
   </td>
 </tr>
 <%end%>
@@ -86,7 +86,7 @@
     <%=movie.votes.count%>
    </td>
   <td>
-    <%=link_to movie.title ,work_path(movie.id)%>
+    <%=link_to movie.title ,work_path(movie.id),:class => 'link'%>
   </td>
   <td>
     <%=movie.creator%>
@@ -95,7 +95,7 @@
     <%=movie.publication_year%>
   </td>
   <td>
-    <%=link_to "Upvote", upvote_path(work:movie), method: :post %>
+    <%=link_to "Upvote", upvote_path(work:movie), method: :post ,class: "button"%>
   </td>
 </tr>
 <%end%>

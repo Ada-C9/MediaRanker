@@ -36,6 +36,7 @@ class WorksController < ApplicationController
     @work.description = params[:work][:description]
     if @work.save
       redirect_to work_path(@work.id)
+      flash[:success] = "Successfully Updated #{@work.category} #{@work.id}"
     else
       render :edit
     end
@@ -50,11 +51,16 @@ class WorksController < ApplicationController
 
   def destroy
     @work = Work.find_by(id: params[:id])
-    if @work.destroy
+    if @work
+      @work.votes.each do |vote|
+        vote.destroy
+      end
+      @work.destroy
       flash[:success] = "Your selection was successfully destroyed."
       redirect_to works_path
     else
       render :show
+      flash[:error] = "Your selection has already been removed."
     end
   end
 
@@ -62,11 +68,10 @@ class WorksController < ApplicationController
       @work = Work.find_by(id: params[:work])
 
       if @work && session[:user_id] != nil
-        Vote.create(user_id:@user.id,work_id:@work.id)
-        redirect_to works_path
+        Vote.create(user_id:@username.id,work_id:@work.id)
         flash[:success] = "Successfully upvoted!"
+        redirect_to works_path
       else
-        render :index
         raise
       end
   end

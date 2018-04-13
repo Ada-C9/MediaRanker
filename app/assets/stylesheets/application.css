@@ -17,3 +17,96 @@
  *= require foundation_and_overrides
 
  */
+
+ h3{
+   color:#26A69A;
+   font-weight: bold;
+ }
+
+ body{
+   margin:0
+ }
+
+ #intro{
+       background-color: #B2DFDB;
+ }
+
+#main-title{
+  padding-top:30px;
+
+}
+
+#title{
+    color: #FF5722;
+    padding: 100px;
+    font-weight:bold;
+}
+
+
+#nav-bar{
+    list-style-type: none;
+    display:flex;
+    flex-wrap:wrap;
+    background-color: #B2DFDB;
+    margin-top:50px;
+}
+
+#nav-bar li{
+      padding-right: 7px;
+}
+#small-title{
+  color:white;
+}
+
+.button{
+    background-color:#26A69A;
+}
+
+.button hover{
+  background-color:#00796B;
+}
+
+#login{
+  margin-left: auto;
+  padding-right:5px;
+}
+
+#logout{
+  margin-left: auto;
+}
+
+.link{
+  color:#26A69A;
+}
+
+.top-ten-container{
+  display:grid;
+  grid-template-columns: auto auto auto
+}
+
+.top-ten:first-of-type{
+  margin-left:100px;
+}
+
+.top-ten{
+  margin-right:20px;
+}
+
+.top-ten h3{
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+#media-spotlight{
+  color:black;
+}
+
+
+#link-title{
+  color:#26A69A;
+  text-decoration:underline;
+}
+
+#top-work-title{
+  color:#26A69A;
+}

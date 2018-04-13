@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   delete '/login', to: 'sessions#destroy', as: 'logout'
 
 
-  root 'homepage#index'
+  root 'homepage#index' , as:'homepage'
   get '/works/new', to: 'works#new', as:'new_work'
   post '/works', to:'works#create'
   get '/works', to: 'works#index'
