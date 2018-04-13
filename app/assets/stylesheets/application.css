@@ -39,6 +39,12 @@
    margin-bottom: 10px;
    padding: 25px 20px 10px 20px;
  }
+
+ header h2 {
+   text-align: center;
+   margin: 25px auto 40px auto;
+ }
+
  header h2 a {
    color: #FF5722;
    padding-right: 25px;
@@ -54,4 +60,8 @@
 
  nav ul li {
    margin: 5px;
+ }
+
+ .login-logout {
+   float: right !important;
  }

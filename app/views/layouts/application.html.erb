@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/owl.jpg" />
-    <!-- Insert this within your head tag and after foundation.css -->
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/owl.jpg" />
+  <!-- Insert this within your head tag and after foundation.css -->
 
-  </head>
+</head>
 
-  <body>
-    <header>
-      <h2><%= link_to "Media Ranker", root_path %><small> Ranking the Best of Everything</small></h2>
+<body>
+  <header>
+    <h2><%= link_to "Media Ranker", root_path %><small> Ranking the Best of Everything</small></h2>
 
-      <nav class = "menu">
-        <ul>
-          <li><%= link_to "View top media", root_path, class: "button"%></li>
-          <li><%= link_to "View all media", works_path, class: "button"%></li>
-          <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
-          <li><%= link_to "View all users", users_path, class: "button"%></li>
+    <nav class = "menu">
+      <ul>
+        <li><%= link_to "View top media", root_path, class: "button"%></li>
+        <li><%= link_to "View all media", works_path, class: "button"%></li>
+        <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
+        <li><%= link_to "View all users", users_path, class: "button"%></li>
+        <div class="login-logout">
 
-
-            <% if session[:user_id]%>
-            <li class="float-right"><%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%></li>
-            <li class="float-right"><%= link_to "Logout", logout_path, method: :delete, class: "button"%></li>
-            <%else%>
-            <li class="float-right"><%= link_to "Log in", login_path, class: "button"%></li>
-            <%end%>
-
-        </ul>
+          <% if session[:user_id]%>
+          <li class="float-right"><%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%></li>
+          <li class="float-right"><%= link_to "Logout", logout_path, method: :delete, class: "button"%></li>
+          <%else%>
+          <li class="float-right"><%= link_to "Log in", login_path, class: "button"%></li>
+          <%end%>
+        </div>
+      </ul>
     </nav>
-    </header>
-    <section class="flash">
-       <% flash.each do |name, message| %>
-         <div class="<%= name %>"><%= message %></div>
-       <% end %>
-     </section>
+  </header>
+  <section class="flash">
+    <% flash.each do |name, message| %>
+    <div class="<%= name %>"><%= message %></div>
+    <% end %>
+  </section>
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>

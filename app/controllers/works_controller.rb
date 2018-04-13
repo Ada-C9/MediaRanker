@@ -2,7 +2,7 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all
-    
+
 
   end
 
@@ -31,15 +31,16 @@ class WorksController < ApplicationController
     # the_book.author = updated_book[:author]
     # the_book.publication_date = updated_book[:publication_date]
     # the_book.synopsys = updated_book[:synopsys]
-    the_task.update_attributes(
-      name: updated_task[:name],
-      description: updated_task[:description],
-      completion: updated_task[:completion],
-      priority: updated_task[:priority],
+    the_work.update_attributes(
+      category: work_params[:category],
+      title: work_params[:title],
+      created_by: work_params[:created_by],
+      published: work_params[:published],
+      description: work_params[:description],
     )
 
-    if the_task.save
-      redirect_to tasks_path
+    if the_work.save
+      redirect_to works_path
     end
   end
 
