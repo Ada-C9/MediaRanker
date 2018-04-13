@@ -35,13 +35,39 @@
   <body>
 
     <main>
-      <section class="flash">
-        <% flash.each do |name, message| %>
-          <div class="<%= name %>"><%= message %></div>
-        <% end %>
-      </section>
-      
+
+      <% if flash[:status] %>
+
+        <section class="callout">
+
+        <div class="flash-<%= flash[:status] %>">
+
+        <%= flash[:message] %>
+
+        </div>
+
+          <% if flash[:errors] %>
+
+          <ul>
+            <% flash[:errors].each do |field, errors | %>
+
+              <% errors.each do |e| %>
+                <% if !e.to_s.blank? %>
+                  <li><%= e %></li>
+                <% end %>
+              <% end %>
+
+            <% end %>
+          </ul>
+
+          <% end %>
+
+        </section>
+
+      <% end %>
+
       <%= yield %>
+
     </main>
 
   </body>

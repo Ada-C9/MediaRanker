@@ -40,12 +40,8 @@
   color: white;
 }
 
-.flash > .success, .flash > .failure {
-  background-color: #e6e6e6;
-  color: #8a8a8a;
-  border-radius: 0.75em;
-  padding: 20px 20px 40px 20px;
-  margin-bottom: 1em;
+.flash-failure {
+  color:#cc4b37;
 }
 
 main {
