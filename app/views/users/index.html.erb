@@ -11,9 +11,9 @@
    <tbody>
      <% @users.each do |user| %>
        <tr>
-         <td><a href="/users/1"><%= user.name %></a></td>
-         <td>8</td>
-         <td>Apr  1, 2017</td>
+         <td><%= link_to user.name, user_path(user.id) %></td>
+         <td><%= user.get_votes %></td>
+         <td><%= user.get_date %></td>
        </tr>
       <% end %>
     </tbody>

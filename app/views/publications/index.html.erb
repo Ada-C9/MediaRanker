@@ -14,9 +14,10 @@
           </tr>
         </thead>
         <tbody>
+
           <% @albums.each do |album| %>
             <tr>
-              <td><%= album.get_votes(album.id) %></td>
+              <td><%= album.get_votes %></td>
               <td><%= album.title %></td>
               <td><%=album.creator%></td>
               <td>2300</td>
@@ -41,7 +42,7 @@
         <tbody>
           <% @books.each do |book| %>
             <tr>
-              <td><%= book.get_votes(book.id) %></td>
+              <td><%= book.get_votes %></td>
               <td><%= book.title %></td>
               <td><%= book.creator %></td>
               <td>2300</td>
@@ -66,7 +67,7 @@
         <tbody>
           <% @movies.each do |movie| %>
             <tr>
-              <td><%= movie.get_votes(movie.id) %></td>
+              <td><%= movie.get_votes %></td>
               <td><%= movie.title %></td>
               <td><%= movie.creator %></td>
               <td>2300</td>

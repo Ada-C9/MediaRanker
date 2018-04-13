@@ -1,11 +1,15 @@
 class PublicationsController < ApplicationController
-  before_action :find_user  
+  before_action :find_user
 
 
   def index
-    @albums = Publication.where(category: "album")
-    @books = Publication.where(category: "book")
-    @movies = Publication.where(category: "movie")
+
+    albums = Publication.where(category: "album")
+    @albums = albums.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+    books = Publication.where(category: "book")
+    @books = books.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
+    movies = Publication.where(category: "movie")
+    @movies = movies.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
   end
 
   def show

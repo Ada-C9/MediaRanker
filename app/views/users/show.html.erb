@@ -1,6 +1,6 @@
 <main class="row">
   <h3>User Summary: <%= @user.name %> </h3>
-  <p>Joined site <%= @user.created_at %></p>
+  <p>Joined site <%= @user.get_date %></p>
 
   <h4>Votes</h4>
   <table>
@@ -14,13 +14,16 @@
       </tr>
     </thead>
     <tbody>
+      <% @user.votes.each do |vote| %>
+       <% publication = vote.find_publication %>
         <tr>
-          <td><a href="/works/246">Death with Interruptions</a></td>
-          <td>Saramago</td>
-          <td>1099</td>
-          <td>Book</td>
-          <td>Oct 10, 2017</td>
+          <td><%= publication.title %></td>
+          <td><%= publication.creator %></td>
+          <td><%= publication.publication_year %></td>
+          <td><%= publication.category %></td>
+          <td><%= vote.get_date %></td>
         </tr>
+      <% end %>
     </tbody>
   </table>
 </main>
