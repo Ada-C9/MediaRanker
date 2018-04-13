@@ -27,6 +27,7 @@ class Work < ApplicationRecord
 
   def self.get_top_work_with_tally
     top = works_with_vote_tallies.first(1)
+    top.flatten!
     return top
   end
 
