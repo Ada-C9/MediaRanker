@@ -20,3 +20,43 @@
 .float-right {
   float: right;
 }
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+.row-spotlight a {
+    border-bottom: 2px solid;
+}
+
+.top-ten-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten h3 {
+    border-bottom: 2px solid;
+    border-bottom-color: #B2DFDB;
+}
+a, h3 {
+    color: #26A69A;
+}
+
+ul, ol, dl {
+    margin-bottom: 1rem;
+    list-style-position: outside;
+    line-height: 1.6;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+body, h1, h2, h3, h4, h5 {
+    font-family: "Gudea", sans-serif;
+}

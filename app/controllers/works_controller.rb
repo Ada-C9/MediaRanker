@@ -68,11 +68,4 @@ class WorksController < ApplicationController
     @work = Work.find_by(id: params[:id])
   end
 
-  def find_top_voted
-
-  end
-
-  def sort_by_votes(category)
-
-  end
 end

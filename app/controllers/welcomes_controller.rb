@@ -1,7 +1,11 @@
 class WelcomesController < ApplicationController
   def index
-    @albums = Work.where(category: "album")
-    @books = Work.where(category: "book")
-    @movies = Work.where(category: "movie")
+    @works = Work.all
+
+    @media_spotlight = Work.media_spotlight
+
+    @albums = Work.top_ten("album")
+    @books = Work.top_ten("book")
+    @movies = Work.top_ten("movie")
   end
 end
