@@ -1,8 +1,6 @@
 class Work < ApplicationRecord
   has_many :votes
-  validates :title, presence: true
-
-  # add requirement for uniqueness of title by category?
+  validates :title, presence: true, uniqueness: true
 
   def vote_count
     self.votes.count
