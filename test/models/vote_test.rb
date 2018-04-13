@@ -21,11 +21,18 @@ describe Vote do
 
     it "is not valid if a user votes on one work twice" do
       vote2.work = vote1.work
+      vote2.user = vote1.user
       vote2.valid?.must_equal false
     end
   end
 
   describe "relations" do
-    it can set
+    it "must respond to works" do
+      vote1.must_respond_to :work
+    end
+
+    it "must respond to users" do
+      vote1.must_respond_to :user
+    end
   end
 end
