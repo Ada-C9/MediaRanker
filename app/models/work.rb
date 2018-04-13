@@ -9,4 +9,6 @@ class Work < ApplicationRecord
   def self.valid_category
     %w[album book movie]
   end
+
+
 end

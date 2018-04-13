@@ -6,7 +6,7 @@
   <section>
     <%= link_to "Back to media ranks", root_path, class: "button"%>
     <%= link_to "Edit", edit_work_path, class: "button"%>
-    <%= link_to "Upvote", work_votes_path(@work.id), methrailVoteod: :post, class: "button"%>
+    <%= link_to "Upvote", work_votes_path(@work.id), method: :post, class: "button"%>
     <%= link_to "Delete", work_path(@work.id), method: :delete, class: "alert button"%>
   </section>
 

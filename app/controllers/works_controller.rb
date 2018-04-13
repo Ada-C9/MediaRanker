@@ -44,6 +44,9 @@ class WorksController < ApplicationController
 
   def destroy
     if @work
+      @work.votes.each do |vote|
+        vote.destroy
+      end
       @work.destroy
       if !@work.title.nil?
         flash[:success] = "#{@work.title} deleted"
