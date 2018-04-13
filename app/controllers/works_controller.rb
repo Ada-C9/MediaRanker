@@ -15,7 +15,7 @@ class WorksController < ApplicationController
     # @work.published.to_i
     if @work.save
       flash[:success] = "#{@work.title} created"
-      redirect_to works_pathc
+      redirect_to works_path
     else
       flash[:alert] = "Creation failed"
       render :new
