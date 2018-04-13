@@ -36,7 +36,7 @@
           <%= vote.work.year %>
         </td>
         <td>
-          <%= vote.work.category %>
+          <%= vote.work.category.capitalize %>
         </td>
         <td>
           <%=vote.created_at.to_datetime.to_formatted_s(:long_ordinal)%>
