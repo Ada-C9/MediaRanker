@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'welcomes#index'
 
-  resources :user
+  resources :users
   resources :works do
     resources :votes, only: [:create]
   end

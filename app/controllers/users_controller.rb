@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :current_user
+
   def index
   end
 
@@ -9,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @show_user.find_by(id: params[:id])
   end
 
   def update
