@@ -1,6 +1,8 @@
 <h3>List of Users</h3>
 
-
+<table>
+  <thead>
+    <tr>
       <th>
         Username
       </th>
@@ -10,8 +12,10 @@
       <th>
         Joined
       </th>
+    </tr>
+</thead>
 
-
+<tbody>
     <% @users.each do |user| %>
     <tr>
       <td>
@@ -25,6 +29,7 @@
       </td>
     </tr>
     <%end%>
+  </tbody>
 </table>
 
 
