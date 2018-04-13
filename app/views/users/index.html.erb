@@ -22,7 +22,7 @@
           <%= link_to "#{user.name}", user_path(user) %>
         </td>
         <td>
-          &nbsp;
+          <%= user.votes.count %>
         </td>
         <td>
           <%= user.joined %>

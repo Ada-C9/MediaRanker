@@ -18,7 +18,7 @@
       <nav>
         <h2><%= link_to("Media Ranker", root_path)%> <small>Ranking the Best of Everything</small></h2>
 
-        <div class="float_left">
+        <div>
           <%= link_to("View top media", root_path, class: "button") %>
 
           <%= link_to("View all media", works_path, class: "button") %>
@@ -26,10 +26,10 @@
           <%= link_to("Add a New work", new_work_path, class: "button") %>
 
           <%= link_to("View all users", users_path, class: "button") %>
-          
+
             <% if session[:user_id] %>
-            <%= link_to("Log out", logout_path, method: :delete, class: "button") %>
-            <%= link_to("Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button")%>
+            <%= link_to("Log out", logout_path, method: :delete, class: "button float-right") %>
+            <%= link_to("Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button float-right")%>
             <% else %>
             <%= link_to "Log in", login_path, class: "button" %>
             <% end %>
@@ -43,8 +43,11 @@
 
     <section class="flash">
       <% flash.each do |name, message| %>
-      <div class="<%= name %>">
+      <div class="callout <%= name %>">
         <%= message %>
+        <% if @vote %>
+        <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+        <% end %>
       </div>
       <% end %>
     </section>

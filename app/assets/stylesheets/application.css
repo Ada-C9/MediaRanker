@@ -25,7 +25,8 @@
 
  header {
    background-color: #B2DFDB;
-   padding-top: 50px;
+   padding: 25px 20px 10px 20px;
+
  }
 
  .nav h2 {
@@ -73,8 +74,9 @@
     margin: 0;
   }
 
-  .float_left {
-    margin-left: 20px;
+
+  .float-right {
+    margin-left: .3rem;
   }
 
 .button {
@@ -90,7 +92,7 @@
     padding-bottom: 2rem;
   }
 
-  body, h1, h2, h3, h4, h5 {
+  body, h1, h2, h3, h4 {
     font-family: "Gudea", sans-serif;
 }
 

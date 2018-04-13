@@ -1,48 +1,46 @@
 class VotesController < ApplicationController
   def index
-    @votes = Vote.all
+
   end
 
   def new
-    @vote = Vote.new
+
   end
 
   def create
-    @vote = Vote.new(vote_params)
+    if session[:user_id]
+
+    new_vote = {
+      user_id: session[:user_id],
+      work_id: params[:work_id]
+    }
+    @vote = Vote.new(new_vote)
 
     if @vote.save
-      redirect_to votes_path
+      flash[:notice] = "Successfully upvoted!"
     else
-      render :new
+      flash[:alert] = "Could not upvote"
+      flash[:notice] = @vote.errors.full_messages
     end
+    end
+    redirect_to request.referer
   end
 
   def show
-    vote_id = params[:id]
+
   end
 
   def update
-    @vote = Vote.find(params[:id])
-    @vote.assign_atrributes(vote_params)
-    if @vote.save
-      #  ?
-      redirect_to vote_path(vote)
-    else
-      render :edit
-    end
+
   end
 
   def edit
-    @vote = Vote.find(params[:id])
+
   end
 
   def destroy
-    Vote.destroy(params[:id])
-    redirect_to votes_path
+
   end
 
-  private
-  def vote_params
-    params.require(:vote).permit(:user_id, :work_id)
-  end
+
 end

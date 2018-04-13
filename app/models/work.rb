@@ -5,14 +5,21 @@ class Work < ApplicationRecord
 
 
   def self.books
-    Work.where(category: "book")
+    a = Work.where(category: "book")
+    b = a.sort_by {|item| item.votes.count}.reverse
+    return b
   end
 
   def self.albums
-    Work.where(category: "album")
+    a = Work.where(category: "album")
+    b = a.sort_by {|item| item.votes.count}.reverse
+    return b
   end
 
   def self.movies
-    Work.where(category: "movie")
+    a = Work.where(category: "movie")
+    b = a.sort_by {|item| item.votes.count}.reverse
+    return b
   end
+
 end

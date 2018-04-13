@@ -31,7 +31,7 @@ class WorksController < ApplicationController
     @work.assign_atrributes(work_params)
     if @work.save
       #  ?
-      redirect_to work_path(work)
+      redirect_to work_path(@work)
     else
       render :edit
     end
