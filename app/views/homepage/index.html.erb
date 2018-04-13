@@ -1,5 +1,5 @@
 <h3 class="sample">
-  <span class="media-spotlight-header">Media Spotlight</span>
+  <span class="media-spotlight-header">Media Spotlight: </span>
   <a href="/works/<%=@sample.id%>"><%= @sample.title %></a>
   <p>by
   <%=@sample.creator%></p>
@@ -20,7 +20,7 @@
           <h4>
             <%=link_to work.title, work_path(work[:id])%>
 
-            <small>by
+            <small id: "byline">by
               <%= work.creator%></small>
           </h4>
           <p><%=work.votes.count%> votes</p>

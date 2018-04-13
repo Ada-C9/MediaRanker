@@ -2,7 +2,8 @@
 class WorksController < ApplicationController
 
   before_action :find_work, only: [:edit, :show, :update, :destroy]
-  before_action :logged_in, only: [:edit,:update, :new, :create, :destroy]
+  before_action :logged_in, only: [:edit,:update, :create, :destroy]
+  before_action :find_user, only: [:new, :show, :index]
 
   def index
     @works = Work.all

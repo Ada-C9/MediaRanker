@@ -16,8 +16,8 @@
   <body>
     <header class="page-header row">
       <h2>
-        <%= link_to 'Media Ranker',root_path %>
-        <small>Ranking the Best of Everything</small>
+        <%= link_to 'Media Ranker',root_path, id: "bold" %>
+        <small id: "bold">Ranking the Best of Everything</small>
       </h2>
 
       <nav>
@@ -26,12 +26,12 @@
         <%= link_to 'Add a new work', new_work_path, class: "button"%>
         <%= link_to 'View all users', users_path, class: "button" %>
         <div class="float-right">
-          <%if @user %>
-            <% session[:user_id] == @user.id %>
-            <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
-            <%= link_to 'Logged in', user_path(:id), class: "button float-right"%>
-          <% else %>
+          <%if !@user %>
             <%= link_to "Login", login_path, class: "button float-right" %>
+          <% else %>
+          <% session[:user_id] == @user.id %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "button float-right"%>
+          <%= link_to 'Logged in', user_path(:id), class: "button float-right"%>
           <%end%>
         </div>
       </header>
