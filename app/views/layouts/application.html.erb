@@ -15,11 +15,11 @@
 
 
 <body>
-  <header class ="media">
-    <h2>
+  <header class ="page-header row ">
+    <h2 class="columns small-12">
       <a href="/">Media Ranker</a> <small>Ranking the Best of Everything</small>
     </h2>
-    <nav>
+    <nav class="columns small-12">
       <a class="button" href="/">View top media</a>
       <a class="button" href="/works">View all media</a>
       <a class="button" href="/works/new">Add a new work</a>
@@ -38,7 +38,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="row">
     <section class="row">
       <% flash.each do |name, message| %>
       <div class="<%= name %>"><%= message %></div>
