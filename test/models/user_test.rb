@@ -32,4 +32,26 @@ describe User do
 
   end
 
+  describe "relationships" do
+
+    it "has many votes" do
+      user = users(:one)
+
+      user.votes.each do |vote|
+        vote.must_be_instance_of Vote
+      end
+
+    end
+
+    it "returns a list of works the user has voted for" do
+      user = users(:one)
+
+      user.upvoted_works.each do |work|
+        work.must_be_kind_of Work
+      end
+      
+    end
+
+  end
+
 end
