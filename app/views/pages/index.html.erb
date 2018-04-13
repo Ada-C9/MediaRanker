@@ -2,16 +2,12 @@
 
 <section class="row spotlight">
   <div>
-    <% if Work.spotlight != nil%>
-      <h3>
-        <span class="media-spotlight-header">Media Spotlight:</span>
-        <%= link_to Work.spotlight.title, work_path(Work.spotlight.id)%> by
-        <%= Work.spotlight.creator %>
-      </h3>
-      <p><%= Work.spotlight.votes.count %> votes - <%=Work.spotlight.description %></p>
-    <% else %>
-      <p>no media spotlight</p>
-    <% end %>
+    <h3>
+      <span class="media-spotlight-header">Media Spotlight:</span>
+      <%= link_to Work.spotlight.title, work_path(Work.spotlight.id)%> by
+      <%= Work.spotlight.creator %>
+    </h3>
+    <p><%= Work.spotlight.votes.count %> votes - <%=Work.spotlight.description %></p>
   </div>
 </section>
 
