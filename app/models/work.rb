@@ -17,15 +17,19 @@ class Work < ApplicationRecord
     self.ordered_works.first
   end
 
-  def self.top_ten_albums
-    self.where(category: :album).limit(10)
+  def self.albums
+    self.where(category: :album)
   end
 
-  def self.top_ten_books
-    self.where(category: :book).limit(10)
+  def self.books
+    self.where(category: :book)
   end
 
-  def self.top_ten_movies
-    self.where(category: :movie).limit(10)
+  def self.movies
+    self.where(category: :movie)
+  end
+
+  def self.top_ten
+    self.limit(10)
   end
 end

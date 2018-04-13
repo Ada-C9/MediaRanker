@@ -1,11 +1,10 @@
-<main>
-  <%= render partial: "layouts/error-messages", locals: { model: @user } %>
-  <h2>Log In</h2>
+<%= render partial: "layouts/error-messages", locals: { model: @user } %>
 
-  <%= form_for @user, url: login_path do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+<h2>Log In</h2>
 
-    <%= f.submit "Login", class: "button" %>
-  <% end %>
-</main>
+<%= form_for @user, url: login_path do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.submit "Login", class: "button" %>
+<% end %>
