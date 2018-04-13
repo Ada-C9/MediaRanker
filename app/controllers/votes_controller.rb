@@ -20,12 +20,11 @@ class VotesController < ApplicationController
       flash[:success] = "Successfully upvoted"
     else
       if @vote.id.nil?
-        flash[:fail] = "You must be logged in to vote."
-      else
+        raise
         flash.now[:alert] = @vote.errors
       end
-      redirect_to login_form_path
     end
+    redirect_to root_path
   end
 
   # def edit
