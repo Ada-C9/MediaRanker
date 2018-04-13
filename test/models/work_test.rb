@@ -58,7 +58,7 @@ describe "self methods" do
     movies.each do |work|
       work.category.must_equal "movie"
     end
-    movies.length.must_equal 2
+    movies.length.must_equal 10
   end
 
   it "must return array with work with highest number of votes at index 0" do
@@ -67,5 +67,10 @@ describe "self methods" do
 
     movies = Work.top_ten_movies
     (movies[0].votes.count >= movies[1].votes.count).must_equal true
+  end
+
+  it "must return ten if there are more than ten options" do
+    movies = Work.top_ten_movies
+    (movies.count == 10).must_equal true
   end
 end

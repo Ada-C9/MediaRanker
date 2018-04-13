@@ -6,8 +6,8 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <!-- <%= stylesheet_link_tag "application" %> -->
-    <%= stylesheet_link_tag 'http://media-ranker-2-0.herokuapp.com/assets/application-23ebb94d64df4b2ce7b6d54cb8e3a957827135ed13ee2e6e74a6153e82900dbb.css' %>
+    <%= stylesheet_link_tag "application" %>
+  
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>

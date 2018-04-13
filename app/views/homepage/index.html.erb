@@ -1,8 +1,8 @@
-<h3>
+<h3 class="sample">
   <span class="media-spotlight-header">Media Spotlight</span>
   <a href="/works/<%=@sample.id%>"><%= @sample.title %></a>
-  by
-  <%=@sample.creator%>
+  <p>by
+  <%=@sample.creator%></p>
 </h3>
 
 <p><%= @sample.votes.count %>
