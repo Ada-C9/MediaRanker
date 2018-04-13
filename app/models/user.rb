@@ -13,7 +13,7 @@ class User < ApplicationRecord
     end
 
     user_indices = user_indices.sort_by { |user, index| index }
-    top_similar_raw = user_indices.last(5)
+    top_similar_raw = user_indices.last(3)
 
     top_similar = Array.new
     top_similar_raw.each do |user_index|
@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     recommendations = User.get_recommendations(top_similar, new_user) # this should probably not be a class method but it is for now for testing
 
-    return recommendations.uniq
+    return recommendations.empty? ? "no recommendations at this time" : recommendations.uniq
   end
 
   def self.get_recommendations(top_similar, new_user)
@@ -37,6 +37,7 @@ class User < ApplicationRecord
     return recommendations
   end
 
+  # this doesn't account for no works?
   def self.calculate_jaccard(user, other)
     intersection =  user.works & other.works
     union = user.works | other.works

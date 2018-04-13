@@ -3,7 +3,7 @@ require 'faker'
 unsaved_users =[]
 20.times do
   user = User.new
-  user.username = Faker::ParksAndRec.character.gsub(' ', '').concat(rand(1-20))
+  user.username = Faker::ParksAndRec.character.gsub(' ', '').concat(rand(1-20).to_s)
   successful = user.save
   if !successful
     unsaved_users << user
@@ -19,11 +19,13 @@ end
   end
 end
 
+category = Category.new(name: 'pokemon')
 # works
 unsaved_works = []
 20.times do
   work = Work.new
-  work.title = Faker::Pokemon.character
+  work.title = Faker::Pokemon.name
+  work.category = category
   work.creator = Faker::Pokemon.location
   work.description = Faker::Pokemon.move
   successful = work.save
@@ -32,27 +34,29 @@ unsaved_works = []
   end
 end
 
-20.times do
-  user = User.find(rand(1-40))
-  work = Work.find(rand(1-20))
-
-  vote = Vote.new
-  vote.user_id = user.id
-  vote.work_id = work.id
+# 20.times do |i|
+#   user = User.find(i + 1)
+#   work = Work.find(rand(1-20))
+#
+#   vote = Vote.new
+#   vote.user_id = user.id
+#   vote.work_id = work.id
   successful = vote.save
 
   if !successful
     puts "vote not saved"
     until vote.errors.messages[:user].nil?
-      user = User.find(rand(1-40))
+      user = User.find(i + 2)
 
       vote = Vote.new
       vote.user_id = user.id
       vote.work_id = work.id
     end
   end
-end
+#
+#   i += 1
+# end
 
 
 puts "#{unsaved_users.length} not saved"
-puts "#{unsaved_works.length} not saved"
+puts "#{unsaved_works.length} works not saved"

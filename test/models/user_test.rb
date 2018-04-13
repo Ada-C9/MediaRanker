@@ -86,15 +86,29 @@ describe User do
   end
 
   describe 'larger sample size recommender tests' do
-    it 'recommends works from users who have liked similar things' do
-      user = User.find(3)
+    before do
+      @user = users(:user_1)
+      40.times do
+        vote = Vote.new
+        vote.user_id = User.all.sample.id
+        vote.work_id = Work.all.sample.id
+        successful = vote.save
 
-      test_result = User.recommendations(user)
+        if !successful
+          puts "vote not saved"
+        end
+      end
+    end
+
+    it 'recommends works from users who have liked similar things' do
+
+      test_result = User.recommendations(@user)
+      # test_result.each do |work| work should not be in user's list of works
       work = test_result[0]
 
       test_result.must_be_kind_of Array
       test_result.wont_be_empty
-      user.works.wont_include work
+      @user.works.wont_include work
     end
   end
 end
