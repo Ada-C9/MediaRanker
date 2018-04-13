@@ -8,27 +8,30 @@ describe Work do
 
   describe "validations" do
     it "is valid when all fields are present" do
-      result = work1.valid?
-      result.must_equal true
+      work1.valid?.must_equal true
     end
 
     it "is not valid when required fields are not present" do
       work2.title = nil
       work2.creator = nil
       work2.category = nil
-      result = work2.valid?
-      result.must_equal false
+
+      work2.valid?.must_equal false
       work2.errors.messages.must_include :title
       work2.errors.messages.must_include :creator
       work2.errors.messages.must_include :category
     end
 
-    # it "is not valid when work titles are not unique" do
-    #   work2_title = work2.title
-    #   creator = "me"
-    #   dup_work = Work.create(title: work2_title, creator: creator)
-    #   dup_work.valid?.must_equal false
-    # end
+    it "is not valid when work titles are not unique within a category" do
+      work2.title = work1.title
+      work2.valid?.must_equal false
+    end
+
+    it "is valid with identical titles across diff categories" do
+      work2.title = work1.title
+      work2.category = "movie"
+      work2.valid?.must_equal true
+    end
 
     it "is not valid when published field is not 4 digit integer <= current year" do
       work1.published = "not a year"
