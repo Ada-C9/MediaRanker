@@ -5,10 +5,7 @@ class Work < ApplicationRecord
   validates :category, inclusion: { in: %w(movie book album)}
 
   def total_votes
+    return self.votes.count
   end
-
-
-
-
 
 end
