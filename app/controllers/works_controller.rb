@@ -18,13 +18,10 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      flash[:success] = "Succesfully created #{@work.category} #{@work.id}."
+      flash[:success] = "Succesfully created #{@work.category} #{@work.title}."
       redirect_to work_path(@work.id)
     else
-      flash.now[:alert] = {}
-      @work.errors.each do |field, message|
-        flash.now[:alert] = @work.errors
-      end
+      flash.now[:alert] = @work.errors
       render :new
     end
   end
