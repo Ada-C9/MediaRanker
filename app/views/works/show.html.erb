@@ -28,5 +28,21 @@
 </section>
 
 <article>
-  <h3><%= @work.votes.count %> for this <%= @work.category %></h3>
+  <h3><%= pluralize(@work.votes.count, "vote") %> for this <%= @work.category %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @work.upvoted_users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user_creation_date(user) %></td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
 </article>
