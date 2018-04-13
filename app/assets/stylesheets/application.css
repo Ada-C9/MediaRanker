@@ -35,10 +35,6 @@ main a:hover {
   color: #0C8076;
 }
 
-@media print, screen and (min-width: 40em)
-h3, .h3 {
-  font-size: 1.9375rem;
-}
 
 .button {
   background-color: #26A69A;
