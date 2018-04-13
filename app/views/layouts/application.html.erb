@@ -56,13 +56,7 @@
 
     <main>
 
-      <section class="flash">
-        <% flash.each do |name, message| %>
-        <div class="<%= name %>">
-          <%= message %>
-        </div>
-        <% end %>
-      </section>
+      <%= render partial: "layouts/error_messages", locals: { model: @work } %>
 
       <%= yield %>
 

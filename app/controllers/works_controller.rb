@@ -56,13 +56,13 @@ class WorksController < ApplicationController
 
       user = User.find(session[:user_id])
       work = Work.find(params[:format])
-      vote = Vote.new
-      vote.assign_attributes(user: user, work: work)
+      @vote = Vote.new
+      @vote.assign_attributes(user: user, work: work)
 
-      if vote.save
+      if @vote.save
         flash[:success] = "Successfully upvoted!"
         redirect_back(fallback_location: root_path)
-      elsif !vote.valid?
+      elsif !@vote.valid?
         flash[:failure] = "Could not upvote"
         redirect_back(fallback_location: root_path)
       end

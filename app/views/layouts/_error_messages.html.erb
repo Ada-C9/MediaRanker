@@ -1,12 +1,28 @@
-<section class="error-message">
-  <% model.errors.messages.each do |field, message| %>
-    <% if !message.empty? %>
-    <p>
-      ERROR:
-      <% message.each do |error| %>
-        <%= field.capitalize %> <%= error %>.
+  <% if model || flash[:failure] || flash[:success] %>
+
+  <section class="status-message">
+
+    <h3 class="failure">
+      <%= flash[:failure] %>
+    </h3>
+    <h3>
+      <%= flash[:success] %>
+    </h3>
+
+    <% if model %>
+
+      <% model.errors.messages.each do |field, message| %>
+        <% if !message.empty? %>
+        <ul>
+          <% message.each do |error| %>
+            <li>
+              <%= field %>:  <%= error %>.
+            </li>
+          <% end %>
+        </ul>
+        <% end %>
       <% end %>
-    </p>
+
     <% end %>
-  <% end %>
-</section>
+  </section>
+<% end %>
