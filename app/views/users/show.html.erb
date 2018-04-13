@@ -18,16 +18,16 @@
     <% @users.votes.each do |vote| %>
     <tr>
       <td>
-        <%= link_to vote.art.title, art_path(vote.art) %>
+        <%= link_to @vote.art.title, art_path(vote.art) %>
       </td>
       <td>
-        <%= vote.art.creator %>
+        <%= @vote.art.creator %>
       </td>
       <td>
-        <%= vote.art.pub_year %>
+        <%= @vote.art.pub_year %>
       </td>
       <td>
-        <%= vote.art.category.capitalize %>
+        <%= @vote.art.category.capitalize %>
       </td>
       <td>
         <%= Vote.created_at.strftime("%FT%T") %>

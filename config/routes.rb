@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'arts#index'
 
   get '/login', to: 'sessions#new', as: 'login'
-  post '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#login'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :arts

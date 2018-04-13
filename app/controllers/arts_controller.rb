@@ -27,11 +27,11 @@ class ArtsController < ApplicationController
     end
   end
 
-  # Preferred style to indicate an intentional blank method
   def show
     @votes = @art.votes.order(created_at: :desc)
   end
 
+  # Preferred style to indicate an intentional blank method
   def edit; end
 
   def update
@@ -59,8 +59,8 @@ class ArtsController < ApplicationController
 
   def upvote
     flash[:staus] = :failure
-    if @login_user
-      vote = Vote.new(user: @login_user, art: @art)
+    if @user
+      vote = Vote.new(user_id: @user, art_id: @art)
       if vote.save
         flash[:status] = :success
         flash[:result_text] = "Successfully voted!"
@@ -89,3 +89,5 @@ class ArtsController < ApplicationController
     @art = Art.find(params[:id])
   end
 end
+
+# TODO: BUILD TOP 10 ARTS LOGIC AND ROOT PAGE

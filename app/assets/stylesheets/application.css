@@ -58,6 +58,11 @@ margin-left: auto;
 font-size: 2.5rem;
 line-height: 1.4;
 }
+
+h2 {
+  font-weight: bold;
+}
+
 h3 {
   color: #26a69a;
   font-weight: bold;
@@ -69,10 +74,6 @@ h4{
 a.button {
 background-color: #26a69a;
 }
-a {
-  color: #26a69a;
-}
-
-tbody {
-  padding: 0.5rem 0.625rem 0.625rem;
+input.button {
+  background-color: #26a69a;
 }
