@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update]
+  before_action :find_user
 
   def main
     @works = Work.all
