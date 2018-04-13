@@ -19,7 +19,7 @@
     <%= user.created_at%>
   </li>
   <li>Votes:
-    <%= user.created_at%>
+    <%= link_to user.votes.count, user_path(user)%>
   </li>
   </ul>
 
