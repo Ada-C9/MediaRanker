@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'csv'
+require 'faker'
 
-["album", "book", "movie"].each do |c|
-  Category.create!( name: c )
+["album", "book", "movie"].each do |category|
+  Category.create( name: category )
 end
 
+puts "Created #{Category.count} category records"
 
 
 WORKS_FILE = Rails.root.join('db','seed_data', 'media_seeds.csv')
@@ -38,3 +40,28 @@ end
 
 puts "Added #{Work.count} work records"
 puts "#{work_failures.length} works failed to save"
+
+
+
+
+User.create!(username: 'admin')
+
+25.times do |i|
+  User.create!(username: "#{Faker::Name.first_name.gsub(" ", "")}#{rand(0..300)}")
+end
+
+puts "Created #{User.count} user records"
+
+
+User.all.each do |u|
+  18.times do |i|
+    v = Vote.new(user: u, work: Work.all.sample)
+    if v.valid?
+      v.save
+    else
+      next
+    end
+  end
+end
+
+puts "Created #{Vote.count} vote records"

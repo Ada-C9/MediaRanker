@@ -11,7 +11,7 @@ class VotesController < ApplicationController
         flash[:success] = "Successfully upvoted!"
         redirect_back(fallback_location: root_path)
       else
-        flash[:failure] = "Oops! Something went wrong.  Try again"
+        flash[:failure] = "Could not upvote"
         redirect_back(fallback_location: root_path)
       end
 
@@ -21,4 +21,5 @@ class VotesController < ApplicationController
     end
 
   end
+
 end

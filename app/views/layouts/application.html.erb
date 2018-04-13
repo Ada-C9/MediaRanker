@@ -35,11 +35,13 @@
 
   <main class="row">
 
+
     <% flash.each do |type, message| %>
-      <section class="row status success">
+      <section class="row status <%= type %>">
         <h3><%= message %></h3>
         </section>
     <% end %>
+
 
     <%= yield %>
   </main>

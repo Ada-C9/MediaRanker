@@ -7,7 +7,7 @@
     <%= link_to "Back to media tracks", root_path, class: "button" %>
     <%= link_to "Edit", edit_work_path, class: "button" %>
     <%= link_to "Upvote", new_vote_path(@work), method: :post, class: "button" %>
-    <%= link_to "Delete", root_path, class: "alert button" %>
+    <%= link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure?"}, class: "alert button" %>
   </section>
 </article>
 
