@@ -3,8 +3,10 @@
 <ul> List of Works
   <% @works.each do |work| %>
   <li>
-    <strong><%= link_to(work.title, work_path(work)) %></strong>
+    <h4><%= link_to(work.title, work_path(work)) %></h4>
     <%= work.created_by %>
+
+    <p><%= work.total_work_vote %> votes </p>
   </li>
 </ul>
 <% end %>

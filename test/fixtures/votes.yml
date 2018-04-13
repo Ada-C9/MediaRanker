@@ -5,8 +5,32 @@
 # below each fixture, per the syntax in the comments below
 #
 
-vote:
+vote1:
     created_at: 03-01-2018
     updated_at: 03-02-2018
     work: four_hour_chef
-    user: one 
+    user: one
+
+vote2:
+    created_at: 03-30-2018
+    updated_at: 03-30-2018
+    work: fooled_by_randomness
+    user: one
+
+vote3:
+    created_at: 03-01-2018
+    updated_at: 03-02-2018
+    work: four_hour_chef
+    user: two
+
+vote4:
+    created_at: 01-20-2018
+    updated_at: 01-20-2018
+    work: fourth_kind
+    user: two
+
+vote4:
+    created_at: 01-20-2018
+    updated_at: 01-20-2018
+    work: Gadfn
+    user: two

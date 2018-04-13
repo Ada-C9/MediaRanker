@@ -27,11 +27,18 @@ class Work < ApplicationRecord
     return top_books = all_books.limit(10)
   end
 
-  def total_votes
-    # return total votes given a user
-    # find user
-    # call all votes on that user id 
+  def total_work_vote
+    # given work, find total votes
+    # votes = Vote.where(work_id: @work.work_id)
+    # return votes.length
 
+    total = self.votes.count
+    return total
   end
 
+  def total_user_votes
+    # return total votes given a user
+    # find user
+    # call all votes on that user id
+  end
 end

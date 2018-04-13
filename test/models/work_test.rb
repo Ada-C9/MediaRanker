@@ -15,15 +15,28 @@ describe Work do
     end
 
     it 'is invalid without a title' do
-      no_title = Work.new(
-      title: nil,
-      created_by: "Tim Ferriss",
-      publication_date: 12-23-2008,
-      description: "description",
-      category: "book",)
+      work = Work.new(title: nil)
 
-      no_title.valid? false
-      @work.errors.messages.must_include :title
+      result = work.valid?
+      result.must_equal false
+      work.errors.messages.must_include :title
+    end
+
+  end
+
+  describe 'total votes' do
+    it 'returns the total votes for a work' do
+      # call total vote method on a work
+      four_hour_chef_votes = [:vote1, :vote3]
+      vote_count = four_hour_chef_votes.length
+
+      total_votes = @work.total_work_vote
+
+      total_votes.must_equal(2)
+    end
+
+    it 'returns the total votes for a user' do
+
     end
 
   end
