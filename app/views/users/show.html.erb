@@ -1,30 +1,32 @@
-<h3>User Summary: <a href="users/id"></a>
+<h3>User Summary: <%= link_to @user.name, user_path(@user.id)%></h3>
 </h3>
-<p>Joined site <p>
+<p>Joined site <%= @user.created_at.to_date %><p>
 
-<h4>Votes</h4>
+  <h4>Votes</h4>
 
-<table>
-  <tr>
-    <th>Media Title</th>
-    <th>Created By</th>
-    <th>Published</th>
-    <th>Category</th>
-    <th>Voted On</th>
-  </tr>
-  <% votes = Vote.all.where(user_id: @user) %>
-  <% votes.each do |vote| %>
-  <% work = Work.find_by(id: vote.work_id) %>
-    <% if work %>
-  <tr>
-      <td><%= work.title %></td>
-      <td><%= work.creator %></td>
-      <td><%= work.publication_year %></td>
-      <td><%= work.category %></td>
-      <td><%= vote.updated_at.strftime("%b %d, %Y") %></td>
-    <% end %>
-  <% end %>
-  </tr>
-</table>
-<a class="button" href="/users">See all Users</a>
-<a class="button" href="/">Back to Media List</a>
+  <table>
+    <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </t>
+  </thead>
+  <tbody>
+    <tr>
+      <% @user.votes.each do |vote| %>
+      <tr>
+        <td><%= link_to vote.work.title, work_path(vote.work_id) %></td>
+        <td><%= vote.work.creator %></td>
+        <td><%= vote.work.publication_year %></td>
+        <td><%= vote.work.category %></td>
+        <td><%= vote.created_at.strftime("%b %d, %Y")%></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+  <a class="button" href="/users">See all Users</a>
+  <a class="button" href="/">Back to Media List</a>
