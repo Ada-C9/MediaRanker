@@ -1,8 +1,12 @@
 class Work < ApplicationRecord
   has_many :votes, dependent: :destroy
 
+  validates :category, presence: true
+
   validates :title, presence: true
-  validates :title, length: { in: 1..75 }
+  validates :title, uniqueness: true
+
+  validates :title, length: { in: 1..35 }
 
 
   def self.works_with_vote_tallies
