@@ -9,82 +9,40 @@
     </thead>
     <tbody>
       <th>
-        <h3>Albums:</h3>
         <% @works.each do |work| %>
           <% if work.category == 'album' %>
             <tr>
             <td><%= link_to(work.title, work_path(work) ) %></td>
             <td><%= work.creator %></td>
             <td><%= work.publication_year %></td>
+            <td><%= link_to 'Upvote', work_votes_path, method: :post %></td>
             </tr>
           <% end %>
         <% end %>
       </th>
       <th>
-        <h3>Books:</h3>
         <% @works.each do |work| %>
           <% if work.category == 'book' %>
             <tr>
             <td><%= link_to(work.title, work_path(work) ) %></td>
             <td><%= work.creator %></td>
             <td><%= work.publication_year %></td>
+            <td><%= link_to 'Upvote', work_votes_path, method: :post %></td>
             </tr>
           <% end %>
         <% end %>
       </th>
       <th>
-        <h3>Movies:</h3>
         <<% @works.each do |work| %>
           <% if work.category == 'movie' %>
-            <tr>
+          <tr>
             <td><%= link_to(work.title, work_path(work) ) %></td>
             <td><%= work.creator %></td>
             <td><%= work.publication_year %></td>
-            </tr>
+            <td><%= link_to 'Upvote', work_votes_path, method: :post, class: 'button' %></td>
+          </tr>
           <% end %>
         <% end %>
       </th>
     </tbody>
   </table>
-<!-- <th class="home_list">
-  <% @works.each do |work| %>
-    <% if work.category == 'album' %>
-      <tr>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
-      <td><%= work.creator %></td>
-      <td><%= work.publication_year %></td>
-      </tr>
-    <% end %>
-  <% end %>
-</th>
-</table> -->
-
-<!-- <h3>Books:</h3> -->
-<!-- <table>
-<th class="home_list">
-  <% @works.each do |work| %>
-    <% if work.category == 'book' %>
-      <tr>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
-      <td><%= work.creator %></td>
-      <td><%= work.publication_year %></td>
-      </tr>
-    <% end %>
-  <% end %>
-</th>
-</table> -->
-
-<!-- <h3>Movies:</h3> -->
-<!-- <table>
-<th class="home_list">
-  <% @works.each do |work| %>
-    <% if work.category == 'movie' %>
-      <tr>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
-      <td><%= work.creator %></td>
-      <td><%= work.publication_year %></td>
-      </tr>
-    <% end %>
-  <% end %>
-</th>
-</table> -->

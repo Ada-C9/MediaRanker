@@ -1,15 +1,16 @@
 class VotesController < ApplicationController
 
   def new
-    @vote = Vote.new(user_id: params[:user_id])
+    @vote = Vote.new
   end
 
   def create
-    @vote = Vote.new
-    if @vote.save
-      redirect_to _path
+    if params[:user_id]
+      @vote = Vote.new(work_id: params[:work_id])
+      @vote.save
+      redirect_to root_path
     else
-      render :new
+      flash[:alert] = "You must log in to do that"
     end
   end
 
