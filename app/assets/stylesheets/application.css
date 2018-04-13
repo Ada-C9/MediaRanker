@@ -112,11 +112,15 @@ section.spotlight > div {
   grid-gap: 2em;
 }
 
-.media-table .first {
-  width: 80px;
+table .w200 {
+  width: 200px;
 }
 
-.media-table .last {
+table .w100 {
+  width: 100px;
+}
+
+table .w80 {
   width: 100px;
 }
 
