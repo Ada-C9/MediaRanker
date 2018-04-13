@@ -20,12 +20,13 @@
           <th>Date</th>
         </tr>
         <tbody>
+          <% @work.votes.each do |vote| %>
           <tr>
-            <%= link_to "user", user_path %>
+            <td><%= link_to vote.user.user_name, user_path(user[:id]) %></td>
+            <td><%= vote.created_at.to_date.to_formatted_s(:long_ordinal) %></td>
           </tr>
-          <tr>
-            date placeholder
-          </tr>
+          <% end %>
+
         </tbody>
       </thead>
     </table>
