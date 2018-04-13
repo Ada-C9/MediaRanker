@@ -4,9 +4,11 @@
  <p>Published: <%= @publication.publication_year %></p>
  <p>Description: <%= @publication.description %></p>
  <section>
-   <a class="button" href="/">Back to media ranks</a>
-   <a class="button" href="/publications/<%= @publication.id %>/edit">Edit</a>
-   <a class="button" rel="nofollow" data-method="post" href="/works/314/upvote">Upvote</a>
-   <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/publications/<%= @publication.id %>">Delete</a>
+
+   <%= link_to "Back to media ranks", main_path, class: "button" %>
+   <%= link_to "Edit", edit_publication_path(@publication.id), class: "button" %>
+   <%= link_to "Upvote", new_publication_vote_path(@publication.id), class: "button" %>
+    <%= link_to "Delete", publication_path, method: :delete, :data => {:confirm => 'Are you sure?'}, class: "alert button" %>
+
  </section>
 </article>
