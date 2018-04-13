@@ -17,11 +17,12 @@
   <tbody>
     <tr>
       <% @albums.each do |album|%>
-      <td>Put votes</td>
+      <td><%= album.votes.length%></td>
       <td><%=link_to album.title, work_path(album[:id])%> </td>
       <td> <%= album.creator %></td>
       <td> <%= album.publication_year %></td>
-      <td> put link to vote</td>
+      <td> <%=link_to "Upvote", new_work_vote_path(album.id) %></td>
+
     </tr>
     <% end%>
   </tbody>
@@ -43,11 +44,11 @@
   <tbody>
     <tr>
       <% @books.each do |book|%>
-      <td>Put votes</td>
+      <td><%= book.votes.length%></td>
       <td> <%=link_to book.title, work_path(book[:id])%></td>
       <td> <%= book.creator %></td>
       <td> <%= book.publication_year %></td>
-      <td> put link to vote</td>
+      <td> <%=link_to "Upvote", new_work_vote_path(book.id) %></td>
     </tr>
     <% end%>
   </tbody>
@@ -69,11 +70,11 @@
   <tbody>
     <tr>
       <% @movies.each do |movie|%>
-      <td>Put votes</td>
+      <td><%= movie.votes.length%></td>
       <td><%=link_to movie.title, work_path(movie[:id])%> </td>
       <td> <%= movie.creator %></td>
       <td> <%= movie.publication_year %></td>
-      <td> put link to vote</td>
+      <td> <%=link_to "Upvote", new_work_vote_path(movie.id) %></td>
     </tr>
     <% end%>
   </tbody>
