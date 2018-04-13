@@ -1,0 +1,41 @@
+
+<h1>Instagram</h1>
+<section class = "add-link">
+<%= link_to "Add a New Instagram", new_instagram_path%>
+</section>
+<section>
+
+
+  <% count = 0 %>
+  <% @instagrams.each do |instagram| %>
+  <% count += 1 %>
+  <ul>
+    <li> Instagram Rank:
+      <%= count %>
+    </li>
+  <li>
+      <%= link_to instagram.id, instagram_path(instagram) %>
+  </li>
+  <li>Handle:
+    <%= instagram.handle %>
+  </li>
+  <li>Posts:
+    <%= instagram.posts %>
+  </li>
+  <li>Followers:
+    <%= instagram.followers %>
+  </li>
+  <li>Votes:
+    <%= instagram.votes.count %>
+  </li>
+
+  </ul>
+
+  <%= link_to "Edit", edit_instagram_path(instagram) %>
+    <%= link_to("Delete", instagram_path(instagram), method: :delete, data: { confirm: "You would like to delete this instagram?" }) %>
+      <%=link_to "Upvote", instagram_upvote_path(instagram), method: :post %>
+<% end %>
+
+
+
+</section>

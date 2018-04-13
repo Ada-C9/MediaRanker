@@ -1,0 +1,29 @@
+
+<section>
+  <h2>Twitter Details</h2>
+  <h3><%= @twitter.handle %></h3>
+  <p><%= @twitter.followers %></p>
+  <li>
+    <%= link_to "Edit", edit_twitter_path(@twitter) %>
+    <%= link_to("Delete", twitter_path(@twitter), method: :delete, data: { confirm: "Are you sure you want to delete this twitter?" }) %>
+    <%= link_to "List of twitters", twitters_path %>
+    <%=link_to "Upvote", twitter_upvote_path(@twitter), method: :post %>
+  </li>
+</section>
+<section>
+  <h1>Votes</h1>
+  <% @twitter.votes.each do |vote| %>
+  <ul>
+    <li>
+      <%= vote.id %>
+    </li>
+    <li>User Id:
+      <%= vote.user_id%>
+    </li>
+    <li>Twitter Id:
+      <%= vote.twitter_id %>
+    </li>
+  </ul>
+  <% end %>
+
+</section>

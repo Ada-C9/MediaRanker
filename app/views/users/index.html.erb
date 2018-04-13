@@ -1,0 +1,30 @@
+
+<h1>Users</h1>
+<section class = "add-link">
+<%= link_to "Add a New user", new_user_path%>
+</section>
+<section>
+
+  <% @users.each do |user| %>
+  <ul>
+  <li>
+    <strong>
+    <%= link_to user.id, user_path(user) %>
+    </strong>
+  </li>
+  <li>Name:
+    <%= user.name %>
+  </li>
+  <li>Joined:
+    <%= user.created_at%>
+  </li>
+  <li>Votes:
+    <%= link_to user.votes.count, user_path(user)%>
+  </li>
+  </ul>
+
+  <%= link_to "Edit", edit_user_path(user) %>
+    <%= link_to("Delete", user_path(user), method: :delete, data: { confirm: "Really really?" }) %>
+<% end %>
+
+</section>

@@ -1,0 +1,34 @@
+
+<h1>Twitter</h1>
+<section class = "add-link">
+<%= link_to "Add a New Twitter", new_twitter_path%>
+</section>
+<section>
+
+  <% count = 0 %>
+  <% @twitters.each do |twitter| %>
+  <% count += 1 %>
+  <ul>
+    <li> Twitter Rank:
+      <%= count %>
+    </li>
+  <li>
+    <strong>
+    <%= link_to twitter.id, twitter_path(twitter) %>
+    </strong>
+  </li>
+  <li>Handle:
+    <%= twitter.handle %>
+  </li>
+  <li>Followers:
+    <%= twitter.followers %>
+  </li>
+  <li>
+    <%= link_to "Edit", edit_subreddit_path(twitter) %>
+      <%= link_to("Delete", subreddit_path(twitter), method: :delete, data: { confirm: "You would like to delete this twitter?" }) %>
+      <%=link_to "Upvote", subreddit_upvote_path(twitter), method: :post %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

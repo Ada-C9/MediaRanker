@@ -1,0 +1,27 @@
+<%= render partial: "layouts/error_messages", locals: { model: @twitter } %>
+<h4>
+  <% page_title ||= "Twitter Information" %>
+  <%= page_title %>
+</h4>
+
+
+<%= form_for @twitter do |f| %>
+<div>
+  <%= f.label :handle %>
+  <%= f.text_field :handle %>
+</div>
+
+<div>
+  <%= f.label :followers %>
+  <%= f.number_field :followers %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<div>
+<%= link_to "List of twitters", twitters_path %>
+</div>

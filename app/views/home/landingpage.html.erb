@@ -1,0 +1,84 @@
+
+<section class = "row spotlight">
+  <div>
+    <h3> <span class= "media-spotlight-header">Media Spotlight:</span
+      <% spotlight = @instagrams.first %>
+      <a>  <%= link_to spotlight.id, instagram_path(spotlight) %></a>
+
+      Handle:
+      <%= spotlight.handle %>
+    </h3>
+    <p>
+      Posts:
+      <%= spotlight.posts %>
+      Followers:
+      <%= spotlight.followers %>
+    </p>
+  </div>
+</section>
+
+<main class = "categories">
+  <section>
+    <h3>Top Twitters<h3>
+
+      <% @twitters.first(10).each do |twitter| %>
+
+      <ul>
+        <li>
+          <strong>
+            <%= link_to twitter.id, twitter_path(twitter) %>
+          </strong>
+        </li>
+        <li>Handle:
+          <%= twitter.handle %>
+        </li>
+        <li>Followers:
+          <%= twitter.followers %>
+        </li>
+      </ul>
+      <% end %>
+    </section>
+
+    <section>
+      <h3>Top Instagrams<h3>
+
+        <% @instagrams.first(10).each do |instagram| %>
+        <ul>
+          <li>
+            <%= link_to instagram.id, instagram_path(instagram) %>
+          </li>
+          <li>Handle:
+            <%= instagram.handle %>
+          </li>
+          <li>Posts:
+            <%= instagram.posts %>
+          </li>
+          <li>Followers:
+            <%= instagram.followers %>
+          </li>
+        </ul>
+        <% end %>
+      </section>
+
+      <section>
+        <h3>Top Subreddits </h3>
+        <% @subreddits.first(10).each do |subreddit| %>
+        <ul>
+          <li>
+            <strong>
+              <%= link_to subreddit.id, subreddit_path(subreddit) %>
+            </strong>
+          </li>
+          <li>Title:
+            <%= subreddit.title %>
+          </li>
+          <li>Description:
+            <%= subreddit.description %>
+          </li>
+          <li> Subscribers:
+            <%= subreddit.subscribers %>
+          </li>
+        </ul>
+        <% end %>
+
+      </main>

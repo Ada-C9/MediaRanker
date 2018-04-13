@@ -1,0 +1,41 @@
+<%= render partial: "layouts/error_messages", locals: { model: @subreddit } %>
+<h4>
+  <% page_title ||= "Subreddit Information" %>
+  <%= page_title %>
+</h4>
+
+<% if @subreddit.errors.any? %>
+  <ul class="errors">
+    <% @subreddit.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @subreddit do |f| %>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</div>
+
+<div>
+  <%= f.label :subscribers %>
+  <%= f.number_field :subscribers %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<div>
+<%= link_to "List of Subreddits", subreddits_path %>
+</div>

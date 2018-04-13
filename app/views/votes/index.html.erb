@@ -1,0 +1,25 @@
+<h1>Votes</h1>
+
+<section>
+
+  <%= @votes.each do |vote| %>
+  <ul>
+  <li>
+    <%= vote.id %>
+  </li>
+  <li>User Id:
+    <%= vote.user_id%>
+  </li>
+  <li>Insta Id:
+    <%= vote.insta_id %>
+  </li>
+  <li>Twitter Id:
+    <%= vote.twitter_id %>
+  </li>
+  <li>Subreddit Id:
+    <%= vote.subreddit_id %>
+  </li>
+  </ul>
+<% end %>
+
+</section>

@@ -1,0 +1,36 @@
+
+<h1>Subreddit</h1>
+<section class = "add-link">
+<%= link_to "Add a New Subreddit", new_subreddit_path%>
+</section>
+<section>
+
+  <% count = 0 %>
+  <% @subreddits.each do |subreddit| %>
+  <% count += 1 %>
+  <ul>
+    <li> Subreddit Rank:
+      <%= count %>
+    </li>
+  <ul>
+  <li>
+    <strong>
+    <%= link_to subreddit.id, subreddit_path(subreddit) %>
+    </strong>
+  </li>
+  <li>Title:
+    <%= subreddit.title %>
+  </li>
+  <li>Description:
+    <%= subreddit.description %>
+  </li>
+  <li> Subscribers:
+    <%= subreddit.subscribers %>
+  </li>
+  <%= link_to "Edit", edit_subreddit_path(subreddit) %>
+    <%= link_to("Delete", subreddit_path(subreddit), method: :delete, data: { confirm: "You would like to delete this subreddit?" }) %>
+    <%=link_to "Upvote", subreddit_upvote_path(subreddit), method: :post %>
+  </ul>
+<% end %>
+
+</section>
