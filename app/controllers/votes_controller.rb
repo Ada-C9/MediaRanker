@@ -10,15 +10,12 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-    # @vote.creator = Work.find(params[:creator_id])
     create
   end
 
   def create
+
     @vote = Vote.create(user_id: @user.id, work_id: params[:work_id])
-    # @vote = Vote.new
-    # @vote.creator = Work.find(params[:creator_id])
-    # @vote.creator = @work.creator
 
     if @vote.save
       flash[:sucess] = "Vote saved"
