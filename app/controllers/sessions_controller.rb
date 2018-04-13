@@ -12,7 +12,15 @@ class SessionsController < ApplicationController
 
     if user.nil?
       user = User.new(user_params)
-      user.save
+
+      if !user.save
+        flash.now[:status] = :failure
+        flash.now[:message] = "A problem occured: Could not log in"
+        flash.now[:errors] = user.errors.messages
+        @user = User.new
+        render :page
+        return
+      end
 
       flash[:message] = "Successfully created new user #{user.username} with ID #{user.id}"
 
@@ -28,8 +36,11 @@ class SessionsController < ApplicationController
 
   # similar to destroy
   def logout
-  end
+    session.delete(:user_id)
+    flash[:success] = "Successfully logged out"
 
+    redirect_to root_path
+  end
 
   def new
     @user = User.new

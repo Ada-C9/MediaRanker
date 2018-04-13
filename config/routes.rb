@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  resources :works
+  resources :works do
+    post :upvote
+  end
 
   get '/login', to: 'sessions#page'
   post '/login', to: 'sessions#login'

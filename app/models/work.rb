@@ -19,19 +19,19 @@ class Work < ApplicationRecord
   end
 
   def self.media_spotlight
-    all.sort_by{ |w| w.votes.count }.first
+    all.sort_by{ |w| w.votes.count }.last
   end
 
   def self.top_movies
-    where(category: "movie").sort_by{ |m| m.votes.count }.first(10)
+    where(category: "movie").sort_by{ |m| m.votes.count }.last(10)
   end
 
   def self.top_books
-    where(category: "book").sort_by{ |b| b.votes.count }.first(10)
+    where(category: "book").sort_by{ |b| b.votes.count }.last(10)
   end
 
   def self.top_albums
-    where(category: "album").sort_by{ |a| a.votes.count }.first(10)
+    where(category: "album").sort_by{ |a| a.votes.count }.last(10)
   end
 
 end

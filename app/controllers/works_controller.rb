@@ -49,9 +49,44 @@ class WorksController < ApplicationController
     end
   end
 
+  def upvote
+
+    if @current_user.nil?
+      flash.now[:status] = :failure
+      flash.now[:message] = "You must log in to do that"
+      @work = Work.find(vote_params[:work_id])
+      render :show
+      return
+    end
+
+    @vote = Vote.new
+
+    @vote[:user_id] = @current_user.id
+    @vote[:work_id] = vote_params[:work_id]
+
+    if @vote.save
+      flash[:status] = :success
+      flash[:message] = "You successfully upvoted #{@vote.work.title}"
+
+    else
+
+      flash[:status] = :failure
+      flash[:message] = "You can't upvote #{@vote.work.title}"
+      flash[:errors] = @vote.errors.messages
+    end
+
+    @work = @vote.work
+    redirect_to work_path(@work)
+
+  end
+
 private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def vote_params
+    return params.permit(:work_id)
   end
 
 end
