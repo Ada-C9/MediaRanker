@@ -46,9 +46,14 @@ describe Work do
   end
 
   describe "relations" do
-    it "can set a vote" do
-
+    it "responds to votes" do
+      work1.must_respond_to :votes
     end
+
+    it "responds to users" do
+      work1.must_respond_to :users
+    end
+
   end
 
   describe "custom methods" do
