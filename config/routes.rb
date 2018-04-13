@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users, except: [:edit]
+  resources :users, only: [:index]
 
   resources :works
 
-  get '/login', to: 'sessions#new', as: 'login'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/login', to: 'sessions#page'
+  post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
 
 end
