@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # TODO: add before action to support controller filters for :show :edit and :update
+  before_action :find_user, only: [:show,:edit,:update]
+
   def index
     @users = User.all
   end
@@ -19,18 +20,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    user_id = params[:id]
+  def show; end
 
-    @user = User.find(user_id) # TODO: add controller filters to all duplicate user.find
-  end
-
-  def edit
-    @user = User.find(params[:id]) # TODO: add controller filters to all duplicate user.find
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id]) # TODO: add controller filters to all duplicate user.find
 
     @user.assign_attributes(user_params)
 
@@ -48,7 +42,10 @@ class UsersController < ApplicationController
   end
 
   private
-  # TODO: Add method for find a user to support controller filters
+  def find_book
+    @user = User.find_by_id(params[:id])
+  end
+  
   def user_params
     return params.require(:user).permit(:name, :created_at)
   end

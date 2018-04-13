@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
-  # TODO: Add before action to support controller filters :show,:edit and update
-
+  before_action :find_work, only: [:show,:edit,:update]
+  
   def index
     @works = Work.all
 
@@ -27,18 +27,11 @@ class WorksController < ApplicationController
     end
   end
 
-  def show
-    work_id = params[:id]
+  def show; end
 
-    @work = Work.find(work_id)# TODO: add controller filters to all duplicate user.find
-  end
-
-  def edit
-    @work = Work.find(params[:id]) # TODO: add controler filter
-  end
+  def edit; end
 
   def update
-    @work = Work.find(params[:id]) # TODO: add controller filters
 
     @work.assign_attributes(work_params)
 
@@ -60,7 +53,11 @@ class WorksController < ApplicationController
   end
 
   private
-  # TODO: add method for find a work to support controller filter
+
+  def find_book
+    @work = Work.find_by_id(params[:id])
+  end
+
   def work_params
     return params.require(:work).permit(:category, :title, :created_by, :votes, :published_year, :description)
   end

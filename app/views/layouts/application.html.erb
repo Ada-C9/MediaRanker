@@ -12,9 +12,9 @@
   </head>
 
   <body>
-    <h2><%= link_to 'Media Ranker',root_path %> <span>Ranking the best of everything</span></h2>
+    <h2><%= link_to 'Media Ranker',top_path %> <span>Ranking the best of everything</span></h2>
     <nav>
-    <%# FIXME:  %><%= link_to 'View top media',works_path, class: 'button'%>
+    <%= link_to 'View top media',top_path, class: 'button'%>
       <%= link_to 'View all media', works_path, class: 'button' %>
       <%= link_to 'Add new work', new_work_path, class: 'button' %>
       <%= link_to 'View all users',users_path, class: 'button' %>
