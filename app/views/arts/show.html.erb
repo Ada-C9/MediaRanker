@@ -10,12 +10,34 @@
       <%= link_to "Back to media ranks", arts_path(@art), {class: "button"} %>
 
       <%= link_to "Edit", edit_art_path(@art), {class: "button"} %>
-      <!-- TODO PUT IN PATH TO UPVOTE ABILITY -->
-      <a class="button">Upvote</a>
+      <!-- FIXME: WHY THE HELL IS THIS FORMAT NOT ACCEPTABLE -->
+      <%= link_to "Upvote", upvote_path(@art), {method: :post, class: 'button'} %>
+
+      <%= link_to "Upvote", upvote_path(@art), { method: :post, class: "button"}} %>
 
       <%= link_to "Delete", art_path(@art.id), {method: :delete, class: 'alert button', data: { confirm: 'Are You Sure?'}} %>
     </section>
 
   </article>
+
+  <article class="voting columns">
+    <h3><%= @votes.count %>Votes for this <%= "#{@art.category}" %></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Users</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @votes.each do %>
+        <tr>
+          <td>
+            <%= link_to vote.user.user_name, user_path(vote.user) %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </article>
 </main>
-<!-- TODO: ONCE BUILT VOTE MODEL AND ROUTES ADD IN LISTING FOR IT -->

@@ -52,8 +52,9 @@ class ArtsController < ApplicationController
   def destroy
     Art.destroy(params[:id])
 
-    redirect_to arts_path
-    # TODO: ADD FLASH ALERTS
+    flash[:status] = :success
+    flash[:result_text] = "Successfully destroyed #{@art.name} #{@art.id}"
+    redirect_to root_path
   end
 
   def upvote
