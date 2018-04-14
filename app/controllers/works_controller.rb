@@ -30,6 +30,7 @@ class WorksController < ApplicationController
       flash[:success] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to works_path
     else
+      @work.errors.messages
       render :new
     end
   end
@@ -56,8 +57,8 @@ class WorksController < ApplicationController
   def upvote
     if session[:user_id]
       @current_user = User.where(id: session[:user_id]).first
-
       @vote = Vote.new(user: @current_user, work: @work)
+
       if @vote.save
         # flash[:status] = :success
         flash[:messages] = "Successfully upvoted #{@work.title}"
@@ -75,8 +76,10 @@ class WorksController < ApplicationController
         end
         redirect_back(fallback_location: work_path(@work))
       else
-        flash[:messages] = @vote.errors.messages
+        flash[:result_text] = "Could not upvote"
+        @vote.errors.messages
         status = :conflict
+        redirect_back(fallback_location: work_path(@work))
       end
     else
       flash.alert = "You must log in to do that"

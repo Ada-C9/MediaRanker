@@ -4,21 +4,24 @@ class SessionsController < ApplicationController
   end
 
   def login
-    user = User.find_by(name: params[:user][:name])
+    @user = User.find_by(name: params[:user][:name])
 
-    if user
-      session[:user_id] = user.id
-      flash[:success] = " #Successfully logged in as existing user #{user.name}"
+    if @user
+      session[:user_id] = @user.id
+      flash[:success] = " #Successfully logged in as existing user #{@user.name}"
     else
       # use strong params instead on refactor
-      user = User.new(name: params[:user][:name])
+      @user = User.new(name: params[:user][:name])
 
-      if user.save
-        session[:user_id] = user.id
-        flash[:success] = "Successfully created new user #{user.name} with ID #{user.id}"
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "Successfully created new user #{@user.name} with ID #{@user.id}"
       else
-        flash[:result_text] = "Could not log in"
-        redirect_to :login
+        # flash.now[:status] = :failure
+        flash.now[:failure] = "Could not log in"
+        @user.errors.messages
+        @user.name = "please enter a username"
+        render :new, status: :failure
         return
       end
 

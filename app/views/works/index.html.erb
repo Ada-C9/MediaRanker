@@ -2,14 +2,10 @@
 
 <main class="row">
   <% category_from_url(request.fullpath)  %>
-  <% @content.each do |category| %>
-  <% @content_title.each do |title| %>
-  <h3><%= title %></h3>
-  <table class="media-table responsive-card-table">
-    <%= render partial: "media-table-headers" %>
-    <%= render partial: "layouts/work-list-item", collection: category, as: :item %>
-  </table>
-  <% end %>
-  <% end %>
-
+    <% @content.each do |category| %>
+      <% @content_title.each do |title| %>
+      <h3><%= title %></h3>
+        <%= render partial: "layouts/media-table", locals: { model: category } %>
+      <% end %>
+    <% end %>
 </main>

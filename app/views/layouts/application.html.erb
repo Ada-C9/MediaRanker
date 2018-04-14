@@ -41,7 +41,6 @@
   <section class="flash">
     <% flash.each do |name, message| %>
       <div class="callout <%= name %> status">
-        <%= message %>
           <% if @vote || @user || @work %>
           <% models = [@vote, @user, @work]%>
             <% models.each do |model| %>

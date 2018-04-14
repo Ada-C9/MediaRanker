@@ -81,11 +81,11 @@ a, h3 {
     color: #424242;
 }
 
-.status.failure h3, .status.success h3 {
+.status.failure h3, .status.success h3, .status h3 {
     font-weight: normal;
     font-size: 1em;
 }
-.status.failure h3 {
+.status.failure h3, status.bad-request h3 {
     color: #C70039;
 }
 
@@ -100,4 +100,9 @@ a, h3 {
     max-width: 75rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+#new_user > div:nth-child(4) {
+  font-weight: lighter;
+  font-style: oblique;
 }
