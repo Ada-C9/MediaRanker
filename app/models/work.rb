@@ -20,6 +20,6 @@ class Work < ApplicationRecord
 
     ordered = Work.where(id: id)
 
-    return ordered
+    return ordered.reverse
   end
 end

@@ -1,6 +1,12 @@
 <h3>User Summary: <%= @user.username %></h3>
 <p>Joined site <%= format_date(@user.created_at) %></p>
 
+<section>
+  <% if session[:user_id] %>
+    Recommended Work: <%= link_to "#{@recommended.title}", work_path(@recommended) %>
+  <% end %>
+</section>
+
 <h4>Votes</h4>
 <table>
   <thead>
