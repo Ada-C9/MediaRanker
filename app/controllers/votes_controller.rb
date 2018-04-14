@@ -1,15 +1,6 @@
 class VotesController < ApplicationController
-  def edit
-  end
-
   def index
     @votes = Vote.all
-  end
-
-  def new
-  end
-
-  def show
   end
 
   def create
@@ -20,12 +11,6 @@ class VotesController < ApplicationController
     else
       flash.now[:alert] = @vote.errors
     end
-  end
-
-  def destroy
-  end
-
-  def update
   end
 
   private

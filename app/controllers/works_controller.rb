@@ -37,7 +37,7 @@ class WorksController < ApplicationController
 
   def destroy
     begin
-      @work = Work.find_by(id: params[:id])
+      # @work = Work.find_by(id: params[:id])
       if @work != nil
         @work.destroy
       end
@@ -45,7 +45,7 @@ class WorksController < ApplicationController
     rescue
       flash.now[:alert] = "Item does not exist!"
     end
-    redirect_to works_path
+    redirect_to root_path
   end
 
   private
