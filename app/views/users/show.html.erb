@@ -1,8 +1,8 @@
 <h4>User Summary: <%= @user.name %></h4>
-<small> Joined site <%= @user.joined %> </small>
+<p><small> Joined site <%= @user.joined %></small></p>
 
-<p><h5>Votes</h5></p>
 <table>
+  <h4>Votes</h4>
   <thead>
     <tr>
       <th width="100">Media Title</th>
@@ -12,6 +12,15 @@
       <th width="100">Voted On</th>
     </tr>
   </thead>
+  <% @user.votes.each do |vote| %>
+  <tr>
+    <td><%=link_to(vote.work.title, work_path(vote.work) ) %></td>
+    <td><%= vote.work.creator %></td>
+    <td><%= vote.work.publication_year %></td>
+    <td><%= vote.work.category %></td>
+    <td><%= vote.date_voted %></td>
+  </tr>
+  <% end %>
 </table>
 
 
