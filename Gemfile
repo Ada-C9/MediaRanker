@@ -71,5 +71,4 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
-  gem 'pry'
 end

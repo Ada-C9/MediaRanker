@@ -21,6 +21,7 @@ class WorksController < ApplicationController
     else
       flash.now[:alert] = @work.errors
     end
+    redirect_to root_path
   end
 
   def edit
@@ -32,7 +33,7 @@ class WorksController < ApplicationController
 
   def update
     @work = Work.find_by(id: params[:id])
-    if !@work.nil? 
+    if !@work.nil?
       if @work.update(work_params)
         flash[:success] = "#{@work.title} succesfully edited!"
       else

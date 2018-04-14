@@ -2,13 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h3 {
-font-family: "Gudea", sans-serif;
-background: #fefefe;
--webkit-font-smoothing: antialiased;
-display: block;
-font-weight: bold
-}
+
 
 section {
     display: block;
@@ -21,11 +15,6 @@ section.spotlight>div {
 
 .media-spotlight-header {
     color: #424242;
-}
-
-.row::before, .row::after {
-    display: table;
-    content: ' ';
 }
 
 .row::after {
@@ -61,14 +50,9 @@ a, h3 {
     color: #26A69A;
 }
 
-h4 {
-    font-family: "Gudea", sans-serif;
-    font-weight: bold
-}
 
 p {
     margin-bottom: 1rem;
-    font-size: inherit;
     line-height: 1.6;
     text-rendering: optimizeLegibility;
 }
