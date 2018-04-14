@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "upvote duplication prevention" do
   scenario "user should not be able to upvote same work twice" do
-    work = Work.create!(category: "album", title: "Dark Side of the Moon")
+    work = Work.create!(category: "album", title: "Dark Side of the Moon", publication_year: 1968)
 
     login_as "Bob"
 
