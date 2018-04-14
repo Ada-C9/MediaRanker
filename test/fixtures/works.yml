@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+book_1:
+  category: book
+  title: Goodnight Moon
+  creator: Margaret Wise Brown
+  publication_year: 1979
+  description: Bunny says goodnight to all objects.
+movie_1:
+  category: movie
+  title: James Bond
+  creator: Ian Fleming
+  publication_year: 1960
+  description: Spy movie
+book_2:
+  category: book
+  title: Eclipse
+  creator: Margaret Brown
+  publication_year: 2000
+  description: About the moon eclipse.
+book_3:
+  category: book
+  title: OOD
+  creator: Metz
+  publication_year: 2010
+  description: Ruby object oriented design
