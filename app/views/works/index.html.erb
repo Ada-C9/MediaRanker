@@ -1,87 +1,21 @@
 
 <h3>List of works</h3>
-<ul>
+
   <h4>Albums</h4>
-  <table>
-    <thead>
-      <tr class = "works-row">
-        <th>Votes</th>
-        <th>Title</th>
-        <th>Created by</th>
-        <th>Published</th>
-        <th>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
 
-      <%@works.where(category: "album").each do |work|%>
-      <tr class = "works-row">
-        <td><%= work.total_votes%></td>
-        <td><%= link_to work.title, work_path(work)%></td>
-        <td><%= work.created_by%></td>
-        <td><%= work.published%></td>
-        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
-      </tr>
-      <%end%>
+  <%= render partial: "media_table", locals: {model: @works.where(category: "album")}%>
 
-    </tbody>
-  </table>
 
-<h4>Books</h4>
+  <h4>Books</h4>
 
-  <table>
-    <thead>
-      <tr class = "works-row">
-        <th>Votes</th>
-        <th>Title</th>
-        <th>Created by</th>
-        <th>Published</th>
-        <th>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
+  <%= render partial: "media_table", locals: {model: @works.where(category: "book")}%>
 
-      <%@works.where(category: "book").each do |work|%>
-      <tr class = "works-row">
-        <td><%= work.total_votes%></td>
-        <td><%= link_to work.title, work_path(work)%></td>
-        <td><%= work.created_by%></td>
-        <td><%= work.published%></td>
-        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
-      </tr>
-      <%end%>
-
-    </tbody>
-  </table>
 
   <h4>Movies</h4>
-  <table>
-    <thead>
-      <tr class = "works-row">
-        <th>Votes</th>
-        <th>Title</th>
-        <th>Created by</th>
-        <th>Published</th>
-        <th>Upvote</th>
-      </tr>
-    </thead>
-    <tbody>
 
-      <%@works.where(category: "movie").each do |work|%>
-      <tr class = "works-row">
-        <td><%= work.total_votes%></td>
-        <td><%= link_to work.title, work_path(work)%></td>
-        <td><%= work.created_by%></td>
-        <td><%= work.published%></td>
-        <td><%= link_to "Upvote", upvote_path(work), method: :post, class: "button"%></td>
-      </tr>
-      <%end%>
+  <%= render partial: "media_table", locals: {model: @works.where(category: "movie")}%>
 
-    </tbody>
-  </table>
-
-
-<ul>
-  <li><%= link_to "View top media", root_path, class: "button"%></li>
-  <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
-</ul>
+  <ul>
+    <li><%= link_to "View top media", root_path, class: "button"%></li>
+    <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
+  </ul>

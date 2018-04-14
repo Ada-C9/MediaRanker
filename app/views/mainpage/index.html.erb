@@ -5,47 +5,21 @@
   <h3>Media Spotlight: <%=link_to @top.title, work_path(@top)%> by <%=@top.created_by%></h3>
   <p><%=@top.votes.count%> votes - <%=@top.description%></p>
 </section>
+
 <section id="tops">
   <ul>
     <h3 class="top-ten">Top Movies</h3>
-    <%@works.where(category: "movie").order_by_vote.take(10).each do |work|%>
-    <li>
-      <h4>
-      <%= link_to work.title, work_path(work)%>
-      <small><%= work.created_by%></small>
-      </h4>
-      <p><%= work.total_votes%> votes</p>
-    </li>
-    <%end%>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "movie")}%>
   </ul>
 
   <ul>
     <h3 class="top-ten">Top Books</h3>
-
-    <%@works.where(category: "book").order_by_vote.take(10).each do |work|%>
-    <li>
-      <h4>
-      <%= link_to work.title, work_path(work)%>
-      <small><%= work.created_by%></small>
-      </h4>
-      <p><%= work.total_votes%> votes</p>
-
-    </li>
-    <%end%>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "book")}%>
   </ul>
 
   <ul>
     <h3 class="top-ten">Top Albums</h3>
-    <%@works.where(category: "album").order_by_vote.take(10).each do |work|%>
-    <li>
-      <h4>
-      <%= link_to work.title, work_path(work)%>
-      <small><%= work.created_by%></small>
-      </h4>
-      <p><%= work.total_votes%> votes</p>
-
-    </li>
-    <%end%>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "album")}%>
   </ul>
 </section>
 
