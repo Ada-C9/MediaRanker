@@ -25,11 +25,12 @@ end
 
 describe "relations" do
   it "responds to votes and can be voted on once " do
-    work = Work.new(:book1)
+    work =works(:book1)
+    binding.pry
     work.must_respond_to :votes
     work.votes.must_be :empty?
     work.votes.must_equal 0
-    vote = Vote.create(work_id: work.id,user_id: users(:user4).id,date:2018-04-13)
+    vote = Vote.create(work_id: work.id,user_id: users(:user1).id,date:2018-04-13)
 
     work.votes << vote
 
