@@ -8,4 +8,6 @@ class Work < ApplicationRecord
   def self.top_votes
     all_work = Work.all.sort_by{ |work| work.votes.count}.reverse
   end
+
+  
 end

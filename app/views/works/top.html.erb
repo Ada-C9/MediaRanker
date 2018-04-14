@@ -1,12 +1,12 @@
-<h2>Media Spotlight: </h2>
+<h2>Media Spotlight: <span>COMING SOON! Not enough votes for a true media spotlight.</span> </h2>
 <section class='top-media'>
   <section>
     <h3>Top Movies</h3>
     <% @works.where(category: 'movie').top_votes.take(10).each do |work| %>
-    
+
     <ul class="no-bullet">
       <li>
-        <strong> <%= work.title %> </strong> <%= work.created_by%>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
       </li>
       <li>
         <%= work.votes.count %> votes
@@ -17,11 +17,10 @@
 
   <section>
     <h3>Top Books</h3>
-    <% @works.each do |work| %>
-    <% work.category == 'book'%>
+    <% @works.where(category: 'book').top_votes.take(10).each do |work| %>
     <ul class="no-bullet">
       <li>
-        <strong> <%= work.title %> </strong> <%= work.created_by%>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
       </li>
       <li>
         <%= work.votes.count %> votes
@@ -32,11 +31,11 @@
 
   <section>
     <h3>Top Albums</h3>
-    <% @works.each do |work| %>
-    <% work.category == 'album'%>
+    <% @works.where(category: 'album').top_votes.take(10).each do |work| %>
+
     <ul class="no-bullet">
       <li>
-        <strong> <%= work.title %> </strong> <%= work.created_by%>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
       </li>
       <li>
         <%= work.votes.count %> votes

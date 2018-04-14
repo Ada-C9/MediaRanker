@@ -39,8 +39,19 @@
 }
 
 /*top-media styling*/
-.top_media ul {
-  display:grid;
-  grid-template-columns: 1fr, 1fr, 1fr;
+.top-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
+}
+
+.top-media h3 {
+  text-decoration: underline;
+
+}
+
+h2 {
+  text-decoration: overline;
+  text-decoration: underline;
+  color: #B91372;
 }
