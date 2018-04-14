@@ -25,6 +25,6 @@ class VotesController < ApplicationController
 
   def vote_params
     # You don't need an explicit return here, but if it helps keep things straight in your head, it's okay to do it.
-    params.require(:vote).permit(:vote, :user_id, :work_id)
+    params.require(:vote).permit(:user_id, :work_id)
   end
 end
