@@ -46,7 +46,7 @@
       <ul>
         <%flash[:alert].each do |field, message| %>
         <li>
-          <strong> <%=field%> : </strong> <%= message%>
+          <strong> <%=field%> : </strong> <%= message.join('')%>
         </li>
         <% end %>
       </ul>
