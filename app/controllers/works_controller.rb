@@ -10,17 +10,17 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new(work_params)
 
-    if @work.save
-      flash[:success] = "Succeesfully created #{@work.title}"
-      redirect_to works_path(@work)
-    else
-      flash[:alert] = "Could not create #{@work.category}"
-      
-      render :new
-    end
-  end
+   @work = Work.new(work_params)
+   if @work.save
+     flash[:success] = "#{@work.title} saved"
+     redirect_to works_path
+   else
+     flash[:alert] = "Could not create #{@work.category}"
+     render :new
+   end
+ end
+
 
   def show
     work = find_work
@@ -50,17 +50,21 @@ class WorksController < ApplicationController
     end
   end
   def destroy
+      current_user = nil
+      if session[:user_id]
+        current_user = User.find_by(id: session[:user_id])
+        @work = Work.find(params[:id])
+        @work.destroy
 
-    @work = Work.find(params[:id])
-    if @work.destroy
+        flash[:message] = "Deleted #{@work.category} #{@work.title}"
+        redirect_to works_path
+      else
+        flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
+        redirect_to works_path
 
-      flash[:message] = "Deleted #{@work.category} #{@work.title}"
+      end
     end
-    redirect_to works_path
-
-
-  end
-
+  
   def upvote
     if !(session[:user_id])
       flash[:status] = :failure
