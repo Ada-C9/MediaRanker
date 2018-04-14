@@ -1,7 +1,10 @@
 class Work < ApplicationRecord
   has_many :votes
   validates :category, presence: true
+  validates :title, presence: true
   validates :title, uniqueness: { scope: :category, message: "That title already exists in this category." }
+  validates :publication_year, numericality: true
+  validates :publication_year, length: { is: 4 }
 
   def vote_count
     votes.count
