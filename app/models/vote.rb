@@ -6,7 +6,7 @@ class Vote < ApplicationRecord
   validates :publication_id, numericality: { only_integer: true}
 
   def find_publication
-    publication = Publication.find_by(id: self.publication_id)
+    Publication.find_by(id: self.publication_id)
   end
 
 end

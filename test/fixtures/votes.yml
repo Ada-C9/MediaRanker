@@ -3,9 +3,19 @@
 one:
   user_id: 1
   publication_id: 1
-  date: 
+  date:
 
 two:
-  user_id: 1
-  publication_id: 1
-  date: 
+  user_id: 2
+  publication_id: 2
+  date:
+
+three:
+  user_id: 3
+  publication_id: 2
+  date:
+
+four:
+  user_id: 4
+  publication_id: 4
+  date:

@@ -8,19 +8,22 @@ describe User do
   end
 
   it "requires a name" do
-    user = User.new
+    user = users(:bob)
+    user.name = ""
     user.valid?.must_equal false
     user.errors.must_include :name
   end
 
   it "does not allow spaces" do
-    user = User.new(name:"wow wee")
+    user = users(:bob)
+    user.name = "wow wee"
     user.valid?.must_equal false
     user.errors.must_include :name
   end
 
   it "does not allow names longer than 25 characters" do
-    user = User.new(name:"whateversomethinganotherthingokaygosuper")
+    user = users(:bob)
+    user.name = "whateversomethinganotherthingokaygosuper"
     user.valid?.must_equal false
     user.errors.must_include :name
   end

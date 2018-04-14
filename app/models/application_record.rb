@@ -10,7 +10,4 @@ class ApplicationRecord < ActiveRecord::Base
     return date.strftime("%b %d, %Y")
   end
 
-  def get_desc
-    self.left_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
-  end
 end

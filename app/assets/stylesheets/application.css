@@ -18,6 +18,15 @@
 
  */
 
+
+header {
+     max-width: 100%;
+     background-color: #B2DFDB;
+     border-bottom: 1px solid #EEEEEE;
+     margin-bottom: 10px;
+     padding: 25px 20px 10px 20px;
+ }
+
 header h2 {
     text-align: center;
     margin: 25px auto 40px auto;
@@ -34,7 +43,12 @@ header h2 a {
      font-family: 'Gudea', sans-serif;
  }
 
-header {
+header h2 small {
+    color: white;
+    font-family: 'Gudea';
+}
+
+.page-header {
     max-width: 100%;
     background-color: #B2DFDB;
     border-bottom: 1px solid #EEEEEE;
@@ -46,11 +60,6 @@ header {
     background-color: #26A69A;
 }
 
-header h2 small {
-    color: white;
-    font-family: 'Gudea';
-}
-
 .top-ten {
   margin-left: 10px;
 }
@@ -60,10 +69,6 @@ header h2 small {
   margin-right: 100px;
 }
 
-main {
-    padding-top: 0;
-    padding-bottom: 2rem;
-}
 
 .row {
     max-width: 75rem;
@@ -71,16 +76,19 @@ main {
     margin-left: auto;
 }
 
-.page-header {
-    max-width: 100%;
-    background-color: #B2DFDB;
-    border-bottom: 1px solid #EEEEEE;
-    margin-bottom: 10px;
-    padding: 25px 20px 10px 20px;
+.show {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+main {
+    padding-top: 0;
+    padding-bottom: 2rem;
 }
 
 body small {
     color: slategrey;
+    font-weight: bold;
 }
 
 body ul {
@@ -92,9 +100,4 @@ body ul {
     height: 2px;
     color: #B2DFDB; /* old IE */
     background-color: #B2DFDB; /* Modern Browsers */
-}
-
-.show {
-  padding-left: 120px;
-  padding-right: 120px;
 }
