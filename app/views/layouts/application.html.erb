@@ -34,19 +34,19 @@
         <section class="flash">
           <% flash.each do |name, message| %>
             <section class="callout <%= name %>">
-              <% if name == "alert" %>
-              <ul>
-                <% flash[:alert].each do |field, message| %>
-                <li>
-                <strong><%= field %>: </strong>
-                  <%= message %>
-                </li>
-                <% end %>
-              </ul>
+              <% if name == :alert %>
+                <ul>
+                  <% flash[:alert].each do |field, error_messages| %>
+                    <li>
+                    <strong><%= field %>: </strong>
+                      <%= error_messages %>
+                    </li>
+                  <% end %>
+                </ul>
               <% else %>
-              <p>
-                <%= message %>
-              </p>
+                <p>
+                  <%= message %>
+                </p>
               <% end %>
             </section>
           <% end %>
