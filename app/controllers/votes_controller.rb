@@ -20,10 +20,10 @@ class VotesController < ApplicationController
     end
   end
 
-  def destroy
-    Vote.destroy(params[:id])
-    redirect_to users_path
-    flash[:alert] = "Vote Deleted"
-  end
+  # def destroy
+  #   Vote.destroy(params[:id])
+  #   redirect_to users_path
+  #   flash[:alert] = "Vote Deleted"
+  # end
 
 end

@@ -2,7 +2,7 @@
 <h4>Albums</h4>
 <table class="hover">
   <th>
-    <tr>
+    <tr class="table-header">
       <td>Votes</td>
       <td>Title</td>
       <td>Created by</td>
@@ -17,7 +17,7 @@
       <td><%= link_to(work.title, work_path(work) ) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
-      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+      <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>
     </tr>
     <% end %>
   </th>
@@ -27,7 +27,7 @@
 <h4>Books</h4>
 <table class="hover">
   <th>
-    <tr>
+    <trclass="table-header">
       <td>Votes</td>
       <td>Title</td>
       <td>Created by</td>
@@ -42,7 +42,7 @@
       <td><%= link_to(work.title, work_path(work) ) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
-      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+      <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>
     </tr>
     <% end %>
   </th>
@@ -52,7 +52,7 @@
 <h4>Movies</h4>
 <table class="hover">
   <th>
-    <tr>
+    <trclass="table-header">
       <td>Votes</td>
       <td>Title</td>
       <td>Created by</td>
@@ -67,7 +67,7 @@
       <td><%= link_to(work.title, work_path(work) ) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
-      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+      <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>
     </tr>
     <% end %>
   </th>

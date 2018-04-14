@@ -27,10 +27,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    User.destroy(params[:id])
-    redirect_to users_path
-  end
+  # def destroy
+  #   User.destroy(params[:id])
+  #   redirect_to users_path
+  # end
 
   private
 
