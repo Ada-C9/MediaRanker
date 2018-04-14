@@ -19,21 +19,18 @@
     <h2><%= link_to "Media Ranker", root_path %><small> Ranking the Best of Everything</small></h2>
 
     <nav class = "menu">
-      <ul>
-        <li><%= link_to "View top media", root_path, class: "button"%></li>
-        <li><%= link_to "View all media", works_path, class: "button"%></li>
-        <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
-        <li><%= link_to "View all users", users_path, class: "button"%></li>
-        <div class="login-logout">
-
+      <%= link_to "View top media", root_path, class: "button"%>
+        <%= link_to "View all media", works_path, class: "button"%>
+        <%= link_to "Add a new work", new_work_path, class: "button"%>
+        <%= link_to "View all users", users_path, class: "button"%>
+        <div class="float-right">
           <% if session[:user_id]%>
-          <li class="float-right"><%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%></li>
-          <li class="float-right"><%= link_to "Logout", logout_path, method: :delete, class: "button"%></li>
+          <%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%>
+          <%= link_to "Logout", logout_path, method: :delete, class: "button"%>
           <%else%>
-          <li class="float-right"><%= link_to "Log in", login_path, class: "button"%></li>
+          <%= link_to "Log in", login_path, class: "button"%>
           <%end%>
         </div>
-      </ul>
     </nav>
   </header>
   <section class="flash">
@@ -42,7 +39,9 @@
     <% end %>
   </section>
 
+<main>
   <%= yield %>
+</main>
 
 </body>
 </html>

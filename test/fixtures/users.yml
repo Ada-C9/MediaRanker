@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+wini:
   name: Wini
   username: winii
   pasword: MyString
-  votes: 1
 
-two:
+
+ana:
   name: Ana
   username: Anai
   pasword: MyString
-  votes: 2
+  

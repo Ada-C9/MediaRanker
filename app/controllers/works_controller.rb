@@ -45,11 +45,13 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    if User.find(session[:user_id]) !=nil
-    user = User.find(session[:user_id])
-  else
-    flash[:failure] = "You must log in to do that"
-    redirect_to works_path
+    if session[:user_id] == nil
+      flash[:failure] = "You must log in to do that"
+      redirect_to works_path
+      return
+    else session[:user_id] !=nil
+      user = User.find(session[:user_id])
+
     end
 
     work_id = params[:id]

@@ -5,11 +5,10 @@ movie:
   created_by: MyString
   published: 2018-04-09
   category: movie
-  votes: 0
+  
 
 book:
   title: how to kill a mockingbird
   created_by: Harper Lee
   published: 2018-04-09
   category: book
-  votes: 1

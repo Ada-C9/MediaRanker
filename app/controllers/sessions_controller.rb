@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:user][:username])
     if user
       session[:user_id] = user.id
-      flash[:success] = "#{user.username} is logged in"
+      flash[:success] = "Successfully logged in as existing user #{user.username}"
       redirect_to root_path
     elsif
       user = User.create(username: params[:user][:username])
       user.save
       if user
         session[:user_id] = user.id
-        flash[:success] = "#{user.username} is logged in"
+        flash[:success] = "Successfully created new user #{user.username} with ID #{user.id}"
         redirect_to root_path
       end
     else
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   def logout
     session[:user_id] = nil
     session.delete(:user_id)
-    flash[:success] = "Logged out successfully"
+    flash[:success] = "Successfully logged out"
 
     redirect_to root_path
   end
