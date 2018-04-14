@@ -32,16 +32,18 @@ end
 puts "Added #{Work.count} work records"
 puts "#{work_failures.length} works failed to save"
 
+raw_users = [
+    { name: "Sandi"},
+    { name: "Gay"},
+    { name: "Roxane" },
+    { name: "Metz" },
+    { name: "Ursula" }
+]
 
-
-
-# Since we set the primary key (the ID) manually on each of the
-# tables, we've got to tell postgres to reload the latest ID
-# values. Otherwise when we create a new record it will try
-# to start at ID 1, which will be a conflict.
-# puts "Manually resetting PK sequence on each table"
-# ActiveRecord::Base.connection.tables.each do |t|
-#   ActiveRecord::Base.connection.reset_pk_sequence!(t)
-# end
+raw_users.each do |raw_user|
+  author = Author.create(name: raw_user[:name])
+  puts "Created user #{user.name}"
+  end
+end
 
 puts "done"
