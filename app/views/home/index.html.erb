@@ -23,7 +23,7 @@
       <%  if movie != nil %>
       <ul>
         <li><%=link_to movie.title, work_path(movie[:id])%> by <%= movie.creator %></li>
-        <p>votes</p>
+        <p><%= movie.votes.length%> votes</p>
       </ul>
       <% end%>
       <% end%>
@@ -36,7 +36,7 @@
       <% if book != nil %>
       <ul>
         <li><%=link_to book.title, work_path(book[:id])%> by <%= book.creator %></li>
-        <p>votes</p>
+        <p><%= book.votes.length%> votes</p>
       </ul>
       <% end%>
       <% end%>
@@ -50,7 +50,7 @@
       <%  if album != nil%>
       <ul>
         <li><%=link_to album.title, work_path(album[:id])%> by <%= album.creator %></li>
-        <p> votes</p>
+        <p> <%= album.votes.length%> votes</p>
       </ul>
       <% end%>
       <% end%>
