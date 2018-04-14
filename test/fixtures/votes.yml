@@ -5,27 +5,27 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  user_id: ada
-  work_id: book_one
+  user: ada
+  work: book_one
 # column: value
 #
 two:
-  user_id: angela
-  work_id: book_two
+  user: angela
+  work: book_two
 # column: value
 
 three:
-  user_id: sander
-  work_id: book_four
+  user: sander
+  work: book_four
 
 four:
-  user_id: desiree
-  work_id: movie_one
+  user: desiree
+  work: movie_one
 
 five:
-  user_id: evan
-  work_id: album_one
+  user: evan
+  work: album_one
 
 six:
-  user_id: noelle
-  work_id: album_two
+  user: noelle
+  work: album_two

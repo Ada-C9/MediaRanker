@@ -26,4 +26,16 @@ describe User do
     local_toshi.valid?.must_equal false
   end
 
+  describe 'relations' do
+
+    it "will return 0 if they have no votes" do
+      users(:maddie).votes.count.must_equal 0
+    end
+
+    it "will return correct number of votes" do
+      users(:evan).votes.count.must_equal 1
+    end
+
+  end
+
 end
