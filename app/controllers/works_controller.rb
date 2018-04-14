@@ -1,9 +1,8 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update]
 
   def index
     @works = Work.all
-
-
   end
 
   def new
@@ -17,21 +16,12 @@ class WorksController < ApplicationController
     end
   end
 
-  def show
-    @work = Work.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
-    the_work = Work.find(params[:id])
-    # the_book.title = updated_book[:title]
-    # the_book.author = updated_book[:author]
-    # the_book.publication_date = updated_book[:publication_date]
-    # the_book.synopsys = updated_book[:synopsys]
-    the_work.update_attributes(
+    @work.update_attributes(
       category: work_params[:category],
       title: work_params[:title],
       created_by: work_params[:created_by],
@@ -39,7 +29,7 @@ class WorksController < ApplicationController
       description: work_params[:description],
     )
 
-    if the_work.save
+    if @work.save
       redirect_to works_path
     end
   end
@@ -51,24 +41,19 @@ class WorksController < ApplicationController
       return
     else session[:user_id] !=nil
       user = User.find(session[:user_id])
-
     end
 
     work_id = params[:id]
-
-
     vote = Vote.new(user_id: user.id, work_id: work_id)
 
     if vote.save
       flash[:success] = "Successfully upvoted!"
-
     else
       flash[:failure] = "Could not upvote"
       flash[:errors] = vote.errors.messages[:user_id]
-
-
     end
     redirect_back(fallback_location: root_path)
+    
   end
 
   def destroy
@@ -80,4 +65,9 @@ class WorksController < ApplicationController
   def work_params
     return params.require(:work).permit(:category, :title, :published, :description, :created_by)
   end
+
+  def find_work
+    @work = Work.find(params[:id])
+  end
+
 end
