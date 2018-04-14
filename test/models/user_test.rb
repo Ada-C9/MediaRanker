@@ -45,9 +45,8 @@ describe User do
     it "connects vote and vote_id" do
       # Arrange
       vote = Vote.create!(user_id: @user.id, work_id: @work.id)
-
+      vote.user.must_equal @user
       # Assert
-      @user.votes.must_include vote
     end
   end
 
