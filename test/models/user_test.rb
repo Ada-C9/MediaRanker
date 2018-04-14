@@ -3,16 +3,16 @@ require "test_helper"
 describe User do
   describe "validations" do
     it "is valid with a name" do
-      u = users(:yellowlion)
-      result = u.valid?
+      user = users(:yellowlion)
+      result = user.valid?
       result.must_equal true
     end
 
     it "is invalid without a name" do
-      u = User.new
-      result = u.valid?
+      user = User.new
+      result = user.valid?
       result.must_equal false
-      u.errors.messages.must_include :name
+      user.errors.messages.must_include :name
     end
 
     it "requires a unique name" do
@@ -25,13 +25,13 @@ describe User do
 
   describe "relations" do
     it "can have votes" do
-      u = users(:yellowlion)
-      u.votes.count.must_equal 3
+      user = users(:yellowlion)
+      user.votes.count.must_equal 8
     end
 
     it "shows zero if user has not voted" do
-      u = users(:littlepony)
-      u.votes.count.must_equal 0
+      user = users(:supermario)
+      user.votes.count.must_equal 0
     end
   end
 end

@@ -38,9 +38,9 @@ describe Work do
   end
 
   describe "custom methods" do
+
     before do
       @work = works(:harrypotter)
-
     end
 
     it 'calculates the total votes for a work' do
@@ -51,38 +51,40 @@ describe Work do
 
     it "finds the work overall categories with more votes (media_spotlight)" do
 
-      Work.top.title.must_equal works(:harrypotter).title
+      Work.media_spotlight.title.must_equal works(:harrypotter).title
     end
 
     it 'returns an array of the first top-ten movies' do
 
       Work.top_ten_movies.must_be_kind_of Array
 
+      Work.top_ten_movies.length.must_equal 10
+      
     end
 
-    it 'returns the FIRST ten movies voted for the Top-Ten Movies' do
 
+    it 'returns an empty array when no works of category books' do
+
+      Work.top_ten_books.must_equal []
+    end
+
+    it 'returns only the FIRST ten movies voted even when more works with same amount of votes' do
       array_top_ten_movies = [works(:harrypotter), works(:the_lure), works(:dark_times),
         works(:the_square), works(:lucky), works(:lady_bird), works(:frozen),
-      works(:goodtime), works(:flinstones), works(:blackpanther)]
+        works(:goodtime), works(:flinstones), works(:blackpanther)]
 
       # The 11th movie has the same amount of votes as the 10th movie, but the method
       # considers the order of voting, so returns the first ten movies voted.
+      # in this test the fixture of movie thor has the same number of votes as blackpanther,
+      # but thor was created at last.
 
-      expected_false = array_top_ten_movies.include?(works(:thor))
+        expected_false = array_top_ten_movies.include?(works(:thor))
 
-      result_false = Work.top_ten_movies.include?(works(:thor))
+        result_false = Work.top_ten_movies.include?(works(:thor))
 
-      result_false.must_equal expected_false
-
+        result_false.must_equal expected_false
     end
 
-
-     it 'returns an empty array when no works of category books' do
-
-      Work.top_ten_books.must_equal []
-     end
-
-
   end
+
 end
