@@ -104,6 +104,14 @@ section.spotlight>div {
  border-bottom: 2px solid #B2DFDB;
 }
 
+.top-ten-container {
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+
 .top-ten ul {
  list-style-type: none;
  margin-left: 0px;
