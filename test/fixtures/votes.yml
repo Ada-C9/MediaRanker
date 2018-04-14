@@ -1,0 +1,19 @@
+vote_one:
+  user: nora
+  work: harry_potter
+
+vote_two:
+  user: nora
+  work: superbad
+
+vote_three:
+  user: bob
+  work: harry_potter
+
+vote_four:
+  user: chad
+  work: code
+
+vote_five:
+  user: todd
+  work: ilym
