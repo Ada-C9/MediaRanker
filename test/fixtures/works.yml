@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+WW:
+  category: movie
+  title: Wonder Woman
+  creator: Patty Jenkins
+  publication_year: 2017
+  description: About the best superhero EVER.
+
+RPO:
+  category: book
+  title: Ready Player One
+  creator: Earnest Cline
+  publication_year: 2011
+  description: Lots of 80's reference and finding the hidden Easter Egg.
+
+Jumanji:
+  category: movie
+  title: Jumanji, Welcome to the Jungle
+  creator: Jake Kasdan
+  publication_year: 2017
+  description: A rebute of the original Jumanji from 1981.
+
+HP:
+  category: book
+  title: Harry Potter
+  creator: J.K. Rowling
+  publication_year: 1998
+  description: About a boy wizard

@@ -1,0 +1,66 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h3, .h3 {
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+.top-ten h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+  margin-top: 50px;
+  font-size: 1.8em;
+}
+
+.top-ten ul li {
+  list-style-type: none;
+}
+
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+main {
+  display: block;
+}
+
+.top-ten h4 small {
+  color: #767A7A;
+}
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+.media-spotlight-header {
+    color: #424242;
+}

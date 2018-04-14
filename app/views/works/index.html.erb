@@ -1,0 +1,20 @@
+<main class="row"
+<section>
+  <h3><strong>List of works</strong></h3>
+
+  <h4><strong>Albums</strong></h4>
+  <%= render partial: 'work_table', locals: { works: @works.albums } %>
+
+  <h4><strong>Books</strong></h4>
+  <%= render partial: 'work_table', locals: { works: @works.books } %>
+
+  <h4><strong>Movies</strong></h4>
+  <%= render partial: 'work_table', locals: { works: @works.movies } %>
+
+
+
+  <%= link_to("View top media", root_path, class: "button") %>
+  <%= link_to("Add a new wook", new_work_path, class: "button") %>
+
+</section>
+</main>
