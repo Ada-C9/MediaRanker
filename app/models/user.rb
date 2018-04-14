@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :upvotes
-  validates :username, presence: true, :uniqueness => true
+  validates :username, presence: true, length: { in: 1..250 }, :uniqueness => true
 
   def get_all_users
     return find_all_users

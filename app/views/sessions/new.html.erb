@@ -1,10 +1,20 @@
 <h2>Log In</h2>
+<% if @current_user.errors.any? %>
+  <ul class="errors">
+    <% @current_user.errors.each do |column, message| %>
+    <li>
+      <strong><%= field.capitalize %></strong> <%= message %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+<section class="form">
 <%= form_for @current_user, url: login_path do |f| %>
   <%= f.label :Username %>
   <%= f.text_field :username %>
-  <a class="button"> <%= f.submit value="Log In"  %></a>
+ <%= f.submit value="Log In", class: "button"  %></a>
 <% end %>
-
+</section>
 <article>
   <h4>A note about logging in</h4>
   <p>
