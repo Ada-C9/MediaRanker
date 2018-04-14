@@ -5,4 +5,8 @@ class User < ApplicationRecord
     return session[:user_id] == self.id
   end
 
+  def join_date
+    self.created_at.strftime("%B %-d, %Y")
+  end
+
 end
