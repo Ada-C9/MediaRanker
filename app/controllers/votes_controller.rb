@@ -23,11 +23,11 @@ class VotesController < ApplicationController
     @vote = Vote.create(user_id: @user.id, work_id: params[:work_id])
 
     if @vote.save
-      flash[:sucess] = "Vote saved"
-      redirect_to works_path
+      flash[:success] = "Vote saved"
+      redirect_back fallback_location: :works_path
     else
-      flash.now[:alert] = "Media was not save."
-      render :new
+      flash[:alert] = "Media was not save. #{@user.name} has already upvoted this work."
+      redirect_back fallback_location: :works_path
     end
   end
 
