@@ -1,0 +1,14 @@
+<% if @work.errors.messages.any? %>
+  <section class=" alert callout">
+    <ul>
+      <% @work.errors.messages.each do |field, problems| %>
+      <% problems.each do |problem| %>
+        <li>
+          <strong><%= field %></strong>
+          <%problem%>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

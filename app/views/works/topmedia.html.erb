@@ -1,0 +1,50 @@
+<div>
+  <h3>
+    <span class="media-spotlight-header">Media Spotlight:</span>
+    <p>placeholder for link to top media</p>
+    <p>by Creator here</p>
+    <p>vote total here, description here</p>
+  </h3>
+</div>
+<section class="top-ten">
+  <h3>Top Movies</h3>
+  <ul>
+    <% @movies.each do |movie| %>
+    <li>
+      <h4>
+        <%= link_to movie.title, work_path(movie.id) %>
+        <small>by <%= movie.creator %></small>
+      </h4>
+      <p>vote count here</p>
+    </li>
+    <% end %>
+  </ul>
+</section>
+<section class="top-ten">
+  <h3>Top Books</h3>
+  <ul>
+    <% @books.each do |book| %>
+    <li>
+      <h4>
+        <%= link_to book.title, work_path(book.id) %>
+        <small>by <%= book.creator %></small>
+      </h4>
+      <p>vote count here</p>
+    </li>
+    <% end %>
+  </ul>
+</section>
+<section class="top-ten">
+  <h3>Top Albums</h3>
+  <ul>
+    <% @albums.each do |album| %>
+    <li>
+      <h4>
+        <%= link_to album.title, work_path(album.id) %>
+        <small>by <%= album.creator %></small>
+      </h4>
+      <p>vote count here</p>
+    </li>
+    <% end %>
+  </ul>
+</section>
