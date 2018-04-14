@@ -61,13 +61,14 @@ describe "self methods" do
     end
     movies.length.must_equal 12
   end
+end
 
-  it "must return array with work with highest number of votes at index 0" do
-    books = Work.books
-    (books[0].votes.count >= books[1].votes.count).must_equal true
+describe "#top_ranked" do
+  it "must return the work with highest number of votes" do
+    top_books = Work.books.top_ranked
+    top_movies = Work.movies.top_ranked
 
-    movies = Work.movies
-    (movies[0].votes.count >= movies[1].votes.count).must_equal true
+    top_books.first.title.must_equal "Harry Potter"
+    top_movies.first.title.must_equal "I Love You Man"
   end
-
 end
