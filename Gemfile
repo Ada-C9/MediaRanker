@@ -67,6 +67,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-screenshot'
   gem 'minitest-rails'
   gem 'minitest-reporters'
+  gem 'minitest-rails-capybara'
+  gem 'poltergeist'
 end
