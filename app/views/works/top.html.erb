@@ -2,8 +2,8 @@
 <section class='top-media'>
   <section>
     <h3>Top Movies</h3>
-    <% @works.each do |work| %>
-    <% work.category == 'movie'%>
+    <% @works.where(category: 'movie').top_votes.take(10).each do |work| %>
+    
     <ul class="no-bullet">
       <li>
         <strong> <%= work.title %> </strong> <%= work.created_by%>
