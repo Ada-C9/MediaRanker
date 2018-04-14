@@ -4,7 +4,6 @@ class Work < ApplicationRecord
 
   validates :title, presence: {message: "can't be blank"}
   validates :title, uniqueness: {message:"has already been taken"}
-  validates :description, length: {maximum: 500, message: "Description is too long"}
 
 
 

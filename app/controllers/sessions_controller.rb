@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
         flash[:success] = "Successfully created new user #{@user.name} with ID #{@user.id}"
         redirect_to root_path
       else
-        flash[:failure] = "A problem occurred. Could not log in"
+        flash.now[:failure] = "A problem occurred. Could not log in"
+        flash.now[:error] = @user.errors.messages
         render :new
       end
     end
