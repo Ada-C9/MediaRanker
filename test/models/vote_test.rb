@@ -3,28 +3,34 @@ require "test_helper"
 describe Vote do
   let(:vote) { Vote.new }
 
-  it "must be valid" do\
-    value(vote).must_be :valid?
+  it "must belong to a user" do
+    vote.valid?.must_equal false
+    vote.errors.must_include :user_id
   end
 
-  it "does not allow voting twice" do
-    user = nil
-    work = nil
+  it "must belong to a work id" do
+    vote.valid?.must_equal false
+    vote.errors.must_include :work_id
 
-    vote = Vote.create!(user: user, work: work)
-    vote2 = Vote.new(user: user, work: work)
-
-    expect(vote2.valid?).to eq(false)
-
-    expect(vote2.errors[:user])
-      .to include("You cannot vote for same work twice.")
   end
 
-  it 'can assign a user to a vote' do
-    user = User.create!(username: "Nora")
-    vote = Vote.new(user: user)
+  it 'must respond to user' do
+    vote = votes(:vote_one)
+    vote.must_respond_to :user
+  end
 
-    vote.user_id.must_equal user.id
+  it 'must respond to work' do
+    vote = votes(:vote_one)
+    vote.must_respond_to :work
+  end
 
+  it 'must have one user' do
+    todd = users(:todd)
+    votes(:vote_five).user.id.must_equal todd.id
+  end
+
+  it 'must have one work' do
+    harry_potter = works(:harry_potter)
+    votes(:vote_one).work.id.must_equal harry_potter.id
   end
 end
