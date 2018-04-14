@@ -1,7 +1,7 @@
 class Work < ApplicationRecord
   has_many :votes
 
-  validates :title, :created_by, :publication_date, :category, :presence => true
+  # validates :title, :created_by, :publication_date, :category, :presence => true
 
   def self.all_albums
     return Work.where(category: "album")
@@ -40,7 +40,7 @@ class Work < ApplicationRecord
     ordered_work = works.sort {
       |work1, work2| work2.total_work_vote <=> work1.total_work_vote
     }
-    # raise 
+    # raise
     return ordered_work.first
 
   end
