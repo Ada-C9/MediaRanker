@@ -1,0 +1,244 @@
+vote_0:
+  work: work_1
+  user: user_1
+vote_1:
+  work: work_1
+  user: user_2
+vote_2:
+  work: work_2
+  user: user_2
+vote_3:
+  work: work_1
+  user: user_3
+vote_4:
+  work: work_2
+  user: user_3
+vote_5:
+  work: work_3
+  user: user_3
+vote_6:
+  work: work_1
+  user: user_4
+vote_7:
+  work: work_2
+  user: user_4
+vote_8:
+  work: work_3
+  user: user_4
+vote_9:
+  work: work_4
+  user: user_4
+vote_10:
+  work: work_1
+  user: user_5
+vote_11:
+  work: work_2
+  user: user_5
+vote_12:
+  work: work_3
+  user: user_5
+vote_13:
+  work: work_4
+  user: user_5
+vote_14:
+  work: work_5
+  user: user_5
+vote_15:
+  work: work_1
+  user: user_6
+vote_16:
+  work: work_2
+  user: user_6
+vote_17:
+  work: work_3
+  user: user_6
+vote_18:
+  work: work_4
+  user: user_6
+vote_19:
+  work: work_5
+  user: user_6
+vote_20:
+  work: work_6
+  user: user_6
+vote_21:
+  work: work_1
+  user: user_7
+vote_22:
+  work: work_2
+  user: user_7
+vote_23:
+  work: work_3
+  user: user_7
+vote_24:
+  work: work_4
+  user: user_7
+vote_25:
+  work: work_5
+  user: user_7
+vote_26:
+  work: work_6
+  user: user_7
+vote_27:
+  work: work_7
+  user: user_7
+vote_28:
+  work: work_1
+  user: user_8
+vote_29:
+  work: work_2
+  user: user_8
+vote_30:
+  work: work_3
+  user: user_8
+vote_31:
+  work: work_4
+  user: user_8
+vote_32:
+  work: work_5
+  user: user_8
+vote_33:
+  work: work_6
+  user: user_8
+vote_34:
+  work: work_7
+  user: user_8
+vote_35:
+  work: work_8
+  user: user_8
+vote_36:
+  work: work_1
+  user: user_9
+vote_37:
+  work: work_2
+  user: user_9
+vote_38:
+  work: work_3
+  user: user_9
+vote_39:
+  work: work_4
+  user: user_9
+vote_40:
+  work: work_5
+  user: user_9
+vote_41:
+  work: work_6
+  user: user_9
+vote_42:
+  work: work_7
+  user: user_9
+vote_43:
+  work: work_8
+  user: user_9
+vote_44:
+  work: work_9
+  user: user_9
+vote_45:
+  work: work_1
+  user: user_10
+vote_46:
+  work: work_2
+  user: user_10
+vote_47:
+  work: work_3
+  user: user_10
+vote_48:
+  work: work_4
+  user: user_10
+vote_49:
+  work: work_5
+  user: user_10
+vote_50:
+  work: work_6
+  user: user_10
+vote_51:
+  work: work_7
+  user: user_10
+vote_52:
+  work: work_8
+  user: user_10
+vote_53:
+  work: work_9
+  user: user_10
+vote_54:
+  work: work_10
+  user: user_10
+vote_55:
+  work: work_1
+  user: user_11
+vote_56:
+  work: work_2
+  user: user_11
+vote_57:
+  work: work_3
+  user: user_11
+vote_58:
+  work: work_4
+  user: user_11
+vote_59:
+  work: work_5
+  user: user_11
+vote_60:
+  work: work_6
+  user: user_11
+vote_61:
+  work: work_7
+  user: user_11
+vote_62:
+  work: work_8
+  user: user_11
+vote_63:
+  work: work_9
+  user: user_11
+vote_64:
+  work: work_10
+  user: user_11
+vote_65:
+  work: work_11
+  user: user_11
+
+vote_66:
+  work: work_12
+  user: user_1
+vote_67:
+  work: work_13
+  user: user_1
+vote_68:
+  work: work_13
+  user: user_2
+vote_69:
+  work: work_14
+  user: user_1
+vote_70:
+  work: work_14
+  user: user_2
+vote_71:
+  work: work_14
+  user: user_3
+vote_72:
+  work: work_15
+  user: user_1
+vote_73:
+  work: work_15
+  user: user_2
+vote_74:
+  work: work_15
+  user: user_3
+vote_75:
+  work: work_15
+  user: user_4
+vote_76:
+  work: work_16
+  user: user_1
+vote_77:
+  work: work_16
+  user: user_2
+vote_78:
+  work: work_16
+  user: user_3
+vote_79:
+  work: work_16
+  user: user_4
+vote_80:
+  work: work_16
+  user: user_5
