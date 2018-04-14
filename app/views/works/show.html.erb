@@ -1,0 +1,29 @@
+<h3><%=@work.title%></h3>
+<p>Created by: <%=@work.creator%></p>
+<p>Published: <%=@work.publication_year%></p>
+<p>Description: <%=@work.description%></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+<section class="show-buttons">
+<p><%= link_to "Delete", delete_work_path, method: :delete, class: "button alert", data:{ confirm: "Are you sure?"}%><p>
+<p><%= link_to "Edit", edit_work_path, class: "button"%></p>
+<p><%= link_to "Back to media ranks", works_path, class: "button"%></p>
+<p><%= link_to "Upvote", upvote_path(work:@work),method: :post, class: "button"%></p>
+</section>
+<h3><%=@work.votes.count%> Votes for this <%=@work.category%></h3>
+
+<%@work.votes.zip(@work.users).each do |vote,user|%>
+<tr>
+  <td><%=link_to "#{user.name}",user_path(user.id)%></td>
+  <td><%=vote.created_at%></td>
+</tr>
+<%end%>
+</table>

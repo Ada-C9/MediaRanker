@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html id="complete-style">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+<section id="intro">
+  <h2 id="main-title"> <span id="title">Media Ranker</span><small id="small-title"> | Ranking the Best of Everything</small> </h2>
+
+  <nav>
+    <ul id="nav-bar">
+      <li><%=link_to "View top media", homepage_path, class:"button"%></li>
+      <li><%= link_to "View all media", works_path, class: "button"%></li>
+      <li><%= link_to "Add a new work", new_work_path, class:"button"%></li>
+      <li><%= link_to "View all users", users_path, class:"button"%></li>
+      <%if @username && @username.name %>
+        <li id="logout"><%=link_to "Logout", logout_path, method: :delete, class:"button"%></li>
+        <li><%=link_to "Logged in as #{@username.name}", user_path(@username.id),class:"button"%></li>
+      <%else%>
+          <li id="login"><%=link_to "Login", login_path,class:"button"%></li>
+      <%end%>
+    </ul>
+  </nav>
+</section>
+
+  <body>
+
+    <main>
+      <section>
+      <ul class="flash-items">
+        <%flash.each do |field,message|%>
+        <li class="primary callout"><%=message%></li>
+        <%end%>
+      <ul>
+      </section>
+
+    </main>
+    </section>
+    <%= yield %>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+
+<h3 id="media-spotlight">Media Spotlight:<span id="top-work-title"> <%=link_to Work.highest_rated_work.title, work_path(Work.highest_rated_work.id), :id=> 'link-title'%> by <%=Work.highest_rated_work.creator%></span></h3>
+
+<p id="spotlight-count"><%=Work.highest_rated_work.votes.count%> Votes - <%=Work.highest_rated_work.description%></p>
+
+<section class="top-ten-container">
+<section class="top-ten">
+  <h3>Top Movies</h3>
+  <ul>
+  <%Work.where(category: "Movie").top_ten.each do |top_movie|%>
+  <li><h4><%=link_to top_movie.title, work_path(top_movie.id),:class => 'link'%></h4></li>
+  <small>By <%=top_movie.creator%></small>
+  <p><%=top_movie.votes.count%> Votes</p>
+  <%end%>
+</ul>
+</section>
+
+<section class="top-ten">
+  <h3>Top Books</h3>
+  <ul>
+  <%Work.where(category: "Book").top_ten.each do |top_book|%>
+  <li><h4><%=link_to top_book.title, work_path(top_book.id),:class => 'link'%></h4></li>
+  <small>By <%=top_book.creator%></small>
+  <p><%=top_book.votes.count%> Votes</p>
+  <%end%>
+</ul>
+</section>
+
+
+
+<section class="top-ten">
+  <h3>Top Albums</h3>
+  <ul>
+  <%Work.where(category: "Album").top_ten.each do |top_album|%>
+  <li><h4><%=link_to top_album.title, work_path(top_album.id),:class => 'link'%></h4></li>
+  <small>By <%=top_album.creator%></small>
+  <p><%=top_album.votes.count%> Votes</p>
+  <%end%>
+</ul>
+</section>
+
+
+</section>
