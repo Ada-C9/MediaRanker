@@ -1,0 +1,27 @@
+<% if @top_work %>
+<h4>Media Spotlight: <%= link_to(@top_work.title, work_path(@top_work.id)) %> by <%= @top_work.creator%></h4>
+
+<h6><%= @top_work.vote_count %> votes - <%= @top_work.description%></h6><br>
+<%  end %>
+
+
+<h5>Top Movies</h5>
+<ul>
+  <% @movies.first(10).each do |movie|%>
+  <li><%= link_to movie.title, work_path(movie.id) %> by <%= movie.creator %></li>
+  <% end %>
+</ul>
+
+<h5>Top Books</h5>
+<ul>
+  <% @books.first(10).each do |book|%>
+  <li><%= link_to book.title, work_path(book.id) %> by <%= book.creator %></li>
+  <% end %>
+</ul>
+
+<h5>Top Albums</h5>
+<ul>
+  <% @albums.first(10).each do |album|%>
+  <li><%= link_to album.title, work_path(album.id) %> by <%= album.creator %></li>
+  <% end %>
+</ul>
