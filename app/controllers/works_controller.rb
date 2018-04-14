@@ -6,7 +6,6 @@ class WorksController < ApplicationController
     @top_movies = Work.top_works("movie")
     @top_books = Work.top_works("book")
 
-    #use the top work thing here.
     @spotlight = Work.first
   end
 
@@ -63,10 +62,6 @@ class WorksController < ApplicationController
     if @work
       @work.destroy
       flash[:success] = "Sucessfully destroyed #{@work.category} #{@work.id}"
-
-      # there was no flash if I deleted an item that has already been deleted.
-    else
-      # flash[:alert] = {book: "Book does not exist"}
     end
     redirect_to root_path
   end

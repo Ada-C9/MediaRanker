@@ -8,9 +8,7 @@ class Work < ApplicationRecord
   end
 
   def self.top_works (type)
-    # how should I handle items with nil votes?
-    # rewrite order to treat nil as 0 ?
-    Work.order(:votes).limit(10)
+    @all_works = Work.where(category: type).limit(10)
   end
 
 end

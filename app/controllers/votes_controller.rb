@@ -6,10 +6,8 @@ class VotesController < ApplicationController
     @votes = Vote.all
   end
 
-  # I don't think I need to see the invididual votes or all the votes.
   def show
   end
-
 
   def edit
   end

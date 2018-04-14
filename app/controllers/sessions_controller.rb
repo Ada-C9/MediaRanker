@@ -1,12 +1,10 @@
 class SessionsController < ApplicationController
   def create
-    # checking if the user with this username
     @user = User.find_by username: params[:user][:username]
 
     if @user
       flash[:success] = "Welcome back #{@user.username}"
 
-      # login this stores the user id into session
       session[:user_id] = @user.id
     else
       @user = User.create username: params[:user][:username]
