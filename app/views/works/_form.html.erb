@@ -1,5 +1,10 @@
-<h2 class="my-class"><%=page_title%></h2>
+<%if @work.errors.any? %>
+  <%@work.errors.each do |key,message| %>
+    <div class="primary callout"><span>Error: <%=message%></span></div>
+    <%end%>
+<%end%>
 
+<h2 class="my-class"><%=page_title%></h2>
 
 <%=form_for @work do |f| %>
 <%= f.select :category, [['movie'],['book'],['album']], :prompt => 'Select a Category' %>

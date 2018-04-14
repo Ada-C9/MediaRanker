@@ -12,38 +12,29 @@ describe User do
     value(user.date_joined).must_equal  "5/5/2008"
   end
 
-  it "User is able to cast a vote" do
-    #user begins with votes of 0
+  it "User is able to cast a vote and display count" do
     value(user.votes.count).must_equal 0
     temp_work = Work.first
+    a_vote = Vote.create(user_id: user.id, work_id: temp_work.id)
 
-    #assign a work
-    user.works << temp_work
-
-    #vote should be increased
     value(user.votes.count).must_equal 1
+    value(user.votes[0].user_id).must_equal user.id
+    value(user.votes[0].work_id).must_equal temp_work.id
   end
 
-  it "User is able to cast multiple votes" do
+  it "User is able to cast many votes and display count" do
     value(user.votes.count).must_equal 0
     temp_work = Work.find_by(title: "Dangerous in Love")
     second_work = Work.find_by(title: "Sound of Nigera")
     third_work = Work.find_by(title: "Malibu")
 
-
-    user.works << temp_work
-    user.works << second_work
-    user.works << third_work
+    first_vote = Vote.create(user_id: user.id, work_id: temp_work.id)
+    second_vote = Vote.create(user_id: user.id, work_id: second_work.id)
+    third_vote = Vote.create(user_id: user.id, work_id: third_work.id)
 
     value(user.votes.count).must_equal 3
   end
-  # it "User is unable to vote for the same Work more than once" do
-  #   #have the user vote, an error should be created when the same work is voted again
-  #   get_out = Work.find_by(title:"Get Out")
-  #   user.works << get_out
-  #   (user.works << get_out).valid? false
-  #
-  # end
+
 
     it "User is able to display associated works" do
       value(user.works.count).must_equal 0
@@ -57,6 +48,23 @@ describe User do
       value(user.works.where(title: "Dangerous in Love").first.title).must_equal "Dangerous in Love"
       value(user.works.where(title: "Sound of Nigera").first.title).must_equal "Sound of Nigera"
     end
+
+    it 'An empty input will violate the presence validation' do
+        user = User.new()
+        assert_not user.valid?
+    end
+
+    it 'An empty string input will violate the presence the validation' do
+      user = User.new(name:'')
+      assert_not user.valid?
+    end
+
+    it 'A nill input will violate the presence validation' do
+        user = User.new(name:nil)
+        assert_not user.valid?
+    end
+
+
 
 
 end

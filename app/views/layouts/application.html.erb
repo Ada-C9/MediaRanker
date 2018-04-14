@@ -33,10 +33,10 @@
   <body>
 
     <main>
-      <section class="flash">
-      <ul>
+      <section>
+      <ul class="flash-items">
         <%flash.each do |field,message|%>
-        <li><%=message%></li>
+        <li class="primary callout"><%=message%></li>
         <%end%>
       <ul>
       </section>

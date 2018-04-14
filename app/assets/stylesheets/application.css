@@ -110,3 +110,17 @@
 #top-work-title{
   color:#26A69A;
 }
+
+.flash-items{
+  list-style-type:none;
+  padding:20px;
+}
+
+.show-buttons{
+  display:flex;
+  margin-left:15px;
+}
+
+.show-buttons p{
+  padding-right:5px;
+}
