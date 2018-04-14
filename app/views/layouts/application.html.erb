@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel=“icon” type=“image/jpg” href=“/assets/images/owl.jpg” />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+  <header class="page-header row">
+    <h2>
+      <strong><%= link_to "Media Ranker", root_path %></strong>
+      <small>Ranking the Best of Everything</small>
+    </h2>
+
+
+    <nav>
+      <ul>
+        <%=link_to "View top media", root_path, class: "button" %>
+        <%=link_to "View all media", works_path, class: "button"%>
+        <%=link_to "Add a new work", new_work_path, class: "button"%>
+        <%=link_to "View all users", users_path, class: "button"%>
+
+        <div class="float-right">
+          <% if @user && @user.name != nil %>
+          <%= link_to "Logged in as #{@user.name}", user_path(@user[:id]), class: "button" %>
+          <%= link_to "Logout", logout_path, method: :delete , class: "button"  %>
+          <% else %>
+          <%= link_to "Login", login_path, class: "button" %>
+          <% end %>
+        </div>
+
+      </ul>
+    </nav>
+  </header>
+</head>
+
+<body>
+  <section class=" success">
+    <% flash.each do |name, message| %>
+
+    <section class="callout <%= name %>">
+
+      <% if name == "alert" %>
+
+          <strong> <%= name.capitalize %>: </strong> <%=message%>
+
+
+      <% else %>
+
+      <p><%= message %></p>
+      <% end%>
+    </section>
+    <% end%>
+  </section>
+
+
+  <%= yield %>
+
+</body>
+</html>
