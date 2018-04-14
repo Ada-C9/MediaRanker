@@ -1,3 +1,74 @@
 // Place all the styles related to the Votes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3 {
+font-family: "Gudea", sans-serif;
+background: #fefefe;
+-webkit-font-smoothing: antialiased;
+display: block;
+font-weight: bold
+}
+
+section {
+    display: block;
+}
+
+
+section.spotlight>div {
+    padding: 0 2rem 2rem 2rem;
+}
+
+.media-spotlight-header {
+    color: #424242;
+}
+
+.row::before, .row::after {
+    display: table;
+    content: ' ';
+}
+
+.row::after {
+    clear: both;
+}
+
+.root-hr {
+    margin: 0px auto 75px auto;
+    color: #EEEEEE;
+}
+
+.top-ten-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+}
+
+
+
+.top-ten h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  list-style-position: outside;
+  line-height: 1.6;
+}
+
+a, h3 {
+    color: #26A69A;
+}
+
+h4 {
+    font-family: "Gudea", sans-serif;
+    font-weight: bold
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: inherit;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
