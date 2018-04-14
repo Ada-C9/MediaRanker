@@ -4,16 +4,33 @@ class Work < ApplicationRecord
   validates :title, uniqueness: { scope: :category, message: "That title already exists in this category." }
 
   def vote_count
-    self.votes.count
+    votes.count
+  end
+
+  def self.movies
+    with_category('movie')
+  end
+
+  def self.books
+    with_category('book')
+  end
+
+  def self.albums
+    with_category('album')
+  end
+
+  def self.with_category(name)
+    where(category: name)
   end
 
   def self.valid_categories
     %w[album movie book]
   end
 
-  def top_media
-
+  def self.top_ranked
+    left_joins(:votes)
+      .group(:id)
+      .order('COUNT(votes.id) DESC')
   end
-
 
 end
