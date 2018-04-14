@@ -1,4 +1,4 @@
-<% most_votes = Work.top_work(@works) %>
+<% most_votes = @works.sort.reverse.first %>
 
 <main>
   <section class="row-spotlight">
