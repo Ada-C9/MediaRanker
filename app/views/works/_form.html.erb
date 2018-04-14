@@ -1,7 +1,7 @@
 <%= form_for @work do |f|%>
 
   <%= f.label "Category:" %>
-  <%= f.select :category, Work.valid_category, :prompt => "Select One" %>
+  <%= f.select :category, @valid_categories, :prompt => "Select One" %>
   <br>
   <%= f.label "title:" %>
   <%= f.text_field :title %>

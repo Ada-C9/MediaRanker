@@ -5,4 +5,6 @@ class ApplicationController < ActionController::Base
     @user = User.find_by(id: session[:user_id])
   end
 
+  VALID_CATEGORIES = %w[album book movie]
+
 end

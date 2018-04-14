@@ -13,7 +13,9 @@ class WorksController < ApplicationController
   end
 
   def new
+    @valid_categories = VALID_CATEGORIES
     @work = Work.new
+
   end
 
   def create
