@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beyhiver2000:
+  username: beyhiver2000
+  joindate: 2017-04-19
+
+potterhead:
+  username: potterhead
+  joindate: 2017-04-19
+
+child2001:
+  username: destiny
+  joindate: 2010-04-05
+
+hermonie:
+  username: leviosa
+  joindate: 2017-04-02

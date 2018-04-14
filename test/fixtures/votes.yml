@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vote_1:
+  work: beyonce
+  user: beyhiver2000
+  vote_date: 2017-04-19
+
+vote_2:
+  work: hp1
+  user: potterhead
+  vote_date: 2017-04-19
+
+vote_3:
+  work: beyonce
+  user: hermonie
+  vote_date: 2017-04-19
+
+vote_4:
+  work: hp1
+  user: potterhead
+  vote_date: 2017-04-19
