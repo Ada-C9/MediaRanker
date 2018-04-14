@@ -1,9 +1,40 @@
 <h2> Homepage </h2>
 
 <spotlight>
-
+  <h2>Media Spotlight: <%= @works.spotlight.title %></h2>
 </spotlight>
 
-<toplists>
-  
-</toplists>
+<categories>
+  <top-movies>
+    <h2>Top Movies</h2>
+    <% @works.top_ten_movies.each do |work| %>
+      <li><h4>
+        <%= work.title %>
+        <small> by <%= work.creator %></small>
+      </h4></li>
+      <p><%= work.votes.count %> votes</p>
+    <% end %>
+  </top-movies>
+
+  <top-books>
+    <h2>Top Books</h2>
+    <% @works.top_ten_books.each do |work| %>
+    <li><h4>
+      <%= work.title %>
+      <small> by <%= work.creator %></small>
+    </h4></li>
+    <p><%= work.votes.count %> votes</p>
+    <% end %>
+  </top-books>
+
+  <top-albums>
+    <h2>Top Albums</h2>
+    <% @works.top_ten_albums.each do |work| %>
+    <li><h4>
+      <%= work.title %>
+      <small> by <%= work.creator %></small>
+    </h4></li>
+    <p><%= work.votes.count %> votes</p>
+    <% end %>
+  </top-albums>
+</categories>

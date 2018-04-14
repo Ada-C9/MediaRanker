@@ -6,7 +6,7 @@
 
 <%= link_to "Back to media ranks", votes_path, class: "button" %>
 <%= link_to "Edit", edit_work_path, class: "button" %>
-<%= link_to "Placeholder Upvote", work_path, class: "button" %>
+<%= link_to "Upvote", new_vote_path(@work), method: :post, class: "button" %>
 <%= link_to "Delete", votes_path, class: "button" %>
 
 <h2># Votes for this <%= @work.category %></h2>
@@ -16,6 +16,10 @@
     <th>User</th>
     <th>Date</th>
   </tr>
-  <tr>
-  </tr>
+  <% @work.votes.each do |vote| %>
+    <tr>
+      <td><%= vote.user.name %></td>
+      <td><%= vote.created_at %></td>
+    </tr>
+    <% end %>
 </table>
