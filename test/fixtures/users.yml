@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user_one:
+  user_name: MaggieMutt
+
+user_two:
+  user_name: LucyCat
+
+user_three:
+  user_name: KajikaTheKitty
+
+user_four:
+  user_name: MaudeTheNiceBird
+
+user_five:
+  user_name: NedrickTheChickenWingBird
+
+user_six:
+  user_name: PicklesTheChicken
+
+user_seven:
+  user_name: SweetPeaTheRat

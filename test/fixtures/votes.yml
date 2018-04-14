@@ -1,0 +1,69 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vote_one:
+  user: user_one
+  work: work_one
+
+vote_two:
+  user: user_two
+  work: work_one
+
+vote_three:
+  user: user_three
+  work: work_one
+
+vote_four:
+  user: user_four
+  work: work_one
+
+vote_five:
+  user: user_one
+  work: work_two
+
+vote_six:
+  user: user_two
+  work: work_two
+
+vote_seven:
+  user: user_one
+  work: work_eleven
+
+vote_eight:
+  user: user_two
+  work: work_eleven
+
+vote_nine:
+  user: user_three
+  work: work_eleven
+
+vote_ten:
+  user: user_one
+  work: work_twelve
+
+vote_eleven:
+  user: user_two
+  work: work_twelve
+
+vote_twelve:
+  user: user_three
+  work: work_twelve
+
+vote_thirteen:
+  user: user_one
+  work: work_twenty
+
+vote_fourteen:
+  user: user_two
+  work: work_twenty
+
+vote_fifteen:
+  user: user_three
+  work: work_twenty
+
+vote_sixteen:
+  user: user_one
+  work: work_twenty_one
+
+vote_seventeen:
+  user: user_one
+  work: work_twenty_two
