@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get '/login', to: 'sessions#login_form', as: 'login'
+
+  post '/login', to: 'sessions#login'
+
+  post '/logout', to: 'sessions#logout'
+
   root 'homepage#index'
 
   post 'works/:id/upvote', to:"works#upvote", as: 'upvote'
