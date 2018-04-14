@@ -33,9 +33,19 @@ describe User do
   describe 'relations' do
 
     it 'has many votes' do
+      user = users(:luke)
+      user.votes.length.must_equal 3
+      user.votes.must_include votes(:book_vote)
+      user.votes.must_include votes(:movie_vote)
+      user.votes.must_include votes(:album_vote)
     end
 
     it 'has many works through votes' do
+      user = users(:luke)
+      user.works.length.must_equal 3
+      user.works.must_include works(:kindred)
+      user.works.must_include works(:black_panther)
+      user.works.must_include works(:american_teen)
     end
 
   end

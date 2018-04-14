@@ -30,9 +30,17 @@ describe Work do
   describe 'relations' do
 
     it 'has many votes' do
+      work = works(:black_panther)
+      work.votes.length.must_equal 2
+      work.votes.must_include votes(:movie_vote)
+      work.votes.must_include votes(:another_movie_vote)
     end
 
     it 'has many users through votes' do
+      work = works(:black_panther)
+      work.users.length.must_equal 2
+      work.users.must_include users(:luke)
+      work.users.must_include users(:samuel)
     end
 
   end

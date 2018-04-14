@@ -11,8 +11,12 @@ book_vote:
 
 movie_vote:
   user: luke
-  work: kindred
+  work: black_panther
+
+another_movie_vote:
+  user: samuel
+  work: black_panther
 
 album_vote:
   user: luke
-  work: kindred
+  work: american_teen
