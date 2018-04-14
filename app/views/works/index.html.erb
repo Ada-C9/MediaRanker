@@ -15,7 +15,8 @@
       </tr>
     </thead>
     <tbody>
-      <% @works.where(category: "album").each do |work| %>
+      <% @sorted_albums = Work.where(category: "album").works_ordered_by_popularity %>
+      <% @sorted_albums.each do |work| %>
       <tr>
         <td><%= work.report_vote_tally(work.id) %></td>
         <td><%= link_to work.title, work_path(work[:id]) %></td>
@@ -41,7 +42,8 @@
       </tr>
     </thead>
     <tbody>
-      <% @works.where(category: "book").each do |work| %>
+      <% @sorted_books = Work.where(category: "book").works_ordered_by_popularity %>
+      <% @sorted_books.each do |work| %>
       <tr>
         <td><%= work.report_vote_tally(work.id) %></td>
         <td><%= link_to work.title, work_path(work[:id]) %></td>
@@ -68,7 +70,8 @@
       </tr>
     </thead>
     <tbody>
-      <% @works.where(category: "movie").each do |work| %>
+      <% @sorted_movies = Work.where(category: "movie").works_ordered_by_popularity %>
+      <% @sorted_movies.each do |work| %>
       <tr>
         <td><%= work.report_vote_tally(work.id) %></td>
         <td><%= link_to work.title, work_path(work[:id]) %></td>

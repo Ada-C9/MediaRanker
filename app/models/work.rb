@@ -20,6 +20,15 @@ class Work < ApplicationRecord
     return sorted_tallies
   end
 
+  def self.works_ordered_by_popularity
+    all_tallied = works_with_vote_tallies
+    just_works = []
+    all_tallied.each_with_index do | work, i |
+      just_works[i] = all_tallied[i][0]
+    end
+    return just_works
+  end
+
   def self.get_top_ten_works_with_tallies
     top_ten = works_with_vote_tallies.first(10)
     return top_ten
