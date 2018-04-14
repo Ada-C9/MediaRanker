@@ -7,12 +7,11 @@ class SessionsController < ApplicationController
     user = params[:user]
     @user = User.find_by(username: user[:username])
 
-    # check if using if @user is better
     if @user.nil?
       @user = User.new(username: user[:username])
       if @user.save
         session[:user_id] = @user.id
-        flash[:success] = 'Successfully created user and logged in'
+        flash[:success] = "Successfully created new user #{@user.username} with ID #{@user.id}"
         redirect_to root_path
       else
         flash.now[:failure] = 'Unable to create user and login'
@@ -20,7 +19,7 @@ class SessionsController < ApplicationController
       end
     else
       session[:user_id] = @user.id
-      flash[:success] = "#{@user.username} successfully logged in"
+      flash[:success] = "Successfully logged in as existing user #{@user.username}"
       redirect_to root_path
     end
   end

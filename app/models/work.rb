@@ -9,15 +9,17 @@ class Work < ApplicationRecord
     return self.all.max_by { |work| work.votes.length }
   end
 
-  def self.order_by_vote(category_id)
-    category = Work.where(category_id: category_id)
-    return category.sort_by {|work| work.votes.count}.reverse
-  end
-
   # def self.order_by_vote(category_id)
-  #   work_category = Work.where(category_id: category_id)
-  #   ordered = work_category.joins(:votes).order('votes.count').group(:work_id)
-  #
-  #   return ordered
+  #   category = Work.where(category_id: category_id)
+  #   return category.sort_by {|work| work.votes.count}.reverse
   # end
+
+  def self.order_by_vote(category_id)
+    work_category = Work.where(category_id: category_id)
+    id = work_category.joins('left join votes on votes.work_id = works.id').select('works ').order('count(votes.id)').group('works.id')
+
+    ordered = Work.where(id: id)
+
+    return ordered
+  end
 end

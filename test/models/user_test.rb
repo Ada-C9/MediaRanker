@@ -31,9 +31,11 @@ describe User do
       result = @user.valid?
 
       result.must_equal false
+      @user.errors.messages.must_include :username
     end
 
     it 'cannot be created if the username has been taken' do
+      # I know this situation will not happen on the website, but maybe can be useful if reading from a CSV or creating users through the console.
       @user.save
       username = @user.username
       user2 = User.new(username: username)
