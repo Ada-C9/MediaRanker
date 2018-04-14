@@ -1,0 +1,16 @@
+# CURRENTLY USING
+# Read about fixtures at
+
+one:
+  category: 'movie'
+  title: 'Singin In The Rain'
+  creator: MyString
+  pub_year: MyString
+  description: MyString
+
+two:
+  category: 'album'
+  title: 'Stories'
+  creator: 'Avicii'
+  pub_year: MyString
+  description: MyString

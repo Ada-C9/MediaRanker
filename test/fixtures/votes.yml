@@ -1,0 +1,10 @@
+# CURRENTLY NOT USING
+one:
+  user_id: 1
+  art_id: 1
+  art: one
+
+two:
+  user_id: 1
+  art_id: 1
+  art: two

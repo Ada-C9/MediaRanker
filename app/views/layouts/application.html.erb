@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= favicon_link_tag asset_path('owl.jpg'), :rel => 'icon', :type =>  'image/jpg' %>
+  <title>AL's Media Ranker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class='page_header'>
+    <h2>
+      <a class="title">Media Ranker</a>
+      <small>Ranking The Best Of Everything</small>
+    </h2>
+
+    <nav>
+      <!-- TODO: Link this button to Top Media once I make it -->
+      <a class="button" href="/">View Top Media</a>
+
+      <a class="button" href="/arts">View All Media</a>
+
+      <a class="button" href="/arts/new">Add a New Work</a>
+
+      <a class="button" href="/users">View All Users</a>
+
+      <div class="float-right">
+        <a class="login_and_logout">
+          <% if @user %>
+          <p class="button">Logged in as <%= link_to @user.user_name, user_path(@user) %>
+          </p>
+          <%= link_to "Log Out", logout_path, method: :post, class: "button float-right" %>
+          <% else %>
+          <%= link_to "Log In", login_path, class: "button float-right" %>
+          <% end %>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <% unless flash.empty? %>
+  <section class="callout secondary">
+    <% flash.each do |name, message| %>
+    <div class="<%= name %>"><%= message %></div>
+    <% end %>
+  </section>
+  <% end %>
+  <%= yield %>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Votes
+      </th>
+      <th>
+        Title
+      </th>
+      <th>
+        Created By
+      </th>
+      <th>
+        Published
+      </th>
+      <th>
+        Upvote
+      </th>
+    </tr>
+  </thead>
+  <% arts.each do |art| %>
+  <tr>
+    <td>
+      <%= art.vote_count %>
+    </td>
+      <td>
+        <%= link_to(art.title, art_path(art)) %>
+      </td>
+      <td>
+        <%= art.creator %>
+      </td>
+      <td>
+        <%= art.pub_year %>
+      </td>
+      <td>
+        <%= link_to "Upvote", upvote_path(art), class: "button upvote", method: :post %>
+      </td>
+  </tr>
+  <% end %>
+</table>
