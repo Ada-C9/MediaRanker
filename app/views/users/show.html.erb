@@ -1,4 +1,4 @@
-<% @user = User.find(session[:user_id])%>
+<% @user = User.find(params[:id])%>
 <h3>User Summary: <%= @user.name %></h3>
 
 <table>
