@@ -1,0 +1,35 @@
+<main class="row">
+  <section>
+    <h3><strong>List of users</strong></h3>
+
+    <table>
+      <tr>
+        <td>
+          <strong>Username</strong>
+        </td>
+        <td width="100">
+          <strong>Votes</strong>
+        </td>
+        <td width="200">
+          <strong>Joined</strong>
+        </td>
+      </tr>
+
+
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to "#{user.name}", user_path(user) %>
+        </td>
+        <td>
+          <%= user.votes.count %>
+        </td>
+        <td>
+          <%= user.joined %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </section>
+  <%= link_to("Back to media list", root_path, class: "button") %>
+</main>

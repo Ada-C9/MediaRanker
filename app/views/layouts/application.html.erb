@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 1979" %></title>
+
+ <%= stylesheet_link_tag    "application" %>
+ <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+ <link rel="shortcut icon" type="image/x-icon" href="https://media-ranker-2-0.herokuapp.com/assets/favicon-910822ff6cd5f6d37119171c4b716f1d4e5fe0e8ad5e408627659ebf8d7f16b1.ico", alt: "site logo, an owl">
+</head>
+
+  <body>
+
+    <header class="nav">
+      <nav>
+        <h2><%= link_to("Media Ranker", root_path)%> <small>Ranking the Best of Everything</small></h2>
+
+        <div>
+          <%= link_to("View top media", root_path, class: "button") %>
+
+          <%= link_to("View all media", works_path, class: "button") %>
+
+          <%= link_to("Add a New work", new_work_path, class: "button") %>
+
+          <%= link_to("View all users", users_path, class: "button") %>
+
+            <% if session[:user_id] %>
+            <%= link_to("Log out", logout_path, method: :delete, class: "button float-right") %>
+            <%= link_to("Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button float-right")%>
+            <% else %>
+            <%= link_to "Log in", login_path, class: "button float-right" %>
+            <% end %>
+          </div>
+
+
+
+
+      </nav>
+    </header>
+
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <div class="callout <%= name %>">
+        <%= message %>
+        <% if @vote %>
+        <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+        <% end %>
+      </div>
+      <% end %>
+    </section>
+
+    <%= yield %>
+
+  </body>
+</html>

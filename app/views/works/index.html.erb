@@ -1,0 +1,137 @@
+<main class="row">
+  <section>
+  <h3><strong>List of works</strong></h3>
+
+  <table>
+    <h4><strong>Albums</strong></h4>
+    <tr>
+      <td width="80">
+        <strong>Votes</strong>
+      </td>
+      <td>
+        <strong>Title</strong>
+      </td>
+      <td>
+        <strong>Created By</strong>
+      </td>
+      <td width="100">
+        <strong>Published</strong>
+      </td>
+      <td width="100">
+        <strong>Upvote</strong>
+      </td>
+    </tr>
+
+
+    <% @works.albums.each do |work| %>
+    <tr>
+      <td>
+         <%= work.votes.count %>
+      </td>
+      <td>
+        <%= link_to "#{work.title}", work_path(work) %>
+      </td>
+      <td>
+        <%= work.creator %>
+      </td>
+      <td>
+        <%= work.publication_year %>
+      </td>
+      <td>
+        <%= link_to "Upvote",upvote_path(work), class: "button" %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+
+<table>
+  <h4><strong>Books</strong></h4>
+  <tr>
+    <td width="80">
+      <strong>Votes</strong>
+    </td>
+    <td>
+      <strong>Title</strong>
+    </td>
+    <td>
+      <strong>Created By</strong>
+    </td>
+    <td width="100">
+      <strong>Published</strong>
+    </td>
+    <td width="100">
+      <strong>Upvote</strong>
+    </td>
+  </tr>
+
+
+  <% @works.books.each do |work| %>
+  <tr>
+    <td>
+      <%= work.votes.count %>
+    </td>
+    <td>
+      <%= link_to "#{work.title}", work_path(work) %>
+    </td>
+    <td>
+      <%= work.creator %>
+    </td>
+    <td>
+      <%= work.publication_year %>
+    </td>
+    <td>
+      <%= link_to "Upvote",upvote_path(work), class: "button" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+<table>
+  <h4><strong>Movies</strong></h4>
+  <tr>
+    <td width="80">
+      <strong>Votes</strong>
+    </td>
+    <td>
+      <strong>Title</strong>
+    </td>
+    <td>
+      <strong>Created By</strong>
+    </td>
+    <td width="100">
+      <strong>Published</strong>
+    </td>
+    <td width="100">
+      <strong>Upvote</strong>
+    </td>
+  </tr>
+
+
+  <% @works.movies.each do |work| %>
+  <tr>
+    <td>
+      <%= work.votes.count %>
+    </td>
+    <td>
+      <%= link_to "#{work.title}", work_path(work) %>
+    </td>
+    <td>
+      <%= work.creator %>
+    </td>
+    <td>
+      <%= work.publication_year %>
+    </td>
+    <td>
+      <%= link_to "Upvote",upvote_path(work), class: "button" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</section>
+
+<%= link_to("View top media", root_path, class: "button") %>
+<%= link_to("Add a New work", new_work_path, class: "button") %>
+</main>

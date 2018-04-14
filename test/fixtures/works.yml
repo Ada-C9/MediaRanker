@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+best_movie:
+  category: movie
+  title: Wonder
+  creator: Stephen Chbosky
+  publication_year: 2017
+  description: Based on the book
+
+best_book:
+  category: book
+  title: Wonder Woman
+  creator: William Moulton Marston
+  publication_year: 1941
+  description: Superhero comic book
+
+best_album:
+  category: album
+  title: Wonder Woman 1
+  creator: William Moulton Marston
+  publication_year: 1941
+  description: Superhero comic book
+
+worst_album:
+  category: album
+  title: Wonder Woman 2
+  creator: William Moulton Marston
+  publication_year: 1941
+  description: Superhero comic book
