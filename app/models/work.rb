@@ -6,7 +6,6 @@ class Work < ApplicationRecord
   validates :title, uniqueness: {message:"has already been taken"}
 
 
-
   def self.top_ten_albums
     album = Work.where(category: "album")
     return album.sort_by {|work| work.votes.count }.reverse.take(10)

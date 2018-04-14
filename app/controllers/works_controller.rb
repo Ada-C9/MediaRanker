@@ -1,5 +1,6 @@
-  class WorksController < ApplicationController
+class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
+
   def index
     @works = Work.all
     @albums = Work.where(category: "album").sort_by {|work| work.votes.count }.reverse
