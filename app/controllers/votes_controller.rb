@@ -31,14 +31,6 @@ class VotesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
   def find_vote
     # @vote = Vote.find_by_id(params[:id])
