@@ -20,7 +20,8 @@
       <%= link_to "View All Users", users_path, :class => "button" %>
       <div class="float-right">
         <% if session[:user_id] %>
-        <li class = "button"> Logged in as <%= link_to User.find_by(id: session[:user_id]).user_name, user_path(session[:user_id]), class: "button"%>
+        <li>
+          <%= link_to User.find_by(id: session[:user_id]).user_name, user_path(session[:user_id]), :class => "button"%>
           <%= link_to "Logout", logout_path, method: :delete, :class => "button"%>
         </li>
         <% else %>
@@ -28,8 +29,6 @@
         <% end %>
       </div>
     </nav>
-
-
 
   </head>
 
