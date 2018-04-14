@@ -59,14 +59,28 @@ class WorksController < ApplicationController
 
       @vote = Vote.new(user: @current_user, work: @work)
       if @vote.save
-        flash.notice = "Successfully upvoted #{@work.title}"
-        redirect_to root_path
+        # flash[:status] = :success
+        flash[:messages] = "Successfully upvoted #{@work.title}"
+        status = :found
+
+        case request.fullpath
+        when "/works"
+          redirect works_path
+        when "/books"
+          redirect books_path
+        when "/albums"
+          redirect albums_path
+        when "/movies"
+          redirect movies_path
+        end
+        redirect_back(fallback_location: work_path(@work))
       else
-        flash.now[:notice] = "Could not upvote"
-        render :show
+        flash[:messages] = @vote.errors.messages
+        status = :conflict
       end
     else
       flash.alert = "You must log in to do that"
+      status = :unauthorized
     end
   end
 

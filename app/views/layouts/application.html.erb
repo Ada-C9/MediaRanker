@@ -32,7 +32,7 @@
         <%= link_to "Logout", logout_path, method: :delete, class:"button secondary" %>
         <% else %>
         <% link_to "Log In", login_path, class: "button" %>
-          <a class="button float-right" href="/login">Log In</a>
+        <a class="button float-right" href="/login">Log In</a>
         <% end %>
       </div>
     </nav>
@@ -40,19 +40,19 @@
 
   <section class="flash">
     <% flash.each do |name, message| %>
-    <div class="callout <%= name %>">
-      <%= message %>
-      <% if @vote || @user || @work %>
-      <% models = [@vote, @user, @work]%>
-          <% models.each do |model| %>
-          <% if model %>
-          <% render_error(model) %>
+      <div class="callout <%= name %> status">
+        <%= message %>
+          <% if @vote || @user || @work %>
+          <% models = [@vote, @user, @work]%>
+            <% models.each do |model| %>
+              <% if model %>
+              <% render_error(model) %>
 
-          <%= render partial: 'layouts/error-messages', locals: {model: model} %>
+              <%= render partial: 'layouts/error-messages', locals: {model: model} %>
+              <% end %>
+            <% end %>
           <% end %>
-      <% end %>
-      <% end %>
-    </div>
+      </div>
     <% end %>
   </section>
 
