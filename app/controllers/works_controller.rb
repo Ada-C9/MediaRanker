@@ -17,7 +17,7 @@ class WorksController < ApplicationController
       redirect_to works_path(@work)
     else
       flash[:alert] = "Could not create #{@work.category}"
-      flash.now[:alert] = @work.errors
+      
       render :new
     end
   end
@@ -57,7 +57,7 @@ class WorksController < ApplicationController
       flash[:message] = "Deleted #{@work.category} #{@work.title}"
     end
     redirect_to works_path
-    
+
 
   end
 
