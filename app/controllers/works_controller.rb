@@ -50,24 +50,20 @@ class WorksController < ApplicationController
     end
   end
   def destroy
-    current_user = nil
-    if session[:user_id]
-      current_user = User.find_by(id: session[:user_id])
-      @work = Work.find(params[:id])
-      @work.destroy
+
+    @work = Work.find(params[:id])
+    if @work.destroy
 
       flash[:message] = "Deleted #{@work.category} #{@work.title}"
-      redirect_to works_path
-    else
-      flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
-      redirect_to works_path
-      return
     end
+    redirect_to works_path
+    
+
   end
-  
+
   def upvote
     if !(session[:user_id])
-
+      flash[:status] = :failure
       flash[:message] = "you must be logged in to do that"
       redirect_back fallback_location: {action: "index"}
     elsif  session[:user_id]
