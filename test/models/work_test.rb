@@ -61,5 +61,9 @@ describe Work do
       Work.top.title.must_equal works(:harrypotter).title
     end
 
+    it 'finds the top-ten albums' do
+
+    end
+
   end
 end

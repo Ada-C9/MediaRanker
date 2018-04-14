@@ -47,7 +47,7 @@ describe Vote do
       @vote.must_respond_to :user_id
       @vote.user.must_equal @user
       @vote.user_id.must_equal @user.id
-    end
+    end  
 
     it "has a work" do
       @vote.must_respond_to :work_id
