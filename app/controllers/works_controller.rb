@@ -45,26 +45,20 @@ class WorksController < ApplicationController
       redirect_to work_path(@work.id)
     else
       flash[:alert] = "A problem occured:Could not update"
-      flash.now[:alert] = @work.errors
+
       render :edit
     end
   end
   def destroy
-      current_user = nil
-      if session[:user_id]
-        current_user = User.find_by(id: session[:user_id])
-        @work = Work.find(params[:id])
-        @work.destroy
 
+        @work = Work.find(params[:id])
+        if @work.destroy
         flash[:message] = "Deleted #{@work.category} #{@work.title}"
-        redirect_to works_path
-      else
-        flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
         redirect_to works_path
 
       end
     end
-  
+
   def upvote
     if !(session[:user_id])
       flash[:status] = :failure
