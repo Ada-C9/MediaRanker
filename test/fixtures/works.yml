@@ -1,33 +1,54 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-lifeisbeautiful:
-  category: album
-  title: lifeisbeautiful
-  creator: aruna
-  publication_year: 2013
-  description: Great book
-
-liquidspirit:
-  category: album
-  title: liquidspirit
-  creator: brenda
-  publication_year: 2014
-  description: good book
-
-book1:
+Kindred:
   category: book
-  title: book1
-  creator: author
-  publication_year: 1960
-
-book2:
-  category: book
-  title: book2
-  creator: author
-  publication_year: 1960
+  title: Kindred
+  creator: Octavia Butler
+  publication_year: 1976
 
 book3:
-  category: book
+  category: album
   title: book3
+  creator: author
+  publication_year: 1960
+
+book4:
+  category: album
+  title: book4
+  creator: author
+  publication_year: 1960
+
+book5:
+  category: book
+  title: book5
+  creator: author
+  publication_year: 1960
+
+book6:
+  category: book
+  title: book6
+  creator: author
+  publication_year: 1960
+
+
+book7:
+  category: book
+  title: book7
+  creator: author
+  publication_year: 1960
+
+book8:
+  category: book
+  title: book8
+  creator: author
+  publication_year: 1960
+
+book9:
+  category: book
+  title: book9
+  creator: author
+  publication_year: 1960
+
+hunger:
+  category: book
+  title: hunger
   creator: author
   publication_year: 1960

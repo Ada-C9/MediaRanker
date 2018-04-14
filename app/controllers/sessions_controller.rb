@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     else
       @user = User.create(username: params[:user][:username],date_joined: Date.today)
       if session[:user_id] = @user.id
-        flash[:success] = "Welcome #{@user.username}"
+        flash[:success] = "Successfully logged in as #{@user.username}"
         redirect_to root_path
       else
         flash.now[:error] = "You are not logged in. Please login"
