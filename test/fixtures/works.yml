@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+album:
+  category: album
+  title: album title
+  creator: album creator
+  publication_year: 1999
+  description:
+
+book:
+  category: book
+  title: book title
+  creator: book creator
+  publication_year: 1999
+  description:
+
+movie:
+  category: movie
+  title: movie title
+  creator: movie creator
+  publication_year: 1999
+  description:

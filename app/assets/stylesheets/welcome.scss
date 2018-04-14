@@ -1,0 +1,58 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h3 a {
+  color: #26A69A;
+  text-decoration: none;
+  font-size: 2rem;
+  border-bottom: 2px solid;
+}
+
+a {
+  color: #26A69A;
+  text-decoration: none;
+}
+
+hr {
+  width: 95%;
+}
+
+.welcome-wrapper {
+  margin: 1.5em;
+}
+
+#spotlight {
+  color: #778899;
+}
+
+#spotlight-votes {
+  color: #778899;
+  margin-left: 2em;
+}
+
+.top-ten h3 {
+  color: #26A69A;
+  width: 70%;
+  border-bottom: #26A69A 1px solid;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.top-ten ul {
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+h4 {
+  font-size: 1.5625rem;
+}
+
+.columns {
+  padding: .5em;
+  line-height: .1em;
+}
+
+li{
+  color: #778899;
+  margin-left: 2.5em;
+}
