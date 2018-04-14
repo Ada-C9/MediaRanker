@@ -16,7 +16,7 @@ class Work < ApplicationRecord
 
   def self.order_by_vote(category_id)
     work_category = Work.where(category_id: category_id)
-    id = work_category.joins('left join votes on votes.work_id = works.id').select('works ').order('count(votes.id)').group('works.id')
+    id = work_category.joins('left join votes on votes.work_id = works.id').select('works.id').order('count(votes.id)').group('works.id')
 
     ordered = Work.where(id: id)
 
