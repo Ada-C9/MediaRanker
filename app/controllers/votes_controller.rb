@@ -1,11 +1,7 @@
 class VotesController < ApplicationController
-  def index
+  def index; end
 
-  end
-
-  def new
-
-  end
+  def new; end
 
   def create
     if session[:user_id]
@@ -28,21 +24,13 @@ class VotesController < ApplicationController
     redirect_to request.referer
   end
 
-  def show
+  def show; end
 
-  end
+  def update; end
 
-  def update
+  def edit; end
 
-  end
-
-  def edit
-
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 
 
 end

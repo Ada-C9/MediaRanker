@@ -32,20 +32,27 @@ describe Work do
 
 
   describe "relations" do
-    before do
-      @work = Work.new(title: 'test work')
+    it "must have votes" do
+      work = works(:best_book)
+      work.votes.count.must_equal 1
     end
 
-    # author
-    it "connects work and work_id" do
-      # Arrange
-      vote = Vote.first
+    it "must have no votes" do
+      work = works(:worst_album)
+      work.votes.count.must_equal 0
+    end
+  end
 
-      # Act
-      @work.vote = vote
+  describe "model methods" do
+    it "find spotlight" do
+      user1 = users(:dikla)
+      user2 = users(:brenda)
+      user3 = users(:luxi)
+      vote1 = Vote.create(work: works(:best_album), user: user1)
+      vote2 = Vote.create(work: works(:best_album), user: user2)
+      vote3 = Vote.create(work: works(:best_book), user: user3)
 
-      # Assert
-      @work.vote_id.must_equal vote.id
+      Work.spotlight.title.must_equal works(:best_album).title
     end
   end
 
