@@ -1,11 +1,11 @@
 
-<main class = "row">
-  <article class = "media-details columns large-6 small-12">
+
+  <article class = "media-details">
     <h3><%= @work.title %></h3>
     <p> Created by: <%= @work.creator %></p>
     <p> Published: <%= @work.publication_year %></p>
     <p> <%= @work.description %></p>
-  </article>
+
   <section>
     <%= link_to("Back to media ranks", works_path, :class => "button") %>
     <%= link_to("Edit", edit_work_path(@work.id), :class => "button")%>
@@ -13,7 +13,8 @@
     <%= link_to("Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"}, :class => "alert button")%>
   </section>
 </article>
-<article class="voting-users columns large-6 small-12">
+
+<article class="voting-users">
   <h3><%= @work.votes.count %> Votes for this <%= @work.category %></h3>
   <table>
     <thead>
@@ -32,5 +33,3 @@
     </tbody>
   </table>
 </article>
-
-</main>

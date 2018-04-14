@@ -59,6 +59,15 @@ a:hover {
  color: #00796B;
 }
 
+section {
+  display: block;
+}
+
+.media-table thead th, thead td, tfoot th, tfoot td {
+    padding: 0.5rem 0.625rem 0.625rem;
+    font-weight: bold;
+    text-align: left;
+}
 
 /* ==========header========== */
 
@@ -68,6 +77,11 @@ a:hover {
  border-bottom: 1px solid #EEEEEE;
  margin-bottom: 10px;
  padding: 25px 20px 10px 20px
+}
+
+.row {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .page-header h2 {
@@ -80,6 +94,8 @@ a:hover {
   padding-right: 25px;
   margin-right: 15px;
   border-right: white 2px solid;
+  font-size: 40px;
+  text-decoration-style: solid;
 }
 
 .page-header h2 small {
@@ -108,22 +124,7 @@ section.spotlight>div {
  border-bottom: 2px solid;
 }
 
-.top-ten h3 {
- border-bottom: 2px solid #B2DFDB;
-}
 
-.top-ten-container {
-  margin-top: 75px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 2em;
-}
-
-
-.top-ten ul {
- list-style-type: none;
- margin-left: 0px;
-}
 
 /* ===========status========= */
 
