@@ -16682,3 +16682,919 @@ Work::relations: test_0003_can destroy dependent relationship to vote
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user1', '2018-03-11', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user2', '2018-01-14', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user3', '2018-01-14', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user4', '2018-02-14', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user5', '2018-02-08', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user6', '2018-04-08', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user7', '2018-01-08', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-18', '2018-04-14 05:05:51.330040', '2018-04-14 05:05:51.330040', 42601833)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 156850806, 576709754, 977661844)[0m
+  [1m[36mFixture Insert (1.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-09-12', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 273681354, 1010528733, 977661844)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 660028255, 188498254, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 804212123, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 959688446, 188498254, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 417889548, 1010528733, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 389926865, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 540737350, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 814080729, 206669143, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 126014020, 305467638, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 1025419005, 624042081, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 169449068, 898448884, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 319866836, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 605550409, 794176482, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 980640484, 206669143, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 225727091, 358143215, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 343737291, 576709754, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 595211104, 1010528733, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 868560591, 188498254, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 79830618, 305467638, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 372503870, 624042081, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 557106601, 898448884, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 255501446, 206669143, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 291385639, 358143215, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 643367346, 576709754, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 1062227982, 1010528733, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:05:51.340720', '2018-04-14 05:05:51.340720', 139944095, 358143215, 581172899)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'Kindred', 'Octavia Butler', '1976', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book3', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book4', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book5', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 363122234)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book6', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 212705166)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book7', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 1001041691)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book8', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 722842252)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book9', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 470975007)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'hunger', 'author', '1960', '2018-04-14 05:05:51.357860', '2018-04-14 05:05:51.357860', 347574605)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0001_returns the top ten media in a category that has more than 10 items
+-------------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0002_returns all media in a category that has fewer than 10 items
+------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 581172899], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0003_returns an empty array if category has no works
+-----------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+User::Validations: test_0002_is invalid without a name
+------------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL AND ("users"."id" != $1) LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+User::Validations: test_0003_is invalid if name is a string with only spaces
+----------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "    "], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Validations: test_0001_is valid when all fields are present
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "user1"], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------
+User::Validations: test_0004_is invalid if an user with same name already exists
+--------------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------
+User::Validations: test_0005_is invalid if length of name is smaller than 1
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", ""], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------
+Work::relations: test_0003_can destroy dependent relationship to vote
+---------------------------------------------------------------------
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 225727091]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 343737291]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 595211104]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 868560591]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 79830618]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 372503870]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 557106601]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "works" WHERE "works"."id" = $1[0m  [["id", 1019702018]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------
+Work::relations: test_0001_responds to votes and can be update the vote 
+------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:05:51.461530"], ["updated_at", "2018-04-14 05:05:51.461530"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227983], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227983], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+Work::relations: test_0002_can have multiple votes
+--------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:05:51.476081"], ["updated_at", "2018-04-14 05:05:51.476081"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227984], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 358143215], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:05:51.484136"], ["updated_at", "2018-04-14 05:05:51.484136"], ["work_id", 470975007], ["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 358143215], ["id", 1062227985], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227984], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227985], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------
+User::Methods::count_votes: test_0001_returns the right vote count
+------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Methods::count_votes: test_0002_returns 0 if no vote exists
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42601833], ["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 42601833]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+Work::validations: test_0001_can be created with all required fields
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND "works"."category" = $2 LIMIT $3[0m  [["title", "book11"], ["category", "album"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["category", "album"], ["title", "book11"], ["creator", "author"], ["publication_year", "1960"], ["description", "good book"], ["created_at", "2018-04-14 05:05:51.496826"], ["updated_at", "2018-04-14 05:05:51.496826"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND ("works"."id" != $2) AND "works"."category" = $3 LIMIT $4[0m  [["title", "book11"], ["id", 1019702019], ["category", "album"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+Work::validations: test_0002_requires a title
+---------------------------------------------
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+Work::validations: test_0003_requires a category
+------------------------------------------------
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+User::Relations: test_0002_can destroy votes when destroy user
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 814080729]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 255501446]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 206669143]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+User::Relations: test_0001_can access votes through 'votes'
+-----------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------
+Work::custom public methods::top_work: test_0001_returns top voted work
+-----------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 347574605], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user1', '2018-03-11', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 206669143)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user2', '2018-01-14', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 358143215)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user3', '2018-01-14', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 576709754)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user4', '2018-02-14', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 1010528733)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user5', '2018-02-08', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 188498254)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user6', '2018-04-08', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 305467638)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user7', '2018-01-08', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 624042081)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 898448884)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-18', '2018-04-14 05:06:44.604689', '2018-04-14 05:06:44.604689', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 156850806, 576709754, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-09-12', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 273681354, 1010528733, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 660028255, 188498254, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 804212123, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 959688446, 188498254, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 417889548, 1010528733, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 389926865, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 540737350, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 814080729, 206669143, 347574605)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 126014020, 305467638, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 1025419005, 624042081, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 169449068, 898448884, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 319866836, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 605550409, 794176482, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 980640484, 206669143, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 225727091, 358143215, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 343737291, 576709754, 1019702018)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 595211104, 1010528733, 1019702018)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 868560591, 188498254, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 79830618, 305467638, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 372503870, 624042081, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 557106601, 898448884, 1019702018)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 255501446, 206669143, 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 291385639, 358143215, 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 643367346, 576709754, 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 1062227982, 1010528733, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:06:44.614495', '2018-04-14 05:06:44.614495', 139944095, 358143215, 581172899)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'Kindred', 'Octavia Butler', '1976', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book3', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book4', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book5', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 363122234)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book6', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 212705166)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book7', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 1001041691)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book8', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 722842252)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book9', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 470975007)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'hunger', 'author', '1960', '2018-04-14 05:06:44.630095', '2018-04-14 05:06:44.630095', 347574605)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------
+Work::custom public methods::top_work: test_0001_returns top voted work
+-----------------------------------------------------------------------
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 347574605], ["LIMIT", 1]]
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------
+Work::relations: test_0001_responds to votes and can be update the vote 
+------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:06:44.687148"], ["updated_at", "2018-04-14 05:06:44.687148"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227983], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227983], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+Work::relations: test_0002_can have multiple votes
+--------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:06:44.697817"], ["updated_at", "2018-04-14 05:06:44.697817"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227984], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 358143215], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:06:44.710073"], ["updated_at", "2018-04-14 05:06:44.710073"], ["work_id", 470975007], ["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 358143215], ["id", 1062227985], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227984], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227985], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------
+Work::relations: test_0003_can destroy dependent relationship to vote
+---------------------------------------------------------------------
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 225727091]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 343737291]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 595211104]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 868560591]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 79830618]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 372503870]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 557106601]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "works" WHERE "works"."id" = $1[0m  [["id", 1019702018]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+User::Relations: test_0001_can access votes through 'votes'
+-----------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+User::Relations: test_0002_can destroy votes when destroy user
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 814080729]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 255501446]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+Work::validations: test_0002_requires a title
+---------------------------------------------
+  [1m[36mWork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+Work::validations: test_0003_requires a category
+------------------------------------------------
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+Work::validations: test_0001_can be created with all required fields
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND "works"."category" = $2 LIMIT $3[0m  [["title", "book11"], ["category", "album"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["category", "album"], ["title", "book11"], ["creator", "author"], ["publication_year", "1960"], ["description", "good book"], ["created_at", "2018-04-14 05:06:44.746592"], ["updated_at", "2018-04-14 05:06:44.746592"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND ("works"."id" != $2) AND "works"."category" = $3 LIMIT $4[0m  [["title", "book11"], ["id", 1019702019], ["category", "album"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------
+User::Validations: test_0005_is invalid if length of name is smaller than 1
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", ""], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Validations: test_0001_is valid when all fields are present
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "user1"], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+User::Validations: test_0002_is invalid without a name
+------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL AND ("users"."id" != $1) LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+User::Validations: test_0003_is invalid if name is a string with only spaces
+----------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "    "], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------
+User::Validations: test_0004_is invalid if an user with same name already exists
+--------------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0002_returns all media in a category that has fewer than 10 items
+------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 581172899], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0003_returns an empty array if category has no works
+-----------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0001_returns the top ten media in a category that has more than 10 items
+-------------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 347574605], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------
+User::Methods::count_votes: test_0001_returns the right vote count
+------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Methods::count_votes: test_0002_returns 0 if no vote exists
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42601833], ["LIMIT", 1]]
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 42601833]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user1', '2018-03-11', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 206669143)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user2', '2018-01-14', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 358143215)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user3', '2018-01-14', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 576709754)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user4', '2018-02-14', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 1010528733)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user5', '2018-02-08', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 188498254)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user6', '2018-04-08', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 305467638)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('user7', '2018-01-08', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 624042081)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username8', '2018-03-18', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 898448884)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "date_joined", "created_at", "updated_at", "id") VALUES ('username9', '2018-04-18', '2018-04-14 05:09:59.612751', '2018-04-14 05:09:59.612751', 42601833)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "votes"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 156850806, 576709754, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-09-12', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 273681354, 1010528733, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 660028255, 188498254, 977661844)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-10-11', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 804212123, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 959688446, 188498254, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 417889548, 1010528733, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 389926865, 576709754, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 540737350, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 814080729, 206669143, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 126014020, 305467638, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 1025419005, 624042081, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 169449068, 898448884, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 319866836, 358143215, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 605550409, 794176482, 347574605)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 980640484, 206669143, 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 225727091, 358143215, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 343737291, 576709754, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 595211104, 1010528733, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 868560591, 188498254, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 79830618, 305467638, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 372503870, 624042081, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 557106601, 898448884, 1019702018)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 255501446, 206669143, 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 291385639, 358143215, 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 643367346, 576709754, 603819915)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 1062227982, 1010528733, 603819915)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "id", "user_id", "work_id") VALUES ('2017-08-30', '2018-04-14 05:09:59.623867', '2018-04-14 05:09:59.623867', 139944095, 358143215, 581172899)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[36mFixture Insert (1.5ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'Kindred', 'Octavia Butler', '1976', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 603819915)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book3', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 1019702018)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('album', 'book4', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 581172899)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book5', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 363122234)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book6', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 212705166)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book7', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 1001041691)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book8', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 722842252)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'book9', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 470975007)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "created_at", "updated_at", "id") VALUES ('book', 'hunger', 'author', '1960', '2018-04-14 05:09:59.638511', '2018-04-14 05:09:59.638511', 347574605)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------
+Vote::relations: test_0001_belongs to a user and creates an error message if no user is given
+---------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 722842252], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" IS NULL AND "votes"."work_id" = 722842252 LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------
+Vote::relations: test_0002_belongs to a work and creates an error message if no work is given
+---------------------------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" IS NULL LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Validations: test_0001_is valid when all fields are present
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "user1"], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+User::Validations: test_0003_is invalid if name is a string with only spaces
+----------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "    "], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------
+User::Validations: test_0004_is invalid if an user with same name already exists
+--------------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------
+User::Validations: test_0005_is invalid if length of name is smaller than 1
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", ""], ["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+User::Validations: test_0002_is invalid without a name
+------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL AND ("users"."id" != $1) LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+Vote::validations: test_0002_requires a date
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 722842252], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------
+Vote::validations: test_0004_can have two votes for the same work from different users
+--------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 722842252], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 898448884], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 898448884], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.712418"], ["updated_at", "2018-04-14 05:09:59.712418"], ["work_id", 722842252], ["user_id", 898448884]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42601833], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 42601833], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.717453"], ["updated_at", "2018-04-14 05:09:59.717453"], ["work_id", 722842252], ["user_id", 42601833]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------
+Vote::validations: test_0003_cannot have two votes for the same work from one user
+----------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 722842252], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 898448884], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 898448884], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.725730"], ["updated_at", "2018-04-14 05:09:59.725730"], ["work_id", 722842252], ["user_id", 898448884]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 898448884], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 898448884], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+Vote::validations: test_0001_can be created with all required fields
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 722842252], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 722842252 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------
+Work::custom public methods::top_work: test_0001_returns top voted work
+-----------------------------------------------------------------------
+  [1m[36mWork Load (0.6ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 347574605], ["LIMIT", 1]]
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+Work::validations: test_0002_requires a title
+---------------------------------------------
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+Work::validations: test_0003_requires a category
+------------------------------------------------
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" IS NULL AND "works"."category" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+Work::validations: test_0001_can be created with all required fields
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND "works"."category" = $2 LIMIT $3[0m  [["title", "book11"], ["category", "album"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "works" ("category", "title", "creator", "publication_year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["category", "album"], ["title", "book11"], ["creator", "author"], ["publication_year", "1960"], ["description", "good book"], ["created_at", "2018-04-14 05:09:59.750557"], ["updated_at", "2018-04-14 05:09:59.750557"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWork Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "works" WHERE "works"."title" = $1 AND ("works"."id" != $2) AND "works"."category" = $3 LIMIT $4[0m  [["title", "book11"], ["id", 1019702019], ["category", "album"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------
+Work::relations: test_0001_responds to votes and can be update the vote 
+------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.761709"], ["updated_at", "2018-04-14 05:09:59.761709"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227986], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227986], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------
+Work::relations: test_0003_can destroy dependent relationship to vote
+---------------------------------------------------------------------
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 225727091]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 343737291]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 595211104]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 868560591]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 79830618]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 372503870]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 557106601]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "works" WHERE "works"."id" = $1[0m  [["id", 1019702018]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+Work::relations: test_0002_can have multiple votes
+--------------------------------------------------
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 LIMIT $2[0m  [["work_id", 470975007], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 206669143], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.782294"], ["updated_at", "2018-04-14 05:09:59.782294"], ["work_id", 470975007], ["user_id", 206669143]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 206669143], ["id", 1062227987], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 470975007], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND "votes"."work_id" = 470975007 LIMIT $2[0m  [["user_id", 358143215], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "votes" ("date", "created_at", "updated_at", "work_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2018-04-13"], ["created_at", "2018-04-14 05:09:59.788316"], ["updated_at", "2018-04-14 05:09:59.788316"], ["work_id", 470975007], ["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = $1 AND ("votes"."id" != $2) AND "votes"."work_id" = 470975007 LIMIT $3[0m  [["user_id", 358143215], ["id", 1062227988], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227987], ["LIMIT", 1]]
+  [1m[36mVote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."work_id" = $1 AND "votes"."id" = $2 LIMIT $3[0m  [["work_id", 470975007], ["id", 1062227988], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0003_returns an empty array if category has no works
+-----------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0001_returns the top ten media in a category that has more than 10 items
+-------------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[36mWork Load (0.1ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 347574605], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------
+Work::custom public methods::top_ten: test_0002_returns all media in a category that has fewer than 10 items
+------------------------------------------------------------------------------------------------------------
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT "works".* FROM "works"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 603819915]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1019702018]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 581172899]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 363122234]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 212705166]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 1001041691]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 722842252]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 470975007]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."work_id" = $1[0m  [["work_id", 347574605]]
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1019702018], ["LIMIT", 1]]
+  [1m[36mWork Load (0.2ms)[0m  [1m[34mSELECT  "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 581172899], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------
+User::Methods::count_votes: test_0001_returns the right vote count
+------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------
+User::Methods::count_votes: test_0002_returns 0 if no vote exists
+-----------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42601833], ["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 42601833]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+User::Relations: test_0001_can access votes through 'votes'
+-----------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 358143215], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 358143215]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+User::Relations: test_0002_can destroy votes when destroy user
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206669143], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = $1[0m  [["user_id", 206669143]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 814080729]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 980640484]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 255501446]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 206669143]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

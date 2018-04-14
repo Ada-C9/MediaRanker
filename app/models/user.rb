@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :votes,dependent: :destroy
   validates :username, presence: {message: "You need to provide a username" }
-  validates :date_joined,presence: true 
+  validates :date_joined,presence: true
   validates :username, uniqueness:true
 
 

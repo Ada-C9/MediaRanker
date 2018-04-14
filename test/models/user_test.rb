@@ -41,6 +41,7 @@ describe User do
     end
   end
 
+#relations
   describe 'Relations' do
     it "can access votes through 'votes'" do
       users(:user2).votes.count.must_equal 5
@@ -57,6 +58,7 @@ describe User do
     end
   end
 
+#custom methods
   describe 'Methods' do
 
     describe 'count_votes' do

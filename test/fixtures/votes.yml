@@ -4,14 +4,14 @@ vote1:
   user: user3
 
 vote2:
-    date: 2017-09-12
-    work: lemonade
-    user: user4
+  date: 2017-09-12
+  work: lemonade
+  user: user4
 
 vote3:
-    date: 2017-10-30
-    work: lemonade
-    user: user5
+  date: 2017-10-30
+  work: lemonade
+  user: user5
 
 vote29:
   date: 2017-10-11
@@ -19,39 +19,34 @@ vote29:
   user: user3
 
 vote4:
-    date: 2017-08-30
-    work: hunger
-    user: user5
+  date: 2017-08-30
+  work: hunger
+  user: user5
 
 vote28:
-    date: 2017-08-30
-    work: hunger
-    user: user4
-
-# vote5:
-#     date: 2017-08-30
-#     work: girls_trip
-#     user: user3
+  date: 2017-08-30
+  work: hunger
+  user: user4
 
 vote6:
-    date: 2017-08-30
-    work: hunger
-    user: user3
+  date: 2017-08-30
+  work: hunger
+  user: user3
 
 vote7:
-    date: 2017-08-30
-    work: hunger
-    user: user2
+  date: 2017-08-30
+  work: hunger
+  user: user2
 
 vote8:
-    date: 2017-08-30
-    work: hunger
-    user: user1
+  date: 2017-08-30
+  work: hunger
+  user: user1
 
 vote9:
-    date: 2017-08-30
-    work: hunger
-    user: user6
+  date: 2017-08-30
+  work: hunger
+  user: user6
 
 vote10:
     date: 2017-08-30

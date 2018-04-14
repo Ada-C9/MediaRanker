@@ -1,20 +1,20 @@
 
 /*
 *
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 html, body, h1, h2, h3, h4, h5, h6, ul, li, p, td, a {
   font-family: "Gudea", sans-serif;
@@ -74,7 +74,7 @@ a, h3 {
 
 /*---------------------------HOMEPAGE---------------------------*/
 .media-spotlight-header {
- color: #424242;
+  color: #424242;
 }
 
 .spotlight>div {
@@ -95,7 +95,7 @@ a, h3 {
 
 main {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 main .row {
@@ -149,6 +149,8 @@ thead {
 thead, tbody, tfoot {
   border: 1px solid #f1f1f1;
   background-color: #fefefe;
+
+  text-align: left;
 }
 
 tbody tr:nth-child(even) {
@@ -158,6 +160,7 @@ tbody tr:nth-child(even) {
 
 tbody th, tbody td {
   padding: 0;
+
 }
 
 /*---------------------------Works Show---------------------------*/

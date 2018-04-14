@@ -9,7 +9,8 @@
   <%= stylesheet_link_tag    "application"%>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  
+  <%= favicon_link_tag 'owl.jpg' %>
+
 </head>
 
 <body>
@@ -36,24 +37,24 @@
     </nav>
   </header>
   <% flash.each do |key, message| %>
-      <section class="row status <%= key %>">
-        <h3><%= message %></h3>
+  <section class="row status <%= key %>">
+    <h3><%= message %></h3>
 
-          <% @object = @work || @object = @vote || @object = @user%>
-          <%if @object != nil && @object.errors.any?%>
-           <ul>
-            <% @object.errors.each do |field, problems| %>
-              <li>
-                <strong><%= field %></strong>
-                <%= problems %>
-              </li>
-              <% end%>
-          </ul>
-          <% end %>
-
-      </section>
+    <% @object = @work || @object = @vote || @object = @user%>
+    <%if @object != nil && @object.errors.any?%>
+    <ul>
+      <% @object.errors.each do |field, problems| %>
+      <li>
+        <strong><%= field %></strong>
+        <%= problems %>
+      </li>
+      <% end%>
+    </ul>
     <% end %>
-    <%= yield %>
 
-  </body>
-  </html>
+  </section>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>

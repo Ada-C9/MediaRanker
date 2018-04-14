@@ -50,20 +50,20 @@ class WorksController < ApplicationController
     end
   end
   def destroy
-      current_user = nil
-      if session[:user_id]
-        current_user = User.find_by(id: session[:user_id])
-        @work = Work.find(params[:id])
-        @work.destroy
+    current_user = nil
+    if session[:user_id]
+      current_user = User.find_by(id: session[:user_id])
+      @work = Work.find(params[:id])
+      @work.destroy
 
-        flash[:message] = "Deleted #{@work.category} #{@work.title}"
-        redirect_to works_path
-      else
-        flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
-        redirect_to works_path
-        return
-      end
+      flash[:message] = "Deleted #{@work.category} #{@work.title}"
+      redirect_to works_path
+    else
+      flash[:alert] = "#{@work.category} #{@work.title} does not exists!"
+      redirect_to works_path
+      return
     end
+  end
   # def destroy
   #   user = nil
   #   if session[:user_id]

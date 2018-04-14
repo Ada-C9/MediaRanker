@@ -4,13 +4,13 @@ require "test_helper"
 describe Work do
 
   describe "validations" do
-    # success validation case for the working model
+
     it "can be created with all required fields" do
       work = Work.create!(category: "album", title: "book11", creator: "author" ,publication_year: 1960,description:"good book")
       work.must_be :valid?
     end
 
-    # failure validation cases
+
     it "requires a title" do
       w = Work.new
       w.wont_be :valid?
@@ -78,37 +78,35 @@ describe Work do
 
   describe "custom public methods" do
     describe "top_work" do
-    it "returns top voted work" do
-      # top voted work in fixtures is Hunger
-      w = works(:hunger)
-      Work.top_work.must_equal w
+      it "returns top voted work" do
+
+        w = works(:hunger)
+        Work.top_work.must_equal w
+      end
+    end
+
+    describe "top_ten" do
+      it "returns the top ten media in a category that has more than 10 items" do
+
+        top_books = Work.top_ten("book")
+
+        top_books.first.must_equal works(:hunger)
+      end
+
+      it "returns all media in a category that has fewer than 10 items" do
+
+        top_albums = Work.top_ten("album")
+
+        top_albums.count.must_equal 2
+
+        top_albums.must_equal [works(:book3), works(:book4)]
+      end
+
+      it "returns an empty array if category has no works" do
+        top_albums = Work.top_ten("movie")
+        top_albums.must_be :empty?
+      end
     end
   end
-
-  describe "top_ten" do
-    it "returns the top ten media in a category that has more than 10 items" do
-      # top voted books in fixtures are Hunger, book3, Kindred, and book4 in that order the rest of the books have zero votes
-      top_books = Work.top_ten("book")
-
-      #top_books.count.must_equal 10
-
-      top_books.first.must_equal works(:hunger)
-    end
-
-    it "returns all media in a category that has fewer than 10 items" do
-      # there are only two albums and they are Lemonade and Liquid Spirit in that order by votes
-      top_albums = Work.top_ten("album")
-
-      top_albums.count.must_equal 2
-
-      top_albums.must_equal [works(:book3), works(:book4)]
-    end
-
-    it "returns an empty array if category has no works" do
-      top_albums = Work.top_ten("movie")
-      top_albums.must_be :empty?
-    end
-  end
-end
 
 end

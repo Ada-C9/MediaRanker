@@ -1,24 +1,19 @@
 <%= form_for @work do |f| %>
 <%= f.label :Category%>
-  <%= f.select :category,["album", "movie", "book"]%>
-  <br>
-  <%= f.label :Title%>
-  <%= f.text_field :title %>
-  <br>
+<%= f.select :category,["album", "movie", "book"]%>
+<br>
+<%= f.label :Title%>
+<%= f.text_field :title %>
 
-  <%= f.label :Creator %>
-  <br>
-  <%= f.text_field :creator%>
-  <br>
-  <%= f.label :Publication_year %>
-  <br>
-  <%= f.text_field :publication_year%>
-  <br>
-  <%= f.label :Description %>
-  <br>
-  <%= f.text_field :description%>
-  <br>
+<%= f.label :Creator %>
 
-  <%= f.submit class:"button"%>
+<%= f.text_field :creator%>
+
+<%= f.label :Publication_year %>
+<%= f.text_field :publication_year%>
+<%= f.label :Description %>
+<%= f.text_field :description%>
+
+<%= f.submit class:"button"%>
 
 <% end %>
