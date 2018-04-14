@@ -1,0 +1,57 @@
+
+<section class="spotlight">
+<h3 > Media Spotlight Section: <%= link_to @spotlight_work.title, work_path(@spotlight_work) %></h3> by <%= @spotlight_work.creator %><p><small><%= @spotlight_work.vote_count %> Votes - <%=@spotlight_work.description%></small> </p></section>
+
+
+<section class="top-ten-container">
+
+
+<section class="top-ten">
+<h3>Top Movies</h3>
+<ul>
+<li>
+<% @movies.each do |movie| %>
+
+    <%=link_to movie.title, work_path(movie[:id]) %> <small>by <%= movie.creator %></small>
+    <br>
+    <p><%= movie.vote_count%> votes</p>
+
+<%end%>
+</li>
+</ul>
+</section>
+
+
+<section class="top-ten">
+<h3>Top Books</h3>
+<ul>
+<li>
+  <% @books.each do |book| %>
+
+    <%=link_to book.title, work_path(book[:id]) %> <small>by <%= book.creator %></small>
+    <br>
+    <p><%= book.vote_count%> votes</p>
+
+  <%end%>
+</li>
+</ul>
+</section>
+
+
+
+<section class="top-ten">
+  <h3>Top Albums</h3>
+  <ul>
+  <li>
+  <% @albums.each do |album| %>
+
+    <%=link_to album.title, work_path(album[:id]) %> <small>by <%= album.creator %></small>
+    <br>
+    <p><%= album.vote_count%> votes</p>
+
+<%end%>
+</li>
+</ul>
+</section>
+
+</section>

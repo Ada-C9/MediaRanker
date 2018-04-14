@@ -1,0 +1,135 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+book_one:
+  category: book
+  title: Boomer Boops Ya
+  creator: Bubs
+  publication_year: 2018
+  description: Boomer does a boop
+
+book_two:
+  category: book
+  title: Ziggy Little
+  creator: Zigfreid Littleton
+  publication_year: 2018
+  description: Little dog zig zags lots
+
+book_three:
+  category: book
+  title: Mickey Turtle
+  creator: Mickey
+  publication_year: 1996
+  description: How a little turtle became turtley awesome
+
+book_four:
+  category: book
+  title: Hip Hoppity Hop
+  creator: Percy Rabbit
+  publication_year: 2018
+  description: rad rapping rabbits
+
+book_five:
+  category: book
+  title: Title 5
+  creator: creator
+  publication_year: 2017
+  description: description
+
+book_six:
+  category: book
+  title: Title 6
+  creator: creator
+  publication_year: 1998
+  description: description
+
+book_seven:
+  category: book
+  title: Title 7
+  creator: creator
+  publication_year: 2000
+  description: description
+
+book_eight:
+  category: book
+  title: Title 8
+  creator: creator
+  publication_year: 2000
+  description: description
+
+book_nine:
+  category: book
+  title: Title 9
+  creator: creator
+  publication_year: 2000
+  description: description
+
+book_ten:
+  category: book
+  title: Title 10
+  creator: creator
+  publication_year: 1999
+  description: description
+
+book_eleven:
+  category: book
+  title: Title 11
+  creator: creator
+  publication_year:
+  description: description
+
+
+movie_one:
+  category: movie
+  title: Title 1
+  creator: creator
+  publication_year: 1999
+  description: description
+
+movie_two:
+  category: movie
+  title: Title 8
+  creator: creator
+  publication_year:
+  description: description
+
+movie_three:
+  category: movie
+  title: Title 3
+  creator: creator
+  publication_year: 2000
+  description: description
+
+movie_four:
+  category: movie
+  title: Title 4
+  creator: creator
+  publication_year: 1992
+  description: description
+
+movie_five:
+  category: movie
+  title: Title 5
+  creator: creator
+  publication_year: 1876
+  description: description
+
+album_one:
+  category: album
+  title: Title 1
+  creator: creator
+  publication_year: 1987
+  description: description
+
+album_two:
+  category: album
+  title: Title 2
+  creator: creator
+  publication_year: 1777
+  description: description
+
+album_three:
+  category: album
+  title: Title 3
+  creator: creator
+  publication_year: 1968
+  description: description
