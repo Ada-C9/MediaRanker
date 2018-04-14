@@ -10,7 +10,6 @@
 <p>
   <ul>
     <li>Media Title</li>
-    <li>Created By></li>
     <li>Published</li>
     <li>Category</li>
     <li>Voted On</li>
@@ -20,10 +19,18 @@
 <p>
 <ul>
   <ul>
-    <!-- is this right? -->
     <% Vote.votes_by_user(find_user).each do |vote|  %>
     <li>
       <%= link_to Work.find(vote.work_id).title, work_path(Work.find(vote.work_id).id) %>
+    </li>
+    <li>
+      <%= Work.find(vote.work_id).publication_year %>
+    </li>
+    <li>
+      <%= Work.find(vote.work_id).category %>
+    </li>
+    <li>
+      <%= Work.find(vote.work_id).created_at %>
     </li>
     <% end %>
   </ul>
