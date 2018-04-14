@@ -2,6 +2,7 @@
   <div>
     <h3>
       <span class="media-spotlight-header"></span>
+      Media Spotlight:
       <% if @works.first != nil %>
       <%= link_to("#{Work.most_popular.title}", work_path(Work.most_popular)) %>
       by <%= Work.most_popular.creator %>
