@@ -35,15 +35,80 @@ describe Work do
   end
 
   describe "works_with_vote_tallies" do
-  
+
+    it "returns an array" do
+    end
+
+    it "is identical in length to the number of works in the database" do
+    end
+
+    it "Is a structure in which each element is an array with a length of two " do
+    end
+
+    it "contains elements that consist of an instance of Work at index 0 and a number at index 1 " do
+    end
+
+    it "contains elements in which index position 1 is the correct tally of votes for the element at index position 0" do
+
+    end
+
+  end
+
+  describe "works_ordered_by_popularity" do
+
+    it "returns an array" do
+    end
+
+    it "has a length identical to the number of works in the database" do
+
+    end
+
+    it "has the work with the most votes at array postion 0" do
+    end
+
+    it "has the work with the eightj most votes at array position 7" do
+
+    end
+
+    it "has the work with the lowest number of votes in the last array position" do
+
+    end
 
   end
 
   describe "get_top_ten_works_with_tallies" do
 
+    it "returns an array" do
+    end
+
+    it "has a length of 10" do
+    end
+
+    it "Is a structure in which each element is an array with a length of two " do
+    end
+
+    it "contains elements that consist of an instance of Work at index 0 and a number at index 1 " do
+    end
+
+    it "contains elements in which index position 1 is the correct tally of votes for the element at index position 0" do
+
+    end
+
   end
 
   describe "get_top_work_with_tally" do
+
+    it "returns an array" do
+    end
+
+    it "has a length of two" do
+    end
+
+    it "has the work-instance with the most votes at index 0" do
+
+    it "has the total number of votes for the work at array position 0 at index 1" do
+      
+    end
 
   end
 end
