@@ -1,31 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-
-noscrubs:
-  title: Fanmail
-  category: album
-  creator: TLC
-  publication_year: 1999
-  description: Album of the best song - No Scrubs
-
-backtoblack:
-  title: Back to Black
-  category: album
-  creator: Amy Winehouse
-  publication_year: 2006
-
-avatar:
-  title: Avatar
-  category: movie
-  creator: James Cameron
-  publication_year: 2009
+<% 1.upto(20) do |i| %>
+work_<%= i %>:
+  title: <%= Faker::Pokemon.name %>
+  category: pokemon
+<% end %>
 
 hill:
-  title: The Miseducation of Lauryn Hill
   category: album
-  creator: Lauryn Hill
-  publication_year: 1998
+  title: The Miseducation of Lauryn Hill
+
+noscrubs:
+  category: album
+  title: Fanmail
