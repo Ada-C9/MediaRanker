@@ -107,13 +107,35 @@ describe Work do
       fourth_vote = Vote.create(user_id:fourth_user.id,work_id:work_other.id)
       fifth_vote = Vote.create(user_id:fifth_user.id,work_id:work.id)
 
-      binding.pry
       Work.top_ten.size.must_equal 10
       Work.top_ten[0].title.must_equal "Dangerous in Love"
       Work.top_ten[1].title.must_equal "Fire and Fury"
-
     end
 
+    it 'will not allow a user to input an empty title' do
+      work = Work.new
+      assert_not work.valid?
+    end
+
+    it 'will not allow a user to input an empty string as a title' do
+      work = Work.new()
+      work.title = ''
+      assert_not work.valid?
+    end
+
+    it 'will not allow a nil input' do
+      work = Work.new(nil)
+      assert_not work.valid?
+    end
+
+    it 'will not allow a user to vote for the same work item more than once' do
+      user = User.create(name: "Joanne Phione")
+      work = Work.find_by(title: "Fire and Fury")
+
+      vote = Vote.create(user_id:user.id,work_id:work.id)
+      vote_test = Vote.new(user_id:user.id,work_id:work.id)
+      assert_not vote_test.valid?
+    end
 
 
 
