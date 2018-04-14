@@ -59,7 +59,7 @@ gem 'foundation-rails'
 gem 'normalize-rails'
 group :development, :test do
   gem 'pry-rails'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'faker'
 end
 
 group :development do
@@ -70,5 +70,4 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
-  gem 'faker'
 end
