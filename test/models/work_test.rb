@@ -40,8 +40,16 @@ describe Work do
 
       value(@work).wont_be :valid?
     end
-  end
 
+    it "is invalid with a duplicate title" do
+      dup_work = Work.new(title: @work.title)
+
+      result = dup_work.valid?
+
+      result.must_equal false
+      dup_work.errors.messages.must_include :title
+    end
+  end
 
   describe "relations" do
     before do
@@ -59,6 +67,22 @@ describe Work do
       # Assert
       @work.vote_ids.must_include vote.id
     end
+
+    # it "must be invalid without a vote" do
+    #   # Arrange
+    #   vote = Vote.find_by(user: 'mambo')
+    #
+    #   # Act
+    #   @work.votes << vote
+    #
+    #   # Assert
+    #   @work.votes.wont_be :valid?
+    #
+    # end
+  end
+
+  describe "self.books method" do
+
 
   end
 end
