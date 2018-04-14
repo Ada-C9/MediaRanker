@@ -1,7 +1,7 @@
 
 <h3 id="media-spotlight">Media Spotlight:<span id="top-work-title"> <%=link_to Work.highest_rated_work.title, work_path(Work.highest_rated_work.id), :id=> 'link-title'%> by <%=Work.highest_rated_work.creator%></span></h3>
 
-<p><%=Work.highest_rated_work.votes.count%> Votes - <%=Work.highest_rated_work.description%></p>
+<p id="spotlight-count"><%=Work.highest_rated_work.votes.count%> Votes - <%=Work.highest_rated_work.description%></p>
 
 <section class="top-ten-container">
 <section class="top-ten">

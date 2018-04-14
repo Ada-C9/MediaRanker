@@ -24,7 +24,7 @@ end
 def destroy
   session[:user_id] = nil
   flash[:success] = "Successfully logged out"
-  redirect_to works_path
+  redirect_to homepage_path
 end
 
 end

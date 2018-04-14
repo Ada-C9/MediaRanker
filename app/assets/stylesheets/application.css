@@ -17,6 +17,9 @@
  *= require foundation_and_overrides
 
  */
+ complete-style{
+   font-family: "Gudea", sans-serif;
+ }
 
  h3{
    color:#26A69A;
@@ -99,8 +102,15 @@
 
 #media-spotlight{
   color:black;
+  padding-left: 15px;
 }
 
+#spotlight-count{
+  padding-left: 15px;
+  padding-bottom: 30px;
+  margin-bottom:80px;
+  border-bottom: 0.5px solid;
+}
 
 #link-title{
   color:#26A69A;
