@@ -36,17 +36,46 @@ describe Work do
 
   describe "works_with_vote_tallies" do
 
+    before do
+
+      @works_n_tallies = Work.works_with_vote_tallies
+
+    end
+
     it "returns an array" do
+
+
+      @works_n_tallies.must_be_kind_of Array
+
     end
 
     it "is identical in length to the number of works in the database" do
+
+
+      @works_n_tallies.length.must_equal 25
+
     end
 
     it "Is a structure in which each element is an array with a length of two " do
+
+      bad_audit = []
+      @works_n_tallies.each do |element|
+        if element.length != 2
+          bad_audit << element
+        end
+      end
+      bad_audit.length.must_equal 0
     end
 
     it "contains elements that consist of an instance of Work at index 0 and a number at index 1 " do
+
+      @works_n_tallies.each do |element|
+        element[0].must_be_instance_of Work
+        element[1].must_be_kind_of Integer
+      end
+
     end
+
 
     it "contains elements in which index position 1 is the correct tally of votes for the element at index position 0" do
 
@@ -106,8 +135,10 @@ describe Work do
 
     it "has the work-instance with the most votes at index 0" do
 
+    end
+
     it "has the total number of votes for the work at array position 0 at index 1" do
-      
+
     end
 
   end

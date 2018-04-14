@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     resources :votes, only: [:new, :create]
   end
 
-  resources :users
+  resources :users, except: [:edit, :update]
 
-  resources :votes, except: [:new, :create]
+  resources :votes, except: [:new, :create, :destroy]
 
   root 'votes#index'
 
