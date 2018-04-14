@@ -1,10 +1,10 @@
 class Work < ApplicationRecord
-  include Comparable
-
   has_many :votes
 
   validates :category, presence: true
   validates :title, length: { minimum: 1, maximum: 25 }, allow_blank: false
+
+  include Comparable
 
   def <=> (other_work)
     votes.count <=> other_work.votes.count

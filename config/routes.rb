@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get 'sessions/create'
-
   get 'sessions/new'
 
   get '/login', to: 'sessions#new', as: 'login_form'
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :index, :show]
   end
 
-  resources :votes 
+  resources :votes
   resources :users
 
   root 'homepage#index'

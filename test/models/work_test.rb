@@ -1,4 +1,5 @@
 require "test_helper"
+require 'pry'
 
 describe Work do
   let(:work) { Work.new category: "movie", title: "hello", creator: "Jane" }
@@ -13,7 +14,6 @@ describe Work do
 
       work.valid?.must_equal false
       work.errors.must_include :category
-
     end
 
     it "must have a title" do
@@ -55,4 +55,36 @@ describe Work do
     end
   end
 
+  describe "methods" do
+    it "gives a list of sorted books" do
+      works = Work.all
+
+      books = Work.category_list(works, "book")
+
+      books.each do |book|
+        book.category.must_equal "book"
+      end
+    end
+
+    it "gives a list of sorted movies" do
+      works = Work.all
+
+      movies = Work.category_list(works, "movie")
+
+      movies.each do |movie|
+        movie.category.must_equal "movie"
+      end
+
+    end
+
+    it "gives a list of sorted albums" do
+      works = Work.all
+
+      albums = Work.category_list(works, "albums")
+
+      albums.each do |album|
+        album.category.must_equal "album"
+      end
+    end
+  end
 end
