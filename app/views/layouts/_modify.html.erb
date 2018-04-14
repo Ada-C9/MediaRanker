@@ -1,29 +1,39 @@
+<% category_from_url(request.fullpath)  %>
+<% if @content_title %>
+<h1>Add a new <%= @content_title.first.singularize %></h1>
+<% else %>
 <h1><%= page_title %></h1>
+<% end %>
+
+
+
+<%= form_for @work, html: {class: "modify-input"} do |f| %>
 
 <% category_from_url(request.fullpath)  %>
-<%= form_for @work, html: {class: "modify-input"} do |f| %>
+
 <% options_array = ["album", "book", "movie"] %>
 
 <%= f.label :category %>
 
 <% if @content %>
-<% f.hidden_field :category, value: @content_title[0].downcase %>
-<%= f.select :category, options_for_select([@content_title[0].downcase])%>
+<% f.hidden_field :category, value: @content_title.first.downcase.singularize %>
+<%= f.select :category, options_for_select([@content_title[0].downcase.singularize]) %>
 <% else %>
 <%= f.select :category, options_for_select(options_array) %>
 <% end %>
 
-<%= f.label :title %>
-<%= f.text_field :title %>
 
-<%= f.label :creator, "Creator" %>
-<%= f.text_field :creator %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-<%= f.label :publication_year, "Publication Year" %>
-<%= f.text_field :publication_year %>
+  <%= f.label :creator, "Creator" %>
+  <%= f.text_field :creator %>
 
-<%= f.label :description %>
-<%= f.text_field :description %>
+  <%= f.label :publication_year, "Publication Year" %>
+  <%= f.text_field :publication_year %>
 
-<%= f.submit %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
 <% end %>

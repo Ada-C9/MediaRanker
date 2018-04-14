@@ -1,1 +1,5 @@
+<% if @work.errors.messages %>
+<%= render partial: 'layouts/error-messages', locals: {model: @work} %>
+<% end %>
+
 <%= render partial: "layouts/modify", locals: {page_title: "Add a Work"} %>

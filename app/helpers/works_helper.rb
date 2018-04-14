@@ -12,8 +12,7 @@ def category_from_url(fullpath)
     @content = [@albums]
     @content_title = ["Albums"]
   when "/works/new"
-    render :new
-  else
+  when "/works"
     @content = [@movies, @books, @albums]
     @content_title = ["Movies", "Books", "Albums"]
   end

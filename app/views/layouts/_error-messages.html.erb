@@ -1,11 +1,13 @@
 
-
-    <ul>
-      <% model.errors.messages.each do |field, problem| %>
-      <li><strong><%= field.capitalize%></strong>
-        <% problem.each do |message| %>
-        <%= message %>
-        <% end %>
-      </li>
+<div class = "callout status failure">
+  <h3> A problem has occurred.</h3>
+  <ul>
+    <% model.errors.messages.each do |field, problem| %>
+    <li><%= field.capitalize%>:
+      <% problem.each do |message| %>
+      <%= message %>
       <% end %>
-    </ul>
+    </li>
+    <% end %>
+  </ul>
+</div>

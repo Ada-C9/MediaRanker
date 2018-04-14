@@ -8,8 +8,6 @@ class Work < ApplicationRecord
   validates :category,  presence: true,
                       inclusion: { in: %w(album book movie) }
 
-
-
   def self.books
     Work.where(category: "book")
   end
