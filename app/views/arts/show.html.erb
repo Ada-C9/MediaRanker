@@ -13,8 +13,6 @@
 
       <%= link_to "Upvote", upvote_path(@art), {method: :post, class: 'button'} %>
 
-      <%= link_to "Upvote", upvote_path(@art), { method: :post, class: "button"} %>
-
       <%= link_to "Delete", art_path(@art.id), {method: :delete, class: 'alert button', data: { confirm: 'Are You Sure?'}} %>
     </section>
 
