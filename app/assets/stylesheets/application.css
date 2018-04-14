@@ -44,8 +44,12 @@
 
 .row-spotlight {
   padding-bottom: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .top-ten-container {
+  padding-left: 3%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -62,6 +66,10 @@
 .media-options {
   display: flex;
   flex-direction: row;
+}
+
+main {
+
 }
 
 html {
