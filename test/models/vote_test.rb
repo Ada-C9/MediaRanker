@@ -18,14 +18,6 @@ describe Vote do
     @vote_2 = Vote.new user_id: @user_todd.id, work_id: @work_breakfast.id
     @vote_3 = Vote.new user_id: @user_bojack.id, work_id: @work_breakfast.id
 
-
-
-
-
-    # USER 14:  1, 2, 3, 23 (:two, :three, :six, :twentynine)
-    # USER 8: 9, 23, 25 (:fourteen, :twentyeight, :thirtytwo)
-    # USER 7: 10 (:sixteen)
-
   end
 
   let(:vote) { Vote.new user_id: @user_diane.id, work_id: @work_breakfast.id }
@@ -109,7 +101,7 @@ describe Vote do
 
     it "must return the exact number of works a user has voted for" do
 
-      @user_14_result.find_by()
+      @user_14_result.count.must_equal 4
       @user_8_result.count.must_equal 3
       @user_7_result.count.must_equal 1
 
@@ -128,11 +120,11 @@ describe Vote do
       assert_includes @user_14_result, @vote_three
       assert_includes @user_14_result, @vote_six
       assert_includes @user_14_result, @vote_twentynine
-      #
-      assert_includes @user_8_result, @vote_eight
+
+      assert_includes @user_8_result, @vote_fourteen
       assert_includes @user_8_result, @vote_twentyeight
       assert_includes @user_8_result, @vote_thirtytwo
-      #
+
       assert_includes @user_7_result, @vote_sixteen
 
     end
