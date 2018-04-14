@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :find_work, only: [:edit, :show, :update]
+  before_action :find_work, only: [:edit, :show, :update, :destroy]
 
   def edit
   end
@@ -36,13 +36,10 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    begin
-      # @work = Work.find_by(id: params[:id])
-      if @work != nil
-        @work.destroy
-      end
-      flash[:success] = "#{@work.category.capitalize} deleted"
-    rescue
+    if @work != nil
+      @work.destroy
+      flash[:success] = "#{@work.category.capitalize} deleted!"
+    else
       flash.now[:alert] = "Item does not exist!"
     end
     redirect_to root_path

@@ -7,6 +7,9 @@ class Work < ApplicationRecord
   include Comparable
 
   def <=> (other_work)
+    if self == nil
+      return nil
+    end 
     votes.count <=> other_work.votes.count
   end
 

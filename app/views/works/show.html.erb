@@ -23,7 +23,7 @@
         <% end %>
       </p>
       <p>
-        <%= link_to "Delete", work_path(@work.id), method: :delete, data: { confirm: "Confirm deletion" }, :class => "button" %>
+        <%= link_to "Delete", work_path(@work.id), method: :delete, data: { confirm: "Are you sure?" }, :class => "button" %>
       </p>
     </section>
   </article>
