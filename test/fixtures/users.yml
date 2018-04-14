@@ -1,7 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+nora:
+  username: Nora
 
-one:
-  username: MyString
+bob:
+  username: Bob
 
-two:
-  username: MyString
+chad:
+  username: Chad
+
+todd:
+  username: Todd
