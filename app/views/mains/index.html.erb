@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag "mains" %>
+
+<main class="row">
+     <section class="row spotlight">
+     <h3><span class="media-spotlight-header">Media Spotlight:</span>
+       <% if @spotlight != nil %>
+        <%= link_to @spotlight.title, publication_path(@spotlight.id) %> by <%= @spotlight.creator %></h3>
+        <p><% total = @spotlight.votes.count %>
+          <% if total == 1 %>
+            <%= total %> vote - <%= @spotlight.description %></p>
+          <% else %>
+            <%= total %> votes - <%= @spotlight.description %></p>
+          <% end %>
+      <% end %>
+ </section>
+
+<hr class="root-hr" />
+
+<section class="top-ten-container">
+
+  <section class="top-ten">
+    <h3>Top Movies</h3>
+    <hr class="category-line" />
+      <ul>
+      <% @movies.each do |movie| %>
+        <li><h4>
+          <%= link_to movie.title, publication_path(movie.id) %>
+          <small>by <%= movie.creator%></small></h4>
+            <% total = movie.votes.count %>
+            <% if total == 1 %>
+              <p><%= total %> vote</p>
+            <% else %>
+              <p><%= total %> votes</p>
+            <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3>Top Books</h3>
+    <hr class="category-line" />
+      <ul>
+      <% @books.each do |book| %>
+        <li><h4>
+          <%= link_to book.title, publication_path(book.id) %>
+          <small>by <%= book.creator%></small></h4>
+          <% total = book.votes.count %>
+          <% if total == 1 %>
+            <p><%= total %> vote</p>
+          <% else %>
+            <p><%= total %> votes</p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten">
+    <h3>Top Albums</h3>
+    <hr class="category-line" />
+      <ul>
+      <% @albums.each do |album| %>
+        <li><h4>
+          <%= link_to album.title, publication_path(album.id) %>
+          <small>by <%= album.creator%></small></h4>
+          <% total = album.votes.count %>
+          <% if total == 1 %>
+            <p><%= total %> vote</p>
+          <% else %>
+            <p><%= total %> votes</p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,19 @@
+.top-ten-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+}
+
+a, h3 {
+    color: #26A69A;
+    font-weight: bold;
+}
+
+h3 a {
+  text-decoration: underline;
+}
+
+.media-spotlight-header {
+    color: #424242;
+    font-weight: bold;
+}

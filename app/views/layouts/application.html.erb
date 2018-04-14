@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<link href='https://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' />
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="shortcut icon" type="image/x-icon" href="https://media-ranker-2-0.herokuapp.com/assets/favicon-910822ff6cd5f6d37119171c4b716f1d4e5fe0e8ad5e408627659ebf8d7f16b1.ico", alt: "site logo, an owl">
+  </head>
+  <header class="page-header">
+    <h2>
+      <strong><%= link_to "Media Ranker", main_path %></strong>
+      <small>Ranking the Best of Everything in the Whole World</small>
+    </h2>
+
+    <nav>
+      <%= link_to "View top media", main_path, class: "button" %>
+      <%= link_to "View all media", publications_path, class: "button" %>
+      <%= link_to "Add a new work", new_publication_path, class: "button" %>
+      <%= link_to "View all users", users_path, class: "button" %>
+      <section class="float-right">
+        <% if @user %>
+          <% if @user.id != nil %>
+            <%= link_to "Logged in as #{@user.name}", user_path(@user.id), class: "button" %>
+            <%= link_to "logout", logout_path, method: :delete, class: "button" %>
+          <% end %>
+        <% else %>
+          <%= link_to "Log In", login_form_path, class: "button" %>
+        <% end %>
+      </section>
+    </nav>
+
+  </header>
+
+  <main class="row">
+    <section class="flash">
+      <% flash.each do |name, message| %>
+        <section class="callout <%= name %>">
+          <% if name == "alert" %>
+            <ul>
+              <% flash[:alert].each do |field, message| %>
+                <li>
+                  <strong> <%= field.capitalize %> </strong> <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>
+              <%= message %>
+            </p>
+          <% end %>
+        </section>
+      <% end %>
+    </section>
+  </main>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
+</html>

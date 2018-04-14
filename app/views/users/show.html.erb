@@ -1,0 +1,29 @@
+<main class="row">
+  <h3>User Summary: <%= @user.name %> </h3>
+  <p>Joined site <%= @user.get_date %></p>
+
+  <h4>Votes</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Media Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Category</th>
+        <th>Voted On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.votes.each do |vote| %>
+       <% publication = vote.find_publication %>
+        <tr>
+          <td><%= link_to publication.title, publication_path(publication.id) %></td>
+          <td><%= publication.creator %></td>
+          <td><%= publication.publication_year %></td>
+          <td><%= publication.category %></td>
+          <td><%= vote.get_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>

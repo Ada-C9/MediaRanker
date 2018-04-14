@@ -1,0 +1,30 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+reader:
+  title: This is a reader
+  creator: writer
+  category: book
+  publication_year: 1991
+  description: The words convey meaning
+
+listener:
+  title: This is a song
+  creator: musician
+  category: album
+  publication_year: 2000
+  description: Nice sounds
+
+tunes:
+  title: Some jams
+  creator: musician
+  category: album
+  publication_year: 1980
+  description: la dee dah
+
+watcher:
+  title: How about a movie
+  creator: actor
+  category: movie
+  publication_year: 2018
+  description: Wherefore art thou
