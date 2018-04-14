@@ -42,3 +42,21 @@ Firefury:
   creator: Michael Wolff
   publication_year: 2018
   description: So much drama in the Trump Administration
+LifeofSlavegirl:
+  category: Book
+  title: Incidents in the Life of a Slave Girl
+  creator: Harriet Anne Jacobs
+  publication_year: 1881
+  description: History of woman escaping slavery
+Cook:
+  category: Book
+  title: Plenty
+  creator: Yottam Otale
+  publication_year: 2010
+  description: Cook book
+Skeleton:
+  category: Movie
+  title: Skeleton
+  creator: Joahanna Fellows
+  publication_year: 2008
+  description: New orleans themed horror film

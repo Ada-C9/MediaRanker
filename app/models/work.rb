@@ -14,17 +14,6 @@ class Work < ApplicationRecord
 
   def self.top_ten
     works = self.all
-    top_works = {}
-
-    works.each do |work|
-      if top_works[work].nil?
-        top_works[work] = 1
-      else
-        top_works[work]+=1
-      end
-    end
-
-    return top_works.sort_by{|work_obj,votes|-votes}.first(10).map(&:first)
+    works.sort_by{|work|work.votes.count}.reverse.first(10)
   end
-
 end
