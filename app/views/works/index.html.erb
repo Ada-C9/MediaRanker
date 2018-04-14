@@ -1,0 +1,132 @@
+<h2>List of works</h2>
+<% if @vote != nil %>
+  <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+  <% end %>
+
+<h3>Music Albums</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @albums.each do |album| %>
+    <tr>
+      <td class="text-center">
+        <%= album.votes.count %>
+      </td>
+      <td class="text-center">
+        <%= link_to album.title, work_path(album)%>
+      </td>
+      <td class="text-center">
+        <%=album.created_by%>
+      </td>
+      <td class="text-center">
+        <%=album.published_year%>
+      </td>
+      <td class="text-center">
+       <%= link_to 'Upvote', upvote_path(album), method: :post, class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
+
+<h3>Books</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td class="text-center">
+        <%=book.votes.count  %>
+      </td>
+      <td class="text-center">
+        <%= link_to book.title, work_path(book)%>
+      </td>
+      <td class="text-center">
+        <%= book.created_by%>
+      </td>
+      <td class="text-center">
+        <%=book.published_year%>
+      </td>
+      <td class="text-center">
+        <%= link_to 'Upvote', upvote_path(book), method: :post, class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
+
+<h3>Movies</h3>
+<table>
+
+  <th>
+    <strong>Votes</strong>
+  </th>
+  <th>
+    <strong>Title</strong>
+  </th>
+  <th>
+    <strong>Created by</strong>
+  </th>
+  <th>
+    <strong>Published</strong>
+  </th>
+  <th>
+    <strong>Upvote</strong>
+  </th>
+  <tr>
+    <% @movies.each do |movie| %>
+    <tr>
+      <td class="text-center">
+        <%=movie.votes.count %>
+      </td>
+      <td class="text-center">
+        <%= link_to movie.title, work_path(movie)%>
+      </td>
+      <td class="text-center">
+        <%=movie.created_by%>
+      </td>
+      <td class="text-center">
+        <%=movie.published_year%>
+      </td>
+      <td class="text-center">
+        <%= link_to 'Upvote', upvote_path(movie), method: :post, class:'button'%>
+      </td>
+    </tr>
+  </tr>
+  <%end%>
+</table>
+
+<section>
+  <%= link_to 'View top media',works_path, class: 'button'%>
+  <%= link_to 'Add new work', new_work_path, class: 'button' %>
+</section>

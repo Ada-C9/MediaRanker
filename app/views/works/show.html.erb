@@ -1,0 +1,45 @@
+<section>
+  <h3><%= @work.title %></h3>
+  <p>
+    Created_by: <%= @work.created_by %>
+  </p>
+  <p>
+  Published: <%= @work.published_year %>
+  </p>
+  <p>
+    Description: <%= @work.description %>
+  </p>
+
+</section>
+
+<section>
+  <%= link_to 'Back to ranks',root_path, class:'button' %>
+  <%= link_to 'Edit',edit_work_path, class:'button' %>
+  <%= link_to 'Upvote', root_path, class:'button' %>
+  <%= link_to 'Delete',work_path, method: :delete, data: {confirm: "Are you sure?"}, class:'alert button'%>
+
+</section>
+
+<section>
+  <h2><%= @work.votes.count%> Votes for this <%= @work.category.capitalize%></h2>
+  <table>
+    <th>
+      <strong>User</strong>
+    </th>
+    <th>
+      <strong>Date</strong>
+    </th>
+    <tr>
+      <% @work.votes.each do |vote| %>
+      <tr>
+        <td class='text-center'>
+          <%= link_to vote.user.name %>
+        </td>
+        <td class='text-center'>
+          <%= vote.created_at.strftime('%B %d, %Y') %>
+        </td>
+      </tr>
+    </tr>
+    <% end %>
+  </table>
+</section>

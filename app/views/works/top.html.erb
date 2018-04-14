@@ -1,0 +1,46 @@
+<h2>Media Spotlight: <span>COMING SOON! Not enough votes for a true media spotlight.</span> </h2>
+<section class='top-media'>
+  <section>
+    <h3>Top Movies</h3>
+    <% @works.where(category: 'movie').top_votes.take(10).each do |work| %>
+
+    <ul class="no-bullet">
+      <li>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+
+  <section>
+    <h3>Top Books</h3>
+    <% @works.where(category: 'book').top_votes.take(10).each do |work| %>
+    <ul class="no-bullet">
+      <li>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+
+  <section>
+    <h3>Top Albums</h3>
+    <% @works.where(category: 'album').top_votes.take(10).each do |work| %>
+
+    <ul class="no-bullet">
+      <li>
+        <strong> <%= link_to work.title, work_path(work) %> </strong> <%= work.created_by%>
+      </li>
+      <li>
+        <%= work.votes.count %> votes
+      </li>
+    </ul>
+    <% end %>
+  </section>
+</section>

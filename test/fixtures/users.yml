@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Jon Snow
+
+two:
+  name: Daenerys Targaryen
+
+three:
+  name: Arya Stark
+
+four:
+  name: Tyrion Lannister
+
+five:
+  name: Khal Drogo
