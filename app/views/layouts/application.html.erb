@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <header class="page-header row">
+      <h2>
+        <a href="/">Media Ranker</a>
+        <small>Ranking the Best of Everything</small>
+      </h2>
+      <nav>
+          <%= link_to "View top media", root_path, class: "button" %>
+          <%= link_to "View all media", works_path, class: "button" %>
+          <%= link_to "Add a new work", new_work_path, class: "button" %>
+          <%= link_to "View all users", users_path, class: "button"%>
+
+          <div class="float-right">
+            <% if current_user != nil %>
+              <%= link_to "Logged in as #{@user.name}", user_path(@user.id), class: "button" %>
+              <%= link_to "Log Out", logout_path, method: :delete, class: "button" %>
+            <% else %>
+              <%= link_to "Login", login_path, class: "button float-right" %>
+            <% end %>
+          </div>
+      </nav>
+    </header>
+
+    <main class= "row">
+
+      <section class="row status success">
+        <% flash.each do |name, message| %>
+          <section class="callout <%= name %>">
+            <% if name == "error" %>
+              <ul>
+                <% flash[:error].each do |field, message|%>
+                  <% if message != []%>
+                    <li><%=field%>: <%=message[0]%></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% else %>
+            <h3>
+              <%= message %>
+            </h3>
+            <% end %>
+          </section>
+        <% end %>
+      </section>
+
+      <%= yield %>
+    </main>
+
+  </body>
+</html>

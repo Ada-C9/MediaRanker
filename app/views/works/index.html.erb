@@ -1,0 +1,39 @@
+<h3>List of works</h3>
+
+<% categories = Work.make_category_hash %>
+<% categories.each do |category| %>
+<section class="media-table">
+  <h4><%= category.capitalize %></h4>
+  <% works_by_category = @works.find_all {|work| work.category == category} %>
+  <% i = 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th width=80>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th width=100>Published</th>
+        <th width=100>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+
+          <% while i < works_by_category.length %>
+          <tr>
+            <% one_work = works_by_category[i] %>
+            <td><%= one_work.votes.count %></td>
+            <td><%= link_to one_work.title, work_path(one_work[:id])%></td>
+            <td><%= one_work.creator%></td>
+            <td><%= one_work.published.to_s(:db)%></td>
+            <td><%=link_to "Upvote", upvote_path(one_work.id), method: :post, class: "button upvote" %></td>
+            <% i += 1%>
+          </tr>
+          <% end %>
+
+    </tbody>
+  </table>
+</section>
+<% end %>
+
+<%= link_to "View top media", root_path, class: "button"%>
+<%= link_to "Add a new work", new_work_path, class: "button"%>

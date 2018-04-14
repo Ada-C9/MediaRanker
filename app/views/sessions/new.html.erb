@@ -1,0 +1,6 @@
+<p>Login</p>
+<%= form_for @user, url: login_path do |f| %>
+  <%= f.label "Username" %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

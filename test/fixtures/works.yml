@@ -1,0 +1,36 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+work1:
+  title: My first book
+  creator: Me
+  published: 1990
+  description: my first book is about this
+  category: book
+
+work2:
+  title: My second book
+  creator: You
+  published: 2017
+  description: and this book is about something else
+  category: book
+
+work3:
+  title: my first album!
+  creator: someone
+  published: 2000
+  description: super good i promise
+  category: album
+
+most_votes:
+  title: most votes work
+  creator: anyone
+  published: 2001
+  description: super good i promise
+  category: movie
+
+no_votes:
+  title: no votes
+  creator: anyone else
+  published: 1800
+  description: old book
+  category: book
