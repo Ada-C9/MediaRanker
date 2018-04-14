@@ -1,6 +1,6 @@
 class MainsController < ApplicationController
 
   def index
-    @works = Work.top_most_work
+    @works = Work.all
   end
 end

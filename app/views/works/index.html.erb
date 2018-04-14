@@ -1,48 +1,75 @@
+<h2>List of works</h2>
+<h4>Albums</h4>
 <table class="hover">
-    <thead>
-      <tr>
-        <th width="200">Table Header</th>
-        <th>Table Header</th>
-        <th width="150">Table Header</th>
-        <th width="150">Table Header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <th>
-        <% @works.each do |work| %>
-          <% if work.category == 'album' %>
-            <tr>
-            <td><%= link_to(work.title, work_path(work) ) %></td>
-            <td><%= work.creator %></td>
-            <td><%= work.publication_year %></td>
-            <td><%= link_to 'Upvote', work_votes_path(work), method: :post %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </th>
-      <th>
-        <% @works.each do |work| %>
-          <% if work.category == 'book' %>
-            <tr>
-            <td><%= link_to(work.title, work_path(work) ) %></td>
-            <td><%= work.creator %></td>
-            <td><%= work.publication_year %></td>
-            <td><%= link_to 'Upvote', work_votes_path(work), method: :post %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </th>
-      <th>
-        <<% @works.each do |work| %>
-          <% if work.category == 'movie' %>
-          <tr>
-            <td><%= link_to(work.title, work_path(work) ) %></td>
-            <td><%= work.creator %></td>
-            <td><%= work.publication_year %></td>
-            <td><%= link_to 'Upvote', work_votes_path(work), method: :post, class: 'button' %></td>
-          </tr>
-          <% end %>
-        <% end %>
-      </th>
-    </tbody>
-  </table>
+  <th>
+    <tr>
+      <td>Votes</td>
+      <td>Title</td>
+      <td>Created by</td>
+      <td>Publication</td>
+      <td>Upvote</td>
+    </tr>
+  </th>
+  <th>
+    <% Work.albums.each do |work| %>
+    <tr>
+      <td><%= pluralize(work.votes.count, "vote") %></td>
+      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= work.creator %></td>
+      <td><%= work.publication_year %></td>
+      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+    </tr>
+    <% end %>
+  </th>
+</tbody>
+</table>
+
+<h4>Books</h4>
+<table class="hover">
+  <th>
+    <tr>
+      <td>Votes</td>
+      <td>Title</td>
+      <td>Created by</td>
+      <td>Publication</td>
+      <td>Upvote</td>
+    </tr>
+  </th>
+  <th>
+    <% Work.books.each do |work| %>
+    <tr>
+      <td><%= pluralize(work.votes.count, "vote") %></td>
+      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= work.creator %></td>
+      <td><%= work.publication_year %></td>
+      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+    </tr>
+    <% end %>
+  </th>
+</tbody>
+</table>
+
+<h4>Movies</h4>
+<table class="hover">
+  <th>
+    <tr>
+      <td>Votes</td>
+      <td>Title</td>
+      <td>Created by</td>
+      <td>Publication</td>
+      <td>Upvote</td>
+    </tr>
+  </th>
+  <th>
+    <% Work.movies.each do |work| %>
+    <tr>
+      <td><%= pluralize(work.votes.count, "vote") %></td>
+      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= work.creator %></td>
+      <td><%= work.publication_year %></td>
+      <td><%= button_to 'Upvote', work_votes_path(work) %></td>
+    </tr>
+    <% end %>
+  </th>
+</tbody>
+</table>
