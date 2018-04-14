@@ -1,6 +1,5 @@
 class WorksController < ApplicationController
 
-  before_action :find_user, only: [:edit, :update]
 
   def index
     @movies = Work.where(category: 'movie')
@@ -29,9 +28,11 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @work = Work.find_by(id: params[:id])
   end
 
   def update
+    @work = Work.find_by(id: params[:id])
     if @work
       if @work.update(work_params)
         flash[:success] = "#{@work.title} updated"
