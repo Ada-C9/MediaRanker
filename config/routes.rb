@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show] do
-    resources :votes
+    resources :votes, only: [:index, :show, :create, :new]
   end
 
   get '/login', to: 'sessions#new', as: 'login'

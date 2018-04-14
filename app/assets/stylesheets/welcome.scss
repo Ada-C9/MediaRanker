@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h3 a {
-  border-bottom: 2px solid;
   color: #26A69A;
   text-decoration: none;
-  font-size: 1.9375rem;
+  font-size: 2rem;
+  border-bottom: 2px solid;
 }
 
 a {
@@ -13,12 +13,26 @@ a {
   text-decoration: none;
 }
 
+hr {
+  width: 95%;
+}
+
 .welcome-wrapper {
   margin: 1.5em;
 }
 
+#spotlight {
+  color: #778899;
+}
+
+#spotlight-votes {
+  color: #778899;
+  margin-left: 2em;
+}
+
 .top-ten h3 {
   color: #26A69A;
+  width: 70%;
   border-bottom: #26A69A 1px solid;
   font-weight: bold;
   font-size: 1.5em;
@@ -40,4 +54,5 @@ h4 {
 
 li{
   color: #778899;
+  margin-left: 2.5em;
 }

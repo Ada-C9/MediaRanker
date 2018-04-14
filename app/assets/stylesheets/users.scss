@@ -1,8 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h2 {
-  padding: .5em 1em .25em 1em;
+body {
+  padding-bottom: 2em;
+}
+
+h2, h3 {
+  padding: 0 1em .25em 1em;
+  color: #26A69A;
+  font-weight: 500;
 }
 
 form {
@@ -12,4 +18,8 @@ form {
 input {
   background-color: #26A69A;
   color: #FEFEFE;
+}
+
+table {
+  margin: 2em;
 }

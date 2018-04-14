@@ -1,10 +1,10 @@
 <div class= "welcome-wrapper">
   <h3>
-    Media Spotlight:
+    <span id="spotlight">Media Spotlight:</span>
     <%= link_to @spotlight.title, work_path(@spotlight)%>
     by <%= @spotlight.creator %>
   </h3>
-  <%= pluralize(@spotlight.votes.count, "vote") %>
+  <span id="spotlight-votes"><%= pluralize(@spotlight.votes.count, "vote") %></span>
   <%= @spotlight.description %>
 </p>
 
@@ -17,9 +17,9 @@
   <ul>
     <% @albums.each do |work| %>
     <li>
-      <h4><%= link_to work.title, work_path(work) %> </h4> <small>by
+      <h5><%= link_to work.title, work_path(work) %> </h5> <small>by
       <%= work.creator %></small>
-      <%= work.votes.count %>
+      <%= pluralize(work.votes.count, "vote") %>
     </li>
     <% end %>
   </ul>
@@ -30,9 +30,9 @@
   <ul>
     <% @books.each do |work| %>
     <li>
-      <%= link_to work.title, work_path(work) %> by
+      <h5><%= link_to work.title, work_path(work) %> </h5> by
       <%= work.creator %>
-      <%= work.votes.count %>
+      <%= pluralize(work.votes.count, "vote") %>
     </li>
     <% end %>
   </ul>
@@ -43,9 +43,9 @@
   <ul>
     <% @movies.each do |work| %>
     <li>
-      <%= link_to work.title, work_path(work) %> by
+      <h5><%= link_to work.title, work_path(work) %> </h5>by
       <%= work.creator %>
-      <%= work.votes.count %>
+      <%= pluralize(work.votes.count, "vote") %>
     </li>
     <% end %>
   </ul>

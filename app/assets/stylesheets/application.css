@@ -22,6 +22,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0A0A0A;
+  overflow-x:hidden;
 }
 
 .page-header {
@@ -60,6 +61,10 @@ h2 small {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #0C8076;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -87,7 +92,16 @@ nav ul li {
   color: red;
 }
 
+.success {
+  background-color: #41f2a5;
+  color: white;
+  font-weight: bold;
+  padding: 2em;
+}
+
 .failure {
   background-color: pink;
   color: red;
+  font-weight: bold;
+  padding: 2em;
 }
