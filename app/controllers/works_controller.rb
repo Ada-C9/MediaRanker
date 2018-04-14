@@ -42,7 +42,7 @@ class WorksController < ApplicationController
     else
       flash.now[:alert] = "Item does not exist!"
     end
-    redirect_to root_path
+    redirect_to works_path
   end
 
   private
