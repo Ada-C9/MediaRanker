@@ -1,4 +1,5 @@
 require "test_helper"
+require "pry"
 
 describe User do
 
@@ -25,6 +26,16 @@ describe User do
       result = @user.valid?
       result.must_equal false
       @user.errors.messages.must_include :username
+    end
+
+  end
+
+  describe 'relations' do
+
+    it 'has many votes' do
+    end
+
+    it 'has many works through votes' do
     end
 
   end

@@ -38,8 +38,33 @@ describe Vote do
       result = @vote.valid?
       result.must_equal false
       @vote.errors.messages.must_include :user_id
-      @vote.errors.messages.must_include :work_id
     end
+  end
+
+  describe 'relations' do
+
+    it 'has a user' do
+      vote = votes(:book_vote)
+      vote.user.must_equal users(:luke)
+    end
+
+    it 'can set the user' do
+      vote = Vote.new()
+      vote.user = users(:luke)
+      vote.user_id.must_equal users(:luke).id
+    end
+
+    it 'has a work' do
+      vote = votes(:book_vote)
+      vote.work.must_equal works(:kindred)
+    end
+
+    it 'can set the work' do
+      vote = Vote.new()
+      vote.work = works(:kindred)
+      vote.work_id.must_equal works(:kindred).id
+    end
+
   end
 
 end

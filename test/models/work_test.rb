@@ -27,4 +27,14 @@ describe Work do
     end
   end
 
+  describe 'relations' do
+
+    it 'has many votes' do
+    end
+
+    it 'has many users through votes' do
+    end
+
+  end
+
 end
