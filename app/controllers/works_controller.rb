@@ -17,6 +17,9 @@ class WorksController < ApplicationController
   end
 
   def show
+    if @work == nil
+      redirect_to "/404.html"
+    end
   end
 
   def edit
@@ -29,6 +32,19 @@ class WorksController < ApplicationController
   def destroy
     @work.destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @vote = Vote.new
+    @vote.user = User.find(session[:user_id])
+    @vote.work = Work.find_by(id: params[:id])
+
+    if @vote.save
+      redirect_to root_path
+      flash[:success] = "Successfully upvoted!"
+    else
+      flash.now[:alert] = @vote.errors
+    end
   end
 
   private
