@@ -1,0 +1,16 @@
+<h2><%=@work.title%></h2>
+<section>
+  <ul>
+    <li><button><%= link_to("Edit", edit_work_path(@work)) %></button></li>
+    <li><button><%= link_to("Delete", work_path(@work.id), method: :delete, data: { confirm: "Are you sure you want to delete #{ @work.title }?" }) %></li>
+    </ul>
+  </section>
+
+  <section>
+    <ul>
+      <li><%=@work.creator%></li>
+      <li><%=@work.publication_year%></li>
+      <li><%=@work.description%></li>
+    </ul>
+
+  </section>

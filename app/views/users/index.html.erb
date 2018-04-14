@@ -1,0 +1,15 @@
+<main>
+  <h1>All users</h1>
+  <table>
+    <tr>
+      <th>User Name</th>
+      <th>Date Joined</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to(user.user_name, user_path(user)) %></td>
+      <td><%= user.date_joined %></td>
+    </tr>
+    <% end %>
+  </table>
+</main>

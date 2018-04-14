@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header>
+    <h2>
+      <a href="/">Media Ranker</a>
+      <small>Ranking the Best of Everything</small>
+    </h2>
+    <nav>
+      <a class="button"><%= link_to "View top media", root_path%></a>
+      <a class="button"><%= link_to "View all media", works_path%></a>
+      <a class="button"><%= link_to "Add a new work", new_work_path %></a>
+      <a class="button"><%= link_to "View all users", users_path%></a>
+      <div>
+        <% if session[:user_id] %>
+        <a class="button" ><%= link_to "Logout", logout_path, method: :delete %></a>
+        <% else %>
+        <a class="button" ><%= link_to "Login",login_path%></a>
+        <%end%>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <div class="<%= name %>">
+        <%= message %>
+        <% if @vote %>
+        <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+        <% end %>
+        <% end %>
+      </div>
+
+      
+    </section>
+
+
+    <%= yield %>
+
+  </body>
+  </html>
