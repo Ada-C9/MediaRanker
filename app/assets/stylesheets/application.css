@@ -153,14 +153,15 @@ thead, tbody, tfoot {
   text-align: left;
 }
 
-tbody tr:nth-child(even) {
-  border-bottom: 0;
-  background: #f1f1f1;
-}
+
 
 tbody th, tbody td {
   padding: 0;
 
+}
+tbody tr:nth-child(even) {
+  border-bottom: 0;
+  background: #f1f1f1;
 }
 
 /*---------------------------Works Show---------------------------*/

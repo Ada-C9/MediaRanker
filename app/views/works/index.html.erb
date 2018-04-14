@@ -3,10 +3,12 @@
   <h3>List of Works</h3>
   <h4>Albums</h4>
   <section class = "media-table">
+
     <table>
       <thead>
+
         <tr>
-          <th width="80">
+          <th>
             Votes
           </th>
           <th>
@@ -15,10 +17,10 @@
           <th>
             Created By
           </th>
-          <th width="100">
+          <th>
             Published
           </th>
-          <th width="100">
+          <th>
             Upvote
           </th>
         </tr>
@@ -31,7 +33,7 @@
             <%= work.votes.count %>
           </td>
           <td>
-            <%=link_to work.title, work_path(work.id)%>
+            <%= link_to work.title, work_path(work.id)%>
           </td>
           <td>
             <%=work.creator%>
@@ -44,9 +46,8 @@
           </td>
         </tr>
         <% end %>
+        <% end %>
       </tbody>
-      <% end %>
-
     </table>
   </section>
   <h4>Books</h4>
@@ -54,6 +55,7 @@
 
     <table>
       <thead>
+
         <tr>
           <th>
             Votes
@@ -96,7 +98,7 @@
         <% end %>
       </tbody>
     </table>
-  </setion>
+  </section>
 
 
   <h4> Movies</h4>
