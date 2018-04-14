@@ -34,6 +34,11 @@ ul {
   list-style: none;
 }
 
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+
 h3 {
   color: #26A69A;
 }
@@ -59,12 +64,4 @@ header h2 a {
 }
 header h2 small {
   color: white;
-}
-
-nav {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative;
-  display: flex;
 }

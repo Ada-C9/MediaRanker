@@ -1,13 +1,12 @@
 
-<h1><%=@work.title%></h1>
+<h3><%=@work.title%></h3>
 
-<h2><%=@work.category%></h2>
-<h2></h2>
-<ul>
-  <li><%=@work.created_by%></li>
-  <li><%= @work.published%></li>
-  <li><%= @work.description%></li>
-</ul>
+
+
+  <p>Created by: <%=@work.created_by%></p>
+  <p>Published: <%= @work.published%></p>
+  <p><%= @work.description%></p>
+
 
 <section>
   <%= link_to "Back to media ranks", root_path, class: "button"%>
@@ -18,7 +17,7 @@
 
 
 
-<h2><%= @work.total_votes%> votes for this movie</h2>
+<h3><%= @work.total_votes%> votes for this <%=@work.category%></h3>
 
 
 <table>
