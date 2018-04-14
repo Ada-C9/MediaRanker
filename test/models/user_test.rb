@@ -1,10 +1,10 @@
 require "test_helper"
 
 describe User do
-  let(:user) { User.new }
+  let(:user) { users(:user_one)}
 
-  it "must be valid" do
-    value(user).must_be :valid?
+  it "must accept a user with valid inputs" do
+    user.valid?.must_equal true
   end
 
   it "it accepts a name input" do
