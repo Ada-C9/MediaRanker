@@ -49,23 +49,9 @@ describe Work do
 
     end
 
-    it "finds the work with more votes" do
+    it "finds the work overall categories with more votes (media_spotlight)" do
 
       Work.top.title.must_equal works(:harrypotter).title
-    end
-
-    it 'returns the first top-ten movies' do
-
-      array_top_ten_movies = [works(:harrypotter), works(:the_lure), works(:dark_times),
-        works(:the_square), works(:lucky), works(:lady_bird), works(:frozen),
-      works(:goodtime), works(:flinstones), works(:blackpanther)]
-
-      expected = array_top_ten_movies.include?(works(:thor))
-
-      result = Work.top_ten_movies.include?(works(:thor))
-
-      result.must_equal expected
-
     end
 
     it 'returns an array of the first top-ten movies' do
@@ -74,7 +60,25 @@ describe Work do
 
     end
 
-     it 'returns empty array when no books' do
+    it 'returns the FIRST ten movies voted for the Top-Ten Movies' do
+
+      array_top_ten_movies = [works(:harrypotter), works(:the_lure), works(:dark_times),
+        works(:the_square), works(:lucky), works(:lady_bird), works(:frozen),
+      works(:goodtime), works(:flinstones), works(:blackpanther)]
+
+      # The 11th movie has the same amount of votes as the 10th movie, but the method
+      # considers the order of voting, so returns the first ten movies voted.
+
+      expected_false = array_top_ten_movies.include?(works(:thor))
+
+      result_false = Work.top_ten_movies.include?(works(:thor))
+
+      result_false.must_equal expected_false
+
+    end
+
+
+     it 'returns an empty array when no works of category books' do
 
       Work.top_ten_books.must_equal []
      end
