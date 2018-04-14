@@ -23,9 +23,12 @@ class WorksController < ApplicationController
   end
 
   def top_media
+    @top_medium = Work.spotlight_work
     @top_albums = Work.top_albums
     @top_movies = Work.top_movies
     @top_books = Work.top_books
+
+    raise
   end
 
 
