@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:logged_in_user] = @user.id
-      flash[:success] = "#{user.name} is successfully logged in"
+      flash[:success] = "#{@user.name} is successfully logged in"
       redirect_to root_path
     else
       @user = User.new(name: params[:name], created_at: Date.today)
@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
         redirect_to root_path
       else
         flash.now[:failure] = "A problem occurred. Could not log in"
-        flash.now[:error] = @user.errors.messages
         render :new
       end
     end

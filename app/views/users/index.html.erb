@@ -13,7 +13,7 @@
     <tr>
       <% @users.each do |user| %>
       <div class="user">
-        <td><strong><%= link_to user.name, user_path(user.id) %></strong></td>
+        <td><%= link_to user.name, user_path(user.id) %></td>
         <td><%= Vote.all.where(user_id: user).count %></td>
         <td><%= user.created_at.strftime("%b %d, %Y") %></td>
       </div>
