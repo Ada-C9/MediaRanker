@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user1:
+  username: user1
+  date_joined: 2018-03-11
+
+user2:
+  username: user2
+  date_joined: 2018-01-14
+
+user3:
+  username: user3
+  date_joined: 2018-01-14
+
+user4:
+  username: user4
+  date_joined: 2018-02-14
+
+user5:
+  username: user5
+  date_joined: 2018-02-08
+
+user6:
+  username: user6
+  date_joined: 2018-04-08
+
+user7:
+  username: user7
+  date_joined: 2018-01-08
+
+user8:
+  username: username8
+  date_joined: 2018-03-18
+
+user9:
+  username: username9
+  date_joined: 2018-04-18

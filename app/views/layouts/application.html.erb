@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
+
+  <%= stylesheet_link_tag    "application"%>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'owl.jpg' %>
+
+</head>
+
+<body>
+  <header class="page-header row">
+    <h2 class="small-12 columns">
+
+      <%=link_to "Media Ranker", '/', method: :get%>
+      <small>Ranking the Best of Everything"</small>
+    </h1>
+    <nav class=" small-12 columns">
+      <%=link_to "View top media", root_path, method: :get,class: "button"%>
+      <%=link_to "View all media", works_path, method: :get,class: "button"%>
+      <%=link_to "Add a new work", new_work_path, method: :get,class:"button"%>
+      <%=link_to "View all users", users_path, method: :get,class:"button"%>
+      <div class="float-right">
+        <% if @user && @user.id %>
+        <%= link_to "logged in as #{@user.username}", user_path(@user.id), method: :get,class: "button" %>
+        <%= link_to "Log out", logout_path, class: "button", method: :delete%>
+        <% else %>
+        <%= link_to "Log in", login_path, class: "button"%>
+        <% end %>
+      </div>
+
+    </nav>
+  </header>
+  <% flash.each do |key, message| %>
+  <section class="row status <%= key %>">
+    <h3><%= message %></h3>
+
+    <% @object = @work || @object = @vote || @object = @user%>
+    <%if @object != nil && @object.errors.any?%>
+    <ul>
+      <% @object.errors.each do |field, problems| %>
+      <li>
+        <strong><%= field %></strong>
+        <%= problems %>
+      </li>
+      <% end%>
+    </ul>
+    <% end %>
+
+  </section>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>
