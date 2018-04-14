@@ -27,14 +27,9 @@ body, h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
 }
 
-body, h1, h2, h3, h4, h5 {
-  font-family: "Gudea", sans-serif;
-}
-
 main a:hover {
   color: #0C8076;
 }
-
 
 .button {
   background-color: #26A69A;
@@ -104,7 +99,6 @@ a, h3 {
   list-style-type: none;
   margin: 30px 15px;
 }
-
 
 main {
   padding-top: 2rem;

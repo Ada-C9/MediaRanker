@@ -1,5 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+WW:
+  category: movie
+  title: Wonder Woman
+  creator: Patty Jenkins
+  publication_year: 2017
+  description: About the best superhero EVER.
+
 RPO:
   category: book
   title: Ready Player One
@@ -14,16 +21,9 @@ Jumanji:
   publication_year: 2017
   description: A rebute of the original Jumanji from 1981.
 
-WW:
-  category: movie
-  title: Wonder Woman
-  creator: Patty Jenkins
-  publication_year: 2017
-  description: About the best superhero EVER.
-
 HP:
   category: book
-  title: Ready Player One
+  title: Harry Potter
   creator: J.K. Rowling
   publication_year: 1998
   description: About a boy wizard

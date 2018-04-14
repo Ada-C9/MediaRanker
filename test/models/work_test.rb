@@ -57,7 +57,7 @@ describe Work do
     end
 
     # votes
-    it "connects votes and vote_ids" do
+    it "connects works and vote_ids" do
       # Arrange
       vote = Vote.first
 
@@ -67,22 +67,19 @@ describe Work do
       # Assert
       @work.vote_ids.must_include vote.id
     end
-
-    # it "must be invalid without a vote" do
-    #   # Arrange
-    #   vote = Vote.find_by(user: 'mambo')
-    #
-    #   # Act
-    #   @work.votes << vote
-    #
-    #   # Assert
-    #   @work.votes.wont_be :valid?
-    #
-    # end
   end
 
-  describe "self.books method" do
+  describe "model methods" do
+    it "find top_work" do
+      user1 = users(:mambo)
+      user2 = users(:tango)
+      user3 = users(:mark)
+      vote1 = Vote.create(work: works(:WW), user: user1)
+      vote2 = Vote.create(work: works(:WW), user: user2)
+      vote3 = Vote.create(work: works(:HP), user: user3)
 
-
+      Work.top_work.title.must_equal works(:WW).title
+    end
   end
+
 end

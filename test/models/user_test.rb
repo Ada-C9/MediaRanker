@@ -16,12 +16,11 @@ describe User do
       result.must_equal true
     end
 
-    it "must be invalid without a category" do
+    it "must be invalid without a name" do
       @user.name = nil
 
       value(@user).wont_be :valid?
     end
-
 
     it "is invalid with a duplicate name" do
       dup_name = User.new(name: @user.name)
@@ -33,24 +32,23 @@ describe User do
     end
   end
 
-  #
-  # describe "relations" do
-  #   before do
-  #     @work = Work.new(title: 'test work')
-  #   end
-  #
-  #   # votes
-  #   it "connects votes and vote_ids" do
-  #     # Arrange
-  #     vote = Vote.first
-  #
-  #     # Act
-  #     @work.votes << vote
-  #
-  #     # Assert
-  #     @work.vote_ids.must_include vote.id
-  #   end
-  #
-  # end
+  describe "relations" do
+    before do
+      @user = User.new(name: 'test user')
+    end
+
+    # votes
+    it "connects users and vote_ids" do
+      # Arrange
+      vote = Vote.first
+
+      # Act
+      @user.votes << vote
+
+      # Assert
+      @user.vote_ids.must_include vote.id
+    end
+
+  end
 
 end
