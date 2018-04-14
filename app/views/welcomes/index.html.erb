@@ -3,9 +3,9 @@
     <div class="">
       <h3>
         <span class="media-spotlight-header">Media Spotlight: </span>
-        <a href="#">Add link to top work</a><span>   by: work.creator </span>
+        <%= link_to @spotlight.title, work_path(@spotlight) %></a><span> by: <%= @spotlight.creator %></span>
       </h3>
-      <p>Add num votes & description</p>
+      <p><%= @spotlight.vote_count %> votes -  <%= @spotlight.description %></p>
     </div>
   </section>
   <hr class="root-hr">
@@ -17,7 +17,7 @@
       <ul>
         <% @movies.each do |movie| %>
         <li>
-          <h4><%= link_to movie.title, work_path(movie.id) %>
+          <h4><%= link_to movie.title, work_path(movie) %>
           <small>by <%= movie.creator %></small>
           </h4>
           <p><%= movie.vote_count %> votes</p>
@@ -30,7 +30,7 @@
       <ul>
         <% @books.each do |book| %>
         <li>
-          <h4><%= link_to book.title, work_path(book.id) %>
+          <h4><%= link_to book.title, work_path(book) %>
           <small>by <%= book.creator %></small>
           </h4>
           <p><%= book.vote_count %> votes</p>
@@ -43,7 +43,7 @@
       <ul>
         <% @albums.each do |album| %>
         <li>
-          <h4><%= link_to album.title, work_path(album.id) %>
+          <h4><%= link_to album.title, work_path(album) %>
           <small>by <%= album.creator %></small>
           </h4>
           <p><%= album.vote_count %> votes</p>
