@@ -17,7 +17,7 @@
       <% @user.votes.each do |vote| %>
        <% publication = vote.find_publication %>
         <tr>
-          <td><%= publication.title %></td>
+          <td><%= link_to publication.title, publication_path(publication.id) %></td>
           <td><%= publication.creator %></td>
           <td><%= publication.publication_year %></td>
           <td><%= publication.category %></td>
