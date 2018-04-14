@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lemonade:
+  title: Lemonade
+  creator: Beyonce
+  publication_year: 2015
+  description: black magic
+  category: album
+
+rks:
+  title: RKS
+  creator: Rainbow Kitten Surprise
+  publication_year: 2016
+  description: devil like me
+  category: album
+
+
+eight:
+  title: Ocean's Eight
+  creator: Awkwafina
+  publication_year: 2018
+  description:
+  category: movie
+
+eight:
+  title: The Secret Life of Walter Mitty
+  creator: Ben Stiller
+  publication_year: 2013
+  description: iceland
+  category: movie
+
+
+poodr:
+  title: Practical Object-Oriented Design in Ruby
+  creator: Sandi Metz
+  publication_year: 2013
+  description: iceland
+  category: movie
+
+kindred:
+  title: Kindred
+  creator: Octavia E. Butler
+  publication_year: 2013
+  description: iceland
+  category: movie
