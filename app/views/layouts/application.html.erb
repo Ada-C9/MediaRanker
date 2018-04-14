@@ -22,15 +22,13 @@
         <a class="button" href="works/new">Add a new work</a>
         <a class="button" href="/users">View all users</a>
           <div class="float-right">
+
             <% if @find_user %>
               <%= link_to "Logged in as #{ @find_user.name }", user_path(@find_user.id), class: "button" %>
               <%= link_to "Log Out", logout_path, method: :delete, class: "button" %>
             <% else %>
               <%= link_to "Log In", login_form_path, class: "button" %>
             <% end %>
-
-            <!-- <a class="button float-right" href="/login">Log In</a> -->
-
           </div>
       </nav>
     </header>
@@ -39,7 +37,6 @@
           <div class="<%= name %>"><%= message %></div>
         <% end %>
     </section>
-
 
     <%= yield %>
 

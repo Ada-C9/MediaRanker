@@ -10,11 +10,11 @@
 
   <% @albums.each do |album| %>
   <tr>
-  <td>Votes</td>
+  <td> <%= album.votes.count %> </td>
   <td><%= link_to(album.title, work_path(album))  %></td>
   <td><%= album.creator %></td>
   <td><%= album.publication_year %></td>
-  <td>Upvote</td>
+  <td><%= link_to "Upvote", upvote_path(album), class: "button" %></td>
   </tr>
   <% end %>
 </table>
@@ -29,11 +29,11 @@
 
   <% @books.each do |book| %>
   <tr>
-  <td>Votes</td>
+  <td><%= book.votes.count %></td>
   <td><%= link_to(book.title, work_path(book)) %></td>
   <td><%= book.creator %></td>
   <td><%= book.publication_year %></td>
-  <td>Upvote</td>
+  <td><%= link_to "Upvote", upvote_path(book), class: "button" %></td>
   </tr>
   <% end %>
 </table>
@@ -48,11 +48,11 @@
 
   <% @movies.each do |movie| %>
   <tr>
-  <td>Votes</td>
+  <td><%= movie.votes.count %></td>
   <td><%= link_to(movie.title, work_path(movie))  %></td>
   <td><%= movie.creator %></td>
   <td><%= movie.publication_year %></td>
-  <td>Upvote</td>
+  <td><%= link_to "Upvote", upvote_path(movie), class: "button" %></td>
   </tr>
   <% end %>
 </table>

@@ -50,9 +50,8 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
-  private
+private
 
-  # TODO undestand this
   def work_params
     params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
   end

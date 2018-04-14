@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     end
   end
 
- #TODO finish this - set session user id to nil = hence it doesn't knw anything about the user, so it logs out
+
   def destroy
       session[:user_id] = nil
       flash[:success] = "Logged out"

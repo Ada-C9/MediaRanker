@@ -22,11 +22,6 @@ def destroy
 end
 
 private
-#
-# def find_user
-#   @user = User.find(params[:id])
-# end
-
 
   def user_params
     return params.require(:user).permit(:name)
