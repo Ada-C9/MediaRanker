@@ -5,14 +5,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # this is if user already exists
+    # this below is if user already exists
     @this_user = User.find_by(name: params[:user][:name])
-    if !@this_user.nil? #also can be "if @this_user"
-      # save user's id to session
+
+    if !@this_user.nil? # <-- also can be "if @this_user"
+      # below saves user's id to session
       session[:user_id] = @this_user.id
       flash[:success] = "#{ @this_user.name } is successfully logged in"
       redirect_to root_path
-    # this is if user does not already exist
+
+      # this below is if user DOES NOT already exist
     else
       @this_user = User.create(name: params[:user][:name])
       session[:user_id] = @this_user.id
@@ -23,8 +25,8 @@ class SessionsController < ApplicationController
 
 
   def destroy
-      session[:user_id] = nil
-      flash[:success] = "Logged out"
-      redirect_to root_path
+    session[:user_id] = nil
+    flash[:success] = "Logged out"
+    redirect_to root_path
   end
 end

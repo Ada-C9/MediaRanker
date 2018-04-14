@@ -1,5 +1,5 @@
 <main class="row">
-    <article class="media-details">
+  <article class="media-details">
   <h3><%= @work.title %></h3>
   <p><%= @work.creator %></p>
   <p><%= @work.publication_year %></p>
@@ -9,16 +9,14 @@
     <%= link_to("Edit", edit_work_path(@work.id), :class => "button") %>
 
     <%# TODO fix upvote routes %>
-    <%= link_to("Upvote", "#", :class => "button") %>
+    <%= link_to("Upvote", upvote_path(@work.id), :class => "button") %>
     <%= link_to("Delete", work_path(@work.id), :class => "button", method: :delete, data: { confirm: "Are you sure you want to delete this work?" }) %>
   </section>
 </article>
 
-
-
 <%# TODO Fill this in with proper links to real users %>
 <article class="voting-users">
-  <h3>8 Votes for this Book</h3>
+  <h3> <%= @work.votes.count %> Votes for this <%= @work.category %></h3>
   <table>
     <thead>
       <tr>
@@ -26,37 +24,16 @@
         <th>Date</th>
       </tr>
     </thead>
-    <tbody>
+    <% @work.votes.each do |vote| %>
       <tr>
-        <td><a href="/users/117">t</a></td>
-        <td>Apr 11, 2018</td>
-
-      </tr><tr>
-        <td><a href="/users/465">coolbanana</a></td>
-        <td>Apr 10, 2018</td>
-
-      </tr><tr>
-        <td><a href="/users/480">chimichangas</a></td>
-        <td>Apr  9, 2018</td>
-
-      </tr><tr>
-        <td><a href="/users/464">lillers</a></td>
-        <td>Apr  9, 2018</td>
-
-      </tr><tr>
-        <td><a href="/users/286">l33t</a></td>
-        <td>Oct 11, 2017</td>
-
-      </tr><tr>
-        <td><a href="/users/301">meta</a></td>
-        <td>Oct 10, 2017</td>
-
-      </tr><tr>
-        <td><a href="/users/298">namenamename</a></td>
-        <td>Oct 10, 2017</td>
-
-      </tr><tr>
-        <td><a href="/users/274">Wilbur</a></td>
-        <td>Oct 10, 2017</td>
-
-</tr></tbody></table></article></main>
+        <td>
+          <%= link_to "#{vote.user.name}", user_path(vote.user) %>
+        </td>
+        <td>
+          <%= vote.created_at.strftime("%B %d, %Y") %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</article>
+</main>

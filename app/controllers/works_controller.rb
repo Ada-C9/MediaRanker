@@ -7,6 +7,7 @@ class WorksController < ApplicationController
     @albums = Work.albums
     @movies = Work.movies
     @books = Work.books
+    @spotlight = Work.spotlight
   end
 
   def index

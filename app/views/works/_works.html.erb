@@ -5,7 +5,7 @@
     <%= link_to item.title, work_path(item) %>
     <small>by <%= link_to item.creator, work_path(item) %></small>
   </h4>
-  <p>9 votes</p>
+  <p> <%= item.votes.count %> </p>
 </li>
 <% end %>
 </ul>
