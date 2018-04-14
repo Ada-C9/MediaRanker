@@ -1,7 +1,8 @@
 class WelcomesController < ApplicationController
   def index
-    @movies = Work.where(category: 'movie').limit(10)
-    @books = Work.where(category: 'book').limit(10)
-    @albums = Work.where(category: 'album').limit(10)
+    @movies = Work.movies.top_ranked.limit(10)
+    @books = Work.books.top_ranked.limit(10)
+    @albums = Work.albums.top_ranked.limit(10)
+    @spotlight = Work.top_ranked.first
   end
 end
