@@ -1,8 +1,8 @@
 class WorksController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :update]
+  before_action :find_work, only: [:show, :edit, :update]
 
   def index
-    @works = Work.ordered_works_inclusive
+    @works = Work.ordered_inclusive
   end
 
   def new
@@ -15,6 +15,7 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
+      @work_errors = @work.errors.messages
       flash.now[:failures] = "A problem occurred: Could not create #{@work.category}"
       render :new
     end
@@ -30,6 +31,7 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
+      @work_errors = @work.errors.messages
       flash.now[:failures] = "A problem occurred: Could not update #{@work.category}"
       render :edit
     end
@@ -43,7 +45,7 @@ class WorksController < ApplicationController
 
   def home
     @spotlight = Work.top_work
-    @works = Work.ordered_works_exclusive
+    @works = Work.ordered_exclusive
   end
 
   private
@@ -51,7 +53,7 @@ class WorksController < ApplicationController
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
   end
 
-  def find_book
+  def find_work
     @work = Work.find_by_id(params[:id])
   end
 end

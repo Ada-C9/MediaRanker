@@ -2,23 +2,19 @@ class Work < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :users, through: :votes
 
-  validates :category, presence: :true
-  validates :title, presence: :true, uniqueness: { scope: :category }
+  validates :category, presence: true
+  validates :title, presence: true, uniqueness: { scope: :category }
 
-  # scope :albums, where(category: :album)
-  # scope :books, where(category: "books")
-  # scope :movies, where(category: "movies")
-
-  def self.ordered_works_exclusive
+  def self.ordered_exclusive
     self.joins(:votes).group(:id).order('COUNT(votes.id) DESC')
   end
 
-  def self.ordered_works_inclusive
+  def self.ordered_inclusive
     self.left_outer_joins(:votes).group(:id).order('COUNT(votes.id) DESC')
   end
 
   def self.top_work
-    self.ordered_works_exclusive.first
+    self.ordered_exclusive.first
   end
 
   def self.albums

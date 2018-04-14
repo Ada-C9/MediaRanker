@@ -40,8 +40,18 @@
     <main>
       <section class="flash">
         <% flash.each do |name, message| %>
-          <div class="<%= name %>"><h3><%= message %></h3></div>
+          <div class="<%= name %>"><h3><%= message %></h3>
         <% end %>
+          <% if @vote_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @vote } %>
+          <% end %>
+          <% if @user_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @user} %>
+          <% end %>
+          <% if @work_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @work } %>
+          <% end %>
+        </div>
       </section>
 
       <%= yield %>

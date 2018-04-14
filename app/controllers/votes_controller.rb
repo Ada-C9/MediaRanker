@@ -9,7 +9,8 @@ class VotesController < ApplicationController
     elsif session[:user_id] == nil
       flash[:failures] = "You must login to do that"
     else
-      flash[:failures] = "Could not upvote: " + "#{@vote.errors.messages.first[1][0]}"
+      @vote_errors = @vote.errors.messages
+      flash[:failures] = "Could not upvote: user has already voted for this work"
     end
     redirect_back(fallback_location: root_path)
   end
