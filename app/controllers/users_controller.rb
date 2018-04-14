@@ -26,9 +26,4 @@ class UsersController < ApplicationController
     return params.require(:work).permit(:user_name)
   end
 
-  # def find_user
-  #   @user = User.find_by(id: params[:id])
-  # end
-
-
 end

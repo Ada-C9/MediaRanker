@@ -39,6 +39,8 @@ describe Work do
     describe 'vote_count' do
       it "counts number of votes correctly" do
         works(:album_two).vote_count.must_equal 2
+        works(:album_two).vote_count.must_be_kind_of Integer
+
       end
 
       it "gives 0 if work has no votes" do
@@ -52,7 +54,7 @@ describe Work do
       it "sorts work by number of votes in ascending order" do
         Work.ordered_by_votes_works("album").count.must_equal 3
         Work.ordered_by_votes_works("album").first.must_equal works(:album_two)
-        Work.ordered_by_votes_works("album").last.must_equal works(:album_one)
+        Work.ordered_by_votes_works("album").last.must_equal works(:album_three)
       end
 
     end

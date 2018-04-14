@@ -4,9 +4,7 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all
-    # @movies = Work.where(category: "movie")
-    # @books = Work.where(category: "book")
-    # @albums = Work.where(category: "album")
+
     @movies = Work.ordered_by_votes_works("movie")
     @books = Work.ordered_by_votes_works("book")
     @albums = Work.ordered_by_votes_works("album")
