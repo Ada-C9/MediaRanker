@@ -21,7 +21,7 @@
 </section>
 
 <section>
-  <h2>Votes section goes here</h2>
+  <h2><%= @work.votes.count%> Votes for this <%= @work.category.capitalize%></h2>
   <table>
     <th>
       <strong>User</strong>
@@ -33,7 +33,7 @@
       <% @work.votes.each do |vote| %>
       <tr>
         <td class='text-center'>
-          <%= vote.user.name %>
+          <%= link_to vote.user.name %>
         </td>
         <td class='text-center'>
           <%= vote.created_at.strftime('%B %d, %Y') %>

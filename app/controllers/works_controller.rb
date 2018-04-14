@@ -49,7 +49,7 @@ class WorksController < ApplicationController
   end
 
   def top
-    @works = Work.all 
+    @works = Work.all
 
     @albums = Work.where(category:'album')
 
@@ -70,7 +70,7 @@ class WorksController < ApplicationController
         flash[:success]= "Successfully voted!"
         redirect_to work_path(work)
       else
-        flash[:failure] = 'The vote was not saved!!!'
+        flash[:failure] = 'You can only vote ONCE!'
         redirect_to works_path
       end
 
