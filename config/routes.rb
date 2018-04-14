@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-  get 'works/index'
-
-  get 'users/index'
-
   root 'mains#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :works
-
-  resources :users
-
-  resources :votes, only: [:index, :new, :create]
-
   resources :mains, only: [:index]
 
+  resources :votes
+
+  resources :works do
+    resources :votes, only: [:create]
+  end
+
+  resources :users
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'

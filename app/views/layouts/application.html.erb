@@ -19,9 +19,9 @@
     </h2>
     <nav>
       <a class="button"><%= link_to "View top media", root_path%></a>
-      <a class="button"><%= link_to "View all media", works_index_path%></a>
+      <a class="button"><%= link_to "View all media", works_path%></a>
       <a class="button"><%= link_to "Add a new work", new_work_path %></a>
-      <a class="button"><%= link_to "View all users", users_index_path%></a>
+      <a class="button"><%= link_to "View all users", users_path%></a>
       <div>
         <% if session[:user_id] %>
         <a class="button" ><%= link_to "Logout", logout_path, method: :delete %></a>
@@ -33,7 +33,22 @@
     </nav>
   </header>
 
-  <%= yield %>
+  <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+      <div class="<%= name %>">
+        <%= message %>
+        <% if @vote %>
+        <%= render partial: "layouts/error_messages", locals: { model: @vote } %>
+        <% end %>
+        <% end %>
+      </div>
 
-</body>
-</html>
+      
+    </section>
+
+
+    <%= yield %>
+
+  </body>
+  </html>
