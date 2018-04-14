@@ -6,8 +6,10 @@
     <div>
       <% @spotlight_work = Work.get_top_work_with_tally[0] %>
       <% top_tally = Work.get_top_work_with_tally[1] %>
-      <h3><span class="media-spotlight-header">Media Spotlight </span><%= link_to "#{@spotlight_work.title}", work_path(@spotlight_work.id) %><%= " by #{@spotlight_work.creator}" %></h3>
-      <p><%= top_tally %> votes - <%= @spotlight_work.description %></p>
+      <% if !@spotlight_work.nil? %>
+        <h3><span class="media-spotlight-header">Media Spotlight </span><%= link_to "#{@spotlight_work.title}", work_path(@spotlight_work.id) %><%= " by #{@spotlight_work.creator}" %></h3>
+        <p><%= top_tally %> votes - <%= @spotlight_work.description %></p>
+      <% end %>
     </div>
   </section>
 </main>
