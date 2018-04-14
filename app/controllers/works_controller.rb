@@ -36,9 +36,8 @@ class WorksController < ApplicationController
 
   def upvote
     @vote = Vote.new
-    @vote.user = User.find(session[:user_id])
-    @vote.work = Work.find_by(id: params[:id])
-
+    @vote.user_id = session[:user]["id"]
+    @vote.work_id = params[:id]
     if @vote.save
       redirect_to root_path
       flash[:success] = "Successfully upvoted!"
