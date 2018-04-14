@@ -7,14 +7,6 @@ class Work < ApplicationRecord
   validates :description, length: {maximum: 500, message: "Description is too long"}
 
 
-  def self.media_spotlight
-    works = Work.all
-    works.max_by do |work|
-      work.votes.count
-      works.max_by { |work| work.votes.count}
-    end
-    return
-  end
 
   def self.top_ten_albums
     album = Work.where(category: "album")
@@ -31,7 +23,7 @@ class Work < ApplicationRecord
     return book.sort_by {|work| work.votes.count }.reverse.take(10)
   end
 
-  def self.top
+  def self.media_spotlight
     sorted = Work.all.sort_by{|work| work.votes.count}.reverse
     top= sorted.first
     return top

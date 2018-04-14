@@ -1,5 +1,5 @@
 
-<article class="media-details row">
+<article class="media-details columns large-6 small-12">
   <h3><%=@work.title%></h3>
 
   <p>Created by:  <%= @work.creator %></p>
@@ -7,10 +7,11 @@
   <p>Description: <%= @work.description %></p>
 
   <section>
-    <%= button_to "Back to media ranks", root_path(@work.id), method: :get, class: "button"%>
-    <%= button_to "Edit", edit_work_path(@work.id), method: :get, class: "button" %>
-    <%= button_to "Upvote", create_vote_path(@work.id), method: :post, class: "button" %>
-    <%= button_to "Delete", work_path(@work.id), method: :delete, data:{confirm: 'Are you sure?'}, class:"alert button"%>
+    <a class="button"<%= link_to "Back to media ranks", root_path(@work.id)%></a>
+    <a class="button" <%= link_to "Edit", edit_work_path(@work.id) %></a>
+    <a class="button" rel="nofollow" data-method="post" <%= link_to 'Upvote', create_vote_path(@work.id), method: :post%> </a>
+    <a class="alert button" data-confirm="Are you sure?" rel="nofollow" data-method="delete" <%= link_to 'Delete',
+    work_path(@work.id),method: :delete, data: { confirm: 'Are you sure?' } %> </a>
   </section>
 </article>
 
