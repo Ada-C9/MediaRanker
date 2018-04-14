@@ -1,14 +1,9 @@
 class PublicationsController < ApplicationController
-  # before_action :find_user
-
 
   def index
-    albums = Publication.where(category: "album")
-    @albums = albums.find_votes
-    books = Publication.where(category: "book")
-    @books = books.find_votes
-    movies = Publication.where(category: "movie")
-    @movies = movies.find_votes
+    @albums = Publication.find_votes("album")
+    @books = Publication.find_votes("book")
+    @movies = Publication.find_votes("movie")
   end
 
   def show
