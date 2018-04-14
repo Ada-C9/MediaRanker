@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cathat:
+  title: The Cat in the Hat
+  creator: Dr Seuss
+  publication_year: "01-01-1957"
+dune:
+  title: Dune
+  creator: Frank Herbert
+  publication_year: "01-01-1965"
+stranger:
+  title: Stranger in a Strange Land
+  creator: Robert A. Heinlein
+  publication_year: "01-01-1961"
+alice:
+  title: Through the Looking-Glass and What Alice Found There
+  creator: Lewis Carroll
+  publication_year: "01-01-1872"
+gods:
+  title: American Gods
+  creator: Neil Gaiman
+  publication_year: "01-01-2001"
+room:
+  title: A Room with a View
+  creator: E.M. Forster
+  publication_year: "01-01-1908"
+solitude:
+  title: One Hundred Years of Solitude
+  creator: Gabriel Garcia Marquez
+  publication_year: "01-01-1967"
+okonkwo:
+  title: Things Fall Apart
+  creator: Chinua Achebe
+  publication_year: "01-01-1958"
+rabbit:
+  title: Watership Down
+  creator: Richard Adams
+  publication_year: "01-01-1972"
+seagull:
+  title: Jonathan Livingston Seagull
+  creator: Richard Bach
+  publication_year: "01-01-1970"
+hogan:
+  title: Ben Hogans Five Lessons
+  creator: Ben Hogan
+  publication_year: "01-01-1985"

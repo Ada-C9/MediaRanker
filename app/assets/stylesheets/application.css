@@ -1,0 +1,140 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require normalize-rails
+
+ *
+ *= require foundation_and_overrides
+ *= require_tree .
+ *= require_self
+
+
+ */
+ /* General */
+
+
+ h1, h2, h3, h4, h5 {
+   font-weight: bold;
+ }
+
+ h3 {
+   color: #26A69A;
+ }
+
+ ul {
+   list-style-type: none;
+ }
+
+/*Application ERB Header*/
+
+ .float-right {
+   float: right !important;
+ }
+
+ .main-header {
+   background-color: #B2DFDB;
+   border-bottom: 1px solid #EEEEEE;
+   padding: 25px 20px 10px 20px;
+ }
+
+ .main-header h2 {
+   text-align: center;
+ }
+
+ .header-title a {
+   color: #FF5722;
+   border-right: white 2px solid;
+   padding-right: 25px;
+   margin-right: 15px;
+ }
+
+ .sub-header {
+   color: white;
+ }
+
+ /* Main Page */
+
+.media-spotlight-header {
+  color: #424242;
+}
+
+/* .media-spotlight-header::after {
+  content: "Media Spotlight:"
+} */
+
+.media-spotlight-header + a {
+  border-bottom: 2px solid;
+}
+
+.root-hr {
+  color: #EEEEEE;
+  margin: 0px auto 75px auto;
+}
+
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.most-popular {
+  text-decoration: underline;
+}
+
+.top-ten ul {
+  margin-left: 0px;
+}
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten-container small {
+  color: slategrey;
+}
+
+.top-ten-category {
+  border-bottom: 2px solid;
+  border-color: #B2DFDB;
+}
+
+/* Flash */
+.alert {
+  background-color: #e6e6e6;
+}
+
+.flash {
+  background-color: #e6e6e6;
+  color: #8a8a8a;
+}
+
+.success {
+  color: #8a8a8a;
+}
+
+.error {
+  color: #C70039;
+}
+
+.circle-list {
+  list-style-type: disc;
+}
+
+h3, .h3 {
+  font-family: "Gudea";
+}
+
+* {
+    font-family: 'Gudea';
+    font-size: 22px;
+}

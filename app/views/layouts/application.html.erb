@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 2.0" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Gudea' rel='stylesheet'>
+    <%= favicon_link_tag asset_path('owl.jpg'), :rel => 'icon', :type =>  'image/jpg' %>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <h2 class="header-title">
+        <%= link_to("Media Ranker", root_path) %>
+        <small class="sub-header">Ranking the Best of Everything</small>
+      </h2>
+
+      <nav class="app-header">
+
+            <%= link_to("View top media", root_path, class: "button") %>
+            <%= link_to("View all media", works_path, class: "button") %>
+            <%= link_to("Add a new work", new_work_path, class: "button") %>
+            <%= link_to("View all users", users_path, class: "button") %>
+          <div class="float-right">
+            <% if session[:user_id] %>
+              <%= link_to "Logged in as #{User.find(session[:user_id]).name}", user_path(session[:user_id]), class: "button" %>
+              <%= link_to "Log Out", logout_path, class: "button", method: :delete %>
+            <% else %>
+              <%= link_to "Login", login_path, class: "button" %>
+            <% end %>
+          </div>
+      </nav>
+    </header>
+    <main>
+
+      <section class="flash">
+        <% flash.each do |name, message| %>
+        <h3><div class="<%= name %>"><%= message %></div></h3>
+        <% end %>
+      </section>
+
+      <%= yield %>
+
+    </main>
+  </body>
+
+</html>

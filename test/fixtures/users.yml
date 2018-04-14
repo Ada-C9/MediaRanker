@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+anne:
+  name: Anne
+puma:
+  name: Puma
+radar:
+  name: Radar
+axel:
+  name: Axel
+jojo:
+  name: Jojo
+inkie:
+  name: Inkie
+biggie:
+  name: Biggie
+buoy:
+  name: Buoy
+starry:
+  name: Starry
+cocoa:
+  name: Cocoa
+mumford:
+  name: Mumford

@@ -1,0 +1,15 @@
+<% if model.errors.messages.any? %>
+  <section class="alert">
+    <h3 class="error">A problem occurred: Could not <%= "#{action_name}"%> <%= "#{model.category}" %> </h3>
+    <ul>
+      <% model.errors.messages.each do |field, problems| %>
+        <% problems.each do |problem| %>
+          <li class="circle-list">
+            <strong><%= field %></strong>
+            <%= problem %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
