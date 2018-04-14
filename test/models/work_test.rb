@@ -32,11 +32,16 @@ describe Work do
 
       total_votes = @work.total_work_vote
 
-      total_votes.must_equal(2)
+      total_votes.must_equal(3)
     end
 
     it 'returns the total votes for a user' do
+    end
 
+    it "spotlights the media with the most votes" do
+      spotlight = @work.spotlight_work
+
+      spotlight.must_equal(works(:four_hour_chef))
     end
 
   end

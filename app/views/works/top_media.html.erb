@@ -1,35 +1,52 @@
 <p>Media Spotlight:
+
 </p>
 
-<ul> Top Albums
-  <% @top_albums.each do |album| %>
-  <li>
-    <h4><%= link_to(album.title, work_path(album)) %></h4>
-    <%= link_to(album.created_by, work_path(album)) %>
+<body>
+  <main class = "row">
+    <section class = "top-ten-container">
+      <section class = "top-ten">
+        <h3>Top Albums</h3>
+        <ul>
+          <% @top_albums.each do |album| %>
+          <li>
+            <h4><%= link_to(album.title, work_path(album)) %></h4>
+            <%= link_to(album.created_by, work_path(album)) %>
 
-    <p><%= album.total_work_vote %> votes </p>
-  </li>
-</ul>
-<% end %>
+            <p><%= album.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
 
-<ul> Top Movies
-  <% @top_movies.each do |movie| %>
-  <li>
-    <h4><%= link_to(movie.title, work_path(movie)) %></h4>
-    <%= link_to(movie.created_by, work_path(movie)) %>
+      </section>
 
-    <p><%= movie.total_work_vote %> votes </p>
-  </li>
-</ul>
-<% end %>
+      <section>
+        <h3>Top Movies</h3>
+        <ul>
+          <% @top_movies.each do |movie| %>
+          <li>
+            <h4><%= link_to(movie.title, work_path(movie)) %></h4>
+            <%= link_to(movie.created_by, work_path(movie)) %>
 
-<ul> Top Books
-  <% @top_books.each do |book| %>
-  <li>
-    <h4><%= link_to(book.title, work_path(book)) %></h4>
-    <%= link_to(book.created_by, work_path(book)) %>
+            <p><%= movie.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
+      </section>
 
-    <p><%= book.total_work_vote %> votes </p>
-  </li>
-</ul>
-<% end %>
+      <section>
+        <h3>Top Books</h3>
+        <ul>
+          <% @top_books.each do |book| %>
+          <li>
+            <h4><%= link_to(book.title, work_path(book)) %></h4>
+            <%= link_to(book.created_by, work_path(book)) %>
+
+            <p><%= book.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
+      </section>
+    </section>
+  </main>
+</body>

@@ -34,3 +34,9 @@ vote4:
     updated_at: 01-20-2018
     work: Gadfn
     user: two
+
+vote5:
+    created_at: 01-21-2018
+    updated_at: 01-21-2018
+    work: four_hour_chef
+    user: three

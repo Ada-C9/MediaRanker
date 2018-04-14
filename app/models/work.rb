@@ -34,4 +34,14 @@ class Work < ApplicationRecord
     return total
   end
 
+  def spotlight_work
+    works = Work.all
+
+    # (1..10).sort {|a,b| b <=> a}
+    ordered_work = works.sort {
+      |work1, work2| work2.total_work_vote <=> work1.total_work_vote
+    }
+    return ordered_work.first
+  end
+
 end
