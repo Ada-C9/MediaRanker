@@ -14,7 +14,7 @@
       <%="by #{movie.creator}"%>
     </li>
     <li>
-      <%="#{movie.votes} votes"%>
+      <%="#{movie.votes.count} votes"%>
     </li>
     <% end %>
   </ul>
@@ -31,7 +31,7 @@
       <%="by #{book.creator}"%>
     </li>
     <li>
-      <%="#{book.votes} votes"%>
+      <%="#{book.votes.count} votes"%>
     </li>
     <% end %>
   </ul>
@@ -48,7 +48,7 @@
       <%="by #{album.creator}"%>
     </li>
     <li>
-      <%="#{album.votes} votes"%>
+      <%="#{album.votes.count} votes"%>
     </li>
     <% end %>
   </ul>

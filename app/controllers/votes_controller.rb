@@ -22,19 +22,29 @@ class VotesController < ApplicationController
   end
 
   def new
-    @vote = Vote.new
+    if find_vote
+      flash[:alert] = "Could not upvote user: has already voted for this work"
+    else
+      @vote = Vote.new
+    end
   end
 
   def create
-    @vote = Vote.create(vote_params)
-    if @vote.id != nil
-      Vote.voted(@vote)
-      flash[:success] = "Upvoted"
-      redirect_to :back
+    if find_vote
+      flash[:alert] = "Could not upvote user: has already voted for this work"
     else
-      flash.now[:alert] = @vote.errors
-      render :new
+
+      @vote = Vote.create(vote_params)
+      @vote.user_id = session[:user_id]
+      @vote.work_id = vote_params[:work_id]
+
+      if @vote.save
+        flash[:success] = "Upvoted"
+      else
+        flash[:fail] = @vote.errors
+      end
     end
+    redirect_to work_path(params[:work_id])
   end
 
   def destroy
@@ -43,12 +53,12 @@ class VotesController < ApplicationController
   end
 
   private
-  def user_params
-    return params.require(:user).permit(:username, :id)
+  def vote_params
+    return params.permit(:user_id, :work_id)
   end
 
   def find_vote
-    @vote = Vote.find_by(id: params[:id])
+    @vote = Vote.find_by id: params[:id]
   end
 
 end
