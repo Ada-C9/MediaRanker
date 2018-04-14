@@ -79,6 +79,12 @@
   margin: 0px auto 75px auto;
 }
 
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .most-popular {
   text-decoration: underline;
 }
@@ -90,7 +96,7 @@
 .top-ten-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 2em
+  grid-column-gap: 2em;
 }
 
 .top-ten-container small {
