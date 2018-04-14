@@ -18,8 +18,76 @@ vote3:
 
 vote4:
   user: rabbit
-  work: best_movie
+  work: harrypotter
 
 vote5:
-  user: yellowlion
+  user: littlepony
   work: harrypotter
+
+vote6:
+  user: littlepony
+  work: the_lure
+
+vote7:
+  user: littlepony
+  work: must_book
+
+vote8:
+  user: littlepony
+  work: dark_times
+
+vote9:
+  user: littlepony
+  work: the_square
+
+vote10:
+  user: yellowlion
+  work: dark_times
+
+vote11:
+  user: yellowlion
+  work: the_square
+
+vote12:
+  user: yellowlion
+  work: the_lure
+
+vote13:
+  user: yellowlion
+  work: lady_bird
+
+vote14:
+  user: yellowlion
+  work: lucky
+
+vote15:
+  user: rabbit
+  work: lady_bird
+
+vote16:
+  user: rabbit
+  work: lucky
+
+vote17:
+  user: rabbit
+  work: goodtime
+
+vote18:
+  user: rabbit
+  work: frozen
+
+vote19:
+  user: yellowlion
+  work: frozen
+
+vote20:
+  user: rabbit
+  work: flinstones
+
+vote21:
+  user: rabbit
+  work: blackpanther
+
+vote22:
+  user: rabbit
+  work: thor

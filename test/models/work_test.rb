@@ -4,7 +4,7 @@ describe Work do
 
   describe "validations" do
     it "can be created with all fields" do
-      work = works(:best_movie)
+      work = works(:the_lure)
       result = work.valid?
       result.must_equal true
     end
@@ -27,12 +27,12 @@ describe Work do
 
   describe "relations" do
     it "must have votes" do
-      work = works(:best_movie)
+      work = works(:best_album)
       work.votes.count.must_equal 1
     end
 
     it "does not have votes" do
-      work = works(:watch_worthy)
+      work = works(:city_ghosts)
       work.votes.count.must_equal 0
     end
   end
@@ -44,26 +44,41 @@ describe Work do
     end
 
     it 'calculates the total votes for a work' do
-      votes = [:vote1, :vote5]
-      votes_count = votes.length
       total = @work.total_votes
-      total.must_equal 2
+      total.must_equal 3
 
     end
+
     it "finds the work with more votes" do
-      user = users(:yellowlion)
-      user2 = users(:rabbit)
-      user3 = users(:littlepony)
-      vote = Vote.create(work: works(:harrypotter), user: user)
-      vote1 = Vote.create(work: works(:harrypotter), user: user2)
-      vote2 = Vote.create(work: works(:best_movie), user: user3)
 
       Work.top.title.must_equal works(:harrypotter).title
     end
 
-    it 'finds the top-ten albums' do
+    it 'returns the first top-ten movies' do
+
+      array_top_ten_movies = [works(:harrypotter), works(:the_lure), works(:dark_times),
+        works(:the_square), works(:lucky), works(:lady_bird), works(:frozen),
+      works(:goodtime), works(:flinstones), works(:blackpanther)]
+
+      expected = array_top_ten_movies.include?(works(:thor))
+
+      result = Work.top_ten_movies.include?(works(:thor))
+
+      result.must_equal expected
 
     end
+
+    it 'returns an array of the first top-ten movies' do
+
+      Work.top_ten_movies.must_be_kind_of Array
+
+    end
+
+     it 'returns empty array when no books' do
+
+      Work.top_ten_books.must_equal []
+     end
+
 
   end
 end

@@ -6,17 +6,17 @@
 #
 
 harrypotter:
-  category: album
+  category: movie
   title: Harry Potter
   creator: JK Rowling
   publication_year: 1993
   description: a great Read
 
-best_movie:
-  title: Terminator II
+the_lure:
+  title: the_lure
   category: movie
-  publication_year: 1991
-  creator: James Cameron
+  publication_year: 20016
+  creator: Agnieszka
 
 best_album:
   title: Yeah
@@ -24,17 +24,74 @@ best_album:
   publication_year: 1984
   creator: Prince
 
-best_book:
-  title: Half of a yellow sun
-  publication_year: 2013
-  creator: Chimamanda Ngozi Adichie
+great_album:
+  title: Yeah
+  category: album
+  publication_year: 1984
+  creator: Prince
 
-watch_worthy:
-  title: Shawshank redemption
+city_ghosts:
+  title: city_ghosts
   category: movie
+  publication_year: 2000
   creator: Stephen King
 
-must_book:
-  title: The Alchemist
-  category: book
-  publication_year: 1988
+dark_times:
+  title: dark_times
+  category: movie
+  publication_year: 2000
+  creator: Campbell
+
+the_square:
+  title: the_square
+  category: movie
+  publication_year: 2000
+  creator: Ruben
+
+lady_bird:
+  title: lady_bird
+  category: movie
+  publication_year: 2002
+  creator: Saorsie Ronan
+
+lucky:
+  title: lucky
+  category: movie
+  publication_year: 2010
+  creator: Harry Dean Stanton
+
+goodtime:
+  title: goodtime
+  category: movie
+  publication_year: 2017
+  creator: Pattinson
+
+frozen:
+  title: frozen
+  category: movie
+  publication_year: 2014
+  creator: Megan
+
+nemo:
+  title: nemo
+  category: movie
+  publication_year: 2010
+  creator: James
+
+flinstones:
+  title: flinstones
+  category: movie
+  publication_year: 2000
+  creator: Jack
+
+blackpanther:
+  title: blackpanther
+  category: movie
+  publication_year: 2018
+  creator: Jack
+
+thor:
+  title: thor
+  category: movie
+  publication_year: 2018
+  creator: Jack
