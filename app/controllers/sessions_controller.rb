@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      flash[:success] = " #Successfully logged in as existing user #{@user.name}"
+      flash[:success] = "Successfully logged in as existing user #{@user.name}"
     else
       # use strong params instead on refactor
       @user = User.new(name: params[:user][:name])

@@ -32,17 +32,17 @@ end
 puts "Added #{Work.count} work records"
 puts "#{work_failures.length} works failed to save"
 
-# raw_users = [
-#     { name: "Sandi"},
-#     { name: "Gay"},
-#     { name: "Roxane" },
-#     { name: "Metz" },
-#     { name: "Ursula" }
-# ]
-#
-# raw_users.each do |raw_user|
-#   author = User.create(name: raw_user[:name])
-#   puts "Created user #{user.name}"
-# end
+raw_users = [
+    { name: "Sandi"},
+    { name: "Gay"},
+    { name: "Roxane" },
+    { name: "Metz" },
+    { name: "Ursula" }
+]
+
+raw_users.each do |raw_user|
+  author = User.create(name: raw_user[:name])
+  puts "Created user #{user.name}"
+end
 
 puts "done"

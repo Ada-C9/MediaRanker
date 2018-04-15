@@ -45,9 +45,8 @@
           <% models = [@vote, @user, @work]%>
             <% models.each do |model| %>
               <% if model %>
-              <% render_error(model) %>
-
-              <%= render partial: 'layouts/error-messages', locals: {model: model} %>
+                <% render_error(model) %>
+                <%= render partial: 'layouts/error-messages', locals: {model: model} %>
               <% end %>
             <% end %>
           <% end %>
