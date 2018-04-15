@@ -47,4 +47,23 @@ describe Vote do
 
   end # relationships
 
+  describe "business logic" do
+
+    describe "#format_vote_date" do
+
+      it "returns the date the vote was created in the format MMM DD, YYYY" do
+        vote = votes(:vote_one)
+        formatted_date = vote.format_vote_date
+        formatted_date = formatted_date.split
+        Date::ABBR_MONTHNAMES.must_include formatted_date[0]
+        (1..31).must_include formatted_date[1].to_i
+        formatted_date[2].length.must_equal 4
+        formatted_date[2].to_i.must_equal Date.today.year
+
+      end
+
+    end # format_vote_Date
+
+  end # business logic
+
 end

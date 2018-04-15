@@ -34,7 +34,7 @@ describe Work do
 
       users = poodr.votes.map do |vote|
         vote.user
-      end 
+      end
 
       users_included = false
 
@@ -47,5 +47,15 @@ describe Work do
     end
 
   end # relationships
+
+  describe "business logic" do
+
+    describe "#upvote" do
+
+      
+
+    end # upvote
+
+  end # business logic
 
 end
