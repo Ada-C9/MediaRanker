@@ -4,7 +4,7 @@
 </h3>
 
 <p>
-  Joined site <%= @user.format_join_date %>
+  Joined site <%= @user.format_date %>
 </p>
 
 <h4>Votes</h4>
@@ -48,7 +48,7 @@
         <%= vote.work.category %>
       </td>
       <td>
-        <%= vote.format_vote_date %>
+        <%= vote.format_date %>
       </td>
     </tr>
     <% end %>

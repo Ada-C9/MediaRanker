@@ -49,11 +49,11 @@ describe Vote do
 
   describe "business logic" do
 
-    describe "#format_vote_date" do
+    describe "#format_date" do
 
       it "returns the date the vote was created in the format MMM DD, YYYY" do
         vote = votes(:vote_one)
-        formatted_date = vote.format_vote_date
+        formatted_date = vote.format_date
         formatted_date = formatted_date.split
         Date::ABBR_MONTHNAMES.must_include formatted_date[0]
         (1..31).must_include formatted_date[1].to_i
@@ -62,7 +62,7 @@ describe Vote do
 
       end
 
-    end # format_vote_date
+    end # format_date
 
   end # business logic
 

@@ -50,13 +50,13 @@ describe User do
 
   describe "business logic" do
 
-    describe "#format_join_date" do
+    describe "#format_date" do
 
       it "returns the date the user joined in the format MMM DD, YYYY" do
 
         user = users(:user_one)
-        
-        formatted_date = user.format_join_date
+
+        formatted_date = user.format_date
         formatted_date = formatted_date.split
 
         Date::ABBR_MONTHNAMES.must_include formatted_date[0]
@@ -66,7 +66,7 @@ describe User do
 
       end
 
-    end # format_join_date
+    end # format_date
 
   end # business logic
 
