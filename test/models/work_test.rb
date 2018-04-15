@@ -44,14 +44,19 @@ describe Work do
     end
 
     it 'calculates the total votes for a work' do
-      total = @work.total_votes
-      total.must_equal 3
+      # votes for harrypotter
+      vote = votes(:vote1, :vote4, :vote5)
+      result = vote.length
+
+      @work.total_votes.must_equal result
 
     end
 
     it "finds the work overall categories with more votes (media_spotlight)" do
+      # in votes fixtures, harrypotter has the most votes.
+      result_media_spotlight = @work.title
 
-      Work.media_spotlight.title.must_equal works(:harrypotter).title
+      Work.media_spotlight.title.must_equal result_media_spotlight
     end
 
     it 'returns an array of the first top-ten movies' do
@@ -59,12 +64,12 @@ describe Work do
       Work.top_ten_movies.must_be_kind_of Array
 
       Work.top_ten_movies.length.must_equal 10
-      
+
     end
 
 
     it 'returns an empty array when no works of category books' do
-
+      # in works fixtures there are no works for books (only fixtures for albums and movies)
       Work.top_ten_books.must_equal []
     end
 
