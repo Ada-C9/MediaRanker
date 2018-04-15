@@ -41,9 +41,8 @@ raw_users = [
 ]
 
 raw_users.each do |raw_user|
-  author = Author.create(name: raw_user[:name])
+  author = User.create(name: raw_user[:name])
   puts "Created user #{user.name}"
-  end
 end
 
 puts "done"
