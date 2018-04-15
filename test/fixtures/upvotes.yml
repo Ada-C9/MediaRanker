@@ -65,9 +65,17 @@ up_sixteen:
  user: petunia
 
 up_seventeen:
- work: 
+ work:
  user: petunia
 
 up_eighteen:
  work: aim
  user:
+
+up_nineteen:
+ work: aim
+ user: mouse
+
+up_twenty:
+ work: aim
+ user: mouse

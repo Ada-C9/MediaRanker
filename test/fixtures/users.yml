@@ -12,5 +12,11 @@ pete:
 petunia:
  username: petunia_1
 
+mouse:
+ username: mouse_2
+
+ferdinand:
+ username: ferdinand_1
+
 inc_name:
-  username: 
+  username:
