@@ -1,65 +1,73 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 up_one:
-  work_id: thinking
-  user_id: peanut
+ work: thinking
+ user: peanut
 
 up_two:
-  work_id: debut
-  user_id: peanut
+ work: debut
+ user: peanut
 
 up_three:
-  work_id: babe
-  user: peanut
+ work: babe
+ user: peanut
 
 up_four:
-  work_id: aim
-  user_id: peanut
+ work: aim
+ user: peanut
 
 up_five:
-  work_id: babe
-  user_id: pickles
+ work: babe
+ user: pickles
 
 up_six:
-  work_id: dancer
-  user_id: pickles:
+ work: dancer
+ user: pickles
 
 up_seven:
-  work_id: math
-  user_id: pickles
+ work: math
+ user: pickles
 
 up_eight:
-  work_id: debut
-  user_id: pickles
+ work: debut
+ user: pickles
 
 up_nine:
-  work_id: dancer
-  user_id: pete
+ work: dancer
+ user: pete
 
-up_ten: aim
-  work_id: babe
-  user_id: pete
+up_ten:
+ work: babe
+ user: pete
 
 up_eleven:
-  work_id: math
-  user_id: pete
+ work: math
+ user: pete
 
 up_twelve:
-  work_id: thinking
-  user_id: pete
+ work: thinking
+ user: pete
 
 up_thirteen:
-  work_id: babe
-  user_id: petunia
+ work: babe
+ user: petunia
 
 up_fourteen:
-  work_id: aim
-  user_id: petunia
+ work: aim
+ user: petunia
 
 up_fifeteen:
-  work_id: debut
-  user_id: petunia
+ work: debut
+ user: petunia
 
 up_sixteen:
-  work_id: thinking
-  user_id: petunia
+ work: thinking
+ user: petunia
+
+up_seventeen:
+ work: 
+ user: petunia
+
+up_eighteen:
+ work: aim
+ user:

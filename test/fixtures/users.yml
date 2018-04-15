@@ -1,17 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 peanut:
-  username: peanut_4
-  join_date: 2018-04-09
+ username: peanut_4
 
 pickles:
-  username: pickles_3
-  join_date: 2018-03-09
+ username: pickles_3
 
 pete:
-  username: pete_2
-  join_date: 2018-02-09
+ username: pete_2
 
 petunia:
-  username: petunia_1
-  join_date: 2018-01-09
+ username: petunia_1
+
+inc_name:
+  username: 

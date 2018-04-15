@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe Work do
-  # let(:work) { Work.new }
+  let(:work) { Work.new }
 
   describe 'validations' do
     it 'is invalid without a name' do
@@ -24,10 +24,6 @@ describe Work do
       result.must_equal false
       work.errors.messages.must_include :work_creator
     end
-  end
-
-  describe 'relations' do
-
   end
 
   it 'must have a title' do
@@ -54,6 +50,15 @@ describe Work do
     work.work_title.must_equal "Babe"
     work.work_description.must_equal "Tale about a gallant sheep pig"
     work.work_category.must_equal "movie"
+    work.work_publication_year.must_equal 1995
+  end
+
+  it 'must accurately return the corresponding fields' do
+    work = works(:debut)
+    work.work_creator.must_equal "Bjork"
+    work.work_title.must_equal "Debut"
+    work.work_description.must_equal "Bjorks second solo studio album"
+    work.work_category.must_equal "album"
     work.work_publication_year.must_equal 1995
   end
 
