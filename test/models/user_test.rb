@@ -18,11 +18,31 @@ describe User do
 
     it "connects vote and vote id" do
 
-      vote_for_poodr = votes(:vote_for_poodr)
+      vote_one = votes(:vote_one)
 
-      test_user = users(:test_user)
+      user_one = users(:user_one)
 
-      test_user.votes.must_include vote_for_poodr
+      user_one.votes.must_include vote_one
+
+    end
+
+    it "connects works and works ids" do
+
+      user = users(:user_one)
+
+      works = [works(:poodr), works(:one_beat)]
+
+      works_list = user.votes.map do |vote|
+        vote.work
+      end
+
+      works_included = false
+
+      works_list.each do |work|
+        works_included = works.include?(work)
+      end
+
+      works_included.must_equal true
 
     end
 

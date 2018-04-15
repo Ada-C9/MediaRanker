@@ -18,11 +18,31 @@ describe Work do
 
     it "connects vote and vote id" do
 
-      vote_for_poodr = votes(:vote_for_poodr)
+      vote_one = votes(:vote_one)
 
       poodr = works(:poodr)
 
-      poodr.votes.must_include vote_for_poodr
+      poodr.votes.must_include vote_one
+
+    end
+
+    it "connects users and users' ids" do
+
+      poodr = works(:poodr)
+
+      voters = [users(:user_one), users(:user_two)]
+
+      users = poodr.votes.map do |vote|
+        vote.user
+      end 
+
+      users_included = false
+
+      users.each do |user|
+        users_included = voters.include?(user)
+      end
+
+      users_included.must_equal true
 
     end
 

@@ -7,13 +7,13 @@ describe Vote do
     it "is unique for any given work-user combination" do
       poodr = works(:poodr)
 
-      test_user = users(:test_user)
+      user_one = users(:user_one)
 
       another_vote_for_poodr = Vote.new
 
       another_vote_for_poodr.work = poodr
 
-      another_vote_for_poodr.user = test_user
+      another_vote_for_poodr.user = user_one
 
       result = another_vote_for_poodr.valid?
 
@@ -29,19 +29,19 @@ describe Vote do
 
       poodr = works(:poodr)
 
-      vote_for_poodr = votes(:vote_for_poodr)
+      vote_one = votes(:vote_one)
 
-      vote_for_poodr.work.must_equal poodr
+      vote_one.work.must_equal poodr
 
     end
 
     it "connects user and user id" do
 
-      test_user = users(:test_user)
+      user_one = users(:user_one)
 
-      vote_for_poodr = votes(:vote_for_poodr)
+      vote_one = votes(:vote_one)
 
-      vote_for_poodr.user.must_equal test_user
+      vote_one.user.must_equal user_one
 
     end
 
