@@ -104,13 +104,7 @@ a, h3 {
 
 element.style {
 }
-.page-header {
-    max-width: 100%;
-    background-color: #B2DFDB;
-    border-bottom: 1px solid #EEEEEE;
-    margin-bottom: 10px;
-    padding: 25px 20px 10px 20px;
-}
+
 
 .row {
     max-width: 75rem;
@@ -121,4 +115,12 @@ element.style {
 #new_user > div:nth-child(4) {
   font-weight: lighter;
   font-style: oblique;
+}
+
+.page-header {
+    max-width: 100%;
+    background-color: #B2DFDB;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 10px;
+    padding: 25px 20px 10px 20px;
 }
