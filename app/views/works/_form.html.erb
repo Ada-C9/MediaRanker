@@ -13,7 +13,7 @@
 <%= form_for @work do |f| %>
 
   <%= f.label :category %>
-  <%= f.select :category, ['Album','Book','Movie'], :prompt => 'Select Work Type' %>
+  <%= f.select :category, ['album','book','movie'], :prompt => 'Select Work Type' %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>

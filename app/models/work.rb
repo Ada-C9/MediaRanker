@@ -21,7 +21,7 @@ class Work < ApplicationRecord
   end
 
   def self.works_ordered_by_popularity
-    all_tallied = works_with_vote_tallies
+    all_tallied = self.works_with_vote_tallies
     just_works = []
     all_tallied.each_with_index do | work, i |
       just_works[i] = all_tallied[i][0]

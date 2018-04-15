@@ -33,16 +33,13 @@ class WorksController < ApplicationController
 
   def update
     @work = Work.find_by(id: params[:id])
-    if !@work.nil?
-      if @work.update(work_params)
-        flash[:success] = "#{@work.title} succesfully edited!"
-      else
-        flash.now[:alert] = @work.errors
-        render :edit
-      end
+    if @work.update(work_params)
+      flash[:success] = "#{@work.title} succesfully edited!"
     else
-      redirect_to works_path
+      flash.now[:alert] = @work.errors
+      render :edit
     end
+    redirect_to root_path
   end
 
   def destroy
@@ -52,8 +49,8 @@ class WorksController < ApplicationController
       flash[:success] = "#{@work.title} deleted"
     else
       flash.now[:alert] = @work.errors
-      render :destroy
     end
+    redirect_to root_path
   end
 
   private

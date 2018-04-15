@@ -105,3 +105,33 @@ Once your test coverage is comprehensive, your HTML is semantic, your user stori
 
 ## What we're looking for
 You can find what instructors will be looking for in the [feedback](feedback.md) markdown document.
+
+
+
+
+<section class="media-table">
+  <h4>Albums</h4>
+  <table>
+    <thead>
+      <tr>
+        <th width=80>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th width=100>Published</th>
+        <th width=100>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sorted_albums = Work.where(category: "album").works_ordered_by_popularity %>
+      <% @sorted_albums.each do |work| %>
+      <tr>
+        <td><%= work.report_vote_tally(work.id) %></td>
+        <td><%= link_to work.title, work_path(work[:id]) %></td>
+        <td><%= work.creator %></td>
+        <td><%= work.year_released %></td>
+        <td><%= button_to "Upvote", work_votes_path(work[:id]), method: :post, class: 'button' %></td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
+</section>

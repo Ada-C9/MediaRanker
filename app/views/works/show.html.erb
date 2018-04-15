@@ -4,7 +4,7 @@
   <h3><%= @work.title %></h3>
   <p>Created by: <%= @work.creator %></p>
   <p>Year released: <%= @work.year_released %></p>
-  <p>@work.description</p>
+  <p><%= @work.description %></p>
   <section>
     <%= link_to "Back to media ranks", root_path, class: 'button' %>
     <%= link_to "Edit", edit_work_path(@work.id), class: 'button' %>
