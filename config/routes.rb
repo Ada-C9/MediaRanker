@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'works#welcome'
 
   resources :works do
-    resources :upvotes, only: [:create]
+    resources :upvotes, only: [:create, :show, :new, :index]
   end
 
   resources :users, only: [:index, :show]
