@@ -1,0 +1,112 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+harrypotter:
+  category: movie
+  title: Harry Potter
+  creator: Jj
+  publication_year: 1993
+  description: a great Read
+
+the_lure:
+  category: movie
+  title: the_lure
+  creator: Agnieszka
+  publication_year: 20016
+  description: cool
+
+best_album:
+  category: album
+  title: Yeah
+  creator: Prince
+  publication_year: 1984
+  description: cool
+
+great_album:
+  category: album
+  title: Yeah
+  creator: Prince
+  publication_year: 1984
+  description: bad
+
+city_ghosts:
+  category: movie
+  title: city_ghosts
+  creator: Stephen King
+  publication_year: 2000
+  description: not the best
+
+dark_times:
+  category: movie
+  title: dark_times
+  creator: Campbell
+  publication_year: 2000
+  description: great movie
+
+the_square:
+  category: movie
+  title: the_square
+  creator: Ruben
+  publication_year: 2000
+  description: awesome
+
+lady_bird:
+  category: movie
+  title: lady_bird
+  creator: Saorsie Ronan
+  publication_year: 2002
+  description: beautiful
+
+lucky:
+  category: movie
+  title: lucky
+  creator: Harry Dean Stanton
+  publication_year: 2010
+  description: beautiful
+
+goodtime:
+  category: movie
+  title: goodtime
+  creator: Pattinson
+  publication_year: 2017
+  description: beautiful
+
+frozen:
+  category: movie
+  title: frozen
+  creator: Megan
+  publication_year: 2014
+  description: beautiful
+
+nemo:
+  category: movie
+  title: nemo
+  creator: James
+  publication_year: 2010
+  description: beautiful
+
+flinstones:
+  category: movie
+  title: flinstones
+  creator: Jack
+  publication_year: 2000
+  description: beautiful
+
+
+blackpanther:
+  category: movie
+  title: blackpanther
+  creator: Jack
+  publication_year: 2018
+  description: beautiful
+
+thor:
+  category: movie
+  title: thor
+  creator: Jack
+  publication_year: 2018
+  description: beautiful

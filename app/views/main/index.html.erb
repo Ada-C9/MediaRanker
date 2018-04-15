@@ -1,0 +1,55 @@
+<body>
+  <main class="row">
+
+    <section class="row spotlight">
+      <div>
+        <h3>
+          <span class="media-spotlight-header">Media Spotlight:</span>
+          <a><%= link_to Work.media_spotlight.title, work_path(@media_spotlight.id)%> by <%=@media_spotlight.creator %></a>
+        </h3>
+        <p><%= Work.media_spotlight.votes.count %> of votes <%= Work.media_spotlight.description %></p>
+      </div>
+    </section>
+
+    <hr class="root-hr">
+
+    <section class ="top-ten-container">
+      <section class="top-ten">
+        <h3>Top Movies</h3>
+        <ul>
+          <li>
+            <% Work.top_ten_movies.each do |work| %>
+            <h4><%= link_to "#{work.title}", work_path(work.id) %><small> by <%= "#{work.creator}" %></small></h4>
+            <p><%= "#{work.total_votes} votes" %></p>
+            <% end %>
+          </li>
+        </ul>
+      </section>
+
+      <section class="top-ten">
+        <h3>Top Albums</h3>
+        <ul>
+          <li>
+            <% Work.top_ten_albums.each do |work| %>
+            <h4><%= link_to "#{work.title}", work_path(work.id) %><small> by<%= "#{work.creator}" %></small></h4>
+              <p><%= "#{work.votes.count} votes" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </section>
+
+        <section class="top-ten">
+          <h3>Top Books</h3>
+          <ul>
+            <li>
+              <% Work.top_ten_books.each do |work| %>
+              <h4><%= link_to "#{work.title}", work_path(work.id) %><small> by <%= "#{work.creator}" %></small></h4>
+              <p><%= "#{work.votes.count} votes" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </section>
+
+      </section>
+    </main>
+  </body>
