@@ -1,0 +1,7 @@
+<%= form_for @user, url: login_path do |f| %>
+<%= f.label :user_name, "Username" %>
+<%= f.text_field :user_name %>
+<%= f.submit "Login", class: "button" %>
+<% end %>
+
+<h3>There is no password field!</h3>
