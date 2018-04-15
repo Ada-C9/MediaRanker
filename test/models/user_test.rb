@@ -48,4 +48,26 @@ describe User do
 
   end # relationships
 
+  describe "business logic" do
+
+    describe "#format_join_date" do
+
+      it "returns the date the user joined in the format MMM DD, YYYY" do
+
+        user = users(:user_one)
+        
+        formatted_date = user.format_join_date
+        formatted_date = formatted_date.split
+
+        Date::ABBR_MONTHNAMES.must_include formatted_date[0]
+        (1..31).must_include formatted_date[1].to_i
+        formatted_date[2].length.must_equal 4
+        formatted_date[2].to_i.must_equal Date.today.year
+
+      end
+
+    end # format_join_date
+
+  end # business logic
+
 end

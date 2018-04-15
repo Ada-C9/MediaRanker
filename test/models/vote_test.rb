@@ -62,7 +62,7 @@ describe Vote do
 
       end
 
-    end # format_vote_Date
+    end # format_vote_date
 
   end # business logic
 
