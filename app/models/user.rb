@@ -6,12 +6,12 @@ class User < ApplicationRecord
     return find_all_users
   end
 
-  def get_votes_given
-    return find_votes_given
+  def get_upvotes_given
+    return find_upvotes_given
   end
 
-  def get_votes_count
-    return count_votes_given
+  def get_upvotes_count
+    return count_upvotes_given
   end
 
   private
@@ -20,11 +20,11 @@ class User < ApplicationRecord
     return self.users
   end
 
-  def find_votes_given
+  def find_upvotes_given
     return self.upvotes
   end
 
-  def count_votes_given
+  def count_upvotes_given
     return self.upvotes.count
   end
 

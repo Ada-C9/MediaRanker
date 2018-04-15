@@ -1,4 +1,4 @@
-<h3 class="page-header"><%=page_title %></h3>
+<h3><%=page_title %></h3>
 <% if @work.errors.any? %>
   <ul class="errors">
     <% @work.errors.each do |column, message| %>
@@ -27,7 +27,7 @@
     <%= f.label :Description %>
     <%= f.text_area :work_description %>
 
-  <%= f.submit  %>
+  <%= f.submit value="Create Work", class: "button"  %>
 
   <% end %>
 </section>

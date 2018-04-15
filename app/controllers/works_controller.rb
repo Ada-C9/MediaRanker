@@ -5,14 +5,21 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all.order(params[:id])
+    @albums = Work.where(work_category: 'album')
+    @books = Work.where(work_category: 'book')
+    @movies = Work.where(work_category: 'movie')
   end
 
   def welcome
     @works = Work.all.order(params[:id])
     @spotlight = Work.all.sample
+    @albums = Work.where(work_category: 'album').take(10)
+    @books = Work.where(work_category: 'book').take(10)
+    @movies = Work.where(work_category: 'movie').take(10)
   end
 
   def show
+    @works = Work.all.order(params[:id])
   end
 
   def new
@@ -49,16 +56,15 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
+  private
 
-private
+  def work_params
+    params.require(:work).permit(:work_title, :work_creator, :work_description, :work_category,
+      :work_publication_year)
+    end
 
-def work_params
-  params.require(:work).permit(:work_title, :work_creator, :work_description, :work_category,
-    :work_publication_year)
+    def find_work
+      @work = Work.find_by id: params[:id]
+    end
+
   end
-
-  def find_work
-    @work = Work.find_by id: params[:id]
-  end
-
-end
