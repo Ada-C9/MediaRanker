@@ -18,7 +18,7 @@
 *= require foundation_and_overrides
 */
 
-.nav_bar {
+.nav-bar {
   padding: 25px 20px;
 }
 
@@ -63,12 +63,16 @@ ul {
   margin-left: .2rem;
 }
 
-.button {
+header .button {
   background-color: #26A69A;
 }
 
-.button:hover {
-  background-color: rgba(59,115,119,1)
+main a:hover {
+  color: #3b7377;
+}
+
+header .button:hover {
+  background-color: #3b7377;
 }
 
 main .name {
@@ -118,7 +122,7 @@ body a, h3 {
 }
 
 .main .flash {
-  background-color: rgb(230, 230, 230);
+  background-color: #e6e6e6;
 }
 
 .flash {
@@ -127,5 +131,5 @@ body a, h3 {
 }
 
 .flash-message {
-  color: rgb(199, 0, 57);
+  color: #c70039;
 }

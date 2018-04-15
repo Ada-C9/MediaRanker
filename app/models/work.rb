@@ -4,6 +4,7 @@ class Work < ApplicationRecord
 
   def self.show_spotlight
     works = self.all
+    raise ArgumentError.new if works.nil?
     return works.max_by {|work| work.votes.count}
   end
 

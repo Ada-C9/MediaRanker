@@ -44,6 +44,17 @@ describe Work do
       result = Work.show_spotlight
       result.must_equal works(:two)
     end
+
+    it "can raise Argument error if there is no work" do
+      skip
+      Work.all.each do |w|
+        w.destroy
+      end
+
+      proc {
+        Work.show_spotlight
+      }.must_raise ArgumentError
+    end
   end
 
   describe "self.show_albums" do
