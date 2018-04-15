@@ -14,10 +14,10 @@
     <% Work.albums.each do |work| %>
     <tr>
       <td><%= pluralize(work.votes.count, "vote") %></td>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= link_to(work.title, work_path(work)) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
-      <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>
+      <td><%= link_to "Upvote", new_work_vote_path(work), class: "button" %></td>
     </tr>
     <% end %>
   </th>
@@ -39,10 +39,10 @@
     <% Work.books.each do |work| %>
     <tr>
       <td><%= pluralize(work.votes.count, "vote") %></td>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= link_to(work.title, work_path(work)) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
-      <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>
+      <td><%= link_to "Upvote", new_work_vote_path(work), class: "button" %></td>
     </tr>
     <% end %>
   </th>
@@ -64,7 +64,7 @@
     <% Work.movies.each do |work| %>
     <tr>
       <td><%= pluralize(work.votes.count, "vote") %></td>
-      <td><%= link_to(work.title, work_path(work) ) %></td>
+      <td><%= link_to(work.title, work_path(work)) %></td>
       <td><%= work.creator %></td>
       <td><%= work.publication_year %></td>
       <td><%= link_to "Upvote", work_votes_path(work), class: "button" %></td>

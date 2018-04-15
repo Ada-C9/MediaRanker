@@ -13,7 +13,8 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      redirect_to works_path
+      flash[:success] = "Successfully created #{@work.category}"
+      redirect_to work_path(@work)
     else
       render :new
     end
@@ -26,6 +27,7 @@ class WorksController < ApplicationController
   def update
     @work.assign_attributes(work_params)
     if @work.save
+      flash[:success] = "Successfully updated #{@work.category}: #{@work.title}"
       redirect_to work_path(@work)
     else
       render :edit
@@ -37,11 +39,11 @@ class WorksController < ApplicationController
     redirect_to works_path
   end
 
-  def upvote
-    @work = Work.find(params[:id])
-    @work.votes.create
-    redirect_to works_path
-  end
+  # def upvote
+  #   @work = Work.find(params[:id])
+  #   @work.votes.create
+  #   redirect_to works_path
+  # end
 
   private
   def work_params

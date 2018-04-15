@@ -1,8 +1,8 @@
-<section class="top-ten-container">
-  <section class="top-ten">
+<section class="top-five-container">
+  <section class="top-five">
     <h3>Top Albums</h3>
     <ul>
-      <% Work.top_ten_album.each do |work| %>
+      <% Work.top_five_album.each do |work| %>
       <li><%= link_to(work.title, work_path(work)) %></li>
       <li>by <%= work.creator %></li>
       <li><small>Votes: <%= work.votes.count %></small></li>
@@ -10,10 +10,10 @@
     </ul>
   </section>
 
-  <section class="top-ten">
+  <section class="top-five">
     <h3>Top Books</h3>
     <ul>
-      <% Work.top_ten_book.each do |work| %>
+      <% Work.top_five_book.each do |work| %>
       <li><%= link_to(work.title, work_path(work)) %></li>
       <li>by <%= work.creator %></li>
       <li><small>Votes: <%= work.votes.count %></small></li>
@@ -21,10 +21,10 @@
     </ul>
   </section>
 
-  <section class="top-ten">
+  <section class="top-five">
     <h3>Top Movies</h3>
     <ul>
-      <% Work.top_ten_movie.each do |work| %>
+      <% Work.top_five_movie.each do |work| %>
       <li><%= link_to(work.title, work_path(work)) %></li>
       <li>by <%= work.creator %></li>
       <li><small>Votes: <%= work.votes.count %></small></li>

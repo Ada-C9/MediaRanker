@@ -1,5 +1,9 @@
 class VotesController < ApplicationController
 
+  def new
+    @vote = Vote.new
+  end
+
   def create
     if session[:user_id]
       new_vote = {

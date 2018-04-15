@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-  has_many :votes
+  has_many :votes, :dependent => :destroy
 
   validates :title, presence: true
   validates :category, inclusion: %w(movie book album)
@@ -26,19 +26,29 @@ class Work < ApplicationRecord
     end
   end
 
-  def self.top_ten_album
+  def self.top_five_album
     sorted = Work.albums
     sorted[-5...sorted.size].reverse
   end
 
-  def self.top_ten_book
+  def self.top_five_book
     sorted = Work.books
     sorted[-5...sorted.size].reverse
   end
 
-  def self.top_ten_movie
+  def self.top_five_movie
     sorted = Work.movies
     sorted[-5...sorted.size].reverse
+  end
+
+  def self.popular
+    pop = Work.first
+    Work.all.each do |work|
+      if work.votes.count > pop
+        pop = work
+      end
+    end
+    return pop
   end
 
 end
