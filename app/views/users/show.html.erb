@@ -1,3 +1,4 @@
+<main class="row">
 <h3>User Summary: <%= link_to @user.name, user_path(@user) %></h3>
 <p>Joined site <%=  @format_date(user.created_at) %></p>
 <!-- dry up with view helper and variable partial rendering -->
@@ -27,3 +28,4 @@
 
 <%= link_to "See all Users", users_path, class: "button" %>
 <%= link_to "Back to Media List", root_path, class: "button" %>
+</main>
