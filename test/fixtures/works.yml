@@ -44,21 +44,29 @@ math:
 
 inc_book:
  work_title:
- work_creator: Lars Von Trier
+ work_creator: Lars
  work_description: A terrible date movie
  work_category: movie
  work_publication_year: 2000
 
 inc_movie:
- work_title: AIM
+ work_title: bug
  work_creator:
  work_description: fifth studio album by English-Sri Lankan rapper and record producer
  work_category: album
  work_publication_year: 2016
 
 inc_album:
- work_title: Weapons of Math Destruction
- work_creator: Cathy ONeil
+ work_title: Turtle
+ work_creator: Cathy Bug
  work_description: How big data increases inequality and threatens democracy
+ work_category:
+ work_publication_year: 2016
+
+
+bouncy:
+ work_title: BouncyBall
+ work_creator: Cathy Bug
+ work_description: Bugs and Balls
  work_category:
  work_publication_year: 2016

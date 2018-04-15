@@ -62,4 +62,15 @@ describe Work do
     work.work_publication_year.must_equal 1995
   end
 
+  it 'must accurately count the votes' do
+    work = works(:debut)
+    work.get_upvotes_count.must_equal 3
+  end
+
+  it 'must accurately count the votes' do
+    work = works(:bouncy)
+    work.get_upvotes_count.must_equal 0
+  end
+
+
 end
