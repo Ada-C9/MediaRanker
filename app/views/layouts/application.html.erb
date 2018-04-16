@@ -15,35 +15,37 @@
 </head>
 
 <body>
-  <header>
+  <header class = "page-header row">
     <h2><%= link_to "Media Ranker", root_path %><small> Ranking the Best of Everything</small></h2>
 
     <nav class = "menu">
-      <%= link_to "View top media", root_path, class: "button"%>
-      <%= link_to "View all media", works_path, class: "button"%>
-      <%= link_to "Add a new work", new_work_path, class: "button"%>
-      <%= link_to "View all users", users_path, class: "button"%>
-      <div class="float-right">
-        <% if session[:user_id]%>
-        <%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%>
-        <%= link_to "Logout", logout_path, method: :delete, class: "button"%>
-        <%else%>
-        <%= link_to "Log in", login_path, class: "button"%>
-        <%end%>
-      </div>
+      <ul>
+        <li><%= link_to "View top media", root_path, class: "button"%></li>
+        <li><%= link_to "View all media", works_path, class: "button"%></li>
+        <li><%= link_to "Add a new work", new_work_path, class: "button"%></li>
+        <li><%= link_to "View all users", users_path, class: "button"%></li>
+        <div class="float-right">
+          <% if session[:user_id]%>
+          <li><%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]), class: "button"%></li>
+          <li><%= link_to "Logout", logout_path, method: :delete, class: "button"%></li>
+          <%else%>
+          <li><%= link_to "Log in", login_path, class: "button"%></li>
+          <%end%>
+        </div>
+      </ul>
     </nav>
 
 
-  </header>
+  </header >
   <section class="flash">
     <% flash.each do |name, message| %>
     <div class="<%= name %>"><%= message %></div>
     <% end %>
   </section>
 
-<main>
-  <%= yield %>
-</main>
+  <main>
+    <%= yield %>
+  </main>
 
 </body>
 </html>

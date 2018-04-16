@@ -13,6 +13,9 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
     if @work.save
       redirect_to work_path(@work)
+    else
+      flash[:failure] = "A problem occurred: Could not create #{work_params[:category]}"
+      render :edit
     end
   end
 
@@ -53,7 +56,7 @@ class WorksController < ApplicationController
       flash[:errors] = vote.errors.messages[:user_id]
     end
     redirect_back(fallback_location: root_path)
-    
+
   end
 
   def destroy

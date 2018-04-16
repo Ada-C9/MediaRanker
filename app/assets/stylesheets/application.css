@@ -65,3 +65,19 @@ header h2 a {
 header h2 small {
   color: white;
 }
+
+nav a {
+  margin-right: 0.5rem;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 4px;
+}
+nav ul div {
+  display: flex;
+}

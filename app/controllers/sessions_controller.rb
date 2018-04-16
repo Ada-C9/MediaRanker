@@ -5,13 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:user][:username])
+    user = User.find_by(username: user_params[:username])
     if user
       session[:user_id] = user.id
       flash[:success] = "Successfully logged in as existing user #{user.username}"
       redirect_to root_path
     elsif
-      user = User.create(username: params[:user][:username])
+      user = User.create(username: user_params[:username])
       user.save
       if user
         session[:user_id] = user.id
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
       end
     else
-      flash[:failure] = "Could not login as #{params[:user][:username]}"
+      flash[:failure] = "Could not login as #{user_params[:username]}"
       redirect_to login_path
     end
   end
@@ -31,4 +31,11 @@ class SessionsController < ApplicationController
 
     redirect_to root_path
   end
+
+private
+
+def user_params
+  return params.require(:user).permit(:username)
+end
+
 end
