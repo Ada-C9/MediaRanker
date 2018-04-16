@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   resources :users
   resources :votes
   resources :works do
-    
+    resources :votes, only: [:create]
   end
 
+
   get "/works/:work_id/upvote", to: "votes#create", as: "upvote"
+  
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
