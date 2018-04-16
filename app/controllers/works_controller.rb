@@ -12,12 +12,12 @@ class WorksController < ApplicationController
   def edit; end
 
   def update
-    work = Work.find(params[:id])
+    @work.assign_attributes(work_params)
 
-    work.assign_attributes(work_params)
-
-    if work.save
-      redirect_to work_path(work)
+    if @work.save
+      redirect_to work_path(@work)
+    else
+      render :edit, status: :bad_request
     end
   end
 
@@ -83,7 +83,8 @@ private
   end
 
   def find_work
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
+    head :not_found unless @work
   end
 
   def vote_params
