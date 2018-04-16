@@ -13,7 +13,6 @@ class Vote < ApplicationRecord
   def one_vote_per_user_per_work
     matching = self.report_user_votes(self.user_id).find_by(work_id: self.work_id)
     unless matching.nil?
-      raise
       self.errors.add(:work_id, "You can only upvote a work once.")
     end
   end
