@@ -1,7 +1,7 @@
 class Work < ApplicationRecord
   has_many :votes, :dependent => :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :category, inclusion: %w(movie book album)
   validates :creator, presence: true
 
@@ -41,14 +41,9 @@ class Work < ApplicationRecord
     sorted[-5...sorted.size].reverse
   end
 
-  def self.popular
-    pop = Work.first
-    Work.all.each do |work|
-      if work.votes.count > pop
-        pop = work
-      end
-    end
-    return pop
+  def self.top_work
+    self.all.sort_by { |work| work.votes.count }.reverse.first
   end
+
 
 end
