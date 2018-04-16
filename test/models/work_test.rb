@@ -95,6 +95,43 @@ describe Work do
 
     end # top_movies
 
+    describe "#top_books" do
+
+      it "returns at most 10 works" do
+        top_books = Work.top_books
+        top_books.length.must_be :<=, 10
+      end
+
+      it "returns only book" do
+
+        top_books = Work.top_books
+
+        all_books = false
+
+        top_books.each do |movie|
+          all_books = movie.category == "book"
+        end
+
+        all_books.must_equal true
+
+      end
+
+      it "returns the top ten movies with the highest votes in descending order" do
+
+        books_with_votes = Work.where(category: "book")
+
+        top_books = Work.top_books
+
+        books_with_votes.each do |book|
+          top_books.must_include book
+        end
+
+        top_books.first.must_equal works(:poodr)
+
+      end
+
+    end # top_books
+
   end # business logic
 
 end

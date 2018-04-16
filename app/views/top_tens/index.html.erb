@@ -40,7 +40,7 @@
   <section class="top-ten">
     <h3>Top Books</h3>
     <ul>
-      <% @top_books.each do |book| %>
+      <% Work.top_books.each do |book| %>
         <li>
           <h4>
             <%= link_to book.title, work_path(book), class: "link" %>
