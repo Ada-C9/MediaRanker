@@ -2,17 +2,17 @@
 
 <section class="media-table">
   <h4>Albums</h4>
-  <%= render partial: 'list', locals: {works: @albums} %>
+  <%= render partial: 'list', locals: {works: @albums.by_category} %>
 </section>
 
 <section class="media-table">
   <h4>Books</h4>
-  <%= render partial: 'list', locals: {works: @books} %>
+  <%= render partial: 'list', locals: {works: @books.by_category} %>
 </section>
 
 <section class="media-table">
   <h4>Movies</h4>
-  <%= render partial: 'list', locals: {works: @movies} %>
+  <%= render partial: 'list', locals: {works: @movies.by_category} %>
 </section>
 
 

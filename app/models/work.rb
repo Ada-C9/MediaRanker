@@ -12,6 +12,10 @@ class Work < ApplicationRecord
     return count_upvotes_received
   end
 
+  def self.by_category
+    self.order(vote_count: :desc)
+  end
+
 
   private
 

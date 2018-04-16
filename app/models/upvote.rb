@@ -1,5 +1,5 @@
 class Upvote < ApplicationRecord
-  belongs_to :work
+  belongs_to :work, counter_cache: :vote_count
   belongs_to :user
   validates :user_id, :uniqueness => { scope: [:work_id]  }
 
