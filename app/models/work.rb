@@ -30,5 +30,14 @@ class Work < ApplicationRecord
       end
     end
     return top_work
-  end 
+  end
+
+  def upvote_work(user)
+    vote = Vote.new
+    vote.work = self
+    vote.user = user
+    vote.save
+    return vote
+  end
+
 end

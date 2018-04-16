@@ -50,12 +50,6 @@ describe Work do
 
   describe "business logic" do
 
-    describe "#upvote" do
-
-
-
-    end # upvote
-
     describe "#top_movies" do
 
       it "returns at most 10 works" do
@@ -170,7 +164,7 @@ describe Work do
     end # top_albums
 
     describe "#top_work" do
-      
+
       it "returns the work with the highest number of votes" do
 
         works = Work.all
@@ -192,6 +186,44 @@ describe Work do
       end
 
     end # top_work
+
+    describe "#upvote_work" do
+
+      it "creates a new vote" do
+        el_rey = works(:el_rey)
+        user = users(:user_two)
+        votes_before = Vote.all.length
+
+        el_rey.upvote_work(user)
+
+        votes_after = Vote.all.length
+
+        votes_after.must_equal votes_before + 1
+      end
+
+      it "adds a new vote to the work specified if the user-work combination is unique" do
+        el_rey = works(:el_rey)
+        user = users(:user_two)
+        votes_before = el_rey.votes.count
+
+        el_rey.upvote_work(user)
+        votes_after = el_rey.votes.count
+
+        votes_after.must_equal votes_before + 1
+      end
+
+      it "does not create a new vote if the user-work combination is not unique" do
+        poodr = works(:poodr)
+        user = users(:user_one)
+        votes_before = poodr.votes.count
+
+        poodr.upvote_work(user)
+        votes_after = poodr.votes.count
+
+        votes_after.must_equal votes_before
+      end
+
+    end # upvote_work
 
   end # business logic
 

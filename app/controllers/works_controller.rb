@@ -20,7 +20,6 @@ class WorksController < ApplicationController
       flash[:success] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to work_path(@work)
     else
-      # include error messages
       flash.now[:failure] = "A problem occurred: Could not create #{@work.category}"
       render :new
     end
@@ -38,7 +37,6 @@ class WorksController < ApplicationController
       flash[:success] = "Successfully updated #{@work.category} #{@work.id}"
       redirect_to work_path(@work)
     else
-      # include error messages
       flash.now[:failure] = "A problem occurred: Could not update #{@work.category}"
       render :edit
     end
@@ -56,13 +54,13 @@ class WorksController < ApplicationController
 
       user = User.find(session[:user_id])
       work = Work.find(params[:format])
-      @vote = Vote.new
-      @vote.assign_attributes(user: user, work: work)
 
-      if @vote.save
+      vote = work.upvote_work(user)
+
+      if vote.save
         flash[:success] = "Successfully upvoted!"
         redirect_back(fallback_location: root_path)
-      elsif !@vote.valid?
+      elsif !vote.valid?
         flash[:failure] = "Could not upvote"
         redirect_back(fallback_location: root_path)
       end
