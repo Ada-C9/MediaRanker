@@ -1,15 +1,17 @@
 require "test_helper"
 
 describe User do
-    let(:user) { User.new(name: "Kainin") }
-
+  before do
+    @user = User.new(name: "Kainin")
+   end
     it "must be valid" do
-      value(user).must_be :valid?
+      @user.must_be :valid?
     end
 
     it "must be invalid without a name" do
-      user.name = nil
-      value(user).wont_be :valid?
+      user = User.new(name: nil)
+      result = user.valid?
+      result.must_be false
     end
 
     it "validates one vote per work" do
