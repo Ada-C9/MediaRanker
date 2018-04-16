@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+caroline:
+  username: Caroline
+
+christine:
+  username: Christine
+
+patty:
+  username: Patty

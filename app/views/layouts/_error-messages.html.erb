@@ -1,0 +1,13 @@
+<section>
+  <ul>
+    <% model.errors.messages.each do |field, problem| %>
+    <% if problem.any? %>
+      <li><%= field%>
+        <% problem.each do |message| %>
+        <%= message %>
+        <% end %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</section>

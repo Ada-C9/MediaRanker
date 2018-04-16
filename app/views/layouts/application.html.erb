@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker 2.0" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Gudea:400,700|Hammersmith+One">
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header class="page-header row">
+      <h2>
+        <%= link_to "Media Ranker", root_path %>
+        <small>Ranking the Best of Everything</small>
+      </h2>
+
+      <nav>
+        <%= link_to "View top media", root_path, class: "button" %>
+        <%= link_to "View all media", works_path, class: "button" %>
+        <%= link_to "Add a new work", new_work_path, class: "button" %>
+        <%= link_to "View all users", users_path, class: "button" %>
+        <div class="float-right">
+          <% if session[:user_id] %>
+            <% user = User.find_by(id: session[:user_id]) %>
+            <%= link_to "Logged in as #{user.username}" , user_path(user), class: "button" %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "button" %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "button" %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="flash">
+        <% flash.each do |name, message| %>
+          <div class="<%= name %>"><h3><%= message %></h3>
+        <% end %>
+          <% if @vote_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @vote } %>
+          <% end %>
+          <% if @user_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @user} %>
+          <% end %>
+          <% if @work_errors %>
+            <%= render partial: "layouts/error-messages", locals: { model: @work } %>
+          <% end %>
+        </div>
+      </section>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>
