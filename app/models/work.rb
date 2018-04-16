@@ -14,6 +14,6 @@ class Work < ApplicationRecord
   end
 
   def self.order_works(category)
-    self.where(category: category).sort_by{ |work| work.num_votes }
+    self.where(category: category).sort_by{ |work| work.num_votes }.reverse
   end
 end
