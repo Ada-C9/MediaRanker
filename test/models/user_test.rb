@@ -34,7 +34,7 @@ describe User do
 
     it 'has many votes' do
       user = users(:luke)
-      user.votes.length.must_equal 3
+      user.votes.length.must_equal 5
       user.votes.must_include votes(:book_vote)
       user.votes.must_include votes(:movie_vote)
       user.votes.must_include votes(:album_vote)
@@ -42,7 +42,8 @@ describe User do
 
     it 'has many works through votes' do
       user = users(:luke)
-      user.works.length.must_equal 3
+      user.works.inspect
+      user.works.length.must_equal 5
       user.works.must_include works(:kindred)
       user.works.must_include works(:black_panther)
       user.works.must_include works(:american_teen)

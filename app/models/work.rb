@@ -19,7 +19,7 @@ class Work < ApplicationRecord
   end
 
   def self.media_spotlight
-    all.sort_by{ |w| w.votes.count }.last
+    all.max_by{ |w| w.votes.count }
   end
 
   def self.top_movies

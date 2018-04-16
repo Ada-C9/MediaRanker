@@ -12,12 +12,21 @@ kindred:
   publication_year: 1979
   description: Kindred is a novel by American writer Octavia E. Butler that incorporates time travel and is modeled on slave narratives.
 
-black_panther:
-  category: movie
-  title: Black Panther
-  creator: Ryan Coogler
-  publication_year: 2018
-  description: Black Panther is a 2018 American superhero film based on the Marvel Comics character of the same name.
+bloodchild:
+  category: book
+  title: Bloodchild
+  creator: Octavia Butler
+  publication_year: 1995
+  description: Winner of the 1984 Nebula Award for Best Novelette and the 1985 Hugo Award for Best Novelette.
+
+# ----------
+
+blueprint:
+  category: album
+  title: The Blueprint
+  creator: Jay-Z
+  publication_year: 2001
+  description: The Blueprint is the sixth studio album by American rapper Jay-Z, released on September 11, 2001, by Roc-A-Fella Records and Def Jam Recordings.
 
 american_teen:
   category: album
@@ -25,3 +34,27 @@ american_teen:
   creator: Kahlid
   publication_year: 2018
   description: Aerican Teen is the debut studio album by American singer Khalid. It was released on March 3, 2017.
+
+# ----------
+
+
+black_panther:
+  category: movie
+  title: Black Panther
+  creator: Ryan Coogler
+  publication_year: 2018
+  description: Black Panther is a 2018 American superhero film based on the Marvel Comics character of the same name.
+
+citizen_kane:
+  category: movie
+  title: Citizen Kane
+  creator: Orson Wells
+  publication_year: 1941
+  description: Citizen Kane is a 1941 American mystery drama film by Orson Welles, its producer, co-screenwriter, director and star.
+
+get_out:
+    category: movie
+    title: Get without
+    creator: Jordan Peele
+    publication_year: 2017
+    description: Get Out is a 2017 American horror documentary written and directed by Jordan Peele.
