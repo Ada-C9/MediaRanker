@@ -54,6 +54,7 @@ describe Vote do
       result = @vote.valid?
 
       result.must_equal false
+      @vote.errors.messages.must_include :user_id
     end
   end
 

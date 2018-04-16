@@ -2,22 +2,7 @@ require "test_helper"
 
 describe Work do
   describe "validations" do
-    # all validations pass
     before do
-      # Arrange
-      # We need an author for a book, so add one to the
-      # test DB. Use create! to fail fast - we aren't
-      # interested in the author, but we need our
-      # tests to be invalid if we can't have one
-
-      # There are a variety of ways to access fixture data
-      # author = Author.find_by(name: "Sandi Metz")
-      # author = authors(:metz)
-      #author = Author.first
-
-      # IDs are assigned at random, so this will not work
-      # Author.find(3)
-
       @work = Work.new(title: "Something Great", category: "album")
     end
 
@@ -69,7 +54,22 @@ describe Work do
 
   describe "relations" do
     before do
+      @work = Work.create!(title: "Something Great", category: "album")
+    end
 
+    it "connects votes and vote_ids" do
+      vote = Vote.create!(user: User.first, work: @work)
+
+      @work.votes.must_include vote
+      @work.vote_ids.must_include vote.id
+    end
+
+    it "connects users and user_ids" do
+      user = users(:patty)
+      vote = Vote.create!(user: user, work: @work)
+
+      @work.users.must_include user
+      @work.user_ids.must_include user.id
     end
   end
 end
