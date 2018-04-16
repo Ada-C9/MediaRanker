@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :find_work, only: [:show, :edit, :update, :destroy]
+  before_action :find_work, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
     @works = Work.all
@@ -35,14 +35,21 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    @vote = Vote.new
-    @vote.user_id = session[:user]["id"]
-    @vote.work_id = params[:id]
-    if @vote.save
-      redirect_to root_path
-      flash[:success] = "Successfully upvoted!"
+    if session[:user] == nil
+      flash[:alert] = "You must be logged in to vote."
+
+      redirect_back(fallback_location: root_path)
     else
-      flash.now[:alert] = @vote.errors
+      @vote = Vote.new
+      @vote.user_id = session[:user]["id"]
+      @vote.work_id = params[:id]
+      if @vote.save
+        redirect_back(fallback_location: root_path)
+        flash[:success] = "Successfully upvoted!"
+      else
+        redirect_back(fallback_location: root_path)
+        flash[:alert] = @vote.errors
+      end
     end
   end
 

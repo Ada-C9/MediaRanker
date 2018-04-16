@@ -8,4 +8,12 @@ class Work < ApplicationRecord
 
   validates :title, presence: true
   validates :title, length: { in: 1..50 }
+
+  def num_votes
+    self.votes.length
+  end
+
+  def self.order_works(category)
+    self.where(category: category).sort_by{ |work| work.num_votes }.reverse
+  end
 end

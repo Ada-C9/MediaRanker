@@ -34,7 +34,7 @@
         </div>
       </nav>
 
-      <% if flash[:error] || flash[:success] %>
+      <% if flash[:error] || flash[:success] || flash[:alert] %>
          <section class="flash">
           <% flash.each do |name, message| %>
           <div class="<%= name %>"><%= message %></div>

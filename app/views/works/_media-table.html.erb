@@ -10,8 +10,8 @@
   <tbody>
     <% (model).each do |work| %>
     <tr>
-      <td>
-        <%# TODO: add vote count %>
+      <td class="vote-count">
+        <%= work.num_votes %>
       </td>
       <td class="work-title">
         <%= link_to work.title, work_path(work.id) %>
