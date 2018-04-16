@@ -4,14 +4,12 @@ class WorksController < ApplicationController
   before_action :find_user
 
   def index
-    @works = Work.all.order(params[:id])
     @albums = Work.where(work_category: 'album').by_votes
     @books = Work.where(work_category: 'book').by_votes
     @movies = Work.where(work_category: 'movie').by_votes
   end
 
   def welcome
-    @works = Work.all.order(params[:id])
     @spotlight = Work.all.get_spotlight
     @albums = Work.where(work_category: 'album').top_ten
     @books = Work.where(work_category: 'book').top_ten
