@@ -27,12 +27,11 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:status] = success
       flash[:message] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to works_path
     else
       @work.errors.messages
-      render :new
+      render :new, status: :bad_request
     end
   end
 
@@ -46,7 +45,7 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
-      render :edit
+      render :edit, status: :bad_request
     end
   end
 
@@ -84,7 +83,7 @@ class WorksController < ApplicationController
     else
       # flash[:status] = :failure
       flash[:failure]= "You must log in to do that"
-
+      redirect_back(fallback_location: work_path(@work))
     end
   end
 
@@ -94,7 +93,10 @@ class WorksController < ApplicationController
   end
 
   def find_work
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
+    unless @work
+      head :not_found
+    end
   end
 
   def work_list
