@@ -108,8 +108,20 @@ describe Work do
       # does same thing as media_spotlight but in less optimized way
       expected = Work.all.sort_by{ |w| w.votes.count }.last
 
-      media_spotlight.must_equal works(:kindred)
       media_spotlight.must_equal expected
+      media_spotlight.must_equal works(:kindred)
+    end
+
+    it 'returns one of the top movies when tie' do
+      # creates tie between kindred and black_panther
+      user = User.find_by(username: "kyle")
+      work = Work.find_by(title: "Black Panther")
+
+      Vote.create!(user_id: user.id, work_id: work.id)
+
+      media_spotlight = Work.media_spotlight
+
+      media_spotlight.must_equal works(:kindred) or works(:black_panther)
     end
 
   end
