@@ -64,6 +64,11 @@ header h2 a {
   margin-right: 15px;
   border-right: white 2px solid
 }
+
+header h2 a:hover {
+    color: #FF5722;
+}
+
 header h2 small {
   color: white;
 }
@@ -82,8 +87,4 @@ nav ul li {
 }
 nav ul div {
   display: flex;
-}
-
-#tops {
-  margin-top: 5%;
 }
