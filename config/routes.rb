@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'top_tens#index'
 
   resources :works
-  resources :users
+  resources :users, only: [:index, :show]
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
