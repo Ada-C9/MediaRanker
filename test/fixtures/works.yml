@@ -1,8 +1,8 @@
-<% 1.upto(20) do |i| %>
-work_<%= i %>:
-  title: <%= Faker::Pokemon.name %>
-  category: pokemon
-<% end %>
+<%# 1.upto(20) do |i| %>
+# work_<%# i %>:
+  # title: <%# Faker::Pokemon.name %>
+  # category: pokemon
+<%# end %>
 
 hill:
   category: album

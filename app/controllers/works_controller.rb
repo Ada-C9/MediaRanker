@@ -58,12 +58,12 @@ class WorksController < ApplicationController
       redirect_to work_path(@work)
     else
       flash.now[:failure] = "A problem occured. Could not create #{@work.category.name}."
-      render :edit
+      render :edit, status: :bad_request
     end
   end
 
   def destroy
-    work = Work.find(params[:id])
+    work = Work.find_by(id: params[:id])
     id = work.id
     category = Category.find(work.category_id)
     result = Work.destroy(params[:id])
@@ -104,7 +104,8 @@ class WorksController < ApplicationController
   end
 
   def find_work
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
+    head :not_found unless @work
   end
 
 end

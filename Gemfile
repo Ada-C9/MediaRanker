@@ -59,7 +59,7 @@ gem 'foundation-rails'
 gem 'normalize-rails'
 group :development, :test do
   gem 'pry-rails'
-  gem 'faker'
+  gem 'faker', '~> 1.8.7'
 end
 
 group :development do
