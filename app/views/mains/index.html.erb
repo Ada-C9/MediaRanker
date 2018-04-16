@@ -1,3 +1,11 @@
+<section class="spotlight">
+  <h3><span class="media-spotlight-header">
+    Media Spotlight:</span>
+    <%= link_to(@top_work.title, work_path(@top_work)) %>
+    by <%= @works.top_work.creator %></h3>
+    <p>-<%= @works.top_work.votes.count %> Votes<%= @works.top_work.description %></p>
+</section>
+
 <section class="top-five-container">
   <section class="top-five">
     <h3>Top Albums</h3>
