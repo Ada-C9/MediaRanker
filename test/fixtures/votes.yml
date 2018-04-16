@@ -5,13 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  user_id: caroline.id
-  work_id: graceland.id
-#
+  user: caroline
+  work: graceland
+
 two:
-  user_id: christine.id
-  work_id: graceland.id
+  user: christine
+  work: graceland
 
 three:
-  user_id: chistine.id
-  work_id: rhythm.id
+  user: chistine
+  work: rhythm

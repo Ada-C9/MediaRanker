@@ -3,8 +3,8 @@ require "test_helper"
 describe Vote do
   describe "validations" do
     before do
-      @existing_vote = Vote.create!(user: User.last, work: Work.last)
-      @vote = Vote.new(user: User.first, work: Work.first)
+      @existing_vote = votes(:one)
+      @vote = Vote.new(user: users(:patty), work: works(:southeastern))
     end
 
     it "can be created with all required fields" do
@@ -59,7 +59,7 @@ describe Vote do
 
   describe "relations" do
     it "connects user and user_id" do
-      user = User.first
+      user = users(:patty)
 
       vote = Vote.create!(user: user, work: Work.first)
 
@@ -67,7 +67,7 @@ describe Vote do
     end
 
     it "connects work and work_id" do
-      work = Work.first
+      work = works(:southeastern)
 
       vote = Vote.create!(user: User.first, work: work)
 
