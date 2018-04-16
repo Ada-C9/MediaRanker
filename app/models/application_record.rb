@@ -3,5 +3,5 @@ class ApplicationRecord < ActiveRecord::Base
 
   def format_date
     return self.created_at.strftime("%b %d, %Y")
-  end
+  end 
 end

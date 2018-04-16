@@ -6,6 +6,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end 
+    @user_votes = @user.votes
+    @user_votes = (@user_votes.sort_by { |vote|
+      vote.work.votes.count
+    }).reverse
+  end
 
 end

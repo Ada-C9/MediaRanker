@@ -3,21 +3,42 @@ class Work < ApplicationRecord
 
   validates :title, presence: true
 
-  def self.top_movies
+  def self.movies
     movies = Work.where(category: "movie")
-    top_movies = (movies.limit(10).sort_by { |work| work.votes.count }).reverse!
+    movies = (movies.sort_by { |work|
+      work.votes.count
+    }).reverse
+  end
+
+  def self.books
+    books = Work.where(category: "book")
+    books = (books.sort_by { |work|
+      work.votes.count
+    }).reverse
+  end
+
+  def self.albums
+    albums = Work.where(category: "album")
+    albums = (albums.sort_by { |work|
+      work.votes.count
+    }).reverse
+  end
+
+  def self.top_movies
+    movies = self.movies
+    top_movies = movies[0..9]
     return top_movies
   end
 
   def self.top_books
-    books = Work.where(category: "book")
-    top_books = (books.limit(10).sort_by { |work| work.votes.count }).reverse!
+    books = self.books
+    top_books = books[0..9]
     return top_books
   end
 
   def self.top_albums
-    albums = Work.where(category: "album")
-    top_albums = (albums.limit(10).sort_by { |work| work.votes.count }).reverse!
+    albums = self.albums
+    top_albums = albums[0..9]
     return top_albums
   end
 
