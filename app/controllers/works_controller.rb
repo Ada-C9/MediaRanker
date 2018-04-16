@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  before_action :find_work, only: [:show, :edit, :update]
 
   def index
     @movies = Work.all_movies
@@ -6,13 +7,9 @@ class WorksController < ApplicationController
     @albums = Work.all_albums
   end
 
-  def show
-    @work = Work.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @work = Work.find(params[:id])
-  end
+  def edit; end
 
   def update
     work = Work.find(params[:id])
@@ -83,6 +80,10 @@ class WorksController < ApplicationController
 private
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
+  end
+
+  def find_work
+    @work = Work.find(params[:id])
   end
 
   def vote_params
