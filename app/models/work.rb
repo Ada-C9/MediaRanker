@@ -15,4 +15,10 @@ class Work < ApplicationRecord
     return top_books
   end
 
+  def self.top_albums
+    albums = Work.where(category: "album")
+    top_albums = (albums.limit(10).sort_by { |work| work.votes.count }).reverse!
+    return top_albums
+  end
+
 end

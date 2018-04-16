@@ -102,7 +102,7 @@ describe Work do
         top_books.length.must_be :<=, 10
       end
 
-      it "returns only book" do
+      it "returns only books" do
 
         top_books = Work.top_books
 
@@ -131,6 +131,43 @@ describe Work do
       end
 
     end # top_books
+
+    describe "#top_albums" do
+
+      it "returns at most 10 works" do
+        top_albums = Work.top_albums
+        top_albums.length.must_be :<=, 10
+      end
+
+      it "returns only albums" do
+
+        top_albums = Work.top_albums
+
+        all_albums = false
+
+        top_albums.each do |album|
+          all_albums = album.category == "album"
+        end
+
+        all_albums.must_equal true
+
+      end
+
+      it "returns the top ten movies with the highest votes in descending order" do
+
+        albums_with_votes = Work.where(category: "album")
+
+        top_albums = Work.top_albums
+
+        albums_with_votes.each do |album|
+          top_albums.must_include album
+        end
+
+        top_albums.first.must_equal works(:mis_cuarenta)
+
+      end
+
+    end # top_albums
 
   end # business logic
 

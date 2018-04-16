@@ -60,7 +60,7 @@
   <section class="top-ten">
     <h3>Top Albums</h3>
     <ul>
-      <% @top_albums.each do |album| %>
+      <% Work.top_albums.each do |album| %>
         <li>
           <h4>
             <%= link_to album.title, work_path(album), class: "link" %>
