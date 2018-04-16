@@ -2,7 +2,7 @@
 
 
 <section id="spotlight">
-  <h3>Media Spotlight: <%=link_to @top.title, work_path(@top)%> by <%=@top.created_by%></h3>
+  <h3><span>Media Spotlight: </span><%=link_to @top.title, work_path(@top)%> by <%=@top.created_by%></h3>
   <p><%=@top.votes.count%> votes - <%=@top.description%></p>
 </section>
 
