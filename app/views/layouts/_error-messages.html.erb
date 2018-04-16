@@ -1,5 +1,4 @@
-
-
+<% if model.errors.messages.any? %>
   <h3> A problem has occurred.</h3>
   <ul>
     <% model.errors.messages.each do |field, problem| %>
@@ -10,3 +9,4 @@
     </li>
     <% end %>
   </ul>
+  <% end %>

@@ -27,7 +27,8 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:success] = "Successfully created #{@work.category} #{@work.id}"
+      flash[:status] = success
+      flash[:message] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to works_path
     else
       @work.errors.messages
@@ -61,8 +62,7 @@ class WorksController < ApplicationController
 
       if @vote.save
         # flash[:status] = :success
-        flash[:messages] = "Successfully upvoted #{@work.title}"
-        status = :found
+        flash[:success] = "Successfully upvoted #{@work.title}"
 
         case request.fullpath
         when "/works"
@@ -76,14 +76,15 @@ class WorksController < ApplicationController
         end
         redirect_back(fallback_location: work_path(@work))
       else
-        flash[:result_text] = "Could not upvote"
+        # flash[:status] = :failure
+        flash[:failure] = "Could not upvote"
         @vote.errors.messages
-        status = :conflict
         redirect_back(fallback_location: work_path(@work))
       end
     else
-      flash.alert = "You must log in to do that"
-      status = :unauthorized
+      # flash[:status] = :failure
+      flash[:failure]= "You must log in to do that"
+
     end
   end
 

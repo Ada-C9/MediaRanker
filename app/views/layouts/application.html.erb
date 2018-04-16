@@ -39,20 +39,16 @@
   </header>
 
   <section class="flash">
-    <% flash.each do |name, message| %>
-      <div class="callout <%= name %> status">
-          <% if @vote || @user || @work %>
-          <% models = [@vote, @user, @work]%>
-            <% models.each do |model| %>
-              <% if model %>
-                <% render_error(model) %>
-                <%= render partial: 'layouts/error-messages', locals: {model: model} %>
-              <% end %>
-            <% end %>
-          <% end %>
-      </div>
-    <% end %>
-  </section>
+  <% flash.each do |name, message| %>
+  <div class="callout <%= name %> status">
+  <%= message %>
+  <% end %>
+
+  </div>
+</section>
+
+
+
 
   <%= yield %>
 
