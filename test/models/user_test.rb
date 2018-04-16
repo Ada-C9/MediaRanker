@@ -27,7 +27,7 @@ describe User do
     let(:user) { User.new(name: "Kainin") }
 
     it "must return the user start date" do
-      user.joined = "04-01-2018"
+      value(user).joined = "04-01-2018"
 
       value(user).joined.must_equal value(user).created_at
     end

@@ -27,7 +27,7 @@ describe Work do
   end
 
   it "must be invalid without a supported category type" do
-    work.category = "literally a bunch of junk"
+    work.category = "random sentences are fun to write"
     value(work).wont_be :valid?
   end
 
