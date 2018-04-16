@@ -1,2 +1,9 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<% @books.each do |book| %>
+  <ul>
+    <li>
+      <h4><%= link_to book.title, work_path(book.id) %></h4>
+      <small><%= book.creator %></small>
+      <p><%= book.num_votes %></p>
+    </li>
+  </ul>
+<% end%>
