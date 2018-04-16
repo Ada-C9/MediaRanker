@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mona:
+  username: monsiscool
+
+paul:
+  username: awesomeguy
+
+chris:
+  username: chrisnumber1
+
+mary: 
+  username: coolmary

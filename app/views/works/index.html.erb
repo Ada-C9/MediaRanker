@@ -1,0 +1,30 @@
+<h3>List of Works</h3>
+
+<% @categories.each do |category| %>
+<section class = "media-table">
+
+  <h4><%= category.name.capitalize %>s</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @works.find_all{ |w| w.category == category }.each do |work| %>
+      <tr>
+        <td><%= work.votes.count %></td>
+        <td><%= link_to work.title, work_path(work) %></td>
+        <td><%= work.creator %></td>
+        <td><%= work.publication_year %></td>
+        <td><%= link_to "Upvote", new_vote_path(work), method: :post, class: "button upvote" %></td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
+</section>
+<% end %>
