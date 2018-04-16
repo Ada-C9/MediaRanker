@@ -3,7 +3,7 @@ class WorksController < ApplicationController
   before_action :find_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = Work.all.most_voted
+    @works = Work.most_voted
     @categories = Category.all
   end
 
