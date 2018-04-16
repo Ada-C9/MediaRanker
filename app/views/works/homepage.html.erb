@@ -1,0 +1,81 @@
+<div>
+  <section class="spotlight">
+    <h3>
+      <span class="media-spotlight">Media Splotlight:
+      </span>
+      <%= link_to(@works.show_spotlight.title, work_path(@works.show_spotlight)) %>
+      by Steely Dan
+    </h3>
+    <p>12 Votes - Greate American rock band</p>
+  </section>
+  <hr class="root-hr">
+</div>
+
+<div class="grid-x">
+  <div class="cell small-4">
+    <strong>
+      <h3>
+        Top Movies
+      </h3>
+    </strong>
+    <ul>
+      <% @works.show_movies.first(10).each do |movie| %>
+      <li>
+        <h4>
+          <%= link_to(movie.title, work_path(movie)) %>
+          <small> by
+            <%= movie.creator %>
+          </small>
+        </h4>
+      </li>
+      <li>
+        <%= movie.votes.count %> votes
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="cell small-4">
+    <h3>
+      Top Books
+    </h3>
+    <ul>
+      <% @works.show_books.first(10).each do |book| %>
+      <li>
+        <h4>
+          <%= link_to(book.title, work_path(book)) %>
+          <small> by
+            <%= book.creator %>
+          </small>
+        </h4>
+      </li>
+      <li>
+        <%= book.votes.count %> votes
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="cell small-4">
+    <strong>
+      <h3>
+        Top Albums
+      </h3>
+    </strong>
+    <ul>
+      <% @works.show_albums.first(10).each do |album| %>
+      <li>
+        <h4>
+          <%= link_to(album.title, work_path(album)) %>
+          <small> by
+            <%= album.creator %>
+          </small>
+        </h4>
+      </li>
+      <li>
+        <%= album.votes.count %> votes
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

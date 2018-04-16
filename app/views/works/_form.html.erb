@@ -1,0 +1,29 @@
+<div class="new_page">
+  <%= form_for @work do |f| %>
+  <ul class="new_info">
+    <li>
+      <%= f.label :categoty %>
+      <%= f.select "category", raw("<option>Album</option><option>Book</option><option>Movie</option>") %>
+    </li>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :creator %>
+      <%= f.text_field :creator %>
+    </li>
+    <li>
+      <%= f.label :publication_year %>
+      <%= f.text_field :publication_year %>
+    </li>
+    <li>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </li>
+    <li>
+      <%= f.submit class: "button"%>
+    </li>
+  </ul>
+  <% end %>
+</div>

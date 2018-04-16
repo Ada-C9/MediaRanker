@@ -1,0 +1,135 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*= require normalize-rails
+
+*
+
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+*/
+
+.nav-bar {
+  padding: 25px 20px;
+}
+
+header {
+  padding: 25px 20px 10px 20px;
+  background-color: #B2DFDB;
+}
+
+header h2 {
+  margin: 25px auto 40px auto;
+  font-weight: bold;
+}
+
+header h2 a {
+  color: #FF5722;
+  border-right: solid white 2px;
+  margin-right: 15px;
+}
+
+header h2 small {
+  color: white;
+}
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .grid-x div > ul, .show-info {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.float-right {
+  margin-left: .2rem;
+}
+
+header .button {
+  background-color: #26A69A;
+}
+
+main a:hover {
+  color: #3b7377;
+}
+
+header .button:hover {
+  background-color: #3b7377;
+}
+
+main .name {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+}
+
+body small {
+  color: slategrey;
+}
+
+.grid-x .cell h3 {
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+.cell {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+body a, h3 {
+  color: #26A69A;
+  font-weight: bold;
+}
+
+.spotlight h3 .media-spotlight {
+  color: #424242;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+.spotlight {
+  padding: 0 32px 32px 32px;
+  border-bottom: 1px solid lightgray;
+}
+
+.root-hr {
+  margin: 0px auto 75px auto;
+  color: #EEEEEE;
+}
+
+.flash-errors > li {
+  list-style-type: disc;
+}
+
+.main .flash {
+  background-color: #e6e6e6;
+}
+
+.flash {
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  color: #c70039;
+}
