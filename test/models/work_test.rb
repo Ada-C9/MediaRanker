@@ -114,4 +114,28 @@ describe Work do
 
   end
 
+  describe 'top moves, books, albums' do
+    before do
+      @top_m = Work.top_movies
+      @top_b = Work.top_books
+      @top_a = Work.top_albums
+    end
+
+    it 'returns top movies' do
+      expected = [works(:black_panther), works(:get_out), works(:citizen_kane)]
+      @top_m.must_equal expected
+    end
+
+    it 'returns top books' do
+      expected = [works(:kindred), works(:bloodchild)]
+      @top_b.must_equal expected
+    end
+
+    it 'returns top albums' do
+      expected = [works(:blueprint), works(:american_teen)]
+      @top_a.must_equal expected
+    end
+
+  end
+
 end
