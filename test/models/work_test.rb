@@ -204,23 +204,30 @@ describe Work do
       it "adds a new vote to the work specified if the user-work combination is unique" do
         el_rey = works(:el_rey)
         user = users(:user_two)
-        votes_before = el_rey.votes.count
+        work_votes_before = el_rey.votes.count
+        user_votes_before = user.votes.count
 
         el_rey.upvote_work(user)
-        votes_after = el_rey.votes.count
+        work_votes_after = el_rey.votes.count
+        user_votes_after = user.votes.count
 
-        votes_after.must_equal votes_before + 1
+        work_votes_after.must_equal work_votes_before + 1
+        user_votes_after.must_equal user_votes_before + 1
+
       end
 
       it "does not create a new vote if the user-work combination is not unique" do
         poodr = works(:poodr)
         user = users(:user_one)
-        votes_before = poodr.votes.count
+        poodr_votes_before = poodr.votes.count
+        user_votes_before = user.votes.count
 
         poodr.upvote_work(user)
-        votes_after = poodr.votes.count
+        poodr_votes_after = poodr.votes.count
+        user_votes_after = user.votes.count
 
-        votes_after.must_equal votes_before
+        poodr_votes_after.must_equal poodr_votes_before
+        user_votes_after.must_equal user_votes_before 
       end
 
     end # upvote_work
