@@ -5,17 +5,17 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all.order(params[:id])
-    @albums = Work.where(work_category: 'album')
-    @books = Work.where(work_category: 'book')
-    @movies = Work.where(work_category: 'movie')
+    @albums = Work.where(work_category: 'album').by_votes
+    @books = Work.where(work_category: 'book').by_votes
+    @movies = Work.where(work_category: 'movie').by_votes
   end
 
   def welcome
     @works = Work.all.order(params[:id])
-    @spotlight = Work.all.sample
-    @albums = Work.where(work_category: 'album').take(10)
-    @books = Work.where(work_category: 'book').take(10)
-    @movies = Work.where(work_category: 'movie').take(10)
+    @spotlight = Work.all.get_spotlight
+    @albums = Work.where(work_category: 'album').top_ten
+    @books = Work.where(work_category: 'book').top_ten
+    @movies = Work.where(work_category: 'movie').top_ten
   end
 
   def show

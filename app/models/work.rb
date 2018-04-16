@@ -12,10 +12,17 @@ class Work < ApplicationRecord
     return count_upvotes_received
   end
 
-  def self.by_category
+  def self.by_votes
     self.order(vote_count: :desc)
   end
 
+  def self.top_ten
+    self.by_votes.take(10)
+  end
+
+  def self.get_spotlight
+    self.by_votes.first
+  end
 
   private
 
