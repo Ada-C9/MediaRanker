@@ -71,4 +71,8 @@ vote_sixteen:
 
 vote_seventeen:
   work: el_rey
-  user: user_one 
+  user: user_one
+
+vote_eighteen:
+  work: mis_cuarenta
+  user: user_three

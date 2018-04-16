@@ -21,4 +21,14 @@ class Work < ApplicationRecord
     return top_albums
   end
 
+  def self.top_work
+    works = Work.all
+    top_work = Work.new
+    works.each do |work|
+      if work.votes.count > top_work.votes.count
+        top_work = work
+      end
+    end
+    return top_work
+  end 
 end

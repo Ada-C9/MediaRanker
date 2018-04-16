@@ -169,6 +169,30 @@ describe Work do
 
     end # top_albums
 
+    describe "#top_work" do
+      
+      it "returns the work with the highest number of votes" do
+
+        works = Work.all
+
+        top = Work.new
+
+        works.each do |work|
+          if work.votes.count > top.votes.count
+            top = work
+          end
+        end
+
+        top.must_equal works(:mis_cuarenta)
+
+        top_work = Work.top_work
+
+        top_work.must_equal top
+
+      end
+
+    end # top_work
+
   end # business logic
 
 end
