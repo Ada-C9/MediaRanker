@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/owl.jpg" />
+  <%= favicon_link_tag asset_path('owl.jpg'), :rel => 'icon', :type => 'image/jpg' %>
   <!-- Insert this within your head tag and after foundation.css -->
 
 </head>
