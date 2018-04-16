@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
+  post '/works/:work_id/upvote', to: 'votes#create', as: 'upvote'
 
 end

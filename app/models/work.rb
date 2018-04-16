@@ -1,7 +1,7 @@
 class Work < ApplicationRecord
   has_many :votes
 
-  # validates :title, :created_by, :publication_date, :category, :presence => true
+  validates :title, :created_by, :publication_date, :category, :presence => true
 
   def self.all_albums
     return Work.where(category: "album")

@@ -27,7 +27,6 @@ class WorksController < ApplicationController
     @top_albums = Work.top_albums
     @top_movies = Work.top_movies
     @top_books = Work.top_books
-
   end
 
 
