@@ -177,6 +177,7 @@ describe WorksController do
 
       must_respond_with :found
       Work.count.must_equal old_work_count - 1
+      Work.find_by(id: work.id).must_be_nil
 
     end
 
@@ -187,6 +188,7 @@ describe WorksController do
       get edit_work_path(work_id)
 
       must_respond_with :not_found
+
 
     end
   end
