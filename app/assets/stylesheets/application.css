@@ -21,6 +21,8 @@
   font-family: "Gudea", sans-serif;
 }
 main {
+  margin-left: 3%;
+  margin-right: 3%;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -80,4 +82,8 @@ nav ul li {
 }
 nav ul div {
   display: flex;
+}
+
+#tops {
+  margin-top: 5%;
 }
