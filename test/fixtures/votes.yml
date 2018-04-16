@@ -12,3 +12,63 @@ vote_one:
 vote_two:
   work: one_beat
   user: user_one
+
+vote_three:
+  work: ww
+  user: user_one
+
+vote_four:
+  work: bvs
+  user: user_one
+
+vote_five:
+  work: bp
+  user: user_one
+
+vote_six:
+  work: thor
+  user: user_one
+
+vote_seven:
+  work: tdk
+  user: user_one
+
+vote_eight:
+  work: dp
+  user: user_one
+
+vote_nine:
+  work: civil_war
+  user: user_one
+
+vote_ten:
+  work: spidey
+  user: user_one
+
+vote_eleven:
+  work: spidey
+  user: user_two
+
+vote_twelve:
+  work: green_lantern
+  user: user_one
+
+vote_thirteen:
+  work: terminator
+  user: user_one
+
+vote_fourteen:
+  work: poodr
+  user: user_two
+
+vote_fifteen:
+  work: mis_cuarenta
+  user: user_one
+
+vote_sixteen:
+  work: mis_cuarenta
+  user: user_two
+
+vote_seventeen:
+  work: el_rey
+  user: user_one 

@@ -30,7 +30,7 @@ describe User do
 
       user = users(:user_one)
 
-      works = [works(:poodr), works(:one_beat)]
+      works = Work.all
 
       works_list = user.votes.map do |vote|
         vote.work

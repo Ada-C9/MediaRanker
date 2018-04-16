@@ -52,9 +52,48 @@ describe Work do
 
     describe "#upvote" do
 
-      
+
 
     end # upvote
+
+    describe "#top_movies" do
+
+      it "returns at most 10 works" do
+        top_movies = Work.top_movies
+        top_movies.length.must_be :<=, 10
+      end
+
+      it "returns only movies" do
+
+        top_movies = Work.top_movies
+
+        all_movies = false
+
+        top_movies.each do |movie|
+          all_movies = movie.category == "movie"
+        end
+
+        all_movies.must_equal true
+
+      end
+
+      it "returns the top ten movies with the highest votes in descending order" do
+
+        movies_with_votes = Work.where(category: "movie")
+
+        movies_with_votes.delete(works(:star_wars))
+
+        top_movies = Work.top_movies
+
+        movies_with_votes.each do |movie|
+          top_movies.must_include movie
+        end
+
+        top_movies.first.must_equal works(:spidey)
+
+      end
+
+    end # top_movies
 
   end # business logic
 
