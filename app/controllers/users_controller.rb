@@ -31,6 +31,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    User.destroy(params[:id])
+    redirect_to users_path
+    flash[:alert] = "User Deleted"
+  end
+
 
   private
   def user_params
