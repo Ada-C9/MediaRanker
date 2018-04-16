@@ -72,4 +72,155 @@ describe Work do
       @work.user_ids.must_include user.id
     end
   end
+
+  describe "ordered_exclusive method" do
+    before do
+      @voted_works = Work.ordered_exclusive
+    end
+    it "returns a collection of works with votes" do
+      @voted_works.must_include works(:graceland)
+      @voted_works.must_include works(:rhythm)
+      @voted_works.map { |work| work.id }.count.must_equal 2
+    end
+
+    it "does not include works without votes" do
+      @voted_works.wont_include works(:southeastern)
+    end
+
+    it "orders works from most votes to least votes" do
+      @voted_works.first.must_equal works(:graceland)
+      @voted_works.last.must_equal works(:rhythm)
+    end
+
+    it "returns an empty array if there are no works with votes" do
+      Vote.all.each do |vote|
+        vote.destroy
+      end
+
+      @voted_works.must_be_empty
+    end
+
+    it "returns an empty array if there are no works" do
+      Work.all.each do |work|
+        work.destroy
+      end
+
+      @voted_works.must_be_empty
+    end
+  end
+
+  describe "ordered_inclusive method" do
+    before do
+      @works = Work.ordered_inclusive
+    end
+
+    it "returns a collection of all works" do
+      @works.map { |work| work.id }.count.must_equal 11
+    end
+
+    it "includes works with and without votes" do
+      @works.must_include works(:graceland)
+      @works.must_include works(:southeastern)
+    end
+
+    it "orders works from most votes to least votes" do
+      @works.first.must_equal works(:graceland)
+      @works.last.votes.must_be_empty
+    end
+
+    it "returns an empty array if there are no works" do
+      Work.all.each do |work|
+        work.destroy
+      end
+
+      @works.must_be_empty
+    end
+  end
+
+  describe "top_work method" do
+    it "returns the work with the most votes" do
+      Work.top_work.must_equal works(:graceland)
+    end
+
+    it "returns nil if there are no works with votes" do
+      Vote.all.each do |vote|
+        vote.destroy
+      end
+
+      Work.top_work.must_be_nil
+    end
+
+    it "returns nil if there are no works" do
+      Work.all.each do |work|
+        work.destroy
+      end
+
+      Work.top_work.must_be_nil
+    end
+  end
+
+  describe "albums method" do
+    it "returns a collection of works with category: album" do
+      Work.albums.count.must_equal 4
+      Work.albums.each do |work|
+        work.category.must_equal "album"
+      end
+    end
+
+    it "returns an empty array if there are no albums" do
+      Work.where(category: :album).each do |work|
+        work.destroy
+      end
+
+      Work.albums.must_be_empty
+    end
+  end
+
+  describe "books method" do
+    it "returns a collection of works with category: book" do
+      Work.books.count.must_equal 4
+      Work.books.each do |work|
+        work.category.must_equal "book"
+      end
+    end
+
+    it "returns an empty array if there are no books" do
+      Work.where(category: :book).each do |work|
+        work.destroy
+      end
+
+      Work.books.must_be_empty
+    end
+  end
+
+  describe "movies method" do
+    it "returns a collection of works with category: movie" do
+      Work.movies.count.must_equal 3
+      Work.movies.each do |work|
+        work.category.must_equal "movie"
+      end
+    end
+
+    it "returns an empty array if there are no movies" do
+      Work.where(category: :movie).each do |work|
+        work.destroy
+      end
+
+      Work.movies.must_be_empty
+    end
+  end
+
+  describe "top_ten method" do
+    it "returns the first ten works" do
+      Work.top_ten.count.must_equal 10
+    end
+
+    it "returns an empty array if there are no works" do
+      Work.all.each do |work|
+        work.destroy
+      end
+
+      Work.top_ten.must_be_empty
+    end
+  end
 end
