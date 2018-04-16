@@ -32,10 +32,14 @@
   <section class="top-five">
     <h3>Top Movies</h3>
     <ul>
+      <% unless Work.top_five_movie.nil? %>
       <% Work.top_five_movie.each do |work| %>
       <li><%= link_to(work.title, work_path(work)) %></li>
       <li>by <%= work.creator %></li>
       <li><small>Votes: <%= work.votes.count %></small></li>
+      <% end %>
+      <% else %>
+      <li>Sorry there are no top 5 at this time.</li>
       <% end %>
     </ul>
   </section>
