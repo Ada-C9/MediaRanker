@@ -10,4 +10,8 @@ one:
 #
 two:
   user_id: christine.id
+  work_id: graceland.id
+
+three:
+  user_id: chistine.id
   work_id: rhythm.id

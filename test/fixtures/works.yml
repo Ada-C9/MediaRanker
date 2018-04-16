@@ -7,3 +7,39 @@ graceland:
 rhythm:
   title: The Rhythm of the Saints
   category: album
+
+southeastern:
+  title: Southeastern
+  category: album
+
+beast:
+  title: The Beast in its Tracks
+  category: album
+
+pilgrim:
+  title: Pilgrim at Tinker Creek
+  category: book
+
+childhood:
+  title: An American Childhood
+  category: book
+
+cannery:
+  title: Cannery Row
+  category: book
+
+price:
+  title: Price of the Ticket
+  category: book
+
+rudy:
+  title: Rudy
+  category: movie
+
+league:
+  title: A League of Their Own
+  category: movie
+
+music:
+  title: The Sound of Music
+  category: movie
