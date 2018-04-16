@@ -1,11 +1,11 @@
 <!-- spotlight -->
 <section class="row spotlight">
   <div>
-  <%@top_work = Work.top%>
+  <%top_work = Work.top%>
   <span class="media-spotlight-header">
-    <h3>Media Spotlight: </span> <%= link_to @top_work.title, work_path(@top_work.id) %> by <%= @top_work.created_by %></h3>
+    <h3>Media Spotlight: </span> <%= link_to top_work.title, work_path(top_work.id) %> by <%= top_work.created_by %></h3>
     <p>
-      <%=@top_work.votes.count%> votes - <%= @top_work.description%>
+      <%=top_work.votes.count%> votes - <%= top_work.description%>
     </p>
   </div>
 </section>
