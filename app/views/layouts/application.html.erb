@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+<body>
+  <header class="page-header row">
+    <h2 class="columns small-12"><%= link_to "Media Ranker", root_path %> <small> Ranking the best of everything</small></h2>
+    <nav class="columns small-12">
+      <%= link_to "View top media", top_works_path, class:"button" %>
+      <%= link_to "View all media", works_path, class:"button"  %>
+      <%= link_to "Add a new work", new_work_path, class:"button"  %>
+      <%= link_to "View all users", users_path, class:"button"  %>
 
-
-
-  <body>
-    <header class="page-header row">
-      <h2 class="columns small-12"><%= link_to "Media Ranker", root_path %> <small> Ranking the best of everything</small></h2>
-      <nav class="columns small-12">
-    <%= link_to "View top works", top_works_path, class:"button" %>
-          <%= link_to "View all works", works_path, class:"button"  %>
-          <%= link_to "Add a new work", new_work_path, class:"button"  %>
-          <%= link_to "View all users", users_path, class:"button"  %>
-
-<div class="float-right">
-    <% if session[:logged_in]%>
-          <% @user = session[:logged_in]%>
-          <%= link_to "Logged in as #{@user['name']}", user_path(@user['id']), class:"button" %>
-          <%= link_to "Log out", logout_path, method: :post, class:"button" %>
+      <div class="float-right">
+        <% if session[:logged_in]%>
+        <% @user = session[:logged_in]%>
+        <%= link_to "Logged in as #{@user['name']}", user_path(@user['id']), class:"button" %>
+        <%= link_to "Log out", logout_path, method: :post, class:"button" %>
         <%else%>
-          <%= link_to "Log in", login_path, class:"button"%>
+        <%= link_to "Log in", login_path, class:"button"%>
         <%end%>
       </div>
-  </nav>
-</header>
-<hr />
+    </nav>
+  </header>
+  <%flash.each do |name, message| %>
+  <div class="row flash <%= name%>">
 
-<%flash.each do |name, message| %>
-    <div class="row flash <%=name%>">
+    <section class="row status <%= name%> ">
+      <h3><%= message %></h3>
+    </section>
+    <%end%>
 
-        <section class="row status <%= name%> ">
-          <h3><%= message %></h3>
-        </section>
-      <%end%>
+  </div>
 
-    </div>
+  <main class="row">
+    <%= yield %>
+  </main>
 
-    <main class="row">
-      <%= yield %>
-    </main>
-
-  </body>
+</body>
 </html>

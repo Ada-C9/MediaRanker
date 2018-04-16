@@ -2,10 +2,10 @@
 <section class="row spotlight">
   <div>
   <%@top_work = Work.top%>
-  <h3><span class="media-spotlight-header">
-    <h3>Media Spotlight: </span> <%= link_to @top_work.title, work_path(@top_work.id) %> by: <%= @top_work.created_by %></h3>
+  <span class="media-spotlight-header">
+    <h3>Media Spotlight: </span> <%= link_to @top_work.title, work_path(@top_work.id) %> by <%= @top_work.created_by %></h3>
     <p>
-      <%=@top_work.votes.count%> votes <%= @top_work.description%>
+      <%=@top_work.votes.count%> votes - <%= @top_work.description%>
     </p>
   </div>
 </section>
@@ -19,7 +19,7 @@
     <ul>
       <% Work.top_ten(type.to_sym).each do |work| %>
       <li>
-        <h4><%=link_to work.title, work_path(work.id)%><small> by <%=work.created_by%></small></h4>
+        <h4><%=link_to work.title, work_path(work.id)%><small>by <%=work.created_by%></small></h4>
         <%= work.votes.count %> votes
         <%= link_to "Upvote", vote_path(work.id), method: :post %>
       </li>
