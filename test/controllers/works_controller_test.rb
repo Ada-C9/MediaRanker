@@ -182,13 +182,13 @@ describe WorksController do
     end
 
     it "Sends back not_found if no work" do
-
+      old_work_count = Work.count
       work_id = Work.last.id + 1
 
       get edit_work_path(work_id)
 
       must_respond_with :not_found
-
+      Work.count.must_equal old_work_count
 
     end
   end
