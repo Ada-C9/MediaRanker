@@ -46,4 +46,41 @@ describe Work do
     end
 
   end
+
+  describe "self.top" do
+
+    it "returns a collection" do
+      result = Work.top(2)
+      result.must_be_kind_of Array
+    end
+
+    it "raises an error without an argument" do
+      proc {
+        Work.top
+      }.must_raise ArgumentError
+
+    end
+
+    it "is has a count that matches the argument" do
+      expected_count = 3
+      result = Work.top(expected_count)
+      result.count.must_equal expected_count
+    end
+
+    it "it returns a smaller collection if the argument is bigger than the number of works available" do
+      result = Work.top(78)
+      result.must_be_kind_of Array
+    end
+  end
+
+  describe "#deactivate" do
+    it "destroys votes associated with the instance of work" do
+      work = Work.first
+      original_count = work.votes.count
+      work.deactivate
+      new_count = work.votes.count
+      new_count.wont_equal original_count
+      new_count.must_equal 0
+    end
+  end
 end

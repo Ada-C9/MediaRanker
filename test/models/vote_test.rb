@@ -4,8 +4,8 @@ describe Vote do
 
   before do
     @work = Work.first
-    @user = User.first
-    @user2 = User.last
+    @user = User.find_by(username: "monsiscool")
+    @user2 = User.find_by(username: "awesomeguy")
   end
 
   describe "validations" do
