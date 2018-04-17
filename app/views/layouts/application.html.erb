@@ -28,8 +28,11 @@
       <div class="float-right">
         <% if @current_user %>
         <%= link_to "Logged in as #{@current_user.username}", user_path(@current_user), class: "button" %>
-          <%= link_to "Log Out", logout_path, method: :patch, class: "button" %>
-        <% else %>
+        <% end %>
+        <% if @current_user %>
+        <%= link_to "Log Out", logout_path, method: :post, class: "button" %>
+        <% end %>
+        <% if !@current_user %>
         <%= link_to "Login", login_path, class: "button" %>
         <% end %>
       </div>
