@@ -1,0 +1,67 @@
+
+<section class="spotlight">
+  <div>
+    <h3>
+      <span class="media-spotlight-header">Media Spotlight: <%= @top_medium.title %>
+      </span>
+      by <%= @top_medium.created_by%>
+    </h3>
+  </div>
+
+</section>
+<p>
+</p>
+<h3>
+</h3>
+</div>
+
+<hr class="root-hr">
+
+<body>
+  <main class = "row">
+    <section class = "top-ten-container">
+      <section class = "top-ten">
+        <h3>Top Albums</h3>
+        <ul>
+          <% @top_albums.each do |album| %>
+          <li>
+            <h4><%= link_to(album.title, work_path(album)) %></h4>
+            <%= link_to(album.created_by, work_path(album)) %>
+
+            <p><%= album.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
+
+      </section>
+
+      <section>
+        <h3>Top Movies</h3>
+        <ul>
+          <% @top_movies.each do |movie| %>
+          <li>
+            <h4><%= link_to(movie.title, work_path(movie)) %></h4>
+            <%= link_to(movie.created_by, work_path(movie)) %>
+
+            <p><%= movie.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
+      </section>
+
+      <section>
+        <h3>Top Books</h3>
+        <ul>
+          <% @top_books.each do |book| %>
+          <li>
+            <h4><%= link_to(book.title, work_path(book)) %></h4>
+            <%= link_to(book.created_by, work_path(book)) %>
+
+            <p><%= book.total_work_vote %> votes </p>
+          </li>
+        </ul>
+        <% end %>
+      </section>
+    </section>
+  </main>
+</body>

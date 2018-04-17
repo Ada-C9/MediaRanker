@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header class="page-header">
+    <h2><%= link_to "Media Ranker", top_media_path %>
+      <small>
+        | Ranking the Best of Everything </small>
+      </h2>
+
+      <nav>
+        <div class="site-nav">
+          <%= link_to "View Top Media", top_media_path, class: "button" %>
+          <%= link_to "View All Media", works_path, class: "button" %>
+          <%= link_to "Add New Work", new_work_path, class: "button" %>
+          <%= link_to "View All Users", users_path, class: "button" %>
+        </div>
+
+        <div class="user-nav">
+          <% if session[:user_id] %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "hollow button" %>
+          <% else %>
+          <%= link_to "Login", login_path, class: "button" %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+  </body>
+  </html>

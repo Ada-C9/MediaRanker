@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+four_hour_chef:
+  title: The 4-Hour Chef
+  created_by: Tim Ferriss
+  publication_date: 12-23-2008
+  description: The simple path to cooking like a pro, learning anything and living the good life.
+  category: book
+
+fooled_by_randomness:
+  title: Fooled By Randomness
+  created_by: Nassim Taleb
+  publication_date: 12-23-2012
+  description: A compilation of random stories about chance playing a larger role in our personal and professional success than your actual ability.
+  category: book
+
+fourth_kind:
+  title: The Fourth Kind
+  created_by: Suspicious
+  publication_date: 03-02-2888
+  description: Aliens
+  category: movie
+
+random_movie:
+  title: Gadfn
+  created_by: a girl
+  publication_date: 03-15-2888
+  description: foreign film probably
+  category: movie
