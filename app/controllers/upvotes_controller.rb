@@ -31,6 +31,7 @@ class UpvotesController < ApplicationController
       @upvote = Upvote.new
       @upvote.work_id = Work.find_by(id: params[:work_id]).id
       @upvote.user_id = @current_user.id
+      @upvote.save
       if @upvote.save
         flash[:success] = "Successfully upvoted!"
       else
