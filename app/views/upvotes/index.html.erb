@@ -11,9 +11,9 @@
   <tbody>
     <% @upvotes.each do |upvote| %>
     <tr>
-      <td><%= link_to upvote.user_id, upvote_path(upvote.id) %></td>
+      <!-- <td><%= link_to upvote.user_id, upvote_path(upvote.id) %></td>
       <td><%= link_to upvote.work_id, upvote_path(upvote.id)%></td>
-      <td><%= upvote.created_at.strftime("%B %d, %Y") %></td>
+      <td><%= upvote.created_at.strftime("%B %d, %Y") %></td> -->
     </tr>
     <% end%>
   </tbody>
