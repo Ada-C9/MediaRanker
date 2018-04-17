@@ -66,3 +66,13 @@ page-header h2 a {
     margin: 0px auto 75px auto;
     color: #EEEEEE;
 }
+
+.top-ten-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+main {
+  padding: 2rem;
+}
