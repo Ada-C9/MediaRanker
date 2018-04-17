@@ -28,13 +28,13 @@ class UpvotesController < ApplicationController
     if !@current_user
       flash[:alert] = {user: "You must be logged in to vote"}
     else
-      @vote = Upvote.create
-      @vote.work_id = Work.find_by(id: params[:work_id]).id
-      @vote.user_id = @current_user.id
-      if @vote.save
+      @upvote = Upvote.new
+      @upvote.work_id = Work.find_by(id: params[:work_id]).id
+      @upvote.user_id = @current_user.id
+      if @upvote.save
         flash[:success] = "Successfully upvoted!"
       else
-        flash[:alert] = @vote.errors
+        flash[:alert] = @upvote.errors
       end
 
     end
