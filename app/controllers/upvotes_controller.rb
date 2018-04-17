@@ -25,13 +25,13 @@ class UpvotesController < ApplicationController
   end
 
   def create
-    if !@user
+    if !@current_user
       flash[:alert] = {user: "You must be logged in to vote"}
       redirect_back fallback_location: :works_path
     else
       @vote = Upvote.create
       @vote.work_id = Work.find_by(id: params[:work_id]).id
-      @vote.user_id = @user.id
+      @vote.user_id = @current_user.id
       if @vote.save
         flash[:success] = "Successfully upvoted!"
         redirect_back fallback_location: :works_path
