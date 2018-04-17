@@ -29,8 +29,9 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    # session[:user_id] = nil
-    # flash[:success] = "Successfully logged out"
+    session[:user_id] = nil
+    flash[:status] = :success
+    flash[:result_text] = "Successfully logged out"
     redirect_to root_path
   end
 
