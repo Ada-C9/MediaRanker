@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#logout'
 
   resources :works do
-    resources :upvotes, only: [:create, :show, :new, :index]
+    resources :upvotes, only: [:create, :new]
   end
 
   resources :users, only: [:index, :show]

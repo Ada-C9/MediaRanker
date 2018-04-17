@@ -19,28 +19,26 @@ class UpvotesController < ApplicationController
   #   end
   # end
 
-  def show
-    id = params[:id]
-    @upvote = Upvote.all.find(params[:id])
-  end
+  # def show
+  #   id = params[:id]
+  #   @upvote = Upvote.all.find(params[:id])
+  # end
 
   def create
     if !@current_user
       flash[:alert] = {user: "You must be logged in to vote"}
-      redirect_back fallback_location: :works_path
     else
       @vote = Upvote.create
       @vote.work_id = Work.find_by(id: params[:work_id]).id
       @vote.user_id = @current_user.id
       if @vote.save
         flash[:success] = "Successfully upvoted!"
-        redirect_back fallback_location: :works_path
       else
         flash[:alert] = @vote.errors
-        redirect_to root_path
       end
 
     end
+    redirect_back fallback_location: :works_path
   end
 
   def upvote_params
