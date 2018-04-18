@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title> MediaRanker 2.0</title>
+    <%= favicon_link_tag asset_path('owl.ico'), type: 'image/x-icon', rel: 'shortcut-icon'%>
+    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Gudea", media: "all", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header class='page-header row'>
+      <h2><%=link_to 'Media Ranker', root_path%> <small>Ranking the Best of Everything</small></h2>
+      <nav>
+        <%= link_to 'View top media', root_path, class: 'button' %>
+        <div class='dropdown'>
+          <%= link_to 'View all media', works_path, class: 'button' %>
+          <div class="dropdown-content">
+            <%= link_to 'View all books', category_path('books') %>
+            <%= link_to 'View all albums', category_path('albums') %>
+            <%= link_to 'View all movies', category_path('movies') %>
+          </div>
+        </div>
+        <%= link_to 'Add a new work', new_work_path, class: 'button' %>
+        <%= link_to 'View all users', users_path, class: 'button' %>
+        <div class='float-right'>
+          <% if session[:user_id] %>
+            <%= link_to "Logged in as #{@user.username}", user_path(session[:user_id]), class: 'button user-status' %>
+            <%= link_to 'Logout', logout_path, method: :delete, class: 'button float-right' %>
+          <% else %>
+            <%= link_to 'Login', login_path, class: 'button float-right' %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <% if !flash.empty? %>
+      <section class="row status">
+        <% flash.each do |name, message| %>
+          <div class="<%= name %>"><%= message %></div>
+        <% end %>
+
+        <% if @user %>
+          <%= relay_errors(@user) %>
+        <% end %>
+        <% if @work %>
+          <%= relay_errors(@work) %>
+        <% end %>
+
+      </section>
+    <% end %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+  </body>
+</html>

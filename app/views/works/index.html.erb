@@ -1,0 +1,13 @@
+<h3>List of Works</h3>
+
+<% if @albums %>
+  <%= render partial: 'display_work', locals: {category: 'Albums', model: @albums} %>
+<% end %>
+
+<% if @books %>
+  <%= render partial: 'display_work', locals: {category: 'Books', model: @books} %>
+<% end %>
+
+<% if @movies %>
+  <%= render partial: 'display_work', locals: {category: 'Movies', model: @movies} %>
+<% end %>
