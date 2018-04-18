@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: lily
+  work: pride
+  vote_date: 2018-04-09
+two:
+  user: milly
+  work: kindred
+  vote_date: 2018-04-09
+three:
+  user: milly
+  work: kindred
+  vote_date: 2018-04-10

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "Media Ranker" %></title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://media-ranker-2-0.herokuapp.com/assets/favicon-910822ff6cd5f6d37119171c4b716f1d4e5fe0e8ad5e408627659ebf8d7f16b1.ico", alt: "site logo, an owl">
+    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <div >
+        <h2 class="hide-for-small-only"><%= link_to "Media Ranker", root_path %><small>Ranking the Best of Everything</small></h2>
+      </div>
+      <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+        <h2>
+          <span>
+          <button class="menu-icon" type="button" data-toggle="main-nav">
+          </button>
+        </span>
+        <div class="title-bar-title">
+        <%= link_to "Media Ranker", root_path %>
+        </div>
+        </h2>
+      </div>
+      <div class="top-bar" id="main-nav">
+        <div class="top-bar-left">
+          <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+            <li><%= link_to "View top media", root_path, class: "button" %></li>
+            <li><%= link_to "View all media", works_path, class: "button" %>
+            <li><%= link_to "Add a new work", new_work_path, class: "button" %></li>
+            <li><%= link_to "View all users", users_path, class: "button" %></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <% if session[:user_id] != nil %>
+              <li><%= link_to "Logged in as #{User.get_username(session[:user_id])}" , user_path(session[:user_id]), method: :get, class: "button"%></li>
+              <li><%= link_to "Log Out", logout_path, method: :delete, class: "button" %></li>
+            <% else %>
+              <li><%= link_to "Log In", login_path, class: "button" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </header>
+  <main>
+    <section class="flash">
+      <% flash.each do |name, message| %>
+        <section class="callout <%= name %>">
+          <% if name == "alert" %>
+          <ul>
+            <% flash.each do |field, message| %>
+              <li>
+              <strong><%= field %>: </strong>
+                <%= message %>
+              </li>
+              <% end %>
+          </ul>
+          <% else %>
+          <p>
+            <%= message %>
+          </p>
+        <% end %>
+        </section>
+        <% end %>
+    </section>
+    <section>
+      <%= yield %>
+    </section>
+  </main>
+  <a class="exit-off-canvas"></a>
+  </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<section>
+  <h3 id="green-head"><%= @work.title %></h3>
+  <p>Created by: <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_year %></p>
+  <% if @work.description %>
+    <p>Description: <%= @work.description %></p>
+  <% end %>
+  <%= link_to "Back to Media ranks", root_path, class: "button" %>
+  <%= link_to "Edit", edit_work_path(@work.id), class: "button" %>
+  <% if @user %>
+    <%= button_to "Upvote", work_upvotes_path(@work.id), class: "button" %>
+    <%= button_to "Delete", work_path(@work.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert" %>
+  <% end %>
+</section>
+<section>
+  <h3 id="green-head"><%= @work.get_count %> vote(s) for this <%= @work.category.downcase %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.upvotes.each do |item| %>
+        <tr>
+          <td><%= link_to item.user.username, user_path(item.user.id) %></td>
+          <td><%= item.vote_date.to_formatted_s(:long) %></td>
+        </tr>
+      <%end %>
+    </tbody>
+  </table>
+</section>

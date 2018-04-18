@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lily:
+  username: Lillerzzz
+  join_date: 2018-04-09
+milly:
+  username: Millz
+  join_date: 2018-04-09
+billy:
+  username: Billz
+  join_date: 2018-04-10
+tilly:
+  username: Tillz
+  join_date: 2018-04-07

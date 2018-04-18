@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pride:
+  title: Pride and Prejudice
+  creator: Jane Austen
+  category: Book
+  publication_year: 1813
+  description: good book
+itonya:
+  title: I, Tonya
+  creator: Craig Gillespie
+  category: Movie
+  publication_year: 2017
+  description: good movie
+kindred:
+  title: Kindred
+  creator: butler
+  category: Album
+  publication_year: 1979
+help:
+  title: Help!
+  creator: The Beatles
+  category: Album
+  publication_year: 1965
+  description: good album
+parable:
+  title: Parable of the Sower
+  creator: butler
+  category: Movie
+  publication_year: 1993
+poodr:
+  title: Practical Object Oriented Design in Ruby
+  creator: metz
+  category: Book
+  publication_year: 2012

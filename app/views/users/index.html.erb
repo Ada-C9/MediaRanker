@@ -1,0 +1,24 @@
+<h3 id="green-head">List of Users</h3>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Votes</th>
+        <th>Joined</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |item| %>
+        <tr>
+        <td><%= link_to item.username, user_path(item.id) %></td>
+        <td><%= item.get_count %></td>
+        <td><%= item.join_date.to_formatted_s(:long) %></td>
+      </tr>
+      <%end %>
+    </tbody>
+  </table>
+</section>
+<section>
+  <%= link_to "Back to Media List", works_path, class: "button" %>
+</section>

@@ -1,0 +1,14 @@
+<section>
+  <% if @work.errors.any? %>
+  <article class="callout alert">
+    <h3>A problem occured: could not create album</h3>
+      <ul>
+        <% @work.errors.each do |field, message| %>
+          <li>
+            <strong><%= field.capitalize %></strong> <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </article>
+</section>
