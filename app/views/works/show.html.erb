@@ -1,0 +1,40 @@
+
+<article class="media-details">
+  <h3><%= @work.work_title %></h3>
+  <p>Created by: <%= @work.work_creator %></p>
+  <p>Published: <%= @work.work_publication_year %></p>
+    <p>Description: <%= @work.work_description %></p>
+  <p></p>
+  <section>
+    <%= link_to "Back to media ranks", root_path, class: "button" %>
+    <%= link_to "Edit", edit_work_path, class: "button" %>
+    <%= link_to "Upvote", work_upvotes_path(@work), method: :post, class: "button" %>
+    <%= link_to "Delete", work_path(@work.id), method: :delete, data: {confirm: "Are you sure?"}, class: "button alert" %>
+  </section>
+</article>
+
+
+<article class="voting-users">
+  <% if @work.get_upvotes_count == 1 %>
+  <h3><%= @work.get_upvotes_count %> Vote for this Album</h3>
+  <% else %>
+  <h3><%= @work.get_upvotes_count %> Votes for this Album</h3>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.get_upvotes_received.each do |upvote| %>
+      <% user = upvote.user %>
+      <tr>
+        <td><%= link_to user.username, user_path(user.id) %></td>
+        <td><%= upvote.created_at.strftime("%B %d, %Y") %></td>
+        <% end%>
+      </tbody>
+    </table>
+  </article>

@@ -1,0 +1,14 @@
+
+<section class="row spotlight">
+  <div>
+    <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to @spotlight.work_title, work_path(@spotlight.id) %> by <%= @spotlight.work_creator%></h3>
+    <p><%= @spotlight.get_upvotes_count %> votes - <%= @spotlight.work_description %> </p>
+  </div>
+</section>
+
+<hr class="root-hr" />
+<section class="top-ten-container">
+  <%= render partial: 'table', locals: {works: @albums, work_category: "Albums"} %>
+  <%= render partial: 'table', locals: {works: @books, work_category: "Books"} %>
+  <%= render partial: 'table', locals: {works: @movies, work_category: "Movies"} %>
+</section>

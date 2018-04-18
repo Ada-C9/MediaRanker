@@ -1,0 +1,11 @@
+<section class="top-ten">
+  <h3>Top <%=work_category %> </h3>
+  <ul>
+    <% works.each do |work| %>
+    <li>
+      <h4><%= link_to work.work_title, work_path(work.id) %> <small>by <%= work.work_creator %> </small></h4>
+      <p><%= work.get_upvotes_count %> votes</p>
+    </li>
+    <% end%>
+  </ul>
+</section>

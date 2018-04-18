@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+peanut:
+ username: peanut_4
+
+pickles:
+ username: pickles_3
+
+pete:
+ username: pete_2
+
+petunia:
+ username: petunia_1
+
+mouse:
+ username: mouse_2
+
+ferdinand:
+ username: ferdinand_1
+
+inc_name:
+  username:
