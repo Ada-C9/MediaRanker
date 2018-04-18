@@ -1,0 +1,140 @@
+
+one:
+  work_id: 1
+  user_id: 15
+
+two:
+  work_id: 1
+  user_id: 14
+
+three:
+  work_id: 2
+  user_id: 14
+
+four:
+  work_id: 2
+  user_id: 13
+
+five:
+  work_id: 2
+  user_id: 11
+
+six:
+  work_id: 3
+  user_id: 14
+
+seven:
+  work_id: 4
+  user_id: 11
+
+eight:
+  work_id: 5
+  user_id: 10
+
+nine:
+  work_id: 6
+  user_id: 9
+
+ten:
+  work_id: 6
+  user_id: 15
+
+eleven:
+  work_id: 6
+  user_id: 1
+
+twelve:
+  work_id: 6
+  user_id: 3
+
+thirteen:
+  work_id: 7
+  user_id: 2
+
+fourteen:
+  work_id: 9
+  user_id: 8
+
+fifteen:
+  work_id: 9
+  user_id: 9
+
+sixteen:
+  work_id: 10
+  user_id: 7
+
+seventeen:
+  work_id: 11
+  user_id: 13
+
+eighteen:
+  work_id: 11
+  user_id: 1
+
+nineteen:
+  work_id: 11
+  user_id: 3
+
+twenty:
+  work_id: 15
+  user_id: 9
+
+twentyone:
+  work_id: 17
+  user_id: 6
+
+twentytwo:
+  work_id: 18
+  user_id: 6
+
+twentythree:
+  work_id: 18
+  user_id: 2
+
+twentyfour:
+  work_id: 19
+  user_id: 1
+
+twentyfive:
+  work_id: 20
+  user_id: 15
+
+twentysix:
+  work_id: 21
+  user_id: 15
+
+twentyseven:
+  work_id: 21
+  user_id: 13
+
+twentyeight:
+  work_id: 23
+  user_id: 8
+
+twentynine:
+  work_id: 23
+  user_id: 14
+
+thirty:
+  work_id: 23
+  user_id: 2
+
+thirtyone:
+  work_id: 24
+  user_id: 4
+
+thirtytwo:
+  work_id: 25
+  user_id: 8
+
+thirtythree:
+  work_id: 25
+  user_id: 15
+
+thirtyfour:
+  work_id: 25
+  user_id: 4
+
+thirtyfive:
+  work_id: 25
+  user_id: 10

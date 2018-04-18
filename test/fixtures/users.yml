@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bojack:
+  name: Bojack Horseman
+diane:
+  name: Diane Nguyen
+todd:
+  name: Todd Chavez
+princess:
+  name: Princess Carolyn
+peanutbutter:
+  name: Mr. Peanutbutter
+kelsey:
+  name: Kelsey Jannings
+margot:
+  name: Character Actress Margot Martindale
+sarah:
+  name: Sarah Lynn
+ana:
+  name: Ana Spanokopita
+queen:
+  name: Queen Antonia
+yolanda:
+  name: Yolanda Buenaventura
+skinny:
+  name: Skinny Gina
+jill:
+  name: Jill Pill
+vincent:
+  name: Vincent Adultman
+cuddlywhiskers:
+  name: Cuddlywhiskers

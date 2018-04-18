@@ -1,0 +1,37 @@
+
+<main class="row">
+    <article class="media-details">
+  <h3><%= @work.title %></h3>
+  <p>Created by: <%= @work.creator %></p>
+  <p>Year released: <%= @work.year_released %></p>
+  <p><%= @work.description %></p>
+  <section>
+    <%= link_to "Back to media ranks", root_path, class: 'button' %>
+    <%= link_to "Edit", edit_work_path(@work.id), class: 'button' %>
+    <%= button_to "Upvote", work_votes_path(@work.id), method: :post, class: 'button' %>
+    <%= link_to 'Delete Work', work_path(@work.id), class: 'alert button', method: :delete, data: {confirm: "Are you sure you want to delete #{@work.title}?"}  %>
+  </section>
+</article>
+
+<article class="voting-users">
+  <h2><%= @work.report_vote_tally(@work.id) %> votes for this <%= @work.category %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @work.report_votes_for_work(@work.id).each do |vote| %>
+        <tr>
+          <% user = User.find(vote.user_id) %>
+          <td><%= link_to user.name, user_path(user.id) %></td>
+          <td><%= vote.created_at %></td>
+        </li>
+      <% end %>
+  </ul>
+</article>
+
+
+</main>
