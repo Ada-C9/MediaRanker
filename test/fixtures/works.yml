@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+boosh:
+  title: Mighty Boosh
+  description: Silly, surreal show. Made me laugh when I was young.
+  category: movie
+  created_by: Noel Fielding
+  year: 2015
+
+vacation:
+  title: Vacation In Hell
+  description: New rap album that I really enjoy.
+  category: album
+  created_by: Flatbush Zombies
+  year: 2018
+
+kitchen:
+  title: Henry's Kitchen
+  description: Silly dark humor about a person who is terrible at cooking
+  category: movie
+  created_by: Henry Phillips
+  year: 2016
+
+baskets:
+  title: Baskets
+  description: Show about a clown. Dark humor.
+  category: movie
+  created_by: Zach Galifinakis
+  year: 2016

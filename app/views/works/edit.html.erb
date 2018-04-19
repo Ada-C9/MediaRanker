@@ -1,0 +1,18 @@
+<%= form_for @work do |f| %>
+<%=f.label :category%>
+<%=f.select :category, ["book", "movie", "album"]%>
+
+<%=f.label :title%>
+<%=f.text_field :title%>
+
+<%=f.label "Creator"%>
+<%=f.text_field :created_by%>
+
+<%=f.label "Publication year"%>
+<%=f.text_field :year %>
+
+<%=f.label :description%>
+<%=f.text_field :description%>
+
+  <%=f.submit "Update Work"%>
+  <%end%>

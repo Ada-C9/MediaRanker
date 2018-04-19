@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jones:
+  name: Brittany Jones
+
+carter:
+  name: Rober Carter
+
+smith:
+  name: John Smith
+
+kate:
+  name: Kate Johnson
+
+jim:
+  name: Jim Links
