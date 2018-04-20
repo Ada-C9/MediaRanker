@@ -33,7 +33,7 @@ class WorksController < ApplicationController
     else
       flash.now[:status] = :failure
       flash.now[:result_text] = "Could not create #{@work.category}"
-      flash[:messages] = @work.errors.messages
+      flash.now[:messages] = @work.errors.messages
       render :new, status: :bad_request
     end
   end
