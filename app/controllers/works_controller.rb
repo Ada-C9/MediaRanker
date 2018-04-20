@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :find_work, only: [:show, :edit, :update, :upvote]
+  before_action :find_work, only: [:show, :edit, :update, :upvote, :destroy]
   before_action :work_list, only: [:root, :index]
   # before_action :category_link_parser, only: [:index, :new, :create ]
   def root
@@ -27,10 +27,13 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      flash[:message] = "Successfully created #{@work.category} #{@work.id}"
+      flash[:status] = :success
+      flash[:result_text] = "Successfully created #{@work.category} #{@work.id}"
       redirect_to works_path
     else
-      @work.errors.messages
+      flash.now[:status] = :failure
+      flash.now[:result_text] = "Could not create #{@work.category}"
+      flash[:messages] = @work.errors.messages
       render :new, status: :bad_request
     end
   end
@@ -45,12 +48,14 @@ class WorksController < ApplicationController
     if @work.save
       redirect_to work_path(@work)
     else
+      flash.now[:status] = :failure
+      flash.now[:messages] = @work.errors.messages
       render :edit, status: :bad_request
     end
   end
 
   def destroy
-    Work.destroy(params[:id])
+    @work.destroy
     redirect_to works_path
   end
 
@@ -60,8 +65,8 @@ class WorksController < ApplicationController
       @vote = Vote.new(user: @current_user, work: @work)
 
       if @vote.save
-        # flash[:status] = :success
-        flash[:success] = "Successfully upvoted #{@work.title}"
+        flash[:status] = :success
+        flash[:result_text] = "Successfully upvoted #{@work.title}"
 
         case request.fullpath
         when "/works"
@@ -75,14 +80,14 @@ class WorksController < ApplicationController
         end
         redirect_back(fallback_location: work_path(@work))
       else
-        # flash[:status] = :failure
-        flash[:failure] = "Could not upvote"
-        @vote.errors.messages
+        flash[:status] = :failure
+        flash[:result_text] = "Could not upvote"
+        flash[:messages] = @vote.errors.messages
         redirect_back(fallback_location: work_path(@work))
       end
     else
-      # flash[:status] = :failure
-      flash[:failure]= "You must log in to do that"
+      flash[:status] = :failure
+      flash[:result_text]= "You must log in to do that"
       redirect_back(fallback_location: work_path(@work))
     end
   end

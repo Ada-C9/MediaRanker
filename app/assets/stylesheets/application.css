@@ -90,8 +90,10 @@ a, h3 {
     font-weight: normal;
     font-size: 1em;
 }
-.failure h3, .status.bad-request h3 {
+.status.failure h3, .status.bad-request h3 {
     color: #C70039;
+    font-weight: normal;
+    font-size: 1em;
 }
 
 .status {
