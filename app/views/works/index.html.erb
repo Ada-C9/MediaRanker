@@ -1,0 +1,50 @@
+<h3>List of works</h3>
+
+<% all = [ @albums, @books, @movies ] %>
+
+<% all.each do |all_in_cat| %>
+
+<h4><%= all_in_cat[0].category.capitalize %>s </h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Votes</th>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+
+      <th>
+        <div class="float-right upvote">
+          Upvote
+        </div>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% all_in_cat.each do |w| %>
+
+    <tr>
+      <td><%= "#{w.votes.length}" %></td>
+      <td><%= link_to w.title, work_path(w.id) %></td>
+      <td><%= "#{w.creator}" %></td>
+      <td><%= "#{w.publication_year}" %></td>
+
+      <td>
+        <div class="float-right upvote">
+          <%= link_to "Upvote", work_upvote_path(w), method: :post, class: "button" %>
+        </div>
+      </td>
+    </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<% end %>
+
+<%= link_to "View top media", root_path, class:"button" %>
+<%= link_to "Add a new work", new_work_path, class:"button" %>

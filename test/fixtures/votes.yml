@@ -1,0 +1,70 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+movie_vote:
+  user: luke
+  work: black_panther
+
+second_movie:
+  user: samuel
+  work: black_panther
+
+third_movie:
+  user: moises
+  work: black_panther
+
+fourth_movie:
+  user: luke
+  work: get_out
+
+fifth_movie:
+  user: samuel
+  work: get_out
+
+sixth_movie:
+  user: moises
+  work: citizen_kane
+
+# ----------
+
+book_vote:
+  user: luke
+  work: kindred
+
+second_book:
+  user: samuel
+  work: kindred
+
+third_book:
+  user: moises
+  work: kindred
+
+fourth_book:
+  user: luke
+  work: bloodchild
+
+fifth_book:
+  user: samuel
+  work: bloodchild
+
+sixth_book:
+  user: kyle
+  work: kindred
+
+# ----------
+
+album_vote:
+  user: luke
+  work: american_teen
+
+second_album:
+  user: moises
+  work: blueprint
+
+third_album:
+  user: samuel
+  work: blueprint
