@@ -1,0 +1,232 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require normalize-rails
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ */
+
+* {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+.row {
+  max-width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  margin-bottom: 10px;
+  padding: 25px 20px 10px 20px;
+}
+
+main, .alert-section {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 2rem;
+}
+
+a {
+  color: #26A69A;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #478B82
+}
+
+.row::before, .row::after {
+  display: table;
+  content: ' ';
+}
+
+.row::after {
+  clear:both;
+}
+
+.row h2 {
+  text-align: center;
+  margin:25px auto 40px auto;
+  font-weight: bold;
+}
+
+.tagline-in-header {
+  color: #ffffff;
+}
+
+.site-name-in-header {
+  color: #FF5722;
+  padding-right: 25px;
+  margin-right: 15px;
+  border-right: #ffffff 2px solid;
+}
+
+header {
+  background-color: #B2DFDB;
+}
+
+header a:hover {
+  color: #FF5722;
+}
+
+.logged-in-button {
+  float: right;
+}
+
+.right-nav-button {
+  float: right !important;
+  margin: 0px 0.25rem 0px;
+}
+
+.spotlight {
+  font-weight: bold;
+  color: #26A69A;
+  padding: 0 1rem 2rem 1rem;
+  border-bottom: #cacaca 1px solid;
+}
+
+.spotlight h3 {
+  font-weight: bold;
+  color: #26A69A;
+  margin: 0;
+  padding: 0;
+}
+
+.spotlight a {
+  border-bottom: 2px solid;
+}
+
+
+.spotlight-grey-header {
+  color: #424242;
+}
+
+.spotlight-work-main {
+}
+
+.spotlight p {
+  color: #0a0a0a;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.vote-button {
+  padding: none;
+  margin: auto;
+}
+
+.cell {
+  grid-column-gap: 2em;
+  padding-right: 2.5rem;
+}
+
+.cell ul {
+  margin-left: 0px;
+}
+
+.cell small {
+  color: slategrey;
+}
+
+.cell p, .tiny-black {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.top-ten-lists h3, .teal-title {
+  color: #26A69A;
+  font-weight: bold;
+}
+
+.top-ten-lists h3 {
+  margin: 75px 0px 0px 0px;
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+.big-black-title {
+  font-family: "Gudea", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.status::before, .status::after {
+  display: table;
+  content: ' ';
+}
+
+.status p {
+
+}
+
+.status {
+  border-radius: 5px;
+  background-color:#e6e6e6;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  margin-top:30px;
+  list-style-type: circle;
+}
+
+.status ul > * {
+  margin-left: none;
+  list-style-type: disc;
+  margin-bottom: 1rem;
+  list-style-position: outside;
+  line-height: 1.6;
+}
+
+.status::after {
+
+}
+
+
+.alert h3 {
+  color:#C70039;
+}
+
+.alert h3, .success h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.top-ten-lists h4 {
+  font-weight: bold;
+  color: #26A69A;
+}
+
+.black-subtitle {
+  font-weight: bold;
+}
+
+
+ /* colors!
+ #000000
+ #0a0a0a
+ #26a69a
+ #555555
+ #6a8e46
+ #888888
+ #b2dfdb
+ #b40000
+ #cacaca
+ #eeeeee
+ #fefefe
+ #ff5722
+ #ffffff
+ */

@@ -1,0 +1,27 @@
+<h3 class="teal-title">User Summary: <%= @site_user.name %></h3>
+<p tiny-black>Joined site <%= @site_user.created_at.strftime("%b %d, %Y")%></p>
+<h4 class="black-subtitle">Votes</h4>
+
+<table>
+	<thead>
+		<tr>
+			<th>Media Title</th>
+			<th>Created By</th>
+			<th>Published</th>
+			<th>Category</th>
+			<th>Voted On</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @site_user.votes.each do |vote| %>
+			<% work = vote.work %> <!-- QUESTION: too dependent?? -->
+			<tr>
+				<td><%= link_to work.title, work_path(work.id) %></td>
+				<td><%= work.creator %></td>
+				<td><%= work.get_publication_year %></td>
+				<td><%= work.category %></td>
+				<td><%= work.created_at.strftime("%b %d, %Y") %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

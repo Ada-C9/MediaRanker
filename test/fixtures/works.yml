@@ -1,0 +1,39 @@
+givingtree:
+  title: The Giving Tree
+  category: book
+  publication_year: 1964-02-02
+  description: The most giving tree of all.
+  creator: Creator McCreator
+hpbook:
+  title: Harry Potter and the Philosopher's Stone
+  category: book
+  publication_year: 1997-07-03
+  description: The start of the best series ever.
+  creator: Name McName
+hpmovie:
+  title: Harry Potter and the Philosopher's Stone
+  category: movie
+  publication_year: 2001-10-27
+  description: The first movie in the series.
+  creator: Ada Lovelace
+damn:
+  title: Damn
+  category: album
+  publication_year: 2017-02-03
+  creator: Grace Hooper, the Creator
+bundo:
+  title: Day in the Life of Marlon Bundo
+  category: book
+  publication_year: 2018-03-22
+  description: A bunny falls in love
+novotesbook:
+  title: No One Likes This Book
+  category: book
+  publication_year: 2017-03-22
+  description: unloved
+  creator: unclaimed
+novotesbooktwo:
+  title: Apparently a terrible Book
+  category: book
+  publication_year: 2017-01-22
+  description: No one likes this book
