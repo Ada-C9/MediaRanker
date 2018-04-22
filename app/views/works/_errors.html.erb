@@ -1,0 +1,9 @@
+<% if @work.errors.any? %>
+  <ul class="errors">
+    <% @work.errors.each do |field, message| %>
+      <li>
+        <strong><%= field.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,31 @@
+<h4><%= section_title %></h4>
+<table>
+  <thead>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+  </thead>
+  <tbody>
+    <% (model).each do |work| %>
+    <tr>
+      <td class="vote-count">
+        <%= work.num_votes %>
+      </td>
+      <td class="work-title">
+        <%= link_to work.title, work_path(work.id) %>
+      </td>
+      <td class="work-creator">
+        <%= work.creator %>
+      </td>
+      <td class="work-pub-year">
+        <%= work.publication_date %>
+      </td>
+      <td>
+        <%= link_to "Upvote", upvote_path(work.id), method: :post, class: "button" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

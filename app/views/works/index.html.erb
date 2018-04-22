@@ -1,0 +1,6 @@
+<h3>List of works</h3>
+<section class="media-tables">
+  <%= render partial: "media-table", locals: { section_title: "Albums", model: @albums } %>
+  <%= render partial: "media-table", locals: { section_title: "Books", model: @books } %>
+  <%= render partial: "media-table", locals: { section_title: "Movies", model: @movies } %>
+</section>
