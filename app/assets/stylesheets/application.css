@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require normalize-rails
+
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+* {
+  font-family: "Gudea", sans-serif;
+}
+
+/*
+  NAVIGATION MENU STYLES
+*/
+
+header {
+  background-color: #B2DFDB;
+  padding: 25px 20px 10px 20px;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header h2 {
+  text-align: center;
+  margin: 25px auto 40px auto;
+  font-weight: bold;
+}
+
+h2 a {
+  color: #FF5722;
+  border-right: solid 2px #FFFFFF;
+  padding-right: 25px;
+  margin-right: 15px;
+}
+
+h2 a:hover {
+  color: #FF5722;
+}
+
+header h2 > small {
+  color: #FFFFFF;
+}
+
+nav div.float-right {
+  float: right;
+}
+
+/*
+  MAIN STYLES
+*/
+main {
+  padding: 2rem auto;
+}
+
+main.row {
+  max-width: 75rem;
+  margin: 3rem auto;
+}
+
+
+/*
+  FLASH & ERROR MESSAGE STYLES
+*/
+
+section.flash {
+  display: none;
+}
+
+section.status-message {
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  margin-top: 30px;
+}
+
+section.status-message h3 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+section.status-message h3 {
+  padding: 20px 25px;
+}
+
+section.status-message h3.failure {
+  color: #C70039;
+}
+
+section.status-message h3.success {
+  color: #8a8a8a;
+}
+
+section.status-message ul {
+  padding: 0 25px 20px 25px;
+}

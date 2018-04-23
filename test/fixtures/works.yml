@@ -1,0 +1,69 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one_beat:
+  title: One Beat
+  creator: Sleater-Kinney
+  publication_year: 2002
+  category: album
+  description:
+
+poodr:
+  title: Practical Object-Oriented Design in Ruby
+  creator: Sandi Metz
+  publication_year: 2012
+  category: book
+  description: Reference book for object-oriented design
+
+mis_cuarenta:
+  title: Mis 40 en Bellas Artes
+  creator: Juan Gabriel
+  category: album
+
+el_rey:
+  title: Sigo Siendo el Rey
+  creator: José Alfredo Jimenez
+  category: album
+
+ww:
+  title: Wonder Woman
+  category: movie
+
+bvs:
+  title: Batman v Superman
+  category: movie
+
+bp:
+  title: Black Panther
+  category: movie
+
+thor:
+  title: Thor Ragnarok
+  category: movie
+
+tdk:
+  title: The Dark Knight
+  category: movie
+
+dp:
+  title: Deadpool
+  category: movie
+
+civil_war:
+  title: Captain America Civil War
+  category: movie
+
+spidey:
+  title: Spiderman Homecoming
+  category: movie
+
+green_lantern:
+  title: Green Lantern
+  category: movie
+
+terminator:
+  title: Terminator
+  category: movie
+
+star_wars:
+  title: Star Wars
+  category: movie

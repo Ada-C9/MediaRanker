@@ -1,0 +1,40 @@
+<section class="status-message">
+
+  <% if flash[:success] %>
+    <h3 class="success">
+      <%= flash[:success] %>
+    </h3>
+  <% end %>
+
+  <% if flash[:failure] %>
+    <h3 class="failure">
+      <%= flash[:failure] %>
+    </h3>
+  <% end %>
+
+
+  <% if flash[:failure] == "Could not upvote" %>
+    <ul>
+      <li>
+        user: has already voted for this work
+      </li>
+    </ul>
+  <% end %>
+
+
+  <% if @work %>
+    <% @work.errors.messages.each do |field, messages| %>
+      <% if messages.empty? %>
+      <% else %>
+        <ul>
+          <% messages.each do |message| %>
+            <li>
+              <%= field %>: <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</section>
