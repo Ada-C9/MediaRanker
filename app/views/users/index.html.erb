@@ -1,0 +1,22 @@
+<table>
+  <th>
+    <tr>
+      <td>Username</td>
+      <td>Votes</td>
+      <td>Joined</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </th>
+  <th>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, user_path(user) %></td>
+      <td><%= user.votes.count %></td>
+      <td><%= user.joined %></td>
+      <td><%= link_to "Edit", edit_user_path(user) %></td>
+      <td><%= link_to("Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.name}?" }) %></td>
+    </tr>
+    <% end %>
+  </th>
+</table>

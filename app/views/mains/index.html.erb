@@ -1,0 +1,46 @@
+<section class="spotlight">
+  <h3><span class="media-spotlight-header">
+    Media Spotlight:</span>
+    <%= link_to(@top_work.title, work_path(@top_work)) %>
+    by <%= @works.top_work.creator %></h3>
+    <p>-<%= @works.top_work.votes.count %> Votes<%= @works.top_work.description %></p>
+</section>
+
+<section class="top-five-container">
+  <section class="top-five">
+    <h3>Top Albums</h3>
+    <ul>
+      <% Work.top_five_album.each do |work| %>
+      <li><%= link_to(work.title, work_path(work)) %></li>
+      <li>by <%= work.creator %></li>
+      <li><small>Votes: <%= work.votes.count %></small></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-five">
+    <h3>Top Books</h3>
+    <ul>
+      <% Work.top_five_book.each do |work| %>
+      <li><%= link_to(work.title, work_path(work)) %></li>
+      <li>by <%= work.creator %></li>
+      <li><small>Votes: <%= work.votes.count %></small></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-five">
+    <h3>Top Movies</h3>
+    <ul>
+      <% unless Work.top_five_movie.nil? %>
+      <% Work.top_five_movie.each do |work| %>
+      <li><%= link_to(work.title, work_path(work)) %></li>
+      <li>by <%= work.creator %></li>
+      <li><small>Votes: <%= work.votes.count %></small></li>
+      <% end %>
+      <% else %>
+      <li>Sorry there are no top 5 at this time.</li>
+      <% end %>
+    </ul>
+  </section>
+</section>

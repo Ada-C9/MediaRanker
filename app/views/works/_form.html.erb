@@ -1,0 +1,18 @@
+<h4><%= page_title %></h4>
+
+<%= render partial: "layouts/error_messages", locals: { model: @work } %>
+
+<%= form_for @work do |w| %>
+<%= w.label :category %>
+<%= w.select :category, ['album', 'book', 'movie'] %>
+<%= w.label :title %>
+<%= w.text_field :title %>
+<%= w.label :created_by %>
+<%= w.text_field :creator %>
+<%= w.label :publication_year %>
+<%= w.select :publication_year, (Time.zone.now.year - 200)..(Time.zone.now.year + 1) %>
+<%= w.label :description %>
+<%= w.text_area :description %>
+
+<%= w.submit submit, class: "button" %>
+<% end %>

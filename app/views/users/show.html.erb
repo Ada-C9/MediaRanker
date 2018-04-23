@@ -1,0 +1,29 @@
+<h4>User Summary: <%= @user.name %></h4>
+<p><small> Joined site <%= @user.joined %></small></p>
+
+<table>
+  <h4>Votes</h4>
+  <thead>
+    <tr>
+      <th>Media Title</th>
+      <th>Created By</th>
+      <th>Published</th>
+      <th>Category</th>
+      <th>Voted On</th>
+    </tr>
+  </thead>
+  <% @user.votes.each do |vote| %>
+  <tr>
+    <td><%=link_to(vote.work.title, work_path(vote.work) ) %></td>
+    <td><%= vote.work.creator %></td>
+    <td><%= vote.work.publication_year %></td>
+    <td><%= vote.work.category %></td>
+    <td><%= vote.date_voted %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<%= link_to "Edit", edit_user_path(@user), class: "button" %>
+<a class="button" href="/users">View all users</a>
+<a class="button" href="/works">Back to Media List</a>
