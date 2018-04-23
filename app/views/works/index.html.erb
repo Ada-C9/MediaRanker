@@ -1,0 +1,11 @@
+
+
+<main class="row">
+  <% category_from_url(request.fullpath)  %>
+    <% @content.each do |category| %>
+      <% @content_title.each do |title| %>
+      <h3><%= title %></h3>
+        <%= render partial: "layouts/media-table", locals: { model: category } %>
+      <% end %>
+    <% end %>
+</main>

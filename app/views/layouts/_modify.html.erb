@@ -1,0 +1,40 @@
+<% category_from_url(request.fullpath)  %>
+<% if @content_title %>
+<% if @content.length == 1 %>
+<h1>Add a new <%= @content_title.first.singularize %></h1>
+<% end %>
+<% else %>
+<h1><%= page_title || "Add a new Work" %></h1>
+<% end %>
+
+
+
+<%= form_for @work, html: {class: "modify-input"} do |f| %>
+
+<% category_from_url(request.fullpath)  %>
+
+<% options_array = ["album", "book", "movie"] %>
+
+<%= f.label :category %>
+
+  <% if @content %>
+  <% f.hidden_field :category, value: @content_title.first.downcase.singularize %>
+  <% end %>
+
+<%= f.select :category, options_for_select(options_array) %>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :creator, "Creator" %>
+<%= f.text_field :creator %>
+
+<%= f.label :publication_year, "Publication Year" %>
+<%= f.text_field :publication_year %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.submit %>
+<% end %>

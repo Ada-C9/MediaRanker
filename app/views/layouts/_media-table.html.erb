@@ -1,0 +1,13 @@
+
+
+<table class="media-table responsive-card-table">
+  <tr>
+  <th width="100">Votes</th>
+  <th width="500">Title</th>
+  <th width="250">Created By</th>
+  <th width="100">Published</th>
+  <th width="100">Upvote</th>
+  </tr>
+
+  <%= render partial: "layouts/work-list-item", collection: model, as: :item %>
+</table>

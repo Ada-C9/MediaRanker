@@ -1,0 +1,11 @@
+<% if model.errors.messages.any? %>
+  <ul>
+    <% model.errors.messages.each do |field, problem| %>
+    <li><%= field.capitalize%>:
+      <% problem.each do |message| %>
+      <%= message %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>

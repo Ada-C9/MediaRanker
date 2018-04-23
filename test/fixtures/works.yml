@@ -1,0 +1,114 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+metz:
+  category: book
+  title: Practical Object Oriented Design in Ruby
+  publication_year: 1972
+  creator: Sandi Metz
+  description: pretty good book overall
+
+potter:
+  category: book
+  title: Harry Potter
+  publication_year: 1997
+  creator: J.K. Rowling
+  description: pretty good book overall
+
+one:
+  category: book
+  title: One
+  publication_year: 1997
+  creator: J.K. Rowling
+  description: pretty good book overall
+
+two:
+    category: book
+    title: Two
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+three:
+    category: book
+    title: Three
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+four:
+    category: book
+    title: Four
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+five:
+    category: book
+    title: Five
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+six:
+    category: book
+    title: Six
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+seven:
+    category: book
+    title: Seven
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+eight:
+    category: book
+    title: Eight
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+nine:
+    category: book
+    title: Nine
+    publication_year: 1997
+    creator: J.K. Rowling
+    description: pretty good book overall
+
+ten:
+  category: book
+  title: Ten
+  publication_year: 1997
+  creator: J.K. Rowling
+  description: pretty good book overall
+
+purple:
+  category: album
+  title: Purple Rain
+  publication_year: 2018
+  creator: falafel and friends
+  description: it's aight
+
+range:
+  category: album
+  title: Out of Range
+  publication_year: 2000
+  creator: Ani DiFranco
+  description: Drive drive drive
+
+
+zoo:
+  category: movie
+  title: Zootopia
+  publication_year: 2016
+  creator: Disney/Pixar
+  description: Gotta go fast
+
+pb:
+  category: movie
+  title: Princess Bride
+  publication_year: 1987
+  creator: Rob Reiner
+  description: Life is pain, highness. Anyone who tells you differently is selling something.
