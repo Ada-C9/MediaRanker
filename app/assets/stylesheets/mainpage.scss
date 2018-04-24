@@ -1,0 +1,31 @@
+// Place all the styles related to the mainpage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#spotlight {
+  border-bottom: 2px solid #aaa;
+}
+#spotlight h3 span {
+  color: rgb(74, 74, 74);
+}
+#spotlight a {
+      border-bottom: 2px solid;
+      font-weight: bold;
+}
+
+#tops {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+  margin-top: 5%;
+  }
+
+#tops ul {
+  display: block;
+}
+
+.top-ten {
+  color: #26A69A;
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB
+}

@@ -1,0 +1,24 @@
+
+
+
+<section id="spotlight">
+  <h3><span>Media Spotlight: </span><%=link_to @top.title, work_path(@top)%> by <%=@top.created_by%></h3>
+  <p><%=@top.votes.count%> votes - <%=@top.description%></p>
+</section>
+
+<section id="tops">
+  <ul>
+    <h3 class="top-ten">Top Movies</h3>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "movie")}%>
+  </ul>
+
+  <ul>
+    <h3 class="top-ten">Top Books</h3>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "book")}%>
+  </ul>
+
+  <ul>
+    <h3 class="top-ten">Top Albums</h3>
+    <%= render partial: "top_ten_form", locals: {model: @works.where(category: "album")}%>
+  </ul>
+</section>

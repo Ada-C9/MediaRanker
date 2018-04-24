@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+wini:
+  name: Wini
+  username: winii
+  pasword: MyString
+
+
+ana:
+  name: Ana
+  username: Anai
+  pasword: MyString
+  
