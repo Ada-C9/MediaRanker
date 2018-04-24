@@ -1,0 +1,50 @@
+<main>
+  <article class="user-details">
+    <h3><strong>User Summary: <%= @user.name %></strong></h3>
+    <p>
+      Joined site: <%= @user.created_at.strftime("%b %d, %Y") %>
+    </p>
+  </article>
+  <article class="user-voted-works">
+    <h5><strong>Votes</strong></h5>
+    <table>
+      <tr>
+        <th>
+          Media Title
+        </th>
+        <th>
+          Created By
+        </th>
+        <th>
+          Published
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Voted On
+        </th>
+      </tr>
+      <% @user.votes.each do |vote| %>
+      <% w = Work.find(vote.work_id) %>
+      <tr>
+        <td>
+        <%= link_to w.title, work_path(w.id)%>
+        </td>
+        <td>
+          <%= w.creator %>
+        </td>
+        <td>
+          <%= w.publication_year %>
+        </td>
+        <td>
+          <%= w.category %>
+        </td>
+        <td>
+          <%= vote.created_at.strftime("%b %d, %Y") %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </article>
+</main>

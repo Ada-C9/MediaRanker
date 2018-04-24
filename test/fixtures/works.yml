@@ -1,0 +1,56 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+one:
+  title: movie-one
+  category: movie
+  creator: director-one
+  publication_year: 2002
+  description: first movie of the year
+
+
+two:
+  title: movie-two
+  category: movie
+  creator: director-two
+  publication_year: 1994
+  description: prequel to something
+
+three:
+  title: movie-three
+  category: movie
+  creator: director-three
+  publication_year: 2013
+  description:
+
+four:
+  title: album-one
+  category: album
+  creator: artist-one
+  publication_year: 2001
+  description:
+
+five:
+  title: album-two
+  category: album
+  creator: artist-two
+  publication_year: 1967
+  description: groovy
+
+six:
+  title: book-one
+  category: book
+  creator: writer-one
+  publication_year: 2008
+  description: super duper mystery
+
+seven:
+  title: book-two
+  category: book
+  creator: writer-two
+  publication_year: 1984
+  description:

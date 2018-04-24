@@ -1,0 +1,32 @@
+<h3>List of Users</h3>
+
+<main>
+  <section class="list-users">
+    <table>
+      <tr>
+        <th>
+          Username
+        </th>
+        <th>
+          Votes
+        </th>
+        <th>
+          Joined
+        </th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user.name, user_path(user.id) %>
+        </td>
+        <td>
+          <%= user.votes.count %>
+        </td>
+        <td>
+          <%= user.created_at.strftime("%b %d, %Y") %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </section>
+</main>
