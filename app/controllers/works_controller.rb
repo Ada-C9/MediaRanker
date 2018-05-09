@@ -29,9 +29,10 @@ class WorksController < ApplicationController
       flash[:success] = "Work added successfully"
       redirect_to works_path
     else
-
-      flash.now[:failure] = "Validations Failed"
-      render :new
+      flash[:alert] = "A problem has occurred. Unable to add work!"
+      flash[:notice] = @work.errors.full_messages
+      # This: "status: :bad_request" has been added below because of the tests we wrote
+      render :new, status: :bad_request
     end
   end
 
@@ -58,7 +59,9 @@ private
   end
 
   def find_work
-    @work = Work.find(params[:id])
+    @work = Work.find_by(id: params[:id])
+    head :not_found unless @work
+    flash[:notice] = "Work with id number #{params[:id]} could not be found!"
   end
 
 end
