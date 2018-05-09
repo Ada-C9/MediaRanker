@@ -1,15 +1,16 @@
 require "test_helper"
 
 describe Vote do
-  describe 'validations' do
+  describe 'vote creation' do
     before do
       @current_vote = votes(:vote_one)
-      @vote = Vote.new(user: users(:ada), work: works(:kindred))
+      user = User.create!(name: 'Magdalena')
+      @vote = Vote.create!(user: user, work: works(:kindred))
     end
 
     it "it can create a valid vote with all required parameters" do
       result = @vote.valid?
-      result.must_equal true
+      @vote.must_be :valid?
     end
   end
 
@@ -30,7 +31,7 @@ describe Vote do
   describe "validations" do
     before do
       @user1 = users(:ada)
-      @user2 = users(:grace)
+      @user2 = users(:kate)
       @work1 = works(:exhile)
       @work2 = works(:selma)
     end
@@ -50,11 +51,10 @@ describe Vote do
     end
 
     it "doesn't allow the same user to vote for the same work twice" do
-      vote1 = Vote.new(user: @user1, work: @work1)
-      vote1.save!
+      vote1 = Vote.create!(user: @user1, work: @work1)
       vote2 = Vote.new(user: @user1, work: @work1)
       vote2.valid?.must_equal false
-      vote2.errors.messages.must_include :user
+      vote2.errors.messages[:work][0].must_include "has already been taken"
     end
   end
 end
