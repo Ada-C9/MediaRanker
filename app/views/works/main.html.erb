@@ -1,0 +1,32 @@
+
+<main class="row">
+  <section class="row spotlight">
+    <div>
+      <h3><span class="media-spotlight-header">Media Spotlight</span>
+        <%= link_to @spotlight.title, work_path(@spotlight) %> by <%= @works.spotlight.creator %> </h3>
+      <p> <%= @works.spotlight.votes.count %> votes - <%= @works.spotlight.description %></p>     
+    </div>
+  </section>
+
+  <hr class="root-hr">
+
+  <section class="top-ten-container">
+    <section class="top-ten">
+      <h3>Top Movies</h3>
+      <%= render partial: "works", locals: {model: @movies} %>
+
+    </section>
+
+    <section class="top-ten">
+      <h3>Top Books</h3>
+      <%= render partial: "works", locals: {model: @books} %>
+    </section>
+
+    <section class="top-ten">
+      <h3>Top Albums</h3>
+      <%= render partial: "works", locals: {model: @albums} %>
+    </section>
+
+  </section>
+
+</main>

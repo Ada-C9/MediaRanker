@@ -1,0 +1,11 @@
+<ul>
+<% model.each do |item| %>
+<li>
+  <h4>
+    <%= link_to item.title, work_path(item) %>
+    <small>by <%= link_to item.creator, work_path(item) %></small>
+  </h4>
+  <p> <%= item.votes.count %> </p>
+</li>
+<% end %>
+</ul>

@@ -1,0 +1,9 @@
+<h2>Log In</h2>
+
+<%= form_for @potential_user, url: login_path do |f| %>
+
+<%= f.label :username %>
+<%= f.text_area :name %>
+
+<%= f.submit "Log In", class: "button" %>
+<% end %>

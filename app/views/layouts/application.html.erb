@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "MR" %></title>
+    <link rel=“icon” type=“image/png” href="/assets/owl.jpg">
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header class="page-header row">
+      <h2>
+        <a href="/">Media Ranker</a><small>  Ranking the Best of Everything</small>
+      </h2>
+      <nav>
+        <a class="button" href="/">View top media</a>
+        <a class="button" href="/works">View all media</a>
+        <a class="button" href="works/new">Add a new work</a>
+        <a class="button" href="/users">View all users</a>
+          <div class="float-right">
+
+            <% if @find_user %>
+              <%= link_to "Logged in as #{ @find_user.name }", user_path(@find_user.id), class: "button" %>
+              <%= link_to "Log Out", logout_path, method: :delete, class: "button" %>
+            <% else %>
+              <%= link_to "Log In", login_form_path, class: "button" %>
+            <% end %>
+          </div>
+      </nav>
+    </header>
+    <section class="flash">
+        <% flash.each do |name, message| %>
+          <div class="<%= name %>"><%= message %></div>
+        <% end %>
+    </section>
+
+    <%= yield %>
+
+  </body>
+</html>
